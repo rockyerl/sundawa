@@ -40,7 +40,7 @@ export default function HeroSection() {
             ))}
 
             <motion.div
-                style={{ y, opacity, width: '100%', paddingTop: '7rem', paddingBottom: '4rem' }}
+                style={{ y, opacity, width: '100%', paddingBottom: '4rem' }}
                 className="container-main relative z-10"
             >
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'center' }}
@@ -216,12 +216,12 @@ export default function HeroSection() {
                                 ))}
                                 <div style={{ position: 'relative', width: 160, height: 160 }}>
                                     <Image
-                                        src="/assets/Logo Sundawa-01.png"
+                                        src="/assets/logo2.png"
                                         alt="Sundawa Logo"
                                         fill
                                         className="object-contain drop-shadow-2xl"
                                         priority={true}
-                                        sizes="40px"
+                                        sizes="160px"
                                     />
                                 </div>
                             </div>

@@ -68,7 +68,7 @@ export default function Navbar() {
                     <a href="#hero" className="flex items-center gap-3 group flex-shrink-0">
                         <div className="relative w-10 h-10">
                             <Image
-                                src="/assets/Logo Sundawa-01.png"
+                                src="/assets/logo2.png"
                                 alt="Sundawa Teknologi"
                                 fill
                                 className="object-contain p-1"

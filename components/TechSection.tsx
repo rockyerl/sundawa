@@ -196,67 +196,6 @@ export default function TechSection() {
                 </div>
             </div>
 
-            {/* Marquee — full bleed */}
-            <div style={{ position: 'relative' }}>
-                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '5rem', background: 'linear-gradient(to right, #0E1E30, transparent)', zIndex: 10, pointerEvents: 'none' }} />
-                <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '5rem', background: 'linear-gradient(to left, #0E1E30, transparent)', zIndex: 10, pointerEvents: 'none' }} />
-
-                {/* Row 1 */}
-                <div style={{ overflow: 'hidden', marginBottom: '0.75rem' }}>
-                    <motion.div
-                        animate={{ x: ['0%', '-50%'] }}
-                        transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-                        style={{ display: 'flex', gap: '0.75rem', width: 'max-content' }}
-                    >
-                        {marqueeRow1.map((t, i) => (
-                            <div
-                                key={i}
-                                className="card-glass"
-                                style={{
-                                    display: 'flex', alignItems: 'center', gap: '0.5rem',
-                                    padding: '0.5rem 1.1rem', flexShrink: 0,
-                                    transition: 'border-color 0.25s', cursor: 'default',
-                                }}
-                                onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(219,201,119,0.4)'}
-                                onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.borderColor = ''}
-                            >
-                                <div style={{ width: 6, height: 6, borderRadius: '50%', background: t.color, flexShrink: 0 }} />
-                                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(248,248,248,0.6)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
-                                    {t.name}
-                                </span>
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* Row 2 reversed */}
-                <div style={{ overflow: 'hidden' }}>
-                    <motion.div
-                        animate={{ x: ['-50%', '0%'] }}
-                        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-                        style={{ display: 'flex', gap: '0.75rem', width: 'max-content' }}
-                    >
-                        {marqueeRow2.map((t, i) => (
-                            <div
-                                key={i}
-                                className="card-glass"
-                                style={{
-                                    display: 'flex', alignItems: 'center', gap: '0.5rem',
-                                    padding: '0.5rem 1.1rem', flexShrink: 0,
-                                    transition: 'border-color 0.25s', cursor: 'default',
-                                }}
-                                onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(219,201,119,0.4)'}
-                                onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.borderColor = ''}
-                            >
-                                <div style={{ width: 6, height: 6, borderRadius: '50%', background: t.color, flexShrink: 0 }} />
-                                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(248,248,248,0.6)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
-                                    {t.name}
-                                </span>
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-            </div>
 
             <style>{`
                 .tech-layout {
