@@ -10,15 +10,8 @@ export default function HeroSection() {
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
-    const stats = [
-        { num: '5+', label: 'Tahun Pengalaman' },
-        { num: '30+', label: 'Project Digital' },
-        { num: '15+', label: 'Klien Aktif' },
-        { num: '10+', label: 'Tim Ahli' },
-    ]
-
     return (
-        <section ref={ref} id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <section ref={ref} id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             {/* Radial backdrop */}
             <div style={{
                 position: 'absolute', inset: 0,
@@ -40,7 +33,7 @@ export default function HeroSection() {
             ))}
 
             <motion.div
-                style={{ y, opacity, width: '100%', paddingBottom: '4rem' }}
+                style={{ y, opacity, width: '100%', paddingTop: '150px' }}
                 className="container-main relative z-10"
             >
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'center' }}
@@ -138,7 +131,7 @@ export default function HeroSection() {
                             </a>
                         </motion.div>
 
-                        {/* Stats */}
+                        {/* Stats (kosong, dipertahankan) */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -149,14 +142,6 @@ export default function HeroSection() {
                                 borderTop: '1px solid rgba(248,248,248,0.08)',
                             }}
                         >
-                            {stats.map((s) => (
-                                <div key={s.num}>
-                                    <div style={{ fontSize: '1.5rem', fontWeight: 900 }} className="gold-gradient">{s.num}</div>
-                                    <div style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.35)', marginTop: '0.25rem' }}>
-                                        {s.label}
-                                    </div>
-                                </div>
-                            ))}
                         </motion.div>
                     </div>
 
@@ -190,7 +175,7 @@ export default function HeroSection() {
                             }} />
                         </div>
 
-                        {/* Logo box — premium framed */}
+                        {/* Logo box */}
                         <motion.div
                             animate={{ y: [0, -14, 0] }}
                             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
@@ -205,7 +190,6 @@ export default function HeroSection() {
                                 boxShadow: '0 0 60px rgba(0,86,170,0.3), inset 0 0 40px rgba(0,86,170,0.05)',
                                 position: 'relative',
                             }}>
-                                {/* Corner accents */}
                                 {[
                                     { top: -1, left: -1, borderTop: '2px solid #DBC977', borderLeft: '2px solid #DBC977' },
                                     { top: -1, right: -1, borderTop: '2px solid #DBC977', borderRight: '2px solid #DBC977' },

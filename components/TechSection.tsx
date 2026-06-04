@@ -4,42 +4,39 @@ import { useRef, useState } from 'react'
 
 const techs = [
     // Backend
-    { name: 'Laravel',        color: '#FF2D20', category: 'Backend'  },
-    { name: 'Node.js',        color: '#539E43', category: 'Backend'  },
-    { name: 'Go',             color: '#00ADD8', category: 'Backend'  },
-    { name: '.NET',           color: '#512BD4', category: 'Backend'  },
+    { name: 'Laravel',        color: '#FF2D20', category: 'Backend',  icon: 'https://cdn.simpleicons.org/laravel/FF2D20'  },
+    { name: 'Node.js',        color: '#539E43', category: 'Backend',  icon: 'https://cdn.simpleicons.org/nodedotjs/539E43' },
+    { name: 'Go',             color: '#00ADD8', category: 'Backend',  icon: 'https://cdn.simpleicons.org/go/00ADD8'        },
+    { name: '.NET',           color: '#512BD4', category: 'Backend',  icon: 'https://cdn.simpleicons.org/dotnet/512BD4'    },
     // Mobile
-    { name: 'Flutter',        color: '#54C5F8', category: 'Mobile'   },
-    { name: 'Kotlin',         color: '#7F52FF', category: 'Mobile'   },
+    { name: 'Flutter',        color: '#54C5F8', category: 'Mobile',   icon: 'https://cdn.simpleicons.org/flutter/54C5F8'  },
+    { name: 'Kotlin',         color: '#7F52FF', category: 'Mobile',   icon: 'https://cdn.simpleicons.org/kotlin/7F52FF'   },
     // Frontend
-    { name: 'Next.js',        color: '#F8F8F8', category: 'Frontend' },
-    { name: 'React',          color: '#61DAFB', category: 'Frontend' },
-    { name: 'TypeScript',     color: '#3178C6', category: 'Frontend' },
+    { name: 'Next.js',        color: '#F8F8F8', category: 'Frontend', icon: 'https://cdn.simpleicons.org/nextdotjs/F8F8F8' },
+    { name: 'React',          color: '#61DAFB', category: 'Frontend', icon: 'https://cdn.simpleicons.org/react/61DAFB'     },
+    { name: 'TypeScript',     color: '#3178C6', category: 'Frontend', icon: 'https://cdn.simpleicons.org/typescript/3178C6'},
     // Database
-    { name: 'MySQL',          color: '#4479A1', category: 'Database' },
-    { name: 'PostgreSQL',     color: '#336791', category: 'Database' },
-    { name: 'Redis',          color: '#DC382D', category: 'Database' },
+    { name: 'MySQL',          color: '#4479A1', category: 'Database', icon: 'https://cdn.simpleicons.org/mysql/4479A1'    },
+    { name: 'PostgreSQL',     color: '#336791', category: 'Database', icon: 'https://cdn.simpleicons.org/postgresql/336791'},
+    { name: 'Redis',          color: '#DC382D', category: 'Database', icon: 'https://cdn.simpleicons.org/redis/DC382D'    },
     // DevOps
-    { name: 'Docker',         color: '#2496ED', category: 'DevOps'   },
-    { name: 'NGINX',          color: '#009639', category: 'DevOps'   },
-    { name: 'GitHub Actions', color: '#2088FF', category: 'DevOps'   },
+    { name: 'Docker',         color: '#2496ED', category: 'DevOps',   icon: 'https://cdn.simpleicons.org/docker/2496ED'        },
+    { name: 'NGINX',          color: '#009639', category: 'DevOps',   icon: 'https://cdn.simpleicons.org/nginx/009639'          },
+    { name: 'GitHub Actions', color: '#2088FF', category: 'DevOps',   icon: 'https://cdn.simpleicons.org/githubactions/2088FF'  },
 ]
 
 const categories = [
-    { name: 'Backend',  color: '#FF2D20', count: 4 },
-    { name: 'Mobile',   color: '#54C5F8', count: 2 },
-    { name: 'Frontend', color: '#61DAFB', count: 3 },
-    { name: 'Database', color: '#4479A1', count: 3 },
-    { name: 'DevOps',   color: '#009639', count: 3 },
+    { name: 'Backend',  color: '#FF2D20', count: 4, icon: 'https://cdn.simpleicons.org/serverless/FF2D20' },
+    { name: 'Mobile',   color: '#54C5F8', count: 2, icon: 'https://cdn.simpleicons.org/android/54C5F8'   },
+    { name: 'Frontend', color: '#61DAFB', count: 3, icon: 'https://cdn.simpleicons.org/html5/61DAFB'      },
+    { name: 'Database', color: '#4479A1', count: 3, icon: 'https://cdn.simpleicons.org/databricks/4479A1' },
+    { name: 'DevOps',   color: '#009639', count: 3, icon: 'https://cdn.simpleicons.org/kubernetes/009639' },
 ]
 
 export default function TechSection() {
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-80px' })
     const [active, setActive] = useState<number | null>(null)
-
-    const marqueeRow1 = [...techs, ...techs]
-    const marqueeRow2 = [...techs.slice(5), ...techs.slice(5), ...techs.slice(0, 5), ...techs.slice(0, 5)]
 
     return (
         <section id="tech" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
@@ -107,7 +104,14 @@ export default function TechSection() {
                                     onMouseLeave={e => e.currentTarget.style.background = '#0E1E30'}
                                 >
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                        <div style={{ width: 6, height: 6, borderRadius: '50%', background: cat.color, flexShrink: 0 }} />
+                                        {/* Icon replacing the dot */}
+                                        <img
+                                            src={cat.icon}
+                                            alt={cat.name}
+                                            width={14}
+                                            height={14}
+                                            style={{ flexShrink: 0, opacity: 0.85 }}
+                                        />
                                         <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.7)' }}>
                                             {cat.name}
                                         </span>
@@ -166,13 +170,22 @@ export default function TechSection() {
                                     transition: 'opacity 0.25s',
                                 }} />
 
-                                <div style={{
-                                    width: 8, height: 8, borderRadius: '50%',
-                                    background: t.color,
-                                    marginBottom: '0.75rem',
-                                    transition: 'transform 0.3s',
-                                    transform: active === i ? 'scale(1.4)' : 'scale(1)',
-                                }} />
+                                {/* Tech icon replacing the dot */}
+                                <div style={{ marginBottom: '0.75rem' }}>
+                                    <img
+                                        src={t.icon}
+                                        alt={t.name}
+                                        width={22}
+                                        height={22}
+                                        style={{
+                                            display: 'block',
+                                            opacity: active === i ? 1 : 0.55,
+                                            transition: 'opacity 0.25s, transform 0.3s',
+                                            transform: active === i ? 'scale(1.15)' : 'scale(1)',
+                                        }}
+                                    />
+                                </div>
+
                                 <div style={{
                                     fontSize: '0.78rem', fontWeight: 700,
                                     color: active === i ? '#F8F8F8' : 'rgba(248,248,248,0.65)',
@@ -195,7 +208,6 @@ export default function TechSection() {
                     </motion.div>
                 </div>
             </div>
-
 
             <style>{`
                 .tech-layout {
