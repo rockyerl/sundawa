@@ -102,7 +102,7 @@ export default function HeroSection() {
 
             <style>{`
                 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1fr !important; } .hero-logo-col { display: flex !important; } }
-                @media (max-width: 640px) { .hero-grid h1 span { font-size: 7.5vw !important; } .hero-content { padding-top: 80px !important; } }
+                @media (max-width: 640px) { .hero-grid h1 span { font-size: 7.5vw !important; } .hero-content { padding-top: 50px !important; } }
                 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
                 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
             `}</style>
