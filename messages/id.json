@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "about": "Tentang",
+    "values": "Nilai",
+    "services": "Layanan",
+    "tech": "Teknologi",
+    "clients": "Klien",
+    "contact": "Kontak",
+    "getInTouch": "HUBUNGI KAMI"
+  },
+  "hero": {
+    "badge": "Perusahaan IT",
+    "line1": "PROFESSIONAL",
+    "line2": "PRECISION",
+    "line3": "CUSTOMER",
+    "line4": "COMFORT",
+    "sub": "Perusahaan IT yang berfokus pada kenyamanan klien dan menjunjung tinggi profesionalitas dalam setiap aspek layanan.",
+    "ctaServices": "Jasa Kami",
+    "ctaAbout": "Tentang Kami",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "Tentang",
+    "heading1": "Tentang",
+    "heading2": "Sundawa",
+    "heading3": "Teknologi",
+    "p1": "Sundawa Teknologi merupakan perusahaan IT yang berfokus pada kenyamanan dan kebutuhan klien, sekaligus menjunjung tinggi profesionalitas pada setiap aspek layanan yang diberikan.",
+    "p2": "Kami menyediakan solusi inovatif dan berfokus untuk menghadirkan solusi IT yang dapat mengubah dan meningkatkan bisnis klien kami.",
+    "quote": "Professional Precision, Customer Comfort",
+    "missions": [
+      {
+        "num": "01",
+        "title": "Customer-First Experience",
+        "body": "Memberikan pengalaman luar biasa bagi setiap klien, memprioritaskan kenyamanan, kepuasan, dan kepercayaan dalam setiap layanan."
+      },
+      {
+        "num": "02",
+        "title": "Precision & Efficiency",
+        "body": "Menyediakan solusi yang tepat, efisien, dan disesuaikan kebutuhan klien dengan menjaga ketepatan di setiap tahap penyelesaian."
+      },
+      {
+        "num": "03",
+        "title": "Strong Relationships",
+        "body": "Mengembangkan hubungan berkelanjutan dengan mendengarkan dan merespons secara cepat terhadap setiap kebutuhan klien."
+      }
+    ]
+  },
+  "values": {
+    "label": "Nilai-Nilai",
+    "heading1": "Nilai-Nilai",
+    "heading2": "Penting Kami",
+    "sub": "Prinsip-prinsip yang membentuk setiap keputusan dan interaksi di Sundawa Teknologi.",
+    "items": [
+      { "num": "01", "title": "Kepuasan Klien Utama", "desc": "Kepuasan dan kebutuhan klien adalah prioritas utama dalam setiap tindakan dan keputusan yang diambil." },
+      { "num": "02", "title": "Pelayanan Ramah & Nyaman", "desc": "Menyediakan lingkungan dan pengalaman yang nyaman bagi klien, dari awal interaksi hingga penyelesaian proyek." },
+      { "num": "03", "title": "Keandalan & Ketepatan", "desc": "Memberikan layanan berkualitas tinggi dengan presisi dan keandalan yang tinggi dalam setiap aspek bisnis." },
+      { "num": "04", "title": "Kolaborasi Aktif", "desc": "Mendorong komunikasi terbuka dan kolaborasi erat antara tim internal dan klien untuk pemahaman mendalam." },
+      { "num": "05", "title": "Komitmen Profesionalisme", "desc": "Menempatkan standar keahlian tinggi dan etika kerja yang tinggi dalam setiap aspek bisnis." },
+      { "num": "06", "title": "Inovasi Berkelanjutan", "desc": "Mendorong inovasi dan peningkatan dalam solusi yang ditawarkan, sesuai perkembangan teknologi dan kebutuhan pasar." }
+    ]
+  },
+  "services": {
+    "label": "Layanan",
+    "heading1": "Jasa",
+    "heading2": "Kami",
+    "sub": "Kami menawarkan berbagai solusi teknologi yang dirancang khusus untuk kebutuhan bisnis Anda — dari konsultasi hingga produk jadi.",
+    "ctaContact": "Diskusi Proyek",
+    "ctaOutsource": "Lihat Estimasi Harga",
+    "items": [
+      { "num": "01", "tag": "Advisory",    "title": "Konsultasi IT",       "desc": "Dapatkan konsultasi dari ahli kami mengenai kebutuhan digital bisnis Anda. Kami membantu merumuskan strategi teknologi yang tepat." },
+      { "num": "02", "tag": "Design",      "title": "UI/UX Design",        "desc": "Desain produk atau aplikasi dengan metode yang efektif dan efisien. Mengutamakan pengalaman pengguna yang intuitif dan menarik." },
+      { "num": "03", "tag": "QA Testing",  "title": "Pengujian Software",  "desc": "Percayai para ahli untuk melakukan pengujian yang diperlukan software Anda. Pastikan produk bebas bug sebelum diluncurkan." },
+      { "num": "04", "tag": "Development", "title": "Custom Software",     "desc": "Tingkatkan efisiensi bisnis dengan software yang dibangun khusus sesuai kebutuhan — dari manajemen stok hingga sistem enterprise." },
+      { "num": "05", "tag": "Mobile",      "title": "Mobile App",          "desc": "Pindahkan identitas merek Anda ke platform yang lebih mudah diakses. Aplikasi mobile yang responsif dan engaging." },
+      { "num": "06", "tag": "Web",         "title": "Web Development",     "desc": "Solusi web profesional dari landing page hingga platform enterprise yang skalabel dan modern." },
+      { "num": "07", "tag": "Outsource",   "title": "IT Outsourcing",      "desc": "Suplai talenta IT profesional terseleksi untuk kebutuhan tim Anda — remote, hybrid, atau onsite. Developer, QA, DevOps, hingga IT Manager." }
+    ],
+    "stats": [
+      { "num": "50+", "label": "Proyek Selesai" },
+      { "num": "7",   "label": "Layanan Utama" },
+      { "num": "98%", "label": "Klien Puas" },
+      { "num": "5+",  "label": "Tahun Pengalaman" }
+    ]
+  },
+  "tech": {
+    "label": "Teknologi",
+    "heading1": "Teknologi",
+    "heading2": "Yang Kami Gunakan",
+    "sub": "Stack teknologi modern yang kami kuasai untuk menghadirkan solusi terbaik di setiap proyek.",
+    "technologies": "technologies"
+  },
+  "clients": {
+    "label": "Klien",
+    "heading1": "Klien",
+    "heading2": "Kami",
+    "sub": "Dipercaya oleh berbagai perusahaan dari beragam industri untuk menghadirkan solusi teknologi terbaik.",
+    "confidentialNotice": "Beberapa klien bersifat confidential",
+    "confidential": "Confidential",
+    "stats": [
+      { "num": "15+", "label": "Klien Aktif" },
+      { "num": "30+", "label": "Project Selesai" },
+      { "num": "5+",  "label": "Tahun Pengalaman" },
+      { "num": "10+", "label": "Tim Profesional" }
+    ],
+    "items": [
+      { "num": "01", "name": "Oetomo Hospital",            "initials": "OH",  "type": "Healthcare",       "desc": "Sistem informasi rumah sakit terintegrasi mencakup manajemen pasien, rekam medis, dan billing." },
+      { "num": "02", "name": "PT. Kimu Enam Kemasindo",    "initials": "KE",  "type": "Manufacturing",    "desc": "Solusi ERP dan manajemen produksi untuk mengoptimalkan rantai pasokan dan efisiensi pabrik." },
+      { "num": "03", "name": "Sistem Informasi Konveksi",  "initials": "SIK", "type": "Textile & Fashion","desc": "Platform manajemen produksi konveksi dari pemesanan hingga pengiriman secara real-time." },
+      { "num": "04", "name": "Healthcare App Client",      "initials": "HC",  "type": "Healthcare",       "desc": "Aplikasi kesehatan mobile dengan fitur telemedicine dan manajemen rekam medis digital.", "confidential": true }
+    ]
+  },
+  "contact": {
+    "label": "Kontak",
+    "readyToStart": "Siap memulai?",
+    "line1": "AYO",
+    "line2": "KERJA",
+    "line3": "BERSAMA",
+    "phoneDesc": "Sen–Jum, 9am–6pm WIB",
+    "emailDesc": "Respon dalam 24 jam",
+    "linkedinDesc": "Follow kami di LinkedIn",
+    "location": "Bandung, Jawa Barat, Indonesia",
+    "waTooltip": "Chat WhatsApp",
+    "waMessage": "Halo Sundawa Teknologi, saya ingin mengetahui lebih lanjut tentang layanan Anda."
+  },
+  "outsource": {
+    "navBack": "Kembali",
+    "navTitle": "IT Outsource Calculator",
+    "label": "IT Outsourcing",
+    "heading1": "Estimasi Harga",
+    "heading2": "Tim IT Outsource",
+    "sub": "Bangun tim developer, QA, DevOps, atau IT Manager impianmu. Pilih posisi, level, dan mode kerja — kami hitung estimasinya secara real-time.",
+    "addTitle": "Tambah Talent",
+    "labelCategory": "Kategori",
+    "labelPosition": "Posisi",
+    "labelLevel": "Level",
+    "labelQty": "Jumlah",
+    "labelMode": "Mode Kerja",
+    "modeRemote": "🏠 Remote",
+    "modeHybrid": "🔄 Hybrid",
+    "modeOnsite": "🏢 Onsite",
+    "pricePerPerson": "Harga per orang / bulan",
+    "addButton": "Tambah ke Estimasi",
+    "priceNote": "⚠️ Harga belum termasuk BPJS, THR, dan overhead operasional. Hubungi kami untuk proposal resmi.",
+    "summaryTitle": "Estimasi Tim",
+    "emptyCart": "Belum ada talent ditambahkan",
+    "totalTalent": "Total talent",
+    "totalPerMonth": "Total estimasi / bln",
+    "reset": "Reset",
+    "waButton": "Diskusi via WhatsApp",
+    "contactCta": "Butuh tim khusus atau konsultasi lebih lanjut?",
+    "contactButton": "Hubungi Kami",
+    "infoRemote": "Talent Bandung bekerja remote untuk klien di mana saja. Value proposition terbaik: harga kompetitif, kualitas setara.",
+    "infoHybrid": "Kombinasi remote dan onsite sesuai kebutuhan proyek. Baseline pricing kami.",
+    "infoOnsite": "Talent hadir penuh di lokasi klien. Cocok untuk proyek yang butuh koordinasi intensif.",
+    "infoNote": "Harga belum termasuk BPJS (~7.7%), THR (~8.3%), dan overhead operasional. Hubungi kami untuk proposal resmi.",
+    "infoTitleRemote": "Remote — Bandung",
+    "infoTitleHybrid": "Hybrid",
+    "infoTitleOnsite": "Onsite",
+    "infoTitleNote": "Catatan Harga",
+    "selectCategory": "— Pilih Kategori —",
+    "selectPosition": "— Pilih Posisi —",
+    "selectLevel": "— Level —"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "about": "About",
+    "values": "Values",
+    "services": "Services",
+    "tech": "Tech",
+    "clients": "Clients",
+    "contact": "Contact",
+    "getInTouch": "GET IN TOUCH"
+  },
+  "hero": {
+    "badge": "IT Solutions Company",
+    "line1": "PROFESSIONAL",
+    "line2": "PRECISION",
+    "line3": "CUSTOMER",
+    "line4": "COMFORT",
+    "sub": "An IT company focused on client comfort and upholding professionalism in every aspect of our service.",
+    "ctaServices": "Our Services",
+    "ctaAbout": "About Us",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "About",
+    "heading1": "About",
+    "heading2": "Sundawa",
+    "heading3": "Teknologi",
+    "p1": "Sundawa Teknologi is an IT company focused on client comfort and needs, while upholding professionalism in every aspect of the services provided.",
+    "p2": "We provide innovative solutions focused on delivering IT solutions that can transform and elevate our clients' businesses.",
+    "quote": "Professional Precision, Customer Comfort",
+    "missions": [
+      {
+        "num": "01",
+        "title": "Customer-First Experience",
+        "body": "Delivering an exceptional experience to every client, prioritizing comfort, satisfaction, and trust in every service."
+      },
+      {
+        "num": "02",
+        "title": "Precision & Efficiency",
+        "body": "Providing accurate, efficient, and tailored solutions to client needs while maintaining precision at every stage of delivery."
+      },
+      {
+        "num": "03",
+        "title": "Strong Relationships",
+        "body": "Building lasting partnerships by listening and responding quickly to every client need."
+      }
+    ]
+  },
+  "values": {
+    "label": "Values",
+    "heading1": "Our Core",
+    "heading2": "Values",
+    "sub": "The principles that shape every decision and interaction at Sundawa Teknologi.",
+    "items": [
+      { "num": "01", "title": "Client Satisfaction First", "desc": "Client satisfaction and needs are the top priority in every action and decision we make." },
+      { "num": "02", "title": "Friendly & Comfortable Service", "desc": "Providing a comfortable environment and experience for clients, from first interaction through project completion." },
+      { "num": "03", "title": "Reliability & Precision", "desc": "Delivering high-quality services with precision and reliability in every aspect of the business." },
+      { "num": "04", "title": "Active Collaboration", "desc": "Encouraging open communication and close collaboration between our internal team and clients for deep mutual understanding." },
+      { "num": "05", "title": "Commitment to Professionalism", "desc": "Placing high standards of expertise and work ethics in every aspect of the business." },
+      { "num": "06", "title": "Continuous Innovation", "desc": "Driving innovation and improvement in the solutions we offer, in line with technological developments and market needs." }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "heading1": "Our",
+    "heading2": "Services",
+    "sub": "We offer a range of technology solutions tailored to your business needs — from consultation to finished product.",
+    "ctaContact": "Discuss a Project",
+    "ctaOutsource": "View Pricing Estimate",
+    "items": [
+      { "num": "01", "tag": "Advisory",    "title": "IT Consultation",    "desc": "Get expert consultation on your business's digital needs. We help formulate the right technology strategy." },
+      { "num": "02", "tag": "Design",      "title": "UI/UX Design",       "desc": "Product and application design using effective and efficient methods, prioritizing intuitive and attractive user experiences." },
+      { "num": "03", "tag": "QA Testing",  "title": "Software Testing",   "desc": "Trust our experts to conduct the testing your software needs. Ensure your product is bug-free before launch." },
+      { "num": "04", "tag": "Development", "title": "Custom Software",    "desc": "Boost business efficiency with software built specifically for your needs — from inventory management to enterprise systems." },
+      { "num": "05", "tag": "Mobile",      "title": "Mobile App",         "desc": "Bring your brand identity to a more accessible platform. Responsive and engaging mobile applications." },
+      { "num": "06", "tag": "Web",         "title": "Web Development",    "desc": "Professional web solutions from landing pages to scalable, modern enterprise platforms." },
+      { "num": "07", "tag": "Outsource",   "title": "IT Outsourcing",     "desc": "Supply selected professional IT talent for your team — remote, hybrid, or onsite. Developers, QA, DevOps, to IT Managers." }
+    ],
+    "stats": [
+      { "num": "50+", "label": "Projects Done" },
+      { "num": "7",   "label": "Core Services" },
+      { "num": "98%", "label": "Happy Clients" },
+      { "num": "5+",  "label": "Years Experience" }
+    ]
+  },
+  "tech": {
+    "label": "Technology",
+    "heading1": "Technologies",
+    "heading2": "We Use",
+    "sub": "The modern tech stack we master to deliver the best solutions in every project.",
+    "technologies": "technologies"
+  },
+  "clients": {
+    "label": "Clients",
+    "heading1": "Our",
+    "heading2": "Clients",
+    "sub": "Trusted by companies across various industries to deliver the best technology solutions.",
+    "confidentialNotice": "Some clients are confidential",
+    "confidential": "Confidential",
+    "stats": [
+      { "num": "15+", "label": "Active Clients" },
+      { "num": "30+", "label": "Projects Done" },
+      { "num": "5+",  "label": "Years Experience" },
+      { "num": "10+", "label": "Professionals" }
+    ],
+    "items": [
+      { "num": "01", "name": "Oetomo Hospital",            "initials": "OH",  "type": "Healthcare",       "desc": "Integrated hospital information system covering patient management, medical records, and billing." },
+      { "num": "02", "name": "PT. Kimu Enam Kemasindo",    "initials": "KE",  "type": "Manufacturing",    "desc": "ERP and production management solutions to optimize supply chain and factory efficiency." },
+      { "num": "03", "name": "Sistem Informasi Konveksi",  "initials": "SIK", "type": "Textile & Fashion","desc": "Garment production management platform from order to real-time delivery tracking." },
+      { "num": "04", "name": "Healthcare App Client",      "initials": "HC",  "type": "Healthcare",       "desc": "Mobile health application with telemedicine features and digital medical record management.", "confidential": true }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "readyToStart": "Ready to start?",
+    "line1": "LET'S",
+    "line2": "WORK",
+    "line3": "TOGETHER",
+    "phoneDesc": "Mon–Fri, 9am–6pm WIB",
+    "emailDesc": "Response within 24 hours",
+    "linkedinDesc": "Follow us on LinkedIn",
+    "location": "Bandung, West Java, Indonesia",
+    "waTooltip": "Chat on WhatsApp",
+    "waMessage": "Hello Sundawa Teknologi, I would like to learn more about your services."
+  },
+  "outsource": {
+    "navBack": "Back",
+    "navTitle": "IT Outsource Calculator",
+    "label": "IT Outsourcing",
+    "heading1": "Pricing Estimate",
+    "heading2": "IT Outsource Team",
+    "sub": "Build your dream team of developers, QA, DevOps, or IT Managers. Choose position, level, and work mode — we calculate the estimate in real time.",
+    "addTitle": "Add Talent",
+    "labelCategory": "Category",
+    "labelPosition": "Position",
+    "labelLevel": "Level",
+    "labelQty": "Quantity",
+    "labelMode": "Work Mode",
+    "modeRemote": "🏠 Remote",
+    "modeHybrid": "🔄 Hybrid",
+    "modeOnsite": "🏢 Onsite",
+    "pricePerPerson": "Price per person / month",
+    "addButton": "Add to Estimate",
+    "priceNote": "⚠️ Price excludes BPJS, THR, and operational overhead. Contact us for a formal proposal.",
+    "summaryTitle": "Team Estimate",
+    "emptyCart": "No talent added yet",
+    "totalTalent": "Total talent",
+    "totalPerMonth": "Total estimate / mo",
+    "reset": "Reset",
+    "waButton": "Discuss via WhatsApp",
+    "contactCta": "Need a custom team or further consultation?",
+    "contactButton": "Contact Us",
+    "infoRemote": "Bandung-based talent working remotely for clients anywhere. Best value proposition: competitive price, equivalent quality.",
+    "infoHybrid": "A mix of remote and onsite work based on project needs. Our baseline pricing.",
+    "infoOnsite": "Talent fully on-site at the client's location. Ideal for projects requiring intensive coordination.",
+    "infoNote": "Price excludes BPJS (~7.7%), THR (~8.3%), and operational overhead. Contact us for a formal proposal.",
+    "infoTitleRemote": "Remote — Bandung",
+    "infoTitleHybrid": "Hybrid",
+    "infoTitleOnsite": "Onsite",
+    "infoTitleNote": "Pricing Notes",
+    "selectCategory": "— Select Category —",
+    "selectPosition": "— Select Position —",
+    "selectLevel": "— Level —"
+  }
+}

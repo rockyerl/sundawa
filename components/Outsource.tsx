@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Plus, X, ChevronDown, MessageCircle, Trash2, Users, ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
 import Image from 'next/image'
+import { Link } from '@/src/i18n/navigation'
+import { useTranslations } from 'next-intl'
+import LangToggle from '@/components/LangToggle'
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 type City   = 'bandung' | 'jakarta'
 type Mode   = 'remote' | 'hybrid' | 'onsite'
@@ -207,6 +208,8 @@ const ModeBadge = ({ mode }: { mode: Mode }) => {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function OutsourcePage() {
+    const t = useTranslations('outsource')
+
     const [city,   setCity]   = useState<City>('bandung')
     const margin = 20 as const
     const [mode,   setMode]   = useState<Mode>('remote')
@@ -268,16 +271,14 @@ export default function OutsourcePage() {
 
     const buildWAMessage = () => {
         if (cart.length === 0) return ''
-        let msg = 'Halo Sundawa Teknologi, saya tertarik dengan layanan IT Outsourcing.\n\nEstimasi Tim:\n'
+        let msg = t('waButton') + '\n\n' + t('summaryTitle') + ':\n'
         cart.forEach(i => {
             const sell = margin === 20 ? i.sell20 : i.sell25
             msg += `• ${i.qty}× ${i.pos} (${i.level}) — ${i.mode} — ${i.city === 'bandung' ? 'Bandung' : 'Jakarta'} → ${fmtJt(sell * i.qty)}/bln\n`
         })
-        msg += `\nTotal ${totCount} talent: ${fmtFull(totSell)}/bln\n\nMohon informasi lebih lanjut, terima kasih.`
+        msg += `\n${t('totalTalent')} ${totCount}: ${fmtFull(totSell)}/bln`
         return msg
     }
-
-    // ── Styles ──────────────────────────────────────────────────────────────
 
     const selectStyle: React.CSSProperties = {
         width: '100%',
@@ -352,7 +353,6 @@ export default function OutsourcePage() {
                 top: 0,
                 zIndex: 50,
             }}>
-                {/* Back button */}
                 <Link href="/" style={{
                     display: 'flex', alignItems: 'center', gap: '0.5rem',
                     fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em',
@@ -363,29 +363,31 @@ export default function OutsourcePage() {
                       onMouseLeave={e => (e.currentTarget.style.color = 'rgba(248,248,248,0.5)')}
                 >
                     <ArrowLeft size={14} />
-                    Kembali
+                    {t('navBack')}
                 </Link>
 
-                {/* Logo */}
-                <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
-                    <div style={{ position: 'relative', width: 32, height: 32, flexShrink: 0 }}>
-                        <Image src="/assets/logo2.png" alt="Sundawa Teknologi" fill style={{ objectFit: 'contain', padding: 2 }} priority sizes="32px" />
-                    </div>
-                    <div>
-                        <div style={{ fontSize: '0.72rem', fontWeight: 900, letterSpacing: '0.25em', color: '#F8F8F8', lineHeight: 1 }}>
-                            SUNDAWA
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <LangToggle />
+                    <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
+                        <div style={{ position: 'relative', width: 32, height: 32, flexShrink: 0 }}>
+                            <Image src="/assets/logo2.png" alt="Sundawa Teknologi" fill style={{ objectFit: 'contain', padding: 2 }} priority sizes="32px" />
                         </div>
-                        <div style={{ fontSize: '0.55rem', fontWeight: 300, letterSpacing: '0.4em', color: 'rgba(219,201,119,0.5)', textTransform: 'uppercase', marginTop: 1 }}>
-                            Teknologi
+                        <div>
+                            <div style={{ fontSize: '0.72rem', fontWeight: 900, letterSpacing: '0.25em', color: '#F8F8F8', lineHeight: 1 }}>
+                                SUNDAWA
+                            </div>
+                            <div style={{ fontSize: '0.55rem', fontWeight: 300, letterSpacing: '0.4em', color: 'rgba(219,201,119,0.5)', textTransform: 'uppercase', marginTop: 1 }}>
+                                Teknologi
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
 
                 <span style={{
                     fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em',
                     textTransform: 'uppercase', color: 'rgba(248,248,248,0.3)',
                 }}>
-                    IT Outsource Calculator
+                    {t('navTitle')}
                 </span>
             </nav>
 
@@ -394,26 +396,22 @@ export default function OutsourcePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                style={{
-                    padding: '3rem 2rem 2rem',
-                    maxWidth: 1100,
-                    margin: '0 auto',
-                }}
+                style={{ padding: '3rem 2rem 2rem', maxWidth: 1100, margin: '0 auto' }}
             >
                 <div style={{
                     fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.3em',
                     textTransform: 'uppercase', color: '#DBC977', marginBottom: '0.75rem',
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                 }}>
-                    <span>— IT Outsourcing</span>
+                    <span>— {t('label')}</span>
                     <div style={{ height: 1, width: 60, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </div>
                 <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '0.75rem' }}>
-                    Estimasi Harga<br />
-                    <span className="gold-gradient">Tim IT Outsource</span>
+                    {t('heading1')}<br />
+                    <span className="gold-gradient">{t('heading2')}</span>
                 </h1>
                 <p style={{ fontSize: '0.82rem', color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8, maxWidth: 520 }}>
-                    Bangun tim developer, QA, DevOps, atau IT Manager impianmu. Pilih posisi, level, dan mode kerja — kami hitung estimasinya secara real-time.
+                    {t('sub')}
                 </p>
             </motion.div>
 
@@ -422,17 +420,9 @@ export default function OutsourcePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                style={{
-                    maxWidth: 1100,
-                    margin: '0 auto',
-                    padding: '0 2rem 4rem',
-                }}
+                style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem 4rem' }}
             >
-                <div style={{
-                    border: '1px solid rgba(219,201,119,0.2)',
-                    borderRadius: 16,
-                    overflow: 'hidden',
-                }}>
+                <div style={{ border: '1px solid rgba(219,201,119,0.2)', borderRadius: 16, overflow: 'hidden' }}>
 
                     {/* ── Calculator header ── */}
                     <div style={{
@@ -445,7 +435,6 @@ export default function OutsourcePage() {
                         flexWrap: 'wrap',
                         gap: '1rem',
                     }}>
-                        {/* City toggle */}
                         <div style={{ display: 'flex', gap: 4, background: 'rgba(0,0,0,0.3)', borderRadius: 8, padding: 4 }}>
                             {(['bandung', 'jakarta'] as City[]).map(c => (
                                 <button key={c} style={tabBtnStyle(city === c)} onClick={() => handleCityChange(c)}>
@@ -460,14 +449,14 @@ export default function OutsourcePage() {
 
                         {/* ── Add panel ── */}
                         <div style={{ padding: '1.75rem', borderRight: '1px solid rgba(219,201,119,0.12)' }}>
-                            <p style={{ ...labelStyle, marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)' }}>Tambah Talent</p>
+                            <p style={{ ...labelStyle, marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)' }}>{t('addTitle')}</p>
 
                             {/* Category */}
                             <div style={{ marginBottom: '0.9rem', position: 'relative' }}>
-                                <label style={labelStyle}>Kategori</label>
+                                <label style={labelStyle}>{t('labelCategory')}</label>
                                 <div style={{ position: 'relative' }}>
                                     <select style={selectStyle} value={cat} onChange={e => handleCatChange(e.target.value)}>
-                                        <option value="">— Pilih Kategori —</option>
+                                        <option value="">{t('selectCategory')}</option>
                                         {categories.map(c => <option key={c} value={c}>{c}</option>)}
                                     </select>
                                     <ChevronDown size={14} style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', color: 'rgba(219,201,119,0.5)', pointerEvents: 'none' }} />
@@ -476,10 +465,10 @@ export default function OutsourcePage() {
 
                             {/* Position */}
                             <div style={{ marginBottom: '0.9rem', position: 'relative' }}>
-                                <label style={labelStyle}>Posisi</label>
+                                <label style={labelStyle}>{t('labelPosition')}</label>
                                 <div style={{ position: 'relative' }}>
                                     <select style={{ ...selectStyle, opacity: cat ? 1 : 0.5 }} value={pos} onChange={e => handlePosChange(e.target.value)} disabled={!cat}>
-                                        <option value="">— Pilih Posisi —</option>
+                                        <option value="">{t('selectPosition')}</option>
                                         {positions.map(p => <option key={p} value={p}>{p}</option>)}
                                     </select>
                                     <ChevronDown size={14} style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', color: 'rgba(219,201,119,0.5)', pointerEvents: 'none' }} />
@@ -489,17 +478,17 @@ export default function OutsourcePage() {
                             {/* Level + Qty */}
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.9rem' }}>
                                 <div>
-                                    <label style={labelStyle}>Level</label>
+                                    <label style={labelStyle}>{t('labelLevel')}</label>
                                     <div style={{ position: 'relative' }}>
                                         <select style={{ ...selectStyle, opacity: pos ? 1 : 0.5 }} value={level} onChange={e => setLevel(e.target.value as Level)} disabled={!pos}>
-                                            <option value="">— Level —</option>
+                                            <option value="">{t('selectLevel')}</option>
                                             {levels.map(l => <option key={l} value={l}>{l}</option>)}
                                         </select>
                                         <ChevronDown size={14} style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', color: 'rgba(219,201,119,0.5)', pointerEvents: 'none' }} />
                                     </div>
                                 </div>
                                 <div>
-                                    <label style={labelStyle}>Jumlah</label>
+                                    <label style={labelStyle}>{t('labelQty')}</label>
                                     <input
                                         type="number" min={1} max={99} value={qty}
                                         onChange={e => setQty(Math.max(1, Math.min(99, parseInt(e.target.value) || 1)))}
@@ -510,11 +499,11 @@ export default function OutsourcePage() {
 
                             {/* Mode kerja */}
                             <div style={{ marginBottom: '1.2rem' }}>
-                                <label style={labelStyle}>Mode Kerja</label>
+                                <label style={labelStyle}>{t('labelMode')}</label>
                                 <div style={{ display: 'flex', gap: 6 }}>
                                     {(['remote', 'hybrid', 'onsite'] as Mode[]).map(m => (
                                         <button key={m} style={modeStyle(mode === m)} onClick={() => setMode(m)}>
-                                            {m === 'remote' ? '🏠 Remote' : m === 'hybrid' ? '🔄 Hybrid' : '🏢 Onsite'}
+                                            {m === 'remote' ? t('modeRemote') : m === 'hybrid' ? t('modeHybrid') : t('modeOnsite')}
                                         </button>
                                     ))}
                                 </div>
@@ -540,7 +529,7 @@ export default function OutsourcePage() {
                                 >
                                     <div>
                                         <div style={{ fontSize: '0.6rem', color: 'rgba(248,248,248,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>
-                                            Harga per orang / bulan
+                                            {t('pricePerPerson')}
                                         </div>
                                     </div>
                                     <div style={{ textAlign: 'right' }}>
@@ -581,25 +570,25 @@ export default function OutsourcePage() {
                                 }}
                             >
                                 <Plus size={15} />
-                                Tambah ke Estimasi
+                                {t('addButton')}
                             </button>
 
                             {/* Notes */}
                             <p style={{ fontSize: '0.62rem', color: 'rgba(248,248,248,0.2)', marginTop: '1rem', lineHeight: 1.7 }}>
-                                ⚠️ Harga belum termasuk BPJS, THR, dan overhead operasional. Hubungi kami untuk proposal resmi.
+                                {t('priceNote')}
                             </p>
                         </div>
 
                         {/* ── Summary panel ── */}
                         <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', minHeight: 480 }}>
-                            <p style={{ ...labelStyle, marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)' }}>Estimasi Tim</p>
+                            <p style={{ ...labelStyle, marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)' }}>{t('summaryTitle')}</p>
 
                             {/* Cart list */}
                             <div style={{ flex: 1, overflowY: 'auto', marginBottom: '1rem', maxHeight: 320 }}>
                                 {cart.length === 0 ? (
                                     <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'rgba(248,248,248,0.2)' }}>
                                         <Users size={32} style={{ display: 'block', margin: '0 auto 10px', opacity: 0.3 }} />
-                                        <p style={{ fontSize: '0.78rem' }}>Belum ada talent ditambahkan</p>
+                                        <p style={{ fontSize: '0.78rem' }}>{t('emptyCart')}</p>
                                     </div>
                                 ) : (
                                     cart.map(item => {
@@ -641,7 +630,7 @@ export default function OutsourcePage() {
                                                     </div>
                                                     <button
                                                         onClick={() => removeItem(item.id)}
-                                                        aria-label="Hapus talent"
+                                                        aria-label="remove"
                                                         style={{
                                                             background: 'none', border: 'none',
                                                             color: 'rgba(248,248,248,0.25)', cursor: 'pointer',
@@ -665,15 +654,11 @@ export default function OutsourcePage() {
                                 padding: '14px 16px',
                                 marginBottom: '0.9rem',
                             }}>
-                                {[
-                                    { label: 'Total talent', val: `${totCount} orang` },
-                                ].map(r => (
-                                    <div key={r.label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: 'rgba(248,248,248,0.5)', padding: '3px 0' }}>
-                                        <span>{r.label}</span><span>{r.val}</span>
-                                    </div>
-                                ))}
+                                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: 'rgba(248,248,248,0.5)', padding: '3px 0' }}>
+                                    <span>{t('totalTalent')}</span><span>{totCount} orang</span>
+                                </div>
                                 <div style={{ borderTop: '1px solid rgba(219,201,119,0.18)', marginTop: 8, paddingTop: 10, display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 800, color: '#DBC977' }}>
-                                    <span>Total estimasi / bln</span>
+                                    <span>{t('totalPerMonth')}</span>
                                     <span>{fmtFull(totSell)}</span>
                                 </div>
                             </div>
@@ -705,7 +690,7 @@ export default function OutsourcePage() {
                                     }}
                                 >
                                     <MessageCircle size={14} />
-                                    Diskusi via WhatsApp
+                                    {t('waButton')}
                                 </a>
                                 {cart.length > 0 && (
                                     <button
@@ -726,7 +711,7 @@ export default function OutsourcePage() {
                                         }}
                                     >
                                         <Trash2 size={13} />
-                                        Reset
+                                        {t('reset')}
                                     </button>
                                 )}
                             </div>
@@ -739,10 +724,10 @@ export default function OutsourcePage() {
             <div style={{ background: 'rgba(29,52,81,0.3)', borderTop: '1px solid rgba(219,201,119,0.1)', padding: '2rem' }}>
                 <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
                     {[
-                        { icon: '🏠', title: 'Remote — Bandung',  desc: 'Talent Bandung bekerja remote untuk klien di mana saja. Value proposition terbaik: harga kompetitif, kualitas setara.' },
-                        { icon: '🔄', title: 'Hybrid',            desc: 'Kombinasi remote dan onsite sesuai kebutuhan proyek. Baseline pricing kami.' },
-                        { icon: '🏢', title: 'Onsite',            desc: 'Talent hadir penuh di lokasi klien. Cocok untuk proyek yang butuh koordinasi intensif.' },
-                        { icon: '📋', title: 'Catatan Harga',     desc: 'Harga belum termasuk BPJS (~7.7%), THR (~8.3%), dan overhead operasional. Hubungi kami untuk proposal resmi.' },
+                        { icon: '🏠', title: t('infoTitleRemote'),  desc: t('infoRemote') },
+                        { icon: '🔄', title: t('infoTitleHybrid'),  desc: t('infoHybrid') },
+                        { icon: '🏢', title: t('infoTitleOnsite'),  desc: t('infoOnsite') },
+                        { icon: '📋', title: t('infoTitleNote'),    desc: t('infoNote')   },
                     ].map(item => (
                         <div key={item.title}>
                             <div style={{ fontSize: '1.1rem', marginBottom: 6 }}>{item.icon}</div>
@@ -756,7 +741,7 @@ export default function OutsourcePage() {
             {/* ── Contact CTA ── */}
             <div style={{ padding: '3rem 2rem', textAlign: 'center' }}>
                 <p style={{ fontSize: '0.72rem', color: 'rgba(248,248,248,0.35)', marginBottom: '1rem' }}>
-                    Butuh tim khusus atau konsultasi lebih lanjut?
+                    {t('contactCta')}
                 </p>
                 <Link
                     href="/#contact"
@@ -771,7 +756,7 @@ export default function OutsourcePage() {
                         transition: 'all 0.2s',
                     }}
                 >
-                    Hubungi Kami <ArrowUpRight size={12} />
+                    {t('contactButton')} <ArrowUpRight size={12} />
                 </Link>
             </div>
 
@@ -800,5 +785,5 @@ export default function OutsourcePage() {
                 ::-webkit-scrollbar-thumb { background: rgba(219,201,119,0.3); border-radius: 2px; }
             `}</style>
         </main>
-    )
+)
 }

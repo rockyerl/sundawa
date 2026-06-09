@@ -3,20 +3,23 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-
-const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#values', label: 'Values' },
-    { href: '#services', label: 'Services' },
-    { href: '#tech', label: 'Tech' },
-    { href: '#clients', label: 'Clients' },
-    { href: '#contact', label: 'Contact' },
-]
+import { useTranslations } from 'next-intl'
+import LangToggle from './LangToggle'
 
 export default function Navbar() {
+    const t = useTranslations('nav')
     const [scrolled, setScrolled] = useState(false)
     const [open, setOpen] = useState(false)
     const [active, setActive] = useState('')
+
+    const navLinks = [
+        { href: '#about',    label: t('about')    },
+        { href: '#values',   label: t('values')   },
+        { href: '#services', label: t('services') },
+        { href: '#tech',     label: t('tech')     },
+        { href: '#clients',  label: t('clients')  },
+        { href: '#contact',  label: t('contact')  },
+    ]
 
     useEffect(() => {
         const handler = () => setScrolled(window.scrollY > 40)
@@ -24,7 +27,6 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handler)
     }, [])
 
-    // Track active section
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -39,6 +41,7 @@ export default function Navbar() {
             if (el) observer.observe(el)
         })
         return () => observer.disconnect()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -51,7 +54,6 @@ export default function Navbar() {
                     scrolled ? 'py-4' : 'py-6'
                 }`}
             >
-                {/* Scrolled background */}
                 <div
                     className="absolute inset-0 transition-all duration-500 pointer-events-none"
                     style={{
@@ -87,7 +89,6 @@ export default function Navbar() {
                     </a>
 
                     {/* Desktop links */}
-                    {/* Desktop links */}
                     <div className="hidden md:flex items-center gap-7">
                         {navLinks.map((link, i) => (
                             <motion.a
@@ -97,9 +98,7 @@ export default function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 + i * 0.05 }}
                                 className="relative text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors duration-300 group"
-                                style={{
-                                    color: active === link.href ? '#DBC977' : 'rgba(248,248,248,0.55)',
-                                }}
+                                style={{ color: active === link.href ? '#DBC977' : 'rgba(248,248,248,0.55)' }}
                             >
                                 {link.label}
                                 <span
@@ -109,27 +108,33 @@ export default function Navbar() {
                                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#DBC977]/50 group-hover:w-full transition-all duration-300" />
                             </motion.a>
                         ))}
+
+                        {/* Language toggle — desktop */}
+                        <LangToggle />
                     </div>
 
-                    {/* Mobile menu button */}
-                    <button
-                        className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center transition-colors duration-300"
-                        style={{ color: open ? '#DBC977' : 'rgba(248,248,248,0.8)' }}
-                        onClick={() => setOpen(!open)}
-                        aria-label="Toggle menu"
-                    >
-                        <AnimatePresence mode="wait">
-                            {open ? (
-                                <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                                    <X size={22} />
-                                </motion.span>
-                            ) : (
-                                <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                                    <Menu size={22} />
-                                </motion.span>
-                            )}
-                        </AnimatePresence>
-                    </button>
+                    {/* Mobile: lang toggle + hamburger */}
+                    <div className="md:hidden flex items-center gap-3">
+                        <LangToggle />
+                        <button
+                            className="relative z-50 w-10 h-10 flex items-center justify-center transition-colors duration-300"
+                            style={{ color: open ? '#DBC977' : 'rgba(248,248,248,0.8)' }}
+                            onClick={() => setOpen(!open)}
+                            aria-label="Toggle menu"
+                        >
+                            <AnimatePresence mode="wait">
+                                {open ? (
+                                    <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                                        <X size={22} />
+                                    </motion.span>
+                                ) : (
+                                    <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                                        <Menu size={22} />
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
+                        </button>
+                    </div>
                 </div>
             </motion.nav>
 
@@ -144,7 +149,6 @@ export default function Navbar() {
                         className="fixed inset-0 z-40 flex flex-col"
                         style={{ background: 'rgba(14,30,48,0.98)', backdropFilter: 'blur(24px)' }}
                     >
-                        {/* Grid bg */}
                         <div className="absolute inset-0 pointer-events-none" style={{
                             backgroundImage: `linear-gradient(rgba(219,201,119,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(219,201,119,0.03) 1px, transparent 1px)`,
                             backgroundSize: '60px 60px',
@@ -192,14 +196,10 @@ export default function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5 }}
                                 className="mt-10 block mx-auto w-full max-w-[260px] text-center px-10 py-4 rounded-2xl font-black tracking-[0.25em] text-sm transition-all duration-300"
-                                style={{
-                                    background: '#DBC977',
-                                    color: '#0E1E30',
-                                    boxShadow: '0 10px 30px rgba(219, 201, 119, 0.3)',
-                                }}
+                                style={{ background: '#DBC977', color: '#0E1E30', boxShadow: '0 10px 30px rgba(219, 201, 119, 0.3)' }}
                                 onClick={() => setOpen(false)}
                             >
-                                GET IN TOUCH
+                                {t('getInTouch')}
                             </motion.a>
                         </div>
                     </motion.div>
