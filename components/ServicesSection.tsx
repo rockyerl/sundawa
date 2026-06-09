@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { MessageSquare, Palette, TestTube, Code2, Smartphone, Globe, ArrowUpRight } from 'lucide-react'
+import { MessageSquare, Palette, TestTube, Code2, Smartphone, Globe, Users, ArrowUpRight } from 'lucide-react'
 
 const services = [
     {
@@ -47,13 +47,23 @@ const services = [
         tag: 'Web',
         num: '06',
     },
+    {
+        icon: Users,
+        title: 'IT Outsourcing',
+        desc: 'Suplai talenta IT profesional terseleksi untuk kebutuhan tim Anda — remote, hybrid, atau onsite. Developer, QA, DevOps, hingga IT Manager.',
+        tag: 'Outsource',
+        num: '07',
+        highlight: true,
+        ctaHref: '/outsource',
+        ctaLabel: 'Lihat Estimasi Harga',
+    },
 ]
 
 const stats = [
     { num: '50+', label: 'Proyek Selesai' },
-    { num: '6',   label: 'Layanan Utama' },
+    { num: '7',   label: 'Layanan Utama' },
     { num: '98%', label: 'Klien Puas' },
-    { num: '5+', label: 'Tahun Pengalaman' },
+    { num: '5+',  label: 'Tahun Pengalaman' },
 ]
 
 export default function ServicesSection() {
@@ -131,25 +141,11 @@ export default function ServicesSection() {
                             }}
                         >
                             {stats.map((s) => (
-                                <div
-                                    key={s.label}
-                                    style={{
-                                        background: '#0E1E30',
-                                        padding: '1.1rem 1rem',
-                                    }}
-                                >
-                                    <div style={{
-                                        fontSize: '1.6rem', fontWeight: 900,
-                                        color: '#DBC977', lineHeight: 1,
-                                        marginBottom: '0.25rem',
-                                    }}>
+                                <div key={s.label} style={{ background: '#0E1E30', padding: '1.1rem 1rem' }}>
+                                    <div style={{ fontSize: '1.6rem', fontWeight: 900, color: '#DBC977', lineHeight: 1, marginBottom: '0.25rem' }}>
                                         {s.num}
                                     </div>
-                                    <div style={{
-                                        fontSize: '0.6rem', fontWeight: 700,
-                                        letterSpacing: '0.15em', textTransform: 'uppercase',
-                                        color: 'rgba(248,248,248,0.35)',
-                                    }}>
+                                    <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.35)' }}>
                                         {s.label}
                                     </div>
                                 </div>
@@ -169,6 +165,7 @@ export default function ServicesSection() {
                                 padding: '0.75rem 1.25rem',
                                 border: '1px solid rgba(219,201,119,0.3)',
                                 transition: 'all 0.25s',
+                                textDecoration: 'none',
                             }}
                             onMouseEnter={e => {
                                 e.currentTarget.style.background = 'rgba(219,201,119,0.08)'
@@ -206,20 +203,36 @@ export default function ServicesSection() {
                                 onMouseLeave={() => setActive(null)}
                                 style={{
                                     position: 'relative',
-                                    background: active === i ? 'rgba(29,52,81,0.6)' : '#0E1E30',
+                                    background: s.highlight
+                                        ? active === i ? 'rgba(29,52,81,0.85)' : 'rgba(14,30,48,0.98)'
+                                        : active === i ? 'rgba(29,52,81,0.6)' : '#0E1E30',
                                     padding: '1.75rem 1.5rem',
                                     cursor: 'default',
                                     transition: 'background 0.3s',
                                     overflow: 'hidden',
+                                    // Span full width if it's the last item (07) and odd count
+                                    gridColumn: i === services.length - 1 && services.length % 2 !== 0 ? 'span 2' : undefined,
                                 }}
+                                className={s.highlight ? 'service-highlight-card' : ''}
                             >
-                                {/* Top accent bar on hover */}
+                                {/* Top accent bar on hover — gold for normal, brighter for highlight */}
                                 <div style={{
                                     position: 'absolute', top: 0, left: 0, right: 0, height: 2,
-                                    background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))',
-                                    opacity: active === i ? 1 : 0,
+                                    background: s.highlight
+                                        ? 'linear-gradient(to right, #DBC977, #A66A2C, rgba(219,201,119,0))'
+                                        : 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))',
+                                    opacity: s.highlight ? (active === i ? 1 : 0.4) : (active === i ? 1 : 0),
                                     transition: 'opacity 0.3s',
                                 }} />
+
+                                {/* Subtle gold shimmer BG for highlight card */}
+                                {s.highlight && (
+                                    <div style={{
+                                        position: 'absolute', inset: 0,
+                                        background: 'linear-gradient(135deg, rgba(219,201,119,0.06) 0%, transparent 50%)',
+                                        pointerEvents: 'none',
+                                    }} />
+                                )}
 
                                 {/* Card top row: icon + num | tag */}
                                 <div style={{
@@ -230,8 +243,8 @@ export default function ServicesSection() {
                                         <div style={{
                                             width: 42, height: 42,
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            border: `1px solid ${active === i ? 'rgba(219,201,119,0.45)' : 'rgba(219,201,119,0.2)'}`,
-                                            background: active === i ? 'rgba(219,201,119,0.12)' : 'rgba(219,201,119,0.05)',
+                                            border: `1px solid ${active === i || s.highlight ? 'rgba(219,201,119,0.45)' : 'rgba(219,201,119,0.2)'}`,
+                                            background: active === i || s.highlight ? 'rgba(219,201,119,0.12)' : 'rgba(219,201,119,0.05)',
                                             color: '#DBC977',
                                             transition: 'all 0.3s',
                                             flexShrink: 0,
@@ -239,8 +252,7 @@ export default function ServicesSection() {
                                             <s.icon size={17} />
                                         </div>
                                         <span style={{
-                                            fontSize: '0.6rem', fontWeight: 800,
-                                            letterSpacing: '0.15em',
+                                            fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em',
                                             color: 'rgba(248,248,248,0.18)',
                                         }}>
                                             {s.num}
@@ -250,8 +262,9 @@ export default function ServicesSection() {
                                         fontSize: '0.58rem', fontWeight: 800,
                                         letterSpacing: '0.2em', textTransform: 'uppercase',
                                         padding: '0.2rem 0.65rem',
-                                        border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(219,201,119,0.15)'}`,
-                                        color: active === i ? 'rgba(219,201,119,0.85)' : 'rgba(219,201,119,0.45)',
+                                        border: `1px solid ${s.highlight ? 'rgba(219,201,119,0.5)' : active === i ? 'rgba(219,201,119,0.4)' : 'rgba(219,201,119,0.15)'}`,
+                                        color: s.highlight ? 'rgba(219,201,119,0.95)' : active === i ? 'rgba(219,201,119,0.85)' : 'rgba(219,201,119,0.45)',
+                                        background: s.highlight ? 'rgba(219,201,119,0.1)' : 'transparent',
                                         transition: 'all 0.3s',
                                         whiteSpace: 'nowrap',
                                     }}>
@@ -262,7 +275,7 @@ export default function ServicesSection() {
                                 {/* Title */}
                                 <h3 style={{
                                     fontWeight: 700, fontSize: '0.92rem',
-                                    color: active === i ? '#DBC977' : '#F8F8F8',
+                                    color: s.highlight ? '#DBC977' : active === i ? '#DBC977' : '#F8F8F8',
                                     letterSpacing: '0.02em',
                                     marginBottom: '0.6rem',
                                     transition: 'color 0.3s',
@@ -270,30 +283,58 @@ export default function ServicesSection() {
                                     {s.title}
                                 </h3>
 
-                                {/* Description — always visible */}
+                                {/* Description */}
                                 <p style={{
                                     fontSize: '0.78rem', lineHeight: 1.75,
                                     fontWeight: 300,
                                     color: 'rgba(248,248,248,0.38)',
+                                    marginBottom: s.ctaHref ? '1.25rem' : 0,
                                 }}>
                                     {s.desc}
                                 </p>
 
-                                {/* Arrow button */}
-                                <div style={{
-                                    display: 'flex', justifyContent: 'flex-end',
-                                    marginTop: '1.1rem',
-                                }}>
-                                    <div style={{
-                                        width: 28, height: 28,
-                                        border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`,
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)',
-                                        transition: 'all 0.3s',
-                                    }}>
-                                        <ArrowUpRight size={13} />
+                                {/* CTA link for outsource card */}
+                                {s.ctaHref && (
+                                    <a
+                                        href={s.ctaHref}
+                                        style={{
+                                            display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                                            fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.15em',
+                                            textTransform: 'uppercase', color: '#DBC977',
+                                            padding: '0.5rem 1rem',
+                                            border: '1px solid rgba(219,201,119,0.35)',
+                                            background: 'rgba(219,201,119,0.07)',
+                                            textDecoration: 'none',
+                                            transition: 'all 0.25s',
+                                        }}
+                                        onMouseEnter={e => {
+                                            e.currentTarget.style.background = 'rgba(219,201,119,0.15)'
+                                            e.currentTarget.style.borderColor = 'rgba(219,201,119,0.6)'
+                                        }}
+                                        onMouseLeave={e => {
+                                            e.currentTarget.style.background = 'rgba(219,201,119,0.07)'
+                                            e.currentTarget.style.borderColor = 'rgba(219,201,119,0.35)'
+                                        }}
+                                    >
+                                        {s.ctaLabel}
+                                        <ArrowUpRight size={11} />
+                                    </a>
+                                )}
+
+                                {/* Arrow button (non-highlight cards) */}
+                                {!s.ctaHref && (
+                                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.1rem' }}>
+                                        <div style={{
+                                            width: 28, height: 28,
+                                            border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`,
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)',
+                                            transition: 'all 0.3s',
+                                        }}>
+                                            <ArrowUpRight size={13} />
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </motion.div>
                         ))}
                     </div>
@@ -307,12 +348,8 @@ export default function ServicesSection() {
                     gap: 3rem;
                     align-items: flex-start;
                 }
-                .services-left {
-                    width: 100%;
-                }
-                .services-right {
-                    width: 100%;
-                }
+                .services-left { width: 100%; }
+                .services-right { width: 100%; }
                 @media (min-width: 1024px) {
                     .services-layout {
                         flex-direction: row !important;
@@ -332,6 +369,9 @@ export default function ServicesSection() {
                 @media (max-width: 600px) {
                     .services-right {
                         grid-template-columns: 1fr !important;
+                    }
+                    .services-right > div[style*="span 2"] {
+                        grid-column: span 1 !important;
                     }
                 }
             `}</style>

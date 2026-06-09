@@ -34,7 +34,7 @@ export default function HeroSection() {
 
             <motion.div
                 style={{ y, opacity, width: '100%', paddingTop: '150px' }}
-                className="container-main relative z-10"
+                className="container-main relative z-10 hero-content"
             >
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'center' }}
                      className="hero-grid">
@@ -233,6 +233,10 @@ export default function HeroSection() {
                 @media (min-width: 1024px) {
                     .hero-grid { grid-template-columns: 1fr 1fr !important; }
                     .hero-logo-col { display: flex !important; }
+                }
+                @media (max-width: 640px) {
+                    .hero-grid h1 span { font-size: 7.5vw !important; }
+                    .hero-content { padding-top: 90px !important; }
                 }
                 @keyframes pulse {
                     0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
