@@ -670,7 +670,7 @@ export default function OutsourcePage() {
                             {/* CTAs */}
                             <div style={{ display: 'flex', gap: 8 }}>
                                 <a
-                                    href={cart.length > 0 ? `https://wa.me/6281234567890?text=${encodeURIComponent(buildWAMessage())}` : '#'}
+                                    href={cart.length > 0 ? `https://wa.me/6287893355332?text=${encodeURIComponent(buildWAMessage())}` : '#'}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
