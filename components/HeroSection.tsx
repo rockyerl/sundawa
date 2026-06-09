@@ -13,7 +13,7 @@ export default function HeroSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
     return (
-        <section ref={ref} id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <section ref={ref} id="hero" style={{ position: 'relative', height: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 60% 50%, rgba(0,86,170,0.15), transparent)', pointerEvents: 'none' }} />
             {[600, 420, 240].map((size, i) => (
                 <div key={size} style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: size, height: size, borderRadius: '50%', border: `1px solid rgba(219,201,119,${0.04 + i * 0.02})`, pointerEvents: 'none' }} />

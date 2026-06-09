@@ -63,7 +63,8 @@ export default function ServicesSection() {
                             return (
                                 <motion.div key={s.num} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 + i * 0.07 }}
                                             onMouseEnter={() => setActive(i)} onMouseLeave={() => setActive(null)}
-                                            style={{ position: 'relative', background: isLast ? active === i ? 'rgba(29,52,81,0.85)' : 'rgba(14,30,48,0.98)' : active === i ? 'rgba(29,52,81,0.6)' : '#0E1E30', padding: '1.75rem 1.5rem', cursor: 'default', transition: 'background 0.3s', overflow: 'hidden', ...(isLast ? { gridColumn: 'span 2' } : {}) }}>
+                                            className={isLast ? 'service-card-last' : ''}
+                                            style={{ position: 'relative', background: isLast ? active === i ? 'rgba(29,52,81,0.85)' : 'rgba(14,30,48,0.98)' : active === i ? 'rgba(29,52,81,0.6)' : '#0E1E30', padding: '1.75rem 1.5rem', cursor: 'default', transition: 'background 0.3s', overflow: 'hidden' }}>
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))', opacity: active === i ? 1 : 0, transition: 'opacity 0.3s' }} />
                                     {isLast && <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(219,201,119,0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />}
 
@@ -108,6 +109,10 @@ export default function ServicesSection() {
                 .services-layout { display: flex; flex-direction: column; gap: 3rem; align-items: flex-start; }
                 .services-left { width: 100%; }
                 .services-right { width: 100%; }
+                .service-card-last { grid-column: 1; }
+                @media (min-width: 600px) {
+                    .service-card-last { grid-column: span 2; }
+                }
                 @media (min-width: 1024px) {
                     .services-layout { flex-direction: row !important; gap: 5rem !important; }
                     .services-left { width: 280px; flex-shrink: 0; position: sticky; top: 8rem; }

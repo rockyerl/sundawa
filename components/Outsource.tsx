@@ -321,17 +321,21 @@ export default function OutsourcePage() {
 
     const modeStyle = (active: boolean): React.CSSProperties => ({
         flex: 1,
-        padding: '8px 4px',
+        padding: '8px 2px',
         border: `1px solid ${active ? 'rgba(219,201,119,0.5)' : 'rgba(219,201,119,0.15)'}`,
         background: active ? 'rgba(219,201,119,0.1)' : 'transparent',
         color: active ? '#DBC977' : 'rgba(248,248,248,0.4)',
         borderRadius: 7,
-        fontSize: '0.7rem',
+        fontSize: '0.65rem',
         fontWeight: 700,
         cursor: 'pointer',
         fontFamily: 'inherit',
         textAlign: 'center' as const,
         transition: 'all 0.15s',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        minWidth: 0,
     })
 
     // ── Render ──────────────────────────────────────────────────────────────
@@ -386,7 +390,7 @@ export default function OutsourcePage() {
                 <span style={{
                     fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em',
                     textTransform: 'uppercase', color: 'rgba(248,248,248,0.3)',
-                }}>
+                }} className="nav-title-hidden">
                     {t('navTitle')}
                 </span>
             </nav>
@@ -503,7 +507,7 @@ export default function OutsourcePage() {
                                 <div style={{ display: 'flex', gap: 6 }}>
                                     {(['remote', 'hybrid', 'onsite'] as Mode[]).map(m => (
                                         <button key={m} style={modeStyle(mode === m)} onClick={() => setMode(m)}>
-                                            {m === 'remote' ? t('modeRemote') : m === 'hybrid' ? t('modeHybrid') : t('modeOnsite')}
+                                            {m === 'remote' ? '🏠 Remote' : m === 'hybrid' ? '🔄 Hybrid' : '🏢 Onsite'}
                                         </button>
                                     ))}
                                 </div>
@@ -776,6 +780,9 @@ export default function OutsourcePage() {
                         grid-template-columns: 1.2fr 0.8fr;
                     }
                 }
+                @media (max-width: 480px) {
+                    .nav-title-hidden { display: none !important; }
+                }
                 select option {
                     background: #1D3451;
                     color: #F8F8F8;
@@ -785,5 +792,5 @@ export default function OutsourcePage() {
                 ::-webkit-scrollbar-thumb { background: rgba(219,201,119,0.3); border-radius: 2px; }
             `}</style>
         </main>
-)
+    )
 }
