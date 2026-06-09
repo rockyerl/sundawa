@@ -13,7 +13,7 @@ export default function HeroSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
     return (
-        <section ref={ref} id="hero" style={{ position: 'relative', height: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <section ref={ref} id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 60% 50%, rgba(0,86,170,0.15), transparent)', pointerEvents: 'none' }} />
             {[600, 420, 240].map((size, i) => (
                 <div key={size} style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: size, height: size, borderRadius: '50%', border: `1px solid rgba(219,201,119,${0.04 + i * 0.02})`, pointerEvents: 'none' }} />
@@ -102,7 +102,7 @@ export default function HeroSection() {
 
             <style>{`
                 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1fr !important; } .hero-logo-col { display: flex !important; } }
-                @media (max-width: 640px) { .hero-grid h1 span { font-size: 7.5vw !important; } .hero-content { padding-top: 90px !important; } }
+                @media (max-width: 640px) { .hero-grid h1 span { font-size: 7.5vw !important; } .hero-content { padding-top: 80px !important; } }
                 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
                 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
             `}</style>
