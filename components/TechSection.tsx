@@ -1,8 +1,8 @@
 'use client'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
-// Inline SVG for icons not on Simple Icons
 const SVG_HARDHAT = `<svg viewBox="0 0 24 24" fill="#FFF100" xmlns="http://www.w3.org/2000/svg"><path d="M12 1C8 1 4.5 4 4.5 8v.5C3 9 2 10.1 2 11.5V13h20v-1.5C22 10.1 21 9 19.5 8.5V8C19.5 4 16 1 12 1zm0 2c3 0 5.5 2.2 5.5 5H6.5C6.5 5.2 9 3 12 3zM2 14v1c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-1H2z"/></svg>`
 const SVG_OPENZEPPELIN = `<svg viewBox="0 0 24 24" fill="#4E5EE4" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7v5c0 5.25 4.25 10.15 10 11.35C17.75 22.15 22 17.25 22 12V7L12 2zm0 2.18l8 4.07V12c0 4.34-3.46 8.48-8 9.71C7.46 20.48 4 16.34 4 12V8.25l8-4.07zM11 7v6l5.25 3.15.75-1.23-4.5-2.67V7H11z"/></svg>`
 
@@ -75,13 +75,14 @@ function TechIcon({ item, size, style }: { item: Tech | Category; size: number; 
 }
 
 export default function TechSection() {
+    const t = useTranslations('tech')
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-80px' })
     const [activeCategory, setActiveCategory] = useState('Backend')
     const [hoveredTech, setHoveredTech] = useState<number | null>(null)
 
     const activeCat = categories.find(c => c.name === activeCategory)!
-    const filteredTechs = techs.filter(t => t.category === activeCategory)
+    const filteredTechs = techs.filter(item => item.category === activeCategory)
 
     return (
         <section id="tech" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
@@ -94,7 +95,7 @@ export default function TechSection() {
                     style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}
                 >
                     <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>
-                        — Technology
+                        — {t('label')}
                     </span>
                     <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </motion.div>
@@ -110,8 +111,8 @@ export default function TechSection() {
                             transition={{ delay: 0.1 }}
                             style={{ fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', color: '#F8F8F8', lineHeight: 1.1, marginBottom: '1rem' }}
                         >
-                            Teknologi<br />
-                            <span className="gold-gradient">Yang Kami Gunakan</span>
+                            {t('heading1')}<br />
+                            <span className="gold-gradient">{t('heading2')}</span>
                         </motion.h2>
 
                         <motion.p
@@ -120,7 +121,7 @@ export default function TechSection() {
                             transition={{ delay: 0.2 }}
                             style={{ color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8, fontSize: '0.85rem', marginBottom: '2.5rem' }}
                         >
-                            Stack teknologi modern yang kami kuasai untuk menghadirkan solusi terbaik di setiap proyek.
+                            {t('sub')}
                         </motion.p>
 
                         {/* Clickable category list */}
@@ -204,7 +205,7 @@ export default function TechSection() {
                                 {activeCategory}
                             </span>
                             <span style={{ fontSize: '0.6rem', color: 'rgba(248,248,248,0.3)', marginLeft: 'auto' }}>
-                                {filteredTechs.length} technologies
+                                {filteredTechs.length} {t('technologies')}
                             </span>
                         </motion.div>
 
