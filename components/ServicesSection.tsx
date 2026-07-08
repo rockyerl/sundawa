@@ -1,7 +1,7 @@
 "use client";
-import { motion, useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { MessageSquare, Palette, TestTube, Code2, Smartphone, Globe, Users, ArrowUpRight } from 'lucide-react'
+import { MessageSquare, Palette, TestTube, Code2, Smartphone, Globe, Users, ArrowUpRight, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
 
@@ -12,9 +12,13 @@ export default function ServicesSection() {
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-80px' })
     const [active, setActive] = useState<number | null>(null)
+    const [selected, setSelected] = useState<number | null>(null)
 
     const items = t.raw('items') as { num: string; tag: string; title: string; desc: string }[]
     const stats = t.raw('stats') as { num: string; label: string }[]
+
+    const selectedItem = selected !== null ? items[selected] : null
+    const SelectedIcon = selected !== null ? icons[selected] : null
 
     return (
         <section id="services" ref={ref} style={{ position: 'relative' }}>
@@ -93,9 +97,13 @@ export default function ServicesSection() {
 
                                     {!isLast && (
                                         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.1rem' }}>
-                                            <div style={{ width: 28, height: 28, border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)', transition: 'all 0.3s' }}>
+                                            <button
+                                                onClick={() => setSelected(i)}
+                                                aria-label="Lihat detail"
+                                                style={{ width: 28, height: 28, border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer', padding: 0 }}
+                                            >
                                                 <ArrowUpRight size={13} />
-                                            </div>
+                                            </button>
                                         </div>
                                     )}
                                 </motion.div>
@@ -104,6 +112,64 @@ export default function ServicesSection() {
                     </div>
                 </div>
             </div>
+
+            {/* Detail Popup */}
+            <AnimatePresence>
+                {selectedItem && SelectedIcon && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelected(null)}
+                        style={{ position: 'fixed', inset: 0, background: 'rgba(6,13,22,0.75)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, padding: '1.5rem' }}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 16, scale: 0.97 }}
+                            transition={{ duration: 0.25, ease: 'easeOut' }}
+                            onClick={(e) => e.stopPropagation()}
+                            style={{ position: 'relative', width: '100%', maxWidth: 460, background: '#0E1E30', border: '1px solid rgba(219,201,119,0.2)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', padding: '2rem' }}
+                        >
+                            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))' }} />
+
+                            <button
+                                onClick={() => setSelected(null)}
+                                aria-label="Tutup"
+                                style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', width: 30, height: 30, border: '1px solid rgba(248,248,248,0.1)', background: 'transparent', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                            >
+                                <X size={14} />
+                            </button>
+
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                                <div style={{ width: 52, height: 52, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(219,201,119,0.45)', background: 'rgba(219,201,119,0.12)', color: '#DBC977' }}>
+                                    <SelectedIcon size={22} />
+                                </div>
+                                <div>
+                                    <span style={{ display: 'inline-flex', fontSize: '0.58rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.2rem 0.65rem', border: '1px solid rgba(219,201,119,0.4)', color: 'rgba(219,201,119,0.85)', marginBottom: '0.4rem' }}>
+                                        {selectedItem.tag}
+                                    </span>
+                                    <h3 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F8F8F8' }}>{selectedItem.title}</h3>
+                                </div>
+                            </div>
+
+                            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, fontWeight: 300, color: 'rgba(248,248,248,0.55)', marginBottom: '1.5rem' }}>
+                                {selectedItem.desc}
+                            </p>
+
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1rem', borderTop: '1px solid rgba(248,248,248,0.05)' }}>
+                                <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(248,248,248,0.25)' }}>{selectedItem.num}</span>
+                                <Link href="#contact" onClick={() => setSelected(null)}
+                                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#DBC977', padding: '0.5rem 1rem', border: '1px solid rgba(219,201,119,0.35)', background: 'rgba(219,201,119,0.07)', textDecoration: 'none', transition: 'all 0.25s' }}
+                                      onMouseEnter={e => { e.currentTarget.style.background = 'rgba(219,201,119,0.15)'; e.currentTarget.style.borderColor = 'rgba(219,201,119,0.6)' }}
+                                      onMouseLeave={e => { e.currentTarget.style.background = 'rgba(219,201,119,0.07)'; e.currentTarget.style.borderColor = 'rgba(219,201,119,0.35)' }}>
+                                    {t('ctaContact')} <ArrowUpRight size={11} />
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <style>{`
                 .services-layout { display: flex; flex-direction: column; gap: 3rem; align-items: flex-start; }
