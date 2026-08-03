@@ -51,12 +51,21 @@ export default function ServicesSection() {
                             ))}
                         </motion.div>
 
-                        <Link href="#contact"
-                              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#DBC977', padding: '0.75rem 1.25rem', border: '1px solid rgba(219,201,119,0.3)', transition: 'all 0.25s', textDecoration: 'none' }}
-                              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(219,201,119,0.08)'; e.currentTarget.style.borderColor = 'rgba(219,201,119,0.6)' }}
-                              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(219,201,119,0.3)' }}>
-                            {t('ctaContact')} <ArrowUpRight size={13} />
-                        </Link>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                            <Link href="#contact"
+                                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#DBC977', padding: '0.75rem 1.25rem', border: '1px solid rgba(219,201,119,0.3)', transition: 'all 0.25s', textDecoration: 'none' }}
+                                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(219,201,119,0.08)'; e.currentTarget.style.borderColor = 'rgba(219,201,119,0.6)' }}
+                                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(219,201,119,0.3)' }}>
+                                {t('ctaContact')} <ArrowUpRight size={13} />
+                            </Link>
+
+                            <Link href="/proses-kerja"
+                                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.55)', padding: '0.75rem 1.25rem', border: '1px solid rgba(248,248,248,0.15)', transition: 'all 0.25s', textDecoration: 'none' }}
+                                  onMouseEnter={e => { e.currentTarget.style.color = '#F8F8F8'; e.currentTarget.style.borderColor = 'rgba(248,248,248,0.35)' }}
+                                  onMouseLeave={e => { e.currentTarget.style.color = 'rgba(248,248,248,0.55)'; e.currentTarget.style.borderColor = 'rgba(248,248,248,0.15)' }}>
+                                {t('ctaProcess')} <ArrowUpRight size={13} />
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Right */}

@@ -66,6 +66,7 @@
     "sub": "Kami menawarkan berbagai solusi teknologi yang dirancang khusus untuk kebutuhan bisnis Anda — dari konsultasi hingga produk jadi.",
     "ctaContact": "Diskusi Proyek",
     "ctaOutsource": "Lihat Estimasi Harga",
+    "ctaProcess": "Lihat Proses Kerja",
     "items": [
       { "num": "01", "tag": "Advisory",    "title": "Konsultasi IT",       "desc": "Dapatkan konsultasi dari ahli kami mengenai kebutuhan digital bisnis Anda. Kami membantu merumuskan strategi teknologi yang tepat." },
       { "num": "02", "tag": "Design",      "title": "UI/UX Design",        "desc": "Desain produk atau aplikasi dengan metode yang efektif dan efisien. Mengutamakan pengalaman pengguna yang intuitif dan menarik." },
@@ -160,5 +161,66 @@
     "selectCategory": "— Pilih Kategori —",
     "selectPosition": "— Pilih Posisi —",
     "selectLevel": "— Level —"
+  },
+  "process": {
+    "navBack": "Kembali",
+    "navTitle": "Proses Kerja",
+    "label": "Proses Kerja",
+    "heading1": "Transparan, Terukur,",
+    "heading2": "Akuntabel",
+    "sub": "Setiap tahap, setiap keputusan — Anda tahu persis apa yang sedang terjadi.",
+    "steps": [
+      {
+        "num": "01",
+        "tag": "Discovery",
+        "title": "Discovery & Alignment",
+        "desc": "Kami dengarkan sebelum kami bangun.",
+        "points": ["Sesi konsultasi kebutuhan", "Analisis kelayakan teknis", "Estimasi timeline & biaya awal"]
+      },
+      {
+        "num": "02",
+        "tag": "Design",
+        "title": "Desain & Cetak Biru",
+        "desc": "Rancangan yang bisa Anda sentuh sebelum satu baris kode ditulis.",
+        "points": ["Wireframe & user flow", "UI design & prototipe interaktif", "Review dan persetujuan bersama"]
+      },
+      {
+        "num": "03",
+        "tag": "Development",
+        "title": "Development Bertahap",
+        "desc": "Progress yang bisa dipantau, bukan ditunggu.",
+        "points": ["Sprint mingguan / dua mingguan", "Demo progres berkala", "Akses repositori kode selama pengerjaan"]
+      },
+      {
+        "num": "04",
+        "tag": "QA Testing",
+        "title": "Pengujian Tanpa Kompromi",
+        "desc": "Presisi bukan slogan, tapi standar QA kami.",
+        "points": ["Functional & regression testing", "Uji performa dan keamanan dasar", "Perbaikan bug sebelum rilis"]
+      },
+      {
+        "num": "05",
+        "tag": "Delivery",
+        "title": "Serah Terima & Kepemilikan Penuh",
+        "desc": "Kode Anda, sepenuhnya milik Anda.",
+        "points": ["Source code & dokumentasi teknis", "Kepemilikan penuh atas hasil kerja", "Sesi handover & pelatihan penggunaan"]
+      },
+      {
+        "num": "06",
+        "tag": "Support",
+        "title": "Pendampingan Purna-Rilis",
+        "desc": "Selesai proyek bukan berarti selesai hubungan.",
+        "points": ["Garansi perbaikan bug pasca-rilis", "Dukungan teknis berkelanjutan", "Opsi maintenance jangka panjang"]
+      }
+    ],
+    "infoItems": [
+      { "icon": "🤝", "title": "Metodologi", "desc": "Agile dengan sprint 2 mingguan, demo progres berkala agar Anda selalu tahu posisi proyek." },
+      { "icon": "🔐", "title": "Kepemilikan Kode", "desc": "Source code dan dokumentasi sepenuhnya milik Anda setelah proyek selesai — tanpa syarat tersembunyi." },
+      { "icon": "📄", "title": "NDA & Kerahasiaan", "desc": "NDA standar tersedia sejak sesi discovery, terutama untuk proyek yang menangani data sensitif." },
+      { "icon": "🛠️", "title": "Purna-Rilis", "desc": "Garansi perbaikan bug pasca-rilis, dengan opsi paket maintenance jangka panjang." }
+    ],
+    "contactCta": "Siap mendiskusikan kebutuhan proyek Anda?",
+    "contactButton": "Hubungi Kami"
   }
 }
+

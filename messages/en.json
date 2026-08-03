@@ -66,6 +66,7 @@
     "sub": "We offer a range of technology solutions tailored to your business needs — from consultation to finished product.",
     "ctaContact": "Discuss a Project",
     "ctaOutsource": "View Pricing Estimate",
+    "ctaProcess": "See Our Process",
     "items": [
       { "num": "01", "tag": "Advisory",    "title": "IT Consultation",    "desc": "Get expert consultation on your business's digital needs. We help formulate the right technology strategy." },
       { "num": "02", "tag": "Design",      "title": "UI/UX Design",       "desc": "Product and application design using effective and efficient methods, prioritizing intuitive and attractive user experiences." },
@@ -160,5 +161,65 @@
     "selectCategory": "— Select Category —",
     "selectPosition": "— Select Position —",
     "selectLevel": "— Level —"
+  },
+  "process": {
+    "navBack": "Back",
+    "navTitle": "Our Process",
+    "label": "Our Process",
+    "heading1": "Transparent, Measured,",
+    "heading2": "Accountable",
+    "sub": "Every stage, every decision — you know exactly what's happening.",
+    "steps": [
+      {
+        "num": "01",
+        "tag": "Discovery",
+        "title": "Discovery & Alignment",
+        "desc": "We listen before we build.",
+        "points": ["Requirements consultation session", "Technical feasibility analysis", "Initial timeline & cost estimate"]
+      },
+      {
+        "num": "02",
+        "tag": "Design",
+        "title": "Design & Blueprint",
+        "desc": "A design you can touch before a single line of code is written.",
+        "points": ["Wireframe & user flow", "UI design & interactive prototype", "Joint review and approval"]
+      },
+      {
+        "num": "03",
+        "tag": "Development",
+        "title": "Iterative Development",
+        "desc": "Progress you can track, not just wait for.",
+        "points": ["Weekly / bi-weekly sprints", "Regular progress demos", "Repository access throughout development"]
+      },
+      {
+        "num": "04",
+        "tag": "QA Testing",
+        "title": "Testing Without Compromise",
+        "desc": "Precision isn't a slogan, it's our QA standard.",
+        "points": ["Functional & regression testing", "Basic performance and security checks", "Bug fixes before release"]
+      },
+      {
+        "num": "05",
+        "tag": "Delivery",
+        "title": "Handover & Full Ownership",
+        "desc": "Your code, fully yours.",
+        "points": ["Source code & technical documentation", "Full ownership of deliverables", "Handover session & usage training"]
+      },
+      {
+        "num": "06",
+        "tag": "Support",
+        "title": "Post-Launch Support",
+        "desc": "The end of a project doesn't mean the end of the relationship.",
+        "points": ["Post-release bug fix warranty", "Ongoing technical support", "Long-term maintenance options"]
+      }
+    ],
+    "infoItems": [
+      { "icon": "🤝", "title": "Methodology", "desc": "Agile with 2-week sprints, regular progress demos so you always know where the project stands." },
+      { "icon": "🔐", "title": "Code Ownership", "desc": "Source code and documentation fully belong to you after project completion — no hidden terms." },
+      { "icon": "📄", "title": "NDA & Confidentiality", "desc": "Standard NDA available from the discovery session onward, especially for projects handling sensitive data." },
+      { "icon": "🛠️", "title": "Post-Launch", "desc": "Bug fix warranty after release, with optional long-term maintenance packages." }
+    ],
+    "contactCta": "Ready to discuss your project needs?",
+    "contactButton": "Contact Us"
   }
 }
