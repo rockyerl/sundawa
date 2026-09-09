@@ -1,6 +1,6 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { Mail, Phone, ArrowUpRight, MapPin } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
@@ -26,6 +26,15 @@ export default function ContactSection() {
     const t = useTranslations('contact')
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-80px' })
+
+    useEffect(() => {
+        if (document.querySelector('script[src="https://widget.clutch.co/static/js/widget.js"]')) return
+
+        const script = document.createElement('script')
+        script.src = 'https://widget.clutch.co/static/js/widget.js'
+        script.async = true
+        document.body.appendChild(script)
+    }, [])
 
     const contacts: { icon: IconComponent; label: string; value: string; href: string; desc: string }[] = [
         { icon: Phone, label: 'Phone', value: '0878 9335 5332', href: 'tel:087893355332', desc: t('phoneDesc') },
@@ -104,6 +113,19 @@ export default function ContactSection() {
                                 <MapPin size={11} className="text-[#DBC977]/40" />
                                 <span className="text-[11px] text-[#F8F8F8]/20 tracking-widest uppercase">{t('location')}</span>
                             </motion.div>
+
+                            {/* Clutch Widget - div biasa, tanpa motion */}
+                            <div className="mt-4 pl-2">
+                                <div
+                                    className="clutch-widget"
+                                    data-url="https://widget.clutch.co"
+                                    data-widget-type="1"
+                                    data-height="40"
+                                    data-nofollow="false"
+                                    data-expandifr="true"
+                                    data-clutchcompany-id="2720297"
+                                />
+                            </div>
                         </div>
                     </div>
 
