@@ -79,8 +79,13 @@ export default function Process() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                style={{ padding: '3rem 2rem 2rem', maxWidth: 1100, margin: '0 auto' }}
+                style={{ position: 'relative', padding: '3rem 2rem 2rem', maxWidth: 1100, margin: '0 auto', overflow: 'hidden' }}
             >
+                {/* Subtle mascot watermark, purely decorative */}
+                <div className="process-mascot-watermark" style={{ position: 'absolute', right: '-1.5rem', top: '0.5rem', width: 220, opacity: 0.1, pointerEvents: 'none', userSelect: 'none' }}>
+                    <Image src="/assets/mascot.png" alt="" width={600} height={600} style={{ width: '100%', height: 'auto' }} />
+                </div>
+
                 <div style={{
                     fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.3em',
                     textTransform: 'uppercase', color: '#DBC977', marginBottom: '0.75rem',
@@ -200,6 +205,7 @@ export default function Process() {
                 }
                 @media (max-width: 480px) {
                     .nav-title-hidden { display: none !important; }
+                    .process-mascot-watermark { display: none !important; }
                 }
             `}</style>
         </main>

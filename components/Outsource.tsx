@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Plus, X, ChevronDown, MessageCircle, Trash2, Users, ArrowLeft } from 'lucide-react'
+import { ArrowUpRight, Plus, X, ChevronDown, MessageCircle, Trash2, ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import { Link } from '@/src/i18n/navigation'
 import { useTranslations } from 'next-intl'
@@ -590,8 +590,10 @@ export default function OutsourcePage() {
                             {/* Cart list */}
                             <div style={{ flex: 1, overflowY: 'auto', marginBottom: '1rem', maxHeight: 320 }}>
                                 {cart.length === 0 ? (
-                                    <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'rgba(248,248,248,0.2)' }}>
-                                        <Users size={32} style={{ display: 'block', margin: '0 auto 10px', opacity: 0.3 }} />
+                                    <div style={{ textAlign: 'center', padding: '2.25rem 1rem', color: 'rgba(248,248,248,0.2)' }}>
+                                        <div style={{ position: 'relative', width: 72, height: 72, margin: '0 auto 10px', opacity: 0.45 }}>
+                                            <Image src="/assets/mascot.png" alt="" fill className="object-contain" sizes="72px" />
+                                        </div>
                                         <p style={{ fontSize: '0.78rem' }}>{t('emptyCart')}</p>
                                     </div>
                                 ) : (

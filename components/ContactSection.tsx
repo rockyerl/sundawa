@@ -2,6 +2,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect } from 'react'
 import { Mail, Phone, ArrowUpRight, MapPin } from 'lucide-react'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 const LinkedInIcon = () => (
@@ -133,7 +134,7 @@ export default function ContactSection() {
                 </div>
             </section>
 
-            {/* Sticky WhatsApp Button */}
+            {/* Sticky WhatsApp Button — mascot is the face of it now */}
             <motion.a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t('waMessage'))}`} target="_blank" rel="noopener noreferrer"
                       initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.2, duration: 0.4 }}
                       className="fixed bottom-8 right-8 z-50 group flex items-center gap-3" style={{ textDecoration: 'none' }}>
@@ -141,11 +142,24 @@ export default function ContactSection() {
                       style={{ color: '#0E1E30', background: '#DBC977', padding: '6px 14px', clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%)', whiteSpace: 'nowrap', pointerEvents: 'none' }}>
                     {t('waTooltip')}
                 </span>
-                <div className="relative w-14 h-14 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                     style={{ background: '#25D366', clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))', boxShadow: '0 0 30px rgba(37,211,102,0.35)' }}>
-                    <span className="absolute inset-0 animate-ping opacity-30" style={{ background: '#25D366', clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))' }} />
-                    <span className="relative text-white"><WhatsAppIcon /></span>
-                </div>
+
+                <motion.div
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                    className="relative w-16 h-16 rounded-full transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: '#0E1E30', border: '2px solid #DBC977', boxShadow: '0 0 30px rgba(219,201,119,0.3), 0 8px 24px rgba(0,0,0,0.4)' }}
+                >
+                    <span className="absolute inset-0 rounded-full animate-ping opacity-20" style={{ background: '#DBC977' }} />
+                    <div className="relative w-full h-full rounded-full overflow-hidden">
+                        <Image src="/assets/call.png" alt="Chat dengan kami" fill className="object-cover" sizes="64px" />
+                    </div>
+
+                    {/* WhatsApp badge, so it's still clear where the chat goes */}
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center"
+                         style={{ background: '#25D366', border: '2px solid #0E1E30', boxShadow: '0 2px 8px rgba(0,0,0,0.4)' }}>
+                        <span style={{ color: 'white', transform: 'scale(0.6)' }}><WhatsAppIcon /></span>
+                    </div>
+                </motion.div>
             </motion.a>
         </>
     )
