@@ -1,7 +1,7 @@
 {
   "nav": {
     "about": "Tentang",
-    "values": "Nilai",
+    "values": "Transformasi",
     "services": "Layanan",
     "tech": "Teknologi",
     "clients": "Klien",
@@ -9,76 +9,74 @@
     "getInTouch": "HUBUNGI KAMI"
   },
   "hero": {
-    "badge": "Perusahaan IT",
-    "line1": "PROFESSIONAL",
-    "line2": "PRECISION",
-    "line3": "CUSTOMER",
-    "line4": "COMFORT",
-    "sub": "Perusahaan IT yang berfokus pada kenyamanan klien dan menjunjung tinggi profesionalitas dalam setiap aspek layanan.",
-    "ctaServices": "Jasa Kami",
-    "ctaAbout": "Tentang Kami",
-    "scroll": "Scroll"
+    "badge": "Modernisasi & Otomatisasi Perangkat Lunak",
+    "line1": "BISNIS ANDA",
+    "line2": "SUDAH MELAMPAUI",
+    "line3": "SISTEM YANG ADA",
+    "line4": "SAAT INI",
+    "sub": "Solusi manual, sistem yang terpisah-pisah, laporan yang lambat, dan pemeliharaan yang terus-menerus diam-diam menguras waktu dan biaya Anda. Kami perbaiki apa yang menghambat — tanpa mengganti apa yang masih berjalan dengan baik.",
+    "ctaServices": "Lihat yang Perlu Diperbaiki",
+    "ctaAbout": "Lihat yang Kami Bangun",
+    "scroll": "Gulir"
   },
   "about": {
-    "label": "Tentang",
-    "heading1": "Tentang",
-    "heading2": "Sundawa",
-    "heading3": "Teknologi",
-    "p1": "Sundawa Teknologi merupakan perusahaan IT yang berfokus pada kenyamanan dan kebutuhan klien, sekaligus menjunjung tinggi profesionalitas pada setiap aspek layanan yang diberikan.",
-    "p2": "Kami menyediakan solusi inovatif dan berfokus untuk menghadirkan solusi IT yang dapat mengubah dan meningkatkan bisnis klien kami.",
-    "quote": "Professional Precision, Customer Comfort",
+    "label": "Cara Kami Bekerja",
+    "heading1": "Bukan Hanya",
+    "heading2": "Tim yang",
+    "heading3": "Menulis Kode",
+    "p1": "Anda butuh tim yang memahami mengapa sistem gagal, menentukan apa yang perlu diubah, dan membangunnya tanpa menambah lapisan kerumitan baru.",
+    "p2": "Kami mulai dari cara bisnis Anda benar-benar berjalan — bukan dari kerangka kerja favorit atau solusi yang sudah jadi.",
+    "quote": "Perangkat lunak yang tidak lagi dilawan oleh tim Anda.",
     "missions": [
       {
         "num": "01",
-        "title": "Customer-First Experience",
-        "body": "Memberikan pengalaman luar biasa bagi setiap klien, memprioritaskan kenyamanan, kepuasan, dan kepercayaan dalam setiap layanan."
+        "title": "Memahami Sebelum Membangun",
+        "body": "Kami mulai dari cara bisnis Anda benar-benar berjalan, bukan dari kerangka kerja favorit atau solusi yang sudah jadi."
       },
       {
         "num": "02",
-        "title": "Precision & Efficiency",
-        "body": "Menyediakan solusi yang tepat, efisien, dan disesuaikan kebutuhan klien dengan menjaga ketepatan di setiap tahap penyelesaian."
+        "title": "Mempertahankan yang Sudah Berjalan",
+        "body": "Modernisasi tidak berarti membangun ulang semuanya — kami pertahankan yang masih berguna dan hanya mengganti yang membatasi bisnis."
       },
       {
         "num": "03",
-        "title": "Strong Relationships",
-        "body": "Mengembangkan hubungan berkelanjutan dengan mendengarkan dan merespons secara cepat terhadap setiap kebutuhan klien."
+        "title": "Bertanggung Jawab Setelah Peluncuran",
+        "body": "Kami tetap menjalankan, membenahi, dan mengembangkan platform Anda, bukan menghilang setelah peluncuran."
       }
     ]
   },
   "values": {
-    "label": "Nilai-Nilai",
-    "heading1": "Nilai-Nilai",
-    "heading2": "Penting Kami",
-    "sub": "Prinsip-prinsip yang membentuk setiap keputusan dan interaksi di Sundawa Teknologi.",
+    "label": "Transformasi",
+    "heading1": "Satu Sistem.",
+    "heading2": "Bukan Enam.",
+    "sub": "Bagaimana operasional yang terpisah-pisah berubah menjadi satu sistem yang benar-benar dapat Anda andalkan.",
     "items": [
-      { "num": "01", "title": "Kepuasan Klien Utama", "desc": "Kepuasan dan kebutuhan klien adalah prioritas utama dalam setiap tindakan dan keputusan yang diambil." },
-      { "num": "02", "title": "Pelayanan Ramah & Nyaman", "desc": "Menyediakan lingkungan dan pengalaman yang nyaman bagi klien, dari awal interaksi hingga penyelesaian proyek." },
-      { "num": "03", "title": "Keandalan & Ketepatan", "desc": "Memberikan layanan berkualitas tinggi dengan presisi dan keandalan yang tinggi dalam setiap aspek bisnis." },
-      { "num": "04", "title": "Kolaborasi Aktif", "desc": "Mendorong komunikasi terbuka dan kolaborasi erat antara tim internal dan klien untuk pemahaman mendalam." },
-      { "num": "05", "title": "Komitmen Profesionalisme", "desc": "Menempatkan standar keahlian tinggi dan etika kerja yang tinggi dalam setiap aspek bisnis." },
-      { "num": "06", "title": "Inovasi Berkelanjutan", "desc": "Mendorong inovasi dan peningkatan dalam solusi yang ditawarkan, sesuai perkembangan teknologi dan kebutuhan pasar." }
+      { "num": "01", "title": "Sistem yang Saling Terhubung", "desc": "Tim tidak perlu lagi memasukkan data yang sama berulang kali — sistem saling bertukar data secara otomatis." },
+      { "num": "02", "title": "Terkendali, Bukan Berantakan", "desc": "Pekerjaan penting tidak lagi bergantung pada spreadsheet; alur kerja berjalan di dalam sistem yang dapat diandalkan tim Anda." },
+      { "num": "03", "title": "Visibilitas Waktu Nyata", "desc": "Data operasional tersedia tepat saat dibutuhkan, tanpa harus menunggu laporan berjam-jam atau berhari-hari." },
+      { "num": "04", "title": "Dibangun untuk Berkembang", "desc": "Sistem inti menjadi lebih mudah dikembangkan, tanpa terhambat oleh perangkat lunak lama." },
+      { "num": "05", "title": "Kecerdasan Buatan di Dalam Alur Kerja", "desc": "Kecerdasan buatan (AI) menjadi bagian dari cara kerja sehari-hari, bukan sekadar eksperimen di luar operasional." },
+      { "num": "06", "title": "Memperbaiki Akar Masalah", "desc": "Arsitektur sistem menyelesaikan masalah yang sebenarnya, bukan sekadar menambal gejala yang berulang." }
     ]
   },
   "services": {
-    "label": "Layanan",
-    "heading1": "Jasa",
-    "heading2": "Kami",
-    "sub": "Kami menawarkan berbagai solusi teknologi yang dirancang khusus untuk kebutuhan bisnis Anda — dari konsultasi hingga produk jadi.",
-    "ctaContact": "Diskusi Proyek",
+    "label": "Modernisasi",
+    "heading1": "Apa yang",
+    "heading2": "Perlu Diubah",
+    "sub": "Lima alasan umum bisnis mencapai titik di mana perangkat lunak yang ada sudah tidak mampu lagi menopang operasional.",
+    "ctaContact": "Sampaikan Titik Masalah Anda",
     "ctaOutsource": "Lihat Estimasi Harga",
-    "ctaProcess": "Lihat Proses Kerja",
+    "ctaProcess": "Lihat Cara Kerja Kami",
     "items": [
-      { "num": "01", "tag": "Advisory",    "title": "Konsultasi IT",       "desc": "Dapatkan konsultasi dari ahli kami mengenai kebutuhan digital bisnis Anda. Kami membantu merumuskan strategi teknologi yang tepat." },
-      { "num": "02", "tag": "Design",      "title": "UI/UX Design",        "desc": "Desain produk atau aplikasi dengan metode yang efektif dan efisien. Mengutamakan pengalaman pengguna yang intuitif dan menarik." },
-      { "num": "03", "tag": "QA Testing",  "title": "Pengujian Software",  "desc": "Percayai para ahli untuk melakukan pengujian yang diperlukan software Anda. Pastikan produk bebas bug sebelum diluncurkan." },
-      { "num": "04", "tag": "Development", "title": "Custom Software",     "desc": "Tingkatkan efisiensi bisnis dengan software yang dibangun khusus sesuai kebutuhan — dari manajemen stok hingga sistem enterprise." },
-      { "num": "05", "tag": "Mobile",      "title": "Mobile App",          "desc": "Pindahkan identitas merek Anda ke platform yang lebih mudah diakses. Aplikasi mobile yang responsif dan engaging." },
-      { "num": "06", "tag": "Web",         "title": "Web Development",     "desc": "Solusi web profesional dari landing page hingga platform enterprise yang skalabel dan modern." },
-      { "num": "07", "tag": "Outsource",   "title": "IT Outsourcing",      "desc": "Suplai talenta IT profesional terseleksi untuk kebutuhan tim Anda — remote, hybrid, atau onsite. Developer, QA, DevOps, hingga IT Manager." }
+      { "num": "01", "tag": "Modernisasi", "title": "Modernisasi Sistem Lama", "desc": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis yang terus berkembang. Kami rancang ulang arsitektur, ganti komponen yang lemah, dan siapkan sistem untuk pertumbuhan ke depan — tanpa membahayakan operasional yang sedang berjalan. Perubahan lebih cepat, keandalan lebih baik, utang teknis lebih sedikit." },
+      { "num": "02", "tag": "Otomatisasi", "title": "Otomatisasi Alur Kerja & AI", "desc": "Terlalu banyak pekerjaan yang masih dilakukan secara manual. Kami ubah persetujuan, pelaporan, pengolahan dokumen, dan input data yang berulang menjadi alur kerja otomatis yang terkendali. Pekerjaan berulang lebih sedikit, operasional lebih cepat, kesalahan lebih jarang terjadi." },
+      { "num": "03", "tag": "Integrasi", "title": "Integrasi Sistem & Data", "desc": "Sistem Anda tidak saling terhubung. Kami hubungkan ERP, sistem keuangan, basis data, API, dan platform eksternal agar informasi mengalir ke tempat yang tepat. Satu aliran informasi, bukan sistem yang terisolasi." },
+      { "num": "04", "tag": "Bangun Khusus", "title": "Platform Bisnis Khusus", "desc": "Perangkat lunak siap pakai tidak selalu cocok dengan cara bisnis Anda bekerja. Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal, portal pelanggan, hingga platform SaaS. Perangkat lunak yang menyesuaikan operasional Anda, bukan sebaliknya." },
+      { "num": "05", "tag": "Operasi Terkelola", "title": "Managed Product Engineering", "desc": "Peluncuran bukan garis akhir. Kami terus memantau, memelihara, mengoptimalkan, dan mengembangkan platform Anda setelah rilis — satu mitra rekayasa yang tetap bertanggung jawab atas sistem Anda." }
     ],
     "stats": [
       { "num": "50+", "label": "Proyek Selesai" },
-      { "num": "7",   "label": "Layanan Utama" },
+      { "num": "5",   "label": "Layanan Inti" },
       { "num": "98%", "label": "Klien Puas" },
       { "num": "5+",  "label": "Tahun Pengalaman" }
     ]
@@ -86,51 +84,51 @@
   "tech": {
     "label": "Teknologi",
     "heading1": "Teknologi",
-    "heading2": "Yang Kami Gunakan",
-    "sub": "Stack teknologi modern yang kami kuasai untuk menghadirkan solusi terbaik di setiap proyek.",
-    "technologies": "technologies"
+    "heading2": "yang Kami Gunakan",
+    "sub": "Rangkaian teknologi modern yang kami kuasai untuk memberikan solusi terbaik di setiap proyek.",
+    "technologies": "teknologi"
   },
   "clients": {
-    "label": "Klien",
-    "heading1": "Klien",
-    "heading2": "Kami",
-    "sub": "Dipercaya oleh berbagai perusahaan dari beragam industri untuk menghadirkan solusi teknologi terbaik.",
-    "confidentialNotice": "Beberapa klien bersifat confidential",
-    "confidential": "Confidential",
+    "label": "Karya Pilihan",
+    "heading1": "Operasional yang",
+    "heading2": "Tidak Bisa Berhenti",
+    "sub": "Sundawa telah menghadirkan sistem yang mendukung administrasi negara, keuangan, manufaktur, kesehatan, dan organisasi internasional.",
+    "confidentialNotice": "Beberapa proyek bersifat rahasia",
+    "confidential": "Rahasia",
     "stats": [
       { "num": "15+", "label": "Klien Aktif" },
-      { "num": "30+", "label": "Project Selesai" },
+      { "num": "30+", "label": "Proyek Selesai" },
       { "num": "5+",  "label": "Tahun Pengalaman" },
-      { "num": "10+", "label": "Tim Profesional" }
+      { "num": "10+", "label": "Profesional" }
     ],
     "items": [
-      { "num": "01", "name": "Oetomo Hospital",            "initials": "OH",  "type": "Healthcare",       "desc": "Sistem informasi rumah sakit terintegrasi mencakup manajemen pasien, rekam medis, dan billing." },
-      { "num": "02", "name": "PT. Kimu Enam Kemasindo",    "initials": "KE",  "type": "Manufacturing",    "desc": "Solusi ERP dan manajemen produksi untuk mengoptimalkan rantai pasokan dan efisiensi pabrik." },
-      { "num": "03", "name": "Sistem Informasi Konveksi",  "initials": "SIK", "type": "Textile & Fashion","desc": "Platform manajemen produksi konveksi dari pemesanan hingga pengiriman secara real-time." },
-      { "num": "04", "name": "Healthcare App Client",      "initials": "HC",  "type": "Healthcare",       "desc": "Aplikasi kesehatan mobile dengan fitur telemedicine dan manajemen rekam medis digital.", "confidential": true }
+      { "num": "01", "name": "Sistem Administrasi Hukum Nasional", "initials": "GOV",  "type": "Pemerintahan",             "desc": "Perombakan sistem secara menyeluruh untuk meningkatkan performa dan keandalan platform yang beroperasi dalam skala nasional.", "confidential": true },
+      { "num": "02", "name": "Platform Produksi & Operasional Terintegrasi", "initials": "MFG",  "type": "Manufaktur",               "desc": "Perangkat lunak ERP dan manajemen produksi yang dirancang untuk meningkatkan visibilitas rantai pasok dan efisiensi operasional pabrik.", "confidential": true },
+      { "num": "03", "name": "Platform Distribusi Dana UNDP", "initials": "UNDP", "type": "Organisasi Internasional",  "desc": "Platform distribusi dana yang awalnya dibuat untuk pendanaan acara, kemudian dikembangkan menjadi sistem distribusi yang lebih luas untuk UNDP.", "confidential": false },
+      { "num": "04", "name": "Ekosistem Koperasi Rumah Sakit", "initials": "HC",   "type": "Kesehatan",                 "desc": "Operasional inventaris, akuntansi, simpan pinjam, dan POS yang terintegrasi dalam satu platform koperasi rumah sakit.", "confidential": true }
     ]
   },
   "contact": {
-    "label": "Kontak",
-    "readyToStart": "Siap memulai?",
-    "line1": "AYO",
-    "line2": "KERJA",
-    "line3": "BERSAMA",
-    "phoneDesc": "Sen–Jum, 9am–6pm WIB",
-    "emailDesc": "Respon dalam 24 jam",
-    "linkedinDesc": "Follow kami di LinkedIn",
+    "label": "Hubungi Kami",
+    "readyToStart": "Siap Membenahi yang Bermasalah?",
+    "line1": "PERBAIKI YANG",
+    "line2": "MEMPERLAMBAT",
+    "line3": "BISNIS ANDA",
+    "phoneDesc": "Sen–Jum, 09.00–18.00 WIB",
+    "emailDesc": "Respons dalam 24 jam",
+    "linkedinDesc": "Ikuti kami di LinkedIn",
     "location": "Bandung, Jawa Barat, Indonesia",
-    "waTooltip": "Chat WhatsApp",
-    "waMessage": "Halo Sundawa Teknologi, saya ingin mengetahui lebih lanjut tentang layanan Anda."
+    "waTooltip": "Hubungi melalui WhatsApp",
+    "waMessage": "Halo Sundawa Teknologi, saya ingin berdiskusi mengenai modernisasi sistem kami."
   },
   "outsource": {
     "navBack": "Kembali",
-    "navTitle": "IT Outsource Calculator",
-    "label": "IT Outsourcing",
+    "navTitle": "Kalkulator Alih Daya TI",
+    "label": "Alih Daya TI",
     "heading1": "Estimasi Harga",
-    "heading2": "Tim IT Outsource",
-    "sub": "Bangun tim developer, QA, DevOps, atau IT Manager impianmu. Pilih posisi, level, dan mode kerja — kami hitung estimasinya secara real-time.",
-    "addTitle": "Tambah Talent",
+    "heading2": "Tim Alih Daya TI",
+    "sub": "Bangun tim impian Anda — developer, QA, DevOps, atau Manajer TI. Pilih posisi, level, dan mode kerja — kami hitung estimasinya secara waktu nyata.",
+    "addTitle": "Tambah Talenta",
     "labelCategory": "Kategori",
     "labelPosition": "Posisi",
     "labelLevel": "Level",
@@ -140,20 +138,20 @@
     "modeHybrid": "🔄 Hybrid",
     "modeOnsite": "🏢 Onsite",
     "pricePerPerson": "Harga per orang / bulan",
-    "addButton": "Tambah ke Estimasi",
-    "priceNote": "⚠️ Harga belum termasuk BPJS, THR, dan overhead operasional. Hubungi kami untuk proposal resmi.",
+    "addButton": "Tambahkan ke Estimasi",
+    "priceNote": "⚠️ Harga belum termasuk BPJS, THR, dan beban operasional tambahan. Hubungi kami untuk proposal resmi.",
     "summaryTitle": "Estimasi Tim",
-    "emptyCart": "Belum ada talent ditambahkan",
-    "totalTalent": "Total talent",
-    "totalPerMonth": "Total estimasi / bln",
-    "reset": "Reset",
-    "waButton": "Diskusi via WhatsApp",
+    "emptyCart": "Belum ada talenta yang ditambahkan",
+    "totalTalent": "Total talenta",
+    "totalPerMonth": "Total estimasi / bulan",
+    "reset": "Atur Ulang",
+    "waButton": "Diskusi melalui WhatsApp",
     "contactCta": "Butuh tim khusus atau konsultasi lebih lanjut?",
     "contactButton": "Hubungi Kami",
-    "infoRemote": "Talent Bandung bekerja remote untuk klien di mana saja. Value proposition terbaik: harga kompetitif, kualitas setara.",
-    "infoHybrid": "Kombinasi remote dan onsite sesuai kebutuhan proyek. Baseline pricing kami.",
-    "infoOnsite": "Talent hadir penuh di lokasi klien. Cocok untuk proyek yang butuh koordinasi intensif.",
-    "infoNote": "Harga belum termasuk BPJS (~7.7%), THR (~8.3%), dan overhead operasional. Hubungi kami untuk proposal resmi.",
+    "infoRemote": "Talenta berbasis Bandung yang bekerja secara remote untuk klien di mana saja. Nilai terbaik: harga kompetitif, kualitas setara.",
+    "infoHybrid": "Kombinasi kerja remote dan onsite sesuai kebutuhan proyek. Harga dasar kami.",
+    "infoOnsite": "Talenta bekerja sepenuhnya di lokasi klien. Ideal untuk proyek yang membutuhkan koordinasi intensif.",
+    "infoNote": "Harga belum termasuk BPJS (~7.7%), THR (~8.3%), dan beban operasional tambahan. Hubungi kami untuk proposal resmi.",
     "infoTitleRemote": "Remote — Bandung",
     "infoTitleHybrid": "Hybrid",
     "infoTitleOnsite": "Onsite",
@@ -164,63 +162,62 @@
   },
   "process": {
     "navBack": "Kembali",
-    "navTitle": "Proses Kerja",
-    "label": "Proses Kerja",
+    "navTitle": "Proses Kami",
+    "label": "Proses Kami",
     "heading1": "Transparan, Terukur,",
     "heading2": "Akuntabel",
-    "sub": "Setiap tahap, setiap keputusan — Anda tahu persis apa yang sedang terjadi.",
+    "sub": "Setiap tahap, setiap keputusan — Anda tahu persis apa yang terjadi.",
     "steps": [
       {
         "num": "01",
-        "tag": "Discovery",
-        "title": "Discovery & Alignment",
-        "desc": "Kami dengarkan sebelum kami bangun.",
-        "points": ["Sesi konsultasi kebutuhan", "Analisis kelayakan teknis", "Estimasi timeline & biaya awal"]
+        "tag": "Penjajakan",
+        "title": "Penjajakan & Penyelarasan",
+        "desc": "Kami mendengarkan sebelum membangun.",
+        "points": ["Sesi konsultasi kebutuhan", "Analisis kelayakan teknis", "Estimasi jadwal & biaya awal"]
       },
       {
         "num": "02",
-        "tag": "Design",
+        "tag": "Desain",
         "title": "Desain & Cetak Biru",
-        "desc": "Rancangan yang bisa Anda sentuh sebelum satu baris kode ditulis.",
-        "points": ["Wireframe & user flow", "UI design & prototipe interaktif", "Review dan persetujuan bersama"]
+        "desc": "Desain yang bisa Anda lihat sebelum satu baris kode pun ditulis.",
+        "points": ["Kerangka desain & alur pengguna", "Desain antarmuka & prototipe interaktif", "Tinjauan dan persetujuan bersama"]
       },
       {
         "num": "03",
-        "tag": "Development",
-        "title": "Development Bertahap",
-        "desc": "Progress yang bisa dipantau, bukan ditunggu.",
-        "points": ["Sprint mingguan / dua mingguan", "Demo progres berkala", "Akses repositori kode selama pengerjaan"]
+        "tag": "Pengembangan",
+        "title": "Pengembangan Iteratif",
+        "desc": "Kemajuan yang bisa Anda pantau, bukan hanya ditunggu.",
+        "points": ["Sprint mingguan / dua mingguan", "Demo kemajuan rutin", "Akses repositori selama pengembangan"]
       },
       {
         "num": "04",
-        "tag": "QA Testing",
+        "tag": "Pengujian QA",
         "title": "Pengujian Tanpa Kompromi",
-        "desc": "Presisi bukan slogan, tapi standar QA kami.",
-        "points": ["Functional & regression testing", "Uji performa dan keamanan dasar", "Perbaikan bug sebelum rilis"]
+        "desc": "Presisi bukan slogan, itu standar QA kami.",
+        "points": ["Pengujian fungsional & regresi", "Pengecekan performa dan keamanan dasar", "Perbaikan bug sebelum rilis"]
       },
       {
         "num": "05",
-        "tag": "Delivery",
-        "title": "Serah Terima & Kepemilikan Penuh",
+        "tag": "Penyerahan",
+        "title": "Alih Serah & Kepemilikan Penuh",
         "desc": "Kode Anda, sepenuhnya milik Anda.",
-        "points": ["Source code & dokumentasi teknis", "Kepemilikan penuh atas hasil kerja", "Sesi handover & pelatihan penggunaan"]
+        "points": ["Kode sumber & dokumentasi teknis", "Kepemilikan penuh atas hasil kerja", "Sesi alih serah & pelatihan penggunaan"]
       },
       {
         "num": "06",
-        "tag": "Support",
-        "title": "Pendampingan Purna-Rilis",
-        "desc": "Selesai proyek bukan berarti selesai hubungan.",
-        "points": ["Garansi perbaikan bug pasca-rilis", "Dukungan teknis berkelanjutan", "Opsi maintenance jangka panjang"]
+        "tag": "Dukungan",
+        "title": "Dukungan Pasca-Peluncuran",
+        "desc": "Selesainya proyek bukan berarti selesainya hubungan kita.",
+        "points": ["Garansi perbaikan bug pasca-rilis", "Dukungan teknis berkelanjutan", "Opsi pemeliharaan jangka panjang"]
       }
     ],
     "infoItems": [
-      { "icon": "🤝", "title": "Metodologi", "desc": "Agile dengan sprint 2 mingguan, demo progres berkala agar Anda selalu tahu posisi proyek." },
-      { "icon": "🔐", "title": "Kepemilikan Kode", "desc": "Source code dan dokumentasi sepenuhnya milik Anda setelah proyek selesai — tanpa syarat tersembunyi." },
-      { "icon": "📄", "title": "NDA & Kerahasiaan", "desc": "NDA standar tersedia sejak sesi discovery, terutama untuk proyek yang menangani data sensitif." },
-      { "icon": "🛠️", "title": "Purna-Rilis", "desc": "Garansi perbaikan bug pasca-rilis, dengan opsi paket maintenance jangka panjang." }
+      { "icon": "🤝", "title": "Metodologi", "desc": "Agile dengan sprint dua minggu, demo kemajuan rutin agar Anda selalu mengetahui posisi proyek." },
+      { "icon": "🔐", "title": "Kepemilikan Kode", "desc": "Kode sumber dan dokumentasi sepenuhnya menjadi milik Anda setelah proyek selesai — tanpa ketentuan tersembunyi." },
+      { "icon": "📄", "title": "NDA & Kerahasiaan", "desc": "NDA standar tersedia sejak sesi penjajakan, terutama untuk proyek yang menangani data sensitif." },
+      { "icon": "🛠️", "title": "Pasca-Peluncuran", "desc": "Garansi perbaikan bug setelah rilis, dengan opsi paket pemeliharaan jangka panjang." }
     ],
     "contactCta": "Siap mendiskusikan kebutuhan proyek Anda?",
     "contactButton": "Hubungi Kami"
   }
 }
-

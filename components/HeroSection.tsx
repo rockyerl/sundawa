@@ -33,14 +33,14 @@ export default function HeroSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
     return (
-        <section ref={ref} id="hero" style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <section ref={ref} id="hero" style={{ position: 'relative', minHeight: '100dvh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 60% 50%, rgba(0,86,170,0.15), transparent)', pointerEvents: 'none' }} />
             {[600, 420, 240].map((size, i) => (
                 <div key={size} style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: size, height: size, borderRadius: '50%', border: `1px solid rgba(219,201,119,${0.04 + i * 0.02})`, pointerEvents: 'none' }} />
             ))}
 
-            <motion.div style={{ y, opacity, width: '100%', paddingTop: '150px' }} className="container-main relative z-10 hero-content">
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'center' }} className="hero-grid">
+            <motion.div style={{ y, opacity, width: '100%', paddingTop: 'clamp(1px, 1vh, 1px)' }} className="container-main relative z-10 hero-content">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }} className="hero-grid">
 
                     {/* LEFT */}
                     <div>
@@ -60,19 +60,19 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                             transition={{ duration: 0.9, delay: 0.3 }}
-                            style={{ fontWeight: 900, lineHeight: 0.92, marginBottom: '1.75rem', letterSpacing: '-0.02em' }}
+                            style={{ fontWeight: 900, lineHeight: 1.02, marginBottom: '1.75rem', letterSpacing: '-0.02em' }}
                         >
-                            <span style={{ display: 'block', fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', color: '#F8F8F8' }}>{t('line1')}</span>
-                            <span style={{ display: 'block', fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }} className="shimmer-text">{t('line2')}</span>
-                            <span style={{ display: 'block', fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', color: 'rgba(248,248,248,0.2)' }}>{t('line3')}</span>
-                            <span style={{ display: 'block', fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', color: '#F8F8F8' }}>{t('line4')}</span>
+                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: '#F8F8F8' }}>{t('line1')}</span>
+                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)' }} className="shimmer-text">{t('line2')}</span>
+                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: 'rgba(248,248,248,0.2)' }}>{t('line3')}</span>
+                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: '#F8F8F8' }}>{t('line4')}</span>
                         </motion.h1>
 
                         <motion.p
                             initial={{ opacity: 0, y: 16 }}
                             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                             transition={{ duration: 0.8, delay: 0.5 }}
-                            style={{ color: 'rgba(248,248,248,0.5)', fontWeight: 300, fontSize: '1.05rem', lineHeight: 1.8, maxWidth: '28rem', marginBottom: '2.25rem' }}
+                            style={{ color: 'rgba(248,248,248,0.5)', fontWeight: 300, fontSize: '1.05rem', lineHeight: 1.8, maxWidth: '35rem', marginBottom: '2.25rem' }}
                         >
                             {t('sub')}
                         </motion.p>
@@ -101,15 +101,15 @@ export default function HeroSection() {
                                     style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', paddingTop: '2rem', borderTop: '1px solid rgba(248,248,248,0.08)' }} />
                     </div>
 
-                    {/* RIGHT — Mascot */}
+                    {/* RIGHT — Mascot (desktop only, hidden entirely on mobile) */}
                     <motion.div initial={{ opacity: 0, scale: 0.85 }}
                                 animate={introDone ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
                                 transition={{ duration: 1.1, delay: 0.4 }}
-                                className="hero-logo-col" style={{ display: 'none', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: 480 }}>
-                        <div style={{ position: 'absolute', width: 380, height: 380, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,86,170,0.28), transparent 70%)', filter: 'blur(40px)' }} />
-                        <div style={{ position: 'absolute', width: 420, height: 420, borderRadius: '50%', border: '1px solid rgba(219,201,119,0.15)', animation: 'spin 22s linear infinite' }} />
-                        <div style={{ position: 'absolute', width: 340, height: 340, borderRadius: '50%', border: '1px solid rgba(0,86,170,0.25)', animation: 'spin 16s linear infinite reverse' }} />
-                        <div style={{ position: 'absolute', width: 420, height: 420, animation: 'spin 9s linear infinite' }}>
+                                className="hero-logo-col" style={{ display: 'none', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: 380 }}>
+                        <div style={{ position: 'absolute', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,86,170,0.28), transparent 70%)', filter: 'blur(40px)' }} />
+                        <div style={{ position: 'absolute', width: 340, height: 340, borderRadius: '50%', border: '1px solid rgba(219,201,119,0.15)', animation: 'spin 22s linear infinite' }} />
+                        <div style={{ position: 'absolute', width: 270, height: 270, borderRadius: '50%', border: '1px solid rgba(0,86,170,0.25)', animation: 'spin 16s linear infinite reverse' }} />
+                        <div style={{ position: 'absolute', width: 340, height: 340, animation: 'spin 9s linear infinite' }}>
                             <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', width: 10, height: 10, borderRadius: '50%', background: '#DBC977', boxShadow: '0 0 16px rgba(219,201,119,0.9)' }} />
                         </div>
 
@@ -117,7 +117,7 @@ export default function HeroSection() {
                         <motion.div
                             animate={{ y: [0, -16, 0] }}
                             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                            style={{ position: 'relative', zIndex: 10, width: 360, maxWidth: '82%', filter: 'drop-shadow(0 30px 36px rgba(0,0,0,0.45))' }}
+                            style={{ position: 'relative', zIndex: 10, width: 280, maxWidth: '80%', filter: 'drop-shadow(0 30px 36px rgba(0,0,0,0.45))' }}
                         >
                             <Image
                                 src="/assets/mascot.png"
@@ -126,30 +126,12 @@ export default function HeroSection() {
                                 height={900}
                                 className="object-contain"
                                 priority
-                                sizes="360px"
+                                sizes="280px"
                                 style={{ width: '100%', height: 'auto' }}
                             />
                         </motion.div>
                     </motion.div>
                 </div>
-            </motion.div>
-
-            {/* Mascot peeking in — mobile / tablet only, desktop shows the full version above */}
-            <motion.div
-                className="hero-mascot-mobile"
-                initial={{ opacity: 0, y: 24 }}
-                animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-                transition={{ duration: 0.9, delay: 0.7 }}
-                style={{ position: 'absolute', right: '-0.5rem', bottom: '3.75rem', width: 118, zIndex: 5, pointerEvents: 'none' }}
-            >
-                <Image
-                    src="/assets/mascot.png"
-                    alt="Sundawa Teknologi mascot"
-                    width={600}
-                    height={600}
-                    sizes="(max-width: 768px) 80vw, 600px"
-                    preload
-                />
             </motion.div>
 
             <motion.div initial={{ opacity: 0 }}
@@ -161,8 +143,8 @@ export default function HeroSection() {
             </motion.div>
 
             <style>{`
-                @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1fr !important; } .hero-logo-col { display: flex !important; } .hero-mascot-mobile { display: none !important; } }
-                @media (max-width: 640px) { .hero-grid h1 span { font-size: 10vw !important; } .hero-content { padding-top: 20px !important; } .hero-mascot-mobile { width: 92px !important; bottom: 3rem !important; } }
+                @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.5fr 0.5fr !important; } .hero-logo-col { display: flex !important; } }
+                @media (max-width: 640px) { .hero-grid h1 span { font-size: 9vw !important; } .hero-content { padding-top: 2px !important; } }
                 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
                 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
             `}</style>

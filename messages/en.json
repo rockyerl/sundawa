@@ -1,7 +1,7 @@
 {
   "nav": {
     "about": "About",
-    "values": "Values",
+    "values": "Transform",
     "services": "Services",
     "tech": "Tech",
     "clients": "Clients",
@@ -9,76 +9,74 @@
     "getInTouch": "GET IN TOUCH"
   },
   "hero": {
-    "badge": "IT Solutions Company",
-    "line1": "PROFESSIONAL",
-    "line2": "PRECISION",
-    "line3": "CUSTOMER",
-    "line4": "COMFORT",
-    "sub": "An IT company focused on client comfort and upholding professionalism in every aspect of our service.",
-    "ctaServices": "Our Services",
-    "ctaAbout": "About Us",
+    "badge": "Software Modernization & Automation",
+    "line1": "YOUR BUSINESS",
+    "line2": "HAS OUTGROWN",
+    "line3": "SOFTWARE HOLDING IT",
+    "line4": "TOGETHER",
+    "sub": "Manual workarounds, disconnected systems, slow reporting, and constant maintenance quietly drain time and money. We fix what's holding you back — without replacing what still works.",
+    "ctaServices": "See What's Worth Fixing",
+    "ctaAbout": "What We've Built",
     "scroll": "Scroll"
   },
   "about": {
-    "label": "About",
-    "heading1": "About",
-    "heading2": "Sundawa",
-    "heading3": "Teknologi",
-    "p1": "Sundawa Teknologi is an IT company focused on client comfort and needs, while upholding professionalism in every aspect of the services provided.",
-    "p2": "We provide innovative solutions focused on delivering IT solutions that can transform and elevate our clients' businesses.",
-    "quote": "Professional Precision, Customer Comfort",
+    "label": "How We Work",
+    "heading1": "Not Just",
+    "heading2": "Another Team",
+    "heading3": "That Writes Code",
+    "p1": "You need people who understand why the system is failing, decide what should change, and build it without adding another layer of complexity.",
+    "p2": "We start with how your business actually operates — not with a preferred framework or a prepackaged solution.",
+    "quote": "Software your team stops fighting with.",
     "missions": [
       {
         "num": "01",
-        "title": "Customer-First Experience",
-        "body": "Delivering an exceptional experience to every client, prioritizing comfort, satisfaction, and trust in every service."
+        "title": "Understand Before Building",
+        "body": "We start with how your business actually operates, not with a preferred framework or prepackaged solution."
       },
       {
         "num": "02",
-        "title": "Precision & Efficiency",
-        "body": "Providing accurate, efficient, and tailored solutions to client needs while maintaining precision at every stage of delivery."
+        "title": "Keep What Already Works",
+        "body": "Modernization doesn't mean rebuilding everything — we preserve what's useful and replace only what limits the business."
       },
       {
         "num": "03",
-        "title": "Strong Relationships",
-        "body": "Building lasting partnerships by listening and responding quickly to every client need."
+        "title": "Stay Responsible After Launch",
+        "body": "We keep running, improving, and expanding the platform instead of disappearing after deployment."
       }
     ]
   },
   "values": {
-    "label": "Values",
-    "heading1": "Our Core",
-    "heading2": "Values",
-    "sub": "The principles that shape every decision and interaction at Sundawa Teknologi.",
+    "label": "The Shift",
+    "heading1": "One System.",
+    "heading2": "Not Six.",
+    "sub": "How disconnected operations turn into one system you can actually rely on.",
     "items": [
-      { "num": "01", "title": "Client Satisfaction First", "desc": "Client satisfaction and needs are the top priority in every action and decision we make." },
-      { "num": "02", "title": "Friendly & Comfortable Service", "desc": "Providing a comfortable environment and experience for clients, from first interaction through project completion." },
-      { "num": "03", "title": "Reliability & Precision", "desc": "Delivering high-quality services with precision and reliability in every aspect of the business." },
-      { "num": "04", "title": "Active Collaboration", "desc": "Encouraging open communication and close collaboration between our internal team and clients for deep mutual understanding." },
-      { "num": "05", "title": "Commitment to Professionalism", "desc": "Placing high standards of expertise and work ethics in every aspect of the business." },
-      { "num": "06", "title": "Continuous Innovation", "desc": "Driving innovation and improvement in the solutions we offer, in line with technological developments and market needs." }
+      { "num": "01", "title": "Systems That Talk to Each Other", "desc": "Instead of teams re-entering the same information everywhere, systems exchange data automatically." },
+      { "num": "02", "title": "Controlled, Not Chaotic", "desc": "Instead of critical work living in spreadsheets, workflows run inside systems your team can actually rely on." },
+      { "num": "03", "title": "Real-Time Visibility", "desc": "Instead of reports taking hours or days, operational data becomes available exactly when it's needed." },
+      { "num": "04", "title": "Built to Extend", "desc": "Instead of legacy software blocking new features, core systems become easier to grow and adapt." },
+      { "num": "05", "title": "AI Inside the Workflow", "desc": "Instead of AI experiments sitting outside daily operations, AI becomes part of how real work gets done." },
+      { "num": "06", "title": "Fixing Root Causes", "desc": "Instead of developers constantly patching symptoms, architecture addresses the problem underneath." }
     ]
   },
   "services": {
-    "label": "Services",
-    "heading1": "Our",
-    "heading2": "Services",
-    "sub": "We offer a range of technology solutions tailored to your business needs — from consultation to finished product.",
-    "ctaContact": "Discuss a Project",
+    "label": "Modernization",
+    "heading1": "What Needs",
+    "heading2": "To Change",
+    "sub": "Five reasons businesses reach the point where existing software can no longer carry the operation forward.",
+    "ctaContact": "Tell Us Where It Breaks Down",
     "ctaOutsource": "View Pricing Estimate",
-    "ctaProcess": "See Our Process",
+    "ctaProcess": "See How We Work",
     "items": [
-      { "num": "01", "tag": "Advisory",    "title": "IT Consultation",    "desc": "Get expert consultation on your business's digital needs. We help formulate the right technology strategy." },
-      { "num": "02", "tag": "Design",      "title": "UI/UX Design",       "desc": "Product and application design using effective and efficient methods, prioritizing intuitive and attractive user experiences." },
-      { "num": "03", "tag": "QA Testing",  "title": "Software Testing",   "desc": "Trust our experts to conduct the testing your software needs. Ensure your product is bug-free before launch." },
-      { "num": "04", "tag": "Development", "title": "Custom Software",    "desc": "Boost business efficiency with software built specifically for your needs — from inventory management to enterprise systems." },
-      { "num": "05", "tag": "Mobile",      "title": "Mobile App",         "desc": "Bring your brand identity to a more accessible platform. Responsive and engaging mobile applications." },
-      { "num": "06", "tag": "Web",         "title": "Web Development",    "desc": "Professional web solutions from landing pages to scalable, modern enterprise platforms." },
-      { "num": "07", "tag": "Outsource",   "title": "IT Outsourcing",     "desc": "Supply selected professional IT talent for your team — remote, hybrid, or onsite. Developers, QA, DevOps, to IT Managers." }
+      { "num": "01", "tag": "Modernization", "title": "Modernize Legacy Systems", "desc": "Your software can't keep up anymore. We redesign architecture, replace weak components, and prepare the system for future growth — without putting critical operations at risk. Faster changes, better reliability, less technical debt." },
+      { "num": "02", "tag": "Automation", "title": "Workflow & AI Automation", "desc": "Too much work still happens manually. We turn repetitive approvals, reporting, document handling, and data entry into controlled automated workflows. Less repetitive work, faster operations, fewer avoidable errors." },
+      { "num": "03", "tag": "Integration", "title": "Systems & Data Integration", "desc": "Your systems don't talk to each other. We connect your ERP, finance tools, databases, APIs, and external platforms so information moves where it needs to. One flow of information instead of isolated systems." },
+      { "num": "04", "tag": "Custom Build", "title": "Custom Business Platforms", "desc": "Off-the-shelf software doesn't fit. We build operational software around how your business actually works — from internal systems to customer portals and SaaS platforms. Software adapts to your operation, not the other way around." },
+      { "num": "05", "tag": "Managed Ops", "title": "Managed Product Engineering", "desc": "Launching isn't the finish line. We keep your platform monitored, maintained, optimized, and continuously improved after launch — one engineering partner that stays accountable for the system." }
     ],
     "stats": [
       { "num": "50+", "label": "Projects Done" },
-      { "num": "7",   "label": "Core Services" },
+      { "num": "5",   "label": "Core Services" },
       { "num": "98%", "label": "Happy Clients" },
       { "num": "5+",  "label": "Years Experience" }
     ]
@@ -91,11 +89,11 @@
     "technologies": "technologies"
   },
   "clients": {
-    "label": "Clients",
-    "heading1": "Our",
-    "heading2": "Clients",
-    "sub": "Trusted by companies across various industries to deliver the best technology solutions.",
-    "confidentialNotice": "Some clients are confidential",
+    "label": "Selected Work",
+    "heading1": "Operations That",
+    "heading2": "Can't Stop",
+    "sub": "Sundawa has delivered systems supporting national administration, finance, manufacturing, healthcare, and international organizations.",
+    "confidentialNotice": "Some engagements are confidential",
     "confidential": "Confidential",
     "stats": [
       { "num": "15+", "label": "Active Clients" },
@@ -104,24 +102,24 @@
       { "num": "10+", "label": "Professionals" }
     ],
     "items": [
-      { "num": "01", "name": "Oetomo Hospital",            "initials": "OH",  "type": "Healthcare",       "desc": "Integrated hospital information system covering patient management, medical records, and billing." },
-      { "num": "02", "name": "PT. Kimu Enam Kemasindo",    "initials": "KE",  "type": "Manufacturing",    "desc": "ERP and production management solutions to optimize supply chain and factory efficiency." },
-      { "num": "03", "name": "Sistem Informasi Konveksi",  "initials": "SIK", "type": "Textile & Fashion","desc": "Garment production management platform from order to real-time delivery tracking." },
-      { "num": "04", "name": "Healthcare App Client",      "initials": "HC",  "type": "Healthcare",       "desc": "Mobile health application with telemedicine features and digital medical record management.", "confidential": true }
+      { "num": "01", "name": "National Legal Administration System", "initials": "GOV",  "type": "Government",       "desc": "A complete system overhaul designed to improve the performance and reliability of a platform operating at national scale.", "confidential": true },
+      { "num": "02", "name": "Integrated Production & Operations Platform", "initials": "MFG",  "type": "Manufacturing",    "desc": "ERP and production-management software designed to improve supply-chain visibility and factory operations.", "confidential": true },
+      { "num": "03", "name": "UNDP Fund Distribution Platform", "initials": "UNDP", "type": "International Org.", "desc": "A fund-distribution platform initially created for event funding and later expanded into a broader distribution system for UNDP.", "confidential": false },
+      { "num": "04", "name": "Hospital Cooperative Ecosystem", "initials": "HC",   "type": "Healthcare",       "desc": "Inventory, accounting, savings and loans, and POS operations integrated into one hospital cooperative platform.", "confidential": true }
     ]
   },
   "contact": {
-    "label": "Contact",
-    "readyToStart": "Ready to start?",
-    "line1": "LET'S",
-    "line2": "WORK",
-    "line3": "TOGETHER",
+    "label": "Get In Touch",
+    "readyToStart": "Ready to fix what's broken?",
+    "line1": "FIX WHAT'S",
+    "line2": "SLOWING",
+    "line3": "YOU DOWN",
     "phoneDesc": "Mon–Fri, 9am–6pm WIB",
     "emailDesc": "Response within 24 hours",
     "linkedinDesc": "Follow us on LinkedIn",
     "location": "Bandung, West Java, Indonesia",
     "waTooltip": "Chat on WhatsApp",
-    "waMessage": "Hello Sundawa Teknologi, I would like to learn more about your services."
+    "waMessage": "Hello Sundawa Teknologi, I'd like to talk about modernizing our systems."
   },
   "outsource": {
     "navBack": "Back",
