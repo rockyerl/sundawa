@@ -3,11 +3,14 @@
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import HeroSection from '@/components/HeroSection'
+import ProblemSection from '@/components/ProblemSection'
 import AboutSection from '@/components/AboutSection'
 import ValuesSection from '@/components/ValuesSection'
 import ServicesSection from '@/components/ServicesSection'
 import TechSection from '@/components/TechSection'
 import ClientsSection from '@/components/ClientsSection'
+import ObjectionsSection from '@/components/ObjectionsSection'
+import FinalCtaSection from '@/components/FinalCtaSection'
 import ContactSection from '@/components/ContactSection'
 
 const ParticleField = dynamic(() => import('@/components/ParticleField'), { ssr: false })
@@ -20,6 +23,8 @@ export default function Home() {
                 <Navbar />
                 <HeroSection />
                 <div className="section-line" />
+                <ProblemSection />
+                <div className="section-line" />
                 <AboutSection />
                 <div className="section-line" />
                 <ValuesSection />
@@ -29,6 +34,10 @@ export default function Home() {
                 <TechSection />
                 <div className="section-line" />
                 <ClientsSection />
+                <div className="section-line" />
+                <ObjectionsSection />
+                <div className="section-line" />
+                <FinalCtaSection />
                 <ContactSection />
             </div>
         </main>

@@ -59,32 +59,57 @@ export default function AboutSection() {
                         </motion.blockquote>
                     </div>
 
-                    {/* Right — Mission list */}
+                    {/* Right — Mission stepper / journey */}
                     <div>
                         {missions.map((m, i) => (
                             <motion.div
                                 key={m.num}
                                 initial={{ opacity: 0, x: 40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
-                                style={{ position: 'relative', padding: '1.75rem 0', borderTop: '1px solid rgba(219,201,119,0.12)', borderBottom: i === missions.length - 1 ? '1px solid rgba(219,201,119,0.12)' : 'none', cursor: 'default' }}
+                                style={{ position: 'relative', display: 'flex', gap: '1.5rem', paddingBottom: i === missions.length - 1 ? 0 : '2.25rem', cursor: 'default' }}
                                 className="group"
                             >
-                                <motion.div initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(219,201,119,0.05), transparent)', pointerEvents: 'none' }} />
-                                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
-                                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '2rem' }}>
-                                        <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(219,201,119,0.45)' }}>{m.num}</span>
-                                        {i < missions.length - 1 && (
-                                            <div style={{ width: '1px', height: '2.5rem', marginTop: '0.5rem', background: 'linear-gradient(to bottom, rgba(219,201,119,0.25), transparent)' }} />
-                                        )}
+                                {/* Node + connecting line */}
+                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+                                    <motion.div
+                                        initial={{ scale: 0.5, opacity: 0 }}
+                                        animate={inView ? { scale: 1, opacity: 1 } : {}}
+                                        transition={{ duration: 0.5, delay: 0.35 + i * 0.15 }}
+                                        style={{
+                                            width: '2.75rem', height: '2.75rem', borderRadius: '50%',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            border: '1.5px solid rgba(219,201,119,0.45)',
+                                            background: 'linear-gradient(135deg, rgba(219,201,119,0.14), rgba(219,201,119,0.02))',
+                                            color: '#DBC977', fontWeight: 800, fontSize: '0.9rem',
+                                            letterSpacing: '0.02em', position: 'relative', zIndex: 1,
+                                            transition: 'border-color 0.3s, background-color 0.3s, box-shadow 0.3s',
+                                        }}
+                                        className="group-hover:!border-[#DBC977] group-hover:!shadow-[0_0_18px_rgba(219,201,119,0.35)]"
+                                    >
+                                        {m.num}
+                                    </motion.div>
+                                    {i < missions.length - 1 && (
+                                        <motion.div
+                                            initial={{ scaleY: 0 }}
+                                            animate={inView ? { scaleY: 1 } : {}}
+                                            transition={{ duration: 0.7, delay: 0.55 + i * 0.15, ease: 'easeOut' }}
+                                            style={{
+                                                width: '1.5px', flex: 1, minHeight: '2.25rem', marginTop: '0.4rem',
+                                                background: 'linear-gradient(to bottom, rgba(219,201,119,0.5), rgba(219,201,119,0.08))',
+                                                transformOrigin: 'top',
+                                            }}
+                                        />
+                                    )}
+                                </div>
+
+                                {/* Content */}
+                                <div style={{ flex: 1, paddingTop: '0.4rem' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.6rem' }}>
+                                        <h3 style={{ fontWeight: 700, fontSize: '0.95rem', letterSpacing: '0.04em', color: '#F8F8F8', transition: 'color 0.3s' }} className="group-hover:!text-[#DBC977]">
+                                            {m.title}
+                                        </h3>
+                                        <div style={{ height: '1px', background: 'rgba(219,201,119,0.3)', transition: 'width 0.4s', width: '1.5rem', flexShrink: 0, marginLeft: '1rem' }} className="group-hover:!w-10" />
                                     </div>
-                                    <div style={{ flex: 1 }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.6rem' }}>
-                                            <h3 style={{ fontWeight: 700, fontSize: '0.95rem', letterSpacing: '0.04em', color: '#F8F8F8', transition: 'color 0.3s' }} className="group-hover:!text-[#DBC977]">
-                                                {m.title}
-                                            </h3>
-                                            <div style={{ height: '1px', background: 'rgba(219,201,119,0.3)', transition: 'width 0.4s', width: '1.5rem', flexShrink: 0, marginLeft: '1rem' }} className="group-hover:!w-10" />
-                                        </div>
-                                        <p style={{ fontSize: '0.85rem', lineHeight: 1.75, fontWeight: 300, color: 'rgba(248,248,248,0.45)' }}>{m.body}</p>
-                                    </div>
+                                    <p style={{ fontSize: '0.85rem', lineHeight: 1.75, fontWeight: 300, color: 'rgba(248,248,248,0.45)' }}>{m.body}</p>
                                 </div>
                             </motion.div>
                         ))}

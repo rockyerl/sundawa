@@ -87,9 +87,10 @@ export default function ClientsSection() {
                                     <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(248,248,248,0.15)' }}>{c.num}</span>
                                     <button
                                         onClick={() => setSelected(i)}
-                                        aria-label="Lihat detail"
-                                        style={{ width: 26, height: 26, border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer', padding: 0 }}
+                                        aria-label={t('viewProject')}
+                                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.4rem 0.7rem', border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, color: active === i ? '#DBC977' : 'rgba(248,248,248,0.3)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer' }}
                                     >
+                                        <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{t('viewProject')}</span>
                                         <ArrowUpRight size={12} />
                                     </button>
                                 </div>

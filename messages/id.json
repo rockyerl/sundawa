@@ -10,21 +10,36 @@
   },
   "hero": {
     "badge": "Modernisasi & Otomatisasi Perangkat Lunak",
-    "line1": "BISNIS ANDA",
-    "line2": "SUDAH MELAMPAUI",
-    "line3": "SISTEM YANG ADA",
-    "line4": "SAAT INI",
-    "sub": "Solusi manual, sistem yang terpisah-pisah, laporan yang lambat, dan pemeliharaan yang terus-menerus diam-diam menguras waktu dan biaya Anda. Kami perbaiki apa yang menghambat — tanpa mengganti apa yang masih berjalan dengan baik.",
+    "line1": "Sistem lama Anda",
+    "line2": "bisa jadi lebih mahal",
+    "line3": "Daripada menggantinya",
+    "line4": "",
+    "sub": "Solusi manual, sistem yang tidak saling terhubung, pelaporan yang lambat, dan pemeliharaan yang terus-menerus diam-diam menguras waktu dan biaya Anda. Kami memperbaiki apa yang menghambat Anda — tanpa mengganti apa yang masih berfungsi dengan baik.",
     "ctaServices": "Lihat yang Perlu Diperbaiki",
-    "ctaAbout": "Lihat yang Kami Bangun",
-    "scroll": "Gulir"
+    "ctaAbout": "Yang Telah Kami Bangun",
+    "scroll": "Scroll"
+  },
+  "problem": {
+    "label": "Masalah Sesungguhnya",
+    "heading1": "Masalahnya biasanya bukan satu sistem yang rusak.",
+    "heading2": "Tapi semua hal di sekitarnya.",
+    "points": [
+      "ERP Anda menangani satu bagian bisnis.",
+      "Excel menangani bagian lainnya.",
+      "Tim menyalin informasi antar sistem secara manual.",
+      "Laporan datang terlambat.",
+      "Perangkat lunak lama makin sulit diubah.",
+      "Dan setiap alat baru justru menambah satu lapisan, bukan menghilangkannya."
+    ],
+    "closing": "Pada akhirnya, tim Anda menghabiskan lebih banyak waktu menyiasati perangkat lunak, dibanding perangkat lunak itu bekerja untuk tim Anda.",
+    "transition": "Di sinilah kami hadir."
   },
   "about": {
     "label": "Cara Kami Bekerja",
     "heading1": "Bukan Hanya",
     "heading2": "Tim yang",
     "heading3": "Menulis Kode",
-    "p1": "Anda butuh tim yang memahami mengapa sistem gagal, menentukan apa yang perlu diubah, dan membangunnya tanpa menambah lapisan kerumitan baru.",
+    "p1": "Anda butuh tim yang memahami mengapa sistem gagal, menentukan apa yang perlu diubah, membangunnya tanpa menambah lapisan kerumitan baru, dan tetap bertanggung jawab setelah peluncuran.",
     "p2": "Kami mulai dari cara bisnis Anda benar-benar berjalan — bukan dari kerangka kerja favorit atau solusi yang sudah jadi.",
     "quote": "Perangkat lunak yang tidak lagi dilawan oleh tim Anda.",
     "missions": [
@@ -36,28 +51,58 @@
       {
         "num": "02",
         "title": "Mempertahankan yang Sudah Berjalan",
-        "body": "Modernisasi tidak berarti membangun ulang semuanya — kami pertahankan yang masih berguna dan hanya mengganti yang membatasi bisnis."
+        "body": "Modernisasi tidak otomatis berarti membangun ulang semuanya. Kami pertahankan sistem yang masih berguna dan hanya mengganti yang membatasi bisnis."
       },
       {
         "num": "03",
-        "title": "Bertanggung Jawab Setelah Peluncuran",
+        "title": "Membangun Berdasarkan Hasil yang Terukur",
+        "body": "Otomatisasi, AI, dan perangkat lunak harus mengurangi beban kerja, menghilangkan hambatan, meningkatkan keandalan, atau membuka kemampuan baru yang sebelumnya tidak bisa Anda capai."
+      },
+      {
+        "num": "04",
+        "title": "Tetap Bertanggung Jawab Setelah Peluncuran",
         "body": "Kami tetap menjalankan, membenahi, dan mengembangkan platform Anda, bukan menghilang setelah peluncuran."
       }
     ]
   },
+  "objections": {
+    "heading": "Tapi mengganti sistem kami terdengar berisiko.",
+    "reassuranceLead": "Bisa saja berisiko, jika modernisasi dimulai dengan menulis ulang semuanya.",
+    "reassuranceBody": "Kami mulai dengan memahami ketergantungan sistem, alur kerja penting, data yang ada, dan apa yang sudah diandalkan tim Anda. Dari situ, sistem bisa dimodernisasi secara bertahap, tanpa memaksa bisnis melewati penggantian besar-besaran yang sebenarnya tidak perlu.",
+    "items": [
+      { "question": "Kami tidak bisa menghentikan operasional selama pembangunan ulang.", "answer": "Kami rencanakan transisi mengikuti operasional yang sedang berjalan." },
+      { "question": "Sistem lama kami menyimpan data penting selama bertahun-tahun.", "answer": "Kami pertahankan dan migrasikan data yang benar-benar dibutuhkan bisnis." },
+      { "question": "Kami belum tahu pasti apa yang perlu dibangun ulang.", "answer": "Itulah yang ditentukan pada tahap discovery." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Sistem mana yang terus dikeluhkan tim Anda setiap minggu?",
+    "points": [
+      "Spreadsheet yang semua orang andalkan.",
+      "Aplikasi yang tidak ingin disentuh siapa pun.",
+      "Alur kerja lima langkah yang seharusnya cukup satu langkah.",
+      "Sistem-sistem yang seharusnya saling terhubung, tapi tidak."
+    ],
+    "startThere": "Mulai dari situ.",
+    "cta": "Tunjukkan yang Memperlambat Anda",
+    "supporting": "Ceritakan apa yang sedang terjadi. Kami bantu tentukan apakah itu butuh modernisasi, integrasi, otomatisasi, atau sesuatu yang sepenuhnya baru."
+  },
   "values": {
     "label": "Transformasi",
-    "heading1": "Satu Sistem.",
-    "heading2": "Bukan Enam.",
-    "sub": "Bagaimana operasional yang terpisah-pisah berubah menjadi satu sistem yang benar-benar dapat Anda andalkan.",
-    "items": [
-      { "num": "01", "title": "Sistem yang Saling Terhubung", "desc": "Tim tidak perlu lagi memasukkan data yang sama berulang kali — sistem saling bertukar data secara otomatis." },
-      { "num": "02", "title": "Terkendali, Bukan Berantakan", "desc": "Pekerjaan penting tidak lagi bergantung pada spreadsheet; alur kerja berjalan di dalam sistem yang dapat diandalkan tim Anda." },
-      { "num": "03", "title": "Visibilitas Waktu Nyata", "desc": "Data operasional tersedia tepat saat dibutuhkan, tanpa harus menunggu laporan berjam-jam atau berhari-hari." },
-      { "num": "04", "title": "Dibangun untuk Berkembang", "desc": "Sistem inti menjadi lebih mudah dikembangkan, tanpa terhambat oleh perangkat lunak lama." },
-      { "num": "05", "title": "Kecerdasan Buatan di Dalam Alur Kerja", "desc": "Kecerdasan buatan (AI) menjadi bagian dari cara kerja sehari-hari, bukan sekadar eksperimen di luar operasional." },
-      { "num": "06", "title": "Memperbaiki Akar Masalah", "desc": "Arsitektur sistem menyelesaikan masalah yang sebenarnya, bukan sekadar menambal gejala yang berulang." }
-    ]
+    "heading1": "Ubah Operasional Terpisah-pisah",
+    "heading2": "Menjadi Satu Sistem yang Bisa Anda Andalkan",
+    "todayLabel": "Sebelumnya",
+    "withLabel": "Bersama Sundawa",
+    "rows": [
+      { "today": "Tim memasukkan data yang sama secara berulang", "withSundawa": "Sistem saling bertukar data secara otomatis" },
+      { "today": "Pekerjaan penting masih bergantung pada spreadsheet", "withSundawa": "Alur kerja berjalan di dalam sistem yang terkendali" },
+      { "today": "Laporan butuh waktu berjam-jam hingga berhari-hari", "withSundawa": "Data operasional tersedia saat dibutuhkan" },
+      { "today": "Perangkat lunak lama menghambat fitur baru", "withSundawa": "Sistem inti jadi lebih mudah dikembangkan" },
+      { "today": "Eksperimen AI berjalan di luar operasional", "withSundawa": "AI menjadi bagian dari alur kerja nyata" },
+      { "today": "Developer terus-menerus menambal gejala", "withSundawa": "Arsitektur menyelesaikan akar masalah" }
+    ],
+    "closing": "Kami tidak mengganti teknologi hanya karena usianya sudah lama. Kami pahami operasional Anda terlebih dahulu, pertahankan yang masih berjalan, hubungkan yang seharusnya saling terhubung, dan bangun ulang yang menghambat Anda.",
+    "cta": "Ceritakan di Mana Sistem Anda Bermasalah"
   },
   "services": {
     "label": "Modernisasi",
@@ -67,12 +112,14 @@
     "ctaContact": "Sampaikan Titik Masalah Anda",
     "ctaOutsource": "Lihat Estimasi Harga",
     "ctaProcess": "Lihat Cara Kerja Kami",
+    "outcomeLabel": "Hasil",
+    "transition": "Dan ini bukan sekadar kemampuan yang kami tambahkan ke halaman penjualan. Ini adalah jenis sistem yang sudah dipercayakan kepada kami untuk dibangun.",
     "items": [
-      { "num": "01", "tag": "Modernisasi", "title": "Modernisasi Sistem Lama", "desc": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis yang terus berkembang. Kami rancang ulang arsitektur, ganti komponen yang lemah, dan siapkan sistem untuk pertumbuhan ke depan — tanpa membahayakan operasional yang sedang berjalan. Perubahan lebih cepat, keandalan lebih baik, utang teknis lebih sedikit." },
-      { "num": "02", "tag": "Otomatisasi", "title": "Otomatisasi Alur Kerja & AI", "desc": "Terlalu banyak pekerjaan yang masih dilakukan secara manual. Kami ubah persetujuan, pelaporan, pengolahan dokumen, dan input data yang berulang menjadi alur kerja otomatis yang terkendali. Pekerjaan berulang lebih sedikit, operasional lebih cepat, kesalahan lebih jarang terjadi." },
-      { "num": "03", "tag": "Integrasi", "title": "Integrasi Sistem & Data", "desc": "Sistem Anda tidak saling terhubung. Kami hubungkan ERP, sistem keuangan, basis data, API, dan platform eksternal agar informasi mengalir ke tempat yang tepat. Satu aliran informasi, bukan sistem yang terisolasi." },
-      { "num": "04", "tag": "Bangun Khusus", "title": "Platform Bisnis Khusus", "desc": "Perangkat lunak siap pakai tidak selalu cocok dengan cara bisnis Anda bekerja. Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal, portal pelanggan, hingga platform SaaS. Perangkat lunak yang menyesuaikan operasional Anda, bukan sebaliknya." },
-      { "num": "05", "tag": "Operasi Terkelola", "title": "Managed Product Engineering", "desc": "Peluncuran bukan garis akhir. Kami terus memantau, memelihara, mengoptimalkan, dan mengembangkan platform Anda setelah rilis — satu mitra rekayasa yang tetap bertanggung jawab atas sistem Anda." }
+      { "num": "01", "problem": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis", "tag": "Modernisasi", "title": "Modernisasi Sistem Lama", "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan — merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.", "outcome": "Perubahan lebih cepat. Keandalan lebih baik. Utang teknis lebih sedikit." },
+      { "num": "02", "problem": "Terlalu banyak pekerjaan yang masih dilakukan secara manual", "tag": "Otomatisasi", "title": "Otomatisasi Alur Kerja & AI", "desc": "Kami ubah persetujuan, pelaporan, pengolahan dokumen, input data, dan tugas operasional yang berulang menjadi alur kerja otomatis yang terkendali.", "outcome": "Pekerjaan berulang lebih sedikit. Operasional lebih cepat. Kesalahan lebih jarang terjadi." },
+      { "num": "03", "problem": "Sistem Anda tidak saling terhubung", "tag": "Integrasi", "title": "Integrasi Sistem & Data", "desc": "Kami hubungkan ERP, sistem keuangan, basis data, API, sistem operasional, dan platform eksternal agar informasi mengalir ke tempat yang tepat.", "outcome": "Satu aliran informasi, bukan sistem yang terisolasi." },
+      { "num": "04", "problem": "Perangkat lunak siap pakai tidak selalu cocok", "tag": "Bangun Khusus", "title": "Platform Bisnis Khusus", "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal dan portal pelanggan hingga platform SaaS.", "outcome": "Perangkat lunak menyesuaikan operasional Anda, bukan sebaliknya." },
+      { "num": "05", "problem": "Peluncuran bukan garis akhir", "tag": "Operasi Terkelola", "title": "Managed Product Engineering", "desc": "Kami terus memantau, memelihara, mengoptimalkan, dan mengembangkan platform Anda setelah rilis.", "outcome": "Satu mitra rekayasa yang tetap bertanggung jawab atas sistem Anda." }
     ],
     "stats": [
       { "num": "50+", "label": "Proyek Selesai" },
@@ -91,10 +138,11 @@
   "clients": {
     "label": "Karya Pilihan",
     "heading1": "Operasional yang",
-    "heading2": "Tidak Bisa Berhenti",
-    "sub": "Sundawa telah menghadirkan sistem yang mendukung administrasi negara, keuangan, manufaktur, kesehatan, dan organisasi internasional.",
+    "heading2": "Tak Bisa Berhenti Bekerja Begitu Saja",
+    "sub": "Sundawa telah menghadirkan sistem yang mendukung administrasi negara, keuangan, pembayaran, manufaktur, kesehatan, properti, dan organisasi internasional.",
     "confidentialNotice": "Beberapa proyek bersifat rahasia",
     "confidential": "Rahasia",
+    "viewProject": "Lihat Proyek",
     "stats": [
       { "num": "15+", "label": "Klien Aktif" },
       { "num": "30+", "label": "Proyek Selesai" },
@@ -102,10 +150,10 @@
       { "num": "10+", "label": "Profesional" }
     ],
     "items": [
-      { "num": "01", "name": "Sistem Administrasi Hukum Nasional", "initials": "GOV",  "type": "Pemerintahan",             "desc": "Perombakan sistem secara menyeluruh untuk meningkatkan performa dan keandalan platform yang beroperasi dalam skala nasional.", "confidential": true },
-      { "num": "02", "name": "Platform Produksi & Operasional Terintegrasi", "initials": "MFG",  "type": "Manufaktur",               "desc": "Perangkat lunak ERP dan manajemen produksi yang dirancang untuk meningkatkan visibilitas rantai pasok dan efisiensi operasional pabrik.", "confidential": true },
-      { "num": "03", "name": "Platform Distribusi Dana UNDP", "initials": "UNDP", "type": "Organisasi Internasional",  "desc": "Platform distribusi dana yang awalnya dibuat untuk pendanaan acara, kemudian dikembangkan menjadi sistem distribusi yang lebih luas untuk UNDP.", "confidential": false },
-      { "num": "04", "name": "Ekosistem Koperasi Rumah Sakit", "initials": "HC",   "type": "Kesehatan",                 "desc": "Operasional inventaris, akuntansi, simpan pinjam, dan POS yang terintegrasi dalam satu platform koperasi rumah sakit.", "confidential": true }
+      { "num": "01", "name": "Memodernisasi sistem administrasi hukum berskala nasional", "initials": "GOV",  "type": "Pemerintahan / Administrasi Hukum", "desc": "Perombakan sistem secara menyeluruh untuk meningkatkan performa dan keandalan platform yang beroperasi dalam skala nasional.", "confidential": true },
+      { "num": "02", "name": "Menyatukan produksi dan operasional dalam satu sistem", "initials": "MFG",  "type": "Manufaktur",               "desc": "Perangkat lunak ERP dan manajemen produksi yang dirancang untuk meningkatkan visibilitas rantai pasok dan efisiensi operasional pabrik.", "confidential": true },
+      { "num": "03", "name": "Memperluas alur kerja keuangan melampaui fungsi awalnya", "initials": "UNDP", "type": "Organisasi Internasional",  "desc": "Platform distribusi dana yang awalnya dibuat untuk pendanaan acara, kemudian dikembangkan menjadi sistem distribusi yang lebih luas untuk UNDP.", "confidential": false },
+      { "num": "04", "name": "Menghubungkan berbagai operasional rumah sakit dalam satu ekosistem", "initials": "HC",   "type": "Kesehatan",                 "desc": "Operasional inventaris, akuntansi, simpan pinjam, dan POS yang terintegrasi dalam satu platform koperasi rumah sakit.", "confidential": true }
     ]
   },
   "contact": {

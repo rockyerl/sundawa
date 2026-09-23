@@ -10,21 +10,36 @@
   },
   "hero": {
     "badge": "Software Modernization & Automation",
-    "line1": "YOUR BUSINESS",
-    "line2": "HAS OUTGROWN",
-    "line3": "SOFTWARE HOLDING IT",
-    "line4": "TOGETHER",
+    "line1": "Your old software",
+    "line2": "May be costing you more",
+    "line3": "Than replacing it",
+    "line4": "",
     "sub": "Manual workarounds, disconnected systems, slow reporting, and constant maintenance quietly drain time and money. We fix what's holding you back — without replacing what still works.",
     "ctaServices": "See What's Worth Fixing",
     "ctaAbout": "What We've Built",
     "scroll": "Scroll"
   },
+  "problem": {
+    "label": "The Real Problem",
+    "heading1": "The problem usually isn't one broken system.",
+    "heading2": "It's everything around it.",
+    "points": [
+      "Your ERP handles one part of the business.",
+      "Excel handles another.",
+      "Teams copy information between systems.",
+      "Reports arrive late.",
+      "Old software becomes harder to change.",
+      "And every new tool adds another layer instead of removing one."
+    ],
+    "closing": "Eventually, your team spends more time working around the software than the software spends working for them.",
+    "transition": "That's where we come in."
+  },
   "about": {
     "label": "How We Work",
     "heading1": "Not Just",
     "heading2": "Another Team",
-    "heading3": "That Writes Code",
-    "p1": "You need people who understand why the system is failing, decide what should change, and build it without adding another layer of complexity.",
+    "heading3": "That Only Writes Code",
+    "p1": "You need people who can understand why the system is failing, decide what should change, build it without creating another layer of complexity, and stay responsible after launch.",
     "p2": "We start with how your business actually operates — not with a preferred framework or a prepackaged solution.",
     "quote": "Software your team stops fighting with.",
     "missions": [
@@ -36,28 +51,58 @@
       {
         "num": "02",
         "title": "Keep What Already Works",
-        "body": "Modernization doesn't mean rebuilding everything — we preserve what's useful and replace only what limits the business."
+        "body": "Modernization doesn't automatically mean rebuilding everything. We preserve useful systems and replace only what limits the business."
       },
       {
         "num": "03",
-        "title": "Stay Responsible After Launch",
-        "body": "We keep running, improving, and expanding the platform instead of disappearing after deployment."
+        "title": "Build Around Measurable Operations",
+        "body": "Automation, AI, and software should reduce work, remove delays, improve reliability, or unlock a capability you couldn't achieve before."
+      },
+      {
+        "num": "04",
+        "title": "Stay After Launch",
+        "body": "We can continue running, improving, and expanding the platform instead of disappearing after deployment."
       }
     ]
   },
+  "objections": {
+    "heading": "But replacing our system sounds risky.",
+    "reassuranceLead": "It can be, if modernization starts with rewriting everything.",
+    "reassuranceBody": "We start by understanding dependencies, critical workflows, existing data, and what your team already relies on. From there, the system can be modernized incrementally instead of forcing the business through an unnecessary big-bang replacement.",
+    "items": [
+      { "question": "We can't stop operations while rebuilding.", "answer": "Plan the transition around live operations." },
+      { "question": "Our old system contains years of important data.", "answer": "Preserve and migrate what the business actually needs." },
+      { "question": "We don't know exactly what should be rebuilt.", "answer": "That's what the discovery stage determines." }
+    ]
+  },
+  "finalCta": {
+    "heading": "What's the system your team complains about every week?",
+    "points": [
+      "The spreadsheet everyone depends on.",
+      "The application nobody wants to touch.",
+      "The workflow that takes five steps when it should take one.",
+      "The systems that should talk to each other but don't."
+    ],
+    "startThere": "Start there.",
+    "cta": "Show Us What's Slowing You Down",
+    "supporting": "Tell us what's happening. We'll help determine whether it needs modernization, integration, automation, or something entirely new."
+  },
   "values": {
     "label": "The Shift",
-    "heading1": "One System.",
-    "heading2": "Not Six.",
-    "sub": "How disconnected operations turn into one system you can actually rely on.",
-    "items": [
-      { "num": "01", "title": "Systems That Talk to Each Other", "desc": "Instead of teams re-entering the same information everywhere, systems exchange data automatically." },
-      { "num": "02", "title": "Controlled, Not Chaotic", "desc": "Instead of critical work living in spreadsheets, workflows run inside systems your team can actually rely on." },
-      { "num": "03", "title": "Real-Time Visibility", "desc": "Instead of reports taking hours or days, operational data becomes available exactly when it's needed." },
-      { "num": "04", "title": "Built to Extend", "desc": "Instead of legacy software blocking new features, core systems become easier to grow and adapt." },
-      { "num": "05", "title": "AI Inside the Workflow", "desc": "Instead of AI experiments sitting outside daily operations, AI becomes part of how real work gets done." },
-      { "num": "06", "title": "Fixing Root Causes", "desc": "Instead of developers constantly patching symptoms, architecture addresses the problem underneath." }
-    ]
+    "heading1": "Turn Disconnected Operations",
+    "heading2": "Into One System You Can Rely On",
+    "todayLabel": "Today",
+    "withLabel": "With Sundawa",
+    "rows": [
+      { "today": "Teams re-enter the same information", "withSundawa": "Systems exchange data automatically" },
+      { "today": "Critical work lives in spreadsheets", "withSundawa": "Workflows run inside controlled systems" },
+      { "today": "Reports take hours or days", "withSundawa": "Operational data becomes available when needed" },
+      { "today": "Legacy software blocks new features", "withSundawa": "Core systems become easier to extend" },
+      { "today": "AI experiments sit outside operations", "withSundawa": "AI becomes part of real workflows" },
+      { "today": "Developers constantly fix symptoms", "withSundawa": "Architecture addresses the underlying problem" }
+    ],
+    "closing": "We don't replace technology simply because it's old. We understand your operation first, keep what still works, connect what should work together, and rebuild what is holding you back.",
+    "cta": "Tell Us Where Your System Breaks Down"
   },
   "services": {
     "label": "Modernization",
@@ -67,12 +112,14 @@
     "ctaContact": "Tell Us Where It Breaks Down",
     "ctaOutsource": "View Pricing Estimate",
     "ctaProcess": "See How We Work",
+    "outcomeLabel": "Outcome",
+    "transition": "And these aren't capabilities we added to a sales page. They're the kind of systems we've already been trusted to build.",
     "items": [
-      { "num": "01", "tag": "Modernization", "title": "Modernize Legacy Systems", "desc": "Your software can't keep up anymore. We redesign architecture, replace weak components, and prepare the system for future growth — without putting critical operations at risk. Faster changes, better reliability, less technical debt." },
-      { "num": "02", "tag": "Automation", "title": "Workflow & AI Automation", "desc": "Too much work still happens manually. We turn repetitive approvals, reporting, document handling, and data entry into controlled automated workflows. Less repetitive work, faster operations, fewer avoidable errors." },
-      { "num": "03", "tag": "Integration", "title": "Systems & Data Integration", "desc": "Your systems don't talk to each other. We connect your ERP, finance tools, databases, APIs, and external platforms so information moves where it needs to. One flow of information instead of isolated systems." },
-      { "num": "04", "tag": "Custom Build", "title": "Custom Business Platforms", "desc": "Off-the-shelf software doesn't fit. We build operational software around how your business actually works — from internal systems to customer portals and SaaS platforms. Software adapts to your operation, not the other way around." },
-      { "num": "05", "tag": "Managed Ops", "title": "Managed Product Engineering", "desc": "Launching isn't the finish line. We keep your platform monitored, maintained, optimized, and continuously improved after launch — one engineering partner that stays accountable for the system." }
+      { "num": "01", "problem": "Your software can't keep up anymore", "tag": "Modernization", "title": "Modernize Legacy Systems", "desc": "Improve aging platforms without putting critical operations at unnecessary risk. We redesign architecture, replace weak components, and prepare the system for future growth.", "outcome": "Faster changes. Better reliability. Less technical debt." },
+      { "num": "02", "problem": "Too much work still happens manually", "tag": "Automation", "title": "Workflow & AI Automation", "desc": "Turn repetitive approvals, reporting, document handling, data entry, and operational tasks into controlled automated workflows.", "outcome": "Less repetitive work. Faster operations. Fewer avoidable errors." },
+      { "num": "03", "problem": "Your systems don't talk to each other", "tag": "Integration", "title": "Systems & Data Integration", "desc": "Connect your ERP, finance tools, databases, APIs, operational systems, and external platforms so information moves where it needs to.", "outcome": "One flow of information instead of isolated systems." },
+      { "num": "04", "problem": "Off-the-shelf software doesn't fit", "tag": "Custom Build", "title": "Custom Business Platforms", "desc": "Build operational software around how your business actually works. From internal systems and customer portals to SaaS platforms.", "outcome": "Software adapts to your operation instead of forcing your operation to adapt to software." },
+      { "num": "05", "problem": "Launching isn't the finish line", "tag": "Managed Ops", "title": "Managed Product Engineering", "desc": "Keep your platform monitored, maintained, optimized, and continuously improved after launch.", "outcome": "One engineering partner that stays accountable for the system." }
     ],
     "stats": [
       { "num": "50+", "label": "Projects Done" },
@@ -91,10 +138,11 @@
   "clients": {
     "label": "Selected Work",
     "heading1": "Operations That",
-    "heading2": "Can't Stop",
-    "sub": "Sundawa has delivered systems supporting national administration, finance, manufacturing, healthcare, and international organizations.",
+    "heading2": "Can't Simply Stop Working",
+    "sub": "Sundawa has delivered systems supporting national administration, finance, payments, manufacturing, healthcare, property, and international organizations.",
     "confidentialNotice": "Some engagements are confidential",
     "confidential": "Confidential",
+    "viewProject": "See the Project",
     "stats": [
       { "num": "15+", "label": "Active Clients" },
       { "num": "30+", "label": "Projects Done" },
@@ -102,10 +150,10 @@
       { "num": "10+", "label": "Professionals" }
     ],
     "items": [
-      { "num": "01", "name": "National Legal Administration System", "initials": "GOV",  "type": "Government",       "desc": "A complete system overhaul designed to improve the performance and reliability of a platform operating at national scale.", "confidential": true },
-      { "num": "02", "name": "Integrated Production & Operations Platform", "initials": "MFG",  "type": "Manufacturing",    "desc": "ERP and production-management software designed to improve supply-chain visibility and factory operations.", "confidential": true },
-      { "num": "03", "name": "UNDP Fund Distribution Platform", "initials": "UNDP", "type": "International Org.", "desc": "A fund-distribution platform initially created for event funding and later expanded into a broader distribution system for UNDP.", "confidential": false },
-      { "num": "04", "name": "Hospital Cooperative Ecosystem", "initials": "HC",   "type": "Healthcare",       "desc": "Inventory, accounting, savings and loans, and POS operations integrated into one hospital cooperative platform.", "confidential": true }
+      { "num": "01", "name": "Modernizing a national-scale legal administration system", "initials": "GOV",  "type": "Government / Legal Administration", "desc": "A complete system overhaul designed to improve the performance and reliability of a platform operating at national scale.", "confidential": true },
+      { "num": "02", "name": "Bringing production and operations into one system", "initials": "MFG",  "type": "Manufacturing",    "desc": "ERP and production-management software designed to improve supply-chain visibility and factory operations.", "confidential": true },
+      { "num": "03", "name": "Expanding a financial workflow beyond its original use case", "initials": "UNDP", "type": "International Org.", "desc": "A fund-distribution platform initially created for event funding and later expanded into a broader distribution system for UNDP.", "confidential": false },
+      { "num": "04", "name": "Connecting multiple hospital operations into one ecosystem", "initials": "HC",   "type": "Healthcare",       "desc": "Inventory, accounting, savings and loans, and POS operations integrated into one hospital cooperative platform.", "confidential": true }
     ]
   },
   "contact": {

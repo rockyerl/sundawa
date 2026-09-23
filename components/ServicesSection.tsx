@@ -14,7 +14,7 @@ export default function ServicesSection() {
     const [active, setActive] = useState<number | null>(null)
     const [selected, setSelected] = useState<number | null>(null)
 
-    const items = t.raw('items') as { num: string; tag: string; title: string; desc: string }[]
+    const items = t.raw('items') as { num: string; problem: string; tag: string; title: string; desc: string; outcome: string }[]
     const stats = t.raw('stats') as { num: string; label: string }[]
 
     const selectedItem = selected !== null ? items[selected] : null
@@ -93,8 +93,14 @@ export default function ServicesSection() {
                                         </span>
                                     </div>
 
+                                    <p style={{ fontSize: '0.68rem', fontWeight: 500, fontStyle: 'italic', color: 'rgba(248,248,248,0.28)', marginBottom: '0.5rem', lineHeight: 1.5 }}>{s.problem}</p>
                                     <h3 style={{ fontWeight: 700, fontSize: '0.92rem', color: isLast ? '#DBC977' : active === i ? '#DBC977' : '#F8F8F8', letterSpacing: '0.02em', marginBottom: '0.6rem', transition: 'color 0.3s' }}>{s.title}</h3>
-                                    <p style={{ fontSize: '0.78rem', lineHeight: 1.75, fontWeight: 300, color: 'rgba(248,248,248,0.38)', marginBottom: isLast ? '1.25rem' : 0 }}>{s.desc}</p>
+                                    <p style={{ fontSize: '0.78rem', lineHeight: 1.75, fontWeight: 300, color: 'rgba(248,248,248,0.38)', marginBottom: '0.85rem' }}>{s.desc}</p>
+
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.4rem', marginBottom: isLast ? '1.25rem' : 0 }}>
+                                        <span style={{ fontSize: '0.58rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(219,201,119,0.5)', flexShrink: 0 }}>{t('outcomeLabel')}</span>
+                                        <span style={{ fontSize: '0.74rem', fontWeight: 500, color: 'rgba(219,201,119,0.8)', lineHeight: 1.5 }}>{s.outcome}</span>
+                                    </div>
 
                                     {isLast && (
                                         <Link href="/outsource" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#DBC977', padding: '0.5rem 1rem', border: '1px solid rgba(219,201,119,0.35)', background: 'rgba(219,201,119,0.07)', textDecoration: 'none', transition: 'all 0.25s' }}
@@ -120,6 +126,11 @@ export default function ServicesSection() {
                         })}
                     </div>
                 </div>
+
+                <motion.p initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.8 }}
+                          style={{ marginTop: '3rem', fontSize: '0.85rem', fontWeight: 300, fontStyle: 'italic', color: 'rgba(248,248,248,0.35)', maxWidth: '40rem', lineHeight: 1.8 }}>
+                    {t('transition')}
+                </motion.p>
             </div>
 
             {/* Detail Popup */}
@@ -162,9 +173,18 @@ export default function ServicesSection() {
                                 </div>
                             </div>
 
-                            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, fontWeight: 300, color: 'rgba(248,248,248,0.55)', marginBottom: '1.5rem' }}>
+                            <p style={{ fontSize: '0.7rem', fontWeight: 500, fontStyle: 'italic', color: 'rgba(248,248,248,0.35)', marginBottom: '0.75rem' }}>
+                                {selectedItem.problem}
+                            </p>
+
+                            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, fontWeight: 300, color: 'rgba(248,248,248,0.55)', marginBottom: '1rem' }}>
                                 {selectedItem.desc}
                             </p>
+
+                            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.4rem', marginBottom: '1.5rem' }}>
+                                <span style={{ fontSize: '0.58rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(219,201,119,0.5)' }}>{t('outcomeLabel')}</span>
+                                <span style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(219,201,119,0.85)' }}>{selectedItem.outcome}</span>
+                            </div>
 
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1rem', borderTop: '1px solid rgba(248,248,248,0.05)' }}>
                                 <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(248,248,248,0.25)' }}>{selectedItem.num}</span>

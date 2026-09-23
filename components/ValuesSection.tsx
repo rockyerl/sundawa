@@ -1,18 +1,15 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Star, Shield, Users, Award, Lightbulb } from 'lucide-react'
+import { X, Check, ArrowUpRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-
-const icons = [Star, Users, Shield, Users, Award, Lightbulb]
-const colors = ['#DBC977', '#2d7dd2', '#DBC977', '#2d7dd2', '#DBC977', '#2d7dd2']
 
 export default function ValuesSection() {
     const t = useTranslations('values')
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-80px' })
 
-    const items = t.raw('items') as { num: string; title: string; desc: string }[]
+    const rows = t.raw('rows') as { today: string; withSundawa: string }[]
 
     return (
         <section id="values" ref={ref} style={{ position: 'relative' }}>
@@ -25,50 +22,70 @@ export default function ValuesSection() {
                 </motion.div>
 
                 <motion.h2 initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.15 }}
-                           style={{ fontWeight: 900, fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', color: '#F8F8F8', marginBottom: '1rem', lineHeight: 1.1 }}>
+                           style={{ fontWeight: 900, fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', color: '#F8F8F8', marginBottom: '3.5rem', lineHeight: 1.15, maxWidth: '46rem' }}>
                     {t('heading1')}<br />
                     <span className="gold-gradient">{t('heading2')}</span>
                 </motion.h2>
 
-                <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.25 }}
-                          style={{ color: 'rgba(248,248,248,0.4)', fontWeight: 300, fontSize: '1rem', marginBottom: '4rem', maxWidth: '32rem', lineHeight: 1.8 }}>
-                    {t('sub')}
-                </motion.p>
+                {/* Comparison table */}
+                <div style={{ border: '1px solid rgba(219,201,119,0.12)', overflow: 'hidden' }}>
+                    {/* Header row */}
+                    <div className="values-table-row" style={{ background: 'rgba(219,201,119,0.05)', borderBottom: '1px solid rgba(219,201,119,0.15)' }}>
+                        <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                            <X size={13} style={{ color: 'rgba(248,248,248,0.3)' }} />
+                            <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.4)' }}>{t('todayLabel')}</span>
+                        </div>
+                        <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem', borderLeft: '1px solid rgba(219,201,119,0.1)' }}>
+                            <Check size={13} style={{ color: '#DBC977' }} />
+                            <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#DBC977' }}>{t('withLabel')}</span>
+                        </div>
+                    </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1px', background: 'rgba(219,201,119,0.08)' }} className="values-grid">
-                    {items.map((v, i) => {
-                        const Icon = icons[i]
-                        const color = colors[i]
-                        return (
-                            <motion.div key={v.num} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 + i * 0.07, duration: 0.6 }}
-                                        style={{ position: 'relative', padding: '2.5rem', background: 'rgba(14,30,48,0.95)', cursor: 'default', overflow: 'hidden', transition: 'background 0.4s' }}
-                                        className="value-card">
-                                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: `linear-gradient(90deg, ${color}60, transparent)`, opacity: 0, transition: 'opacity 0.4s' }} className="value-top-line" />
-                                <div style={{ position: 'absolute', bottom: '1rem', right: '1.5rem', fontSize: '5rem', fontWeight: 900, lineHeight: 1, color: 'rgba(248,248,248,0.03)', userSelect: 'none', pointerEvents: 'none' }}>{v.num}</div>
-                                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-                                    <div style={{ width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                                        <div style={{ position: 'absolute', top: 0, left: 0, width: 10, height: 10, borderTop: `1.5px solid ${color}`, borderLeft: `1.5px solid ${color}` }} />
-                                        <div style={{ position: 'absolute', bottom: 0, right: 0, width: 10, height: 10, borderBottom: `1.5px solid ${color}`, borderRight: `1.5px solid ${color}` }} />
-                                        <Icon size={16} style={{ color, opacity: 0.9 }} />
-                                    </div>
-                                    <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: `${color}60` }}>{v.num}</span>
-                                </div>
-                                <h3 style={{ fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.04em', color: '#F8F8F8', marginBottom: '0.75rem', lineHeight: 1.4, transition: 'color 0.3s' }} className="value-title">
-                                    {v.title}
-                                </h3>
-                                <p style={{ fontSize: '0.82rem', lineHeight: 1.75, fontWeight: 300, color: 'rgba(248,248,248,0.38)' }}>{v.desc}</p>
-                            </motion.div>
-                        )
-                    })}
+                    {/* Data rows */}
+                    {rows.map((r, i) => (
+                        <motion.div key={i}
+                                    initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 + i * 0.07, duration: 0.5 }}
+                                    className="values-table-row"
+                                    style={{ borderBottom: i < rows.length - 1 ? '1px solid rgba(219,201,119,0.08)' : 'none', background: i % 2 === 0 ? 'transparent' : 'rgba(29,52,81,0.2)' }}>
+                            <div style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(248,248,248,0.4)' }}>
+                                {r.today}
+                            </div>
+                            <div style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.6, color: 'rgba(248,248,248,0.85)', borderLeft: '1px solid rgba(219,201,119,0.08)' }}>
+                                {r.withSundawa}
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
+
+                {/* Closing paragraph */}
+                <motion.blockquote
+                    initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.7, duration: 0.8 }}
+                    style={{ marginTop: '3rem', marginBottom: '2.5rem', paddingLeft: '1.5rem', borderLeft: '2px solid #DBC977', maxWidth: '42rem' }}
+                >
+                    <p style={{ color: 'rgba(248,248,248,0.6)', fontWeight: 300, fontSize: '1rem', lineHeight: 1.8 }}>
+                        {t('closing')}
+                    </p>
+                </motion.blockquote>
+
+                {/* CTA */}
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.85 }}>
+                    <a href="#contact" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', transition: 'box-shadow 0.3s', textDecoration: 'none' }}
+                       onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 40px rgba(219,201,119,0.5)')}
+                       onMouseLeave={e => (e.currentTarget.style.boxShadow = 'none')}>
+                        {t('cta')} <ArrowUpRight size={14} />
+                    </a>
+                </motion.div>
             </div>
 
             <style>{`
-                @media (min-width: 768px) { .values-grid { grid-template-columns: 1fr 1fr !important; } }
-                @media (min-width: 1024px) { .values-grid { grid-template-columns: 1fr 1fr 1fr !important; } }
-                .value-card:hover { background: rgba(20, 38, 60, 0.98) !important; }
-                .value-card:hover .value-top-line { opacity: 1 !important; }
-                .value-card:hover .value-title { color: #DBC977 !important; }
+                .gold-gradient {
+                    background: linear-gradient(135deg, #DBC977, #A66A2C, #DBC977);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .values-table-row { display: grid; grid-template-columns: 1fr; }
+                @media (min-width: 700px) { .values-table-row { grid-template-columns: 1fr 1fr !important; } }
             `}</style>
         </section>
     )
