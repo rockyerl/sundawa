@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import LangToggle from './LangToggle'
 
 export default function Navbar() {
     const t = useTranslations('nav')
+    const pathname = usePathname()
     const [scrolled, setScrolled] = useState(false)
     const [open, setOpen] = useState(false)
     const [active, setActive] = useState('')
@@ -18,8 +20,13 @@ export default function Navbar() {
         { href: '#services', label: t('services') },
         { href: '#tech',     label: t('tech')     },
         { href: '#clients',  label: t('clients')  },
+        { href: '#blog',  label: t('blog')  },
         { href: '#contact',  label: t('contact')  },
     ]
+
+    // Hash links (#about, dst) cuma valid di homepage; "/blog" itu route halaman beda.
+    const isLinkActive = (href: string) =>
+        href.startsWith('#') ? active === href : pathname?.includes(href)
 
     useEffect(() => {
         const handler = () => setScrolled(window.scrollY > 40)
@@ -37,6 +44,7 @@ export default function Navbar() {
             { threshold: 0.4 }
         )
         navLinks.forEach(l => {
+            if (!l.href.startsWith('#')) return
             const el = document.querySelector(l.href)
             if (el) observer.observe(el)
         })
@@ -98,12 +106,12 @@ export default function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 + i * 0.05 }}
                                 className="relative text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors duration-300 group"
-                                style={{ color: active === link.href ? '#DBC977' : 'rgba(248,248,248,0.55)' }}
+                                style={{ color: isLinkActive(link.href) ? '#DBC977' : 'rgba(248,248,248,0.55)' }}
                             >
                                 {link.label}
                                 <span
                                     className="absolute -bottom-1 left-0 h-px bg-[#DBC977] transition-all duration-300"
-                                    style={{ width: active === link.href ? '100%' : '0%' }}
+                                    style={{ width: isLinkActive(link.href) ? '100%' : '0%' }}
                                 />
                                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#DBC977]/50 group-hover:w-full transition-all duration-300" />
                             </motion.a>

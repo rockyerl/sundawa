@@ -1,6 +1,4 @@
-"use client";
-
-import dynamic from 'next/dynamic'
+import ParticleField from '@/components/ParticleFieldClient'
 import Navbar from '@/components/Navbar'
 import HeroSection from '@/components/HeroSection'
 import ProblemSection from '@/components/ProblemSection'
@@ -12,8 +10,7 @@ import ClientsSection from '@/components/ClientsSection'
 import ObjectionsSection from '@/components/ObjectionsSection'
 import FinalCtaSection from '@/components/FinalCtaSection'
 import ContactSection from '@/components/ContactSection'
-
-const ParticleField = dynamic(() => import('@/components/ParticleField'), { ssr: false })
+import BlogSection from '@/components/Blogsection'
 
 export default function Home() {
     return (
@@ -36,6 +33,8 @@ export default function Home() {
                 <ClientsSection />
                 <div className="section-line" />
                 <ObjectionsSection />
+                <div className="section-line" />
+                <BlogSection />
                 <div className="section-line" />
                 <FinalCtaSection />
                 <ContactSection />

@@ -6,6 +6,7 @@
     "tech": "Teknologi",
     "clients": "Klien",
     "contact": "Kontak",
+    "blog": "Artikel",
     "getInTouch": "HUBUNGI KAMI"
   },
   "hero": {
@@ -267,5 +268,14 @@
     ],
     "contactCta": "Siap mendiskusikan kebutuhan proyek Anda?",
     "contactButton": "Hubungi Kami"
+  },
+  "blog": {
+    "eyebrow": "Insight & Artikel",
+    "title": "Dari Blog Kami",
+    "subtitle": "Wawasan seputar teknologi, development, dan transformasi digital.",
+    "readMore": "Baca Selengkapnya",
+    "viewAll": "Lihat Semua Artikel",
+    "backToBlog": "Kembali ke Blog",
+    "empty": "Belum ada artikel blog saat ini. Nantikan update berikutnya!"
   }
 }

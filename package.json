@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.2.8",
+    "@portabletext/react": "^8.0.1",
+    "@sanity/image-url": "^2.1.1",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
     "next-intl": "^4.13.0",
+    "next-sanity": "^13.3.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

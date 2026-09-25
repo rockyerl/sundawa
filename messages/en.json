@@ -5,6 +5,7 @@
     "services": "Services",
     "tech": "Tech",
     "clients": "Clients",
+    "blog": "Blog",
     "contact": "Contact",
     "getInTouch": "GET IN TOUCH"
   },
@@ -267,5 +268,14 @@
     ],
     "contactCta": "Ready to discuss your project needs?",
     "contactButton": "Contact Us"
+  },
+  "blog": {
+    "eyebrow": "Insights & Articles",
+    "title": "From Our Blog",
+    "subtitle": "Insights on technology, development, and digital transformation.",
+    "readMore": "Read More",
+    "viewAll": "View All Articles",
+    "backToBlog": "Back to Blog",
+    "empty": "No blog posts yet. Stay tuned for updates!"
   }
 }
