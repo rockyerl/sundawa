@@ -33,7 +33,7 @@ export default function HeroSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
     return (
-        <section ref={ref} id="hero" style={{ position: 'relative', minHeight: '100dvh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+        <section ref={ref} id="hero" className="hero-section" style={{ position: 'relative', minHeight: '100dvh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 60% 50%, rgba(0,86,170,0.15), transparent)', pointerEvents: 'none' }} />
             {[600, 420, 240].map((size, i) => (
                 <div key={size} style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: size, height: size, borderRadius: '50%', border: `1px solid rgba(219,201,119,${0.04 + i * 0.02})`, pointerEvents: 'none' }} />
@@ -48,7 +48,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem', padding: '0.4rem 1rem', border: '1px solid rgba(219,201,119,0.3)', background: 'rgba(219,201,119,0.05)' }}
+                            className="hero-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem', maxWidth: '100%', padding: '0.4rem 1rem', border: '1px solid rgba(219,201,119,0.3)', background: 'rgba(219,201,119,0.05)' }}
                         >
                             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#DBC977', animation: 'pulse 2s infinite' }} />
                             <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>
@@ -81,7 +81,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                             transition={{ duration: 0.8, delay: 0.65 }}
-                            style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3.5rem' }}
+                            className="hero-cta" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3.5rem' }}
                         >
                             <a href="#services" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', overflow: 'hidden', transition: 'box-shadow 0.3s' }}
                                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 40px rgba(219,201,119,0.5)')}
@@ -137,14 +137,22 @@ export default function HeroSection() {
             <motion.div initial={{ opacity: 0 }}
                         animate={introDone ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ delay: 1.6 }}
-                        style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', color: 'rgba(248,248,248,0.25)' }}>
+                        className="hero-scroll" style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', color: 'rgba(248,248,248,0.25)' }}>
                 <span style={{ fontSize: '0.6rem', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>{t('scroll')}</span>
                 <ChevronDown size={14} style={{ animation: 'bounce 1.5s infinite' }} />
             </motion.div>
 
             <style>{`
                 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.5fr 0.5fr !important; } .hero-logo-col { display: flex !important; } }
-                @media (max-width: 640px) { .hero-grid h1 span { font-size: 9vw !important; } .hero-content { padding-top: 2px !important; } }
+                @media (max-width: 1023px) { .hero-section { padding: 6rem 0 4.5rem; } }
+                @media (max-width: 640px) {
+                    .hero-grid { gap: 2rem !important; }
+                    .hero-grid h1 span { font-size: clamp(1.75rem, 8.5vw, 2.4rem) !important; }
+                    .hero-badge span:last-child { letter-spacing: 0.15em !important; font-size: 0.62rem !important; }
+                    .hero-cta { flex-direction: column; margin-bottom: 1.5rem !important; }
+                    .hero-cta a { justify-content: center; width: 100%; box-sizing: border-box; }
+                    .hero-scroll { display: none !important; }
+                }
                 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
                 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
             `}</style>

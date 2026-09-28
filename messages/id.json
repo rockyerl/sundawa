@@ -277,5 +277,25 @@
     "viewAll": "Lihat Semua Artikel",
     "backToBlog": "Kembali ke Blog",
     "empty": "Belum ada artikel blog saat ini. Nantikan update berikutnya!"
+  },
+  "meta": {
+    "home": {
+      "title": "Sundawa Teknologi | Software House Bandung, Modernisasi Sistem",
+      "description": "Software house Bandung yang memodernisasi sistem lama, mengotomatiskan alur kerja, dan menghubungkan ERP serta data, tanpa mengganti yang masih berfungsi.",
+      "ogTitle": "Modernisasi Sistem & Otomatisasi Software | Sundawa Teknologi",
+      "ogDescription": "Sistem lama yang mahal dirawat? Kami modernisasi, integrasikan, dan otomatisasi, lalu tetap mendampingi setelah rilis."
+    },
+    "outsource": {
+      "title": "Estimasi Harga Alih Daya IT: Developer, QA & DevOps",
+      "description": "Hitung estimasi biaya tim alih daya IT per bulan. Pilih posisi, level, dan mode kerja (remote, hybrid, onsite) dari talenta berbasis Bandung."
+    },
+    "process": {
+      "title": "Proses Kerja Pengembangan Software yang Transparan",
+      "description": "Enam tahap kerja Sundawa Teknologi: penjajakan, desain, pengembangan iteratif, QA, alih serah kode, dan dukungan pasca-rilis."
+    },
+    "blog": {
+      "title": "Artikel & Insight Teknologi",
+      "description": "Wawasan seputar modernisasi sistem, otomatisasi, integrasi, dan pengembangan software dari tim Sundawa Teknologi."
+    }
   }
 }

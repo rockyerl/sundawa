@@ -32,7 +32,7 @@ export default function ServicesSection() {
                     {/* Left */}
                     <div className="services-left">
                         <motion.h2 initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.15 }}
-                                   style={{ fontWeight: 900, fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: '#F8F8F8', lineHeight: 1.1, marginBottom: '1.25rem' }}>
+                                   style={{ fontWeight: 900, fontSize: 'clamp(1.9rem, 6.5vw, 3.2rem)', color: '#F8F8F8', lineHeight: 1.1, marginBottom: '1.25rem' }}>
                             {t('heading1')}<br /><span className="gold-gradient">{t('heading2')}</span>
                         </motion.h2>
 
@@ -81,14 +81,14 @@ export default function ServicesSection() {
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))', opacity: active === i ? 1 : 0, transition: 'opacity 0.3s' }} />
                                     {isLast && <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(219,201,119,0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />}
 
-                                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.1rem' }}>
+                                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.1rem' }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                                             <div style={{ width: 42, height: 42, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `1px solid ${active === i || isLast ? 'rgba(219,201,119,0.45)' : 'rgba(219,201,119,0.2)'}`, background: active === i || isLast ? 'rgba(219,201,119,0.12)' : 'rgba(219,201,119,0.05)', color: '#DBC977', transition: 'all 0.3s', flexShrink: 0 }}>
                                                 <Icon size={17} />
                                             </div>
                                             <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(248,248,248,0.18)' }}>{s.num}</span>
                                         </div>
-                                        <span style={{ fontSize: '0.58rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.2rem 0.65rem', border: `1px solid ${isLast ? 'rgba(219,201,119,0.5)' : active === i ? 'rgba(219,201,119,0.4)' : 'rgba(219,201,119,0.15)'}`, color: isLast ? 'rgba(219,201,119,0.95)' : active === i ? 'rgba(219,201,119,0.85)' : 'rgba(219,201,119,0.45)', background: isLast ? 'rgba(219,201,119,0.1)' : 'transparent', transition: 'all 0.3s', whiteSpace: 'nowrap' }}>
+                                        <span style={{ fontSize: '0.58rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', padding: '0.2rem 0.65rem', border: `1px solid ${isLast ? 'rgba(219,201,119,0.5)' : active === i ? 'rgba(219,201,119,0.4)' : 'rgba(219,201,119,0.15)'}`, color: isLast ? 'rgba(219,201,119,0.95)' : active === i ? 'rgba(219,201,119,0.85)' : 'rgba(219,201,119,0.45)', background: isLast ? 'rgba(219,201,119,0.1)' : 'transparent', transition: 'all 0.3s' }}>
                                             {s.tag}
                                         </span>
                                     </div>
@@ -115,7 +115,7 @@ export default function ServicesSection() {
                                             <button
                                                 onClick={() => setSelected(i)}
                                                 aria-label="Lihat detail"
-                                                style={{ width: 28, height: 28, border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer', padding: 0 }}
+                                                style={{ width: 36, height: 36, border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer', padding: 0 }}
                                             >
                                                 <ArrowUpRight size={13} />
                                             </button>
@@ -149,19 +149,19 @@ export default function ServicesSection() {
                             exit={{ opacity: 0, y: 16, scale: 0.97 }}
                             transition={{ duration: 0.25, ease: 'easeOut' }}
                             onClick={(e) => e.stopPropagation()}
-                            style={{ position: 'relative', width: '100%', maxWidth: 460, background: '#0E1E30', border: '1px solid rgba(219,201,119,0.2)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', padding: '2rem' }}
+                            style={{ position: 'relative', width: '100%', maxWidth: 460, maxHeight: '88dvh', overflowY: 'auto', background: '#0E1E30', border: '1px solid rgba(219,201,119,0.2)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', padding: 'clamp(1.25rem, 5vw, 2rem)' }}
                         >
                             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))' }} />
 
                             <button
                                 onClick={() => setSelected(null)}
                                 aria-label="Tutup"
-                                style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', width: 30, height: 30, border: '1px solid rgba(248,248,248,0.1)', background: 'transparent', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                                style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', width: 36, height: 36, border: '1px solid rgba(248,248,248,0.1)', background: 'transparent', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                             >
                                 <X size={14} />
                             </button>
 
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', paddingRight: '2.25rem' }}>
                                 <div style={{ width: 52, height: 52, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(219,201,119,0.45)', background: 'rgba(219,201,119,0.12)', color: '#DBC977' }}>
                                     <SelectedIcon size={22} />
                                 </div>
@@ -203,9 +203,9 @@ export default function ServicesSection() {
             <style>{`
                 .services-layout { display: flex; flex-direction: column; gap: 3rem; align-items: flex-start; }
                 .services-left { width: 100%; }
-                .services-right { width: 100%; }
+                .services-right { width: 100%; min-width: 0; }
                 .service-card-last { grid-column: 1; }
-                @media (min-width: 600px) {
+                @media (min-width: 601px) {
                     .service-card-last { grid-column: span 2; }
                 }
                 @media (min-width: 1024px) {

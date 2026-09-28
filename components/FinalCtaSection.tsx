@@ -41,7 +41,7 @@ export default function FinalCtaSection() {
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.8 }} style={{ marginBottom: '1rem' }}>
-                    <a href="#contact" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.9rem 2.25rem', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.78rem', letterSpacing: '0.15em', textTransform: 'uppercase', transition: 'box-shadow 0.3s', textDecoration: 'none' }}
+                    <a href="#contact" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.9rem 2.25rem', justifyContent: 'center', textAlign: 'center', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.78rem', letterSpacing: '0.15em', textTransform: 'uppercase', transition: 'box-shadow 0.3s', textDecoration: 'none' }}
                        onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 40px rgba(219,201,119,0.5)')}
                        onMouseLeave={e => (e.currentTarget.style.boxShadow = 'none')}>
                         {t('cta')} <ArrowUpRight size={14} />

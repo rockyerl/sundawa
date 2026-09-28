@@ -13,7 +13,7 @@ export default function ObjectionsSection() {
     return (
         <section id="objections" ref={ref} style={{ position: 'relative' }}>
             <div className="container-main">
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'start' }} className="objections-grid">
+                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '2.5rem', alignItems: 'start' }} className="objections-grid">
                     {/* LEFT — the fear + reassurance */}
                     <div>
                         <motion.h2

@@ -129,6 +129,7 @@ export default function TechSection() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.3 }}
+                            className="tech-cats"
                             style={{
                                 display: 'flex', flexDirection: 'column',
                                 gap: '1px',
@@ -141,6 +142,7 @@ export default function TechSection() {
                                 return (
                                     <button
                                         key={cat.name}
+                                        className={`tech-cat-btn${isActive ? ' is-active' : ''}`}
                                         onClick={() => { setActiveCategory(cat.name); setHoveredTech(null) }}
                                         style={{
                                             background: isActive ? 'rgba(29,52,81,0.9)' : '#0E1E30',
@@ -212,7 +214,7 @@ export default function TechSection() {
                         {/* Grid with AnimatePresence for smooth category switching */}
                         <div style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
                             gap: '1px',
                             background: 'rgba(219,201,119,0.1)',
                             border: '1px solid rgba(219,201,119,0.1)',
@@ -292,7 +294,15 @@ export default function TechSection() {
                     flex-direction: column;
                     gap: 3rem;
                 }
-                .tech-left { width: 100%; }
+                .tech-left { width: 100%; min-width: 0; }
+                .tech-right { min-width: 0; }
+                @media (max-width: 1023px) {
+                    .tech-cats { flex-direction: row !important; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+                    .tech-cats::-webkit-scrollbar { display: none; }
+                    .tech-cat-btn { flex: 0 0 auto; width: auto !important; gap: 0.75rem; border-left: none !important; border-bottom: 2px solid transparent !important; }
+                    .tech-cat-btn.is-active { border-bottom-color: #DBC977 !important; }
+                    .tech-cat-btn span, .tech-cat-btn div { white-space: nowrap; }
+                }
                 .tech-right { width: 100%; }
 
                 @media (min-width: 1024px) {
@@ -304,11 +314,7 @@ export default function TechSection() {
                     }
                 }
 
-                @media (max-width: 480px) {
-                    .tech-grid-inner {
-                        grid-template-columns: repeat(2, 1fr) !important;
-                    }
-                }
+                @media (max-width: 640px) { .tech-grid-inner { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
             `}</style>
         </section>
     )

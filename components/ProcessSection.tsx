@@ -20,12 +20,12 @@ export default function Process() {
     const infoItems = t.raw('infoItems') as { icon: string; title: string; desc: string }[]
 
     return (
-        <main style={{ background: '#0E1E30', minHeight: '100vh', color: '#F8F8F8' }}>
+        <main style={{ background: '#0E1E30', minHeight: '100dvh', color: '#F8F8F8' }}>
 
             {/* ── Top bar — sama persis pola Outsource.tsx ── */}
-            <nav style={{
+            <nav className="process-nav" style={{
                 borderBottom: '1px solid rgba(219,201,119,0.15)',
-                padding: '1rem 2rem',
+                padding: '1rem clamp(1rem, 4vw, 2rem)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -79,7 +79,7 @@ export default function Process() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                style={{ position: 'relative', padding: '3rem 2rem 2rem', maxWidth: 1100, margin: '0 auto', overflow: 'hidden' }}
+                style={{ position: 'relative', padding: 'clamp(2rem, 6vw, 3rem) clamp(1.25rem, 5vw, 2rem) 2rem', maxWidth: 1100, margin: '0 auto', overflow: 'hidden' }}
             >
                 {/* Subtle mascot watermark, purely decorative */}
                 <div className="process-mascot-watermark" style={{ position: 'absolute', right: '-1.5rem', top: '0.5rem', width: 220, opacity: 0.1, pointerEvents: 'none', userSelect: 'none' }}>
@@ -104,7 +104,7 @@ export default function Process() {
             </motion.div>
 
             {/* ── Timeline steps ── */}
-            <div ref={ref} style={{ maxWidth: 1100, margin: '0 auto', padding: '1rem 2rem 3rem' }}>
+            <div ref={ref} style={{ maxWidth: 1100, margin: '0 auto', padding: '1rem clamp(1.25rem, 5vw, 2rem) 3rem' }}>
                 <div className="process-timeline">
                     {steps.map((s, i) => {
                         const Icon = icons[i]
@@ -149,7 +149,7 @@ export default function Process() {
             </div>
 
             {/* ── Info strip — pola persis Outsource.tsx ── */}
-            <div style={{ background: 'rgba(29,52,81,0.3)', borderTop: '1px solid rgba(219,201,119,0.1)', padding: '2rem' }}>
+            <div style={{ background: 'rgba(29,52,81,0.3)', borderTop: '1px solid rgba(219,201,119,0.1)', padding: '2rem clamp(1.25rem, 5vw, 2rem)' }}>
                 <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
                     {infoItems.map(item => (
                         <div key={item.title}>
@@ -162,7 +162,7 @@ export default function Process() {
             </div>
 
             {/* ── Contact CTA — pola persis Outsource.tsx ── */}
-            <div style={{ padding: '3rem 2rem', textAlign: 'center' }}>
+            <div style={{ padding: '3rem clamp(1.25rem, 5vw, 2rem)', textAlign: 'center' }}>
                 <p style={{ fontSize: '0.72rem', color: 'rgba(248,248,248,0.35)', marginBottom: '1rem' }}>
                     {t('contactCta')}
                 </p>
@@ -203,10 +203,13 @@ export default function Process() {
                 @media (min-width: 1024px) {
                     .process-timeline { grid-template-columns: repeat(3, 1fr); }
                 }
+                @media (max-width: 720px) { .nav-title-hidden { display: none !important; } }
                 @media (max-width: 480px) {
-                    .nav-title-hidden { display: none !important; }
                     .process-mascot-watermark { display: none !important; }
+                    .process-nav { gap: 0.5rem !important; }
+                    .process-nav > a:first-child { font-size: 0.62rem !important; letter-spacing: 0.08em !important; }
                 }
+                @media (max-width: 400px) { .process-nav a > div:last-child { display: none !important; } }
             `}</style>
         </main>
     )

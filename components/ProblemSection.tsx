@@ -26,13 +26,13 @@ export default function ProblemSection() {
 
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.15 }}
-                    style={{ fontWeight: 900, fontSize: 'clamp(2.2rem, 4.2vw, 3.4rem)', lineHeight: 1.15, color: '#F8F8F8', marginBottom: '3.5rem', maxWidth: '42rem' }}
+                    style={{ fontWeight: 900, fontSize: 'clamp(1.9rem, 7vw, 3.4rem)', lineHeight: 1.15, color: '#F8F8F8', marginBottom: 'clamp(2rem, 6vw, 3.5rem)', maxWidth: '42rem' }}
                 >
                     {t('heading1')}<br />
                     <span className="gold-gradient">{t('heading2')}</span>
                 </motion.h2>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }} className="problem-grid">
+                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '2.5rem', alignItems: 'center' }} className="problem-grid">
                     {/* LEFT — cascading points */}
                     <div>
                         {points.map((p, i) => (
@@ -52,7 +52,7 @@ export default function ProblemSection() {
                     </div>
 
                     {/* RIGHT — closing + transition */}
-                    <div style={{ padding: '2rem', border: '1px solid rgba(219,201,119,0.15)', background: 'rgba(219,201,119,0.03)' }}>
+                    <div style={{ padding: 'clamp(1.25rem, 5vw, 2rem)', border: '1px solid rgba(219,201,119,0.15)', background: 'rgba(219,201,119,0.03)' }}>
                         <motion.blockquote
                             initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.7 }}
                             style={{ paddingLeft: '1.5rem', borderLeft: '2px solid #DBC977', margin: 0, marginBottom: '2.5rem' }}

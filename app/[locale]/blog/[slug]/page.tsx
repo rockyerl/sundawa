@@ -1,11 +1,39 @@
+import type { Metadata } from 'next'
+import { cache } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/src/i18n/navigation'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { client, urlFor } from '@/lib/sanity'
 import { postBySlugQuery, postSlugsQuery } from '@/lib/Queries'
 import PortableTextRenderer from '@/components/PortableTextRenderer'
 import type { Post } from '@/lib/types'
+import { buildAlternates, SITE_URL, SITE_NAME } from '@/lib/Seo'
+
+const getPost = cache((slug: string): Promise<Post | null> => client.fetch(postBySlugQuery, { slug }))
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+    const { locale, slug } = await params
+    const post = await getPost(slug)
+    if (!post) return {}
+    const { canonical } = buildAlternates(locale, `/blog/${slug}`)
+    const image = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : '/og-image.png'
+    return {
+        title: post.title,
+        description: post.excerpt,
+        alternates: { canonical },
+        openGraph: {
+            type: 'article',
+            url: canonical,
+            siteName: SITE_NAME,
+            title: post.title,
+            description: post.excerpt,
+            publishedTime: post.publishedAt,
+            images: [{ url: image, width: 1200, height: 630, alt: post.title }],
+        },
+        twitter: { card: 'summary_large_image', title: post.title, description: post.excerpt, images: [image] },
+    }
+}
 
 // Generate static params buat semua slug yang ada (SSG)
 export async function generateStaticParams() {
@@ -18,18 +46,32 @@ export default async function BlogDetailPage({
                                              }: {
     params: Promise<{ locale: string; slug: string }>
 }) {
-    const { slug } = await params
+    const { locale, slug } = await params
     const t = await getTranslations('blog')
 
-    const post: Post | null = await client.fetch(postBySlugQuery, { slug })
+    const post: Post | null = await getPost(slug)
 
     if (!post) {
         notFound()
     }
 
+    const canonical = buildAlternates(locale, `/blog/${slug}`).canonical
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.publishedAt,
+        image: post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : `${SITE_URL}/og-image.png`,
+        mainEntityOfPage: canonical,
+        author: { '@id': `${SITE_URL}/#organization` },
+        publisher: { '@id': `${SITE_URL}/#organization` },
+    }
+
     return (
-        <main className="relative min-h-screen pt-32 pb-24" style={{ background: '#0E1E30' }}>
-            <article className="container-main max-w-3xl mx-auto">
+        <main className="relative min-h-screen pt-28 pb-16 md:pt-32 md:pb-24" style={{ background: '#0E1E30' }}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
+            <article className="container-main max-w-3xl mx-auto min-w-0">
                 {/* Back link */}
                 <Link
                     href="/#blog"
@@ -49,7 +91,7 @@ export default async function BlogDetailPage({
                             })}
                         </span>
                     )}
-                    <h1 className="text-3xl md:text-5xl font-black tracking-tight text-[#F8F8F8] leading-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-[#F8F8F8] leading-tight break-words">
                         {post.title}
                     </h1>
                     {post.excerpt && (
@@ -74,7 +116,7 @@ export default async function BlogDetailPage({
                 )}
 
                 {/* Body content */}
-                <div className="prose prose-invert max-w-none text-[#F8F8F8]/80">
+                <div className="prose prose-invert max-w-none break-words text-[#F8F8F8]/80 prose-img:rounded-xl prose-pre:overflow-x-auto">
                     {post.body && <PortableTextRenderer value={post.body} />}
                 </div>
             </article>

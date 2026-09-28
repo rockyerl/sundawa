@@ -14,10 +14,10 @@ export default async function BlogSection() {
     const latestPosts = posts.slice(0, 3)
 
     return (
-        <section id="blog" className="relative py-24 md:py-32">
+        <section id="blog" className="relative py-16 md:py-28">
             <div className="container-main">
                 {/* Header */}
-                <div className="flex flex-col items-center text-center mb-16">
+                <div className="flex flex-col items-center text-center mb-10 md:mb-16">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="h-px w-8 bg-[#DBC977]/40" />
                         <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#DBC977]/60">

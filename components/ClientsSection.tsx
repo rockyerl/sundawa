@@ -116,19 +116,19 @@ export default function ClientsSection() {
                             exit={{ opacity: 0, y: 16, scale: 0.97 }}
                             transition={{ duration: 0.25, ease: 'easeOut' }}
                             onClick={(e) => e.stopPropagation()}
-                            style={{ position: 'relative', width: '100%', maxWidth: 460, background: '#0E1E30', border: '1px solid rgba(219,201,119,0.2)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', padding: '2rem' }}
+                            style={{ position: 'relative', width: '100%', maxWidth: 460, maxHeight: '88dvh', overflowY: 'auto', background: '#0E1E30', border: '1px solid rgba(219,201,119,0.2)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', padding: 'clamp(1.25rem, 5vw, 2rem)' }}
                         >
                             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))' }} />
 
                             <button
                                 onClick={() => setSelected(null)}
                                 aria-label="Tutup"
-                                style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', width: 30, height: 30, border: '1px solid rgba(248,248,248,0.1)', background: 'transparent', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                                style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', width: 36, height: 36, border: '1px solid rgba(248,248,248,0.1)', background: 'transparent', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                             >
                                 <X size={14} />
                             </button>
 
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', paddingRight: '2.25rem' }}>
                                 <div style={{ width: 52, height: 52, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(219,201,119,0.4)', background: 'rgba(219,201,119,0.1)', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.05em', color: '#DBC977' }}>
                                     {selectedClient.initials}
                                 </div>
@@ -164,7 +164,7 @@ export default function ClientsSection() {
                 .clients-left { width: 100%; }
                 .clients-right { width: 100%; }
                 @media (min-width: 1024px) { .clients-layout { display: grid !important; grid-template-columns: 260px 1fr !important; gap: 5rem !important; align-items: start !important; } }
-                @media (max-width: 480px) { .clients-right { grid-template-columns: 1fr !important; } }
+                @media (max-width: 640px) { .clients-right { grid-template-columns: 1fr !important; } }
             `}</style>
         </section>
     )

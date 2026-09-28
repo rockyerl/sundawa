@@ -277,5 +277,25 @@
     "viewAll": "View All Articles",
     "backToBlog": "Back to Blog",
     "empty": "No blog posts yet. Stay tuned for updates!"
+  },
+  "meta": {
+    "home": {
+      "title": "Sundawa Teknologi | Software Modernization, Bandung",
+      "description": "Bandung software house that modernizes legacy systems, automates workflows and connects ERP and data, without replacing what still works.",
+      "ogTitle": "Software Modernization & Automation | Sundawa Teknologi",
+      "ogDescription": "Legacy software costing more than it should? We modernize, integrate and automate, then stay accountable after launch."
+    },
+    "outsource": {
+      "title": "IT Outsourcing Price Calculator: Developers, QA & DevOps",
+      "description": "Estimate your monthly IT outsourcing cost. Choose role, level and work mode (remote, hybrid, onsite) from Bandung-based talent."
+    },
+    "process": {
+      "title": "Our Transparent Software Development Process",
+      "description": "Sundawa Teknologi's six stages: discovery, design, iterative development, QA, code handover and post-launch support."
+    },
+    "blog": {
+      "title": "Articles & Technology Insights",
+      "description": "Insights on software modernization, automation, integration and development from the Sundawa Teknologi team."
+    }
   }
 }

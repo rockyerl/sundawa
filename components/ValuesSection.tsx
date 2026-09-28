@@ -22,7 +22,7 @@ export default function ValuesSection() {
                 </motion.div>
 
                 <motion.h2 initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.15 }}
-                           style={{ fontWeight: 900, fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', color: '#F8F8F8', marginBottom: '3.5rem', lineHeight: 1.15, maxWidth: '46rem' }}>
+                           style={{ fontWeight: 900, fontSize: 'clamp(1.9rem, 6.5vw, 3.5rem)', color: '#F8F8F8', marginBottom: 'clamp(2rem, 6vw, 3.5rem)', lineHeight: 1.15, maxWidth: '46rem' }}>
                     {t('heading1')}<br />
                     <span className="gold-gradient">{t('heading2')}</span>
                 </motion.h2>
@@ -30,12 +30,12 @@ export default function ValuesSection() {
                 {/* Comparison table */}
                 <div style={{ border: '1px solid rgba(219,201,119,0.12)', overflow: 'hidden' }}>
                     {/* Header row */}
-                    <div className="values-table-row" style={{ background: 'rgba(219,201,119,0.05)', borderBottom: '1px solid rgba(219,201,119,0.15)' }}>
+                    <div className="values-table-row values-header" style={{ background: 'rgba(219,201,119,0.05)', borderBottom: '1px solid rgba(219,201,119,0.15)' }}>
                         <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                             <X size={13} style={{ color: 'rgba(248,248,248,0.3)' }} />
                             <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.4)' }}>{t('todayLabel')}</span>
                         </div>
-                        <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem', borderLeft: '1px solid rgba(219,201,119,0.1)' }}>
+                        <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }} className="values-cell-with">
                             <Check size={13} style={{ color: '#DBC977' }} />
                             <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#DBC977' }}>{t('withLabel')}</span>
                         </div>
@@ -48,10 +48,10 @@ export default function ValuesSection() {
                                     className="values-table-row"
                                     style={{ borderBottom: i < rows.length - 1 ? '1px solid rgba(219,201,119,0.08)' : 'none', background: i % 2 === 0 ? 'transparent' : 'rgba(29,52,81,0.2)' }}>
                             <div style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(248,248,248,0.4)' }}>
-                                {r.today}
+                                <span className="values-cell-label" style={{ color: 'rgba(248,248,248,0.35)' }}>{t('todayLabel')}</span>{r.today}
                             </div>
-                            <div style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.6, color: 'rgba(248,248,248,0.85)', borderLeft: '1px solid rgba(219,201,119,0.08)' }}>
-                                {r.withSundawa}
+                            <div className="values-cell-with" style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.6, color: 'rgba(248,248,248,0.85)' }}>
+                                <span className="values-cell-label" style={{ color: '#DBC977' }}>{t('withLabel')}</span>{r.withSundawa}
                             </div>
                         </motion.div>
                     ))}
@@ -84,8 +84,16 @@ export default function ValuesSection() {
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
                 }
-                .values-table-row { display: grid; grid-template-columns: 1fr; }
-                @media (min-width: 700px) { .values-table-row { grid-template-columns: 1fr 1fr !important; } }
+                .values-table-row { display: grid; grid-template-columns: minmax(0, 1fr); }
+                .values-header { display: none; }
+                .values-cell-label { display: block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.35rem; }
+                .values-cell-with { border-top: 1px dashed rgba(219,201,119,0.15); }
+                @media (min-width: 700px) {
+                    .values-table-row { grid-template-columns: 1fr 1fr !important; }
+                    .values-header { display: grid; }
+                    .values-cell-label { display: none; }
+                    .values-cell-with { border-top: none; border-left: 1px solid rgba(219,201,119,0.1); }
+                }
             `}</style>
         </section>
     )

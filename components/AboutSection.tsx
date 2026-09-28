@@ -17,18 +17,18 @@ export default function AboutSection() {
             <div className="container-main">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}
-                    style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '4rem' }}
+                    style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: 'clamp(2rem, 6vw, 4rem)' }}
                 >
                     <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>— {t('label')}</span>
                     <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </motion.div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '5rem', alignItems: 'start' }} className="lg-grid-2col">
+                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '3.5rem', alignItems: 'start' }} className="lg-grid-2col">
                     {/* Left */}
                     <div>
                         <motion.h2
                             initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }}
-                            style={{ fontWeight: 900, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: 1.15, color: '#F8F8F8', marginBottom: '2rem' }}
+                            style={{ fontWeight: 900, fontSize: 'clamp(1.9rem, 6.5vw, 3.5rem)', lineHeight: 1.15, color: '#F8F8F8', marginBottom: '2rem' }}
                         >
                             {t('heading1')}<br />
                             <span className="gold-gradient">{t('heading2')}</span><br />
@@ -117,7 +117,7 @@ export default function AboutSection() {
                 </div>
             </div>
 
-            <style>{`@media (min-width: 1024px) { .lg-grid-2col { grid-template-columns: 1fr 1fr !important; } }`}</style>
+            <style>{`@media (min-width: 1024px) { .lg-grid-2col { grid-template-columns: 1fr 1fr !important; gap: 5rem !important; } }`}</style>
         </section>
     )
 }

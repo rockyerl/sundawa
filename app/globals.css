@@ -30,9 +30,10 @@
     --off-white: #F8F8F8;
 }
 
-* {
-    margin: 0;
-    padding: 0;
+/* NOTE: the old `* { margin: 0; padding: 0 }` was unlayered, so it beat every
+   Tailwind v4 utility (p-*, m-*, pt-*, mt-auto, mx-auto ...). Tailwind's preflight
+   already resets margins/padding, so only box-sizing is kept here. */
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -42,6 +43,8 @@ section, nav, footer {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* anchor links (#services, #contact) no longer hide under the fixed navbar */
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -112,17 +115,29 @@ body {
     background: rgba(29, 52, 81, 0.6);
 }
 
-.container-main {
-    width: 100%;
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: clamp(2rem, 6vw, 8rem);
-    padding-right: clamp(2rem, 6vw, 8rem);
+@layer components {
+    .container-main {
+        width: 100%;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: clamp(1.25rem, 6vw, 8rem);
+        padding-right: clamp(1.25rem, 6vw, 8rem);
+    }
 }
-section {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+
+/* Layered (base) so py-* utilities on a section can override it. 4.5rem on phones, 7rem from 768px up (unchanged on desktop). */
+@layer base {
+    section {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+    @media (min-width: 768px) {
+        section {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+        }
+    }
 }
 
 .section-label {

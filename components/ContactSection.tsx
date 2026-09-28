@@ -19,7 +19,7 @@ const WhatsAppIcon = () => (
     </svg>
 )
 
-const WA_NUMBER = '6287893355332'
+const WA_NUMBER = '6282318087980'
 
 type IconComponent = React.ComponentType<{ size?: number; strokeWidth?: number }>
 
@@ -38,34 +38,34 @@ export default function ContactSection() {
     }, [])
 
     const contacts: { icon: IconComponent; label: string; value: string; href: string; desc: string }[] = [
-        { icon: Phone, label: 'Phone', value: '0878 9335 5332', href: 'tel:087893355332', desc: t('phoneDesc') },
+        { icon: Phone, label: 'Phone', value: '0823 1808 7980', href: 'tel:082318087980', desc: t('phoneDesc') },
         { icon: Mail, label: 'Email', value: 'sundawateknologi@gmail.com', href: 'mailto:sundawateknologi@gmail.com', desc: t('emailDesc') },
         { icon: LinkedInIcon, label: 'LinkedIn', value: 'Sundawa Teknologi Indonesia', href: 'https://www.linkedin.com/company/sundawa-teknologi-indonesia', desc: t('linkedinDesc') },
     ]
 
     return (
         <>
-            <section id="contact" ref={ref} className="relative py-32 overflow-hidden">
+            <section id="contact" ref={ref} className="relative py-16 md:py-28 overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `linear-gradient(rgba(219,201,119,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(219,201,119,0.04) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
                 <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,86,170,0.12) 0%, transparent 70%)', border: '1px solid rgba(219,201,119,0.06)' }} />
                 <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(219,201,119,0.06) 0%, transparent 70%)' }} />
 
                 <div className="container-main relative z-10">
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} className="flex items-center gap-4 mb-20">
+                    <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} className="flex items-center gap-4 mb-12 md:mb-20">
                         <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#DBC977]">— {t('label')}</span>
                         <div className="flex-1 h-px bg-gradient-to-r from-[#DBC977]/40 to-transparent" />
                     </motion.div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                         {/* LEFT */}
                         <div>
                             <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}>
                                 <div className="relative">
                                     <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#DBC977]/60 mb-4 block">{t('readyToStart')}</span>
                                     <div style={{ lineHeight: 1.1 }}>
-                                        <span className="block font-black" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line1')}</span>
-                                        <span className="block font-black" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', color: '#DBC977', letterSpacing: '-0.03em', textShadow: '0 0 60px rgba(219,201,119,0.25)' }}>{t('line2')}</span>
-                                        <span className="block font-black" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line3')}</span>
+                                        <span className="block font-black" style={{ fontSize: 'clamp(2.1rem, 8.5vw, 4.5rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line1')}</span>
+                                        <span className="block font-black" style={{ fontSize: 'clamp(2.4rem, 9.5vw, 5rem)', color: '#DBC977', letterSpacing: '-0.03em', textShadow: '0 0 60px rgba(219,201,119,0.25)' }}>{t('line2')}</span>
+                                        <span className="block font-black" style={{ fontSize: 'clamp(2.1rem, 8.5vw, 4.5rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line3')}</span>
                                     </div>
                                     <div className="flex items-center gap-3 mt-5">
                                         <div className="w-12 h-[2px] bg-[#DBC977]" />
@@ -91,19 +91,19 @@ export default function ContactSection() {
                             {contacts.map((c, i) => (
                                 <motion.a key={c.label} href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
                                           initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.2 + i * 0.12 }}
-                                          className="group relative flex items-center gap-6 p-6 transition-all duration-500 hover:-translate-y-0.5"
+                                          className="group relative flex items-center gap-4 p-4 sm:gap-6 sm:p-6 transition-all duration-500 hover:-translate-y-0.5"
                                           style={{ background: 'rgba(29,52,81,0.35)', backdropFilter: 'blur(16px)', border: '1px solid rgba(219,201,119,0.12)', clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))', textDecoration: 'none' }}>
                                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(219,201,119,0.06) 0%, transparent 60%)' }} />
                                     <div className="relative flex-shrink-0">
-                                        <div className="w-14 h-14 flex items-center justify-center text-[#DBC977] transition-all duration-300 group-hover:scale-110"
+                                        <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center text-[#DBC977] transition-all duration-300 group-hover:scale-110"
                                              style={{ background: 'rgba(219,201,119,0.08)', border: '1px solid rgba(219,201,119,0.25)', clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))' }}>
                                             <c.icon size={18} strokeWidth={1.5} />
                                         </div>
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <div className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#F8F8F8]/30 mb-1">{c.label}</div>
-                                        <div className="text-sm font-semibold text-[#F8F8F8]/75 group-hover:text-[#DBC977] transition-colors duration-300 truncate">{c.value}</div>
-                                        <div className="text-[11px] text-[#F8F8F8]/25 mt-0.5">{c.desc}</div>
+                                        <div className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#F8F8F8]/45 mb-1">{c.label}</div>
+                                        <div className="text-sm font-semibold text-[#F8F8F8]/75 group-hover:text-[#DBC977] transition-colors duration-300 break-words sm:truncate">{c.value}</div>
+                                        <div className="text-[11px] text-[#F8F8F8]/45 mt-0.5">{c.desc}</div>
                                     </div>
                                     <ArrowUpRight size={14} className="flex-shrink-0 text-[#DBC977]/0 group-hover:text-[#DBC977]/60 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     <div className="absolute bottom-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(90deg, transparent, rgba(219,201,119,0.4), transparent)' }} />
@@ -112,11 +112,11 @@ export default function ContactSection() {
 
                             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.6 }} className="flex items-center gap-2 mt-2 pl-2">
                                 <MapPin size={11} className="text-[#DBC977]/40" />
-                                <span className="text-[11px] text-[#F8F8F8]/20 tracking-widest uppercase">{t('location')}</span>
+                                <span className="text-[11px] text-[#F8F8F8]/40 tracking-widest uppercase">{t('location')}</span>
                             </motion.div>
 
                             {/* Clutch Widget - div biasa, tanpa motion */}
-                            <div className="mt-4 pl-2">
+                            <div className="mt-4 pl-2 max-w-full overflow-x-auto">
                                 <div
                                     className="clutch-widget"
                                     data-url="https://widget.clutch.co"
@@ -130,14 +130,14 @@ export default function ContactSection() {
                         </div>
                     </div>
 
-                    <motion.div initial={{ scaleX: 0 }} animate={inView ? { scaleX: 1 } : {}} transition={{ delay: 0.7, duration: 0.8 }} className="mt-24 h-px origin-left" style={{ background: 'linear-gradient(90deg, rgba(219,201,119,0.3), rgba(219,201,119,0.05), transparent)' }} />
+                    <motion.div initial={{ scaleX: 0 }} animate={inView ? { scaleX: 1 } : {}} transition={{ delay: 0.7, duration: 0.8 }} className="mt-16 md:mt-24 h-px origin-left" style={{ background: 'linear-gradient(90deg, rgba(219,201,119,0.3), rgba(219,201,119,0.05), transparent)' }} />
                 </div>
             </section>
 
             {/* Sticky WhatsApp Button — mascot is the face of it now */}
             <motion.a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t('waMessage'))}`} target="_blank" rel="noopener noreferrer"
                       initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.2, duration: 0.4 }}
-                      className="fixed bottom-8 right-8 z-50 group flex items-center gap-3" style={{ textDecoration: 'none' }}>
+                      className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 group flex items-center gap-3" style={{ textDecoration: 'none' }}>
                 <span className="hidden md:block text-[11px] font-bold tracking-[0.15em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ color: '#0E1E30', background: '#DBC977', padding: '6px 14px', clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%)', whiteSpace: 'nowrap', pointerEvents: 'none' }}>
                     {t('waTooltip')}
@@ -146,7 +146,7 @@ export default function ContactSection() {
                 <motion.div
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                    className="relative w-16 h-16 rounded-full transition-transform duration-300 group-hover:scale-110"
+                    className="relative w-14 h-14 md:w-16 md:h-16 rounded-full transition-transform duration-300 group-hover:scale-110"
                     style={{ background: '#0E1E30', border: '2px solid #DBC977', boxShadow: '0 0 30px rgba(219,201,119,0.3), 0 8px 24px rgba(0,0,0,0.4)' }}
                 >
                     <span className="absolute inset-0 rounded-full animate-ping opacity-20" style={{ background: '#DBC977' }} />
