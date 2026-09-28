@@ -20,7 +20,13 @@ function entry(path: string, priority: number, changeFrequency: 'weekly' | 'mont
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const slugs: { slug: string }[] = await client.fetch(postSlugsQuery)
+    // If Sanity is unreachable, still serve the static pages instead of failing the whole sitemap.
+    let slugs: { slug: string }[] = []
+    try {
+        slugs = (await client.fetch(postSlugsQuery)) ?? []
+    } catch (err) {
+        console.error('[sitemap] failed to load blog slugs from Sanity:', err)
+    }
 
     return [
         ...staticPaths.flatMap((p) => entry(p, p === '' ? 1 : 0.7, p === '/blog' ? 'weekly' : 'monthly')),
