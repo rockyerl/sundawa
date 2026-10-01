@@ -71,9 +71,18 @@
     "reassuranceLead": "Bisa saja berisiko, jika modernisasi dimulai dengan menulis ulang semuanya.",
     "reassuranceBody": "Kami mulai dengan memahami ketergantungan sistem, alur kerja penting, data yang ada, dan apa yang sudah diandalkan tim Anda. Dari situ, sistem bisa dimodernisasi secara bertahap, tanpa memaksa bisnis melewati penggantian besar-besaran yang sebenarnya tidak perlu.",
     "items": [
-      { "question": "Kami tidak bisa menghentikan operasional selama pembangunan ulang.", "answer": "Kami rencanakan transisi mengikuti operasional yang sedang berjalan." },
-      { "question": "Sistem lama kami menyimpan data penting selama bertahun-tahun.", "answer": "Kami pertahankan dan migrasikan data yang benar-benar dibutuhkan bisnis." },
-      { "question": "Kami belum tahu pasti apa yang perlu dibangun ulang.", "answer": "Itulah yang ditentukan pada tahap discovery." }
+      {
+        "question": "Kami tidak bisa menghentikan operasional selama pembangunan ulang.",
+        "answer": "Kami rencanakan transisi mengikuti operasional yang sedang berjalan."
+      },
+      {
+        "question": "Sistem lama kami menyimpan data penting selama bertahun-tahun.",
+        "answer": "Kami pertahankan dan migrasikan data yang benar-benar dibutuhkan bisnis."
+      },
+      {
+        "question": "Kami belum tahu pasti apa yang perlu dibangun ulang.",
+        "answer": "Itulah yang ditentukan pada tahap discovery."
+      }
     ]
   },
   "finalCta": {
@@ -95,12 +104,30 @@
     "todayLabel": "Sebelumnya",
     "withLabel": "Bersama Sundawa",
     "rows": [
-      { "today": "Tim memasukkan data yang sama secara berulang", "withSundawa": "Sistem saling bertukar data secara otomatis" },
-      { "today": "Pekerjaan penting masih bergantung pada spreadsheet", "withSundawa": "Alur kerja berjalan di dalam sistem yang terkendali" },
-      { "today": "Laporan butuh waktu berjam-jam hingga berhari-hari", "withSundawa": "Data operasional tersedia saat dibutuhkan" },
-      { "today": "Perangkat lunak lama menghambat fitur baru", "withSundawa": "Sistem inti jadi lebih mudah dikembangkan" },
-      { "today": "Eksperimen AI berjalan di luar operasional", "withSundawa": "AI menjadi bagian dari alur kerja nyata" },
-      { "today": "Developer terus-menerus menambal gejala", "withSundawa": "Arsitektur menyelesaikan akar masalah" }
+      {
+        "today": "Tim memasukkan data yang sama secara berulang",
+        "withSundawa": "Sistem saling bertukar data secara otomatis"
+      },
+      {
+        "today": "Pekerjaan penting masih bergantung pada spreadsheet",
+        "withSundawa": "Alur kerja berjalan di dalam sistem yang terkendali"
+      },
+      {
+        "today": "Laporan butuh waktu berjam-jam hingga berhari-hari",
+        "withSundawa": "Data operasional tersedia saat dibutuhkan"
+      },
+      {
+        "today": "Perangkat lunak lama menghambat fitur baru",
+        "withSundawa": "Sistem inti jadi lebih mudah dikembangkan"
+      },
+      {
+        "today": "Eksperimen AI berjalan di luar operasional",
+        "withSundawa": "AI menjadi bagian dari alur kerja nyata"
+      },
+      {
+        "today": "Developer terus-menerus menambal gejala",
+        "withSundawa": "Arsitektur menyelesaikan akar masalah"
+      }
     ],
     "closing": "Kami tidak mengganti teknologi hanya karena usianya sudah lama. Kami pahami operasional Anda terlebih dahulu, pertahankan yang masih berjalan, hubungkan yang seharusnya saling terhubung, dan bangun ulang yang menghambat Anda.",
     "cta": "Ceritakan di Mana Sistem Anda Bermasalah"
@@ -116,17 +143,64 @@
     "outcomeLabel": "Hasil",
     "transition": "Dan ini bukan sekadar kemampuan yang kami tambahkan ke halaman penjualan. Ini adalah jenis sistem yang sudah dipercayakan kepada kami untuk dibangun.",
     "items": [
-      { "num": "01", "problem": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis", "tag": "Modernisasi", "title": "Modernisasi Sistem Lama", "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan — merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.", "outcome": "Perubahan lebih cepat. Keandalan lebih baik. Utang teknis lebih sedikit." },
-      { "num": "02", "problem": "Terlalu banyak pekerjaan yang masih dilakukan secara manual", "tag": "Otomatisasi", "title": "Otomatisasi Alur Kerja & AI", "desc": "Kami ubah persetujuan, pelaporan, pengolahan dokumen, input data, dan tugas operasional yang berulang menjadi alur kerja otomatis yang terkendali.", "outcome": "Pekerjaan berulang lebih sedikit. Operasional lebih cepat. Kesalahan lebih jarang terjadi." },
-      { "num": "03", "problem": "Sistem Anda tidak saling terhubung", "tag": "Integrasi", "title": "Integrasi Sistem & Data", "desc": "Kami hubungkan ERP, sistem keuangan, basis data, API, sistem operasional, dan platform eksternal agar informasi mengalir ke tempat yang tepat.", "outcome": "Satu aliran informasi, bukan sistem yang terisolasi." },
-      { "num": "04", "problem": "Perangkat lunak siap pakai tidak selalu cocok", "tag": "Bangun Khusus", "title": "Platform Bisnis Khusus", "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal dan portal pelanggan hingga platform SaaS.", "outcome": "Perangkat lunak menyesuaikan operasional Anda, bukan sebaliknya." },
-      { "num": "05", "problem": "Peluncuran bukan garis akhir", "tag": "Operasi Terkelola", "title": "Managed Product Engineering", "desc": "Kami terus memantau, memelihara, mengoptimalkan, dan mengembangkan platform Anda setelah rilis.", "outcome": "Satu mitra rekayasa yang tetap bertanggung jawab atas sistem Anda." }
+      {
+        "num": "01",
+        "problem": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis",
+        "tag": "Modernisasi",
+        "title": "Modernisasi Sistem Lama",
+        "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan — merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.",
+        "outcome": "Perubahan lebih cepat. Keandalan lebih baik. Utang teknis lebih sedikit."
+      },
+      {
+        "num": "02",
+        "problem": "Terlalu banyak pekerjaan yang masih dilakukan secara manual",
+        "tag": "Otomatisasi",
+        "title": "Otomatisasi Alur Kerja & AI",
+        "desc": "Kami ubah persetujuan, pelaporan, pengolahan dokumen, input data, dan tugas operasional yang berulang menjadi alur kerja otomatis yang terkendali.",
+        "outcome": "Pekerjaan berulang lebih sedikit. Operasional lebih cepat. Kesalahan lebih jarang terjadi."
+      },
+      {
+        "num": "03",
+        "problem": "Sistem Anda tidak saling terhubung",
+        "tag": "Integrasi",
+        "title": "Integrasi Sistem & Data",
+        "desc": "Kami hubungkan ERP, sistem keuangan, basis data, API, sistem operasional, dan platform eksternal agar informasi mengalir ke tempat yang tepat.",
+        "outcome": "Satu aliran informasi, bukan sistem yang terisolasi."
+      },
+      {
+        "num": "04",
+        "problem": "Perangkat lunak siap pakai tidak selalu cocok",
+        "tag": "Bangun Khusus",
+        "title": "Platform Bisnis Khusus",
+        "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal dan portal pelanggan hingga platform SaaS.",
+        "outcome": "Perangkat lunak menyesuaikan operasional Anda, bukan sebaliknya."
+      },
+      {
+        "num": "05",
+        "problem": "Peluncuran bukan garis akhir",
+        "tag": "Operasi Terkelola",
+        "title": "Managed Product Engineering",
+        "desc": "Kami terus memantau, memelihara, mengoptimalkan, dan mengembangkan platform Anda setelah rilis.",
+        "outcome": "Satu mitra rekayasa yang tetap bertanggung jawab atas sistem Anda."
+      }
     ],
     "stats": [
-      { "num": "50+", "label": "Proyek Selesai" },
-      { "num": "5",   "label": "Layanan Inti" },
-      { "num": "98%", "label": "Klien Puas" },
-      { "num": "5+",  "label": "Tahun Pengalaman" }
+      {
+        "num": "30+",
+        "label": "Proyek Selesai"
+      },
+      {
+        "num": "5",
+        "label": "Layanan Inti"
+      },
+      {
+        "num": "15+",
+        "label": "Klien Aktif"
+      },
+      {
+        "num": "5+",
+        "label": "Tahun Pengalaman"
+      }
     ]
   },
   "tech": {
@@ -145,17 +219,326 @@
     "confidential": "Rahasia",
     "viewProject": "Lihat Proyek",
     "stats": [
-      { "num": "15+", "label": "Klien Aktif" },
-      { "num": "30+", "label": "Proyek Selesai" },
-      { "num": "5+",  "label": "Tahun Pengalaman" },
-      { "num": "10+", "label": "Profesional" }
+      {
+        "num": "15+",
+        "label": "Klien Aktif"
+      },
+      {
+        "num": "30+",
+        "label": "Proyek Selesai"
+      },
+      {
+        "num": "5+",
+        "label": "Tahun Pengalaman"
+      },
+      {
+        "num": "10+",
+        "label": "Profesional"
+      }
     ],
     "items": [
-      { "num": "01", "name": "Memodernisasi sistem administrasi hukum berskala nasional", "initials": "GOV",  "type": "Pemerintahan / Administrasi Hukum", "desc": "Perombakan sistem secara menyeluruh untuk meningkatkan performa dan keandalan platform yang beroperasi dalam skala nasional.", "confidential": true },
-      { "num": "02", "name": "Menyatukan produksi dan operasional dalam satu sistem", "initials": "MFG",  "type": "Manufaktur",               "desc": "Perangkat lunak ERP dan manajemen produksi yang dirancang untuk meningkatkan visibilitas rantai pasok dan efisiensi operasional pabrik.", "confidential": true },
-      { "num": "03", "name": "Memperluas alur kerja keuangan melampaui fungsi awalnya", "initials": "UNDP", "type": "Organisasi Internasional",  "desc": "Platform distribusi dana yang awalnya dibuat untuk pendanaan acara, kemudian dikembangkan menjadi sistem distribusi yang lebih luas untuk UNDP.", "confidential": false },
-      { "num": "04", "name": "Menghubungkan berbagai operasional rumah sakit dalam satu ekosistem", "initials": "HC",   "type": "Kesehatan",                 "desc": "Operasional inventaris, akuntansi, simpan pinjam, dan POS yang terintegrasi dalam satu platform koperasi rumah sakit.", "confidential": true }
-    ]
+      {
+        "num": "01",
+        "name": "Oetomo Hospital Website",
+        "initials": "OH",
+        "type": "Branding Rumah Sakit & Kehadiran Digital",
+        "desc": "Website khusus untuk memperkuat branding rumah sakit dan komunikasi institusi.",
+        "confidential": false,
+        "details": {
+          "challenge": "Membangun kehadiran digital yang profesional untuk memperkuat branding rumah sakit dan menyampaikan informasi institusi melalui website khusus.",
+          "architecture": "Arsitektur web berbasis CMS yang dirancang untuk mendukung pengelolaan konten terstruktur, tampilan responsif, dan operasional website yang mudah dipelihara.",
+          "role": "Menyelesaikan pengembangan website mencakup analisis sistem, implementasi backend, pengembangan frontend, quality assurance, dan koordinasi proyek.",
+          "impact": "Menyediakan platform digital terpusat untuk mendukung branding rumah sakit, komunikasi institusi, dan pengelolaan konten."
+        }
+      },
+      {
+        "num": "02",
+        "name": "Gatsby Website",
+        "initials": "GW",
+        "type": "Website Branding Perusahaan",
+        "desc": "Website korporat untuk memperkuat identitas merek dan menyajikan informasi bisnis.",
+        "confidential": false,
+        "details": {
+          "challenge": "Membuat platform digital khusus untuk memperkuat identitas merek dan menyajikan informasi bisnis melalui pengalaman web yang mudah diakses.",
+          "architecture": "Arsitektur website responsif yang terintegrasi dengan content management system untuk mendukung pembaruan konten yang fleksibel dan mudah dipelihara.",
+          "role": "Menyelesaikan proses pengembangan website, termasuk analisis sistem, implementasi backend dan frontend, serta quality assurance.",
+          "impact": "Membangun kehadiran digital khusus untuk mendukung komunikasi merek dan pengelolaan konten berkelanjutan."
+        }
+      },
+      {
+        "num": "03",
+        "name": "Sales Kit",
+        "initials": "SK",
+        "type": "Platform Pendukung Penjualan Digital",
+        "desc": "Platform web terpusat untuk menyajikan informasi produk bagi tim penjualan dan pemasaran.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mendukung tim penjualan dan pemasaran dengan platform digital terpusat untuk menyederhanakan presentasi produk dan mempermudah akses ke materi pemasaran.",
+          "architecture": "Arsitektur aplikasi web berbasis CMS dengan konten produk terstruktur, pengelolaan informasi terpusat, dan tampilan frontend responsif.",
+          "role": "Mengembangkan aplikasi Sales Kit berbasis web, mencakup analisis sistem, pengembangan backend, implementasi frontend, dan quality assurance.",
+          "impact": "Menyediakan platform terpusat bagi tim penjualan dan pemasaran untuk mengelola dan menyajikan informasi produk dengan lebih efisien."
+        }
+      },
+      {
+        "num": "04",
+        "name": "DACAR by UNDP",
+        "initials": "UNDP",
+        "type": "Platform Distribusi Dana Tunai Digital",
+        "desc": "Aplikasi distribusi dana berbasis acara yang dikembangkan menjadi platform digital yang lebih luas.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mengadaptasi aplikasi distribusi dana tunai berbasis acara menjadi platform yang mendukung distribusi pendanaan untuk acara terorganisir dan aktivitas operasional terkait.",
+          "architecture": "Arsitektur aplikasi lintas platform yang menggabungkan web, mobile, layanan backend, dan infrastruktur basis data, dengan deployment cloud dan komponen aplikasi yang terintegrasi.",
+          "role": "Berkontribusi dalam pengembangan platform digital melalui manajemen proyek, analisis sistem, UI/UX, rekayasa backend dan frontend, pengembangan mobile, QA, dan DevOps.",
+          "impact": "Memperluas kemampuan aplikasi untuk mendukung distribusi dana tunai digital dalam konteks operasional berbasis acara."
+        }
+      },
+      {
+        "num": "05",
+        "name": "E-Office",
+        "initials": "EO",
+        "type": "Sistem Administrasi Perkantoran Terintegrasi",
+        "desc": "Platform digital untuk surat-menyurat, disposisi dokumen, dan administrasi internal.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mendigitalkan proses administrasi perkantoran, khususnya surat-menyurat, disposisi dokumen, dan aktivitas administrasi internal lainnya.",
+          "architecture": "Arsitektur aplikasi web modular yang mendukung alur kerja dokumen, proses administrasi, dan interaksi berbasis peran antar pengguna kantor.",
+          "role": "Menyelesaikan pengembangan aplikasi melalui analisis sistem, desain UI/UX, rekayasa backend dan frontend, QA, dan DevOps.",
+          "impact": "Menyediakan platform digital untuk mendukung pengelolaan alur kerja administrasi, penanganan dokumen, dan operasional internal kantor."
+        }
+      },
+      {
+        "num": "06",
+        "name": "Kayaroll — HRIS",
+        "initials": "KR",
+        "type": "Sistem Penggajian & Informasi SDM",
+        "desc": "Platform penggajian dan HRIS yang mudah diakses untuk UMKM dan startup.",
+        "confidential": false,
+        "details": {
+          "challenge": "Menyediakan solusi penggajian yang mudah diakses bagi UMKM dan startup untuk menyederhanakan administrasi gaji dan mendukung proses terkait karyawan di desktop maupun perangkat mobile.",
+          "architecture": "Arsitektur HRIS responsif yang menggabungkan layanan backend dan antarmuka web untuk mendukung alur kerja penggajian dan akses multi-perangkat.",
+          "role": "Berkontribusi dalam pengembangan platform HRIS melalui analisis sistem, UI/UX, rekayasa backend dan frontend, QA, dan DevOps.",
+          "impact": "Membangun platform penggajian digital yang dirancang untuk menyederhanakan administrasi gaji dan meningkatkan aksesibilitas bagi UMKM, startup, dan karyawannya."
+        }
+      },
+      {
+        "num": "07",
+        "name": "Healthcare",
+        "initials": "HC",
+        "type": "Sistem Informasi Kesehatan Berbasis FHIR",
+        "desc": "Aplikasi kesehatan yang selaras dengan FHIR dan ICD-10 untuk rumah sakit menengah dan kecil.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mendukung rumah sakit menengah dan kecil dengan aplikasi kesehatan digital yang selaras dengan standar data kesehatan, termasuk FHIR dan ICD-10.",
+          "architecture": "Arsitektur aplikasi kesehatan yang mencakup rekam medis elektronik, layanan gawat darurat, rawat jalan, dan rawat inap, dengan komponen aplikasi web dan mobile.",
+          "role": "Mengembangkan aplikasi kesehatan melalui analisis sistem, implementasi backend dan frontend, pengembangan mobile, dan quality assurance.",
+          "impact": "Menyediakan platform kesehatan digital untuk mendukung pengelolaan informasi klinis dan alur layanan rumah sakit di berbagai unit perawatan."
+        }
+      },
+      {
+        "num": "08",
+        "name": "EHR",
+        "initials": "EHR",
+        "type": "Aplikasi Layanan Kelistrikan Digital",
+        "desc": "Platform digital untuk permohonan layanan listrik, pembayaran, dan penagihan.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mendigitalkan permohonan layanan listrik publik, termasuk sambungan baru, tambah daya, dan pemutusan layanan, beserta proses pembayaran dan penagihan.",
+          "architecture": "Arsitektur layanan terintegrasi yang menggabungkan pengelolaan pesanan pelanggan, integrasi payment gateway, proses penagihan, serta aplikasi web dan mobile.",
+          "role": "Menyelesaikan pengembangan aplikasi mencakup analisis sistem, rekayasa backend dan frontend, pengembangan mobile, dan QA.",
+          "impact": "Menyediakan platform layanan digital untuk mendukung permohonan layanan listrik, pemrosesan pembayaran, dan pengelolaan penagihan."
+        }
+      },
+      {
+        "num": "09",
+        "name": "Zakat & Sholat Reminder",
+        "initials": "ZS",
+        "type": "Aplikasi Gaya Hidup Islami & Pengingat",
+        "desc": "Aplikasi untuk informasi zakat dan pengingat sholat.",
+        "confidential": false,
+        "details": {
+          "challenge": "Menyediakan aplikasi digital untuk mendukung aktivitas ibadah harian melalui informasi terkait zakat dan pengingat sholat.",
+          "architecture": "Arsitektur aplikasi lintas platform yang menggabungkan layanan backend, antarmuka web, dan fungsi aplikasi mobile untuk mendukung pengalaman pengguna berbasis pengingat.",
+          "role": "Berkontribusi dalam pengembangan aplikasi melalui manajemen proyek, analisis sistem, rekayasa backend dan frontend, dan pengembangan mobile.",
+          "impact": "Membangun platform digital yang menyediakan pengingat ibadah dan fitur terkait zakat yang mudah diakses."
+        }
+      },
+      {
+        "num": "10",
+        "name": "Jabar Masagi",
+        "initials": "JM",
+        "type": "Dukungan Infrastruktur DevOps",
+        "desc": "Dukungan rekayasa DevOps khusus dengan model outsourcing.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mendukung kebutuhan infrastruktur proyek melalui sumber daya rekayasa DevOps khusus.",
+          "architecture": "Pengelolaan infrastruktur dan lingkungan deployment, berfokus pada konfigurasi operasional dan kebutuhan teknis terkait DevOps.",
+          "role": "Menyediakan dukungan rekayasa DevOps khusus dengan model kerja sama outsourcing.",
+          "impact": "Mendukung aktivitas proyek terkait infrastruktur dan kebutuhan operasional DevOps."
+        }
+      },
+      {
+        "num": "11",
+        "name": "Telin",
+        "initials": "TL",
+        "type": "Dukungan Rekayasa DevOps",
+        "desc": "Tenaga DevOps khusus untuk kebutuhan infrastruktur dan deployment.",
+        "confidential": false,
+        "details": {
+          "challenge": "Menyediakan sumber daya DevOps khusus untuk mendukung infrastruktur teknis dan kebutuhan proyek terkait deployment.",
+          "architecture": "Dukungan infrastruktur berfokus DevOps yang mencakup konfigurasi lingkungan dan aktivitas rekayasa terkait deployment.",
+          "role": "Menyediakan tenaga rekayasa DevOps khusus melalui model kerja sama outsourcing.",
+          "impact": "Mendukung aktivitas infrastruktur proyek melalui sumber daya rekayasa DevOps khusus."
+        }
+      },
+      {
+        "num": "12",
+        "name": "TanaHub",
+        "initials": "TH",
+        "type": "Platform Aset Digital & Marketplace Terdesentralisasi",
+        "desc": "Ekosistem digital untuk kepemilikan aset, barang virtual, dan partisipasi marketplace.",
+        "confidential": false,
+        "details": {
+          "challenge": "Menciptakan ekosistem digital yang menggabungkan teknologi terdesentralisasi, alat kreatif, dan pengalaman imersif untuk memungkinkan kepemilikan aset digital, pembuatan barang virtual, dan partisipasi marketplace.",
+          "architecture": "Arsitektur platform konseptual yang melibatkan komponen teknologi terdesentralisasi, pengelolaan aset digital, fungsi marketplace, dan pengalaman pengguna imersif.",
+          "role": "Berkontribusi dalam pengembangan konsep platform digital TanaHub dan ekosistem teknologi pendukungnya.",
+          "impact": "Membangun konsep platform yang dirancang untuk menghubungkan kepemilikan digital, barang virtual, dan pengalaman marketplace kolaboratif."
+        }
+      },
+      {
+        "num": "13",
+        "name": "Pesona Kahuripan",
+        "initials": "PK",
+        "type": "Platform Pemasaran Properti Digital",
+        "desc": "Platform web yang membantu kontraktor perumahan menampilkan penawaran propertinya.",
+        "confidential": false,
+        "details": {
+          "challenge": "Meningkatkan kemampuan pemasaran properti dengan menyediakan platform digital bagi kontraktor perumahan untuk menampilkan penawaran properti dan memperkuat presentasi penjualan.",
+          "architecture": "Arsitektur aplikasi web yang berfokus pada penyajian informasi properti, konten pemasaran digital, dan pengelolaan profil penjualan terstruktur.",
+          "role": "Berkontribusi dalam pengembangan platform pemasaran berbasis web yang disesuaikan dengan kebutuhan bisnis kontraktor perumahan.",
+          "impact": "Menyediakan platform pemasaran digital untuk mendukung presentasi properti dan meningkatkan visibilitas penawaran kontraktor perumahan."
+        }
+      },
+      {
+        "num": "14",
+        "name": "PPOB",
+        "initials": "PP",
+        "type": "Platform Payment Point Online Banking Terintegrasi",
+        "desc": "Platform pembayaran elektronik terpadu untuk utilitas, telekomunikasi, asuransi, dan lainnya.",
+        "confidential": false,
+        "details": {
+          "challenge": "Menyediakan platform pembayaran elektronik terpadu yang mendukung berbagai layanan pembayaran, termasuk utilitas, telekomunikasi, asuransi, pulsa, dan transaksi keuangan.",
+          "architecture": "Arsitektur transaksi multi-layanan yang mengintegrasikan berbagai kategori pembayaran, pemrosesan transaksi, dan pengelolaan layanan pembayaran terpusat.",
+          "role": "Berkontribusi dalam pengembangan sistem ini sebagai bagian dari kerja sama rekayasa Sundawa.",
+          "impact": "Dirancang untuk menghadirkan pengalaman pembayaran digital terpusat melalui platform transaksi elektronik terintegrasi."
+        }
+      },
+      {
+        "num": "15",
+        "name": "AHU Salinan",
+        "initials": "AS",
+        "type": "Sistem Permohonan Salinan Dokumen Hukum",
+        "desc": "Sistem permohonan salinan untuk dokumen hukum yang rusak atau hilang.",
+        "confidential": false,
+        "details": {
+          "challenge": "Memfasilitasi permohonan salinan dokumen bagi individu yang dokumen hukum aslinya rusak atau hilang.",
+          "architecture": "Arsitektur pengelolaan permohonan dokumen yang melibatkan alur pengajuan, penanganan informasi dokumen, dan pemrosesan administrasi.",
+          "role": "Berkontribusi dalam pengembangan sistem ini sebagai bagian dari kerja sama rekayasa Sundawa.",
+          "impact": "Mendukung digitalisasi proses permohonan salinan dokumen hukum dan penanganan dokumen administrasi."
+        }
+      },
+      {
+        "num": "16",
+        "name": "SIPAKAR",
+        "initials": "SP",
+        "type": "Sistem Manajemen Aset & Keuangan Internal",
+        "desc": "Aplikasi digital untuk pengelolaan aset dan keuangan internal.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mendukung kebutuhan organisasi internal dalam mengelola aset dan informasi keuangan melalui aplikasi digital khusus.",
+          "architecture": "Arsitektur manajemen aset dan keuangan terintegrasi yang dirancang untuk mengorganisasi catatan operasional dan mendukung alur kerja manajemen internal.",
+          "role": "Berkontribusi dalam pengembangan sistem ini sebagai bagian dari kerja sama rekayasa Sundawa.",
+          "impact": "Menyediakan solusi digital untuk mendukung administrasi aset internal dan aktivitas pengelolaan keuangan."
+        }
+      },
+      {
+        "num": "17",
+        "name": "AHU Rebuild",
+        "initials": "AR",
+        "type": "Modernisasi Sistem Pemerintahan",
+        "desc": "Pengembangan ulang platform layanan pemerintah berbasis web yang sudah ada.",
+        "confidential": false,
+        "details": {
+          "challenge": "Membangun ulang sistem pemerintah berbasis web yang sudah ada untuk memenuhi kebutuhan pengembangan ulang aplikasi tanpa mengubah tujuan layanan intinya.",
+          "architecture": "Pengembangan ulang sistem yang melibatkan fungsionalitas bisnis yang ada, rekonstruksi arsitektur aplikasi, dan kesinambungan alur kerja administrasi yang telah berjalan.",
+          "role": "Berkontribusi dalam pengembangan sistem ini sebagai bagian dari kerja sama rekayasa Sundawa.",
+          "impact": "Mendukung pengembangan ulang platform layanan digital pemerintah yang sudah ada."
+        }
+      },
+      {
+        "num": "18",
+        "name": "Indocell",
+        "initials": "IC",
+        "type": "Sistem POS & Manajemen Inventaris Ritel",
+        "desc": "Sistem POS dan inventaris terintegrasi untuk toko aksesori ponsel.",
+        "confidential": false,
+        "details": {
+          "challenge": "Mengelola operasional penjualan ritel dan inventaris untuk toko aksesori ponsel melalui solusi digital khusus.",
+          "architecture": "Arsitektur aplikasi ritel terintegrasi yang menggabungkan transaksi point-of-sale dan manajemen inventaris dalam satu sistem operasional.",
+          "role": "Berkontribusi dalam pengembangan sistem ini sebagai bagian dari kerja sama rekayasa Sundawa.",
+          "impact": "Menyediakan platform digital terintegrasi untuk mendukung transaksi penjualan ritel dan administrasi inventaris."
+        }
+      },
+      {
+        "num": "19",
+        "name": "Laku Pandai NTBS",
+        "initials": "LP",
+        "type": "Aplikasi EDC Agen Bank & Mini ATM",
+        "desc": "Layanan perbankan berbasis EDC untuk agen dan operator mini ATM.",
+        "confidential": true,
+        "details": {
+          "challenge": "Mendukung layanan perbankan Laku Pandai melalui perangkat electronic data capture yang digunakan agen bank dan operator mini ATM.",
+          "architecture": "Arsitektur aplikasi berbasis EDC yang melibatkan antarmuka transaksi tingkat perangkat, komunikasi backend, integrasi API, dan pemrosesan transaksi dalam lingkungan layanan perbankan.",
+          "role": "Berkontribusi dalam pengembangan sistem Laku Pandai untuk operasional agen bank dan mini ATM menggunakan perangkat EDC.",
+          "impact": "Memungkinkan fungsi layanan perbankan digital melalui kanal agen dan mini ATM berbasis EDC."
+        }
+      },
+      {
+        "num": "20",
+        "name": "LBB Best Cirebon",
+        "initials": "LB",
+        "type": "Sistem Absensi Siswa & Pembayaran SPP Berbasis NFC",
+        "desc": "Perangkat EDC berfitur NFC untuk absensi dan pembayaran SPP.",
+        "confidential": false,
+        "details": {
+          "challenge": "Menyederhanakan pencatatan absensi siswa dan proses pembayaran SPP melalui perangkat EDC berfitur NFC.",
+          "architecture": "Arsitektur aplikasi terintegrasi yang menghubungkan terminal EDC berfitur NFC dengan manajemen absensi, pemrosesan pembayaran, dan layanan backend.",
+          "role": "Berkontribusi dalam pengembangan sistem absensi dan pembayaran SPP, termasuk fungsi aplikasi berbasis EDC dan integrasi sistem.",
+          "impact": "Mendigitalkan pencatatan absensi siswa dan proses pembayaran SPP melalui teknologi EDC berfitur NFC."
+        }
+      },
+      {
+        "num": "21",
+        "name": "TMII",
+        "initials": "TM",
+        "type": "Sistem Tiket Digital & Pembayaran Wahana",
+        "desc": "Pembelian tiket digital untuk atraksi dan wahana lewat kiosk dan EDC.",
+        "confidential": false,
+        "details": {
+          "challenge": "Menyediakan solusi pembelian tiket digital untuk atraksi dan wahana melalui perangkat kiosk dan EDC.",
+          "architecture": "Arsitektur transaksi multi-perangkat yang menghubungkan kiosk swalayan, terminal EDC, alur pembelian tiket, dan komponen pemrosesan transaksi.",
+          "role": "Berkontribusi dalam pengembangan sistem pembelian tiket digital untuk layanan atraksi dan wahana menggunakan perangkat kiosk dan EDC.",
+          "impact": "Mendukung pembelian tiket digital dan pemrosesan transaksi melalui kanal layanan berbasis kiosk dan EDC."
+        }
+      }
+    ],
+    "close": "Tutup",
+    "detailLabels": {
+      "challenge": "Tantangan",
+      "architecture": "Kompleksitas Arsitektur",
+      "role": "Peran Kami",
+      "impact": "Dampak Proyek"
+    }
   },
   "contact": {
     "label": "Hubungi Kami",
@@ -222,49 +605,89 @@
         "tag": "Penjajakan",
         "title": "Penjajakan & Penyelarasan",
         "desc": "Kami mendengarkan sebelum membangun.",
-        "points": ["Sesi konsultasi kebutuhan", "Analisis kelayakan teknis", "Estimasi jadwal & biaya awal"]
+        "points": [
+          "Sesi konsultasi kebutuhan",
+          "Analisis kelayakan teknis",
+          "Estimasi jadwal & biaya awal"
+        ]
       },
       {
         "num": "02",
         "tag": "Desain",
         "title": "Desain & Cetak Biru",
         "desc": "Desain yang bisa Anda lihat sebelum satu baris kode pun ditulis.",
-        "points": ["Kerangka desain & alur pengguna", "Desain antarmuka & prototipe interaktif", "Tinjauan dan persetujuan bersama"]
+        "points": [
+          "Kerangka desain & alur pengguna",
+          "Desain antarmuka & prototipe interaktif",
+          "Tinjauan dan persetujuan bersama"
+        ]
       },
       {
         "num": "03",
         "tag": "Pengembangan",
         "title": "Pengembangan Iteratif",
         "desc": "Kemajuan yang bisa Anda pantau, bukan hanya ditunggu.",
-        "points": ["Sprint mingguan / dua mingguan", "Demo kemajuan rutin", "Akses repositori selama pengembangan"]
+        "points": [
+          "Sprint mingguan / dua mingguan",
+          "Demo kemajuan rutin",
+          "Akses repositori selama pengembangan"
+        ]
       },
       {
         "num": "04",
         "tag": "Pengujian QA",
         "title": "Pengujian Tanpa Kompromi",
         "desc": "Presisi bukan slogan, itu standar QA kami.",
-        "points": ["Pengujian fungsional & regresi", "Pengecekan performa dan keamanan dasar", "Perbaikan bug sebelum rilis"]
+        "points": [
+          "Pengujian fungsional & regresi",
+          "Pengecekan performa dan keamanan dasar",
+          "Perbaikan bug sebelum rilis"
+        ]
       },
       {
         "num": "05",
         "tag": "Penyerahan",
         "title": "Alih Serah & Kepemilikan Penuh",
         "desc": "Kode Anda, sepenuhnya milik Anda.",
-        "points": ["Kode sumber & dokumentasi teknis", "Kepemilikan penuh atas hasil kerja", "Sesi alih serah & pelatihan penggunaan"]
+        "points": [
+          "Kode sumber & dokumentasi teknis",
+          "Kepemilikan penuh atas hasil kerja",
+          "Sesi alih serah & pelatihan penggunaan"
+        ]
       },
       {
         "num": "06",
         "tag": "Dukungan",
         "title": "Dukungan Pasca-Peluncuran",
         "desc": "Selesainya proyek bukan berarti selesainya hubungan kita.",
-        "points": ["Garansi perbaikan bug pasca-rilis", "Dukungan teknis berkelanjutan", "Opsi pemeliharaan jangka panjang"]
+        "points": [
+          "Garansi perbaikan bug pasca-rilis",
+          "Dukungan teknis berkelanjutan",
+          "Opsi pemeliharaan jangka panjang"
+        ]
       }
     ],
     "infoItems": [
-      { "icon": "🤝", "title": "Metodologi", "desc": "Agile dengan sprint dua minggu, demo kemajuan rutin agar Anda selalu mengetahui posisi proyek." },
-      { "icon": "🔐", "title": "Kepemilikan Kode", "desc": "Kode sumber dan dokumentasi sepenuhnya menjadi milik Anda setelah proyek selesai — tanpa ketentuan tersembunyi." },
-      { "icon": "📄", "title": "NDA & Kerahasiaan", "desc": "NDA standar tersedia sejak sesi penjajakan, terutama untuk proyek yang menangani data sensitif." },
-      { "icon": "🛠️", "title": "Pasca-Peluncuran", "desc": "Garansi perbaikan bug setelah rilis, dengan opsi paket pemeliharaan jangka panjang." }
+      {
+        "icon": "🤝",
+        "title": "Metodologi",
+        "desc": "Agile dengan sprint dua minggu, demo kemajuan rutin agar Anda selalu mengetahui posisi proyek."
+      },
+      {
+        "icon": "🔐",
+        "title": "Kepemilikan Kode",
+        "desc": "Kode sumber dan dokumentasi sepenuhnya menjadi milik Anda setelah proyek selesai — tanpa ketentuan tersembunyi."
+      },
+      {
+        "icon": "📄",
+        "title": "NDA & Kerahasiaan",
+        "desc": "NDA standar tersedia sejak sesi penjajakan, terutama untuk proyek yang menangani data sensitif."
+      },
+      {
+        "icon": "🛠️",
+        "title": "Pasca-Peluncuran",
+        "desc": "Garansi perbaikan bug setelah rilis, dengan opsi paket pemeliharaan jangka panjang."
+      }
     ],
     "contactCta": "Siap mendiskusikan kebutuhan proyek Anda?",
     "contactButton": "Hubungi Kami"

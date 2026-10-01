@@ -71,9 +71,18 @@
     "reassuranceLead": "It can be, if modernization starts with rewriting everything.",
     "reassuranceBody": "We start by understanding dependencies, critical workflows, existing data, and what your team already relies on. From there, the system can be modernized incrementally instead of forcing the business through an unnecessary big-bang replacement.",
     "items": [
-      { "question": "We can't stop operations while rebuilding.", "answer": "Plan the transition around live operations." },
-      { "question": "Our old system contains years of important data.", "answer": "Preserve and migrate what the business actually needs." },
-      { "question": "We don't know exactly what should be rebuilt.", "answer": "That's what the discovery stage determines." }
+      {
+        "question": "We can't stop operations while rebuilding.",
+        "answer": "Plan the transition around live operations."
+      },
+      {
+        "question": "Our old system contains years of important data.",
+        "answer": "Preserve and migrate what the business actually needs."
+      },
+      {
+        "question": "We don't know exactly what should be rebuilt.",
+        "answer": "That's what the discovery stage determines."
+      }
     ]
   },
   "finalCta": {
@@ -95,12 +104,30 @@
     "todayLabel": "Today",
     "withLabel": "With Sundawa",
     "rows": [
-      { "today": "Teams re-enter the same information", "withSundawa": "Systems exchange data automatically" },
-      { "today": "Critical work lives in spreadsheets", "withSundawa": "Workflows run inside controlled systems" },
-      { "today": "Reports take hours or days", "withSundawa": "Operational data becomes available when needed" },
-      { "today": "Legacy software blocks new features", "withSundawa": "Core systems become easier to extend" },
-      { "today": "AI experiments sit outside operations", "withSundawa": "AI becomes part of real workflows" },
-      { "today": "Developers constantly fix symptoms", "withSundawa": "Architecture addresses the underlying problem" }
+      {
+        "today": "Teams re-enter the same information",
+        "withSundawa": "Systems exchange data automatically"
+      },
+      {
+        "today": "Critical work lives in spreadsheets",
+        "withSundawa": "Workflows run inside controlled systems"
+      },
+      {
+        "today": "Reports take hours or days",
+        "withSundawa": "Operational data becomes available when needed"
+      },
+      {
+        "today": "Legacy software blocks new features",
+        "withSundawa": "Core systems become easier to extend"
+      },
+      {
+        "today": "AI experiments sit outside operations",
+        "withSundawa": "AI becomes part of real workflows"
+      },
+      {
+        "today": "Developers constantly fix symptoms",
+        "withSundawa": "Architecture addresses the underlying problem"
+      }
     ],
     "closing": "We don't replace technology simply because it's old. We understand your operation first, keep what still works, connect what should work together, and rebuild what is holding you back.",
     "cta": "Tell Us Where Your System Breaks Down"
@@ -116,17 +143,64 @@
     "outcomeLabel": "Outcome",
     "transition": "And these aren't capabilities we added to a sales page. They're the kind of systems we've already been trusted to build.",
     "items": [
-      { "num": "01", "problem": "Your software can't keep up anymore", "tag": "Modernization", "title": "Modernize Legacy Systems", "desc": "Improve aging platforms without putting critical operations at unnecessary risk. We redesign architecture, replace weak components, and prepare the system for future growth.", "outcome": "Faster changes. Better reliability. Less technical debt." },
-      { "num": "02", "problem": "Too much work still happens manually", "tag": "Automation", "title": "Workflow & AI Automation", "desc": "Turn repetitive approvals, reporting, document handling, data entry, and operational tasks into controlled automated workflows.", "outcome": "Less repetitive work. Faster operations. Fewer avoidable errors." },
-      { "num": "03", "problem": "Your systems don't talk to each other", "tag": "Integration", "title": "Systems & Data Integration", "desc": "Connect your ERP, finance tools, databases, APIs, operational systems, and external platforms so information moves where it needs to.", "outcome": "One flow of information instead of isolated systems." },
-      { "num": "04", "problem": "Off-the-shelf software doesn't fit", "tag": "Custom Build", "title": "Custom Business Platforms", "desc": "Build operational software around how your business actually works. From internal systems and customer portals to SaaS platforms.", "outcome": "Software adapts to your operation instead of forcing your operation to adapt to software." },
-      { "num": "05", "problem": "Launching isn't the finish line", "tag": "Managed Ops", "title": "Managed Product Engineering", "desc": "Keep your platform monitored, maintained, optimized, and continuously improved after launch.", "outcome": "One engineering partner that stays accountable for the system." }
+      {
+        "num": "01",
+        "problem": "Your software can't keep up anymore",
+        "tag": "Modernization",
+        "title": "Modernize Legacy Systems",
+        "desc": "Improve aging platforms without putting critical operations at unnecessary risk. We redesign architecture, replace weak components, and prepare the system for future growth.",
+        "outcome": "Faster changes. Better reliability. Less technical debt."
+      },
+      {
+        "num": "02",
+        "problem": "Too much work still happens manually",
+        "tag": "Automation",
+        "title": "Workflow & AI Automation",
+        "desc": "Turn repetitive approvals, reporting, document handling, data entry, and operational tasks into controlled automated workflows.",
+        "outcome": "Less repetitive work. Faster operations. Fewer avoidable errors."
+      },
+      {
+        "num": "03",
+        "problem": "Your systems don't talk to each other",
+        "tag": "Integration",
+        "title": "Systems & Data Integration",
+        "desc": "Connect your ERP, finance tools, databases, APIs, operational systems, and external platforms so information moves where it needs to.",
+        "outcome": "One flow of information instead of isolated systems."
+      },
+      {
+        "num": "04",
+        "problem": "Off-the-shelf software doesn't fit",
+        "tag": "Custom Build",
+        "title": "Custom Business Platforms",
+        "desc": "Build operational software around how your business actually works. From internal systems and customer portals to SaaS platforms.",
+        "outcome": "Software adapts to your operation instead of forcing your operation to adapt to software."
+      },
+      {
+        "num": "05",
+        "problem": "Launching isn't the finish line",
+        "tag": "Managed Ops",
+        "title": "Managed Product Engineering",
+        "desc": "Keep your platform monitored, maintained, optimized, and continuously improved after launch.",
+        "outcome": "One engineering partner that stays accountable for the system."
+      }
     ],
     "stats": [
-      { "num": "50+", "label": "Projects Done" },
-      { "num": "5",   "label": "Core Services" },
-      { "num": "98%", "label": "Happy Clients" },
-      { "num": "5+",  "label": "Years Experience" }
+      {
+        "num": "30+",
+        "label": "Projects Done"
+      },
+      {
+        "num": "5",
+        "label": "Core Services"
+      },
+      {
+        "num": "15+",
+        "label": "Active Clients"
+      },
+      {
+        "num": "5+",
+        "label": "Years Experience"
+      }
     ]
   },
   "tech": {
@@ -145,17 +219,326 @@
     "confidential": "Confidential",
     "viewProject": "See the Project",
     "stats": [
-      { "num": "15+", "label": "Active Clients" },
-      { "num": "30+", "label": "Projects Done" },
-      { "num": "5+",  "label": "Years Experience" },
-      { "num": "10+", "label": "Professionals" }
+      {
+        "num": "15+",
+        "label": "Active Clients"
+      },
+      {
+        "num": "30+",
+        "label": "Projects Done"
+      },
+      {
+        "num": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "num": "10+",
+        "label": "Professionals"
+      }
     ],
     "items": [
-      { "num": "01", "name": "Modernizing a national-scale legal administration system", "initials": "GOV",  "type": "Government / Legal Administration", "desc": "A complete system overhaul designed to improve the performance and reliability of a platform operating at national scale.", "confidential": true },
-      { "num": "02", "name": "Bringing production and operations into one system", "initials": "MFG",  "type": "Manufacturing",    "desc": "ERP and production-management software designed to improve supply-chain visibility and factory operations.", "confidential": true },
-      { "num": "03", "name": "Expanding a financial workflow beyond its original use case", "initials": "UNDP", "type": "International Org.", "desc": "A fund-distribution platform initially created for event funding and later expanded into a broader distribution system for UNDP.", "confidential": false },
-      { "num": "04", "name": "Connecting multiple hospital operations into one ecosystem", "initials": "HC",   "type": "Healthcare",       "desc": "Inventory, accounting, savings and loans, and POS operations integrated into one hospital cooperative platform.", "confidential": true }
-    ]
+      {
+        "num": "01",
+        "name": "Oetomo Hospital Website",
+        "initials": "OH",
+        "type": "Hospital Branding & Digital Presence",
+        "desc": "A dedicated website to strengthen hospital branding and institutional communication.",
+        "confidential": false,
+        "details": {
+          "challenge": "Establishing a professional digital presence to strengthen hospital branding and communicate institutional information through a dedicated website.",
+          "architecture": "CMS-based web architecture designed to support structured content management, responsive presentation, and maintainable website operations.",
+          "role": "Delivered website development covering system analysis, backend implementation, frontend development, quality assurance, and project coordination.",
+          "impact": "Provided a centralized digital platform to support hospital branding, institutional communication, and content management."
+        }
+      },
+      {
+        "num": "02",
+        "name": "Gatsby Website",
+        "initials": "GW",
+        "type": "Corporate Branding Website",
+        "desc": "A corporate website to strengthen brand identity and present business information.",
+        "confidential": false,
+        "details": {
+          "challenge": "Creating a dedicated digital platform to strengthen brand identity and present business information through an accessible web experience.",
+          "architecture": "Responsive website architecture integrated with a content management system to support flexible content updates and maintainability.",
+          "role": "Delivered the website development process, including system analysis, backend and frontend implementation, and quality assurance.",
+          "impact": "Established a dedicated digital presence to support brand communication and ongoing content management."
+        }
+      },
+      {
+        "num": "03",
+        "name": "Sales Kit",
+        "initials": "SK",
+        "type": "Digital Sales Enablement Platform",
+        "desc": "A centralized web platform for presenting product information to sales and marketing teams.",
+        "confidential": false,
+        "details": {
+          "challenge": "Supporting sales and marketing teams with a centralized digital platform to simplify product presentation and improve access to marketing materials.",
+          "architecture": "CMS-driven web application architecture with structured product content, centralized information management, and responsive frontend delivery.",
+          "role": "Developed the web-based Sales Kit application, covering system analysis, backend development, frontend implementation, and quality assurance.",
+          "impact": "Provided sales and marketing teams with a centralized platform to manage and present product information more efficiently."
+        }
+      },
+      {
+        "num": "04",
+        "name": "DACAR by UNDP",
+        "initials": "UNDP",
+        "type": "Digital Cash Fund Distribution Platform",
+        "desc": "An event-based fund-distribution app extended into a broader digital platform.",
+        "confidential": false,
+        "details": {
+          "challenge": "Adapting an event-oriented cash fund distribution application into a platform supporting funding distribution for organized events and related operational activities.",
+          "architecture": "Cross-platform application architecture combining web, mobile, backend services, and database infrastructure, with cloud deployment and integrated application components.",
+          "role": "Contributed to the development of the digital platform through project management, system analysis, UI/UX, backend and frontend engineering, mobile development, QA, and DevOps.",
+          "impact": "Extended the application capabilities to support digital cash fund distribution within an event-based operational context."
+        }
+      },
+      {
+        "num": "05",
+        "name": "E-Office",
+        "initials": "EO",
+        "type": "Integrated Office Administration System",
+        "desc": "A digital platform for correspondence, document disposition, and internal administration.",
+        "confidential": false,
+        "details": {
+          "challenge": "Digitizing office administration processes, particularly correspondence, document disposition, and other internal administrative activities.",
+          "architecture": "Modular web application architecture supporting document workflows, administrative processes, and role-based interactions between office users.",
+          "role": "Delivered application development through system analysis, UI/UX design, backend and frontend engineering, QA, and DevOps.",
+          "impact": "Provided a digital platform to support administrative workflow management, document handling, and internal office operations."
+        }
+      },
+      {
+        "num": "06",
+        "name": "Kayaroll — HRIS",
+        "initials": "KR",
+        "type": "Payroll & Human Resource Information System",
+        "desc": "An accessible payroll and HRIS platform for MSMEs and startups.",
+        "confidential": false,
+        "details": {
+          "challenge": "Providing MSMEs and startups with an accessible payroll solution that simplifies payroll administration and supports employee-related processes across desktop and mobile devices.",
+          "architecture": "Responsive HRIS architecture combining backend services and web interfaces to support payroll-related workflows and multi-device accessibility.",
+          "role": "Contributed to the development of the HRIS platform through system analysis, UI/UX, backend and frontend engineering, QA, and DevOps.",
+          "impact": "Established a digital payroll platform designed to simplify payroll administration and improve accessibility for MSMEs, startups, and their employees."
+        }
+      },
+      {
+        "num": "07",
+        "name": "Healthcare",
+        "initials": "HC",
+        "type": "FHIR-Based Healthcare Information System",
+        "desc": "A healthcare application aligned with FHIR and ICD-10 for medium and smaller hospitals.",
+        "confidential": false,
+        "details": {
+          "challenge": "Supporting medium and smaller hospitals with a digital healthcare application aligned with healthcare data standards, including FHIR and ICD-10.",
+          "architecture": "Healthcare application architecture covering electronic medical records, emergency services, outpatient care, and inpatient care, with web and mobile application components.",
+          "role": "Developed the healthcare application through system analysis, backend and frontend implementation, mobile development, and quality assurance.",
+          "impact": "Provided a digital healthcare platform to support clinical information management and hospital service workflows across multiple care units."
+        }
+      },
+      {
+        "num": "08",
+        "name": "EHR",
+        "initials": "EHR",
+        "type": "Digital Electricity Service Application",
+        "desc": "A digital platform for electricity service requests, payments, and billing.",
+        "confidential": false,
+        "details": {
+          "challenge": "Digitizing public electricity service requests, including new connections, additional capacity, and service disconnection, alongside payment and billing processes.",
+          "architecture": "Integrated service architecture combining customer order management, payment gateway integration, billing processes, and web and mobile applications.",
+          "role": "Delivered application development covering system analysis, backend and frontend engineering, mobile development, and QA.",
+          "impact": "Provided a digital service platform to support electricity service requests, payment processing, and billing management."
+        }
+      },
+      {
+        "num": "09",
+        "name": "Zakat & Sholat Reminder",
+        "initials": "ZS",
+        "type": "Islamic Lifestyle & Reminder Application",
+        "desc": "An app for zakat information and prayer reminders.",
+        "confidential": false,
+        "details": {
+          "challenge": "Providing users with a digital application to support daily religious activities through zakat-related information and prayer reminders.",
+          "architecture": "Cross-platform application architecture combining backend services, web interfaces, and mobile application functionality to support reminder-based user experiences.",
+          "role": "Contributed to application development through project management, system analysis, backend and frontend engineering, and mobile development.",
+          "impact": "Established a digital platform to provide accessible religious reminders and zakat-related features."
+        }
+      },
+      {
+        "num": "10",
+        "name": "Jabar Masagi",
+        "initials": "JM",
+        "type": "DevOps Infrastructure Support",
+        "desc": "Dedicated DevOps engineering support under an outsourcing model.",
+        "confidential": false,
+        "details": {
+          "challenge": "Supporting project infrastructure requirements through dedicated DevOps engineering resources.",
+          "architecture": "Infrastructure and deployment environment management, focusing on operational configuration and DevOps-related technical requirements.",
+          "role": "Provided dedicated DevOps engineering support under an outsourcing engagement model.",
+          "impact": "Supported infrastructure-related project activities and DevOps operational requirements."
+        }
+      },
+      {
+        "num": "11",
+        "name": "Telin",
+        "initials": "TL",
+        "type": "DevOps Engineering Support",
+        "desc": "Specialized DevOps personnel for infrastructure and deployment needs.",
+        "confidential": false,
+        "details": {
+          "challenge": "Providing specialized DevOps resources to support technical infrastructure and deployment-related project requirements.",
+          "architecture": "DevOps-focused infrastructure support involving environment configuration and deployment-related engineering activities.",
+          "role": "Provided dedicated DevOps engineering personnel through an outsourcing engagement model.",
+          "impact": "Supported project infrastructure activities through dedicated DevOps engineering resources."
+        }
+      },
+      {
+        "num": "12",
+        "name": "TanaHub",
+        "initials": "TH",
+        "type": "Decentralized Digital Asset & Marketplace Platform",
+        "desc": "A digital ecosystem for asset ownership, virtual goods, and marketplace participation.",
+        "confidential": false,
+        "details": {
+          "challenge": "Creating a digital ecosystem that combines decentralized technologies, creative tools, and immersive experiences to enable digital asset ownership, virtual goods creation, and marketplace participation.",
+          "architecture": "Conceptual platform architecture involving decentralized technology components, digital asset management, marketplace functionality, and immersive user experiences.",
+          "role": "Contributed to the development of the TanaHub digital platform concept and its supporting technology ecosystem.",
+          "impact": "Established a platform concept designed to connect digital ownership, virtual goods, and collaborative marketplace experiences."
+        }
+      },
+      {
+        "num": "13",
+        "name": "Pesona Kahuripan",
+        "initials": "PK",
+        "type": "Digital Property Marketing Platform",
+        "desc": "A web platform helping housing contractors showcase their property offerings.",
+        "confidential": false,
+        "details": {
+          "challenge": "Improving property marketing capabilities by providing housing contractors with a digital platform to showcase property offerings and strengthen their sales presentation.",
+          "architecture": "Web application architecture focused on property information presentation, digital marketing content, and structured sales profile management.",
+          "role": "Contributed to the development of a web-based marketing platform tailored to housing contractor business requirements.",
+          "impact": "Provided a digital marketing platform to support property presentation and increase the visibility of housing contractor offerings."
+        }
+      },
+      {
+        "num": "14",
+        "name": "PPOB",
+        "initials": "PP",
+        "type": "Integrated Payment Point Online Banking Platform",
+        "desc": "A unified electronic payment platform for utilities, telecom, insurance, and more.",
+        "confidential": false,
+        "details": {
+          "challenge": "Providing a unified electronic payment platform capable of supporting multiple payment services, including utilities, telecommunications, insurance, mobile credits, and financial transactions.",
+          "architecture": "Multi-service transaction architecture integrating various payment categories, transaction processing, and centralized payment service management.",
+          "role": "Contributed to the development of this system as part of Sundawa's engineering engagement.",
+          "impact": "Designed to provide a centralized digital payment experience through an integrated electronic transaction platform."
+        }
+      },
+      {
+        "num": "15",
+        "name": "AHU Salinan",
+        "initials": "AS",
+        "type": "Legal Document Copy Request System",
+        "desc": "A system for requesting copies of damaged or lost legal documents.",
+        "confidential": false,
+        "details": {
+          "challenge": "Facilitating document copy requests for individuals whose original legal documents have been damaged or lost.",
+          "architecture": "Document request management architecture involving submission workflows, document information handling, and administrative processing.",
+          "role": "Contributed to the development of this system as part of Sundawa's engineering engagement.",
+          "impact": "Supported the digitization of legal document copy request processes and administrative document handling."
+        }
+      },
+      {
+        "num": "16",
+        "name": "SIPAKAR",
+        "initials": "SP",
+        "type": "Internal Asset & Financial Management System",
+        "desc": "A digital application for internal asset and financial management.",
+        "confidential": false,
+        "details": {
+          "challenge": "Supporting internal organizational requirements for managing assets and financial information through a dedicated digital application.",
+          "architecture": "Integrated asset and financial management architecture designed to organize operational records and support internal management workflows.",
+          "role": "Contributed to the development of this system as part of Sundawa's engineering engagement.",
+          "impact": "Provided a digital solution to support internal asset administration and financial management activities."
+        }
+      },
+      {
+        "num": "17",
+        "name": "AHU Rebuild",
+        "initials": "AR",
+        "type": "Government System Modernization",
+        "desc": "Redevelopment of an existing government web-based service platform.",
+        "confidential": false,
+        "details": {
+          "challenge": "Rebuilding an existing government web-based system to address application redevelopment requirements while maintaining its core service purpose.",
+          "architecture": "System redevelopment involving existing business functionality, application architecture reconstruction, and continuity of established administrative workflows.",
+          "role": "Contributed to the development of this system as part of Sundawa's engineering engagement.",
+          "impact": "Supported the redevelopment of an existing government digital service platform."
+        }
+      },
+      {
+        "num": "18",
+        "name": "Indocell",
+        "initials": "IC",
+        "type": "Retail POS & Inventory Management System",
+        "desc": "An integrated POS and inventory system for a mobile accessories store.",
+        "confidential": false,
+        "details": {
+          "challenge": "Managing retail sales and inventory operations for a mobile phone accessories store through a dedicated digital solution.",
+          "architecture": "Integrated retail application architecture combining point-of-sale transactions and inventory management within a unified operational system.",
+          "role": "Contributed to the development of this system as part of Sundawa's engineering engagement.",
+          "impact": "Provided an integrated digital platform to support retail sales transactions and inventory administration."
+        }
+      },
+      {
+        "num": "19",
+        "name": "Laku Pandai NTBS",
+        "initials": "LP",
+        "type": "Banking Agent & Mini ATM EDC Application",
+        "desc": "EDC-based banking services for agents and mini ATM operators.",
+        "confidential": true,
+        "details": {
+          "challenge": "Supporting Laku Pandai banking services through electronic data capture devices used by banking agents and mini ATM operators.",
+          "architecture": "EDC-based application architecture involving device-level transaction interfaces, backend communication, API integration, and transaction processing within a banking service environment.",
+          "role": "Contributed to the development of the Laku Pandai system for agent banking and mini ATM operations using EDC devices.",
+          "impact": "Enabled digital banking service functionality through EDC-based agent and mini ATM channels."
+        }
+      },
+      {
+        "num": "20",
+        "name": "LBB Best Cirebon",
+        "initials": "LB",
+        "type": "NFC-Based Student Attendance & School Fee Payment System",
+        "desc": "NFC-enabled EDC devices for attendance and tuition payments.",
+        "confidential": false,
+        "details": {
+          "challenge": "Simplifying student attendance recording and school fee payment processes through NFC-enabled EDC devices.",
+          "architecture": "Integrated application architecture connecting NFC-enabled EDC terminals with attendance management, payment processing, and backend services.",
+          "role": "Contributed to the development of the attendance and tuition payment system, including EDC-based application functionality and system integration.",
+          "impact": "Digitized student attendance recording and tuition payment processes through NFC-enabled EDC technology."
+        }
+      },
+      {
+        "num": "21",
+        "name": "TMII",
+        "initials": "TM",
+        "type": "Digital Ticketing & Attraction Payment System",
+        "desc": "Digital ticket purchasing for attractions and rides via kiosk and EDC.",
+        "confidential": false,
+        "details": {
+          "challenge": "Providing a digital ticket purchasing solution for attractions and rides through kiosk and EDC devices.",
+          "architecture": "Multi-device transaction architecture connecting self-service kiosks, EDC terminals, ticket purchasing workflows, and transaction processing components.",
+          "role": "Contributed to the development of the digital ticket purchasing system for attraction and ride services using kiosk and EDC devices.",
+          "impact": "Supported digital ticket purchasing and transaction processing across kiosk and EDC-based service channels."
+        }
+      }
+    ],
+    "close": "Close",
+    "detailLabels": {
+      "challenge": "Challenge",
+      "architecture": "Architecture Complexity",
+      "role": "Our Role",
+      "impact": "Project Impact"
+    }
   },
   "contact": {
     "label": "Get In Touch",
@@ -222,49 +605,89 @@
         "tag": "Discovery",
         "title": "Discovery & Alignment",
         "desc": "We listen before we build.",
-        "points": ["Requirements consultation session", "Technical feasibility analysis", "Initial timeline & cost estimate"]
+        "points": [
+          "Requirements consultation session",
+          "Technical feasibility analysis",
+          "Initial timeline & cost estimate"
+        ]
       },
       {
         "num": "02",
         "tag": "Design",
         "title": "Design & Blueprint",
         "desc": "A design you can touch before a single line of code is written.",
-        "points": ["Wireframe & user flow", "UI design & interactive prototype", "Joint review and approval"]
+        "points": [
+          "Wireframe & user flow",
+          "UI design & interactive prototype",
+          "Joint review and approval"
+        ]
       },
       {
         "num": "03",
         "tag": "Development",
         "title": "Iterative Development",
         "desc": "Progress you can track, not just wait for.",
-        "points": ["Weekly / bi-weekly sprints", "Regular progress demos", "Repository access throughout development"]
+        "points": [
+          "Weekly / bi-weekly sprints",
+          "Regular progress demos",
+          "Repository access throughout development"
+        ]
       },
       {
         "num": "04",
         "tag": "QA Testing",
         "title": "Testing Without Compromise",
         "desc": "Precision isn't a slogan, it's our QA standard.",
-        "points": ["Functional & regression testing", "Basic performance and security checks", "Bug fixes before release"]
+        "points": [
+          "Functional & regression testing",
+          "Basic performance and security checks",
+          "Bug fixes before release"
+        ]
       },
       {
         "num": "05",
         "tag": "Delivery",
         "title": "Handover & Full Ownership",
         "desc": "Your code, fully yours.",
-        "points": ["Source code & technical documentation", "Full ownership of deliverables", "Handover session & usage training"]
+        "points": [
+          "Source code & technical documentation",
+          "Full ownership of deliverables",
+          "Handover session & usage training"
+        ]
       },
       {
         "num": "06",
         "tag": "Support",
         "title": "Post-Launch Support",
         "desc": "The end of a project doesn't mean the end of the relationship.",
-        "points": ["Post-release bug fix warranty", "Ongoing technical support", "Long-term maintenance options"]
+        "points": [
+          "Post-release bug fix warranty",
+          "Ongoing technical support",
+          "Long-term maintenance options"
+        ]
       }
     ],
     "infoItems": [
-      { "icon": "🤝", "title": "Methodology", "desc": "Agile with 2-week sprints, regular progress demos so you always know where the project stands." },
-      { "icon": "🔐", "title": "Code Ownership", "desc": "Source code and documentation fully belong to you after project completion — no hidden terms." },
-      { "icon": "📄", "title": "NDA & Confidentiality", "desc": "Standard NDA available from the discovery session onward, especially for projects handling sensitive data." },
-      { "icon": "🛠️", "title": "Post-Launch", "desc": "Bug fix warranty after release, with optional long-term maintenance packages." }
+      {
+        "icon": "🤝",
+        "title": "Methodology",
+        "desc": "Agile with 2-week sprints, regular progress demos so you always know where the project stands."
+      },
+      {
+        "icon": "🔐",
+        "title": "Code Ownership",
+        "desc": "Source code and documentation fully belong to you after project completion — no hidden terms."
+      },
+      {
+        "icon": "📄",
+        "title": "NDA & Confidentiality",
+        "desc": "Standard NDA available from the discovery session onward, especially for projects handling sensitive data."
+      },
+      {
+        "icon": "🛠️",
+        "title": "Post-Launch",
+        "desc": "Bug fix warranty after release, with optional long-term maintenance packages."
+      }
     ],
     "contactCta": "Ready to discuss your project needs?",
     "contactButton": "Contact Us"

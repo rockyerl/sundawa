@@ -1,8 +1,25 @@
 'use client'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Lock, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+
+type ClientDetails = {
+    challenge: string
+    architecture: string
+    role: string
+    impact: string
+}
+
+type Client = {
+    num: string
+    name: string
+    initials: string
+    type: string
+    desc: string
+    confidential?: boolean
+    details: ClientDetails
+}
 
 export default function ClientsSection() {
     const t = useTranslations('clients')
@@ -11,10 +28,33 @@ export default function ClientsSection() {
     const [active, setActive] = useState<number | null>(null)
     const [selected, setSelected] = useState<number | null>(null)
 
-    const clients = t.raw('items') as { num: string; name: string; initials: string; type: string; desc: string; confidential?: boolean }[]
+    const clients = t.raw('items') as Client[]
     const stats = t.raw('stats') as { num: string; label: string }[]
 
     const selectedClient = selected !== null ? clients[selected] : null
+
+    // 4 kolom detail, selalu tampil untuk setiap proyek
+    const detailSections = selectedClient
+        ? [
+            { key: 'challenge', label: t('detailLabels.challenge'), text: selectedClient.details.challenge },
+            { key: 'architecture', label: t('detailLabels.architecture'), text: selectedClient.details.architecture },
+            { key: 'role', label: t('detailLabels.role'), text: selectedClient.details.role },
+            { key: 'impact', label: t('detailLabels.impact'), text: selectedClient.details.impact },
+        ]
+        : []
+
+    // Tutup popup dengan Escape + kunci scroll body saat popup terbuka
+    useEffect(() => {
+        if (selected === null) return
+        const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setSelected(null) }
+        window.addEventListener('keydown', onKey)
+        const prevOverflow = document.body.style.overflow
+        document.body.style.overflow = 'hidden'
+        return () => {
+            window.removeEventListener('keydown', onKey)
+            document.body.style.overflow = prevOverflow
+        }
+    }, [selected])
 
     return (
         <section id="clients" ref={ref} style={{ position: 'relative' }}>
@@ -116,13 +156,13 @@ export default function ClientsSection() {
                             exit={{ opacity: 0, y: 16, scale: 0.97 }}
                             transition={{ duration: 0.25, ease: 'easeOut' }}
                             onClick={(e) => e.stopPropagation()}
-                            style={{ position: 'relative', width: '100%', maxWidth: 460, maxHeight: '88dvh', overflowY: 'auto', background: '#0E1E30', border: '1px solid rgba(219,201,119,0.2)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', padding: 'clamp(1.25rem, 5vw, 2rem)' }}
+                            style={{ position: 'relative', width: '100%', maxWidth: 580, maxHeight: '88dvh', overflowY: 'auto', background: '#0E1E30', border: '1px solid rgba(219,201,119,0.2)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', padding: 'clamp(1.25rem, 5vw, 2rem)' }}
                         >
                             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))' }} />
 
                             <button
                                 onClick={() => setSelected(null)}
-                                aria-label="Tutup"
+                                aria-label={t('close')}
                                 style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', width: 36, height: 36, border: '1px solid rgba(248,248,248,0.1)', background: 'transparent', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                             >
                                 <X size={14} />
@@ -150,6 +190,21 @@ export default function ClientsSection() {
                             <p style={{ fontSize: '0.85rem', lineHeight: 1.8, fontWeight: 300, color: 'rgba(248,248,248,0.55)', marginBottom: '1.5rem' }}>
                                 {selectedClient.desc}
                             </p>
+
+                            {detailSections.length > 0 && (
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', marginBottom: '1.5rem' }}>
+                                    {detailSections.map((d) => (
+                                        <div key={d.key} style={{ paddingLeft: '0.9rem', borderLeft: '2px solid rgba(219,201,119,0.25)' }}>
+                                            <div style={{ fontSize: '0.58rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#DBC977', marginBottom: '0.35rem' }}>
+                                                {d.label}
+                                            </div>
+                                            <p style={{ fontSize: '0.8rem', lineHeight: 1.75, fontWeight: 300, color: 'rgba(248,248,248,0.55)', margin: 0 }}>
+                                                {d.text}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
 
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1rem', borderTop: '1px solid rgba(248,248,248,0.05)' }}>
                                 <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(248,248,248,0.25)' }}>{selectedClient.num}</span>
