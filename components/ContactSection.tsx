@@ -39,7 +39,7 @@ export default function ContactSection() {
 
     const contacts: { icon: IconComponent; label: string; value: string; href: string; desc: string }[] = [
         { icon: Phone, label: 'Phone', value: '0823 1808 7980', href: 'tel:082318087980', desc: t('phoneDesc') },
-        { icon: Mail, label: 'Email', value: 'sundawateknologi@gmail.com', href: 'mailto:sundawateknologi@gmail.com', desc: t('emailDesc') },
+        { icon: Mail, label: 'Email', value: 'rocky@sundawa.net', href: 'mailto:rocky@sundawa.net', desc: t('emailDesc') },
         { icon: LinkedInIcon, label: 'LinkedIn', value: 'Sundawa Teknologi Indonesia', href: 'https://www.linkedin.com/company/sundawa-teknologi-indonesia', desc: t('linkedinDesc') },
     ]
 
@@ -76,7 +76,7 @@ export default function ContactSection() {
                             </motion.div>
 
                             <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.25 }} className="mt-8">
-                                <a href="mailto:sundawateknologi@gmail.com" className="inline-flex items-center gap-4 group"
+                                <a href="mailto:rocky@sundawa.net" className="inline-flex items-center gap-4 group"
                                    style={{ padding: '16px 36px', background: '#DBC977', color: '#0E1E30', fontWeight: 900, fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', transition: 'background 0.25s, color 0.25s, box-shadow 0.25s', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.background = '#F8F8F8'; e.currentTarget.style.boxShadow = '0 0 40px rgba(219,201,119,0.35)' }}
                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.background = '#DBC977'; e.currentTarget.style.boxShadow = 'none' }}>

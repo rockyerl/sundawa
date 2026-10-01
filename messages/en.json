@@ -12,8 +12,8 @@
   "hero": {
     "badge": "Software Modernization & Automation",
     "line1": "Your old software",
-    "line2": "May be costing you more",
-    "line3": "Than replacing it",
+    "line2": "may be costing you more",
+    "line3": "than replacing it",
     "line4": "",
     "sub": "Manual workarounds, disconnected systems, slow reporting, and constant maintenance quietly drain time and money. We fix what's holding you back — without replacing what still works.",
     "ctaServices": "See What's Worth Fixing",
@@ -214,7 +214,7 @@
     "label": "Selected Work",
     "heading1": "Operations That",
     "heading2": "Can't Simply Stop Working",
-    "sub": "Sundawa has delivered systems supporting national administration, finance, payments, manufacturing, healthcare, property, and international organizations.",
+    "sub": "Sundawa has delivered systems supporting national administration, finance and payments, healthcare, energy services, education, tourism, property, and international organizations.",
     "confidentialNotice": "Some engagements are confidential",
     "confidential": "Confidential",
     "viewProject": "See the Project",
@@ -538,7 +538,9 @@
       "architecture": "Architecture Complexity",
       "role": "Our Role",
       "impact": "Project Impact"
-    }
+    },
+    "showAll": "Show all projects ({count})",
+    "showLess": "Show fewer"
   },
   "contact": {
     "label": "Get In Touch",

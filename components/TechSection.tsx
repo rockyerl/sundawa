@@ -6,6 +6,17 @@ import { useTranslations } from 'next-intl'
 const SVG_HARDHAT = `<svg viewBox="0 0 24 24" fill="#FFF100" xmlns="http://www.w3.org/2000/svg"><path d="M12 1C8 1 4.5 4 4.5 8v.5C3 9 2 10.1 2 11.5V13h20v-1.5C22 10.1 21 9 19.5 8.5V8C19.5 4 16 1 12 1zm0 2c3 0 5.5 2.2 5.5 5H6.5C6.5 5.2 9 3 12 3zM2 14v1c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-1H2z"/></svg>`
 const SVG_OPENZEPPELIN = `<svg viewBox="0 0 24 24" fill="#4E5EE4" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7v5c0 5.25 4.25 10.15 10 11.35C17.75 22.15 22 17.25 22 12V7L12 2zm0 2.18l8 4.07V12c0 4.34-3.46 8.48-8 9.71C7.46 20.48 4 16.34 4 12V8.25l8-4.07zM11 7v6l5.25 3.15.75-1.23-4.5-2.67V7H11z"/></svg>`
 
+const lucide = (color: string, body: string) =>
+    `<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">${body}</svg>`
+
+const CAT_ICONS = {
+    backend: (c: string) => lucide(c, '<rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/>'),
+    mobile: (c: string) => lucide(c, '<rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/>'),
+    frontend: (c: string) => lucide(c, '<rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/>'),
+    database: (c: string) => lucide(c, '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>'),
+    devops: (c: string) => lucide(c, '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>'),
+}
+
 type Tech = {
     name: string
     color: string
@@ -46,11 +57,11 @@ const techs: Tech[] = [
 ]
 
 const categories: Category[] = [
-    { name: 'Backend',  color: '#FF2D20', count: 4, icon: 'https://cdn.simpleicons.org/serverless/FF2D20' },
-    { name: 'Mobile',   color: '#54C5F8', count: 2, icon: 'https://cdn.simpleicons.org/android/54C5F8'   },
-    { name: 'Frontend', color: '#61DAFB', count: 3, icon: 'https://cdn.simpleicons.org/html5/61DAFB'      },
-    { name: 'Database', color: '#4479A1', count: 3, icon: 'https://cdn.simpleicons.org/databricks/4479A1' },
-    { name: 'DevOps',   color: '#009639', count: 3, icon: 'https://cdn.simpleicons.org/kubernetes/009639' },
+    { name: 'Backend',  color: '#FF2D20', count: 4, svgIcon: CAT_ICONS.backend('#FF2D20') },
+    { name: 'Mobile',   color: '#54C5F8', count: 2, svgIcon: CAT_ICONS.mobile('#54C5F8') },
+    { name: 'Frontend', color: '#61DAFB', count: 3, svgIcon: CAT_ICONS.frontend('#61DAFB') },
+    { name: 'Database', color: '#4479A1', count: 3, svgIcon: CAT_ICONS.database('#4479A1') },
+    { name: 'DevOps',   color: '#009639', count: 3, svgIcon: CAT_ICONS.devops('#009639') },
     { name: 'Web3',     color: '#627EEA', count: 5, icon: 'https://cdn.simpleicons.org/ethereum/627EEA'   },
 ]
 

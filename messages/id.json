@@ -13,7 +13,7 @@
     "badge": "Modernisasi & Otomatisasi Perangkat Lunak",
     "line1": "Sistem lama Anda",
     "line2": "bisa jadi lebih mahal",
-    "line3": "Daripada menggantinya",
+    "line3": "daripada menggantinya",
     "line4": "",
     "sub": "Solusi manual, sistem yang tidak saling terhubung, pelaporan yang lambat, dan pemeliharaan yang terus-menerus diam-diam menguras waktu dan biaya Anda. Kami memperbaiki apa yang menghambat Anda — tanpa mengganti apa yang masih berfungsi dengan baik.",
     "ctaServices": "Lihat yang Perlu Diperbaiki",
@@ -214,7 +214,7 @@
     "label": "Karya Pilihan",
     "heading1": "Operasional yang",
     "heading2": "Tak Bisa Berhenti Bekerja Begitu Saja",
-    "sub": "Sundawa telah menghadirkan sistem yang mendukung administrasi negara, keuangan, pembayaran, manufaktur, kesehatan, properti, dan organisasi internasional.",
+    "sub": "Sundawa telah menghadirkan sistem yang mendukung administrasi negara, keuangan dan pembayaran, kesehatan, layanan kelistrikan, pendidikan, pariwisata, properti, dan organisasi internasional.",
     "confidentialNotice": "Beberapa proyek bersifat rahasia",
     "confidential": "Rahasia",
     "viewProject": "Lihat Proyek",
@@ -538,7 +538,9 @@
       "architecture": "Kompleksitas Arsitektur",
       "role": "Peran Kami",
       "impact": "Dampak Proyek"
-    }
+    },
+    "showAll": "Lihat semua proyek ({count})",
+    "showLess": "Tampilkan lebih sedikit"
   },
   "contact": {
     "label": "Hubungi Kami",
