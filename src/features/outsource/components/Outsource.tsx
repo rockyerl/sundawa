@@ -2,40 +2,26 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Plus, X, ChevronDown, MessageCircle, Trash2, ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import { Link } from '@/src/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import LangToggle from '@/components/LangToggle'
-
-
-type City   = 'bandung' | 'jakarta'
-type Mode   = 'remote' | 'hybrid' | 'onsite'
-type Level  = 'Junior' | 'Mid' | 'Senior'
-
-interface TalentEntry {
-    cat:         string
-    pos:         string
-    level:       Level
-    hybridMin:   number
-    hybridMax:   number
-    remoteSell20: number; remoteSell25: number
-    hybridSell20: number; hybridSell25: number
-    onsiteSell20: number; onsiteSell25: number
-}
-
-interface CartItem {
-    id:      number
-    city:    City
-    pos:     string
-    level:   Level
-    cat:     string
-    mode:    Mode
-    qty:     number
-    sell20:  number
-    sell25:  number
-    feeAvg:  number
-}
+import LangToggle from '@/src/shared/ui/LangToggle'
+import {
+    formatFullPrice,
+    formatMillions,
+    getSellPrice,
+    LEVEL_ORDER,
+    type CartItem,
+    type City,
+    type Level,
+    type Mode,
+    type TalentEntry,
+} from '../domain'
+import TalentSelector from './TalentSelector'
+import EstimateCart from './EstimateCart'
+import InfoStrip from './InfoStrip'
+import ContactCta from './ContactCta'
 
 // ─── Pricing Data ─────────────────────────────────────────────────────────────
 
@@ -160,51 +146,6 @@ const PRICING: Record<City, TalentEntry[]> = {
     ],
 }
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-function fmtJt(n: number): string {
-    if (n <= 0) return 'Rp 0'
-    if (n >= 1_000_000) return 'Rp ' + (n / 1_000_000).toFixed(1).replace(/\.0$/, '') + ' jt'
-    return 'Rp ' + n.toLocaleString('id-ID')
-}
-
-function fmtFull(n: number): string {
-    return 'Rp ' + n.toLocaleString('id-ID')
-}
-
-function getSellPrice(entry: TalentEntry, mode: Mode): number {
-    if (mode === 'remote') return entry.remoteSell20
-    if (mode === 'hybrid') return entry.hybridSell20
-    return entry.onsiteSell20
-}
-
-const LEVEL_ORDER: Level[] = ['Junior', 'Mid', 'Senior']
-
-// ─── Sub-components ───────────────────────────────────────────────────────────
-
-const ModeBadge = ({ mode }: { mode: Mode }) => {
-    const styles: Record<Mode, React.CSSProperties> = {
-        remote: { background: 'rgba(45,125,210,0.2)',  color: '#7BB8EE' },
-        hybrid: { background: 'rgba(219,201,119,0.18)', color: '#DBC977' },
-        onsite: { background: 'rgba(166,106,44,0.25)', color: '#E0A060' },
-    }
-    const labels: Record<Mode, string> = { remote: 'Remote', hybrid: 'Hybrid', onsite: 'Onsite' }
-    return (
-        <span style={{
-            ...styles[mode],
-            display: 'inline-block',
-            padding: '2px 8px',
-            borderRadius: 4,
-            fontSize: '0.6rem',
-            fontWeight: 800,
-            textTransform: 'uppercase',
-            letterSpacing: '0.06em',
-        }}>
-            {labels[mode]}
-        </span>
-    )
-}
-
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function OutsourcePage() {
@@ -274,35 +215,10 @@ export default function OutsourcePage() {
         let msg = t('waButton') + '\n\n' + t('summaryTitle') + ':\n'
         cart.forEach(i => {
             const sell = margin === 20 ? i.sell20 : i.sell25
-            msg += `• ${i.qty}× ${i.pos} (${i.level}) — ${i.mode} — ${i.city === 'bandung' ? 'Bandung' : 'Jakarta'} → ${fmtJt(sell * i.qty)}/bln\n`
+            msg += `• ${i.qty}× ${i.pos} (${i.level}) — ${i.mode} — ${i.city === 'bandung' ? 'Bandung' : 'Jakarta'} → ${formatMillions(sell * i.qty)}/bln\n`
         })
-        msg += `\n${t('totalTalent')} ${totCount}: ${fmtFull(totSell)}/bln`
+        msg += `\n${t('totalTalent')} ${totCount}: ${formatFullPrice(totSell)}/bln`
         return msg
-    }
-
-    const selectStyle: React.CSSProperties = {
-        width: '100%',
-        background: 'rgba(29,52,81,0.7)',
-        border: '1px solid rgba(219,201,119,0.2)',
-        borderRadius: 8,
-        color: '#F8F8F8',
-        fontSize: '0.8rem',
-        padding: '9px 36px 9px 12px',
-        outline: 'none',
-        fontFamily: 'inherit',
-        appearance: 'none',
-        WebkitAppearance: 'none',
-        cursor: 'pointer',
-    }
-
-    const labelStyle: React.CSSProperties = {
-        display: 'block',
-        fontSize: '0.6rem',
-        fontWeight: 700,
-        color: 'rgba(248,248,248,0.4)',
-        marginBottom: 5,
-        textTransform: 'uppercase',
-        letterSpacing: '0.1em',
     }
 
     const tabBtnStyle = (active: boolean): React.CSSProperties => ({
@@ -317,25 +233,6 @@ export default function OutsourcePage() {
         transition: 'all 0.18s',
         letterSpacing: '0.03em',
         fontFamily: 'inherit',
-    })
-
-    const modeStyle = (active: boolean): React.CSSProperties => ({
-        flex: 1,
-        padding: '8px 2px',
-        border: `1px solid ${active ? 'rgba(219,201,119,0.5)' : 'rgba(219,201,119,0.15)'}`,
-        background: active ? 'rgba(219,201,119,0.1)' : 'transparent',
-        color: active ? '#DBC977' : 'rgba(248,248,248,0.4)',
-        borderRadius: 7,
-        fontSize: '0.65rem',
-        fontWeight: 700,
-        cursor: 'pointer',
-        fontFamily: 'inherit',
-        textAlign: 'center' as const,
-        transition: 'all 0.15s',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        minWidth: 0,
     })
 
     // ── Render ──────────────────────────────────────────────────────────────
@@ -451,320 +348,40 @@ export default function OutsourcePage() {
                     {/* ── Calculator body ── */}
                     <div className="calc-body-grid">
 
-                        {/* ── Add panel ── */}
-                        <div style={{ padding: '1.75rem', borderRight: '1px solid rgba(219,201,119,0.12)' }}>
-                            <p style={{ ...labelStyle, marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)' }}>{t('addTitle')}</p>
+                        <TalentSelector
+                            categories={categories}
+                            positions={positions}
+                            levels={levels}
+                            category={cat}
+                            position={pos}
+                            level={level}
+                            quantity={qty}
+                            mode={mode}
+                            activeEntry={activeEntry}
+                            previewPrice={previewSell}
+                            onCategoryChange={handleCatChange}
+                            onPositionChange={handlePosChange}
+                            onLevelChange={setLevel}
+                            onQuantityChange={setQty}
+                            onModeChange={setMode}
+                            onAdd={addTalent}
+                        />
 
-                            {/* Category */}
-                            <div style={{ marginBottom: '0.9rem', position: 'relative' }}>
-                                <label style={labelStyle}>{t('labelCategory')}</label>
-                                <div style={{ position: 'relative' }}>
-                                    <select style={selectStyle} value={cat} onChange={e => handleCatChange(e.target.value)}>
-                                        <option value="">{t('selectCategory')}</option>
-                                        {categories.map(c => <option key={c} value={c}>{c}</option>)}
-                                    </select>
-                                    <ChevronDown size={14} style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', color: 'rgba(219,201,119,0.5)', pointerEvents: 'none' }} />
-                                </div>
-                            </div>
+                        <EstimateCart
+                            cart={cart}
+                            totalCount={totCount}
+                            totalPrice={totSell}
+                            onRemove={removeItem}
+                            onClear={() => setCart([])}
+                            buildMessage={buildWAMessage}
+                        />
 
-                            {/* Position */}
-                            <div style={{ marginBottom: '0.9rem', position: 'relative' }}>
-                                <label style={labelStyle}>{t('labelPosition')}</label>
-                                <div style={{ position: 'relative' }}>
-                                    <select style={{ ...selectStyle, opacity: cat ? 1 : 0.5 }} value={pos} onChange={e => handlePosChange(e.target.value)} disabled={!cat}>
-                                        <option value="">{t('selectPosition')}</option>
-                                        {positions.map(p => <option key={p} value={p}>{p}</option>)}
-                                    </select>
-                                    <ChevronDown size={14} style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', color: 'rgba(219,201,119,0.5)', pointerEvents: 'none' }} />
-                                </div>
-                            </div>
-
-                            {/* Level + Qty */}
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.9rem' }}>
-                                <div>
-                                    <label style={labelStyle}>{t('labelLevel')}</label>
-                                    <div style={{ position: 'relative' }}>
-                                        <select style={{ ...selectStyle, opacity: pos ? 1 : 0.5 }} value={level} onChange={e => setLevel(e.target.value as Level)} disabled={!pos}>
-                                            <option value="">{t('selectLevel')}</option>
-                                            {levels.map(l => <option key={l} value={l}>{l}</option>)}
-                                        </select>
-                                        <ChevronDown size={14} style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', color: 'rgba(219,201,119,0.5)', pointerEvents: 'none' }} />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label style={labelStyle}>{t('labelQty')}</label>
-                                    <input
-                                        type="number" min={1} max={99} value={qty}
-                                        onChange={e => setQty(Math.max(1, Math.min(99, parseInt(e.target.value) || 1)))}
-                                        style={{ ...selectStyle, textAlign: 'center', padding: '9px 12px' }}
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Mode kerja */}
-                            <div style={{ marginBottom: '1.2rem' }}>
-                                <label style={labelStyle}>{t('labelMode')}</label>
-                                <div style={{ display: 'flex', gap: 6 }}>
-                                    {(['remote', 'hybrid', 'onsite'] as Mode[]).map(m => (
-                                        <button key={m} style={modeStyle(mode === m)} onClick={() => setMode(m)}>
-                                            {m === 'remote' ? '🏠 Remote' : m === 'hybrid' ? '🔄 Hybrid' : '🏢 Onsite'}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Price preview */}
-                            {activeEntry && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 6 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    style={{
-                                        background: 'rgba(219,201,119,0.07)',
-                                        border: '1px solid rgba(219,201,119,0.22)',
-                                        borderRadius: 10,
-                                        padding: '12px 14px',
-                                        marginBottom: '1.2rem',
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        gap: 8,
-                                        flexWrap: 'wrap',
-                                    }}
-                                >
-                                    <div>
-                                        <div style={{ fontSize: '0.6rem', color: 'rgba(248,248,248,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>
-                                            {t('pricePerPerson')}
-                                        </div>
-                                    </div>
-                                    <div style={{ textAlign: 'right' }}>
-                                        <div style={{ fontSize: '1rem', fontWeight: 800, color: '#DBC977' }}>
-                                            {fmtJt(previewSell)}
-                                        </div>
-                                        {qty > 1 && (
-                                            <div style={{ fontSize: '0.65rem', color: 'rgba(248,248,248,0.35)' }}>
-                                                {qty} org = {fmtJt(previewSell * qty)}
-                                            </div>
-                                        )}
-                                    </div>
-                                </motion.div>
-                            )}
-
-                            {/* Add button */}
-                            <button
-                                onClick={addTalent}
-                                disabled={!activeEntry}
-                                style={{
-                                    width: '100%',
-                                    background: activeEntry ? '#DBC977' : 'rgba(219,201,119,0.2)',
-                                    color: activeEntry ? '#0E1E30' : 'rgba(248,248,248,0.3)',
-                                    border: 'none',
-                                    borderRadius: 8,
-                                    padding: '11px',
-                                    fontSize: '0.75rem',
-                                    fontWeight: 800,
-                                    cursor: activeEntry ? 'pointer' : 'not-allowed',
-                                    fontFamily: 'inherit',
-                                    letterSpacing: '0.06em',
-                                    textTransform: 'uppercase',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: 6,
-                                    transition: 'all 0.15s',
-                                }}
-                            >
-                                <Plus size={15} />
-                                {t('addButton')}
-                            </button>
-
-                            {/* Notes */}
-                            <p style={{ fontSize: '0.62rem', color: 'rgba(248,248,248,0.2)', marginTop: '1rem', lineHeight: 1.7 }}>
-                                {t('priceNote')}
-                            </p>
-                        </div>
-
-                        {/* ── Summary panel ── */}
-                        <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', minHeight: 480 }}>
-                            <p style={{ ...labelStyle, marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)' }}>{t('summaryTitle')}</p>
-
-                            {/* Cart list */}
-                            <div style={{ flex: 1, overflowY: 'auto', marginBottom: '1rem', maxHeight: 320 }}>
-                                {cart.length === 0 ? (
-                                    <div style={{ textAlign: 'center', padding: '2.25rem 1rem', color: 'rgba(248,248,248,0.2)' }}>
-                                        <div style={{ position: 'relative', width: 72, height: 72, margin: '0 auto 10px', opacity: 0.45 }}>
-                                            <Image src="/assets/mascot.png" alt="" fill className="object-contain" sizes="72px" />
-                                        </div>
-                                        <p style={{ fontSize: '0.78rem' }}>{t('emptyCart')}</p>
-                                    </div>
-                                ) : (
-                                    cart.map(item => {
-                                        const sell = item.sell20
-                                        return (
-                                            <motion.div
-                                                key={item.id}
-                                                initial={{ opacity: 0, x: 10 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                style={{
-                                                    background: 'rgba(29,52,81,0.5)',
-                                                    border: '1px solid rgba(219,201,119,0.1)',
-                                                    borderRadius: 10,
-                                                    padding: '10px 12px',
-                                                    marginBottom: 8,
-                                                    display: 'grid',
-                                                    gridTemplateColumns: '1fr auto',
-                                                    alignItems: 'start',
-                                                    gap: 8,
-                                                }}
-                                            >
-                                                <div>
-                                                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#F8F8F8', marginBottom: 4 }}>
-                                                        {item.qty}× {item.pos}
-                                                    </div>
-                                                    <div style={{ fontSize: '0.65rem', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
-                                                        <ModeBadge mode={item.mode} />
-                                                        <span>{item.level} · {item.city === 'bandung' ? 'Bandung' : 'Jakarta'}</span>
-                                                    </div>
-                                                </div>
-                                                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6 }}>
-                                                    <div style={{ textAlign: 'right' }}>
-                                                        <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#DBC977', whiteSpace: 'nowrap' }}>
-                                                            {fmtJt(sell * item.qty)}
-                                                        </div>
-                                                        <div style={{ fontSize: '0.6rem', color: 'rgba(219,201,119,0.5)' }}>
-                                                            {fmtJt(sell)}/org
-                                                        </div>
-                                                    </div>
-                                                    <button
-                                                        onClick={() => removeItem(item.id)}
-                                                        aria-label="remove"
-                                                        style={{
-                                                            background: 'none', border: 'none',
-                                                            color: 'rgba(248,248,248,0.25)', cursor: 'pointer',
-                                                            padding: 2, lineHeight: 1, marginTop: 2,
-                                                        }}
-                                                    >
-                                                        <X size={13} />
-                                                    </button>
-                                                </div>
-                                            </motion.div>
-                                        )
-                                    })
-                                )}
-                            </div>
-
-                            {/* Totals */}
-                            <div style={{
-                                background: 'rgba(0,0,0,0.25)',
-                                border: '1px solid rgba(219,201,119,0.18)',
-                                borderRadius: 10,
-                                padding: '14px 16px',
-                                marginBottom: '0.9rem',
-                            }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: 'rgba(248,248,248,0.5)', padding: '3px 0' }}>
-                                    <span>{t('totalTalent')}</span><span>{totCount} orang</span>
-                                </div>
-                                <div style={{ borderTop: '1px solid rgba(219,201,119,0.18)', marginTop: 8, paddingTop: 10, display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 800, color: '#DBC977' }}>
-                                    <span>{t('totalPerMonth')}</span>
-                                    <span>{fmtFull(totSell)}</span>
-                                </div>
-                            </div>
-
-                            {/* CTAs */}
-                            <div style={{ display: 'flex', gap: 8 }}>
-                                <a
-                                    href={cart.length > 0 ? `https://wa.me/6287893355332?text=${encodeURIComponent(buildWAMessage())}` : '#'}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        flex: 1,
-                                        background: cart.length > 0 ? '#25D366' : 'rgba(37,211,102,0.2)',
-                                        color: cart.length > 0 ? 'white' : 'rgba(255,255,255,0.3)',
-                                        border: 'none',
-                                        borderRadius: 8,
-                                        padding: '10px',
-                                        fontSize: '0.72rem',
-                                        fontWeight: 800,
-                                        textDecoration: 'none',
-                                        fontFamily: 'inherit',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        gap: 6,
-                                        transition: 'opacity 0.15s',
-                                        cursor: cart.length > 0 ? 'pointer' : 'not-allowed',
-                                        pointerEvents: cart.length > 0 ? 'auto' : 'none',
-                                    }}
-                                >
-                                    <MessageCircle size={14} />
-                                    {t('waButton')}
-                                </a>
-                                {cart.length > 0 && (
-                                    <button
-                                        onClick={() => setCart([])}
-                                        style={{
-                                            background: 'rgba(226,75,74,0.12)',
-                                            color: '#E24B4A',
-                                            border: '1px solid rgba(226,75,74,0.25)',
-                                            borderRadius: 8,
-                                            padding: '10px 12px',
-                                            fontSize: '0.72rem',
-                                            fontWeight: 700,
-                                            cursor: 'pointer',
-                                            fontFamily: 'inherit',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: 4,
-                                        }}
-                                    >
-                                        <Trash2 size={13} />
-                                        {t('reset')}
-                                    </button>
-                                )}
-                            </div>
-                        </div>
                     </div>
                 </div>
             </motion.div>
 
-            {/* ── Info strip ── */}
-            <div style={{ background: 'rgba(29,52,81,0.3)', borderTop: '1px solid rgba(219,201,119,0.1)', padding: '2rem' }}>
-                <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
-                    {[
-                        { icon: '🏠', title: t('infoTitleRemote'),  desc: t('infoRemote') },
-                        { icon: '🔄', title: t('infoTitleHybrid'),  desc: t('infoHybrid') },
-                        { icon: '🏢', title: t('infoTitleOnsite'),  desc: t('infoOnsite') },
-                        { icon: '📋', title: t('infoTitleNote'),    desc: t('infoNote')   },
-                    ].map(item => (
-                        <div key={item.title}>
-                            <div style={{ fontSize: '1.1rem', marginBottom: 6 }}>{item.icon}</div>
-                            <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#DBC977', marginBottom: 6, letterSpacing: '0.03em' }}>{item.title}</div>
-                            <p style={{ fontSize: '0.7rem', color: 'rgba(248,248,248,0.35)', lineHeight: 1.7, fontWeight: 300 }}>{item.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* ── Contact CTA ── */}
-            <div style={{ padding: '3rem 2rem', textAlign: 'center' }}>
-                <p style={{ fontSize: '0.72rem', color: 'rgba(248,248,248,0.35)', marginBottom: '1rem' }}>
-                    {t('contactCta')}
-                </p>
-                <Link
-                    href="/#contact"
-                    style={{
-                        display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                        fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.15em',
-                        textTransform: 'uppercase', color: '#DBC977',
-                        padding: '0.6rem 1.5rem',
-                        border: '1px solid rgba(219,201,119,0.35)',
-                        background: 'rgba(219,201,119,0.06)',
-                        textDecoration: 'none',
-                        transition: 'all 0.2s',
-                    }}
-                >
-                    {t('contactButton')} <ArrowUpRight size={12} />
-                </Link>
-            </div>
+            <InfoStrip />
+            <ContactCta />
 
             <style>{`
                 .gold-gradient {

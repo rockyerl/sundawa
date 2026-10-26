@@ -1,14 +1,12 @@
 import { Link } from '@/src/i18n/navigation'
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
-import { client } from '@/lib/sanity'
 import { urlFor } from '@/lib/sanity'
-import { postsQuery } from '@/lib/Queries'
-import type { Post } from '@/lib/types'
+import { getPosts } from '@/src/features/blog'
 
 export default async function BlogSection() {
     const t = await getTranslations('blog')
-    const posts: Post[] = await client.fetch(postsQuery)
+    const posts = await getPosts()
 
     // Cuma tampilin 3 post terbaru di landing page
     const latestPosts = posts.slice(0, 3)

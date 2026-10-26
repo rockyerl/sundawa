@@ -7,9 +7,9 @@ export const SITE_NAME = 'Sundawa Teknologi'
 
 const OG_LOCALE: Record<string, string> = { id: 'id_ID', en: 'en_US' }
 
-// routing.ts uses localePrefix: 'always', so every URL carries its locale: /id, /id/outsource, /en/blog ...
 export function localizedPath(locale: string, path = '') {
-    return `/${locale}${path}`
+    const normalizedPath = path ? (path.startsWith('/') ? path : `/${path}`) : ''
+    return `/${locale}${normalizedPath}`
 }
 
 export function buildAlternates(locale: string, path = '') {

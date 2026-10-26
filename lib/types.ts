@@ -16,5 +16,14 @@ export interface Post {
     mainImage?: SanityImage
     excerpt?: string
     body?: PortableTextBlock[]
-    publishedAt: string
+    publishedAt?: string
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+    return typeof value === 'object' && value !== null
+}
+
+export function isPost(value: unknown): value is Post {
+    if (!isRecord(value) || typeof value._id !== 'string' || typeof value.title !== 'string') return false
+    return isRecord(value.slug) && typeof value.slug.current === 'string'
 }

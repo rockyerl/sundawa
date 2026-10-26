@@ -1,20 +1,16 @@
 import type { Metadata } from 'next'
-import { cache } from 'react'
 import Image from 'next/image'
 import { Link } from '@/src/i18n/navigation'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
-import { client, urlFor } from '@/lib/sanity'
-import { postBySlugQuery, postSlugsQuery } from '@/lib/Queries'
-import PortableTextRenderer from '@/components/PortableTextRenderer'
-import type { Post } from '@/lib/types'
+import { urlFor } from '@/lib/sanity'
+import { PortableTextRenderer } from '@/src/features/blog'
 import { buildAlternates, SITE_URL, SITE_NAME } from '@/lib/Seo'
-
-const getPost = cache((slug: string): Promise<Post | null> => client.fetch(postBySlugQuery, { slug }))
+import { getPostBySlug, getPostSlugs } from '@/src/features/blog'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
     const { locale, slug } = await params
-    const post = await getPost(slug)
+    const post = await getPostBySlug(slug)
     if (!post) return {}
     const { canonical } = buildAlternates(locale, `/blog/${slug}`)
     const image = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : '/og-image.png'
@@ -37,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 // Generate static params buat semua slug yang ada (SSG)
 export async function generateStaticParams() {
-    const slugs: { slug: string }[] = await client.fetch(postSlugsQuery)
+    const slugs = await getPostSlugs()
     return slugs.map((s) => ({ slug: s.slug }))
 }
 
@@ -49,7 +45,7 @@ export default async function BlogDetailPage({
     const { locale, slug } = await params
     const t = await getTranslations('blog')
 
-    const post: Post | null = await getPost(slug)
+    const post = await getPostBySlug(slug)
 
     if (!post) {
         notFound()

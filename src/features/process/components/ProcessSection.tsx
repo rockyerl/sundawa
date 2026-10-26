@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowUpRight, Search, PenTool, Code2, TestTube, PackageCheck
 import Image from 'next/image'
 import { Link } from '@/src/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import LangToggle from '@/components/LangToggle'
+import LangToggle from '@/src/shared/ui/LangToggle'
 
 const icons = [Search, PenTool, Code2, TestTube, PackageCheck, HeartHandshake]
 

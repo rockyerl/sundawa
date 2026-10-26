@@ -4,8 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/src/i18n/routing'
 import { SITE_URL, SITE_NAME } from '@/lib/Seo'
-import IntroLoader from '@/components/Introloader'
-import PageTransition from '@/components/Pagetransition'
+import { IntroLoader, PageTransition } from '@/src/shared/ui'
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 

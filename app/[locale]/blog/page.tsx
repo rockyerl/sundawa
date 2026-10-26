@@ -2,10 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/src/i18n/navigation'
-import { client, urlFor } from '@/lib/sanity'
-import { postsQuery } from '@/lib/Queries'
-import type { Post } from '@/lib/types'
+import { urlFor } from '@/lib/sanity'
 import { pageMetadata } from '@/lib/Seo'
+import { getPosts } from '@/src/features/blog'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params
@@ -14,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function BlogPage() {
     const t = await getTranslations('blog')
-    const posts: Post[] = await client.fetch(postsQuery)
+    const posts = await getPosts()
 
     return (
         <main className="relative min-h-screen pt-28 pb-16 md:pt-32 md:pb-24" style={{ background: '#0E1E30' }}>

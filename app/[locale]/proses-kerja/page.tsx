@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import ProcessSection from '@/components/ProcessSection'
+import { ProcessSection } from '@/src/features/process'
 import { pageMetadata } from '@/lib/Seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

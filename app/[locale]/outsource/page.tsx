@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import OutsourceCalculator from '@/components/Outsource'
+import { OutsourceCalculator } from '@/src/features/outsource'
 import { pageMetadata } from '@/lib/Seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

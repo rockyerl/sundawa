@@ -4,7 +4,7 @@ import { useEffect, useRef, useSyncExternalStore } from 'react'
 import { ChevronDown, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { getIntroSeenSnapshot, markIntroSeen, subscribeIntroSeen } from './IntroEvents'
+import { getIntroSeenSnapshot, markIntroSeen, subscribeIntroSeen } from '@/src/shared/ui/IntroEvents'
 
 function getServerSnapshot() {
     return false

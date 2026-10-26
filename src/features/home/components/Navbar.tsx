@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
-import LangToggle from './LangToggle'
+import LangToggle from '@/src/shared/ui/LangToggle'
 
 export default function Navbar() {
     const t = useTranslations('nav')

@@ -1,16 +1,18 @@
-import ParticleField from '@/components/ParticleFieldClient'
-import Navbar from '@/components/Navbar'
-import HeroSection from '@/components/HeroSection'
-import ProblemSection from '@/components/ProblemSection'
-import AboutSection from '@/components/AboutSection'
-import ValuesSection from '@/components/ValuesSection'
-import ServicesSection from '@/components/ServicesSection'
-import TechSection from '@/components/TechSection'
-import ClientsSection from '@/components/ClientsSection'
-import ObjectionsSection from '@/components/ObjectionsSection'
-import FinalCtaSection from '@/components/FinalCtaSection'
-import ContactSection from '@/components/ContactSection'
-import BlogSection from '@/components/Blogsection'
+import {
+    AboutSection,
+    BlogSection,
+    ClientsSection,
+    ContactSection,
+    FinalCtaSection,
+    HeroSection,
+    Navbar,
+    ObjectionsSection,
+    ParticleField,
+    ProblemSection,
+    ServicesSection,
+    TechSection,
+    ValuesSection,
+} from '@/src/features/home'
 
 export default function Home() {
     return (
