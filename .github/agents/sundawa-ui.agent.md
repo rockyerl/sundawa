@@ -78,7 +78,7 @@ The homepage is composed of 13 sections exported from `src/features/home/index.t
 | `ServicesSection` | Service offerings grid |
 | `TechSection` | Technology stack grid (data from `techCatalog.ts`) |
 | `TechIcon` | SVG icon renderer (CDN + inline) |
-| `ClientsSection` | Client portfolio showcase |
+| `ClientsSection` | Client portfolio showcase — fetches from Supabase |
 | `ObjectionsSection` | Common objections / FAQ section |
 | `FinalCtaSection` | Final call-to-action before contact |
 | `ContactSection` | Contact information & form |
@@ -87,8 +87,8 @@ The homepage is composed of 13 sections exported from `src/features/home/index.t
 
 **Additional internal components** (not exported from index.ts):
 - `Introcontext` — intro animation context provider
-- `ClientProjectDialog` — client project detail modal
-- `ClientsGrid` — client logos grid
+- `ClientProjectDialog` — client project detail modal (uses `PortfolioProject` type)
+- `ClientsGrid` — card grid with cover image backgrounds from Supabase
 - `ClientsStats` — client statistics display
 - `ParticleFieldClient` — client-side particle animation wrapper
 
@@ -99,11 +99,22 @@ The homepage is composed of 13 sections exported from `src/features/home/index.t
 | Component | Role |
 |---|---|
 | `BlogCard` | Reusable card for blog post preview — used in `BlogArchive` and `Blogsection` (home) |
-| `BlogArchive` | Full blog listing with `SubpageNav` header |
+| `BlogArchive` | Full blog listing with search input and `SubpageNav` header |
 | `BlogPostDetail` | Full post renderer with JSON-LD structured data |
 | `MdxRenderer` | HTML renderer (dangerouslySetInnerHTML for TipTap output) |
 
 **BlogCard** is the single source of truth for post card UI. If you update card styles, update only `BlogCard.tsx`.
+
+---
+
+## Portfolio UI Components (`src/features/portfolio/components/`)
+
+| Component | Role |
+|---|---|
+| `PortfolioArchive` | Grid listing with cover image backgrounds, hover zoom, and initials fallback |
+| `PortfolioDetail` | Single project detail with hero banner, cover image overlay, and project info |
+
+**PortfolioArchive** cards use cover images as backgrounds with gradient overlays. Projects without images show initials badges with gradient backgrounds.
 
 ---
 

@@ -54,19 +54,26 @@ sundawa-web/
 │   ├── globals.css
 │   ├── Robots.ts
 │   ├── sitemap.ts
-│   └── admin/                    # Custom admin panel (password protected)
-│       ├── layout.tsx            # Auth guard
-│       ├── page.tsx              # Dashboard — list posts
+│   └── admin/                    # Custom admin panel (unified CMS)
+│       ├── layout.tsx            # Auth guard + ToastContainer
+│       ├── page.tsx              # Dashboard — tabs (Blog | Portfolio)
 │       ├── components/
-│       │   └── TipTapEditor.tsx  # Rich text editor
-│       └── posts/
-│           ├── PostForm.tsx      # Create/edit form
-│           ├── new/page.tsx      # Create new post
-│           └── [id]/edit/page.tsx # Edit post
+│       │   ├── TipTapEditor.tsx  # Rich text editor
+│       │   └── Toast.tsx         # Toast notifications + real-time refresh
+│       ├── posts/
+│       │   ├── PostForm.tsx      # Create/edit form with TipTap
+│       │   ├── new/page.tsx      # Create new post
+│       │   └── [id]/edit/page.tsx # Edit post
+│       └── portfolio/
+│           ├── page.tsx          # Portfolio dashboard with pagination
+│           ├── PortfolioForm.tsx # Create/edit form with cover image
+│           ├── new/page.tsx      # Create new project
+│           └── [id]/edit/page.tsx # Edit project
 │   └── api/
 │       ├── admin/auth/route.ts   # Admin login/logout
-│       ├── blog/posts/route.ts   # CRUD API
-│       └── blog/upload/route.ts  # Image upload
+│       ├── blog/posts/route.ts   # CRUD API for blog posts
+│       ├── blog/portfolio/route.ts # CRUD API for portfolio (with pagination)
+│       └── blog/upload/route.ts  # Image upload to Supabase Storage
 ├── messages/
 │   ├── id.json                       # Indonesian (default)
 │   └── en.json                       # English (must mirror id.json 1:1)
@@ -82,7 +89,7 @@ sundawa-web/
 │   │   │   │   ├── ServicesSection.tsx
 │   │   │   │   ├── TechSection.tsx       # Imports data from techCatalog.ts
 │   │   │   │   ├── TechIcon.tsx          # SVG renderer — uses `unoptimized` for CDN SVGs
-│   │   │   │   ├── ClientsSection.tsx
+│   │   │   │   ├── ClientsSection.tsx    # Fetches from Supabase portfolio
 │   │   │   │   ├── ObjectionsSection.tsx
 │   │   │   │   ├── FinalCtaSection.tsx
 │   │   │   │   ├── ContactSection.tsx
@@ -124,12 +131,12 @@ sundawa-web/
 │   │       │   └── ProcessSection.tsx    # Uses SubpageNav
 │   │       ├── types.ts                  # ProcessStep, ProcessInfoItem
 │   │       └── index.ts
-│   │   ├── portfolio/
+│   │   ├── portfolio/              # Supabase backed
 │   │   │   ├── components/
-│   │   │   │   ├── PortfolioArchive.tsx  # Portfolio grid listing
-│   │   │   │   └── PortfolioDetail.tsx   # Single project detail
-│   │   │   ├── types.ts                  # PortfolioProject type
-│   │   │   ├── data.ts                   # Data transformation from clients
+│   │   │   │   ├── PortfolioArchive.tsx  # Grid with cover images
+│   │   │   │   └── PortfolioDetail.tsx   # Detail with hero banner
+│   │   │   ├── types.ts                  # Re-exports from lib/types.ts
+│   │   │   ├── data.ts                   # Supabase queries (no cache)
 │   │   │   └── index.ts
 │   │   ├── services/
 │   │   │   ├── components/

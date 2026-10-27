@@ -61,7 +61,7 @@ sundawa-web/
 │   │   └── page.tsx              # Offline fallback with Sundawa branding
 │   ├── globals.css               # Tailwind CSS v4 setup & theme styles
 │   ├── Robots.ts                 # Dynamic robots.txt
-│   └── sitemap.ts                # Dynamic sitemap with Supabase post slugs
+│   └── sitemap.ts                # Dynamic sitemap with Supabase post + portfolio slugs
 ├── messages/                     # Translation dictionaries
 │   ├── id.json                   # Indonesian translations (primary)
 │   └── en.json                   # English translations (must mirror id.json 1:1)
@@ -77,7 +77,7 @@ sundawa-web/
 │   │   │   │   ├── ServicesSection.tsx   # Service offerings grid
 │   │   │   │   ├── TechSection.tsx       # Tech grid — imports data from techCatalog.ts
 │   │   │   │   ├── TechIcon.tsx          # SVG icon renderer — uses `unoptimized` for CDN SVGs
-│   │   │   │   ├── ClientsSection.tsx    # Client portfolio showcase
+│   │   │   │   ├── ClientsSection.tsx    # Client portfolio showcase — fetches from Supabase
 │   │   │   │   ├── ObjectionsSection.tsx # Common objections/FAQ
 │   │   │   │   ├── FinalCtaSection.tsx   # Final call-to-action
 │   │   │   │   ├── ContactSection.tsx    # Contact information & form
@@ -88,7 +88,7 @@ sundawa-web/
 │   │   │   │   ├── ClientProjectDialog.tsx # Client project detail modal
 │   │   │   │   ├── ClientsGrid.tsx       # Client logos grid
 │   │   │   │   └── ClientsStats.tsx      # Client statistics display
-│   │   │   ├── clients.ts        # Client portfolio data & types
+│   │   │   ├── clients.ts        # Client constants (INITIAL_VISIBLE_CLIENTS)
 │   │   │   ├── clients.test.ts   # Client data contract tests
 │   │   │   ├── tech.ts           # Tech & TechCategory type definitions
 │   │   │   ├── techCatalog.ts    # Technology catalog data (techs[], categories[])
@@ -119,12 +119,12 @@ sundawa-web/
 │   │       │   └── ProcessSection.tsx  # Uses SubpageNav, typed with process domain types
 │   │       ├── types.ts          # ProcessStep, ProcessInfoItem type definitions
 │   │       └── index.ts          # Public exports for the process feature
-│   │   ├── portfolio/            # Project portfolio feature
+│   │   ├── portfolio/            # Project portfolio feature — Supabase backed
 │   │   │   ├── components/
-│   │   │   │   ├── PortfolioArchive.tsx  # Portfolio grid listing
-│   │   │   │   └── PortfolioDetail.tsx   # Single project detail page
-│   │   │   ├── types.ts          # PortfolioProject type definition
-│   │   │   ├── data.ts           # Portfolio data transformation from clients
+│   │   │   │   ├── PortfolioArchive.tsx  # Portfolio grid listing with cover images
+│   │   │   │   └── PortfolioDetail.tsx   # Single project detail with hero banner
+│   │   │   ├── types.ts          # Re-exports PortfolioProject from lib/types.ts
+│   │   │   ├── data.ts           # Supabase queries (getPortfolioProjects, getPortfolioProjectBySlug) — no cache
 │   │   │   └── index.ts          # Public exports for the portfolio feature
 │   │   ├── services/             # Services listing & detail feature
 │   │   │   ├── components/
@@ -177,19 +177,26 @@ sundawa-web/
 │       ├── icon-192x192.png      # PWA icon 192x192
 │       └── icon-512x512.png      # PWA icon 512x512
 ├── app/
-│   └── admin/                    # Custom admin panel (password protected)
-│       ├── layout.tsx            # Auth guard (ADMIN_PASSWORD env var)
-│       ├── page.tsx              # Dashboard — list posts with CRUD actions
+│   └── admin/                    # Custom admin panel (password protected, unified CMS)
+│       ├── layout.tsx            # Auth guard (ADMIN_PASSWORD env var) + ToastContainer
+│       ├── page.tsx              # Dashboard — tab navigation (Blog | Portfolio) with real-time CRUD
 │       ├── components/
-│       │   └── TipTapEditor.tsx  # Rich text editor (bold, italic, heading, lists, link, image)
-│       └── posts/
-│           ├── PostForm.tsx      # Shared create/edit form with cover image upload
-│           ├── new/page.tsx      # Create new post
-│           └── [id]/edit/page.tsx # Edit existing post
+│       │   ├── TipTapEditor.tsx  # Rich text editor (bold, italic, heading, lists, link, image)
+│       │   └── Toast.tsx         # Toast notification system with real-time data refresh
+│       ├── posts/
+│       │   ├── PostForm.tsx      # Shared create/edit form with TipTap + cover image upload
+│       │   ├── new/page.tsx      # Create new post
+│       │   └── [id]/edit/page.tsx # Edit existing post
+│       └── portfolio/
+│           ├── page.tsx          # Portfolio dashboard with pagination
+│           ├── PortfolioForm.tsx # Shared create/edit form with cover image upload
+│           ├── new/page.tsx      # Create new project
+│           └── [id]/edit/page.tsx # Edit existing project
 ├── app/
 │   └── api/
 │       ├── admin/auth/route.ts   # Admin login/logout (cookie session)
 │       ├── blog/posts/route.ts   # CRUD API for blog posts
+│       ├── blog/portfolio/route.ts # CRUD API for portfolio projects (with pagination)
 │       └── blog/upload/route.ts  # Image upload to Supabase Storage
 └── .github/
     ├── agents/                   # GitHub Copilot custom agents
@@ -230,22 +237,28 @@ sundawa-web/
 ### 3.5. Supabase & Data Fetching
 - Supabase client configuration is initialized in `lib/supabase.ts`.
 - Required environment variables are strictly verified in `lib/env.ts` (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ADMIN_PASSWORD`). Do not use hardcoded fallback strings.
-- All data fetching operations go through `src/features/blog/data.ts` — **no React `cache()`** to ensure fresh data after admin CRUD operations.
-- Validate incoming data using `isPost` runtime type guard before rendering.
+- All data fetching operations go through feature `data.ts` files — **no React `cache()`** to ensure fresh data after admin CRUD operations.
+- Validate incoming data using `isPost` / `isPortfolioProject` runtime type guards before rendering.
 - Render blog content using `HtmlRenderer` in `src/features/blog/components/MdxRenderer.tsx` (dangerouslySetInnerHTML for HTML output from TipTap).
 - Images are stored in Supabase Storage (`blog-images` bucket) and referenced by public URL string.
-- Database table `posts` columns: `id` (uuid), `title` (text), `slug` (text unique), `body_html` (text), `excerpt` (text nullable), `main_image_url` (text nullable), `published_at` (timestamptz), `created_at`, `updated_at`.
+- **Database table `posts`** columns: `id` (uuid), `title` (text), `slug` (text unique), `body_html` (text), `excerpt` (text nullable), `main_image_url` (text nullable), `published_at` (timestamptz), `created_at`, `updated_at`.
+- **Database table `portfolio`** columns: `id` (uuid), `slug` (text unique), `num` (text), `name` (text), `initials` (text), `type` (text), `desc` (text), `confidential` (boolean), `challenge` (text), `architecture` (text), `role` (text), `impact` (text), `main_image_url` (text nullable), `created_at`, `updated_at`.
+- Both tables have RLS disabled for admin panel access.
 
 ### 3.6. Admin Panel
 - Located at `app/admin/` with client-side auth guard (password from `ADMIN_PASSWORD` env var).
-- Dashboard at `app/admin/page.tsx` lists all posts with edit/delete actions.
-- Create post at `app/admin/posts/new/page.tsx`, edit at `app/admin/posts/[id]/edit/page.tsx`.
-- Shared form component: `app/admin/posts/PostForm.tsx` with TipTap rich text editor (bold, italic, headings, lists, links, images, code blocks) and cover image upload with preview.
+- **Unified CMS**: Dashboard at `app/admin/page.tsx` has tab navigation (Blog | Portfolio) for managing both content types.
+- **Blog management**: Create at `app/admin/posts/new/page.tsx`, edit at `app/admin/posts/[id]/edit/page.tsx`.
+- **Portfolio management**: Dashboard at `app/admin/portfolio/page.tsx` with pagination (10 per page). Create at `app/admin/portfolio/new/page.tsx`, edit at `app/admin/portfolio/[id]/edit/page.tsx`.
+- Shared form components: `PostForm.tsx` (TipTap + cover image), `PortfolioForm.tsx` (text fields + cover image upload).
 - TipTap editor: `app/admin/components/TipTapEditor.tsx` — dark theme matching Sundawa design.
-- API routes: `/api/admin/auth` (login/logout), `/api/blog/posts` (CRUD), `/api/blog/upload` (image upload to Supabase Storage).
+- **Toast notifications**: `app/admin/components/Toast.tsx` provides real-time feedback for all CRUD operations with `showToast()`, `refreshData()`, and `onDataRefresh()` event emitter system.
+- **Real-time CRUD**: All operations (create, update, delete) provide instant UI feedback via local state filter + server reload via event emitter.
+- API routes: `/api/admin/auth` (login/logout), `/api/blog/posts` (CRUD), `/api/blog/portfolio` (CRUD with pagination), `/api/blog/upload` (image upload to Supabase Storage).
 - `/admin` is disallowed in `app/Robots.ts` to prevent search engine indexing.
-- Edit page uses `await params` for Next.js 16 App Router async params pattern.
+- Edit pages use `await params` for Next.js 16 App Router async params pattern.
 - Logout redirects to `/admin` (not home) via `setAuthenticated(false)` + `window.location.href`.
+- Admin routes use `next/link` directly (not `@/src/i18n/navigation`) because they live outside `[locale]` tree.
 
 ### 3.7. Outsource Calculator Domain Logic
 - Pure calculations for talent rates, modes (remote/hybrid/onsite), margins, cart totals, and pricing strings live in `src/features/outsource/domain.ts`.
@@ -277,10 +290,10 @@ sundawa-web/
 
 ### 3.12. SEO & Structured Data
 - **Metadata**: `lib/Seo.ts` provides `pageMetadata()` for 8 page keys (home, outsource, process, blog, portfolio, contact, about, services) with canonical URLs, hreflang, Open Graph, and Twitter cards.
-- **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) plus dynamic blog post slugs from Supabase.
+- **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) plus dynamic blog post slugs AND portfolio project slugs from Supabase.
 - **Structured Data (JSON-LD)**: Layout injects Organization + WebSite schema with ContactPoint and SearchAction. Blog posts include BlogPosting schema.
 - **Google Search Console**: Verification token configured in layout metadata (`verification.google`).
-- **Robots.txt**: Disallows `/offline` path, allows all other paths.
+- **Robots.txt**: Disallows `/offline` and `/admin` paths, allows all other paths.
 - **Open Graph**: `/og-image.png` (1200x630) used for social sharing previews.
 - **Favicons**: `/favicon.ico`, `/favicon-16x16.png`, `/favicon-32x32.png`, `/apple-touch-icon.png` generated from logo.
 
@@ -320,7 +333,7 @@ Before submitting any changes, always execute:
 ```bash
 npm.cmd run check
 ```
-This runs ESLint, TypeScript compiler verification, and the Vitest test suite (6 suites, 15 tests).
+This runs ESLint, TypeScript compiler verification, and the Vitest test suite (6 suites, 17 tests).
 
 ### Known Issues
 - **Turbopack build panic**: `npm run build` may fail with a Turbopack internal panic on `app/globals.css` in Next.js 16.2.7. This is a known upstream bug — not a code issue. The dev server works fine; use `npm run check` as the quality gate, not `npm run build`.
