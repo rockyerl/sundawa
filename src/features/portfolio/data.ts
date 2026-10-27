@@ -1,31 +1,31 @@
-import type { Client } from '@/src/features/home/clients'
-import type { PortfolioProject } from './types'
+import { supabase } from '@/lib/supabase'
+import { isPortfolioProject, type PortfolioProject } from '@/lib/types'
 
-function clientToSlug(client: Client): string {
-    return client.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-}
+export async function getPortfolioProjects(): Promise<PortfolioProject[]> {
+    const { data, error } = await supabase
+        .from('portfolio')
+        .select('*')
+        .order('created_at', { ascending: false })
 
-function clientToPortfolio(client: Client): PortfolioProject {
-    return {
-        slug: clientToSlug(client),
-        num: client.num,
-        name: client.name,
-        initials: client.initials,
-        type: client.type,
-        desc: client.desc,
-        confidential: client.confidential,
-        challenge: client.details.challenge,
-        architecture: client.details.architecture,
-        role: client.details.role,
-        impact: client.details.impact,
+    if (error) {
+        console.error('[portfolio] failed to fetch projects:', error)
+        return []
     }
+
+    return (data ?? []).filter(isPortfolioProject)
 }
 
-export function getPortfolioProjects(clients: Client[]): PortfolioProject[] {
-    return clients.map(clientToPortfolio)
-}
+export async function getPortfolioProjectBySlug(slug: string): Promise<PortfolioProject | undefined> {
+    const { data, error } = await supabase
+        .from('portfolio')
+        .select('*')
+        .eq('slug', slug)
+        .single()
 
-export function getPortfolioProjectBySlug(clients: Client[], slug: string): PortfolioProject | undefined {
-    const project = getPortfolioProjects(clients).find((p) => p.slug === slug)
-    return project
+    if (error) {
+        console.error('[portfolio] failed to fetch project by slug:', error)
+        return undefined
+    }
+
+    return isPortfolioProject(data) ? data : undefined
 }

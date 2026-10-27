@@ -53,7 +53,20 @@ sundawa-web/
 │   ├── offline/page.tsx          # PWA offline fallback
 │   ├── globals.css
 │   ├── Robots.ts
-│   └── sitemap.ts
+│   ├── sitemap.ts
+│   └── admin/                    # Custom admin panel (password protected)
+│       ├── layout.tsx            # Auth guard
+│       ├── page.tsx              # Dashboard — list posts
+│       ├── components/
+│       │   └── TipTapEditor.tsx  # Rich text editor
+│       └── posts/
+│           ├── PostForm.tsx      # Create/edit form
+│           ├── new/page.tsx      # Create new post
+│           └── [id]/edit/page.tsx # Edit post
+│   └── api/
+│       ├── admin/auth/route.ts   # Admin login/logout
+│       ├── blog/posts/route.ts   # CRUD API
+│       └── blog/upload/route.ts  # Image upload
 ├── messages/
 │   ├── id.json                       # Indonesian (default)
 │   └── en.json                       # English (must mirror id.json 1:1)
@@ -104,7 +117,7 @@ sundawa-web/
 │   │   │   │   ├── BlogArchive.tsx       # Post listing with SubpageNav
 │   │   │   │   ├── BlogPostDetail.tsx    # Post renderer with JSON-LD schema
 │   │   │   │   └── MdxRenderer.tsx         # HTML renderer (TipTap output)
-│   │   │   ├── data.ts                   # getPosts, getPostBySlug (Supabase cache)
+│   │   │   ├── data.ts                   # getPosts, getPostBySlug (Supabase, no cache)
 │   │   │   └── index.ts
 │   │   └── process/
 │   │       ├── components/
@@ -255,6 +268,14 @@ The app is installable as a PWA with offline support:
 - **Install Prompt**: `InstallPrompt` component shows a banner on supported browsers
 - **Offline Fallback**: `/offline` page displays when the user loses connectivity
 - **Icons**: 192x192 and 512x512 PNG icons generated from the existing logo
+
+### Admin Panel
+Custom admin panel at `/admin` for managing blog posts:
+- **Auth**: Password-protected (via `ADMIN_PASSWORD` env var)
+- **Dashboard**: List all posts with edit/delete actions
+- **TipTap Editor**: Rich text editing with bold, italic, headings, lists, links, images, code blocks
+- **Image Upload**: Cover images and inline images uploaded to Supabase Storage (`blog-images` bucket)
+- **API Routes**: `/api/admin/auth` (login), `/api/blog/posts` (CRUD), `/api/blog/upload` (images)
 
 ### SEO & Structured Data
 The app follows SEO best practices with complete metadata and structured data:

@@ -1,9 +1,9 @@
 'use client'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
-import { ArrowUpRight, ChevronDown, Lock } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { INITIAL_VISIBLE_CLIENTS, type Client } from '../clients'
+import { INITIAL_VISIBLE_CLIENTS } from '../clients'
+import type { PortfolioProject } from '@/lib/types'
 import ClientProjectDialog from './ClientProjectDialog'
 import ClientsStats from './ClientsStats'
 import ClientsGrid from './ClientsGrid'
@@ -15,22 +15,61 @@ export default function ClientsSection() {
     const [active, setActive] = useState<number | null>(null)
     const [selected, setSelected] = useState<number | null>(null)
     const [expanded, setExpanded] = useState(false)
+    const [projects, setProjects] = useState<PortfolioProject[]>([])
 
-    const clients = t.raw('items') as Client[]
     const stats = t.raw('stats') as { num: string; label: string }[]
 
-    const visibleClients = expanded ? clients : clients.slice(0, INITIAL_VISIBLE_CLIENTS)
-    const hasMore = clients.length > INITIAL_VISIBLE_CLIENTS
+    // Fetch portfolio data from Supabase
+    const loadProjects = useCallback(async () => {
+        try {
+            const res = await fetch('/api/blog/portfolio?page=1&per_page=50')
+            if (!res.ok) {
+                console.error('Portfolio API returned status:', res.status)
+                return
+            }
+            const text = await res.text()
+            if (!text) {
+                console.error('Portfolio API returned empty response')
+                return
+            }
+            const result = JSON.parse(text)
+            if (result.data && Array.isArray(result.data)) {
+                setProjects(result.data)
+            }
+        } catch (err) {
+            console.error('Failed to fetch portfolio for clients section:', err)
+        }
+    }, [])
 
-    const selectedClient = selected !== null ? clients[selected] : null
+    useEffect(() => {
+        // Schedule fetch asynchronously to avoid synchronous setState in effect
+        Promise.resolve().then(() => loadProjects())
+    }, [loadProjects])
+
+    // Poll for portfolio changes every 30 seconds to keep homepage in sync
+    const loadProjectsRef = useRef(loadProjects)
+    useEffect(() => {
+        loadProjectsRef.current = loadProjects
+    }, [loadProjects])
+    useEffect(() => {
+        const interval = setInterval(() => {
+            loadProjectsRef.current()
+        }, 30000)
+        return () => clearInterval(interval)
+    }, [])
+
+    const visibleClients = expanded ? projects : projects.slice(0, INITIAL_VISIBLE_CLIENTS)
+    const hasMore = projects.length > INITIAL_VISIBLE_CLIENTS
+
+    const selectedClient = selected !== null ? projects[selected] : null
 
     // 4 kolom detail, selalu tampil untuk setiap proyek
     const detailSections = selectedClient
         ? [
-            { key: 'challenge', label: t('detailLabels.challenge'), text: selectedClient.details.challenge },
-            { key: 'architecture', label: t('detailLabels.architecture'), text: selectedClient.details.architecture },
-            { key: 'role', label: t('detailLabels.role'), text: selectedClient.details.role },
-            { key: 'impact', label: t('detailLabels.impact'), text: selectedClient.details.impact },
+            { key: 'challenge', label: t('detailLabels.challenge'), text: selectedClient.challenge },
+            { key: 'architecture', label: t('detailLabels.architecture'), text: selectedClient.architecture },
+            { key: 'role', label: t('detailLabels.role'), text: selectedClient.role },
+            { key: 'impact', label: t('detailLabels.impact'), text: selectedClient.impact },
         ]
         : []
 
@@ -79,72 +118,13 @@ export default function ClientsSection() {
                         expanded={expanded}
                         hasMore={hasMore}
                         showLessLabel={t('showLess')}
-                        showAllLabel={t('showAll', { count: clients.length })}
+                        showAllLabel={t('showAll', { count: projects.length })}
                         viewProjectLabel={t('viewProject')}
                         confidentialLabel={t('confidential')}
                         onHover={setActive}
                         onSelect={setSelected}
                         onToggleExpanded={() => setExpanded(value => !value)}
                     />
-                    {false && (<>
-                    <div className="clients-right" style={{ alignSelf: 'start' }}>
-                        <div className="clients-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: 'rgba(219,201,119,0.1)', border: '1px solid rgba(219,201,119,0.1)' }}>
-                            {visibleClients.map((c, i) => (
-                                <motion.div key={c.name} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: i < INITIAL_VISIBLE_CLIENTS ? 0.15 + i * 0.08 : (i - INITIAL_VISIBLE_CLIENTS) * 0.04 }}
-                                            onMouseEnter={() => setActive(i)} onMouseLeave={() => setActive(null)}
-                                            style={{ position: 'relative', background: active === i ? 'rgba(29,52,81,0.6)' : '#0E1E30', padding: '1.75rem 1.5rem', cursor: 'default', transition: 'background 0.3s', overflow: 'hidden' }}>
-                                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))', opacity: active === i ? 1 : 0, transition: 'opacity 0.3s' }} />
-
-                                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem', gap: '0.75rem' }}>
-                                        <div style={{ width: 44, height: 44, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `1px solid ${active === i ? 'rgba(219,201,119,0.5)' : 'rgba(219,201,119,0.2)'}`, background: active === i ? 'rgba(219,201,119,0.12)' : 'rgba(219,201,119,0.06)', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.05em', color: active === i ? '#DBC977' : 'rgba(219,201,119,0.7)', transition: 'all 0.3s' }}>
-                                            {c.initials}
-                                        </div>
-                                        {c.confidential && (
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.2rem 0.6rem', border: '1px solid rgba(219,201,119,0.15)' }}>
-                                                <Lock size={10} color="rgba(219,201,119,0.4)" />
-                                                <span style={{ fontSize: '0.55rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(219,201,119,0.4)' }}>{t('confidential')}</span>
-                                            </div>
-                                        )}
-                                    </div>
-
-                                    <div style={{ display: 'inline-flex', alignItems: 'center', padding: '0.25rem 0.75rem', border: '1px solid rgba(45,125,210,0.25)', background: 'rgba(45,125,210,0.07)', marginBottom: '0.75rem' }}>
-                                        <span style={{ fontSize: '0.58rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(45,125,210,0.8)' }}>{c.type}</span>
-                                    </div>
-
-                                    <h3 style={{ fontWeight: 700, fontSize: '0.95rem', color: active === i ? '#DBC977' : '#F8F8F8', letterSpacing: '0.01em', lineHeight: 1.3, marginBottom: '0.5rem', transition: 'color 0.3s' }}>{c.name}</h3>
-                                    <p style={{ fontSize: '0.78rem', lineHeight: 1.7, fontWeight: 300, color: 'rgba(248,248,248,0.38)' }}>{c.desc}</p>
-
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid rgba(248,248,248,0.05)' }}>
-                                        <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(248,248,248,0.15)' }}>{c.num}</span>
-                                        <button
-                                            onClick={() => setSelected(i)}
-                                            aria-label={t('viewProject')}
-                                            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.4rem 0.7rem', border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, color: active === i ? '#DBC977' : 'rgba(248,248,248,0.3)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer' }}
-                                        >
-                                            <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{t('viewProject')}</span>
-                                            <ArrowUpRight size={12} />
-                                        </button>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-
-                        {hasMore && (
-                            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
-                                <button
-                                    onClick={() => setExpanded((v) => !v)}
-                                    aria-expanded={expanded}
-                                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.8rem 1.6rem', border: '1px solid rgba(219,201,119,0.35)', background: 'rgba(219,201,119,0.05)', color: '#DBC977', fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', cursor: 'pointer', transition: 'background 0.3s' }}
-                                    onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(219,201,119,0.12)')}
-                                    onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(219,201,119,0.05)')}
-                                >
-                                    {expanded ? t('showLess') : t('showAll', { count: clients.length })}
-                                    <ChevronDown size={14} style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
-                                </button>
-                            </div>
-                        )}
-                    </div>
-                    </>)}
                 </div>
             </div>
 

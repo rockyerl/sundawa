@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import ToastContainer from './components/Toast'
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
     const [authenticated, setAuthenticated] = useState(false)
@@ -98,6 +99,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
     return (
         <div className="min-h-screen" style={{ background: '#0E1E30' }}>
+            <ToastContainer />
             <header
                 className="flex items-center justify-between px-6 py-4 border-b"
                 style={{ borderColor: 'rgba(219,201,119,0.12)' }}

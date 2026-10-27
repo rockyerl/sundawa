@@ -42,3 +42,22 @@ export async function getPostSlugs(): Promise<PostSlug[]> {
 
     return (data ?? []).map(row => ({ slug: row.slug as string }))
 }
+
+export async function searchPosts(query: string): Promise<Post[]> {
+    if (!query.trim()) return getPosts()
+
+    const escaped = query.trim().replace(/[{}]/g, '\\$&')
+    const { data, error } = await supabase
+        .from('posts')
+        .select('*')
+        .or(`title.ilike.%${escaped}%,excerpt.ilike.%${escaped}%,body_html.ilike.%${escaped}%`)
+        .order('published_at', { ascending: false })
+        .not('published_at', 'is', null)
+
+    if (error) {
+        console.error('[blog] failed to search posts:', error)
+        return []
+    }
+
+    return (data ?? []).filter(isPost)
+}

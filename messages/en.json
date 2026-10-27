@@ -703,7 +703,10 @@
     "readMore": "Read More",
     "viewAll": "View All Articles",
     "backToBlog": "Back to Blog",
-    "empty": "No blog posts yet. Stay tuned for updates!"
+    "empty": "No blog posts yet. Stay tuned for updates!",
+    "searchPlaceholder": "Search articles...",
+    "searchNoResults": "No results for '{{query}}'",
+    "searchResultsCount": "{{count}} results for '{{query}}'"
   },
   "portfolio": {
     "navBack": "Back",

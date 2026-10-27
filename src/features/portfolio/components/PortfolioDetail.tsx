@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image'
 import { ArrowLeft, Lock } from 'lucide-react'
 import { Link } from '@/src/i18n/navigation'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
@@ -30,35 +31,55 @@ export default function PortfolioDetail({ project, translations }: PortfolioDeta
     return (
         <>
             <SubpageNav backLabel={translations.navBack} titleLabel={translations.navTitle} backHref="/portfolio" />
-            <section className="py-16 md:py-20">
-                <div className="container-main">
-                    {/* Header */}
-                    <div className="mb-12">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div
-                                className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#00F0FF] to-[#1E3A8A] flex items-center justify-center text-lg font-black text-[#0A192F] flex-shrink-0"
-                            >
-                                {project.initials}
-                            </div>
-                            <div>
-                                <p className="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-gold mb-2">
-                                    {project.type}
-                                </p>
-                                <h1 className="font-black text-[clamp(1.8rem,3vw,2.5rem)] text-cream leading-tight">
-                                    {project.name}
-                                </h1>
-                            </div>
-                        </div>
-                        <p className="text-lg text-cream/60 max-w-[700px] leading-relaxed mb-4">
-                            {project.desc}
-                        </p>
-                        {project.confidential && (
-                            <span className="inline-flex items-center gap-1 text-xs text-cream/55 px-3 py-1 bg-gold/[0.05] rounded">
-                                <Lock size={12} />
-                                {translations.confidential}
+
+            {/* Hero Banner */}
+            <div className="relative h-64 w-full overflow-hidden md:h-80">
+                {project.main_image_url ? (
+                    <>
+                        <Image
+                            src={project.main_image_url}
+                            alt={project.name}
+                            fill
+                            className="object-cover"
+                            priority
+                            sizes="100vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0E1E30] via-[#0E1E30]/70 to-[#0E1E30]/30" />
+                    </>
+                ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#00F0FF]/10 via-[#1E3A8A]/20 to-[#0E1E30]" />
+                )}
+                {/* Hero Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                    <div className="container-main">
+                        <div className="flex items-center gap-3 mb-3">
+                            {!project.main_image_url && (
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#00F0FF] to-[#1E3A8A] text-[#0A192F] text-base font-black flex-shrink-0">
+                                    {project.initials}
+                                </div>
+                            )}
+                            <span className="rounded-md bg-[#DBC977]/20 px-2.5 py-0.5 text-[10px] font-bold tracking-[0.15em] uppercase text-[#DBC977]">
+                                {project.type}
                             </span>
-                        )}
+                            {project.confidential && (
+                                <span className="flex items-center gap-1 text-[10px] font-bold text-red-400/80">
+                                    <Lock size={10} />
+                                    {translations.confidential}
+                                </span>
+                            )}
+                        </div>
+                        <h1 className="text-[#F8F8F8] leading-tight font-black" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
+                            {project.name}
+                        </h1>
                     </div>
+                </div>
+            </div>
+
+            <section className="py-12 md:py-16">
+                <div className="container-main">
+                    <p className="mb-8 text-lg text-[#F8F8F8]/60 max-w-[700px] leading-relaxed">
+                        {project.desc}
+                    </p>
 
                     {/* Detail Sections */}
                     <div className="grid gap-8">

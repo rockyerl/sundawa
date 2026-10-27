@@ -14,7 +14,7 @@ You are the primary engineering agent for **Sundawa Web** (`sundawa-web`). Your 
 | Animation | Framer Motion v12 |
 | Icons | Lucide React, SimpleIcons CDN |
 | i18n | next-intl v4 (locales: `id`, `en`; prefix: `always`) |
-| CMS | Sanity (`next-sanity`, `@sanity/image-url`, `@portabletext/react`) |
+| CMS | Supabase (`@supabase/supabase-js`) + TipTap rich text + custom admin |
 | Testing | Vitest v2, ESLint 9, `tsc --noEmit` |
 | CI | GitHub Actions `.github/workflows/ci.yml` |
 
@@ -26,12 +26,14 @@ You are the primary engineering agent for **Sundawa Web** (`sundawa-web`). Your 
 src/features/<feature>/
   ├── components/   # UI components (Server by default, "use client" only when needed)
   ├── domain.ts     # Pure business logic & calculations
-  ├── data.ts       # Static data or Sanity-cached queries
+  ├── data.ts       # Static data or Supabase queries (no cache for fresh CRUD data)
   ├── types.ts      # Feature-local TypeScript types
   └── index.ts      # Public API surface — the ONLY import point for external consumers
 src/shared/ui/      # Cross-feature reusable components (SubpageNav, LangToggle, etc.)
 app/[locale]/       # Thin route adapters ONLY — no business logic
-lib/                # Infrastructure: Sanity client, SEO, Sitemap, env validation
+app/admin/          # Custom admin panel (password protected, TipTap editor)
+app/api/            # API routes: auth, blog CRUD, image upload
+lib/                # Infrastructure: Supabase client, SEO, Sitemap, env validation
 messages/           # i18n dictionaries (id.json, en.json — must always be in parity)
 ```
 
@@ -82,11 +84,11 @@ messages/           # i18n dictionaries (id.json, en.json — must always be in 
   - `ModeBadge` — remote/hybrid/onsite mode indicator badge
 
 ### `src/features/blog/`
-- `data.ts` — `getPosts()`, `getPostBySlug()` with React `cache()` deduplication
+- `data.ts` — `getPosts()`, `getPostBySlug()` — **no React cache()** to ensure fresh data after admin CRUD
 - `components/BlogCard.tsx` — reusable blog card (used by `BlogArchive` and `Blogsection`)
 - `components/BlogArchive.tsx` — blog listing page; uses `SubpageNav` for back navigation
 - `components/BlogPostDetail.tsx` — post renderer with JSON-LD structured data
-- `components/PortableTextRenderer.tsx` — `@portabletext/react` wrapper
+- `components/MdxRenderer.tsx` — HTML renderer (dangerouslySetInnerHTML for TipTap output)
 
 **BlogArchive translations contract** — the `translations` prop must include:
 ```ts
@@ -98,14 +100,33 @@ messages/           # i18n dictionaries (id.json, en.json — must always be in 
 - `components/ProcessSection.tsx` — uses `SubpageNav`
 
 ### `src/shared/ui/`
-- **Public exports (4)**: `IntroLoader`, `LangToggle`, `PageTransition`, `SubpageNav`
-- `SubpageNav.tsx` — standard back-navigation header for all subpages (blog, outsource, proses-kerja)
+- **Public exports (8)**: `IntroLoader`, `LangToggle`, `PageTransition`, `SubpageNav`, `GoogleAnalytics`, `SkipLink`, `PWARegister`, `InstallPrompt`
+- `SubpageNav.tsx` — standard back-navigation header for all subpages (blog, portfolio, services, about, contact, outsource, proses-kerja)
 - `LangToggle.tsx` — locale switcher
 - `Introloader.tsx` — loading splash animation
 - `Pagetransition.tsx` — page route transition wrapper
+- `GoogleAnalytics.tsx` — GA4 & GTM script injection (conditional on env vars)
+- `SkipLink.tsx` — skip navigation link (WCAG 2.1 AA)
+- `PWARegister.tsx` — service worker registration
+- `InstallPrompt.tsx` — PWA install banner
 - `IntroEvents.ts` — intro loader event bus (internal, not exported)
 
 ---
+
+## Admin Panel (`app/admin/`)
+
+Custom admin panel for managing blog posts:
+- `layout.tsx` — auth guard (password from `ADMIN_PASSWORD` env var)
+- `page.tsx` — dashboard listing all posts with CRUD actions
+- `posts/PostForm.tsx` — shared create/edit form with TipTap editor + cover image upload
+- `posts/new/page.tsx` — create new post
+- `posts/[id]/edit/page.tsx` — edit existing post (uses `await params` for Next.js 16)
+- `components/TipTapEditor.tsx` — rich text editor (bold, italic, heading, lists, link, image upload)
+
+API Routes:
+- `/api/admin/auth` — login/logout (cookie session)
+- `/api/blog/posts` — CRUD for blog posts
+- `/api/blog/upload` — image upload to Supabase Storage
 
 ## SVG & External Image Handling
 
@@ -146,5 +167,5 @@ npm.cmd run check   # lint + typecheck + test (6 suites, 15 tests)
 1. **Read first** — check the owning feature's `index.ts`, `domain.ts`, and the relevant route adapter before changing anything.
 2. **Smallest correct change** — follow established conventions exactly.
 3. **Run the quality gate** — `npm.cmd run check` must pass before reporting completion.
-4. **No secrets in code** — env vars are validated in `lib/env.ts`; use `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` via the env module only.
+4. **No secrets in code** — env vars are validated in `lib/env.ts`; use `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` via the env module only. Admin password via `ADMIN_PASSWORD`.
 

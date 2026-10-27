@@ -703,7 +703,10 @@
     "readMore": "Baca Selengkapnya",
     "viewAll": "Lihat Semua Artikel",
     "backToBlog": "Kembali ke Blog",
-    "empty": "Belum ada artikel blog saat ini. Nantikan update berikutnya!"
+    "empty": "Belum ada artikel blog saat ini. Nantikan update berikutnya!",
+    "searchPlaceholder": "Cari artikel...",
+    "searchNoResults": "Tidak ada hasil untuk '{{query}}'",
+    "searchResultsCount": "{{count}} hasil untuk '{{query}}'"
   },
   "portfolio": {
     "navBack": "Kembali",

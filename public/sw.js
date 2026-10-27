@@ -59,14 +59,22 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Network-first for API routes
+    // Network-only for API mutation routes (POST/PUT/DELETE) — Cache API doesn't support non-GET
+    if (url.pathname.startsWith('/api/') && !request.method.match(/^(GET|HEAD)$/)) {
+        event.respondWith(fetch(request));
+        return;
+    }
+
+    // Cache-first for API GET routes
     if (url.pathname.startsWith('/api/')) {
         event.respondWith(
-            fetch(request).then((response) => {
-                const responseToCache = response.clone();
-                caches.open(CACHE_NAME).then((cache) => cache.put(request, responseToCache));
-                return response;
-            }).catch(() => caches.match(request))
+            caches.match(request).then((cached) =>
+                cached || fetch(request).then((response) => {
+                    const responseToCache = response.clone();
+                    caches.open(CACHE_NAME).then((cache) => cache.put(request, responseToCache));
+                    return response;
+                })
+            )
         );
         return;
     }

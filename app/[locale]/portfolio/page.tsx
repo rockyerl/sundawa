@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { pageMetadata } from '@/lib/Seo'
-import type { Client } from '@/src/features/home/clients'
 import { PortfolioArchive, getPortfolioProjects } from '@/src/features/portfolio'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -14,9 +13,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
     setRequestLocale(locale)
 
     const t = await getTranslations({ locale, namespace: 'portfolio' })
-    const clientsT = await getTranslations({ locale, namespace: 'clients' })
-    const clients = clientsT.raw('items') as Client[]
-    const projects = getPortfolioProjects(clients)
+    const projects = await getPortfolioProjects()
 
     return (
         <PortfolioArchive

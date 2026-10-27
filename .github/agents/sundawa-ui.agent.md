@@ -33,20 +33,24 @@ You are the UI/UX and localization specialist for **Sundawa Web**. Your focus: c
 
 | Component | Purpose |
 |---|---|
-| `SubpageNav` | Back-navigation header for subpages. Props: `navBack` (button label), `navTitle` (page title) |
+| `SubpageNav` | Back-navigation header for subpages. Props: `backLabel` (button label), `titleLabel` (page title) |
 | `LangToggle` | Locale switcher (id/en) |
 | `IntroLoader` | Loading splash animation |
 | `PageTransition` | Page route transition wrapper |
+| `GoogleAnalytics` | GA4 & GTM script injection (conditional on env vars) |
+| `SkipLink` | Skip navigation link (WCAG 2.1 AA) |
+| `PWARegister` | Service worker registration |
+| `InstallPrompt` | PWA install banner |
 | `IntroEvents` | Intro loader event bus (internal, not exported) |
 
-**Public exports**: `IntroLoader`, `LangToggle`, `PageTransition`, `SubpageNav`
+**Public exports (8)**: `IntroLoader`, `LangToggle`, `PageTransition`, `SubpageNav`, `GoogleAnalytics`, `SkipLink`, `PWARegister`, `InstallPrompt`
 
 **SubpageNav usage pattern:**
 ```tsx
 import { SubpageNav } from '@/src/shared/ui'
-<SubpageNav navBack={translations.navBack} navTitle={translations.navTitle} />
+<SubpageNav backLabel={translations.navBack} titleLabel={translations.navTitle} />
 ```
-Used by: `BlogArchive`, `ProcessSection`. Any new subpage should follow this pattern.
+Used by: `BlogArchive`, `PortfolioArchive`, `ServicesPage`, `AboutPage`, `ContactPage`, `ProcessSection`. Any new subpage should follow this pattern.
 
 ---
 
@@ -97,7 +101,7 @@ The homepage is composed of 13 sections exported from `src/features/home/index.t
 | `BlogCard` | Reusable card for blog post preview — used in `BlogArchive` and `Blogsection` (home) |
 | `BlogArchive` | Full blog listing with `SubpageNav` header |
 | `BlogPostDetail` | Full post renderer with JSON-LD structured data |
-| `PortableTextRenderer` | `@portabletext/react` wrapper for Sanity rich text |
+| `MdxRenderer` | HTML renderer (dangerouslySetInnerHTML for TipTap output) |
 
 **BlogCard** is the single source of truth for post card UI. If you update card styles, update only `BlogCard.tsx`.
 

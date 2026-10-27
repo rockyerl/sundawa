@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import TipTapEditor from '../components/TipTapEditor'
+import { showToast, refreshData } from '../components/Toast'
 
 interface PostFormProps {
     post?: {
@@ -57,12 +58,16 @@ export default function PostForm({ post }: PostFormProps) {
 
             if (!res.ok) {
                 const data = await res.json()
-                throw new Error(data.error || 'Failed to save post')
+                showToast(data.error || 'Failed to save post', 'error')
+                setLoading(false)
+                return
             }
 
-            router.push('/admin')
+            showToast(isEdit ? 'Post updated successfully' : 'Post created successfully')
+            refreshData('blog')
+            setTimeout(() => router.push('/admin'), 800)
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Failed to save post')
+            showToast(err instanceof Error ? err.message : 'Failed to save post', 'error')
         } finally {
             setLoading(false)
         }
@@ -83,9 +88,13 @@ export default function PostForm({ post }: PostFormProps) {
             if (res.ok) {
                 const data = await res.json()
                 setImageUrl(data.url)
+                showToast('Image uploaded successfully')
+            } else {
+                showToast('Failed to upload image', 'error')
             }
         } catch (err) {
             console.error('Failed to upload image:', err)
+            showToast('Failed to upload image', 'error')
         }
     }
 

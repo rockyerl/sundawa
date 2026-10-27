@@ -1,9 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import { Lock, X } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import type { Client } from '../clients'
+import type { PortfolioProject } from '@/lib/types'
 
 type DetailSection = {
     key: string
@@ -12,7 +13,7 @@ type DetailSection = {
 }
 
 type ClientProjectDialogProps = {
-    client: Client
+    client: PortfolioProject
     details: DetailSection[]
     confidentialLabel: string
     closeLabel: string
@@ -93,7 +94,7 @@ export default function ClientProjectDialog({ client, details, confidentialLabel
                     padding: 'clamp(1.25rem, 5vw, 2rem)',
                 }}
             >
-                <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))' }} />
+                <div className="absolute top-0 left-0 right-0 h-0.5" style={{ zIndex: 20, background: 'linear-gradient(to right, #DBC977, rgba(219,201,119,0))' }} />
                 <button
                     type="button"
                     onClick={onClose}
@@ -102,15 +103,46 @@ export default function ClientProjectDialog({ client, details, confidentialLabel
                     style={{
                         top: '1.25rem',
                         right: '1.25rem',
+                        zIndex: 20,
                         width: 36,
                         height: 36,
-                        border: '1px solid rgba(248,248,248,0.1)',
-                        background: 'transparent',
-                        color: 'rgba(248,248,248,0.55)',
+                        border: '1px solid rgba(248,248,248,0.15)',
+                        background: 'rgba(14,30,48,0.75)',
+                        color: 'rgba(248,248,248,0.7)',
                     }}
                 >
                     <X size={14} />
                 </button>
+                {client.main_image_url && (
+                    <div
+                        className="relative overflow-hidden"
+                        style={{
+                            height: '11rem',
+                            margin: 'calc(-1 * clamp(1.25rem, 5vw, 2rem)) calc(-1 * clamp(1.25rem, 5vw, 2rem)) 1.5rem',
+                            background: '#0A192F',
+                        }}
+                    >
+                        {/* Blurred backdrop from the same image fills any empty space */}
+                        <Image
+                            src={client.main_image_url}
+                            alt=""
+                            aria-hidden
+                            fill
+                            className="object-cover"
+                            sizes="580px"
+                            style={{ filter: 'blur(18px)', transform: 'scale(1.2)', opacity: 0.45 }}
+                        />
+                        {/* Full image, never cropped */}
+                        <Image
+                            src={client.main_image_url}
+                            alt={client.name}
+                            fill
+                            className="object-contain"
+                            sizes="580px"
+                        />
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #0E1E30, transparent 35%)', pointerEvents: 'none' }} />
+                    </div>
+                )}
                 <div className="flex items-center gap-4 mb-6" style={{ paddingRight: '2.25rem' }}>
                     <div
                         className="flex items-center justify-center flex-shrink-0"

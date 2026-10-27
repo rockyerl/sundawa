@@ -2,6 +2,17 @@
 sessionId: session-261027-105203-12mr
 ---
 
+# Blog Search Implementation Plan
+
+### * Step 1: Add Search to Blog Data Layer
+Add `searchPosts(query: string)` function in `src/features/blog/data.ts` that queries Supabase with ILIKE for title, excerpt, and body_html fields.
+
+###   Step 2: Update BlogArchive with Search UI
+Convert BlogArchive to a client component with search input, debounced filtering, URL query params, and no-results state.
+
+###   Step 3: Update Route Adapter and i18n
+Update `app/[locale]/blog/page.tsx` to pass search query, add translation keys for search UI in both id.json and en.json.
+
 # Requirements
 
 ### Overview & Goals

@@ -112,7 +112,7 @@ sundawa-web/
 │   │   │   │   ├── BlogCard.tsx        # Reusable blog card (used by BlogArchive & BlogSection)
 │   │   │   │   ├── BlogPostDetail.tsx  # Blog post renderer with JSON-LD schema
 │   │   │   │   └── MdxRenderer.tsx      # HTML renderer (renamed from MdxRenderer, uses dangerouslySetInnerHTML)
-│   │   │   ├── data.ts           # Cached Supabase queries (getPosts, getPostBySlug)
+│   │   │   ├── data.ts           # Supabase queries (getPosts, getPostBySlug) — no cache
 │   │   │   └── index.ts          # Public exports for the blog feature
 │   │   └── process/              # Working process feature
 │   │       ├── components/
@@ -156,7 +156,7 @@ sundawa-web/
 │       ├── request.ts            # Server request configuration for messages
 │       └── navigation.ts         # Wrapped Link, useRouter, usePathname
 ├── lib/                          # Core infrastructure, Supabase, SEO & utils
-│   ├── env.ts                    # Fail-fast public environment validation
+│   ├── env.ts                    # Fail-fast env validation (Supabase + ADMIN_PASSWORD)
 │   ├── supabase.ts               # Configured Supabase client
 │   ├── types.ts                  # Post interface & isPost type guard
 │   ├── types.test.ts             # Unit tests for Post type guards
@@ -176,6 +176,21 @@ sundawa-web/
 │   └── icons/
 │       ├── icon-192x192.png      # PWA icon 192x192
 │       └── icon-512x512.png      # PWA icon 512x512
+├── app/
+│   └── admin/                    # Custom admin panel (password protected)
+│       ├── layout.tsx            # Auth guard (ADMIN_PASSWORD env var)
+│       ├── page.tsx              # Dashboard — list posts with CRUD actions
+│       ├── components/
+│       │   └── TipTapEditor.tsx  # Rich text editor (bold, italic, heading, lists, link, image)
+│       └── posts/
+│           ├── PostForm.tsx      # Shared create/edit form with cover image upload
+│           ├── new/page.tsx      # Create new post
+│           └── [id]/edit/page.tsx # Edit existing post
+├── app/
+│   └── api/
+│       ├── admin/auth/route.ts   # Admin login/logout (cookie session)
+│       ├── blog/posts/route.ts   # CRUD API for blog posts
+│       └── blog/upload/route.ts  # Image upload to Supabase Storage
 └── .github/
     ├── agents/                   # GitHub Copilot custom agents
     │   ├── sundawa-web.agent.md  # Primary Lead Engineering Agent
@@ -214,31 +229,45 @@ sundawa-web/
 
 ### 3.5. Supabase & Data Fetching
 - Supabase client configuration is initialized in `lib/supabase.ts`.
-- Required environment variables are strictly verified in `lib/env.ts` (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`). Do not use hardcoded fallback strings.
-- All data fetching operations must go through `src/features/blog/data.ts` using React's `cache()` for deduplication.
+- Required environment variables are strictly verified in `lib/env.ts` (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ADMIN_PASSWORD`). Do not use hardcoded fallback strings.
+- All data fetching operations go through `src/features/blog/data.ts` — **no React `cache()`** to ensure fresh data after admin CRUD operations.
 - Validate incoming data using `isPost` runtime type guard before rendering.
 - Render blog content using `HtmlRenderer` in `src/features/blog/components/MdxRenderer.tsx` (dangerouslySetInnerHTML for HTML output from TipTap).
 - Images are stored in Supabase Storage (`blog-images` bucket) and referenced by public URL string.
+- Database table `posts` columns: `id` (uuid), `title` (text), `slug` (text unique), `body_html` (text), `excerpt` (text nullable), `main_image_url` (text nullable), `published_at` (timestamptz), `created_at`, `updated_at`.
 
-### 3.6. Outsource Calculator Domain Logic
+### 3.6. Admin Panel
+- Located at `app/admin/` with client-side auth guard (password from `ADMIN_PASSWORD` env var).
+- Dashboard at `app/admin/page.tsx` lists all posts with edit/delete actions.
+- Create post at `app/admin/posts/new/page.tsx`, edit at `app/admin/posts/[id]/edit/page.tsx`.
+- Shared form component: `app/admin/posts/PostForm.tsx` with TipTap rich text editor (bold, italic, headings, lists, links, images, code blocks) and cover image upload with preview.
+- TipTap editor: `app/admin/components/TipTapEditor.tsx` — dark theme matching Sundawa design.
+- API routes: `/api/admin/auth` (login/logout), `/api/blog/posts` (CRUD), `/api/blog/upload` (image upload to Supabase Storage).
+- `/admin` is disallowed in `app/Robots.ts` to prevent search engine indexing.
+- Edit page uses `await params` for Next.js 16 App Router async params pattern.
+- Logout redirects to `/admin` (not home) via `setAuthenticated(false)` + `window.location.href`.
+
+### 3.7. Outsource Calculator Domain Logic
 - Pure calculations for talent rates, modes (remote/hybrid/onsite), margins, cart totals, and pricing strings live in `src/features/outsource/domain.ts`.
 - Static pricing data lives in `src/features/outsource/data.ts` (the `PRICING` constant).
 - Changes to pricing models must be accompanied by updated unit tests in `src/features/outsource/domain.test.ts`.
 
-### 3.7. Technology Catalog
+### 3.8. Technology Catalog
 - Technology data (`techs[]`, `categories[]`) lives exclusively in `src/features/home/techCatalog.ts`.
 - Type definitions (`Tech`, `TechCategory`) live in `src/features/home/tech.ts`.
 - `TechSection.tsx` imports from `techCatalog.ts` — never define inline data arrays in the component.
 - `TechIcon.tsx` renders both CDN-hosted SVG icons (via `<Image unoptimized />`) and inline SVG strings.
 
-### 3.8. SVG Handling & External Images
+### 3.9. SVG Handling & External Images
 - `next.config.ts` enables `dangerouslyAllowSVG: true` for `cdn.simpleicons.org` with a strict Content-Security-Policy (`script-src: 'none'; sandbox`).
 - The `TechIcon` component always passes `unoptimized` prop to `next/image` when rendering SVGs from external CDN URLs.
 - Do not remove the `unoptimized` prop or the `dangerouslyAllowSVG` config — they are required for SimpleIcons CDN delivery.
+- `next.config.ts` also allows images from `xruymvsjvwumlpwisiht.supabase.co` for Supabase Storage blog images.
 
-- **Analytics**: Google Analytics (GA4) and Google Tag Manager support via `lib/analytics.ts` and `src/shared/ui/GoogleAnalytics.tsx`. Enable by setting `NEXT_PUBLIC_GA_MEASUREMENT_ID` and/or `NEXT_PUBLIC_GTM_ID` environment variables.
+### 3.10. Analytics
+- Google Analytics (GA4) and Google Tag Manager support via `lib/analytics.ts` and `src/shared/ui/GoogleAnalytics.tsx`. Enable by setting `NEXT_PUBLIC_GA_MEASUREMENT_ID` and/or `NEXT_PUBLIC_GTM_ID` environment variables.
 
-### 3.10. Progressive Web App (PWA)
+### 3.11. Progressive Web App (PWA)
 - **Manifest**: `public/manifest.json` defines app name, theme colors (`#0E1E30`), display mode (`standalone`), and icons.
 - **Service Worker**: `public/sw.js` uses native Cache API — cache-first for static assets (images, fonts, icons), network-first for API and navigation requests.
 - **Registration**: `PWARegister` client component in `src/shared/ui/` handles SW registration and update detection.
@@ -246,7 +275,7 @@ sundawa-web/
 - **Offline Fallback**: `app/offline/page.tsx` serves as the offline fallback page with Sundawa branding.
 - **Headers**: `next.config.ts` configures `Cache-Control` for `/sw.js` (no-cache) and `/manifest.json` (1 hour cache).
 
-### 3.11. SEO & Structured Data
+### 3.12. SEO & Structured Data
 - **Metadata**: `lib/Seo.ts` provides `pageMetadata()` for 8 page keys (home, outsource, process, blog, portfolio, contact, about, services) with canonical URLs, hreflang, Open Graph, and Twitter cards.
 - **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) plus dynamic blog post slugs from Supabase.
 - **Structured Data (JSON-LD)**: Layout injects Organization + WebSite schema with ContactPoint and SearchAction. Blog posts include BlogPosting schema.
@@ -255,15 +284,7 @@ sundawa-web/
 - **Open Graph**: `/og-image.png` (1200x630) used for social sharing previews.
 - **Favicons**: `/favicon.ico`, `/favicon-16x16.png`, `/favicon-32x32.png`, `/apple-touch-icon.png` generated from logo.
 
-### 3.6. Admin Panel
-- Located at `app/admin/` with client-side auth guard (password from `ADMIN_PASSWORD` env var).
-- Dashboard at `app/admin/page.tsx` lists all posts with edit/delete actions.
-- Create post at `app/admin/posts/new/page.tsx`, edit at `app/admin/posts/[id]/edit/page.tsx`.
-- Shared form component: `app/admin/posts/PostForm.tsx` with TipTap rich text editor (bold, italic, headings, lists, links, images, code blocks) and cover image upload with preview.
-- API routes: `/api/admin/auth` (login/logout), `/api/blog/posts` (CRUD), `/api/blog/upload` (image upload).
-- `/admin` is disallowed in `app/Robots.ts` to prevent search engine indexing.
-
-### 3.7. Shared UI Components
+### 3.13. Shared UI Components
 - `SubpageNav` in `src/shared/ui/SubpageNav.tsx` is the standard back-navigation header for all subpages (`/blog`, `/portfolio`, `/services`, `/about`, `/contact`, `/outsource`, `/proses-kerja`).
 - It accepts `backLabel` (button label) and `titleLabel` (page title) as string props.
 - `BlogArchive`, `PortfolioArchive`, `ServicesPage`, `AboutPage`, `ContactPage`, and `ProcessSection` all consume `SubpageNav`.

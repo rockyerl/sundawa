@@ -13,9 +13,9 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
     }, [error])
 
     return (
-        <html lang="id">
+        <html lang="id" suppressHydrationWarning>
             <body className="bg-[#0E1E30] text-[#F8F8F8]">
-                <main className="flex min-h-screen items-center justify-center px-6 text-center">
+                <div className="flex min-h-screen items-center justify-center px-6 text-center">
                     <div className="max-w-md">
                         <h1 className="text-3xl font-black">Something went wrong</h1>
                         <p className="mt-4 text-sm leading-7 text-[#F8F8F8]/60">Please try again to continue.</p>
@@ -27,7 +27,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
                             Try again
                         </button>
                     </div>
-                </main>
+                </div>
             </body>
         </html>
     )
