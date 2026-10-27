@@ -10,8 +10,25 @@ export default function ObjectionsSection() {
 
     const items = t.raw('items') as { question: string; answer: string }[]
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: items.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer,
+            },
+        })),
+    }
+
     return (
         <section id="objections" ref={ref} style={{ position: 'relative' }}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+            />
             <div className="container-main">
                 <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '2.5rem', alignItems: 'start' }} className="objections-grid">
                     {/* LEFT — the fear + reassurance */}

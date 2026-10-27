@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { ArrowLeft, Lock } from 'lucide-react'
 import { Link } from '@/src/i18n/navigation'
+import { SITE_URL } from '@/lib/Seo'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 import type { PortfolioProject } from '../types'
 
@@ -28,8 +29,23 @@ export default function PortfolioDetail({ project, translations }: PortfolioDeta
         { label: translations.impact, content: project.impact },
     ]
 
+    const imageUrl = project.main_image_url || `${SITE_URL}/og-image.png`
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: project.name,
+        description: project.desc,
+        creator: { '@id': `${SITE_URL}/#organization` },
+        publisher: { '@id': `${SITE_URL}/#organization` },
+        image: imageUrl,
+    }
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+            />
             <SubpageNav backLabel={translations.navBack} titleLabel={translations.navTitle} backHref="/portfolio" />
 
             {/* Hero Banner */}

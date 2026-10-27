@@ -19,10 +19,12 @@ export default function ClientsSection() {
 
     const stats = t.raw('stats') as { num: string; label: string }[]
 
-    // Fetch portfolio data from Supabase
+    // Fetch portfolio data from Supabase with cache-busting to bypass service worker
     const loadProjects = useCallback(async () => {
         try {
-            const res = await fetch('/api/blog/portfolio?page=1&per_page=50')
+            const res = await fetch(`/api/blog/portfolio?page=1&per_page=50&_t=${Date.now()}`, {
+                cache: 'no-store',
+            })
             if (!res.ok) {
                 console.error('Portfolio API returned status:', res.status)
                 return
@@ -87,23 +89,24 @@ export default function ClientsSection() {
     }, [selected])
 
     return (
-        <section id="clients" ref={ref} style={{ position: 'relative' }}>
+        <section id="clients" ref={ref} className="relative">
             <div className="container-main">
-                <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-                    <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>— {t('label')}</span>
-                    <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
+                <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+                    className="flex items-center gap-4 mb-10">
+                    <span className="text-[0.65rem] font-extrabold tracking-[0.3em] uppercase text-gold">— {t('label')}</span>
+                    <div className="flex-1 h-px bg-gradient-to-r from-gold/40 to-transparent" />
                 </motion.div>
 
                 <div className="clients-layout">
                     {/* Left */}
                     <div className="clients-left">
                         <motion.h2 initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
-                                   style={{ fontWeight: 900, fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', color: '#F8F8F8', lineHeight: 1.1, marginBottom: '1rem' }}>
+                                   className="font-black text-[clamp(2rem,3.5vw,2.8rem)] text-cream leading-tight mb-4">
                             {t('heading1')}<br /><span className="gold-gradient">{t('heading2')}</span>
                         </motion.h2>
 
                         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
-                                  style={{ color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8, fontSize: '0.85rem', marginBottom: '2rem' }}>
+                                  className="text-cream/40 font-light leading-relaxed text-sm mb-8">
                             {t('sub')}
                         </motion.p>
 
@@ -140,14 +143,6 @@ export default function ClientsSection() {
                     />
                 )}
             </AnimatePresence>
-
-            <style>{`
-                .clients-layout { display: flex; flex-direction: column; gap: 3rem; align-items: flex-start; }
-                .clients-left { width: 100%; }
-                .clients-right { width: 100%; }
-                @media (min-width: 1024px) { .clients-layout { display: grid !important; grid-template-columns: 260px 1fr !important; gap: 5rem !important; align-items: start !important; } }
-                @media (max-width: 640px) { .clients-grid { grid-template-columns: 1fr !important; } }
-            `}</style>
         </section>
     )
 }

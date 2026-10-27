@@ -3,6 +3,7 @@
 import { ArrowLeft } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
+import { SITE_URL } from '@/lib/Seo'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 
 export interface ServiceDetailProps {
@@ -26,8 +27,20 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
         { label: translations.outcome, content: service.outcome },
     ]
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: service.title,
+        description: service.desc,
+        provider: { '@id': `${SITE_URL}/#organization` },
+    }
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+            />
             <SubpageNav backLabel={translations.navBack} titleLabel={translations.navTitle} backHref="/services" />
             <section className="py-16 md:py-20">
                 <div className="container-main">

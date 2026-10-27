@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
+import { SITE_URL } from '@/lib/Seo'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 
 export default function AboutPage() {
@@ -20,8 +21,18 @@ export default function AboutPage() {
         { num: '10+', label: t('stats.professionals') },
     ]
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        mainEntity: { '@id': `${SITE_URL}/#organization` },
+    }
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+            />
             <SubpageNav backLabel={t('navBack')} titleLabel={t('navTitle')} backHref="/" />
             <section ref={ref} className="py-16 md:py-20">
                 <div className="container-main">

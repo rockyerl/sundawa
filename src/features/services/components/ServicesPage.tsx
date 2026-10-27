@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
+import { SITE_URL } from '@/lib/Seo'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 
 export default function ServicesPage() {
@@ -15,8 +16,25 @@ export default function ServicesPage() {
     const services = t.raw('detail') as Record<string, { slug: string; problem: string; title: string; desc: string; outcome: string; details: string }>
     const serviceList = Object.values(services)
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: serviceList.map((service, index) => ({
+            '@type': 'Service',
+            position: index + 1,
+            name: service.title,
+            description: service.desc,
+            provider: { '@id': `${SITE_URL}/#organization` },
+            url: `${SITE_URL}/en/services/${service.slug}`,
+        })),
+    }
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+            />
             <SubpageNav backLabel={t('navBack')} titleLabel={t('navTitle')} backHref="/" />
             <section ref={ref} style={{ padding: '4rem 0' }}>
                 <div className="container-main">

@@ -19,10 +19,12 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel }: 
         headline: post.title,
         description: post.excerpt,
         datePublished: post.published_at,
+        dateModified: post.published_at,
         image: imageUrl,
         mainEntityOfPage: canonicalUrl,
         author: { '@id': `${SITE_URL}/#organization` },
         publisher: { '@id': `${SITE_URL}/#organization` },
+        articleSection: 'Technology',
     }
 
     return (

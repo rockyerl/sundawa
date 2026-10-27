@@ -75,7 +75,7 @@ export default function Navbar() {
                 <div className="container-main relative flex items-center justify-between min-h-[78px] md:min-h-[82px]">
 
                     {/* Logo */}
-                    <a href="#hero" className="flex items-center gap-3 group flex-shrink-0">
+                    <a href="#hero" className="flex items-center gap-3 group flex-shrink-0" aria-label="Sundawa Teknologi - Kembali ke beranda">
                         <div className="relative w-10 h-10">
                             <Image
                                 src="/assets/logo2.png"
@@ -107,6 +107,7 @@ export default function Navbar() {
                                 transition={{ delay: 0.1 + i * 0.05 }}
                                 className="relative text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors duration-300 group"
                                 style={{ color: isLinkActive(link.href) ? '#DBC977' : 'rgba(248,248,248,0.55)' }}
+                                aria-current={isLinkActive(link.href) ? 'true' : undefined}
                             >
                                 {link.label}
                                 <span

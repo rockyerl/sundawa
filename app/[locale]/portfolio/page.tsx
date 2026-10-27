@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { pageMetadata } from '@/lib/Seo'
 import { PortfolioArchive, getPortfolioProjects } from '@/src/features/portfolio'
+import { BreadcrumbJsonLd } from '@/src/shared/ui'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params
@@ -16,7 +17,9 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
     const projects = await getPortfolioProjects()
 
     return (
-        <PortfolioArchive
+        <>
+            <BreadcrumbJsonLd breadcrumbs={[{ name: 'Portfolio', url: `/${locale}/portfolio` }]}/>
+            <PortfolioArchive
             projects={projects}
             translations={{
                 navBack: t('navBack'),
@@ -29,5 +32,6 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
                 confidential: t('confidential'),
             }}
         />
+        </>
     )
 }

@@ -22,6 +22,9 @@ export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QCMRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAADlAAIAAAASAAAMAAAVAAAAAABSAAAAMAAAEAAQAAAAAADaAAUAAAABAAAASgAAAAATkaQAAAABAAAAAAAAAAAAAQAgAAAMAAADAAEAAAAAAAEAAAAAAAEAAAAAAAB//9s="
                     />
                     <div
                         className="absolute inset-0"

@@ -352,6 +352,27 @@ body {
     margin: 2rem 0;
 }
 
+/* Clients Section Layout */
+.clients-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+}
+.clients-left { width: 100%; }
+.clients-right { width: 100%; }
+@media (min-width: 1024px) {
+    .clients-layout {
+        display: grid !important;
+        grid-template-columns: 260px 1fr !important;
+        gap: 5rem !important;
+        align-items: start !important;
+    }
+}
+@media (max-width: 640px) {
+    .clients-grid { grid-template-columns: 1fr !important; }
+}
+
 /* Admin Toast Notification Animation */
 @keyframes slideIn {
     from {

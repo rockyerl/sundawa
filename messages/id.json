@@ -882,23 +882,23 @@
     },
     "blog": {
       "title": "Artikel & Insight Teknologi",
-      "description": "Wawasan seputar modernisasi sistem, otomatisasi, integrasi, dan pengembangan software dari tim Sundawa Teknologi."
+      "description": "Wawasan seputar modernisasi sistem, otomatisasi alur kerja, integrasi data, dan pengembangan software dari tim Sundawa Teknologi."
     },
     "portfolio": {
       "title": "Portfolio Proyek | Sundawa Teknologi",
-      "description": "Lihat proyek-proyek yang telah kami selesaikan untuk berbagai klien di berbagai industri."
+      "description": "Lihat proyek modernisasi sistem, otomatisasi, dan integrasi data yang telah kami selesaikan untuk berbagai klien di Indonesia."
     },
     "contact": {
       "title": "Hubungi Kami | Sundawa Teknologi",
-      "description": "Siap mendiskusikan kebutuhan modernisasi sistem atau alih daya IT? Hubungi kami untuk konsultasi gratis."
+      "description": "Siap mendiskusikan kebutuhan modernisasi sistem, otomatisasi alur kerja, atau alih daya IT? Konsultasi gratis dengan tim Sundawa."
     },
     "about": {
       "title": "Tentang Kami | Sundawa Teknologi",
-      "description": "Kenali lebih dekat Sundawa Teknologi, tim di balik modernisasi sistem dan solusi software untuk bisnis di Indonesia."
+      "description": "Kenali Sundawa Teknologi — software house Bandung yang berspesialisasi dalam modernisasi sistem, otomatisasi, dan integrasi data untuk bisnis."
     },
     "services": {
       "title": "Layanan Kami | Sundawa Teknologi",
-      "description": "Modernisasi sistem, otomatisasi AI, integrasi data, platform khusus, dan managed engineering untuk bisnis Anda."
+      "description": "Modernisasi sistem lama, otomatisasi alur kerja dengan AI, integrasi ERP dan data, platform bisnis khusus, dan managed engineering."
     }
   }
 }

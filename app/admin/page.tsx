@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { showToast, refreshData, onDataRefresh } from './components/Toast'
+import { Skeleton } from '@/src/shared/ui'
 
 interface Post {
     id: string
@@ -153,7 +154,11 @@ export default function AdminDashboard() {
                     </div>
 
                     {loading ? (
-                        <div className="text-[#F8F8F8]/50">Loading...</div>
+                        <div className="space-y-3">
+                            {Array.from({ length: 3 }).map((_, i) => (
+                                <Skeleton key={i} className="h-16 w-full rounded-xl" />
+                            ))}
+                        </div>
                     ) : posts.length === 0 ? (
                         <div className="text-[#F8F8F8]/50">No posts yet. Create your first post!</div>
                     ) : (
@@ -204,7 +209,11 @@ export default function AdminDashboard() {
                     </div>
 
                     {loading ? (
-                        <div className="text-[#F8F8F8]/50">Loading...</div>
+                        <div className="space-y-3">
+                            {Array.from({ length: 3 }).map((_, i) => (
+                                <Skeleton key={i} className="h-16 w-full rounded-xl" />
+                            ))}
+                        </div>
                     ) : projects.length === 0 ? (
                         <div className="text-[#F8F8F8]/50">No portfolio projects yet. Create your first project!</div>
                     ) : (

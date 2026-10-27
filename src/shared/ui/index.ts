@@ -6,4 +6,6 @@ export { default as GoogleAnalytics } from './GoogleAnalytics'
 export { default as SkipLink } from './SkipLink'
 export { default as PWARegister } from './PWARegister'
 export { default as InstallPrompt } from './InstallPrompt'
+export { default as BreadcrumbJsonLd } from './BreadcrumbJsonLd'
+export { default as Skeleton } from './Skeleton'
 

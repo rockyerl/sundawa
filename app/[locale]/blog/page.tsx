@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { pageMetadata } from '@/lib/Seo'
 import { BlogArchive, getPosts, searchPosts } from '@/src/features/blog'
+import { BreadcrumbJsonLd } from '@/src/shared/ui'
 
 export async function generateMetadata({ params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<{ q?: string }> }): Promise<Metadata> {
     const { locale } = await params
@@ -31,7 +32,9 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
     const posts = query ? await searchPosts(query) : await getPosts()
 
     return (
-        <BlogArchive
+        <>
+            <BreadcrumbJsonLd breadcrumbs={[{ name: 'Blog', url: `/${locale}/blog` }]}/>
+            <BlogArchive
             posts={posts}
             initialQuery={query}
             translations={{
@@ -47,5 +50,6 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
                 searchResultsCount: t('searchResultsCount'),
             }}
         />
+        </>
     )
 }

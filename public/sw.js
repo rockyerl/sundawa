@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sundawa-pwa-v1';
+const CACHE_NAME = 'sundawa-pwa-v2';
 const STATIC_ASSETS = [
     '/',
     '/manifest.json',
@@ -62,6 +62,19 @@ self.addEventListener('fetch', (event) => {
     // Network-only for API mutation routes (POST/PUT/DELETE) — Cache API doesn't support non-GET
     if (url.pathname.startsWith('/api/') && !request.method.match(/^(GET|HEAD)$/)) {
         event.respondWith(fetch(request));
+        return;
+    }
+
+    // Network-first for API routes that return dynamic data (portfolio, blog posts)
+    // This ensures fresh data is always fetched first, with cache as fallback
+    if (url.pathname.startsWith('/api/blog/') || url.pathname.startsWith('/api/admin/')) {
+        event.respondWith(
+            fetch(request).then((response) => {
+                const responseToCache = response.clone();
+                caches.open(CACHE_NAME).then((cache) => cache.put(request, responseToCache));
+                return response;
+            }).catch(() => caches.match(request))
+        );
         return;
     }
 

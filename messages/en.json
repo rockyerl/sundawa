@@ -882,23 +882,23 @@
     },
     "blog": {
       "title": "Articles & Technology Insights",
-      "description": "Insights on software modernization, automation, integration and development from the Sundawa Teknologi team."
+      "description": "Insights on system modernization, workflow automation, data integration, and software development from Sundawa Teknologi."
     },
     "portfolio": {
       "title": "Project Portfolio | Sundawa Teknologi",
-      "description": "See the projects we have completed for various clients across different industries."
+      "description": "See our system modernization, automation, and data integration projects completed for clients across Indonesia."
     },
     "contact": {
       "title": "Contact Us | Sundawa Teknologi",
-      "description": "Ready to discuss system modernization or IT outsourcing needs? Contact us for a free consultation."
+      "description": "Ready to discuss system modernization, workflow automation, or IT outsourcing? Free consultation with Sundawa's team."
     },
     "about": {
       "title": "About Us | Sundawa Teknologi",
-      "description": "Get to know Sundawa Teknologi, the team behind system modernization and software solutions for businesses in Indonesia."
+      "description": "Meet Sundawa Teknologi — a Bandung software house specializing in system modernization, automation, and data integration for businesses."
     },
     "services": {
       "title": "Our Services | Sundawa Teknologi",
-      "description": "System modernization, AI automation, data integration, custom platforms, and managed engineering for your business."
+      "description": "Legacy system modernization, AI workflow automation, ERP and data integration, custom business platforms, and managed engineering."
     }
   }
 }
