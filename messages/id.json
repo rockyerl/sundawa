@@ -705,6 +705,163 @@
     "backToBlog": "Kembali ke Blog",
     "empty": "Belum ada artikel blog saat ini. Nantikan update berikutnya!"
   },
+  "portfolio": {
+    "navBack": "Kembali",
+    "navTitle": "Portfolio Proyek",
+    "eyebrow": "Karya Pilihan",
+    "title": "Proyek yang Telah Kami Bangun",
+    "subtitle": "Setiap proyek adalah cerita kolaborasi, tantangan unik, dan solusi yang dirancang khusus untuk kebutuhan klien.",
+    "empty": "Belum ada proyek yang ditampilkan.",
+    "viewProject": "Lihat Proyek",
+    "confidential": "Rahasia",
+    "challenge": "Tantangan",
+    "architecture": "Arsitektur",
+    "role": "Peran Kami",
+    "impact": "Dampak",
+    "backToPortfolio": "Kembali ke Portfolio"
+  },
+  "contactPage": {
+    "navBack": "Kembali",
+    "navTitle": "Hubungi Kami",
+    "eyebrow": "Kontak",
+    "title": "Mari Diskusikan Kebutuhan Anda",
+    "subtitle": "Ceritakan sistem atau alur kerja yang ingin Anda perbaiki. Kami akan membantu menentukan solusi yang tepat.",
+    "name": "Nama Lengkap",
+    "email": "Email",
+    "company": "Perusahaan",
+    "message": "Pesan",
+    "namePlaceholder": "Nama Anda",
+    "emailPlaceholder": "email@perusahaan.com",
+    "companyPlaceholder": "Nama perusahaan (opsional)",
+    "messagePlaceholder": "Ceritakan sistem atau alur kerja yang ingin Anda perbaiki...",
+    "submit": "Kirim Pesan",
+    "submitting": "Mengirim...",
+    "success": "Pesan Anda berhasil dikirim. Kami akan menghubungi Anda dalam 1x24 jam.",
+    "error": "Gagal mengirim pesan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.",
+    "whatsapp": "Atau hubungi kami langsung via WhatsApp",
+    "emailLabel": "Email",
+    "phoneLabel": "Telepon",
+    "addressLabel": "Lokasi",
+    "addressValue": "Bandung, Jawa Barat, Indonesia"
+  },
+  "aboutPage": {
+    "navBack": "Kembali",
+    "navTitle": "Tentang Kami",
+    "eyebrow": "Tentang Sundawa",
+    "title": "Lebih dari Sekadar Tim yang Menulis Kode",
+    "subtitle": "Kami memahami mengapa sistem gagal, menentukan apa yang perlu diubah, membangunnya tanpa menambah kerumitan, dan tetap bertanggung jawab setelah peluncuran.",
+    "mission": {
+      "label": "Misi Kami",
+      "items": [
+        {
+          "num": "01",
+          "title": "Memahami Sebelum Membangun",
+          "body": "Kami mulai dari cara bisnis Anda benar-benar berjalan, bukan dari kerangka kerja favorit atau solusi yang sudah jadi."
+        },
+        {
+          "num": "02",
+          "title": "Mempertahankan yang Sudah Berjalan",
+          "body": "Modernisasi tidak otomatis berarti membangun ulang semuanya. Kami pertahankan sistem yang masih berguna dan hanya mengganti yang membatasi bisnis."
+        },
+        {
+          "num": "03",
+          "title": "Membangun Berdasarkan Hasil yang Terukur",
+          "body": "Otomatisasi, AI, dan perangkat lunak harus mengurangi beban kerja, menghilangkan hambatan, meningkatkan keandalan, atau membuka kemampuan baru."
+        },
+        {
+          "num": "04",
+          "title": "Tetap Bertanggung Jawab Setelah Peluncuran",
+          "body": "Kami tetap menjalankan, membenahi, dan mengembangkan platform Anda, bukan menghilang setelah peluncuran."
+        }
+      ]
+    },
+    "values": {
+      "label": "Nilai Inti",
+      "items": [
+        {
+          "title": "Transparansi",
+          "body": "Komunikasi terbuka di setiap tahap, dari estimasi hingga peluncuran."
+        },
+        {
+          "title": "Akuntabilitas",
+          "body": "Kami bertanggung jawab atas hasil, bukan hanya proses."
+        },
+        {
+          "title": "Keterukuran",
+          "body": "Setiap keputusan didasarkan pada data dan hasil yang bisa diukur."
+        },
+        {
+          "title": "Kolaborasi",
+          "body": "Kami bekerja bersama tim Anda, bukan menggantikan tim Anda."
+        }
+      ]
+    },
+    "stats": {
+      "projects": "Proyek Selesai",
+      "clients": "Klien Aktif",
+      "years": "Tahun Pengalaman",
+      "professionals": "Profesional"
+    },
+    "cta": {
+      "title": "Tertarik Bekerja Sama?",
+      "subtitle": "Ceritakan apa yang sedang terjadi. Kami bantu tentukan apakah itu butuh modernisasi, integrasi, otomatisasi, atau sesuatu yang sepenuhnya baru.",
+      "button": "Hubungi Kami"
+    }
+  },
+  "servicesPage": {
+    "navBack": "Kembali",
+    "navTitle": "Layanan Kami",
+    "eyebrow": "Layanan",
+    "title": "Apa yang Kami Tawarkan",
+    "subtitle": "Lima layanan inti yang dirancang untuk menyelesaikan masalah operasional nyata, bukan sekadar menambahkan teknologi baru.",
+    "viewDetail": "Lihat Detail",
+    "backToServices": "Kembali ke Layanan",
+    "challenge": "Tantangan",
+    "solution": "Solusi Kami",
+    "outcome": "Hasil",
+    "detail": {
+      "modernization": {
+        "slug": "modernisasi-sistem",
+        "problem": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis",
+        "title": "Modernisasi Sistem Lama",
+        "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan — merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.",
+        "outcome": "Perubahan lebih cepat. Keandalan lebih baik. Utang teknis lebih sedikit.",
+        "details": "Modernisasi sistem lama adalah proses yang hati-hati. Kami tidak menulis ulang semuanya dari awal. Sebaliknya, kami menganalisis sistem yang ada, mengidentifikasi komponen yang masih berfungsi dengan baik, dan mengganti hanya bagian yang menghambat operasional. Pendekatan ini meminimalkan risiko dan memastikan bisnis tetap berjalan selama proses modernisasi."
+      },
+      "automation": {
+        "slug": "otomatisasi-ai",
+        "problem": "Terlalu banyak pekerjaan yang masih dilakukan secara manual",
+        "title": "Otomatisasi Alur Kerja & AI",
+        "desc": "Kami ubah persetujuan, pelaporan, pengolahan dokumen, input data, dan tugas operasional yang berulang menjadi alur kerja otomatis yang terkendali.",
+        "outcome": "Pekerjaan berulang lebih sedikit. Operasional lebih cepat. Kesalahan lebih jarang terjadi.",
+        "details": "Otomatisasi bukan hanya tentang menghilangkan pekerjaan manual. Ini tentang menciptakan alur kerja yang konsisten, terukur, dan bisa dipantau. Kami mengidentifikasi tugas yang berulang, merancang alur otomatis, dan mengintegrasikannya dengan sistem yang sudah ada. AI digunakan ketika benar-benar memberikan nilai, bukan sebagai gimmick."
+      },
+      "integration": {
+        "slug": "integrasi-sistem",
+        "problem": "Sistem Anda tidak saling terhubung",
+        "title": "Integrasi Sistem & Data",
+        "desc": "Kami hubungkan ERP, sistem keuangan, basis data, API, sistem operasional, dan platform eksternal agar informasi mengalir ke tempat yang tepat.",
+        "outcome": "Satu aliran informasi, bukan sistem yang terisolasi.",
+        "details": "Integrasi sistem dimulai dengan memahami bagaimana data mengalir di antara sistem yang ada. Kami memetakan ketergantungan, mengidentifikasi titik integrasi, dan membangun konektor yang andal. Hasilnya adalah informasi yang mengalir otomatis ke tempat yang tepat, tanpa duplikasi atau inkonsistensi."
+      },
+      "custom": {
+        "slug": "platform-khusus",
+        "problem": "Perangkat lunak siap pakai tidak selalu cocok",
+        "title": "Platform Bisnis Khusus",
+        "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal dan portal pelanggan hingga platform SaaS.",
+        "outcome": "Perangkat lunak menyesuaikan operasional Anda, bukan sebaliknya.",
+        "details": "Platform bisnis khusus dirancang dari awal untuk memenuhi kebutuhan unik bisnis Anda. Kami mulai dengan memahami alur kerja, merancang arsitektur yang scalable, dan membangun platform yang bisa berkembang bersama bisnis Anda. Dari sistem internal hingga platform SaaS, kami memastikan setiap fitur memberikan nilai nyata."
+      },
+      "managed": {
+        "slug": "managed-engineering",
+        "problem": "Peluncuran bukan garis akhir",
+        "title": "Managed Product Engineering",
+        "desc": "Kami terus memantau, memelihara, mengoptimalkan, dan mengembangkan platform Anda setelah rilis.",
+        "outcome": "Satu mitra rekayasa yang tetap bertanggung jawab atas sistem Anda.",
+        "details": "Managed product engineering berarti kami tidak menghilang setelah peluncuran. Kami terus memantau performa, memperbaiki bug, mengoptimalkan kecepatan, dan mengembangkan fitur baru. Anda mendapatkan mitra rekayasa jangka panjang yang memahami sistem Anda dan tetap bertanggung jawab atas kualitasnya."
+      }
+    }
+  },
   "meta": {
     "home": {
       "title": "Sundawa Teknologi | Software House Bandung, Modernisasi Sistem",
@@ -723,6 +880,22 @@
     "blog": {
       "title": "Artikel & Insight Teknologi",
       "description": "Wawasan seputar modernisasi sistem, otomatisasi, integrasi, dan pengembangan software dari tim Sundawa Teknologi."
+    },
+    "portfolio": {
+      "title": "Portfolio Proyek | Sundawa Teknologi",
+      "description": "Lihat proyek-proyek yang telah kami selesaikan untuk berbagai klien di berbagai industri."
+    },
+    "contact": {
+      "title": "Hubungi Kami | Sundawa Teknologi",
+      "description": "Siap mendiskusikan kebutuhan modernisasi sistem atau alih daya IT? Hubungi kami untuk konsultasi gratis."
+    },
+    "about": {
+      "title": "Tentang Kami | Sundawa Teknologi",
+      "description": "Kenali lebih dekat Sundawa Teknologi, tim di balik modernisasi sistem dan solusi software untuk bisnis di Indonesia."
+    },
+    "services": {
+      "title": "Layanan Kami | Sundawa Teknologi",
+      "description": "Modernisasi sistem, otomatisasi AI, integrasi data, platform khusus, dan managed engineering untuk bisnis Anda."
     }
   }
 }

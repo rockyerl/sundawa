@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/src/i18n/routing'
 import { SITE_URL, SITE_NAME } from '@/lib/Seo'
-import { IntroLoader, PageTransition } from '@/src/shared/ui'
+import { GoogleAnalytics, InstallPrompt, IntroLoader, PageTransition, PWARegister, SkipLink } from '@/src/shared/ui'
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
@@ -57,11 +57,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 { url: '/favicon.ico' },
                 { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
                 { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+                { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+                { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
             ],
             apple: '/apple-touch-icon.png',
             shortcut: '/favicon-16x16.png',
+            other: [
+                { rel: 'manifest', url: '/manifest.json' },
+            ],
         },
-        // verification: { google: 'PASTE_TOKEN_HERE' }, // only add when you have a token; an empty value renders an empty meta tag
+        verification: { google: '5af37c72f9949e81' },
     }
 }
 
@@ -95,6 +100,13 @@ export default async function LocaleLayout({ children, params }: Props) {
                 },
                 areaServed: 'ID',
                 sameAs: ['https://www.linkedin.com/company/sundawa-teknologi-indonesia'],
+                contactPoint: {
+                    '@type': 'ContactPoint',
+                    telephone: '+6287893355332',
+                    contactType: 'customer service',
+                    areaServed: 'ID',
+                    availableLanguage: ['id', 'en'],
+                },
             },
             {
                 '@type': 'WebSite',
@@ -103,6 +115,11 @@ export default async function LocaleLayout({ children, params }: Props) {
                 name: SITE_NAME,
                 inLanguage: locale,
                 publisher: { '@id': `${SITE_URL}/#organization` },
+                potentialAction: {
+                    '@type': 'SearchAction',
+                    target: `${SITE_URL}/blog?q={search_term_string}`,
+                    'query-input': 'required name=search_term_string',
+                },
             },
         ],
     }
@@ -113,8 +130,14 @@ export default async function LocaleLayout({ children, params }: Props) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
             />
+            <GoogleAnalytics />
             <IntroLoader />
-            <PageTransition>{children}</PageTransition>
+            <SkipLink />
+            <PWARegister />
+            <InstallPrompt />
+            <div id="main-content">
+                <PageTransition>{children}</PageTransition>
+            </div>
         </NextIntlClientProvider>
     )
 }

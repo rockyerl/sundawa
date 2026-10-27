@@ -35,9 +35,11 @@ You are the UI/UX and localization specialist for **Sundawa Web**. Your focus: c
 |---|---|
 | `SubpageNav` | Back-navigation header for subpages. Props: `navBack` (button label), `navTitle` (page title) |
 | `LangToggle` | Locale switcher (id/en) |
-| `Introloader` | Loading splash animation |
-| `Pagetransition` | Page route transition wrapper |
-| `IntroEvents` | Intro loader event bus (not a component) |
+| `IntroLoader` | Loading splash animation |
+| `PageTransition` | Page route transition wrapper |
+| `IntroEvents` | Intro loader event bus (internal, not exported) |
+
+**Public exports**: `IntroLoader`, `LangToggle`, `PageTransition`, `SubpageNav`
 
 **SubpageNav usage pattern:**
 ```tsx
@@ -55,6 +57,36 @@ Used by: `BlogArchive`, `ProcessSection`. Any new subpage should follow this pat
   1. **CDN URL** (SimpleIcons) → `<Image unoptimized ... />` — the `unoptimized` prop is mandatory for SVG URLs.
   2. **Inline SVG string** → rendered via `dangerouslySetInnerHTML`.
 - `next.config.ts` allows SVG from `cdn.simpleicons.org` with `dangerouslyAllowSVG: true` + CSP. Do not remove this config.
+
+---
+
+## Home Page Components (`src/features/home/components/`)
+
+The homepage is composed of 13 sections exported from `src/features/home/index.ts`:
+
+| Component | Purpose |
+|---|---|
+| `Navbar` | Top navigation with locale-aware links |
+| `HeroSection` | Landing hero with CTA buttons |
+| `ProblemSection` | Pain points / problem statement |
+| `AboutSection` | Company overview & introduction |
+| `ValuesSection` | Core company values display |
+| `ServicesSection` | Service offerings grid |
+| `TechSection` | Technology stack grid (data from `techCatalog.ts`) |
+| `TechIcon` | SVG icon renderer (CDN + inline) |
+| `ClientsSection` | Client portfolio showcase |
+| `ObjectionsSection` | Common objections / FAQ section |
+| `FinalCtaSection` | Final call-to-action before contact |
+| `ContactSection` | Contact information & form |
+| `BlogSection` | Latest blog posts preview (uses `BlogCard`) |
+| `ParticleField` | Background particle animation (Server → Client via `ParticleFieldClient`) |
+
+**Additional internal components** (not exported from index.ts):
+- `Introcontext` — intro animation context provider
+- `ClientProjectDialog` — client project detail modal
+- `ClientsGrid` — client logos grid
+- `ClientsStats` — client statistics display
+- `ParticleFieldClient` — client-side particle animation wrapper
 
 ---
 

@@ -35,6 +35,16 @@ sundawa-web/
 │   │   ├── blog/                 # Blog archive & dynamic post [slug]
 │   │   │   ├── page.tsx          # Thin route adapter — passes translations to BlogArchive
 │   │   │   └── [slug]/page.tsx   # Thin route adapter — passes post + locale to BlogPostDetail
+│   │   ├── portfolio/            # Project portfolio archive & detail
+│   │   │   ├── page.tsx          # Thin route adapter — renders <PortfolioArchive />
+│   │   │   └── [slug]/page.tsx   # Thin route adapter — renders <PortfolioDetail />
+│   │   ├── services/             # Services listing & detail
+│   │   │   ├── page.tsx          # Thin route adapter — renders <ServicesPage />
+│   │   │   └── [slug]/page.tsx   # Thin route adapter — renders <ServiceDetail />
+│   │   ├── about/                # About company page
+│   │   │   └── page.tsx          # Thin route adapter — renders <AboutPage />
+│   │   ├── contact/              # Contact form page
+│   │   │   └── page.tsx          # Thin route adapter — renders <ContactPage />
 │   │   ├── outsource/            # Outsource rate card & estimator
 │   │   │   └── page.tsx          # Thin route adapter — renders <Outsource />
 │   │   ├── proses-kerja/         # Workflow process overview
@@ -47,6 +57,8 @@ sundawa-web/
 │   ├── error.tsx                 # Global root error boundary
 │   ├── layout.tsx                # Root layout (no locale context)
 │   ├── not-found.tsx             # Global root 404 fallback
+│   ├── offline/                  # PWA offline fallback page
+│   │   └── page.tsx              # Offline fallback with Sundawa branding
 │   ├── globals.css               # Tailwind CSS v4 setup & theme styles
 │   ├── Robots.ts                 # Dynamic robots.txt
 │   └── sitemap.ts                # Dynamic sitemap with Sanity post slugs
@@ -56,9 +68,26 @@ sundawa-web/
 ├── src/
 │   ├── features/                 # Modular feature domains
 │   │   ├── home/                 # Landing page sections, clients modal, tech grid
-│   │   │   ├── components/       # HeroSection, ClientsSection, TechSection, etc.
-│   │   │   │   ├── TechIcon.tsx  # SVG icon renderer — uses `unoptimized` for CDN SVGs
-│   │   │   │   └── TechSection.tsx # Tech grid — imports data from techCatalog.ts
+│   │   │   ├── components/       # 13 public exports + internal helpers
+│   │   │   │   ├── Navbar.tsx            # Top navigation with locale-aware links
+│   │   │   │   ├── HeroSection.tsx       # Landing hero with CTA
+│   │   │   │   ├── ProblemSection.tsx    # Pain points section
+│   │   │   │   ├── AboutSection.tsx      # Company overview
+│   │   │   │   ├── ValuesSection.tsx     # Core values display
+│   │   │   │   ├── ServicesSection.tsx   # Service offerings grid
+│   │   │   │   ├── TechSection.tsx       # Tech grid — imports data from techCatalog.ts
+│   │   │   │   ├── TechIcon.tsx          # SVG icon renderer — uses `unoptimized` for CDN SVGs
+│   │   │   │   ├── ClientsSection.tsx    # Client portfolio showcase
+│   │   │   │   ├── ObjectionsSection.tsx # Common objections/FAQ
+│   │   │   │   ├── FinalCtaSection.tsx   # Final call-to-action
+│   │   │   │   ├── ContactSection.tsx    # Contact information & form
+│   │   │   │   ├── Blogsection.tsx       # Latest blog posts preview (uses BlogCard)
+│   │   │   │   ├── ParticleField.tsx     # Background particle animation (Server)
+│   │   │   │   ├── ParticleFieldClient.tsx # Client-side particle wrapper
+│   │   │   │   ├── Introcontext.tsx      # Intro animation context
+│   │   │   │   ├── ClientProjectDialog.tsx # Client project detail modal
+│   │   │   │   ├── ClientsGrid.tsx       # Client logos grid
+│   │   │   │   └── ClientsStats.tsx      # Client statistics display
 │   │   │   ├── clients.ts        # Client portfolio data & types
 │   │   │   ├── clients.test.ts   # Client data contract tests
 │   │   │   ├── tech.ts           # Tech & TechCategory type definitions
@@ -66,7 +95,13 @@ sundawa-web/
 │   │   │   ├── techCatalog.test.ts # Contract tests for techCatalog (4 tests)
 │   │   │   └── index.ts          # Public exports for the home feature
 │   │   ├── outsource/            # Outsource calculator & talent selection
-│   │   │   ├── components/       # Outsource, EstimateCart, TalentSelector, etc.
+│   │   │   ├── components/
+│   │   │   │   ├── Outsource.tsx       # Main outsource calculator page (exported as OutsourceCalculator)
+│   │   │   │   ├── TalentSelector.tsx  # Talent selection with mode toggle
+│   │   │   │   ├── EstimateCart.tsx    # Cart summary with pricing breakdown
+│   │   │   │   ├── ContactCta.tsx      # Contact call-to-action section
+│   │   │   │   ├── InfoStrip.tsx       # Informational banner strip
+│   │   │   │   └── ModeBadge.tsx       # Remote/hybrid/onsite mode indicator
 │   │   │   ├── data.ts           # Static pricing data (PRICING constant)
 │   │   │   ├── domain.ts         # Pure domain: pricing models, cart totals, WA message builder
 │   │   │   ├── domain.test.ts    # Unit tests for domain calculations (5 tests)
@@ -84,6 +119,26 @@ sundawa-web/
 │   │       │   └── ProcessSection.tsx  # Uses SubpageNav, typed with process domain types
 │   │       ├── types.ts          # ProcessStep, ProcessInfoItem type definitions
 │   │       └── index.ts          # Public exports for the process feature
+│   │   ├── portfolio/            # Project portfolio feature
+│   │   │   ├── components/
+│   │   │   │   ├── PortfolioArchive.tsx  # Portfolio grid listing
+│   │   │   │   └── PortfolioDetail.tsx   # Single project detail page
+│   │   │   ├── types.ts          # PortfolioProject type definition
+│   │   │   ├── data.ts           # Portfolio data transformation from clients
+│   │   │   └── index.ts          # Public exports for the portfolio feature
+│   │   ├── services/             # Services listing & detail feature
+│   │   │   ├── components/
+│   │   │   │   ├── ServicesPage.tsx      # Services grid listing
+│   │   │   │   └── ServiceDetail.tsx     # Single service detail page
+│   │   │   └── index.ts          # Public exports for the services feature
+│   │   ├── about/                # About company page feature
+│   │   │   ├── components/
+│   │   │   │   └── AboutPage.tsx         # About page with missions, values, stats
+│   │   │   └── index.ts          # Public exports for the about feature
+│   │   └── contact/              # Contact form feature
+│   │       ├── components/
+│   │       │   └── ContactPage.tsx       # Contact form with WhatsApp integration
+│   │       └── index.ts          # Public exports for the contact feature
 │   ├── shared/
 │   │   └── ui/                   # Reusable cross-feature UI components
 │   │       ├── IntroEvents.ts    # Intro loader event bus
@@ -91,6 +146,10 @@ sundawa-web/
 │   │       ├── LangToggle.tsx    # Locale switcher
 │   │       ├── Pagetransition.tsx# Page route transition wrapper
 │   │       ├── SubpageNav.tsx    # Reusable subpage navigation header (back + title)
+│   │       ├── GoogleAnalytics.tsx # Google Analytics & GTM script injection
+│   │       ├── SkipLink.tsx      # Skip navigation link for accessibility
+│   │       ├── PWARegister.tsx   # Service worker registration
+│   │       ├── InstallPrompt.tsx # PWA install banner
 │   │       └── index.ts          # Public exports for shared UI
 │   └── i18n/                     # next-intl configuration & routing
 │       ├── routing.ts            # Supported locales, default locale, prefix rule
@@ -105,7 +164,19 @@ sundawa-web/
 │   ├── Seo.ts                    # SEO metadata & alternate hreflang generator
 │   ├── Seo.test.ts               # Unit tests for SEO helpers
 │   ├── Sitemap.ts                # Sitemap URL generator
-│   └── Sitemap.test.ts           # Unit tests for Sitemap helpers
+│   ├── Sitemap.test.ts           # Unit tests for Sitemap helpers
+│   └── analytics.ts              # Google Analytics & GTM ID utilities
+├── public/
+│   ├── manifest.json             # PWA web app manifest
+│   ├── sw.js                     # Service worker (native Cache API)
+│   ├── og-image.png              # Open Graph image 1200x630
+│   ├── favicon.ico               # Favicon (PNG fallback)
+│   ├── favicon-16x16.png         # Favicon 16x16
+│   ├── favicon-32x32.png         # Favicon 32x32
+│   ├── apple-touch-icon.png      # Apple touch icon 180x180
+│   └── icons/
+│       ├── icon-192x192.png      # PWA icon 192x192
+│       └── icon-512x512.png      # PWA icon 512x512
 └── .github/
     ├── agents/                   # GitHub Copilot custom agents
     │   ├── sundawa-web.agent.md  # Primary Lead Engineering Agent
@@ -166,10 +237,33 @@ sundawa-web/
 - The `TechIcon` component always passes `unoptimized` prop to `next/image` when rendering SVGs from external CDN URLs.
 - Do not remove the `unoptimized` prop or the `dangerouslyAllowSVG` config — they are required for SimpleIcons CDN delivery.
 
+- **Analytics**: Google Analytics (GA4) and Google Tag Manager support via `lib/analytics.ts` and `src/shared/ui/GoogleAnalytics.tsx`. Enable by setting `NEXT_PUBLIC_GA_MEASUREMENT_ID` and/or `NEXT_PUBLIC_GTM_ID` environment variables.
+
+### 3.10. Progressive Web App (PWA)
+- **Manifest**: `public/manifest.json` defines app name, theme colors (`#0E1E30`), display mode (`standalone`), and icons.
+- **Service Worker**: `public/sw.js` uses native Cache API — cache-first for static assets (images, fonts, icons), network-first for API and navigation requests.
+- **Registration**: `PWARegister` client component in `src/shared/ui/` handles SW registration and update detection.
+- **Install Prompt**: `InstallPrompt` in `src/shared/ui/` shows a banner when the browser supports installation (via `beforeinstallprompt` event).
+- **Offline Fallback**: `app/offline/page.tsx` serves as the offline fallback page with Sundawa branding.
+- **Headers**: `next.config.ts` configures `Cache-Control` for `/sw.js` (no-cache) and `/manifest.json` (1 hour cache).
+
+### 3.11. SEO & Structured Data
+- **Metadata**: `lib/Seo.ts` provides `pageMetadata()` for 8 page keys (home, outsource, process, blog, portfolio, contact, about, services) with canonical URLs, hreflang, Open Graph, and Twitter cards.
+- **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) plus dynamic blog post slugs from Sanity.
+- **Structured Data (JSON-LD)**: Layout injects Organization + WebSite schema with ContactPoint and SearchAction. Blog posts include BlogPosting schema.
+- **Google Search Console**: Verification token configured in layout metadata (`verification.google`).
+- **Robots.txt**: Disallows `/offline` path, allows all other paths.
+- **Open Graph**: `/og-image.png` (1200x630) used for social sharing previews.
+- **Favicons**: `/favicon.ico`, `/favicon-16x16.png`, `/favicon-32x32.png`, `/apple-touch-icon.png` generated from logo.
+
 ### 3.9. Shared UI Components
-- `SubpageNav` in `src/shared/ui/SubpageNav.tsx` is the standard back-navigation header for all subpages (`/blog`, `/outsource`, `/proses-kerja`).
-- It accepts `navBack` (button label) and `navTitle` (page title) as string props.
-- `BlogArchive` and `ProcessSection` both consume `SubpageNav`.
+- `SubpageNav` in `src/shared/ui/SubpageNav.tsx` is the standard back-navigation header for all subpages (`/blog`, `/portfolio`, `/services`, `/about`, `/contact`, `/outsource`, `/proses-kerja`).
+- It accepts `backLabel` (button label) and `titleLabel` (page title) as string props.
+- `BlogArchive`, `PortfolioArchive`, `ServicesPage`, `AboutPage`, `ContactPage`, and `ProcessSection` all consume `SubpageNav`.
+- `GoogleAnalytics` in `src/shared/ui/GoogleAnalytics.tsx` injects GA4/GTM scripts conditionally when env vars are set.
+- `SkipLink` in `src/shared/ui/SkipLink.tsx` provides skip navigation for keyboard users (WCAG 2.1 AA).
+- `PWARegister` in `src/shared/ui/PWARegister.tsx` registers the service worker on mount.
+- `InstallPrompt` in `src/shared/ui/InstallPrompt.tsx` displays an install banner for PWA-capable browsers.
 
 ---
 
@@ -198,7 +292,7 @@ Before submitting any changes, always execute:
 ```bash
 npm.cmd run check
 ```
-This runs ESLint, TypeScript compiler verification, and the Vitest test suite (6 suites, 15+ tests).
+This runs ESLint, TypeScript compiler verification, and the Vitest test suite (6 suites, 15 tests).
 
 ### Known Issues
 - **Turbopack build panic**: `npm run build` may fail with a Turbopack internal panic on `app/globals.css` in Next.js 16.2.7. This is a known upstream bug — not a code issue. The dev server works fine; use `npm run check` as the quality gate, not `npm run build`.

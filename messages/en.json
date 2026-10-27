@@ -705,6 +705,163 @@
     "backToBlog": "Back to Blog",
     "empty": "No blog posts yet. Stay tuned for updates!"
   },
+  "portfolio": {
+    "navBack": "Back",
+    "navTitle": "Project Portfolio",
+    "eyebrow": "Selected Work",
+    "title": "Projects We Have Built",
+    "subtitle": "Every project is a story of collaboration, unique challenges, and solutions designed specifically for our clients' needs.",
+    "empty": "No projects to display yet.",
+    "viewProject": "View Project",
+    "confidential": "Confidential",
+    "challenge": "Challenge",
+    "architecture": "Architecture",
+    "role": "Our Role",
+    "impact": "Impact",
+    "backToPortfolio": "Back to Portfolio"
+  },
+  "contactPage": {
+    "navBack": "Back",
+    "navTitle": "Contact Us",
+    "eyebrow": "Contact",
+    "title": "Let's Discuss Your Needs",
+    "subtitle": "Tell us about the system or workflow you want to improve. We'll help determine the right solution.",
+    "name": "Full Name",
+    "email": "Email",
+    "company": "Company",
+    "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "email@company.com",
+    "companyPlaceholder": "Company name (optional)",
+    "messagePlaceholder": "Tell us about the system or workflow you want to improve...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Your message has been sent successfully. We'll get back to you within 24 hours.",
+    "error": "Failed to send message. Please try again or contact us directly via WhatsApp.",
+    "whatsapp": "Or contact us directly via WhatsApp",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Location",
+    "addressValue": "Bandung, West Java, Indonesia"
+  },
+  "aboutPage": {
+    "navBack": "Back",
+    "navTitle": "About Us",
+    "eyebrow": "About Sundawa",
+    "title": "More Than Just a Team That Writes Code",
+    "subtitle": "We understand why systems fail, determine what needs to change, build it without adding complexity, and stay accountable after launch.",
+    "mission": {
+      "label": "Our Mission",
+      "items": [
+        {
+          "num": "01",
+          "title": "Understand Before Building",
+          "body": "We start from how your business actually works, not from a favorite framework or off-the-shelf solution."
+        },
+        {
+          "num": "02",
+          "title": "Preserve What Works",
+          "body": "Modernization doesn't automatically mean rebuilding everything. We keep systems that still serve and replace only what limits the business."
+        },
+        {
+          "num": "03",
+          "title": "Build Based on Measurable Results",
+          "body": "Automation, AI, and software should reduce workload, remove bottlenecks, increase reliability, or unlock new capabilities."
+        },
+        {
+          "num": "04",
+          "title": "Stay Accountable After Launch",
+          "body": "We continue running, fixing, and evolving your platform, not disappearing after launch."
+        }
+      ]
+    },
+    "values": {
+      "label": "Core Values",
+      "items": [
+        {
+          "title": "Transparency",
+          "body": "Open communication at every stage, from estimation to launch."
+        },
+        {
+          "title": "Accountability",
+          "body": "We are responsible for results, not just processes."
+        },
+        {
+          "title": "Measurability",
+          "body": "Every decision is based on data and measurable outcomes."
+        },
+        {
+          "title": "Collaboration",
+          "body": "We work alongside your team, not replace your team."
+        }
+      ]
+    },
+    "stats": {
+      "projects": "Completed Projects",
+      "clients": "Active Clients",
+      "years": "Years of Experience",
+      "professionals": "Professionals"
+    },
+    "cta": {
+      "title": "Interested in Working Together?",
+      "subtitle": "Tell us what's happening. We'll help determine if it needs modernization, integration, automation, or something entirely new.",
+      "button": "Contact Us"
+    }
+  },
+  "servicesPage": {
+    "navBack": "Back",
+    "navTitle": "Our Services",
+    "eyebrow": "Services",
+    "title": "What We Offer",
+    "subtitle": "Five core services designed to solve real operational problems, not just add new technology.",
+    "viewDetail": "View Details",
+    "backToServices": "Back to Services",
+    "challenge": "Challenge",
+    "solution": "Our Solution",
+    "outcome": "Outcome",
+    "detail": {
+      "modernization": {
+        "slug": "system-modernization",
+        "problem": "Your software can no longer keep up with business needs",
+        "title": "Legacy System Modernization",
+        "desc": "We fix legacy platforms without endangering ongoing operations — redesigning architecture, replacing weak components, and preparing systems for future growth.",
+        "outcome": "Faster changes. Better reliability. Less technical debt.",
+        "details": "Legacy system modernization is a careful process. We don't rewrite everything from scratch. Instead, we analyze the existing system, identify components that still work well, and replace only the parts that hinder operations. This approach minimizes risk and ensures business continuity during modernization."
+      },
+      "automation": {
+        "slug": "workflow-automation-ai",
+        "problem": "Too many tasks are still done manually",
+        "title": "Workflow Automation & AI",
+        "desc": "We transform approvals, reporting, document processing, data entry, and repetitive operational tasks into controlled automated workflows.",
+        "outcome": "Less repetitive work. Faster operations. Fewer errors.",
+        "details": "Automation isn't just about eliminating manual work. It's about creating consistent, measurable, and monitorable workflows. We identify repetitive tasks, design automated flows, and integrate them with existing systems. AI is used when it truly adds value, not as a gimmick."
+      },
+      "integration": {
+        "slug": "system-integration",
+        "problem": "Your systems don't connect",
+        "title": "System & Data Integration",
+        "desc": "We connect ERP, financial systems, databases, APIs, operational systems, and external platforms so information flows to the right place.",
+        "outcome": "One information flow, not isolated systems.",
+        "details": "System integration starts with understanding how data flows between existing systems. We map dependencies, identify integration points, and build reliable connectors. The result is information that flows automatically to the right place, without duplication or inconsistency."
+      },
+      "custom": {
+        "slug": "custom-platform",
+        "problem": "Off-the-shelf software doesn't always fit",
+        "title": "Custom Business Platform",
+        "desc": "We build operational software tailored to how your business actually works — from internal systems and customer portals to SaaS platforms.",
+        "outcome": "Software that adapts to your operations, not the other way around.",
+        "details": "Custom business platforms are designed from the ground up to meet your unique business needs. We start by understanding workflows, design a scalable architecture, and build a platform that can grow with your business. From internal systems to SaaS platforms, we ensure every feature delivers real value."
+      },
+      "managed": {
+        "slug": "managed-engineering",
+        "problem": "Launch is not the finish line",
+        "title": "Managed Product Engineering",
+        "desc": "We continue monitoring, maintaining, optimizing, and developing your platform after release.",
+        "outcome": "One engineering partner that stays accountable for your system.",
+        "details": "Managed product engineering means we don't disappear after launch. We continue monitoring performance, fixing bugs, optimizing speed, and developing new features. You get a long-term engineering partner that understands your system and stays accountable for its quality."
+      }
+    }
+  },
   "meta": {
     "home": {
       "title": "Sundawa Teknologi | Software Modernization, Bandung",
@@ -723,6 +880,22 @@
     "blog": {
       "title": "Articles & Technology Insights",
       "description": "Insights on software modernization, automation, integration and development from the Sundawa Teknologi team."
+    },
+    "portfolio": {
+      "title": "Project Portfolio | Sundawa Teknologi",
+      "description": "See the projects we have completed for various clients across different industries."
+    },
+    "contact": {
+      "title": "Contact Us | Sundawa Teknologi",
+      "description": "Ready to discuss system modernization or IT outsourcing needs? Contact us for a free consultation."
+    },
+    "about": {
+      "title": "About Us | Sundawa Teknologi",
+      "description": "Get to know Sundawa Teknologi, the team behind system modernization and software solutions for businesses in Indonesia."
+    },
+    "services": {
+      "title": "Our Services | Sundawa Teknologi",
+      "description": "System modernization, AI automation, data integration, custom platforms, and managed engineering for your business."
     }
   }
 }

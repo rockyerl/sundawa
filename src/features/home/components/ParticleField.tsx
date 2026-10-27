@@ -4,12 +4,19 @@ import { useEffect, useRef } from 'react'
 
 export default function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const isVisibleRef = useRef(true)
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) {
+      return
+    }
 
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
@@ -33,6 +40,11 @@ export default function ParticleField() {
     let animId: number
 
     function draw() {
+      if (!isVisibleRef.current) {
+        animId = requestAnimationFrame(draw)
+        return
+      }
+
       if (!ctx || !canvas) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -80,9 +92,16 @@ export default function ParticleField() {
     }
     window.addEventListener('resize', handleResize)
 
+    // Pause animation when tab is not visible
+    const handleVisibilityChange = () => {
+      isVisibleRef.current = !document.hidden
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
     return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener('resize', handleResize)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
   }, [])
 
