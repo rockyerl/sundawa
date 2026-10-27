@@ -1,10 +1,9 @@
-import { cache } from 'react'
 import { supabase } from '@/lib/supabase'
 import { isPost, type Post } from '@/lib/types'
 
 export type PostSlug = { slug: string }
 
-export const getPosts = cache(async (): Promise<Post[]> => {
+export async function getPosts(): Promise<Post[]> {
     const { data, error } = await supabase
         .from('posts')
         .select('*')
@@ -17,9 +16,9 @@ export const getPosts = cache(async (): Promise<Post[]> => {
     }
 
     return (data ?? []).filter(isPost)
-})
+}
 
-export const getPostBySlug = cache(async (slug: string): Promise<Post | null> => {
+export async function getPostBySlug(slug: string): Promise<Post | null> {
     const { data, error } = await supabase
         .from('posts')
         .select('*')
@@ -28,9 +27,9 @@ export const getPostBySlug = cache(async (slug: string): Promise<Post | null> =>
 
     if (error || !data) return null
     return isPost(data) ? data : null
-})
+}
 
-export const getPostSlugs = cache(async (): Promise<PostSlug[]> => {
+export async function getPostSlugs(): Promise<PostSlug[]> {
     const { data, error } = await supabase
         .from('posts')
         .select('slug')
@@ -42,4 +41,4 @@ export const getPostSlugs = cache(async (): Promise<PostSlug[]> => {
     }
 
     return (data ?? []).map(row => ({ slug: row.slug as string }))
-})
+}
