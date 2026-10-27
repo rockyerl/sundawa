@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { usePathname } from '@/src/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import LangToggle from '@/src/shared/ui/LangToggle'
 

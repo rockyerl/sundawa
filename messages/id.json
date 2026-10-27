@@ -695,6 +695,8 @@
     "contactButton": "Hubungi Kami"
   },
   "blog": {
+    "navBack": "Kembali",
+    "navTitle": "Artikel Blog",
     "eyebrow": "Insight & Artikel",
     "title": "Dari Blog Kami",
     "subtitle": "Wawasan seputar teknologi, development, dan transformasi digital.",

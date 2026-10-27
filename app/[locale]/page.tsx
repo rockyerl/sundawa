@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server'
 import {
     AboutSection,
     BlogSection,
@@ -14,7 +15,10 @@ import {
     ValuesSection,
 } from '@/src/features/home'
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params
+    setRequestLocale(locale)
+
     return (
         <main className="relative noise-bg">
             <ParticleField />

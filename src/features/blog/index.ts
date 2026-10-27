@@ -1,2 +1,5 @@
 export { default as PortableTextRenderer } from './components/PortableTextRenderer'
-export { getPostBySlug, getPostSlugs, getPosts } from './data'
+export { default as BlogCard } from './components/BlogCard'
+export { default as BlogArchive } from './components/BlogArchive'
+export { default as BlogPostDetail } from './components/BlogPostDetail'
+export * from './data'

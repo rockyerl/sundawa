@@ -695,6 +695,8 @@
     "contactButton": "Contact Us"
   },
   "blog": {
+    "navBack": "Back",
+    "navTitle": "Blog Posts",
     "eyebrow": "Insights & Articles",
     "title": "From Our Blog",
     "subtitle": "Insights on technology, development, and digital transformation.",

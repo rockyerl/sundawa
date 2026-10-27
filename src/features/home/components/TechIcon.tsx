@@ -9,10 +9,24 @@ type TechIconProps = {
 
 export default function TechIcon({ item, size, style }: TechIconProps) {
     if (item.svgIcon) {
-        return <span style={{ display: 'inline-block', width: size, height: size, flexShrink: 0, ...style }} dangerouslySetInnerHTML={{ __html: item.svgIcon }} />
+        return (
+            <span
+                style={{ display: 'inline-block', width: size, height: size, flexShrink: 0, ...style }}
+                dangerouslySetInnerHTML={{ __html: item.svgIcon }}
+            />
+        )
     }
 
     if (!item.icon) return null
 
-    return <Image src={item.icon} alt={item.name} width={size} height={size} style={{ display: 'block', flexShrink: 0, ...style }} />
+    return (
+        <Image
+            src={item.icon}
+            alt={item.name}
+            width={size}
+            height={size}
+            unoptimized
+            style={{ display: 'block', flexShrink: 0, ...style }}
+        />
+    )
 }
