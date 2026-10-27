@@ -18,7 +18,7 @@ Sundawa Web is the official web application for **Sundawa Teknologi**, built for
   - Typography: Montserrat (`@fontsource/montserrat`)
 - **Animation & Icons**: [Framer Motion v12](https://www.framer.com/motion/), [Lucide React](https://lucide.dev/), SimpleIcons CDN
 - **Internationalization (i18n)**: [next-intl v4](https://next-intl-docs.vercel.app/) (Locales: `id` [default], `en`; prefix: `always`)
-- **Content Management**: [Sanity CMS](https://www.sanity.io/) (`next-sanity`, `@sanity/image-url`, `@portabletext/react`)
+- **Content Management**: [Supabase](https://supabase.com/) (`@supabase/supabase-js`) + HTML (`dangerouslySetInnerHTML`) + [TipTap](https://tiptap.dev/) rich text editor + custom admin panel
 - **Testing & Quality Assurance**: [Vitest v2](https://vitest.dev/), ESLint 9, `tsc --noEmit`
 - **Continuous Integration**: GitHub Actions (`.github/workflows/ci.yml`)
 
@@ -61,7 +61,7 @@ sundawa-web/
 │   │   └── page.tsx              # Offline fallback with Sundawa branding
 │   ├── globals.css               # Tailwind CSS v4 setup & theme styles
 │   ├── Robots.ts                 # Dynamic robots.txt
-│   └── sitemap.ts                # Dynamic sitemap with Sanity post slugs
+│   └── sitemap.ts                # Dynamic sitemap with Supabase post slugs
 ├── messages/                     # Translation dictionaries
 │   ├── id.json                   # Indonesian translations (primary)
 │   └── en.json                   # English translations (must mirror id.json 1:1)
@@ -106,13 +106,13 @@ sundawa-web/
 │   │   │   ├── domain.ts         # Pure domain: pricing models, cart totals, WA message builder
 │   │   │   ├── domain.test.ts    # Unit tests for domain calculations (5 tests)
 │   │   │   └── index.ts          # Public exports for the outsource feature
-│   │   ├── blog/                 # Sanity blog data fetching & portable text
+│   │   ├── blog/                 # Blog data fetching from Supabase + HTML rendering
 │   │   │   ├── components/
 │   │   │   │   ├── BlogArchive.tsx     # Blog listing — uses SubpageNav (navBack/navTitle)
 │   │   │   │   ├── BlogCard.tsx        # Reusable blog card (used by BlogArchive & BlogSection)
 │   │   │   │   ├── BlogPostDetail.tsx  # Blog post renderer with JSON-LD schema
-│   │   │   │   └── PortableTextRenderer.tsx # @portabletext/react wrapper
-│   │   │   ├── data.ts           # Cached Sanity queries (getPosts, getPostBySlug)
+│   │   │   │   └── MdxRenderer.tsx      # HTML renderer (renamed from MdxRenderer, uses dangerouslySetInnerHTML)
+│   │   │   ├── data.ts           # Cached Supabase queries (getPosts, getPostBySlug)
 │   │   │   └── index.ts          # Public exports for the blog feature
 │   │   └── process/              # Working process feature
 │   │       ├── components/
@@ -155,12 +155,11 @@ sundawa-web/
 │       ├── routing.ts            # Supported locales, default locale, prefix rule
 │       ├── request.ts            # Server request configuration for messages
 │       └── navigation.ts         # Wrapped Link, useRouter, usePathname
-├── lib/                          # Core infrastructure, Sanity, SEO & utils
+├── lib/                          # Core infrastructure, Supabase, SEO & utils
 │   ├── env.ts                    # Fail-fast public environment validation
-│   ├── sanity.ts                 # Configured Sanity client & image builder
-│   ├── Queries.ts                # Centralized GROQ query strings
-│   ├── types.ts                  # Sanity interfaces & isPost type guard
-│   ├── types.test.ts             # Unit tests for Sanity type guards
+│   ├── supabase.ts               # Configured Supabase client
+│   ├── types.ts                  # Post interface & isPost type guard
+│   ├── types.test.ts             # Unit tests for Post type guards
 │   ├── Seo.ts                    # SEO metadata & alternate hreflang generator
 │   ├── Seo.test.ts               # Unit tests for SEO helpers
 │   ├── Sitemap.ts                # Sitemap URL generator
@@ -181,7 +180,7 @@ sundawa-web/
     ├── agents/                   # GitHub Copilot custom agents
     │   ├── sundawa-web.agent.md  # Primary Lead Engineering Agent
     │   ├── sundawa-ui.agent.md   # UI/UX & Localization Specialist
-    │   └── sundawa-content.agent.md # Sanity CMS & Data Specialist
+    │   └── sundawa-content.agent.md # Supabase CMS & Data Specialist
     ├── copilot-instructions.md   # GitHub Copilot global instructions
     └── workflows/ci.yml          # CI quality check & production build
 ```
@@ -213,13 +212,13 @@ sundawa-web/
 - **Navigation**: Always import `Link`, `useRouter`, `usePathname`, and `redirect` from `@/src/i18n/navigation`. Never import directly from `next/link` or `next/navigation` in localized route trees.
 - The `blog` namespace in both `id.json` and `en.json` includes `navBack` and `navTitle` keys (used by `BlogArchive` via `SubpageNav`).
 
-### 3.5. Sanity CMS & Data Fetching
-- Sanity client configuration is initialized in `lib/sanity.ts`.
-- Required environment variables are strictly verified in `lib/env.ts` (`NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`). Do not use hardcoded fallback strings.
-- Centralize GROQ queries in `lib/Queries.ts`.
+### 3.5. Supabase & Data Fetching
+- Supabase client configuration is initialized in `lib/supabase.ts`.
+- Required environment variables are strictly verified in `lib/env.ts` (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`). Do not use hardcoded fallback strings.
 - All data fetching operations must go through `src/features/blog/data.ts` using React's `cache()` for deduplication.
-- Validate incoming data using `isPost` or corresponding runtime type guards before rendering.
-- Render rich text using `@portabletext/react` wrapped in `src/features/blog/components/PortableTextRenderer.tsx`.
+- Validate incoming data using `isPost` runtime type guard before rendering.
+- Render blog content using `HtmlRenderer` in `src/features/blog/components/MdxRenderer.tsx` (dangerouslySetInnerHTML for HTML output from TipTap).
+- Images are stored in Supabase Storage (`blog-images` bucket) and referenced by public URL string.
 
 ### 3.6. Outsource Calculator Domain Logic
 - Pure calculations for talent rates, modes (remote/hybrid/onsite), margins, cart totals, and pricing strings live in `src/features/outsource/domain.ts`.
@@ -249,14 +248,22 @@ sundawa-web/
 
 ### 3.11. SEO & Structured Data
 - **Metadata**: `lib/Seo.ts` provides `pageMetadata()` for 8 page keys (home, outsource, process, blog, portfolio, contact, about, services) with canonical URLs, hreflang, Open Graph, and Twitter cards.
-- **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) plus dynamic blog post slugs from Sanity.
+- **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) plus dynamic blog post slugs from Supabase.
 - **Structured Data (JSON-LD)**: Layout injects Organization + WebSite schema with ContactPoint and SearchAction. Blog posts include BlogPosting schema.
 - **Google Search Console**: Verification token configured in layout metadata (`verification.google`).
 - **Robots.txt**: Disallows `/offline` path, allows all other paths.
 - **Open Graph**: `/og-image.png` (1200x630) used for social sharing previews.
 - **Favicons**: `/favicon.ico`, `/favicon-16x16.png`, `/favicon-32x32.png`, `/apple-touch-icon.png` generated from logo.
 
-### 3.9. Shared UI Components
+### 3.6. Admin Panel
+- Located at `app/admin/` with client-side auth guard (password from `ADMIN_PASSWORD` env var).
+- Dashboard at `app/admin/page.tsx` lists all posts with edit/delete actions.
+- Create post at `app/admin/posts/new/page.tsx`, edit at `app/admin/posts/[id]/edit/page.tsx`.
+- Shared form component: `app/admin/posts/PostForm.tsx` with TipTap rich text editor (bold, italic, headings, lists, links, images, code blocks) and cover image upload with preview.
+- API routes: `/api/admin/auth` (login/logout), `/api/blog/posts` (CRUD), `/api/blog/upload` (image upload).
+- `/admin` is disallowed in `app/Robots.ts` to prevent search engine indexing.
+
+### 3.7. Shared UI Components
 - `SubpageNav` in `src/shared/ui/SubpageNav.tsx` is the standard back-navigation header for all subpages (`/blog`, `/portfolio`, `/services`, `/about`, `/contact`, `/outsource`, `/proses-kerja`).
 - It accepts `backLabel` (button label) and `titleLabel` (page title) as string props.
 - `BlogArchive`, `PortfolioArchive`, `ServicesPage`, `AboutPage`, `ContactPage`, and `ProcessSection` all consume `SubpageNav`.

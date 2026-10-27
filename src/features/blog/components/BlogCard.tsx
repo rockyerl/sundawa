@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { Link } from '@/src/i18n/navigation'
-import { urlFor } from '@/lib/sanity'
 import type { Post } from '@/lib/types'
 
 interface BlogCardProps {
@@ -11,14 +10,14 @@ interface BlogCardProps {
 export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
     return (
         <Link
-            href={`/blog/${post.slug.current}`}
+            href={`/blog/${post.slug}`}
             className="group relative flex flex-col overflow-hidden rounded-2xl transition-all duration-300 min-w-0"
             style={{ background: 'rgba(248,248,248,0.03)', border: '1px solid rgba(219,201,119,0.12)' }}
         >
-            {post.mainImage && (
+            {post.main_image_url && (
                 <div className="relative w-full aspect-[16/10] overflow-hidden">
                     <Image
-                        src={urlFor(post.mainImage).width(600).height(375).url()}
+                        src={post.main_image_url}
                         alt={post.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -32,9 +31,9 @@ export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
             )}
 
             <div className="flex flex-col flex-1 p-5 md:p-6">
-                {post.publishedAt && (
+                {post.published_at && (
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/50 mb-3">
-                        {new Date(post.publishedAt).toLocaleDateString('id-ID', {
+                        {new Date(post.published_at).toLocaleDateString('id-ID', {
                             day: 'numeric',
                             month: 'long',
                             year: 'numeric',

@@ -46,7 +46,7 @@ export default async function BlogSection() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {latestPosts.map((post) => (
                             <BlogCard
-                                key={post._id}
+                                key={post.id}
                                 post={post}
                                 readMoreLabel={t('readMore')}
                             />

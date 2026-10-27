@@ -14,7 +14,7 @@ Official web application for **Sundawa Teknologi** — built for performance, mo
 | Animation | Framer Motion v12 |
 | Icons | Lucide React, SimpleIcons CDN |
 | i18n | next-intl v4 (`id` default, `en`; prefix: `always`) |
-| CMS | Sanity (`next-sanity`, `@portabletext/react`, `@sanity/image-url`) |
+| CMS | Supabase (`@supabase/supabase-js`) + TipTap rich text editor + custom admin |
 | Testing | Vitest v2 |
 | Linting | ESLint 9 |
 | CI | GitHub Actions |
@@ -103,8 +103,8 @@ sundawa-web/
 │   │   │   │   ├── BlogCard.tsx          # Reusable post card
 │   │   │   │   ├── BlogArchive.tsx       # Post listing with SubpageNav
 │   │   │   │   ├── BlogPostDetail.tsx    # Post renderer with JSON-LD schema
-│   │   │   │   └── PortableTextRenderer.tsx
-│   │   │   ├── data.ts                   # getPosts, getPostBySlug (React cache)
+│   │   │   │   └── MdxRenderer.tsx         # HTML renderer (TipTap output)
+│   │   │   ├── data.ts                   # getPosts, getPostBySlug (Supabase cache)
 │   │   │   └── index.ts
 │   │   └── process/
 │   │       ├── components/
@@ -149,8 +149,7 @@ sundawa-web/
 │       └── navigation.ts                 # Always import Link/useRouter from here
 ├── lib/
 │   ├── env.ts                            # Fail-fast env validation
-│   ├── sanity.ts                         # Sanity client & image builder
-│   ├── Queries.ts                        # Centralized GROQ queries
+│   ├── supabase.ts                       # Supabase client
 │   ├── types.ts                          # Post interface & isPost type guard
 │   ├── types.test.ts
 │   ├── Seo.ts                            # pageMetadata() with hreflang
@@ -173,7 +172,7 @@ sundawa-web/
     ├── agents/
     │   ├── sundawa-web.agent.md          # Lead Engineering Agent
     │   ├── sundawa-ui.agent.md           # UI/UX & Localization Specialist
-    │   └── sundawa-content.agent.md      # Sanity CMS & Data Specialist
+    │   └── sundawa-content.agent.md      # Supabase CMS & Data Specialist
     ├── copilot-instructions.md
     └── workflows/ci.yml
 ```
@@ -184,13 +183,15 @@ sundawa-web/
 
 ### Prerequisites
 - Node.js 20+
-- A Sanity project with `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` configured
+- A Supabase project with `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` configured
 
 ### Environment Variables
 Create a `.env.local` file:
 ```env
-NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
-NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+# Optional: Admin panel password
+ADMIN_PASSWORD=your_secure_password
 # Optional: Google Analytics
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXX
@@ -228,7 +229,7 @@ Every feature (`home`, `outsource`, `blog`, `process`, `portfolio`, `services`, 
 ### Thin Route Adapters
 `app/[locale]/*/page.tsx` files contain zero business logic. They:
 1. Call `setRequestLocale(locale)`
-2. Fetch data (Sanity or static)
+2. Fetch data (Supabase or static)
 3. Resolve translations via `getTranslations()`
 4. Render a single feature component with typed props
 
@@ -270,7 +271,7 @@ The app follows SEO best practices with complete metadata and structured data:
 ## Testing
 
 ```
-lib/types.test.ts                         # Sanity type guard tests
+lib/types.test.ts                         # Post type guard tests
 lib/Seo.test.ts                           # SEO metadata helper tests
 lib/Sitemap.test.ts                       # Sitemap URL generator tests
 src/features/home/clients.test.ts         # Client data contract tests

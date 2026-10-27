@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { buildAlternates, SITE_NAME } from '@/lib/Seo'
-import { urlFor } from '@/lib/sanity'
 import { BlogPostDetail, getPostBySlug, getPostSlugs } from '@/src/features/blog'
 import { routing } from '@/src/i18n/routing'
 
@@ -11,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const post = await getPostBySlug(slug)
     if (!post) return {}
     const { canonical } = buildAlternates(locale, `/blog/${slug}`)
-    const image = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : '/og-image.png'
+    const image = post.main_image_url || '/og-image.png'
     return {
         title: post.title,
         description: post.excerpt,
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             siteName: SITE_NAME,
             title: post.title,
             description: post.excerpt,
-            publishedTime: post.publishedAt,
+            publishedTime: post.published_at,
             images: [{ url: image, width: 1200, height: 630, alt: post.title }],
         },
         twitter: { card: 'summary_large_image', title: post.title, description: post.excerpt, images: [image] },

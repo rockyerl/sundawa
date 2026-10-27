@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { Link } from '@/src/i18n/navigation'
-import { urlFor } from '@/lib/sanity'
 import { SITE_URL } from '@/lib/Seo'
 import type { Post } from '@/lib/types'
-import PortableTextRenderer from './PortableTextRenderer'
+import HtmlRenderer from './MdxRenderer'
 
 interface BlogPostDetailProps {
     post: Post
@@ -12,13 +11,15 @@ interface BlogPostDetailProps {
 }
 
 export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel }: BlogPostDetailProps) {
+    const imageUrl = post.main_image_url || `${SITE_URL}/og-image.png`
+
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         headline: post.title,
         description: post.excerpt,
-        datePublished: post.publishedAt,
-        image: post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : `${SITE_URL}/og-image.png`,
+        datePublished: post.published_at,
+        image: imageUrl,
         mainEntityOfPage: canonicalUrl,
         author: { '@id': `${SITE_URL}/#organization` },
         publisher: { '@id': `${SITE_URL}/#organization` },
@@ -41,9 +42,9 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel }: 
 
                 {/* Header */}
                 <div className="mb-10">
-                    {post.publishedAt && (
+                    {post.published_at && (
                         <span className="block text-[11px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/50 mb-4">
-                            {new Date(post.publishedAt).toLocaleDateString('id-ID', {
+                            {new Date(post.published_at).toLocaleDateString('id-ID', {
                                 day: 'numeric',
                                 month: 'long',
                                 year: 'numeric',
@@ -61,10 +62,10 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel }: 
                 </div>
 
                 {/* Main image */}
-                {post.mainImage && (
+                {post.main_image_url && (
                     <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-12">
                         <Image
-                            src={urlFor(post.mainImage).width(1200).height(675).url()}
+                            src={post.main_image_url}
                             alt={post.title}
                             fill
                             className="object-cover"
@@ -76,7 +77,7 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel }: 
 
                 {/* Body content */}
                 <div className="prose prose-invert max-w-none break-words text-[#F8F8F8]/80 prose-img:rounded-xl prose-pre:overflow-x-auto">
-                    {post.body && <PortableTextRenderer value={post.body} />}
+                    {post.body_html && <HtmlRenderer source={post.body_html} />}
                 </div>
             </article>
         </main>

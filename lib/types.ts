@@ -1,22 +1,11 @@
-import type { PortableTextBlock } from '@portabletext/react'
-
-
-export interface SanityImage {
-    _type: 'image'
-    asset: {
-        _ref: string
-        _type: 'reference'
-    }
-}
-
 export interface Post {
-    _id: string
+    id: string
     title: string
-    slug: { current: string }
-    mainImage?: SanityImage
+    slug: string
+    body_html: string
     excerpt?: string
-    body?: PortableTextBlock[]
-    publishedAt?: string
+    main_image_url?: string
+    published_at?: string
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -24,6 +13,6 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 
 export function isPost(value: unknown): value is Post {
-    if (!isRecord(value) || typeof value._id !== 'string' || typeof value.title !== 'string') return false
-    return isRecord(value.slug) && typeof value.slug.current === 'string'
+    if (!isRecord(value) || typeof value.id !== 'string' || typeof value.title !== 'string') return false
+    return typeof value.slug === 'string' && typeof value.body_html === 'string'
 }

@@ -52,7 +52,7 @@ export default function BlogArchive({ posts, translations }: BlogArchiveProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
                         {posts.map((post) => (
                             <BlogCard
-                                key={post._id}
+                                key={post.id}
                                 post={post}
                                 readMoreLabel={translations.readMore}
                             />

@@ -14,13 +14,13 @@ const nextConfig: NextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'cdn.sanity.io',
-                pathname: '/images/**',
+                hostname: 'cdn.simpleicons.org',
+                pathname: '/**',
             },
             {
                 protocol: 'https',
-                hostname: 'cdn.simpleicons.org',
-                pathname: '/**',
+                hostname: 'xruymvsjvwumlpwisiht.supabase.co',
+                pathname: '/storage/v1/object/public/**',
             },
         ],
     },

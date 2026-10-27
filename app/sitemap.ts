@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try {
         slugs = await getPostSlugs()
     } catch (err) {
-        console.error('[sitemap] failed to load blog slugs from Sanity:', err)
+        console.error('[sitemap] failed to load blog slugs from Supabase:', err)
     }
 
     return [
