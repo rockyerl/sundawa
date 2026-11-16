@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { sitemapEntries, staticSitemapPaths } from '@/lib/Sitemap'
 import { getPostSlugs } from '@/src/features/blog'
 import { getPortfolioProjects } from '@/src/features/portfolio'
+import { getAllProductSlugs } from '@/src/features/products'
 
 export const revalidate = 3600 // rebuild the sitemap at most hourly so new posts appear
 
@@ -21,9 +22,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         console.error('[sitemap] failed to load portfolio slugs from Supabase:', err)
     }
 
+    const productSlugs = getAllProductSlugs()
+
     return [
         ...staticSitemapPaths.flatMap(path => sitemapEntries(path, path === '' ? 1 : 0.7, path === '/blog' ? 'weekly' : 'monthly')),
         ...slugs.flatMap(slug => sitemapEntries(`/blog/${slug.slug}`, 0.6, 'monthly')),
         ...portfolioSlugs.flatMap(slug => sitemapEntries(`/portfolio/${slug.slug}`, 0.6, 'monthly')),
+        ...productSlugs.flatMap(slug => sitemapEntries(`/products/${slug}`, 0.7, 'monthly')),
     ]
 }

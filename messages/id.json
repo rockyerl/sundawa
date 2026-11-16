@@ -4,6 +4,7 @@
     "values": "Transformasi",
     "services": "Layanan",
     "tech": "Teknologi",
+    "products": "Produk",
     "clients": "Klien",
     "contact": "Kontak",
     "blog": "Artikel",
@@ -899,6 +900,295 @@
     "services": {
       "title": "Layanan Kami | Sundawa Teknologi",
       "description": "Modernisasi sistem lama, otomatisasi alur kerja dengan AI, integrasi ERP dan data, platform bisnis khusus, dan managed engineering."
+    },
+    "products": {
+      "title": "Produk Sundawa & Case Studies | Sundawa Teknologi",
+      "description": "Eksplorasi produk ekosistem Sundawa — Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, dan Abo Rent Car beserta studi kasusnya."
+    }
+  },
+  "products": {
+    "navBack": "Kembali",
+    "navTitle": "Produk Sundawa",
+    "label": "Produk Sundawa",
+    "heading1": "Ekosistem Produk",
+    "heading2": "Karya Sundawa",
+    "sub": "Selain membangun sistem khusus untuk klien, Sundawa merancang dan mengoperasikan produk SaaS, platform mobilitas, dan infrastruktur enterprise siap adopsi lintas industri.",
+    "stats": [
+      {
+        "num": "6",
+        "label": "Produk Aktif"
+      },
+      {
+        "num": "5+",
+        "label": "Sektor Industri"
+      },
+      {
+        "num": "100%",
+        "label": "Built In-House"
+      }
+    ],
+    "categories": {
+      "all": "Semua Produk",
+      "enterprise": "Enterprise & Gov",
+      "saas": "SaaS & Mobilitas"
+    },
+    "statuses": {
+      "liveSaas": "Live SaaS",
+      "enterpriseB2B": "Enterprise B2B",
+      "prototype": "Live Prototype",
+      "authPortal": "Portal Terproteksi",
+      "livePlatform": "Live Platform"
+    },
+    "actions": {
+      "viewCaseStudy": "Lihat Case Study",
+      "visitSite": "Buka Situs",
+      "fullDetail": "Halaman Detail",
+      "close": "Tutup",
+      "backToProducts": "Kembali ke Produk",
+      "inspectSelectedCaseStudy": "Baca Studi Kasus"
+    },
+    "caseStudySection": {
+      "eyebrow": "Case Studies Produk",
+      "title": "Dampak Nyata di Lapangan",
+      "subtitle": "Pelajari tantangan bisnis, pendekatan arsitektur, dan hasil terukur dari keenam platform yang dibangun dan dioperasikan oleh Sundawa.",
+      "labels": {
+        "subject": "Konteks & Profil Pengguna",
+        "challenge": "Tantangan Bisnis",
+        "solution": "Solusi & Modul Kunci",
+        "architecture": "Arsitektur & Keamanan",
+        "impact": "Dampak & Hasil Terukur",
+        "highlights": "Indikator & Sorotan Kunci",
+        "scenarios": "Studi Kasus & Skenario Spesifik",
+        "coreModules": "Modul Utama",
+        "accessNote": "Catatan Akses",
+        "liveDomain": "Domain Aktif",
+        "techStack": "Teknologi & Kapabilitas"
+      }
+    },
+    "items": {
+      "sewaka": {
+        "name": "Sewaka",
+        "sector": "WeddingTech SaaS",
+        "tagline": "Kemewahan Tradisi, Keabadian Cinta",
+        "summary": "Asisten pernikahan digital untuk pernikahan adat Nusantara—menyatukan anggaran, vendor, undangan tamu QR, dan panduan prosesi adat dalam satu workspace.",
+        "badgeMetric": "Hemat Rp 18 Jt & 60 Jam Persiapan",
+        "modules": [
+          "Task, Budget Real-Time & Vendor Tracker",
+          "Seserahan Tracker & Cultural Rundown",
+          "Tamu, Undangan Digital & QR Check-in",
+          "Ensiklopedia Budaya Adat Nusantara"
+        ],
+        "caseStudy": {
+          "subject": "Calon pengantin, keluarga besar, & wedding organizer pernikahan adat (Jawa, Sunda, Minang, Madura)",
+          "challenge": "Persiapan pernikahan adat melibatkan puluhan tahapan sakral lintas keluarga besar—dari seserahan, siraman, midodareni, hingga panggih—yang kerap tercecer di 5+ aplikasi dan spreadsheet terpisah sehingga memicu pembengkakan budget dan miskomunikasi jadwal.",
+          "solution": "Sewaka menggabungkan 6 modul perencanaan inti (Checklist, Budget, Vendor, Tamu & QR Check-in, Timeline, Galeri) dengan 3 modul khas budaya (Seserahan Tracker, Cultural Rundown, Ensiklopedia Budaya) dalam paket Gratis, Premium (Rp99rb/bln), dan Enterprise.",
+          "architecture": "Aplikasi web Next.js dengan autentikasi Email/Password & Google OAuth, Row-Level Security (RLS) untuk isolasi ruang kerja pasangan dan keluarga, serta pelacakan progres persiapan dan alokasi anggaran secara real-time.",
+          "impact": "Berdasarkan studi kasus pengguna di platform: efisiensi persiapan seserahan hingga 60 jam, penghematan budget vendor Rp 18 juta dari rencana awal, dan rundown hari H adat yang berjalan 100% sesuai jadwal.",
+          "highlights": [
+            "60 jam dihemat (Rina & Budi · Adat Jawa)",
+            "Rp 18 Jt budget tersimpan (Dewi & Andi · Adat Madura)",
+            "100% sesuai jadwal (Sari & Reza · Adat Sunda)"
+          ],
+          "scenarios": [
+            {
+              "title": "Rina & Budi (Jakarta · Adat Jawa)",
+              "outcome": "Menghemat 60 jam persiapan seserahan melalui checklist terstruktur dan kolaborasi keluarga."
+            },
+            {
+              "title": "Dewi & Andi (Surabaya · Adat Madura)",
+              "outcome": "Menghemat budget Rp 18 juta dari rencana awal lewat pelacakan anggaran & evaluasi 3 vendor."
+            },
+            {
+              "title": "Sari & Reza (Bandung · Adat Sunda)",
+              "outcome": "Eksekusi rundown hari H adat Sunda berjalan 100% sesuai jadwal tanpa keterlambatan prosesi."
+            }
+          ]
+        }
+      },
+      "laku-pandai": {
+        "name": "LAKUPANDAI by Sundawa",
+        "sector": "Enterprise Agent Banking",
+        "tagline": "Perluas jangkauan layanan. Pertahankan kendali bank.",
+        "summary": "Platform infrastruktur agent banking end-to-end bagi bank komersial, BPD, dan BPR—menghubungkan aplikasi agen Flutter, backoffice Maker-Checker, dan adaptor core banking on-premise.",
+        "badgeMetric": "On-Premise DC/DRC · Control by Design",
+        "modules": [
+          "Flutter Agent App + Hardware Key Binding",
+          "Portal Backoffice SSO, RBAC & Maker-Checker",
+          "Rekonsiliasi 4-Arah & Ledger SHA-256",
+          "Core Adapter ISO 8583 / ISO 20022 (On-Prem)"
+        ],
+        "caseStudy": {
+          "subject": "Bank Komersial, BPD, & BPR — Retail Banking, Ops Branchless, Risk & Compliance, serta Enterprise Architecture",
+          "challenge": "Ekspansi jaringan agen di area sinyal terbatas rentan memicu double-debit atau status transaksi menggantung (UNKNOWN), manipulasi lokasi outlet, kelangkaan likuiditas kas agen, rekonsiliasi manual lambat, dan perubahan biaya tanpa kontrol otorisasi.",
+          "solution": "Arsitektur 3 lapis Control by Design yang memadukan aplikasi mobile agen Flutter (hardware device key binding & geofencing GPS/WiFi BSSID) dengan portal backoffice Maker-Checker, rekonsiliasi 4-arah harian, dan cockpit operasi real-time.",
+          "architecture": "Cluster container on-premise (RHEL 9 Podman/Docker, Kubernetes/OpenShift) di Primary DC + Hot Standby DRC, Core Adapter ISO 8583/20022/REST/SOAP, IAM OAuth2/SAML, ledger append-only SHA-256, serta FCM wake signal tanpa payload data nasabah.",
+          "impact": "Menghadirkan kendali tata kelola bank yang dapat diaudit: nol self-approval untuk fee/limit, resolusi deterministik transaksi di sinyal rendah, kedaulatan penuh data di server bank, dan delivery bertahap dari MVM-1 ke MVM-2.",
+          "highlights": [
+            "3 lapis arsitektur lapangan, backoffice, & DC/DRC",
+            "6 kontrol bawaan: Maker-Checker hingga SHA-256 ledger",
+            "Core Adapter ISO 8583, ISO 20022, REST, & SOAP"
+          ],
+          "scenarios": [
+            {
+              "title": "Geofencing Outlet & Hardware Key",
+              "outcome": "Mengunci transaksi outlet pada zona GPS/WiFi BSSID dengan kunci perangkat keras Android Keystore / Secure Enclave."
+            },
+            {
+              "title": "Idempotency pada Area Minim Sinyal",
+              "outcome": "Mencegah double-debit dan menyelesaikan status UNKNOWN secara deterministik."
+            },
+            {
+              "title": "Maker-Checker & Rekonsiliasi 4-Arah",
+              "outcome": "Pemisahan empat mata untuk konfigurasi biaya/limit serta audit harian Matched/Mismatch/Missing."
+            }
+          ]
+        }
+      },
+      "vellumia": {
+        "name": "Vellumia",
+        "sector": "Penerbitan Digital",
+        "tagline": "Where every story is written to be kept.",
+        "summary": "Platform baca cerita serial digital bebas iklan berbahasa Indonesia berbasis langganan langsung per penulis (Rp15.000/bulan), filter 18 genre, kalender rilis, dan pembaca panel vertikal.",
+        "badgeMetric": "Rp15.000/bln per Penulis · Bebas Iklan",
+        "modules": [
+          "Langganan Langsung per Penulis (Rp15rb/bln)",
+          "Eksplorasi 18 Genre & Kalender Rilis Harian",
+          "Pembaca Episode Panel Vertikal & Tipping",
+          "Gerbang Verifikasi Usia 18+ & Paywall Kreator"
+        ],
+        "caseStudy": {
+          "subject": "Pembaca fiksi serial berbahasa Indonesia & penulis independen",
+          "challenge": "Penulis cerita serial independen kerap bergantung pada pendapatan iklan yang rendah dan mengganggu pembaca, sementara pembaca menginginkan bacaan bersih, terkurasi lintas genre, dan dilindungi batas usia 18+.",
+          "solution": "Vellumia menyediakan etalase penemuan karya lengkap (carousel Trending Top-10, 18 filter genre, kalender rilis, direktori 26 kreator berlangganan) yang terhubung ke episode reader vertikal serta dukungan tipping langsung.",
+          "architecture": "Aplikasi web Next.js bertema editorial warm paper-cream (#F7F1EA) dengan panel baca aspect-[3/4], gerbang usia 18+, dan lapisan paywall khusus pelanggan kreator (saat ini beroperasi sebagai prototipe publik interaktif).",
+          "impact": "Membuktikan model monetisasi creator-first langsung seharga Rp15.000/bulan per penulis tanpa gangguan iklan, menyatukan engagement pembaca (Suka, Simpan, Komentar, Dukung penulis) dalam satu platform.",
+          "highlights": [
+            "Rp15.000/bulan langganan langsung per penulis",
+            "18 kategori genre + kalender jadwal rilis",
+            "Pembaca bebas iklan dengan proteksi usia 18+"
+          ],
+          "scenarios": [
+            {
+              "title": "Model Monetisasi Direct-to-Writer",
+              "outcome": "Pembaca berlangganan langsung per penulis bebas iklan dan dapat memberi dukungan tambahan (tipping)."
+            },
+            {
+              "title": "Segmentasi Usia 18+ & Paywall Eksklusif",
+              "outcome": "Akses cerita dewasa dan episode khusus pelanggan terlindungi di tingkat antarmuka pembaca."
+            }
+          ]
+        }
+      },
+      "si-geomedik": {
+        "name": "SI-GEOMEDIK",
+        "sector": "Kesehatan Pertahanan (Kemhan RI)",
+        "tagline": "Sistem Informasi Geospasial & Sumber Daya Kesehatan Pertahanan",
+        "summary": "Portal informasi geospasial terproteksi untuk inventarisasi dan pengelolaan Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan pertahanan Kemhan RI.",
+        "badgeMetric": "Portal Terproteksi · Dynamic RBAC + SEC-07",
+        "accessNote": "Aplikasi ini bersifat login-gated khusus personel berwenang. Ringkasan studi kasus disusun berdasarkan arsitektur autentikasi, peran RBAC, dan spesifikasi keamanan publik pada portal login.",
+        "modules": [
+          "Inventarisasi Geospasial Faskes & SDM Medis",
+          "Pengelolaan Alat Kesehatan & Material Kesehatan",
+          "Dynamic RBAC 3 Tingkatan Kewenangan",
+          "Sesi Terenkripsi HS256 & Audit Trail SEC-07"
+        ],
+        "caseStudy": {
+          "subject": "Kementerian Pertahanan RI — Pusdatin, Verifikator Ditkes Kuathan, & Operator Faskes/Kesdam",
+          "challenge": "Sumber daya kesehatan pertahanan—mencakup Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan—tersebar di unit Kesdam/Faskes sehingga menuntut konsolidasi geospasial terpadu serta pengamanan data ketat.",
+          "solution": "SI-GEOMEDIK menstrukturkan alur verifikasi lintas 3 peran: Operator (Faskes/Kesdam) di lapangan, Verifikator (Ditkes Kuathan) sebagai penelaah berjenjang, dan Pusdatin sebagai pengawas pusat (Super Admin Penuh).",
+          "architecture": "Portal web tertutup dengan autentikasi email dinas, sesi terenkripsi HS256, Dynamic RBAC lintas tiga tingkatan kewenangan, serta Audit Trail keamanan berstandar SUNDAWA SEC-07.",
+          "impact": "Menyediakan satu portal geospasial yang terstruktur dan akuntabel untuk konsolidasi data Faskes, SDM, Alkes, dan Matkes pertahanan dengan pemisahan wewenang yang jelas.",
+          "highlights": [
+            "3 tingkat RBAC: Operator, Verifikator, & Pusdatin",
+            "Cakupan sumber daya: Faskes, SDM, Alkes, & Matkes",
+            "Sesi terenkripsi HS256 & Audit Trail SUNDAWA SEC-07"
+          ],
+          "scenarios": [
+            {
+              "title": "Hierarki Data Faskes → Ditkes Kuathan → Pusdatin",
+              "outcome": "Memisahkan wewenang input unit daerah, verifikasi berjenjang, dan pengawasan pusat."
+            },
+            {
+              "title": "Keamanan Autentikasi & Jejak Audit",
+              "outcome": "Seluruh sesi dikunci di balik autentikasi personel dengan enkripsi HS256 dan standar audit SEC-07."
+            }
+          ]
+        }
+      },
+      "nawasanga": {
+        "name": "Nawasanga",
+        "sector": "Enterprise ESG & Anti-Fraud BBM",
+        "tagline": "Dari semua penjuru, satu pandangan.",
+        "summary": "Platform intelligence konsumsi bahan bakar armada (anti-fraud solar) dan otomasi audit emisi GRK Scope 1 (ISO 14064-1 & POJK 51) untuk armada logistik, tambang, sawit, dan industri.",
+        "badgeMetric": "Pangkas 24,6% Kebocoran BBM · Audit 3 Menit",
+        "modules": [
+          "Sentinel Anti-Fraud Solar (AI OCR + Geofence)",
+          "Mesin Emisi Scope 1 IPCC Tier-2 (B35/B40)",
+          "Dossier Audit 1-Klik KAN & KLHK SIGN-SMART",
+          "Driver Mobile PWA Offline + Webhook GPS/ERP"
+        ],
+        "caseStudy": {
+          "subject": "Operator Armada Logistik, Pertambangan Alat Berat, Perkebunan Sawit, & Industri (520+ Armada Korporat)",
+          "challenge": "Kebocoran solar (solar kencing, struk SPBU fiktif, klaim melebihi kapasitas tangki) menggerus biaya operasional, sementara penyusunan inventarisasi emisi Scope 1 POJK 51 & ISO 14064 secara manual memakan waktu hingga 4 bulan.",
+          "solution": "Nawasanga menggabungkan Driver Mobile PWA (tangkap struk & odometer dalam 20 detik, mendukung offline blank-spot) dengan AI OCR anti-fraud, geofencing SPBU GPS, mesin kalkulasi Scope 1 IPCC Tier-2 (koreksi biodiesel B35/B40), dan generator dossier audit 1-klik.",
+          "architecture": "Platform multi-tenant dengan isolasi data Row-Level Security dan 5-level RBAC, terintegrasi ke penyedia telematika GPS (Geotab, Cartrack, EasyGo), webhook ERP (SAP/Oracle), serta OpenAPI/Swagger.",
+          "impact": "Studi kasus platform mencatat penghematan 24,6% kebocoran BBM (Rp 840 Jt/tahun) & percepatan audit dari 4 bulan ke 3 menit di PT Nusantara Logistik Prima (420 truk), serta efisiensi HSD Rp 2,4 Miliar/kuartal di PT Borneo Prima Mining (280 unit).",
+          "highlights": [
+            "Rp 4,8 Miliar total kebocoran BBM ditekan (520+ armada)",
+            "32.400 Ton CO₂e teraudit · 100% lolos POJK 51 & SIMPEL",
+            "Waktu penyusunan audit ESG terpangkas dari 4 bulan ke 3 menit"
+          ],
+          "scenarios": [
+            {
+              "title": "PT Nusantara Logistik Prima (420 Truk)",
+              "outcome": "Memangkas 24,6% kebocoran BBM (hemat Rp 840 Jt/thn, hentikan Rp 70 Jt/bln struk fiktif), audit 4 bulan → 3 menit, dan lolos Green Financing."
+            },
+            {
+              "title": "PT Borneo Prima Mining (280 Alat Berat)",
+              "outcome": "Menekan pemborosan HSD 14,2% (Rp 2,4 Miliar/kuartal atau 177.500 liter/bln) dengan pelaporan SIMPEL & PROPER Emas tanpa temuan."
+            }
+          ]
+        }
+      },
+      "abo-rentcar": {
+        "name": "Abo Rent Car",
+        "sector": "Mobilitas & Rental Cerdas",
+        "tagline": "Pilih mobil. Siap jalan.",
+        "summary": "Platform rental mobil wilayah Bandung Raya, Cimahi, dan Padalarang tanpa deposit tunai—dilengkapi katalog 14+ unit, kalkulator biaya real-time, gratis antar-jemput Whoosh Padalarang, dan booking WhatsApp.",
+        "badgeMetric": "Rating 4,95/5 · 1.200+ Penyewa",
+        "modules": [
+          "Katalog 14+ Armada (MPV, SUV, & City Car)",
+          "Kalkulator Sewa Weekday / Weekend Real-Time",
+          "Gratis Antar-Jemput Stasiun Whoosh Padalarang",
+          "Checkout WhatsApp Instan & Layanan /b2b"
+        ],
+        "caseStudy": {
+          "subject": "Penumpang Kereta Cepat Whoosh Jakarta–Bandung, Wisatawan Keluarga, & Klien Korporat (/b2b)",
+          "challenge": "Pelancong dan penyewa lokal sering terhambat keharusan deposit tunai besar, tarif weekday/weekend yang kurang transparan, serta waktu tunggu serah terima mobil yang lama ketika turun di stasiun.",
+          "solution": "Abo Rent Car mempublikasikan katalog 14 unit (2022–2024, mulai Rp275rb/hari lepas kunci atau +Rp200rb/hari plus supir) dengan syarat Tanpa Deposit Tunai (KTP & SIM), kalkulator lokasi jemput + nomor kereta Whoosh, serta konfirmasi instan WhatsApp.",
+          "architecture": "Aplikasi web konversi tinggi dengan filter kategori unit, kalkulator tarif multi-hari & preset lokasi jemput, kanal korporat /b2b, serta operasional pool 10 menit dari Stasiun Whoosh Padalarang.",
+          "impact": "Mencapai kepuasan pelanggan 4,95/5 dari 1.200+ penyewa dengan ketepatan waktu penjemputan stasiun 100%, unit disiagakan 15 menit sebelum kereta tiba, dan serah terima dokumen dalam 5 menit.",
+          "highlights": [
+            "Rating 4,95/5 dari 1.200+ penyewa di Bandung Raya",
+            "14+ unit tahun 2022–2024 & 100% antar-jemput tepat waktu",
+            "Tanpa deposit tunai · Serah terima dokumen 5 menit"
+          ],
+          "scenarios": [
+            {
+              "title": "Last-Mile Kedatangan Whoosh Padalarang",
+              "outcome": "Unit siap 15 menit sebelum jadwal kedatangan kereta dengan gratis antar-jemput & proses 5 menit."
+            },
+            {
+              "title": "Wisata Ciwidey, Pangalengan, & Kuliner",
+              "outcome": "Opsi transparan MPV Hybrid/Diesel hingga City Car untuk lepas kunci maupun dengan supir."
+            },
+            {
+              "title": "Kebutuhan Korporat & Acara (/b2b)",
+              "outcome": "Kalkulator sewa menghitung otomatis tarif weekday/weekend & >2 hari sebelum diteruskan ke reservasi WhatsApp."
+            }
+          ]
+        }
+      }
     }
   }
 }

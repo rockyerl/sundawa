@@ -4,6 +4,7 @@
     "values": "Transform",
     "services": "Services",
     "tech": "Tech",
+    "products": "Products",
     "clients": "Clients",
     "blog": "Blog",
     "contact": "Contact",
@@ -899,6 +900,295 @@
     "services": {
       "title": "Our Services | Sundawa Teknologi",
       "description": "Legacy system modernization, AI workflow automation, ERP and data integration, custom business platforms, and managed engineering."
+    },
+    "products": {
+      "title": "Sundawa Products & Case Studies | Sundawa Teknologi",
+      "description": "Explore Sundawa's ecosystem of products — Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, and Abo Rent Car with their case studies."
+    }
+  },
+  "products": {
+    "navBack": "Back",
+    "navTitle": "Sundawa Products",
+    "label": "Sundawa Products",
+    "heading1": "Proprietary Ecosystem",
+    "heading2": "Built by Sundawa",
+    "sub": "Beyond bespoke client engineering, Sundawa designs and operates SaaS platforms, smart mobility products, and enterprise infrastructure built for real operational demands.",
+    "stats": [
+      {
+        "num": "6",
+        "label": "Active Products"
+      },
+      {
+        "num": "5+",
+        "label": "Industry Sectors"
+      },
+      {
+        "num": "100%",
+        "label": "Built In-House"
+      }
+    ],
+    "categories": {
+      "all": "All Products",
+      "enterprise": "Enterprise & Gov",
+      "saas": "SaaS & Mobility"
+    },
+    "statuses": {
+      "liveSaas": "Live SaaS",
+      "enterpriseB2B": "Enterprise B2B",
+      "prototype": "Live Prototype",
+      "authPortal": "Auth-Gated Portal",
+      "livePlatform": "Live Platform"
+    },
+    "actions": {
+      "viewCaseStudy": "View Case Study",
+      "visitSite": "Visit Live Site",
+      "fullDetail": "Full Case Study",
+      "close": "Close",
+      "backToProducts": "Back to Products",
+      "inspectSelectedCaseStudy": "Read Case Study"
+    },
+    "caseStudySection": {
+      "eyebrow": "Product Case Studies",
+      "title": "Real Operational Impact",
+      "subtitle": "Explore the business challenges, system architecture, and measurable outcomes behind all six platforms engineered by Sundawa.",
+      "labels": {
+        "subject": "Context & User Profile",
+        "challenge": "Business Challenge",
+        "solution": "Solution & Key Modules",
+        "architecture": "Architecture & Security",
+        "impact": "Measurable Outcomes",
+        "highlights": "Key Indicators & Highlights",
+        "scenarios": "Case Studies & Real Scenarios",
+        "coreModules": "Core Modules",
+        "accessNote": "Access Note",
+        "liveDomain": "Live Domain",
+        "techStack": "Stack & Capabilities"
+      }
+    },
+    "items": {
+      "sewaka": {
+        "name": "Sewaka",
+        "sector": "WeddingTech SaaS",
+        "tagline": "Luxury of Tradition, Eternity of Love",
+        "summary": "A digital wedding assistant crafted for Indonesian traditional weddings—unifying budgets, vendors, QR guest check-ins, and cultural ceremony rundowns in one workspace.",
+        "badgeMetric": "Saved IDR 18M & 60 Prep Hours",
+        "modules": [
+          "Tasks, Real-Time Budget & Vendor Tracker",
+          "Seserahan Tracker & Cultural Rundown",
+          "Digital Invites, RSVP & QR Guest Check-in",
+          "Nusantara Cultural Encyclopedia"
+        ],
+        "caseStudy": {
+          "subject": "Couples, extended families, & planners organizing traditional Indonesian weddings (Javanese, Sundanese, Minang, Madurese)",
+          "challenge": "Planning traditional Indonesian weddings spans dozens of sacred rituals across extended families—from seserahan and siraman to midodareni and panggih—typically scattered across 5+ apps and spreadsheets, leading to budget blowouts and scheduling confusion.",
+          "solution": "Sewaka unifies 6 core management modules (Checklists, Real-time Budgets, Vendors, Digital RSVP & QR Check-in, Timelines, Galleries) with 3 cultural modules (Seserahan Tracker, Cultural Rundown, Cultural Encyclopedia) across Free, Premium (IDR 99k/mo), and Enterprise tiers.",
+          "architecture": "Next.js SaaS application equipped with Email/Password & Google OAuth authentication, Row-Level Security (RLS) for couple and family workspace isolation, and real-time progress and budget allocation tracking.",
+          "impact": "According to published user case stories on the platform: up to 60 hours saved preparing seserahan, IDR 18 million saved against planned budgets through vendor swaps, and 100% on-schedule Day-H ceremony rundowns.",
+          "highlights": [
+            "60 hours saved (Rina & Budi · Javanese Custom)",
+            "IDR 18M budget saved (Dewi & Andi · Madurese Custom)",
+            "100% on-schedule Day-H (Sari & Reza · Sundanese Custom)"
+          ],
+          "scenarios": [
+            {
+              "title": "Rina & Budi (Jakarta · Javanese Custom)",
+              "outcome": "Saved 60 preparation hours on seserahan through structured checklists and collaborative tracking."
+            },
+            {
+              "title": "Dewi & Andi (Surabaya · Madurese Custom)",
+              "outcome": "Saved IDR 18 million against their original budget by tracking allocations and swapping 3 vendors."
+            },
+            {
+              "title": "Sari & Reza (Bandung · Sundanese Custom)",
+              "outcome": "Executed complex multi-family Day-H Sundanese ceremony rundowns 100% on schedule."
+            }
+          ]
+        }
+      },
+      "laku-pandai": {
+        "name": "LAKUPANDAI by Sundawa",
+        "sector": "Enterprise Agent Banking",
+        "tagline": "Expand service reach. Maintain bank control.",
+        "summary": "End-to-end agent banking infrastructure for commercial banks, regional banks (BPD), and BPRs—connecting Flutter field agent apps, Maker-Checker backoffice, and on-premise core banking adapters.",
+        "badgeMetric": "On-Premise DC/DRC · Control by Design",
+        "modules": [
+          "Flutter Agent App + Hardware Key Binding",
+          "Backoffice Portal with SSO, RBAC & Maker-Checker",
+          "4-Way Daily Reconciliation & SHA-256 Ledger",
+          "On-Prem Core Adapter (ISO 8583 / ISO 20022)"
+        ],
+        "caseStudy": {
+          "subject": "Commercial Banks, Regional Banks (BPD) & BPRs — Branchless Banking Ops, Risk & Compliance, and Enterprise Architecture",
+          "challenge": "Scaling field agent networks across low-signal regions risks double-debits or stuck UNKNOWN transactions, outlet location spoofing, agent float shortages, slow manual reconciliation, and unapproved fee or limit modifications.",
+          "solution": "A 3-layer Control by Design architecture pairing a Flutter field agent mobile app (hardware-bound device keys & GPS/WiFi BSSID geofencing) with a Maker-Checker bank operations portal, 4-way reconciliation, and real-time operations cockpit.",
+          "architecture": "On-premise container cluster (RHEL 9 Podman/Docker, Kubernetes/OpenShift) across Primary DC + Hot Standby DRC, ISO 8583/20022/REST/SOAP Core Adapters, OAuth2/SAML IAM, SHA-256 hash-chained ledger, and zero-payload FCM wake signals.",
+          "impact": "Enforces auditable banking control from day one: four-eyes segregation preventing self-approval on fees/limits, deterministic idempotency in weak connectivity, full data sovereignty in bank DC/DRC, and phased MVM-1 to MVM-2 delivery.",
+          "highlights": [
+            "3-layer architecture across field, backoffice & DC/DRC",
+            "6 built-in controls from Maker-Checker to SHA-256 ledger",
+            "ISO 8583, ISO 20022, REST & SOAP Core Banking Adapters"
+          ],
+          "scenarios": [
+            {
+              "title": "Outlet Geofencing & Hardware Key Binding",
+              "outcome": "Locks outlet operations within GPS/WiFi BSSID boundaries via Android Keystore / Secure Enclave mTLS keys."
+            },
+            {
+              "title": "Transaction Certainty in Low Signal",
+              "outcome": "Idempotency guard with deterministic UNKNOWN resolution eliminates double-debits in field areas."
+            },
+            {
+              "title": "Four-Eyes Governance & 4-Way Recon",
+              "outcome": "Maker-Checker fee/limit approvals paired with daily Matched/Mismatch/Missing transaction reconciliation."
+            }
+          ]
+        }
+      },
+      "vellumia": {
+        "name": "Vellumia",
+        "sector": "Digital Publishing",
+        "tagline": "Where every story is written to be kept.",
+        "summary": "An ad-free Indonesian serialized story reading platform built around direct per-author subscriptions (IDR 15,000/month), 18-genre discovery, a release calendar, and vertical panel reading.",
+        "badgeMetric": "IDR 15,000/mo per Author · Ad-Free",
+        "modules": [
+          "Direct Per-Author Subscription (IDR 15k/mo)",
+          "18-Genre Discovery & Daily Release Calendar",
+          "Vertical Panel Episode Reader & Creator Tipping",
+          "18+ Age Verification & Subscriber Paywall"
+        ],
+        "caseStudy": {
+          "subject": "Indonesian serialized fiction readers & independent writers",
+          "challenge": "Independent fiction writers struggle to build predictable recurring income on ad-cluttered platforms, while readers seek distraction-free reading, curated genre exploration, and clear mature-content controls.",
+          "solution": "Vellumia combines a structured story catalog (Top-10 Trending carousel, 18 genre filters, daily release schedule, and a 26-author subscription directory) with a vertical-scroll episode reader and direct creator support.",
+          "architecture": "Editorial paper-cream (#F7F1EA) Next.js web application implementing an aspect-[3/4] vertical panel reader shell, 18+ age-verification gating, and per-creator subscriber paywall overlays (currently live as an interactive public prototype).",
+          "impact": "Validates a creator-first direct subscription model at IDR 15,000/month per writer with zero ads, integrating social engagement (Like, Save, Comment, Support writer) directly into the reading loop.",
+          "highlights": [
+            "IDR 15,000/mo direct per-author subscription model",
+            "18 curated genre filters & scheduled release calendar",
+            "Ad-free reading experience with 18+ content gating"
+          ],
+          "scenarios": [
+            {
+              "title": "Direct-to-Writer Micro-Subscriptions",
+              "outcome": "Readers subscribe per favorite author ad-free while supporting writers directly through tipping."
+            },
+            {
+              "title": "18+ Gating & Subscriber Paywall",
+              "outcome": "Enforces age verification and subscriber-only episode gating seamlessly inside the web reader."
+            }
+          ]
+        }
+      },
+      "si-geomedik": {
+        "name": "SI-GEOMEDIK",
+        "sector": "Defense Healthcare (MoD)",
+        "tagline": "Defense Geospatial & Healthcare Resource Information System",
+        "summary": "An authentication-gated geospatial portal for managing Indonesian Ministry of Defense healthcare facilities, medical personnel, medical equipment, and medical logistics with tiered RBAC.",
+        "badgeMetric": "Auth-Gated Portal · Dynamic RBAC + SEC-07",
+        "accessNote": "This portal is login-gated for authorized personnel. This case study strictly reflects observed authentication architecture, RBAC roles, and security posture visible on the portal.",
+        "modules": [
+          "Geospatial Inventory of Faskes & Medical Staff",
+          "Medical Equipment & Logistics Tracking",
+          "3-Tier Dynamic RBAC Approval Workflow",
+          "HS256 Encrypted Sessions & SEC-07 Audit Trail"
+        ],
+        "caseStudy": {
+          "subject": "Indonesian Ministry of Defense — Pusdatin, Ditkes Kuathan Verifiers, & Faskes/Kesdam Operators",
+          "challenge": "Defense medical assets—encompassing healthcare facilities (Faskes), medical personnel, equipment, and medical logistics—are distributed across regional units, requiring centralized geospatial visibility, layered verification, and hardened access security.",
+          "solution": "SI-GEOMEDIK separates duties across 3 defined organizational roles: Operator (Faskes/Kesdam) for unit data entry, Verifikator (Ditkes Kuathan) for verification, and Pusdatin as central Super Admin oversight.",
+          "architecture": "Auth-gated personnel web portal secured by official email sign-in, HS256-encrypted sessions, Dynamic RBAC across all three command levels, and SUNDAWA SEC-07 compliant audit trails.",
+          "impact": "Establishes a secure, accountable single-portal foundation for defense healthcare resource readiness and verification spanning regional clinics to central ministry oversight.",
+          "highlights": [
+            "3-tier RBAC: Operator, Verifier, & Pusdatin",
+            "Unified scope: Faskes, HR, Medical Gear & Logistics",
+            "HS256 encrypted sessions & SUNDAWA SEC-07 Audit Trail"
+          ],
+          "scenarios": [
+            {
+              "title": "Hierarchical Verification Workflow",
+              "outcome": "Regional Faskes/Kesdam updates pass through Ditkes Kuathan verification under central Pusdatin governance."
+            },
+            {
+              "title": "Hardened Login-Gated Security Posture",
+              "outcome": "All geospatial inventories remain protected behind personnel auth with HS256 sessions and SEC-07 auditing."
+            }
+          ]
+        }
+      },
+      "nawasanga": {
+        "name": "Nawasanga",
+        "sector": "Enterprise ESG & Fuel Anti-Fraud",
+        "tagline": "From every corner, one unified view.",
+        "summary": "Enterprise intelligence platform for fleet fuel anti-fraud and automated Scope 1 GHG emissions accounting (ISO 14064-1 & POJK 51) built for logistics, heavy mining, plantations, and industrial fleets.",
+        "badgeMetric": "24.6% Fuel Leakage Cut · 3-Min Audit Prep",
+        "modules": [
+          "Sentinel Diesel Anti-Fraud (AI OCR + Geofence)",
+          "IPCC Tier-2 Scope 1 GHG Engine (B35/B40)",
+          "1-Click KAN & KLHK SIGN-SMART Audit Dossier",
+          "Offline Driver Mobile PWA + GPS / ERP Webhooks"
+        ],
+        "caseStudy": {
+          "subject": "Logistics Fleets, Heavy Mining, Palm Plantations & Industrial Operations (520+ Corporate Fleets)",
+          "challenge": "Diesel theft—fake SPBU receipts, fuel siphoning, and over-tank billing—drains fleet budgets, while manual spreadsheet Scope 1 GHG audits for POJK 51 and ISO 14064-1 take up to 4 months per reporting cycle.",
+          "solution": "Nawasanga combines an offline-ready Driver Mobile PWA (20-second receipt & odometer capture) with AI OCR verification, SPBU GPS geofencing, IPCC Tier-2 calculations (including B35/B40 biodiesel factors), and 1-click audit workpapers.",
+          "architecture": "Multi-tenant enterprise platform with Row-Level Security, 5-level RBAC, GPS telematics integrations (Geotab, Cartrack, EasyGo), ERP webhooks (SAP/Oracle), and OpenAPI/Swagger endpoints.",
+          "impact": "Featured platform case studies report 24.6% fuel leakage cut (IDR 840M/year saved) & audit prep shrunk from 4 months to 3 minutes at PT Nusantara Logistik Prima (420 trucks), and 14.2% HSD waste reduction (IDR 2.4B/quarter) at PT Borneo Prima Mining (280 units).",
+          "highlights": [
+            "IDR 4.8B fuel leakage curbed across 520+ corporate fleets",
+            "32,400 Tons CO₂e audited · 100% POJK 51 & SIMPEL pass rate",
+            "ESG compliance dossier time reduced from 4 months to 3 mins"
+          ],
+          "scenarios": [
+            {
+              "title": "PT Nusantara Logistik Prima (420 Trucks)",
+              "outcome": "Cut 24.6% fuel leakage (IDR 840M/yr saved, eliminated IDR 70M/mo fake receipts), 4 months → 3 mins audit prep, unlocked Green Financing."
+            },
+            {
+              "title": "PT Borneo Prima Mining (280 Heavy Units)",
+              "outcome": "Reduced HSD waste by 14.2% (IDR 2.4B/quarter or 177,500 L/mo saved) with automated SIMPEL reporting & zero-finding PROPER Gold audit."
+            }
+          ]
+        }
+      },
+      "abo-rentcar": {
+        "name": "Abo Rent Car",
+        "sector": "Smart Mobility & Car Rental",
+        "tagline": "Pick a car. Ready to roll.",
+        "summary": "Deposit-free car rental platform serving Greater Bandung, Cimahi, and Padalarang—featuring a 14+ late-model fleet catalog, real-time rate calculator, free Whoosh Padalarang pickup, and WhatsApp booking.",
+        "badgeMetric": "4.95/5 Rating · 1,200+ Renters",
+        "modules": [
+          "14+ Unit Fleet Catalog (MPV, SUV & City Car)",
+          "Real-Time Weekday / Weekend Rate Calculator",
+          "Free Whoosh Padalarang HSR Station Pickup",
+          "Pre-Filled WhatsApp Booking & /b2b Portal"
+        ],
+        "caseStudy": {
+          "subject": "Whoosh High-Speed Rail Travelers, Bandung Tourists, & Corporate Clients (/b2b)",
+          "challenge": "High-speed rail passengers and family travelers frequently face steep cash security deposits, unclear weekday vs. weekend rate cards, and station pickup delays upon arrival.",
+          "solution": "Abo Rent Car publishes transparent pricing across 14 vehicles (2022–2024 models, from IDR 275k/day self-drive or +IDR 200k/day chauffeur) with Zero Cash Deposit (KTP & SIM only), a Whoosh train-number & pickup calculator, and instant WhatsApp booking.",
+          "architecture": "High-conversion web platform with vehicle category filtering, dynamic multi-day rate calculator with preset pickup hubs, dedicated /b2b corporate route, and 10-minute dispatch staging near Whoosh Padalarang.",
+          "impact": "Maintains a 4.95/5 rating across 1,200+ renters with 100% on-time station pickups, 15-minute pre-arrival vehicle staging, and 5-minute KTP/SIM document handover.",
+          "highlights": [
+            "4.95/5 customer rating across 1,200+ renters",
+            "14+ late-model vehicles (2022–2024) · 100% on-time pickup",
+            "Zero cash deposit · 5-minute document handover"
+          ],
+          "scenarios": [
+            {
+              "title": "Whoosh Padalarang HSR Arrivals",
+              "outcome": "Free station handover staged 15 minutes before arrival with 5-minute KTP & SIM verification."
+            },
+            {
+              "title": "Ciwidey, Pangalengan & Culinary Trips",
+              "outcome": "Transparent self-drive or chauffeur rates across Hybrid/Diesel MPVs, SUVs, and City Cars."
+            },
+            {
+              "title": "Events & Corporate Mobility (/b2b)",
+              "outcome": "Interactive calculator auto-prices weekday/weekend & multi-day trips directly into WhatsApp checkout."
+            }
+          ]
+        }
+      }
     }
   }
 }

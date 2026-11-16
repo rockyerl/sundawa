@@ -19,8 +19,9 @@ export default function Navbar() {
         { href: '#values',   label: t('values')   },
         { href: '#services', label: t('services') },
         { href: '#tech',     label: t('tech')     },
+        { href: '#products', label: t('products') },
         { href: '#clients',  label: t('clients')  },
-        { href: '#blog',  label: t('blog')  },
+        { href: '#blog',     label: t('blog')     },
         { href: '#contact',  label: t('contact')  },
     ]
 
@@ -41,7 +42,7 @@ export default function Navbar() {
                     if (e.isIntersecting) setActive('#' + e.target.id)
                 })
             },
-            { threshold: 0.4 }
+            { threshold: [0.15, 0.4] }
         )
         navLinks.forEach(l => {
             if (!l.href.startsWith('#')) return
@@ -97,7 +98,7 @@ export default function Navbar() {
                     </a>
 
                     {/* Desktop links */}
-                    <div className="hidden md:flex items-center gap-7">
+                    <div className="hidden md:flex items-center gap-5 lg:gap-7">
                         {navLinks.map((link, i) => (
                             <motion.a
                                 key={link.href}

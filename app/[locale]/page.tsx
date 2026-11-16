@@ -14,6 +14,7 @@ import {
     TechSection,
     ValuesSection,
 } from '@/src/features/home'
+import { ProductsSection } from '@/src/features/products'
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params
@@ -35,6 +36,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <ServicesSection />
                 <div className="section-line" />
                 <TechSection />
+                <div className="section-line" />
+                <ProductsSection />
                 <div className="section-line" />
                 <ClientsSection />
                 <div className="section-line" />
