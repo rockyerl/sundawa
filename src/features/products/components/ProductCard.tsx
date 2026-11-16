@@ -104,7 +104,7 @@ export default function ProductCard({
             </div>
 
             {/* Footer Action Row */}
-            <div className="mt-auto flex items-center justify-between gap-3 border-t border-cream/[0.06] pt-4">
+            <div className="mt-auto flex flex-wrap items-center justify-between gap-2.5 border-t border-cream/[0.06] pt-4">
                 <button
                     type="button"
                     onClick={() => onSelect(product)}

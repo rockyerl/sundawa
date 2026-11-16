@@ -62,7 +62,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                         {sections.map((section, index) => (
                             <div
                                 key={section.label}
-                                className="p-8 bg-gold/[0.03] border border-gold/10 rounded-lg"
+                                className="p-5 sm:p-8 bg-gold/[0.03] border border-gold/10 rounded-lg"
                                 style={{ opacity: 0, animation: `fadeInUp 0.5s ease ${index * 0.1}s forwards` }}
                             >
                                 <h3 className="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-gold mb-4">
@@ -76,7 +76,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                     </div>
 
                     {/* CTA */}
-                    <div className="mb-12 border border-gold/20 bg-gold/[0.03] p-8 text-center">
+                    <div className="mb-12 border border-gold/20 bg-gold/[0.03] p-6 sm:p-8 text-center">
                         <h3 className="mb-4 text-xl font-bold text-cream">
                             {t('ctaContact')}
                         </h3>

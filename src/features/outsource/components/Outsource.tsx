@@ -76,6 +76,14 @@ export default function OutsourcePage() {
             feeAvg: Math.round((activeEntry.hybridMin + activeEntry.hybridMax) / 2),
         }])
         setIdSeq(s => s + 1)
+        if (typeof window !== 'undefined' && window.innerWidth < 768) {
+            setTimeout(() => {
+                const cartElement = document.getElementById('estimate-cart')
+                if (cartElement) {
+                    cartElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+            }, 60)
+        }
     }
 
     const removeItem = (id: number) => setCart(prev => prev.filter(i => i.id !== id))
@@ -117,7 +125,7 @@ export default function OutsourcePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                style={{ padding: '3rem 2rem 2rem', maxWidth: 1100, margin: '0 auto' }}
+                style={{ padding: 'clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) 2rem', maxWidth: 1100, margin: '0 auto' }}
             >
                 <div style={{
                     fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.3em',
@@ -141,7 +149,7 @@ export default function OutsourcePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem 4rem' }}
+                style={{ maxWidth: 1100, margin: '0 auto', padding: '0 clamp(1rem, 4vw, 2rem) 4rem' }}
             >
                 <div style={{ border: '1px solid rgba(219,201,119,0.2)', borderRadius: 16, overflow: 'hidden' }}>
 
@@ -149,7 +157,7 @@ export default function OutsourcePage() {
                     <div style={{
                         background: 'rgba(29,52,81,0.5)',
                         borderBottom: '1px solid rgba(219,201,119,0.2)',
-                        padding: '1.2rem 1.75rem',
+                        padding: '1rem clamp(0.75rem, 3vw, 1.75rem)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
@@ -186,14 +194,16 @@ export default function OutsourcePage() {
                             onAdd={addTalent}
                         />
 
-                        <EstimateCart
-                            cart={cart}
-                            totalCount={totalCount}
-                            totalPrice={totalPrice}
-                            onRemove={removeItem}
-                            onClear={() => setCart([])}
-                            buildMessage={handleBuildWAMessage}
-                        />
+                        <div id="estimate-cart">
+                            <EstimateCart
+                                cart={cart}
+                                totalCount={totalCount}
+                                totalPrice={totalPrice}
+                                onRemove={removeItem}
+                                onClear={() => setCart([])}
+                                buildMessage={handleBuildWAMessage}
+                            />
+                        </div>
                     </div>
                 </div>
             </motion.div>

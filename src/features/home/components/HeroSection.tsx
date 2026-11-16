@@ -64,7 +64,7 @@ export default function HeroSection() {
                         >
                             <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: '#F8F8F8' }}>{t('line1')}</span>
                             <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)' }} className="shimmer-text">{t('line2')}</span>
-                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: 'rgba(248,248,248,0.2)' }}>{t('line3')}</span>
+                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: 'rgba(248,248,248,0.55)' }}>{t('line3')}</span>
                             <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: '#F8F8F8' }}>{t('line4')}</span>
                         </motion.h1>
 

@@ -120,6 +120,16 @@ export default function Navbar() {
         }
     }, [])
 
+    useEffect(() => {
+        if (mobileOpen) {
+            const previousOverflow = document.body.style.overflow
+            document.body.style.overflow = 'hidden'
+            return () => {
+                document.body.style.overflow = previousOverflow
+            }
+        }
+    }, [mobileOpen])
+
     const isGroupActive = (group: NavGroup) =>
         group.activePrefixes.some((prefix) => pathname?.startsWith(prefix))
 
@@ -314,7 +324,7 @@ export default function Navbar() {
                         <LangToggle />
                         <button
                             type="button"
-                            className="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center border-none bg-transparent transition-colors duration-300"
+                            className="relative z-[70] flex h-10 w-10 cursor-pointer items-center justify-center border-none bg-transparent transition-colors duration-300"
                             style={{ color: mobileOpen ? '#DBC977' : 'rgba(248,248,248,0.85)' }}
                             onClick={() => setMobileOpen(!mobileOpen)}
                             aria-label="Toggle menu"
@@ -356,7 +366,7 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.22 }}
-                        className="fixed inset-0 z-40 flex flex-col overflow-y-auto pt-24 pb-10 lg:hidden"
+                        className="fixed inset-0 z-[60] flex flex-col overflow-y-auto pt-24 pb-24 lg:hidden"
                         style={{ background: 'rgba(14,30,48,0.98)', backdropFilter: 'blur(24px)' }}
                     >
                         <div className="container-main flex flex-1 flex-col gap-3">

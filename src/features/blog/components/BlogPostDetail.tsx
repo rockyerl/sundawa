@@ -36,7 +36,7 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel }: 
             <article className="container-main max-w-3xl mx-auto min-w-0">
                 {/* Back link */}
                 <Link
-                    href="/#blog"
+                    href="/blog"
                     className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/70 hover:text-[#DBC977] transition-colors duration-300 mb-10"
                 >
                     ← {backToBlogLabel}

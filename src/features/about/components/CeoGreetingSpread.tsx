@@ -53,9 +53,9 @@ export default function CeoGreetingSpread({
                 </div>
 
                 {/* Right: Stoic Philosophy Epigraph & Full CEO Message */}
-                <div className="flex flex-col justify-between p-7 sm:p-10 lg:col-span-8">
+                <div className="flex flex-col justify-between p-5 sm:p-8 lg:p-10 lg:col-span-8">
                     {/* Stoic Epigraph Callout */}
-                    <div className="mb-8 border border-gold/25 bg-navy/85 p-6">
+                    <div className="mb-8 border border-gold/25 bg-navy/85 p-5 sm:p-6">
                         <div className="mb-3 flex items-center gap-2 text-[0.6rem] font-black tracking-[0.2em] text-gold uppercase">
                             <Quote size={14} aria-hidden="true" />
                             <span>{stoicQuote.tag}</span>

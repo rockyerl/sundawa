@@ -102,7 +102,7 @@ export default function PortfolioDetail({ project, translations }: PortfolioDeta
                         {sections.map((section, index) => (
                             <div
                                 key={section.label}
-                                className="p-8 bg-gold/[0.03] border border-gold/10 rounded-lg"
+                                className="p-5 sm:p-8 bg-gold/[0.03] border border-gold/10 rounded-lg"
                                 style={{ opacity: 0, animation: `fadeInUp 0.5s ease ${index * 0.1}s forwards` }}
                             >
                                 <h3 className="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-gold mb-4">

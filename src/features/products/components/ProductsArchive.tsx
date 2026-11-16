@@ -84,7 +84,7 @@ export default function ProductsArchive() {
                                     {product.badgeMetric}
                                 </div>
 
-                                <div className="mt-auto flex items-center justify-between border-t border-cream/10 pt-4">
+                                <div className="mt-auto flex flex-wrap items-center justify-between gap-2.5 border-t border-cream/10 pt-4">
                                     <Link
                                         href={`/products/${product.slug}`}
                                         className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] text-gold uppercase no-underline hover:text-cream"

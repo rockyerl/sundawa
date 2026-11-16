@@ -20,7 +20,7 @@ type EstimateCartProps = {
 export default function EstimateCart({ cart, totalCount, totalPrice, onRemove, onClear, buildMessage }: EstimateCartProps) {
     const t = useTranslations('outsource')
     return (
-        <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', minHeight: 480 }}>
+        <div className="min-h-[300px] md:min-h-[480px]" style={{ padding: 'clamp(1.1rem, 4vw, 1.75rem)', display: 'flex', flexDirection: 'column' }}>
             <p style={{ marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)', fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{t('summaryTitle')}</p>
             <div style={{ flex: 1, overflowY: 'auto', marginBottom: '1rem', maxHeight: 320 }}>
                 {cart.length === 0 ? (

@@ -63,9 +63,9 @@ export default function ContactSection() {
                                 <div className="relative">
                                     <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#DBC977]/60 mb-4 block">{t('readyToStart')}</span>
                                     <div style={{ lineHeight: 1.08 }}>
-                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.6rem, 3.4vw, 2.75rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line1')}</span>
-                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.75rem, 3.85vw, 3.1rem)', color: '#DBC977', letterSpacing: '-0.03em', textShadow: '0 0 60px rgba(219,201,119,0.25)' }}>{t('line2')}</span>
-                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.6rem, 3.4vw, 2.75rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line3')}</span>
+                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.35rem, 5.2vw, 2.75rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line1')}</span>
+                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.45rem, 5.8vw, 3.1rem)', color: '#DBC977', letterSpacing: '-0.03em', textShadow: '0 0 60px rgba(219,201,119,0.25)' }}>{t('line2')}</span>
+                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.35rem, 5.2vw, 2.75rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line3')}</span>
                                     </div>
                                     <div className="flex items-center gap-3 mt-5">
                                         <div className="w-12 h-[2px] bg-[#DBC977]" />

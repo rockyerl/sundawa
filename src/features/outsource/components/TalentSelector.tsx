@@ -57,7 +57,10 @@ export default function TalentSelector({
     )
 
     return (
-        <div style={{ padding: '1.75rem', borderRight: '1px solid rgba(219,201,119,0.12)' }}>
+        <div
+            className="border-b md:border-b-0 md:border-r border-[rgba(219,201,119,0.12)]"
+            style={{ padding: 'clamp(1.1rem, 4vw, 1.75rem)' }}
+        >
             <p style={{ ...labelStyle, marginBottom: '1.2rem', color: 'rgba(219,201,119,0.6)' }}>{t('addTitle')}</p>
             <div style={{ marginBottom: '0.9rem' }}><label style={labelStyle}>{t('labelCategory')}</label>{select(category, categories, false, onCategoryChange)}</div>
             <div style={{ marginBottom: '0.9rem' }}><label style={labelStyle}>{t('labelPosition')}</label>{select(position, positions, !category, onPositionChange)}</div>

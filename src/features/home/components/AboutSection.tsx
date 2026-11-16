@@ -81,7 +81,7 @@ export default function AboutSection() {
                         {missions.map((m, i) => (
                             <motion.div
                                 key={m.num}
-                                initial={{ opacity: 0, x: 40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
+                                initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
                                 style={{ position: 'relative', display: 'flex', gap: '1.5rem', paddingBottom: i === missions.length - 1 ? 0 : '2.25rem', cursor: 'default' }}
                                 className="group"
                             >

@@ -169,7 +169,7 @@ export default function ProductDetail({
                         {pillars.map((pillar) => (
                             <div
                                 key={pillar.key}
-                                className="border border-gold/15 bg-gold/[0.03] p-7"
+                                className="border border-gold/15 bg-gold/[0.03] p-5 sm:p-7"
                             >
                                 <h2 className="mb-3 border-l-2 border-gold pl-3 text-xs font-black tracking-[0.2em] text-gold uppercase">
                                     {pillar.label}
@@ -183,7 +183,7 @@ export default function ProductDetail({
 
                     {/* Specific Scenarios */}
                     {product.caseStudy.scenarios.length > 0 && (
-                        <div className="mb-12 border border-gold/15 bg-gold/[0.03] p-7">
+                        <div className="mb-12 border border-gold/15 bg-gold/[0.03] p-5 sm:p-7">
                             <h2 className="mb-5 text-xs font-black tracking-[0.2em] text-gold uppercase">
                                 {labels.scenarios}
                             </h2>

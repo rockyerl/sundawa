@@ -56,18 +56,19 @@ export default function TechSection() {
                         </motion.p>
 
                         {/* Clickable category list */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={inView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ delay: 0.3 }}
-                            className="tech-cats"
-                            style={{
-                                display: 'flex', flexDirection: 'column',
-                                gap: '1px',
-                                background: 'rgba(219,201,119,0.1)',
-                                border: '1px solid rgba(219,201,119,0.1)',
-                            }}
-                        >
+                        <div className="tech-cats-wrapper">
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={inView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ delay: 0.3 }}
+                                className="tech-cats"
+                                style={{
+                                    display: 'flex', flexDirection: 'column',
+                                    gap: '1px',
+                                    background: 'rgba(219,201,119,0.1)',
+                                    border: '1px solid rgba(219,201,119,0.1)',
+                                }}
+                            >
                             {categories.map((cat) => {
                                 const isActive = cat.name === activeCategory
                                 return (
@@ -114,6 +115,7 @@ export default function TechSection() {
                                 )
                             })}
                         </motion.div>
+                        </div>
                     </div>
 
                     {/* ── Right — filtered tech grid with AnimatePresence ── */}
@@ -228,6 +230,17 @@ export default function TechSection() {
                 .tech-left { width: 100%; min-width: 0; }
                 .tech-right { min-width: 0; }
                 @media (max-width: 1023px) {
+                    .tech-cats-wrapper { position: relative; }
+                    .tech-cats-wrapper::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 24px;
+                        background: linear-gradient(to right, transparent, rgba(14,30,48,0.95));
+                        pointer-events: none;
+                    }
                     .tech-cats { flex-direction: row !important; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
                     .tech-cats::-webkit-scrollbar { display: none; }
                     .tech-cat-btn { flex: 0 0 auto; width: auto !important; gap: 0.75rem; border-left: none !important; border-bottom: 2px solid transparent !important; }

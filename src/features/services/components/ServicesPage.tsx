@@ -63,7 +63,7 @@ export default function ServicesPage() {
                                     href={`/services/${service.slug}`}
                                     style={{
                                         display: 'block',
-                                        padding: '2rem',
+                                        padding: 'clamp(1.25rem, 4vw, 2rem)',
                                         background: 'rgba(219,201,119,0.03)',
                                         border: '1px solid rgba(219,201,119,0.1)',
                                         borderRadius: '8px',
