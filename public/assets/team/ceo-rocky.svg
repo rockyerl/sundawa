@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#13263E" />
+      <stop offset="60%" stop-color="#0B1929" />
+      <stop offset="100%" stop-color="#07111D" />
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="34%" r="48%">
+      <stop offset="0%" stop-color="#DBC977" stop-opacity="0.22" />
+      <stop offset="65%" stop-color="#2D7DD2" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#0B1929" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="suit" x1="200" y1="270" x2="200" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1D3654" />
+      <stop offset="100%" stop-color="#0A1625" />
+    </linearGradient>
+    <linearGradient id="goldLine" x1="120" y1="80" x2="280" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#DBC977" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#F3E5A5" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#A66A2C" stop-opacity="0.45" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)" />
+  <rect width="400" height="500" fill="url(#halo)" />
+  <!-- Subtle architectural blueprint rings & grid -->
+  <g stroke="#DBC977" stroke-opacity="0.08" stroke-width="1">
+    <line x1="0" y1="125" x2="400" y2="125" />
+    <line x1="0" y1="250" x2="400" y2="250" />
+    <line x1="0" y1="375" x2="400" y2="375" />
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <circle cx="200" cy="185" r="118" stroke-dasharray="4 6" stroke-opacity="0.22" />
+    <circle cx="200" cy="185" r="88" stroke-opacity="0.16" />
+  </g>
+  <!-- Editorial bust silhouette (CEO formal suit & structured collar) -->
+  <g>
+    <path d="M52 500C58 388 106 324 164 304L200 356L236 304C294 324 342 388 348 500H52Z" fill="url(#suit)" stroke="url(#goldLine)" stroke-width="1.5" />
+    <!-- Shirt & tie geometry -->
+    <path d="M168 302L200 398L232 302L200 288L168 302Z" fill="#0E1E30" stroke="#DBC977" stroke-opacity="0.4" stroke-width="1" />
+    <path d="M194 318L206 318L209 382L200 398L191 382L194 318Z" fill="#DBC977" fill-opacity="0.72" />
+    <!-- Lapels -->
+    <path d="M164 304L144 352L176 380L200 416" stroke="#DBC977" stroke-opacity="0.45" stroke-width="1.2" fill="none" />
+    <path d="M236 304L256 352L224 380L200 416" stroke="#DBC977" stroke-opacity="0.45" stroke-width="1.2" fill="none" />
+    <!-- Neck -->
+    <path d="M174 260V304C174 316 226 316 226 304V260H174Z" fill="#172D47" stroke="#DBC977" stroke-opacity="0.35" stroke-width="1.2" />
+    <!-- Head contour -->
+    <ellipse cx="200" cy="192" rx="54" ry="68" fill="#18304B" stroke="url(#goldLine)" stroke-width="1.8" />
+    <!-- Geometric hair crown -->
+    <path d="M146 184C146 142 170 120 202 120C235 120 254 142 254 182C246 154 226 144 200 146C174 148 156 160 146 184Z" fill="#DBC977" fill-opacity="0.22" stroke="#DBC977" stroke-opacity="0.55" stroke-width="1.2" />
+  </g>
+  <!-- Corner reticles -->
+  <g stroke="#DBC977" stroke-opacity="0.5" stroke-width="1.5">
+    <path d="M20 36V20H36" />
+    <path d="M364 20H380V36" />
+    <path d="M20 464V480H36" />
+    <path d="M364 480H380V464" />
+  </g>
+</svg>

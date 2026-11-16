@@ -8,7 +8,33 @@
     "clients": "Klien",
     "contact": "Kontak",
     "blog": "Artikel",
-    "getInTouch": "HUBUNGI KAMI"
+    "getInTouch": "HUBUNGI KAMI",
+    "groups": {
+      "solutions": "Solusi",
+      "products": "Produk",
+      "work": "Karya & Insight",
+      "company": "Perusahaan"
+    },
+    "items": {
+      "servicesTitle": "Layanan Engineering",
+      "servicesDesc": "Modernisasi sistem lama, AI, integrasi ERP & platform khusus",
+      "processTitle": "Proses Kerja",
+      "processDesc": "6 tahap transparansi sprint & alih serah kepemilikan penuh",
+      "outsourceTitle": "Kalkulator Alih Daya IT",
+      "outsourceDesc": "Estimasi biaya tim developer, QA, DevOps & IT Manager",
+      "techTitle": "Stack Teknologi",
+      "techDesc": "Rangkaian teknologi inti yang kami kuasai di produksi",
+      "allProductsTitle": "Semua Produk & Case Studies",
+      "allProductsDesc": "Eksplorasi 6 produk ekosistem SaaS, mobilitas & enterprise Sundawa",
+      "portfolioTitle": "Portfolio Proyek Klien",
+      "portfolioDesc": "Studi kasus sistem klien lintas perbankan, kesehatan & publik",
+      "blogTitle": "Artikel & Insight",
+      "blogDesc": "Wawasan seputar arsitektur sistem & transformasi digital",
+      "aboutTitle": "Tentang Sundawa",
+      "aboutDesc": "Profil PT Sundawa Teknologi Indonesia, visi misi & pimpinan",
+      "valuesTitle": "Transformasi Operasional",
+      "valuesDesc": "Perubahan alur kerja sebelum vs bersama tim Sundawa"
+    }
   },
   "hero": {
     "badge": "Modernisasi & Otomatisasi Perangkat Lunak",
@@ -44,6 +70,7 @@
     "p1": "Anda butuh tim yang memahami mengapa sistem gagal, menentukan apa yang perlu diubah, membangunnya tanpa menambah lapisan kerumitan baru, dan tetap bertanggung jawab setelah peluncuran.",
     "p2": "Kami mulai dari cara bisnis Anda benar-benar berjalan — bukan dari kerangka kerja favorit atau solusi yang sudah jadi.",
     "quote": "Perangkat lunak yang tidak lagi dilawan oleh tim Anda.",
+    "ctaAboutPage": "Profil Perusahaan & Tim Pimpinan",
     "missions": [
       {
         "num": "01",
@@ -142,6 +169,8 @@
     "ctaOutsource": "Lihat Estimasi Harga",
     "ctaProcess": "Lihat Cara Kerja Kami",
     "outcomeLabel": "Hasil",
+    "viewDetail": "Lihat detail",
+    "close": "Tutup",
     "transition": "Dan ini bukan sekadar kemampuan yang kami tambahkan ke halaman penjualan. Ini adalah jenis sistem yang sudah dipercayakan kepada kami untuk dibangun.",
     "items": [
       {
@@ -545,6 +574,7 @@
   },
   "contact": {
     "label": "Hubungi Kami",
+    "ctaForm": "Buka Form Konsultasi",
     "readyToStart": "Siap Membenahi yang Bermasalah?",
     "line1": "PERBAIKI YANG",
     "line2": "MEMPERLAMBAT",
@@ -706,8 +736,8 @@
     "backToBlog": "Kembali ke Blog",
     "empty": "Belum ada artikel blog saat ini. Nantikan update berikutnya!",
     "searchPlaceholder": "Cari artikel...",
-    "searchNoResults": "Tidak ada hasil untuk '{{query}}'",
-    "searchResultsCount": "{{count}} hasil untuk '{{query}}'"
+    "searchNoResults": "Tidak ada hasil untuk \"{query}\"",
+    "searchResultsCount": "{count} hasil untuk \"{query}\""
   },
   "portfolio": {
     "navBack": "Kembali",
@@ -727,78 +757,232 @@
   "contactPage": {
     "navBack": "Kembali",
     "navTitle": "Hubungi Kami",
-    "eyebrow": "Kontak",
+    "eyebrow": "Kontak Resmi Sundawa",
     "title": "Mari Diskusikan Kebutuhan Anda",
-    "subtitle": "Ceritakan sistem atau alur kerja yang ingin Anda perbaiki. Kami akan membantu menentukan solusi yang tepat.",
+    "subtitle": "Ceritakan sistem, produk, atau kebutuhan alih daya tim yang sedang Anda rencanakan. Kami menjaga komunikasi tetap jelas sejak percakapan pertama.",
+    "topicLabel": "Topik Konsultasi",
+    "topics": [
+      "Modernisasi Sistem Lama",
+      "Otomatisasi & Integrasi Data",
+      "Demo Produk Sundawa",
+      "Tim Alih Daya IT",
+      "Konsultasi Umum"
+    ],
     "name": "Nama Lengkap",
     "email": "Email",
-    "company": "Perusahaan",
-    "message": "Pesan",
+    "company": "Perusahaan / Organisasi",
+    "message": "Ceritakan Kebutuhan Anda",
     "namePlaceholder": "Nama Anda",
     "emailPlaceholder": "email@perusahaan.com",
-    "companyPlaceholder": "Nama perusahaan (opsional)",
-    "messagePlaceholder": "Ceritakan sistem atau alur kerja yang ingin Anda perbaiki...",
-    "submit": "Kirim Pesan",
-    "submitting": "Mengirim...",
-    "success": "Pesan Anda berhasil dikirim. Kami akan menghubungi Anda dalam 1x24 jam.",
-    "error": "Gagal mengirim pesan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.",
-    "whatsapp": "Atau hubungi kami langsung via WhatsApp",
-    "emailLabel": "Email",
-    "phoneLabel": "Telepon",
-    "addressLabel": "Lokasi",
+    "companyPlaceholder": "Nama perusahaan atau instansi (opsional)",
+    "messagePlaceholder": "Ceritakan proses kerja, kendala sistem, atau produk Sundawa yang ingin Anda diskusikan...",
+    "submit": "Kirim via WhatsApp",
+    "submitEmail": "Kirim via Email",
+    "submitting": "Menyiapkan...",
+    "success": "Aplikasi WhatsApp terbuka dengan ringkasan pesan Anda. Anda juga dapat mengirimkannya lewat email jika lebih nyaman.",
+    "error": "Gagal menyiapkan pesan. Silakan hubungi kami langsung melalui WhatsApp atau email resmi di samping.",
+    "whatsapp": "Atau chat langsung dengan tim Sundawa",
+    "whatsappButton": "Chat WhatsApp (0823 1808 7980)",
+    "emailLabel": "Email Resmi",
+    "emailDesc": "Respons dalam 1x24 jam kerja",
+    "phoneLabel": "Telepon / WhatsApp",
+    "phoneDesc": "Senin–Jumat, 09.00–18.00 WIB",
+    "linkedinLabel": "LinkedIn",
+    "linkedinDesc": "PT Sundawa Teknologi Indonesia",
+    "addressLabel": "Lokasi Kantor",
     "addressValue": "Bandung, Jawa Barat, Indonesia"
   },
   "aboutPage": {
     "navBack": "Kembali",
-    "navTitle": "Tentang Kami",
-    "eyebrow": "Tentang Sundawa",
-    "title": "Lebih dari Sekadar Tim yang Menulis Kode",
-    "subtitle": "Kami memahami mengapa sistem gagal, menentukan apa yang perlu diubah, membangunnya tanpa menambah kerumitan, dan tetap bertanggung jawab setelah peluncuran.",
-    "mission": {
-      "label": "Misi Kami",
+    "navTitle": "Tentang Sundawa",
+    "eyebrow": "PT Sundawa Teknologi Indonesia",
+    "slogan": "Professional Precision, Customer Comfort",
+    "title": "Tentang Sundawa Teknologi",
+    "profileLabel": "Profil Perusahaan",
+    "subtitle": "PT Sundawa Teknologi Indonesia adalah perusahaan teknologi yang merancang dan mengembangkan aplikasi, website, dan sistem informasi untuk kebutuhan bisnis dan organisasi. Kami membantu klien menerjemahkan kebutuhan operasional menjadi solusi digital yang dapat digunakan oleh tim mereka sehari-hari.",
+    "heroCtaPrimary": "Jadwalkan Diskusi Proyek",
+    "heroCtaSecondary": "Jelajahi Produk & Case Studies",
+    "studioCard": {
+      "badge": "Engineering Studio · Bandung, ID",
+      "title": "Arsitektur Berpresisi Tinggi untuk Sistem Misi-Kritis",
+      "caption": "PT Sundawa Teknologi Indonesia — Fokus pada keandalan & keberlanjutan operasional."
+    },
+    "governance": {
+      "label": "Kesiapan Tata Kelola Kemitraan",
+      "heading": "Tim Inti Senior — Tanpa Lempar ke Subkontraktor Lepas",
+      "ctaProcess": "Lihat 6 Tahap Proses Kerja",
       "items": [
         {
+          "title": "Keterlibatan Pimpinan Langsung",
+          "desc": "Proyek strategis didampingi langsung oleh jajaran CEO, CTO, dan COO bersama tim inti engineer Bandung — menjaga arsitektur tetap konsisten."
+        },
+        {
+          "title": "NDA & Kerahasiaan Sejak Penjajakan",
+          "desc": "Perjanjian kerahasiaan (NDA) standar tersedia sejak diskusi awal untuk melindungi data sensitif perusahaan maupun instansi."
+        },
+        {
+          "title": "100% Hak Kepemilikan Kode & HKI",
+          "desc": "Kode sumber, repositori, dan dokumentasi teknis diserahkan sepenuhnya kepada klien pada tahap serah terima — tanpa lock-in vendor."
+        },
+        {
+          "title": "Opsi On-Premise DC/DRC & Cloud Lokal",
+          "desc": "Arsitektur disiapkan untuk deployment on-premise di pusat data internal institusi maupun cloud sesuai regulasi kepatuhan."
+        }
+      ]
+    },
+    "criticalSectors": {
+      "label": "Pengalaman Lintas Sektor Kritis",
+      "ctaPortfolio": "Lihat Rekam Jejak Proyek",
+      "items": [
+        {
+          "sector": "Perbankan & Pembayaran",
+          "proof": "LAKUPANDAI Agent Banking, PPOB & Layanan EDC"
+        },
+        {
+          "sector": "Pertahanan & Pemerintahan",
+          "proof": "SI-GEOMEDIK Kemhan RI, AHU Salinan & Rebuild"
+        },
+        {
+          "sector": "Layanan Kesehatan",
+          "proof": "Sistem EHR Standar FHIR / ICD-10 & Oetomo Hospital"
+        },
+        {
+          "sector": "Organisasi Internasional",
+          "proof": "Platform Distribusi Dana DACAR by UNDP"
+        },
+        {
+          "sector": "Energi, Kelistrikan & ESG",
+          "proof": "Nawasanga Anti-Fraud & Scope 1 ESG, Sistem Kelistrikan"
+        }
+      ]
+    },
+    "howWeWork": {
+      "label": "Cara Kami Bekerja",
+      "heading": "Dua Disiplin Eksekusi Tanpa Kompromi",
+      "pillars": [
+        {
           "num": "01",
-          "title": "Memahami Sebelum Membangun",
-          "body": "Kami mulai dari cara bisnis Anda benar-benar berjalan, bukan dari kerangka kerja favorit atau solusi yang sudah jadi."
+          "tag": "Kendali Mutu Rekayasa",
+          "title": "Professional Precision",
+          "body": "Kami mulai dengan memahami proses bisnis dan kebutuhan pengguna. Bersama klien, kami menyepakati ruang lingkup dan kriteria penerimaan. Kriteria itu menjadi acuan dalam perancangan, pengembangan, dan pengujian sebelum serah terima.",
+          "checkpoints": [
+            "Penyelarasan proses bisnis & kebutuhan pengguna",
+            "Kesepakatan ruang lingkup & acceptance criteria tertulis",
+            "Pengujian ketat sebelum tahap serah terima"
+          ]
         },
         {
           "num": "02",
-          "title": "Mempertahankan yang Sudah Berjalan",
-          "body": "Modernisasi tidak otomatis berarti membangun ulang semuanya. Kami pertahankan sistem yang masih berguna dan hanya mengganti yang membatasi bisnis."
+          "tag": "Tata Kelola Kolaborasi",
+          "title": "Customer Comfort",
+          "body": "Kami menjaga agar klien mudah mengikuti perkembangan proyek dan memahami keputusan yang perlu diambil. Saat ada perubahan, kami menjelaskan dampaknya terhadap ruang lingkup dan jadwal. Kami juga menindaklanjuti pertanyaan dan masukan yang muncul selama proyek.",
+          "checkpoints": [
+            "Pelacakan progres proyek yang transparan",
+            "Kejelasan dampak perubahan terhadap scope & jadwal",
+            "Tindak lanjut responsif atas setiap masukan klien"
+          ]
+        }
+      ]
+    },
+    "visionMission": {
+      "label": "Visi & Misi",
+      "visionLabel": "Visi Perusahaan",
+      "vision": "Menjadi mitra teknologi tepercaya bagi perusahaan dan organisasi di Indonesia dalam membangun solusi digital yang andal melalui kerja yang presisi dan kolaborasi yang nyaman bagi klien.",
+      "missionLabel": "Misi Perusahaan",
+      "missions": [
+        {
+          "num": "01",
+          "body": "Memahami kebutuhan pengguna dan tujuan bisnis klien sebagai dasar perancangan solusi digital."
+        },
+        {
+          "num": "02",
+          "body": "Menjaga mutu pekerjaan melalui perencanaan yang jelas, pengembangan yang terukur, dan pengujian sebelum serah terima."
         },
         {
           "num": "03",
-          "title": "Membangun Berdasarkan Hasil yang Terukur",
-          "body": "Otomatisasi, AI, dan perangkat lunak harus mengurangi beban kerja, menghilangkan hambatan, meningkatkan keandalan, atau membuka kemampuan baru."
+          "body": "Membangun hubungan jangka panjang melalui komunikasi terbuka, layanan yang tanggap, dan tindak lanjut atas masukan klien."
         },
         {
           "num": "04",
-          "title": "Tetap Bertanggung Jawab Setelah Peluncuran",
-          "body": "Kami tetap menjalankan, membenahi, dan mengembangkan platform Anda, bukan menghilang setelah peluncuran."
+          "body": "Mengembangkan kompetensi tim dan menerapkan praktik serta teknologi yang relevan untuk meningkatkan mutu layanan."
         }
       ]
     },
     "values": {
-      "label": "Nilai Inti",
+      "label": "Nilai Perusahaan",
+      "heading": "Fondasi Budaya Kerja Sundawa",
       "items": [
         {
-          "title": "Transparansi",
-          "body": "Komunikasi terbuka di setiap tahap, dari estimasi hingga peluncuran."
+          "num": "01",
+          "title": "Fokus pada Klien",
+          "body": "Kami menggunakan tujuan bisnis yang disepakati untuk menentukan prioritas pekerjaan."
         },
         {
-          "title": "Akuntabilitas",
-          "body": "Kami bertanggung jawab atas hasil, bukan hanya proses."
+          "num": "02",
+          "title": "Kepedulian dalam Pelayanan",
+          "body": "Kami menggunakan bahasa yang mudah dipahami dan membantu klien menilai pilihan yang tersedia."
         },
         {
-          "title": "Keterukuran",
-          "body": "Setiap keputusan didasarkan pada data dan hasil yang bisa diukur."
+          "num": "03",
+          "title": "Presisi dan Keandalan",
+          "body": "Kami mencatat kesepakatan, memeriksa hasil pekerjaan, dan menyampaikan kendala sejak dini."
         },
         {
-          "title": "Kolaborasi",
-          "body": "Kami bekerja bersama tim Anda, bukan menggantikan tim Anda."
+          "num": "04",
+          "title": "Kolaborasi Terbuka",
+          "body": "Kami melibatkan tim internal dan klien saat meninjau hasil serta membahas perubahan proyek."
+        },
+        {
+          "num": "05",
+          "title": "Profesionalisme",
+          "body": "Kami menjaga kerahasiaan informasi klien dan bertanggung jawab atas keputusan serta pekerjaan kami."
+        },
+        {
+          "num": "06",
+          "title": "Inovasi dan Perbaikan Berkelanjutan",
+          "body": "Kami memperbaiki cara kerja berdasarkan masukan dan pembelajaran dari setiap proyek."
         }
       ]
+    },
+    "leadership": {
+      "label": "Tim Pimpinan",
+      "heading": "Dipimpin Langsung oleh Praktisi Teknis & Operasional",
+      "avatarBadge": "Pimpinan Sundawa",
+      "members": [
+        {
+          "id": "rocky",
+          "name": "Raden Rocky Erlianto",
+          "role": "Chief Executive Officer (CEO)",
+          "bio": "Memimpin arah perusahaan dan pengembangan hubungan dengan klien serta mitra."
+        },
+        {
+          "id": "akbar",
+          "name": "Mochamad Akbar",
+          "role": "Chief Technology Officer (CTO)",
+          "bio": "Memimpin arah teknis dan menjaga mutu rekayasa dalam pengembangan solusi Sundawa."
+        },
+        {
+          "id": "velia",
+          "name": "Velia Aprita Dewi",
+          "role": "Chief Operating Officer (COO)",
+          "bio": "Memimpin operasional perusahaan dan koordinasi pelaksanaan proyek."
+        }
+      ]
+    },
+    "ceoGreeting": {
+      "label": "Sambutan CEO",
+      "stoicQuote": {
+        "tag": "Prinsip Kepemimpinan · Stoikisme",
+        "quote": "Jika suatu hal tidak benar, jangan lakukan; jika sesuatu tidak jujur, jangan katakan.",
+        "author": "Marcus Aurelius — Meditations, XII.17",
+        "bridge": "Filosofi Stoikisme inilah yang menuntun setiap keputusan di Sundawa: mengendalikan mutu rekayasa dengan tenang, mendengarkan sebelum berbicara, dan hanya menjanjikan apa yang siap kami pertanggungjawabkan saat serah terima."
+      },
+      "paragraphs": [
+        "Bagi saya, tanggung jawab Sundawa dimulai ketika kami mendengarkan persoalan yang dihadapi klien. Tim yang akan menggunakan sistem setiap hari sering kali paling memahami letak masalahnya. Karena itu, kami meluangkan waktu untuk memahami cara mereka bekerja sebelum menentukan apa yang perlu dibangun.",
+        "Saya ingin setiap klien tahu apa yang sedang kami kerjakan, alasan di balik keputusan kami, dan apa yang bisa mereka harapkan pada tahap berikutnya. Pada saat serah terima, hasilnya perlu menjawab kebutuhan yang kami sepakati bersama. Itulah arti Professional Precision, Customer Comfort bagi saya, dan standar yang ingin kami jaga di Sundawa."
+      ],
+      "authorName": "Raden Rocky Erlianto",
+      "authorRole": "Chief Executive Officer, PT Sundawa Teknologi Indonesia"
     },
     "stats": {
       "projects": "Proyek Selesai",
@@ -807,9 +991,11 @@
       "professionals": "Profesional"
     },
     "cta": {
-      "title": "Tertarik Bekerja Sama?",
-      "subtitle": "Ceritakan apa yang sedang terjadi. Kami bantu tentukan apakah itu butuh modernisasi, integrasi, otomatisasi, atau sesuatu yang sepenuhnya baru.",
-      "button": "Hubungi Kami"
+      "eyebrow": "Kemitraan Strategis & Enterprise",
+      "title": "Siap Mendiskusikan Sistem Misi-Kritis Organisasi Anda?",
+      "subtitle": "Dari modernisasi sistem inti hingga pengembangan platform lintas institusi — jadwalkan sesi penyelarasan awal langsung bersama tim pimpinan Sundawa.",
+      "button": "Hubungi Tim Pimpinan",
+      "secondaryButton": "Lihat Produk Sundawa"
     }
   },
   "servicesPage": {
@@ -886,23 +1072,23 @@
       "description": "Wawasan seputar modernisasi sistem, otomatisasi alur kerja, integrasi data, dan pengembangan software dari tim Sundawa Teknologi."
     },
     "portfolio": {
-      "title": "Portfolio Proyek | Sundawa Teknologi",
+      "title": "Portfolio Proyek",
       "description": "Lihat proyek modernisasi sistem, otomatisasi, dan integrasi data yang telah kami selesaikan untuk berbagai klien di Indonesia."
     },
     "contact": {
-      "title": "Hubungi Kami | Sundawa Teknologi",
+      "title": "Hubungi Kami",
       "description": "Siap mendiskusikan kebutuhan modernisasi sistem, otomatisasi alur kerja, atau alih daya IT? Konsultasi gratis dengan tim Sundawa."
     },
     "about": {
-      "title": "Tentang Kami | Sundawa Teknologi",
-      "description": "Kenali Sundawa Teknologi — software house Bandung yang berspesialisasi dalam modernisasi sistem, otomatisasi, dan integrasi data untuk bisnis."
+      "title": "Tentang Kami",
+      "description": "Kenali PT Sundawa Teknologi Indonesia — perusahaan teknologi Bandung dengan standar Professional Precision, Customer Comfort."
     },
     "services": {
-      "title": "Layanan Kami | Sundawa Teknologi",
+      "title": "Layanan Kami",
       "description": "Modernisasi sistem lama, otomatisasi alur kerja dengan AI, integrasi ERP dan data, platform bisnis khusus, dan managed engineering."
     },
     "products": {
-      "title": "Produk Sundawa & Case Studies | Sundawa Teknologi",
+      "title": "Produk Sundawa & Case Studies",
       "description": "Eksplorasi produk ekosistem Sundawa — Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, dan Abo Rent Car beserta studi kasusnya."
     }
   },
@@ -948,17 +1134,17 @@
       "inspectSelectedCaseStudy": "Baca Studi Kasus"
     },
     "caseStudySection": {
-      "eyebrow": "Case Studies Produk",
-      "title": "Dampak Nyata di Lapangan",
-      "subtitle": "Pelajari tantangan bisnis, pendekatan arsitektur, dan hasil terukur dari keenam platform yang dibangun dan dioperasikan oleh Sundawa.",
+      "eyebrow": "Case Studies & Arsitektur Produk",
+      "title": "Masalah, Arsitektur & Skenario Penerapan",
+      "subtitle": "Pelajari tantangan bisnis yang diselesaikan, desain arsitektur sistem, serta skenario penerapan dari keenam produk ekosistem Sundawa (termasuk studi kasus showcase yang dipublikasikan pada situs masing-masing produk).",
       "labels": {
         "subject": "Konteks & Profil Pengguna",
         "challenge": "Tantangan Bisnis",
         "solution": "Solusi & Modul Kunci",
         "architecture": "Arsitektur & Keamanan",
-        "impact": "Dampak & Hasil Terukur",
-        "highlights": "Indikator & Sorotan Kunci",
-        "scenarios": "Studi Kasus & Skenario Spesifik",
+        "impact": "Hasil & Kapabilitas Platform",
+        "highlights": "Indikator & Sorotan Situs Produk",
+        "scenarios": "Contoh Skenario & Studi Kasus Platform",
         "coreModules": "Modul Utama",
         "accessNote": "Catatan Akses",
         "liveDomain": "Domain Aktif",
@@ -971,7 +1157,7 @@
         "sector": "WeddingTech SaaS",
         "tagline": "Kemewahan Tradisi, Keabadian Cinta",
         "summary": "Asisten pernikahan digital untuk pernikahan adat Nusantara—menyatukan anggaran, vendor, undangan tamu QR, dan panduan prosesi adat dalam satu workspace.",
-        "badgeMetric": "Hemat Rp 18 Jt & 60 Jam Persiapan",
+        "badgeMetric": "6 Modul Inti + 3 Modul Adat Nusantara",
         "modules": [
           "Task, Budget Real-Time & Vendor Tracker",
           "Seserahan Tracker & Cultural Rundown",
@@ -983,7 +1169,7 @@
           "challenge": "Persiapan pernikahan adat melibatkan puluhan tahapan sakral lintas keluarga besar—dari seserahan, siraman, midodareni, hingga panggih—yang kerap tercecer di 5+ aplikasi dan spreadsheet terpisah sehingga memicu pembengkakan budget dan miskomunikasi jadwal.",
           "solution": "Sewaka menggabungkan 6 modul perencanaan inti (Checklist, Budget, Vendor, Tamu & QR Check-in, Timeline, Galeri) dengan 3 modul khas budaya (Seserahan Tracker, Cultural Rundown, Ensiklopedia Budaya) dalam paket Gratis, Premium (Rp99rb/bln), dan Enterprise.",
           "architecture": "Aplikasi web Next.js dengan autentikasi Email/Password & Google OAuth, Row-Level Security (RLS) untuk isolasi ruang kerja pasangan dan keluarga, serta pelacakan progres persiapan dan alokasi anggaran secara real-time.",
-          "impact": "Berdasarkan studi kasus pengguna di platform: efisiensi persiapan seserahan hingga 60 jam, penghematan budget vendor Rp 18 juta dari rencana awal, dan rundown hari H adat yang berjalan 100% sesuai jadwal.",
+          "impact": "Menyatukan manajemen vendor, anggaran, QR tamu, dan rundown adat dalam satu workspace. Contoh skenario yang ditampilkan pada situs Sewaka mencantumkan penghematan 60 jam persiapan seserahan dan efisiensi anggaran Rp 18 juta.",
           "highlights": [
             "60 jam dihemat (Rina & Budi · Adat Jawa)",
             "Rp 18 Jt budget tersimpan (Dewi & Andi · Adat Madura)",
@@ -1120,7 +1306,7 @@
         "sector": "Enterprise ESG & Anti-Fraud BBM",
         "tagline": "Dari semua penjuru, satu pandangan.",
         "summary": "Platform intelligence konsumsi bahan bakar armada (anti-fraud solar) dan otomasi audit emisi GRK Scope 1 (ISO 14064-1 & POJK 51) untuk armada logistik, tambang, sawit, dan industri.",
-        "badgeMetric": "Pangkas 24,6% Kebocoran BBM · Audit 3 Menit",
+        "badgeMetric": "Anti-Fraud Solar + Scope 1 ISO 14064 / POJK 51",
         "modules": [
           "Sentinel Anti-Fraud Solar (AI OCR + Geofence)",
           "Mesin Emisi Scope 1 IPCC Tier-2 (B35/B40)",
@@ -1132,7 +1318,7 @@
           "challenge": "Kebocoran solar (solar kencing, struk SPBU fiktif, klaim melebihi kapasitas tangki) menggerus biaya operasional, sementara penyusunan inventarisasi emisi Scope 1 POJK 51 & ISO 14064 secara manual memakan waktu hingga 4 bulan.",
           "solution": "Nawasanga menggabungkan Driver Mobile PWA (tangkap struk & odometer dalam 20 detik, mendukung offline blank-spot) dengan AI OCR anti-fraud, geofencing SPBU GPS, mesin kalkulasi Scope 1 IPCC Tier-2 (koreksi biodiesel B35/B40), dan generator dossier audit 1-klik.",
           "architecture": "Platform multi-tenant dengan isolasi data Row-Level Security dan 5-level RBAC, terintegrasi ke penyedia telematika GPS (Geotab, Cartrack, EasyGo), webhook ERP (SAP/Oracle), serta OpenAPI/Swagger.",
-          "impact": "Studi kasus platform mencatat penghematan 24,6% kebocoran BBM (Rp 840 Jt/tahun) & percepatan audit dari 4 bulan ke 3 menit di PT Nusantara Logistik Prima (420 truk), serta efisiensi HSD Rp 2,4 Miliar/kuartal di PT Borneo Prima Mining (280 unit).",
+          "impact": "Menggabungkan pelacakan anti-fraud SPBU, AI OCR, dan pelaporan Scope 1 B35/B40 otomatis dalam satu alur kerja. Skenario contoh di situs Nawasanga memodelkan pemangkasan kebocoran BBM 24,6% (420 truk logistik) hingga efisiensi HSD 14,2% (280 unit tambang) serta kesiapan audit POJK 51.",
           "highlights": [
             "Rp 4,8 Miliar total kebocoran BBM ditekan (520+ armada)",
             "32.400 Ton CO₂e teraudit · 100% lolos POJK 51 & SIMPEL",
@@ -1190,5 +1376,28 @@
         }
       }
     }
+  },
+  "footer": {
+    "legalName": "PT Sundawa Teknologi Indonesia",
+    "motto": "Professional Precision, Customer Comfort",
+    "summary": "Perusahaan teknologi berbasis di Bandung yang merancang, memodernisasi, dan mengelola aplikasi, sistem informasi, serta platform produk digital.",
+    "location": "Bandung, Jawa Barat, Indonesia",
+    "columns": {
+      "solutions": "Solusi & Layanan",
+      "products": "Ekosistem Produk",
+      "company": "Perusahaan & Kontak"
+    },
+    "links": {
+      "services": "Layanan Engineering",
+      "process": "Proses Kerja (6 Tahap)",
+      "outsource": "Kalkulator Alih Daya IT",
+      "portfolio": "Portfolio Proyek",
+      "allProducts": "Semua Produk & Case Studies",
+      "about": "Tentang Sundawa",
+      "blog": "Artikel & Insight",
+      "contact": "Formulir Konsultasi"
+    },
+    "assurances": "NDA Standar · 100% Kepemilikan Kode · On-Premise & Cloud",
+    "copyright": "© {year} PT Sundawa Teknologi Indonesia. Seluruh hak cipta dilindungi."
   }
 }

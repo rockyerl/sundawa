@@ -1,6 +1,29 @@
 export const STORAGE_KEY = 'sundawa-intro-seen'
 export const INTRO_FINISHED_EVENT = 'sundawa-intro-finished'
 
+let pendingSectionHash: string | null = null
+
+export function setPendingSectionHash(hash: string | null) {
+    if (!hash) {
+        pendingSectionHash = null
+        return
+    }
+    pendingSectionHash = hash.replace(/^#/, '')
+}
+
+export function scrollToPendingOrLocationHash(): boolean {
+    if (typeof window === 'undefined') return false
+    const id = pendingSectionHash || window.location.hash.replace(/^#/, '')
+    if (!id) return false
+
+    const target = document.getElementById(id)
+    if (!target) return false
+
+    pendingSectionHash = null
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    return true
+}
+
 export function getIntroSeenSnapshot(): boolean {
     if (typeof window === 'undefined') return false
 

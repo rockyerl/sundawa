@@ -5,7 +5,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { getIntroSeenSnapshot, markIntroSeen, subscribeIntroSeen } from './IntroEvents'
+import {
+    getIntroSeenSnapshot,
+    markIntroSeen,
+    scrollToPendingOrLocationHash,
+    subscribeIntroSeen,
+} from './IntroEvents'
 
 function getServerSnapshot() {
     return false
@@ -29,6 +34,7 @@ export default function IntroLoader() {
     const handleExitComplete = useCallback(() => {
         document.body.style.overflow = ''
         markIntroSeen()
+        scrollToPendingOrLocationHash()
     }, [])
 
     useEffect(() => {

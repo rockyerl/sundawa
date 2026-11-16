@@ -1,144 +1,344 @@
 'use client'
-import { useState, useEffect } from 'react'
+
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { usePathname } from '@/src/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import LangToggle from '@/src/shared/ui/LangToggle'
+import { Link, usePathname } from '@/src/i18n/navigation'
+import { PRODUCT_SPECS } from '@/src/features/products'
+import { LangToggle, scrollToPendingOrLocationHash, setPendingSectionHash } from '@/src/shared/ui'
+
+type NavGroupId = 'solutions' | 'products' | 'work' | 'company'
+
+interface NavChildItem {
+    href: string
+    label: string
+    desc?: string
+    badge?: string
+}
+
+interface NavGroup {
+    id: NavGroupId
+    label: string
+    href: string
+    items: NavChildItem[]
+    activePrefixes: string[]
+}
 
 export default function Navbar() {
     const t = useTranslations('nav')
+    const tp = useTranslations('products')
     const pathname = usePathname()
+
     const [scrolled, setScrolled] = useState(false)
-    const [open, setOpen] = useState(false)
-    const [active, setActive] = useState('')
+    const [mobileOpen, setMobileOpen] = useState(false)
+    const [openDropdown, setOpenDropdown] = useState<NavGroupId | null>(null)
+    const [openMobileGroup, setOpenMobileGroup] = useState<NavGroupId | null>('products')
 
-    const navLinks = [
-        { href: '#about',    label: t('about')    },
-        { href: '#values',   label: t('values')   },
-        { href: '#services', label: t('services') },
-        { href: '#tech',     label: t('tech')     },
-        { href: '#products', label: t('products') },
-        { href: '#clients',  label: t('clients')  },
-        { href: '#blog',     label: t('blog')     },
-        { href: '#contact',  label: t('contact')  },
-    ]
+    const navRef = useRef<HTMLElement>(null)
+    const isHomepage = pathname === '/' || pathname === ''
 
-    // Hash links (#about, dst) cuma valid di homepage; "/blog" itu route halaman beda.
-    const isLinkActive = (href: string) =>
-        href.startsWith('#') ? active === href : pathname?.includes(href)
+    const navGroups: NavGroup[] = useMemo(() => {
+        const productItems = PRODUCT_SPECS.map((spec) => ({
+            href: `/products/${spec.slug}`,
+            label: tp(`items.${spec.slug}.name`),
+            desc: tp(`items.${spec.slug}.sector`),
+            badge: spec.num,
+        }))
 
-    useEffect(() => {
-        const handler = () => setScrolled(window.scrollY > 40)
-        window.addEventListener('scroll', handler)
-        return () => window.removeEventListener('scroll', handler)
-    }, [])
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) setActive('#' + e.target.id)
-                })
+        return [
+            {
+                id: 'solutions',
+                label: t('groups.solutions'),
+                href: '/services',
+                activePrefixes: ['/services', '/proses-kerja', '/outsource'],
+                items: [
+                    { href: '/services', label: t('items.servicesTitle'), desc: t('items.servicesDesc') },
+                    { href: '/proses-kerja', label: t('items.processTitle'), desc: t('items.processDesc') },
+                    { href: '/outsource', label: t('items.outsourceTitle'), desc: t('items.outsourceDesc') },
+                    { href: '/#tech', label: t('items.techTitle'), desc: t('items.techDesc') },
+                ],
             },
-            { threshold: [0.15, 0.4] }
-        )
-        navLinks.forEach(l => {
-            if (!l.href.startsWith('#')) return
-            const el = document.querySelector(l.href)
-            if (el) observer.observe(el)
-        })
-        return () => observer.disconnect()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+            {
+                id: 'products',
+                label: t('groups.products'),
+                href: '/products',
+                activePrefixes: ['/products'],
+                items: [
+                    { href: '/products', label: t('items.allProductsTitle'), desc: t('items.allProductsDesc') },
+                    ...productItems,
+                ],
+            },
+            {
+                id: 'work',
+                label: t('groups.work'),
+                href: '/portfolio',
+                activePrefixes: ['/portfolio', '/blog'],
+                items: [
+                    { href: '/portfolio', label: t('items.portfolioTitle'), desc: t('items.portfolioDesc') },
+                    { href: '/blog', label: t('items.blogTitle'), desc: t('items.blogDesc') },
+                ],
+            },
+            {
+                id: 'company',
+                label: t('groups.company'),
+                href: '/about',
+                activePrefixes: ['/about'],
+                items: [
+                    { href: '/about', label: t('items.aboutTitle'), desc: t('items.aboutDesc') },
+                    { href: '/#values', label: t('items.valuesTitle'), desc: t('items.valuesDesc') },
+                ],
+            },
+        ]
+    }, [t, tp])
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 40)
+        onScroll()
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
     }, [])
+
+    useEffect(() => {
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setOpenDropdown(null)
+                setMobileOpen(false)
+            }
+        }
+        const onClickOutside = (event: MouseEvent) => {
+            if (navRef.current && !navRef.current.contains(event.target as Node)) {
+                setOpenDropdown(null)
+            }
+        }
+        document.addEventListener('keydown', onKeyDown)
+        document.addEventListener('mousedown', onClickOutside)
+        return () => {
+            document.removeEventListener('keydown', onKeyDown)
+            document.removeEventListener('mousedown', onClickOutside)
+        }
+    }, [])
+
+    const isGroupActive = (group: NavGroup) =>
+        group.activePrefixes.some((prefix) => pathname?.startsWith(prefix))
+
+    const isCompactBar = scrolled || !isHomepage
+    const closeAllMenus = () => {
+        setOpenDropdown(null)
+        setMobileOpen(false)
+    }
+
+    const handleItemClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        closeAllMenus()
+        const hashIndex = href.indexOf('#')
+        if (hashIndex === -1) {
+            setPendingSectionHash(null)
+            return
+        }
+
+        const hash = href.slice(hashIndex)
+        setPendingSectionHash(hash)
+
+        if (isHomepage) {
+            event.preventDefault()
+            window.history.pushState(null, '', hash)
+            scrollToPendingOrLocationHash()
+        }
+    }
 
     return (
         <>
             <motion.nav
+                ref={navRef}
                 initial={{ y: -80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-                    scrolled ? 'py-4' : 'py-6'
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+                className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
+                    isCompactBar ? 'py-3' : 'py-5'
                 }`}
             >
                 <div
-                    className="absolute inset-0 transition-all duration-500 pointer-events-none"
+                    className="pointer-events-none absolute inset-0 transition-all duration-300"
                     style={{
-                        background: scrolled ? 'rgba(14,30,48,0.95)' : 'transparent',
-                        backdropFilter: scrolled ? 'blur(20px)' : 'none',
-                        borderBottom: scrolled ? '1px solid rgba(219,201,119,0.12)' : 'none',
-                        boxShadow: scrolled ? '0 4px 40px rgba(0,0,0,0.3)' : 'none',
+                        background: isCompactBar ? 'rgba(14,30,48,0.96)' : 'transparent',
+                        backdropFilter: isCompactBar ? 'blur(20px)' : 'none',
+                        borderBottom: isCompactBar ? '1px solid rgba(219,201,119,0.14)' : 'none',
+                        boxShadow: isCompactBar ? '0 4px 36px rgba(0,0,0,0.32)' : 'none',
                     }}
                 />
 
-                <div className="container-main relative flex items-center justify-between min-h-[78px] md:min-h-[82px]">
-
+                <div
+                    className={`container-main relative flex items-center justify-between gap-4 ${
+                        isCompactBar ? 'min-h-[52px]' : 'min-h-[60px]'
+                    }`}
+                >
                     {/* Logo */}
-                    <a href="#hero" className="flex items-center gap-3 group flex-shrink-0" aria-label="Sundawa Teknologi - Kembali ke beranda">
-                        <div className="relative w-10 h-10">
+                    <Link
+                        href="/"
+                        onClick={closeAllMenus}
+                        className="group flex flex-shrink-0 items-center gap-3 no-underline"
+                        aria-label="Sundawa Teknologi"
+                    >
+                        <div className="relative h-9 w-9">
                             <Image
                                 src="/assets/logo2.png"
                                 alt="Sundawa Teknologi"
                                 fill
-                                className="object-contain p-1"
-                                priority={true}
-                                sizes="40px"
+                                className="object-contain p-0.5"
+                                priority
+                                sizes="36px"
                             />
                         </div>
                         <div>
-                            <div className="font-black text-sm tracking-[0.25em] text-[#F8F8F8] group-hover:text-[#DBC977] transition-colors duration-300 leading-none">
+                            <div className="text-sm leading-none font-black tracking-[0.25em] text-cream transition-colors duration-300 group-hover:text-gold">
                                 SUNDAWA
                             </div>
-                            <div className="text-[9px] font-light tracking-[0.4em] text-[#DBC977]/50 uppercase -mt-0.5">
+                            <div className="-mt-0.5 text-[9px] font-light tracking-[0.4em] text-gold/55 uppercase">
                                 Teknologi
                             </div>
                         </div>
-                    </a>
+                    </Link>
 
-                    {/* Desktop links */}
-                    <div className="hidden md:flex items-center gap-5 lg:gap-7">
-                        {navLinks.map((link, i) => (
-                            <motion.a
-                                key={link.href}
-                                href={link.href}
-                                initial={{ opacity: 0, y: -8 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 + i * 0.05 }}
-                                className="relative text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors duration-300 group"
-                                style={{ color: isLinkActive(link.href) ? '#DBC977' : 'rgba(248,248,248,0.55)' }}
-                                aria-current={isLinkActive(link.href) ? 'true' : undefined}
-                            >
-                                {link.label}
-                                <span
-                                    className="absolute -bottom-1 left-0 h-px bg-[#DBC977] transition-all duration-300"
-                                    style={{ width: isLinkActive(link.href) ? '100%' : '0%' }}
-                                />
-                                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#DBC977]/50 group-hover:w-full transition-all duration-300" />
-                            </motion.a>
-                        ))}
+                    {/* Desktop Categorized Menu */}
+                    <div className="hidden items-center gap-5 lg:flex lg:gap-7">
+                        {navGroups.map((group) => {
+                            const active = isGroupActive(group)
+                            const isOpen = openDropdown === group.id
+                            return (
+                                <div
+                                    key={group.id}
+                                    className="relative"
+                                    onMouseEnter={() => setOpenDropdown(group.id)}
+                                    onMouseLeave={() => setOpenDropdown(null)}
+                                >
+                                    <button
+                                        type="button"
+                                        aria-expanded={isOpen}
+                                        aria-haspopup="true"
+                                        onClick={() => setOpenDropdown(isOpen ? null : group.id)}
+                                        className={`inline-flex cursor-pointer items-center gap-1.5 border-none bg-transparent py-2 text-[11px] font-semibold tracking-[0.16em] uppercase transition-colors duration-200 ${
+                                            active || isOpen ? 'text-gold' : 'text-cream/65 hover:text-gold'
+                                        }`}
+                                    >
+                                        <span>{group.label}</span>
+                                        <ChevronDown
+                                            size={13}
+                                            className={`transition-transform duration-200 ${
+                                                isOpen ? 'rotate-180 text-gold' : 'opacity-70'
+                                            }`}
+                                            aria-hidden="true"
+                                        />
+                                    </button>
 
-                        {/* Language toggle — desktop */}
-                        <LangToggle />
+                                    <AnimatePresence>
+                                        {isOpen && (
+                                            <motion.div
+                                                key={group.id}
+                                                initial={{ opacity: 0, y: 6 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: 4 }}
+                                                transition={{ duration: 0.16 }}
+                                                className="absolute top-full left-0 z-50 pt-1.5"
+                                            >
+                                                <div
+                                                    className={`border border-gold/25 bg-navy/98 p-2 shadow-2xl backdrop-blur-xl ${
+                                                        group.id === 'products' ? 'w-[340px]' : 'w-[300px]'
+                                                    }`}
+                                                    style={{ boxShadow: '0 20px 50px rgba(0,0,0,0.55)' }}
+                                                >
+                                                    <div className="flex flex-col gap-0.5">
+                                                        {group.items.map((item, idx) => (
+                                                            <Link
+                                                                key={`${item.href}-${idx}`}
+                                                                href={item.href}
+                                                                scroll={!item.href.includes('#')}
+                                                                onClick={(event) => handleItemClick(event, item.href)}
+                                                                className={`group/item flex items-start gap-3 px-3 py-2.5 no-underline transition-colors duration-150 hover:bg-dark-slate/70 ${
+                                                                    idx === 0 && group.id === 'products'
+                                                                        ? 'mb-1 border-b border-gold/15 pb-3'
+                                                                        : ''
+                                                                }`}
+                                                            >
+                                                                {item.badge && (
+                                                                    <span className="mt-0.5 border border-gold/30 bg-gold/10 px-1.5 py-0.5 text-[0.55rem] font-extrabold text-gold">
+                                                                        {item.badge}
+                                                                    </span>
+                                                                )}
+                                                                <div className="min-w-0 flex-1">
+                                                                    <div className="flex items-center justify-between gap-2 text-xs font-bold text-cream transition-colors group-hover/item:text-gold">
+                                                                        <span className="truncate">{item.label}</span>
+                                                                        <ArrowUpRight
+                                                                            size={12}
+                                                                            className="flex-shrink-0 text-gold/0 transition-colors group-hover/item:text-gold"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    </div>
+                                                                    {item.desc && (
+                                                                        <p className="mt-0.5 text-[0.68rem] leading-snug font-light text-cream/50">
+                                                                            {item.desc}
+                                                                        </p>
+                                                                    )}
+                                                                </div>
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            )
+                        })}
                     </div>
 
-                    {/* Mobile: lang toggle + hamburger */}
-                    <div className="md:hidden flex items-center gap-3">
+                    {/* Right Actions */}
+                    <div className="hidden items-center gap-3 lg:flex">
+                        <LangToggle />
+                        <Link
+                            href="/contact"
+                            onClick={closeAllMenus}
+                            className={`inline-flex items-center gap-1.5 px-4 py-2 text-[10px] font-black tracking-[0.18em] uppercase no-underline transition-all duration-200 ${
+                                pathname === '/contact'
+                                    ? 'border border-gold bg-transparent text-gold'
+                                    : 'border border-gold bg-gold text-navy hover:shadow-[0_0_24px_rgba(219,201,119,0.4)]'
+                            }`}
+                        >
+                            <span>{t('getInTouch')}</span>
+                            <ArrowUpRight size={12} aria-hidden="true" />
+                        </Link>
+                    </div>
+
+                    {/* Mobile / Tablet Controls */}
+                    <div className="flex items-center gap-3 lg:hidden">
                         <LangToggle />
                         <button
-                            className="relative z-50 w-10 h-10 flex items-center justify-center transition-colors duration-300"
-                            style={{ color: open ? '#DBC977' : 'rgba(248,248,248,0.8)' }}
-                            onClick={() => setOpen(!open)}
+                            type="button"
+                            className="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center border-none bg-transparent transition-colors duration-300"
+                            style={{ color: mobileOpen ? '#DBC977' : 'rgba(248,248,248,0.85)' }}
+                            onClick={() => setMobileOpen(!mobileOpen)}
                             aria-label="Toggle menu"
+                            aria-expanded={mobileOpen}
                         >
                             <AnimatePresence mode="wait">
-                                {open ? (
-                                    <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                                {mobileOpen ? (
+                                    <motion.span
+                                        key="close"
+                                        initial={{ rotate: -90, opacity: 0 }}
+                                        animate={{ rotate: 0, opacity: 1 }}
+                                        exit={{ rotate: 90, opacity: 0 }}
+                                        transition={{ duration: 0.18 }}
+                                    >
                                         <X size={22} />
                                     </motion.span>
                                 ) : (
-                                    <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                                    <motion.span
+                                        key="menu"
+                                        initial={{ rotate: 90, opacity: 0 }}
+                                        animate={{ rotate: 0, opacity: 1 }}
+                                        exit={{ rotate: -90, opacity: 0 }}
+                                        transition={{ duration: 0.18 }}
+                                    >
                                         <Menu size={22} />
                                     </motion.span>
                                 )}
@@ -148,69 +348,83 @@ export default function Navbar() {
                 </div>
             </motion.nav>
 
-            {/* Mobile Menu */}
+            {/* Mobile Categorized Drawer */}
             <AnimatePresence>
-                {open && (
+                {mobileOpen && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="fixed inset-0 z-40 flex flex-col"
+                        transition={{ duration: 0.22 }}
+                        className="fixed inset-0 z-40 flex flex-col overflow-y-auto pt-24 pb-10 lg:hidden"
                         style={{ background: 'rgba(14,30,48,0.98)', backdropFilter: 'blur(24px)' }}
                     >
-                        <div className="absolute inset-0 pointer-events-none" style={{
-                            backgroundImage: `linear-gradient(rgba(219,201,119,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(219,201,119,0.03) 1px, transparent 1px)`,
-                            backgroundSize: '60px 60px',
-                        }} />
+                        <div className="container-main flex flex-1 flex-col gap-3">
+                            {navGroups.map((group, idx) => {
+                                const expanded = openMobileGroup === group.id
+                                return (
+                                    <div key={group.id} className="border border-gold/15 bg-dark-slate/25">
+                                        <button
+                                            type="button"
+                                            onClick={() =>
+                                                setOpenMobileGroup(expanded ? null : group.id)
+                                            }
+                                            aria-expanded={expanded}
+                                            className="flex w-full cursor-pointer items-center justify-between border-none bg-transparent px-4 py-3.5 text-left"
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-[10px] font-extrabold tracking-widest text-gold/55">
+                                                    {String(idx + 1).padStart(2, '0')}
+                                                </span>
+                                                <span className="text-sm font-black tracking-[0.16em] text-cream uppercase">
+                                                    {group.label}
+                                                </span>
+                                            </div>
+                                            <ChevronDown
+                                                size={16}
+                                                className={`text-gold transition-transform duration-200 ${
+                                                    expanded ? 'rotate-180' : ''
+                                                }`}
+                                            />
+                                        </button>
 
-                        <div className="relative flex flex-col items-center justify-center flex-1 gap-2 px-8">
-                            <motion.div
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.05 }}
-                                className="flex items-center gap-3 mb-8"
+                                        {expanded && (
+                                            <div className="flex flex-col border-t border-gold/10 bg-navy/60">
+                                                {group.items.map((item) => (
+                                                    <Link
+                                                        key={item.href}
+                                                        href={item.href}
+                                                        scroll={!item.href.includes('#')}
+                                                        onClick={(event) => handleItemClick(event, item.href)}
+                                                        className="flex items-center justify-between border-b border-cream/[0.05] px-4 py-3 no-underline last:border-b-0"
+                                                    >
+                                                        <div>
+                                                            <div className="text-xs font-bold text-cream">
+                                                                {item.label}
+                                                            </div>
+                                                            {item.desc && (
+                                                                <div className="mt-0.5 text-[0.68rem] text-cream/45">
+                                                                    {item.desc}
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                        <ArrowUpRight size={13} className="flex-shrink-0 text-gold/65" />
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                )
+                            })}
+
+                            <Link
+                                href="/contact"
+                                onClick={closeAllMenus}
+                                className="mt-4 inline-flex w-full items-center justify-center gap-2 bg-gold px-6 py-4 text-xs font-black tracking-[0.22em] text-navy uppercase no-underline"
                             >
-                                <div className="h-px w-8 bg-[#DBC977]/30" />
-                                <span className="text-[9px] font-bold tracking-[0.35em] uppercase text-[#DBC977]/40">Navigation</span>
-                                <div className="h-px w-8 bg-[#DBC977]/30" />
-                            </motion.div>
-
-                            {navLinks.map((link, i) => (
-                                <motion.a
-                                    key={link.href}
-                                    href={link.href}
-                                    initial={{ opacity: 0, x: -24 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -24 }}
-                                    transition={{ delay: 0.08 + i * 0.06 }}
-                                    className="group flex items-center gap-4 py-3 w-full max-w-xs"
-                                    style={{ borderBottom: '1px solid rgba(219,201,119,0.06)', textDecoration: 'none' }}
-                                    onClick={() => setOpen(false)}
-                                >
-                                    <span className="text-[10px] font-bold tracking-widest text-[#DBC977]/30 w-5 text-right">
-                                        {String(i + 1).padStart(2, '0')}
-                                    </span>
-                                    <span
-                                        className="text-xl font-black tracking-widest uppercase transition-colors duration-300 group-hover:text-[#DBC977]"
-                                        style={{ color: 'rgba(248,248,248,0.75)' }}
-                                    >
-                                        {link.label}
-                                    </span>
-                                </motion.a>
-                            ))}
-
-                            <motion.a
-                                href="#contact"
-                                initial={{ opacity: 0, y: 16 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.5 }}
-                                className="mt-10 block mx-auto w-full max-w-[260px] text-center px-10 py-4 rounded-2xl font-black tracking-[0.25em] text-sm transition-all duration-300"
-                                style={{ background: '#DBC977', color: '#0E1E30', boxShadow: '0 10px 30px rgba(219, 201, 119, 0.3)' }}
-                                onClick={() => setOpen(false)}
-                            >
-                                {t('getInTouch')}
-                            </motion.a>
+                                <span>{t('getInTouch')}</span>
+                                <ArrowUpRight size={15} aria-hidden="true" />
+                            </Link>
                         </div>
                     </motion.div>
                 )}

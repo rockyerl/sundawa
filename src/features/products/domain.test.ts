@@ -61,8 +61,33 @@ describe('products catalog and case studies', () => {
         expect(adjLast.next).toBeNull()
     })
 
-    it('maintains 100% i18n key parity between id.json and en.json for products and nav/meta', () => {
+    it('maintains 100% i18n key parity between id.json and en.json for products, nav, about, contact, and meta', () => {
         expect(collectLeafKeys(idMessages.nav).sort()).toEqual(collectLeafKeys(enMessages.nav).sort())
+        expect(collectLeafKeys(idMessages.about).sort()).toEqual(collectLeafKeys(enMessages.about).sort())
+        expect(collectLeafKeys(idMessages.aboutPage).sort()).toEqual(
+            collectLeafKeys(enMessages.aboutPage).sort(),
+        )
+        expect(collectLeafKeys(idMessages.services).sort()).toEqual(
+            collectLeafKeys(enMessages.services).sort(),
+        )
+        expect(collectLeafKeys(idMessages.footer).sort()).toEqual(
+            collectLeafKeys(enMessages.footer).sort(),
+        )
+
+        for (const [locale, tree] of [
+            ['id', idMessages],
+            ['en', enMessages],
+        ] as const) {
+            const rawJson = JSON.stringify(tree)
+            expect(rawJson, `${locale} must not contain invalid {{mustache}} ICU tokens`).not.toContain('{{')
+            expect(rawJson, `${locale} must not escape ICU variables inside single quotes`).not.toMatch(/'\{[a-zA-Z0-9_]+\}'/)
+        }
+        expect(collectLeafKeys(idMessages.contact).sort()).toEqual(
+            collectLeafKeys(enMessages.contact).sort(),
+        )
+        expect(collectLeafKeys(idMessages.contactPage).sort()).toEqual(
+            collectLeafKeys(enMessages.contactPage).sort(),
+        )
         expect(collectLeafKeys(idMessages.meta).sort()).toEqual(collectLeafKeys(enMessages.meta).sort())
         expect(collectLeafKeys(idMessages.products).sort()).toEqual(
             collectLeafKeys(enMessages.products).sort(),

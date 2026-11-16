@@ -46,7 +46,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                 <div className="container-main">
                     {/* Header */}
                     <div className="mb-12">
-                        <p className="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-[#00F0FF]/60 mb-4">
+                        <p className="mb-4 text-[0.72rem] font-bold tracking-[0.2em] text-sky uppercase">
                             {service.problem}
                         </p>
                         <h1 className="font-black text-[clamp(1.8rem,3vw,2.5rem)] text-cream leading-tight mb-4">
@@ -76,13 +76,13 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                     </div>
 
                     {/* CTA */}
-                    <div className="p-8 bg-gold/[0.03] border border-gold/[0.15] rounded-xl text-center mb-12">
-                        <h3 className="font-bold text-xl text-cream mb-3">
+                    <div className="mb-12 border border-gold/20 bg-gold/[0.03] p-8 text-center">
+                        <h3 className="mb-4 text-xl font-bold text-cream">
                             {t('ctaContact')}
                         </h3>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-[#00F0FF] to-[#1E3A8A] rounded-md text-[#0A192F] text-sm font-extrabold tracking-[0.1em] uppercase no-underline"
+                            className="inline-flex items-center gap-2 bg-gold px-6 py-3.5 text-xs font-black tracking-[0.16em] text-navy uppercase no-underline transition-shadow hover:shadow-[0_0_24px_rgba(219,201,119,0.4)]"
                         >
                             {t('ctaContact')}
                         </Link>

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import type { Post } from '@/lib/types'
 import { SubpageNav } from '@/src/shared/ui'
 import BlogCard from './BlogCard'
@@ -18,12 +19,11 @@ interface BlogArchiveProps {
         empty: string
         readMore: string
         searchPlaceholder: string
-        searchNoResults: string
-        searchResultsCount: string
     }
 }
 
 export default function BlogArchive({ posts, initialQuery, translations }: BlogArchiveProps) {
+    const tBlog = useTranslations('blog')
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
@@ -91,6 +91,8 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                 <div className="max-w-xl mx-auto mb-8 md:mb-10">
                     <div className="relative">
                         <input
+                            id="blog-search"
+                            name="q"
                             type="text"
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
@@ -114,9 +116,10 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                     {isSearching && (
                         <p className="mt-3 text-xs text-[#F8F8F8]/40 text-center">
                             {filteredPosts.length > 0
-                                ? translations.searchResultsCount
-                                    .replace('{{count}}', String(filteredPosts.length))
-                                    .replace('{{query}}', query.trim())
+                                ? tBlog('searchResultsCount', {
+                                      count: filteredPosts.length,
+                                      query: effectiveQuery,
+                                  })
                                 : ''}
                         </p>
                     )}
@@ -129,7 +132,7 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                     >
                         <p className="text-sm text-[#F8F8F8]/50">
                             {isSearching
-                                ? translations.searchNoResults.replace('{{query}}', query.trim())
+                                ? tBlog('searchNoResults', { query: effectiveQuery })
                                 : translations.empty}
                         </p>
                     </div>

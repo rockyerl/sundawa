@@ -1,7 +1,9 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/src/i18n/navigation'
 
 export default function AboutSection() {
     const t = useTranslations('about')
@@ -57,6 +59,21 @@ export default function AboutSection() {
                                 &ldquo;{t('quote')}&rdquo;
                             </p>
                         </motion.blockquote>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.7, delay: 0.7 }}
+                            className="mt-8"
+                        >
+                            <Link
+                                href="/about"
+                                className="inline-flex items-center gap-2 border border-gold/35 bg-gold/[0.06] px-5 py-3 text-xs font-extrabold tracking-[0.16em] text-gold uppercase no-underline transition-colors duration-200 hover:border-gold hover:bg-gold hover:text-navy"
+                            >
+                                <span>{t('ctaAboutPage')}</span>
+                                <ArrowRight size={14} aria-hidden="true" />
+                            </Link>
+                        </motion.div>
                     </div>
 
                     {/* Right — Mission stepper / journey */}

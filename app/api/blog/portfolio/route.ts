@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
+import { requireAdminAuth } from '@/lib/adminAuth'
 import { supabase } from '@/lib/supabase'
 import { isPortfolioProject } from '@/lib/types'
 
@@ -38,7 +39,10 @@ export async function GET(request: Request) {
     })
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+    const unauthorized = requireAdminAuth(request)
+    if (unauthorized) return unauthorized
+
     try {
         const body = await request.json()
         const { name, slug, num, initials, type, desc, confidential, challenge, architecture, role, impact, main_image_url } = body
@@ -85,7 +89,10 @@ export async function POST(request: Request) {
     }
 }
 
-export async function PUT(request: Request) {
+export async function PUT(request: NextRequest) {
+    const unauthorized = requireAdminAuth(request)
+    if (unauthorized) return unauthorized
+
     try {
         const { searchParams } = new URL(request.url)
         const id = searchParams.get('id')
@@ -138,7 +145,10 @@ export async function PUT(request: Request) {
     }
 }
 
-export async function DELETE(request: Request) {
+export async function DELETE(request: NextRequest) {
+    const unauthorized = requireAdminAuth(request)
+    if (unauthorized) return unauthorized
+
     const { searchParams } = new URL(request.url)
     const id = searchParams.get('id')
     if (!id) {

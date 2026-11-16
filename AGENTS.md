@@ -41,6 +41,9 @@ sundawa-web/
 │   │   ├── services/             # Services listing & detail
 │   │   │   ├── page.tsx          # Thin route adapter — renders <ServicesPage />
 │   │   │   └── [slug]/page.tsx   # Thin route adapter — renders <ServiceDetail />
+│   │   ├── products/             # Sundawa products archive & deep case studies
+│   │   │   ├── page.tsx          # Thin route adapter — renders <ProductsArchive />
+│   │   │   └── [slug]/page.tsx   # Thin route adapter — renders <ProductDetail />
 │   │   ├── about/                # About company page
 │   │   │   └── page.tsx          # Thin route adapter — renders <AboutPage />
 │   │   ├── contact/              # Contact form page
@@ -131,9 +134,28 @@ sundawa-web/
 │   │   │   │   ├── ServicesPage.tsx      # Services grid listing
 │   │   │   │   └── ServiceDetail.tsx     # Single service detail page
 │   │   │   └── index.ts          # Public exports for the services feature
+│   │   ├── products/             # Sundawa proprietary products & case studies
+│   │   │   ├── components/
+│   │   │   │   ├── ProductsSection.tsx   # Homepage showcase + category filters
+│   │   │   │   ├── ProductCard.tsx       # Product card with modules & live link
+│   │   │   │   ├── ProductCategoryFilter.tsx # Shared category filter bar
+│   │   │   │   ├── ProductCaseStudiesSpotlight.tsx # On-page case study switcher
+│   │   │   │   ├── ProductCaseStudyDialog.tsx # Accessible case study modal
+│   │   │   │   ├── ProductsArchive.tsx   # Subpage catalog (/products)
+│   │   │   │   └── ProductDetail.tsx     # Full case study route (/products/[slug])
+│   │   │   ├── data.ts           # Canonical PRODUCT_SPECS catalog (6 products)
+│   │   │   ├── domain.ts         # Filters, mappers, adjacency, slug lookup
+│   │   │   ├── domain.test.ts    # Unit & i18n parity contract tests (4 tests)
+│   │   │   ├── types.ts          # Product & case study types
+│   │   │   └── index.ts          # Public exports for the products feature
 │   │   ├── about/                # About company page feature
 │   │   │   ├── components/
-│   │   │   │   └── AboutPage.tsx         # About page with missions, values, stats
+│   │   │   │   ├── AboutPage.tsx         # Executive company showcase
+│   │   │   │   ├── AboutSectionHeader.tsx
+│   │   │   │   ├── CeoGreetingSpread.tsx # CEO portrait + Stoic epigraph + greeting
+│   │   │   │   └── LeadershipShowcase.tsx# 3 leadership portrait cards
+│   │   │   ├── team.ts           # Leadership & studio avatar image paths
+│   │   │   ├── team.test.ts      # Asset existence & copy parity tests (2 tests)
 │   │   │   └── index.ts          # Public exports for the about feature
 │   │   └── contact/              # Contact form feature
 │   │       ├── components/
@@ -145,7 +167,8 @@ sundawa-web/
 │   │       ├── Introloader.tsx   # Loading splash animation
 │   │       ├── LangToggle.tsx    # Locale switcher
 │   │       ├── Pagetransition.tsx# Page route transition wrapper
-│   │       ├── SubpageNav.tsx    # Reusable subpage navigation header (back + title)
+│   │       ├── SubpageNav.tsx    # Contextual subpage breadcrumb header (back + title)
+│   │       ├── Footer.tsx        # Enterprise corporate footer (PT identity, links, contacts)
 │   │       ├── GoogleAnalytics.tsx # Google Analytics & GTM script injection
 │   │       ├── SkipLink.tsx      # Skip navigation link for accessibility
 │   │       ├── PWARegister.tsx   # Service worker registration
@@ -156,6 +179,10 @@ sundawa-web/
 │       ├── request.ts            # Server request configuration for messages
 │       └── navigation.ts         # Wrapped Link, useRouter, usePathname
 ├── lib/                          # Core infrastructure, Supabase, SEO & utils
+│   ├── adminAuth.ts              # HMAC admin session cookie signing & route auth guard
+│   ├── adminAuth.test.ts         # Unit tests for admin session tokens (2 tests)
+│   ├── contact.ts                # Single source of truth for official contact & WhatsApp/mailto helpers
+│   ├── contact.test.ts           # Unit tests for company contact constants & URL builders
 │   ├── env.ts                    # Fail-fast env validation (Supabase + ADMIN_PASSWORD)
 │   ├── supabase.ts               # Configured Supabase client
 │   ├── types.ts                  # Post interface & isPost type guard
@@ -289,18 +316,17 @@ sundawa-web/
 - **Headers**: `next.config.ts` configures `Cache-Control` for `/sw.js` (no-cache) and `/manifest.json` (1 hour cache).
 
 ### 3.12. SEO & Structured Data
-- **Metadata**: `lib/Seo.ts` provides `pageMetadata()` for 8 page keys (home, outsource, process, blog, portfolio, contact, about, services) with canonical URLs, hreflang, Open Graph, and Twitter cards.
-- **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) plus dynamic blog post slugs AND portfolio project slugs from Supabase.
-- **Structured Data (JSON-LD)**: Layout injects Organization + WebSite schema with ContactPoint and SearchAction. Blog posts include BlogPosting schema.
+- **Metadata**: `lib/Seo.ts` provides `pageMetadata()` for 9 page keys (home, outsource, process, blog, portfolio, contact, about, services, products) with canonical URLs, hreflang, Open Graph, and Twitter cards.
+- **Sitemap**: `lib/Sitemap.ts` covers all static pages (home, outsource, proses-kerja, blog, portfolio, services, products, about, contact) plus dynamic blog post slugs, portfolio project slugs, and product detail slugs (`/products/[slug]`).
+- **Structured Data (JSON-LD)**: Layout injects Organization + WebSite schema with ContactPoint and SearchAction. Blog posts include BlogPosting schema; product pages include SoftwareApplication schema.
 - **Google Search Console**: Verification token configured in layout metadata (`verification.google`).
 - **Robots.txt**: Disallows `/offline` and `/admin` paths, allows all other paths.
 - **Open Graph**: `/og-image.png` (1200x630) used for social sharing previews.
 - **Favicons**: `/favicon.ico`, `/favicon-16x16.png`, `/favicon-32x32.png`, `/apple-touch-icon.png` generated from logo.
 
-### 3.13. Shared UI Components
-- `SubpageNav` in `src/shared/ui/SubpageNav.tsx` is the standard back-navigation header for all subpages (`/blog`, `/portfolio`, `/services`, `/about`, `/contact`, `/outsource`, `/proses-kerja`).
-- It accepts `backLabel` (button label) and `titleLabel` (page title) as string props.
-- `BlogArchive`, `PortfolioArchive`, `ServicesPage`, `AboutPage`, `ContactPage`, and `ProcessSection` all consume `SubpageNav`.
+### 3.13. Shared UI Components & Navigation
+- `Navbar` (`src/features/home/components/Navbar.tsx`) is mounted site-wide in `app/[locale]/layout.tsx` with 4 categorized dropdown groups (`Solusi`, `Produk`, `Karya & Insight`, `Tentang`) + a dedicated Contact CTA (`/contact`) and mobile accordion drawer.
+- `SubpageNav` in `src/shared/ui/SubpageNav.tsx` serves as a contextual secondary back-navigation breadcrumb strip directly below the fixed `Navbar` across subpages (`/blog`, `/portfolio`, `/services`, `/products`, `/about`, `/contact`, `/outsource`, `/proses-kerja`).
 - `GoogleAnalytics` in `src/shared/ui/GoogleAnalytics.tsx` injects GA4/GTM scripts conditionally when env vars are set.
 - `SkipLink` in `src/shared/ui/SkipLink.tsx` provides skip navigation for keyboard users (WCAG 2.1 AA).
 - `PWARegister` in `src/shared/ui/PWARegister.tsx` registers the service worker on mount.
@@ -333,7 +359,7 @@ Before submitting any changes, always execute:
 ```bash
 npm.cmd run check
 ```
-This runs ESLint, TypeScript compiler verification, and the Vitest test suite (6 suites, 17 tests).
+This runs ESLint, TypeScript compiler verification, and the Vitest test suite (10 suites, 27 tests).
 
 ### Known Issues
 - **Turbopack build panic**: `npm run build` may fail with a Turbopack internal panic on `app/globals.css` in Next.js 16.2.7. This is a known upstream bug — not a code issue. The dev server works fine; use `npm run check` as the quality gate, not `npm run build`.

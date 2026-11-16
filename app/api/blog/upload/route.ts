@@ -1,8 +1,12 @@
 import { randomUUID } from 'node:crypto'
 import { NextRequest, NextResponse } from 'next/server'
+import { requireAdminAuth } from '@/lib/adminAuth'
 import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
+    const unauthorized = requireAdminAuth(request)
+    if (unauthorized) return unauthorized
+
     const formData = await request.formData()
     const file = formData.get('file')
 

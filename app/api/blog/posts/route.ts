@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { requireAdminAuth } from '@/lib/adminAuth'
 import { supabase } from '@/lib/supabase'
 
 // GET - List all posts
@@ -17,6 +18,9 @@ export async function GET() {
 
 // POST - Create a new post
 export async function POST(request: NextRequest) {
+    const unauthorized = requireAdminAuth(request)
+    if (unauthorized) return unauthorized
+
     const body = await request.json()
     const { title, slug, excerpt, body_html, main_image_url, published_at } = body
 
@@ -42,6 +46,9 @@ export async function POST(request: NextRequest) {
 
 // PUT - Update an existing post
 export async function PUT(request: NextRequest) {
+    const unauthorized = requireAdminAuth(request)
+    if (unauthorized) return unauthorized
+
     const { searchParams } = new URL(request.url)
     const id = searchParams.get('id')
 
@@ -76,6 +83,9 @@ export async function PUT(request: NextRequest) {
 
 // DELETE - Delete a post
 export async function DELETE(request: NextRequest) {
+    const unauthorized = requireAdminAuth(request)
+    if (unauthorized) return unauthorized
+
     const { searchParams } = new URL(request.url)
     const id = searchParams.get('id')
 

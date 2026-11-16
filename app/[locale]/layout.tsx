@@ -4,7 +4,9 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/src/i18n/routing'
 import { SITE_URL, SITE_NAME } from '@/lib/Seo'
-import { GoogleAnalytics, InstallPrompt, IntroLoader, PageTransition, PWARegister, SkipLink } from '@/src/shared/ui'
+import { COMPANY_CONTACT } from '@/lib/contact'
+import { Navbar } from '@/src/features/home'
+import { Footer, GoogleAnalytics, InstallPrompt, IntroLoader, PageTransition, PWARegister, SkipLink } from '@/src/shared/ui'
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
@@ -89,8 +91,8 @@ export default async function LocaleLayout({ children, params }: Props) {
                 logo: `${SITE_URL}/assets/logo2.png`,
                 image: `${SITE_URL}/og-image.png`,
                 description: t('description'),
-                email: 'sundawateknologi@gmail.com',
-                telephone: '+6287893355332',
+                email: COMPANY_CONTACT.email,
+                telephone: COMPANY_CONTACT.phoneSchema,
                 address: {
                     '@type': 'PostalAddress',
                     addressLocality: 'Bandung',
@@ -99,10 +101,10 @@ export default async function LocaleLayout({ children, params }: Props) {
                     // streetAddress: '...', postalCode: '...'  <- add the real office address; it matters most for local SEO
                 },
                 areaServed: 'ID',
-                sameAs: ['https://www.linkedin.com/company/sundawa-teknologi-indonesia'],
+                sameAs: [COMPANY_CONTACT.linkedinUrl],
                 contactPoint: {
                     '@type': 'ContactPoint',
-                    telephone: '+6287893355332',
+                    telephone: COMPANY_CONTACT.phoneSchema,
                     contactType: 'customer service',
                     areaServed: 'ID',
                     availableLanguage: ['id', 'en'],
@@ -133,11 +135,13 @@ export default async function LocaleLayout({ children, params }: Props) {
             <GoogleAnalytics />
             <IntroLoader />
             <SkipLink />
+            <Navbar />
             <PWARegister />
             <InstallPrompt />
             <div id="main-content">
                 <PageTransition>{children}</PageTransition>
             </div>
+            <Footer />
         </NextIntlClientProvider>
     )
 }

@@ -114,7 +114,7 @@ export default function ServicesSection() {
                                         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.1rem' }}>
                                             <button
                                                 onClick={() => setSelected(i)}
-                                                aria-label="Lihat detail"
+                                                aria-label={t('viewDetail')}
                                                 style={{ width: 36, height: 36, border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer', padding: 0 }}
                                             >
                                                 <ArrowUpRight size={13} />
@@ -155,7 +155,7 @@ export default function ServicesSection() {
 
                             <button
                                 onClick={() => setSelected(null)}
-                                aria-label="Tutup"
+                                aria-label={t('close')}
                                 style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', width: 36, height: 36, border: '1px solid rgba(248,248,248,0.1)', background: 'transparent', color: 'rgba(248,248,248,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                             >
                                 <X size={14} />

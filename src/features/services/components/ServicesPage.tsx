@@ -81,7 +81,7 @@ export default function ServicesPage() {
                                 >
                                     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', marginBottom: '1rem' }}>
                                         <div>
-                                            <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(0,240,255,0.6)', marginBottom: '0.5rem' }}>
+                                            <p className="mb-2 text-[0.65rem] font-bold tracking-[0.15em] text-sky uppercase">
                                                 {service.problem}
                                             </p>
                                             <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#F8F8F8', lineHeight: 1.3 }}>

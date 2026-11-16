@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="400" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#142840" />
+      <stop offset="60%" stop-color="#0B1929" />
+      <stop offset="100%" stop-color="#07111D" />
+    </linearGradient>
+    <radialGradient id="halo3" cx="50%" cy="34%" r="48%">
+      <stop offset="0%" stop-color="#DBC977" stop-opacity="0.2" />
+      <stop offset="65%" stop-color="#A66A2C" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0B1929" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="suit3" x1="200" y1="270" x2="200" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E3755" />
+      <stop offset="100%" stop-color="#0A1625" />
+    </linearGradient>
+    <linearGradient id="goldLine3" x1="120" y1="80" x2="280" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F3E5A5" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#A66A2C" stop-opacity="0.5" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg3)" />
+  <rect width="400" height="500" fill="url(#halo3)" />
+  <!-- Balanced operational compass geometry -->
+  <g stroke="#DBC977" stroke-opacity="0.09" stroke-width="1">
+    <line x1="0" y1="125" x2="400" y2="125" />
+    <line x1="0" y1="250" x2="400" y2="250" />
+    <line x1="0" y1="375" x2="400" y2="375" />
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <circle cx="200" cy="188" r="108" stroke-opacity="0.2" />
+    <rect x="115" y="103" width="170" height="170" transform="rotate(45 200 188)" stroke-opacity="0.14" />
+  </g>
+  <!-- Editorial bust silhouette (COO tailored executive blazer) -->
+  <g>
+    <path d="M64 500C70 392 114 328 168 308L200 364L232 308C286 328 330 392 336 500H64Z" fill="url(#suit3)" stroke="url(#goldLine3)" stroke-width="1.5" />
+    <path d="M170 308L200 390L230 308" stroke="#DBC977" stroke-opacity="0.45" stroke-width="1.2" fill="#0E1E30" />
+    <path d="M176 258V306C176 318 224 318 224 306V258H176Z" fill="#172D47" stroke="#DBC977" stroke-opacity="0.35" stroke-width="1.2" />
+    <ellipse cx="200" cy="190" rx="51" ry="65" fill="#18304B" stroke="url(#goldLine3)" stroke-width="1.8" />
+    <!-- Minimalist neutral silhouette crown -->
+    <path d="M148 224C144 150 166 116 200 116C234 116 256 150 252 224C244 176 230 148 200 148C170 148 156 176 148 224Z" fill="#DBC977" fill-opacity="0.16" stroke="#DBC977" stroke-opacity="0.45" stroke-width="1.2" />
+  </g>
+  <g stroke="#DBC977" stroke-opacity="0.5" stroke-width="1.5">
+    <path d="M20 36V20H36" />
+    <path d="M364 20H380V36" />
+    <path d="M20 464V480H36" />
+    <path d="M364 480H380V464" />
+  </g>
+</svg>

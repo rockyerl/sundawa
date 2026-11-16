@@ -8,7 +8,33 @@
     "clients": "Clients",
     "blog": "Blog",
     "contact": "Contact",
-    "getInTouch": "GET IN TOUCH"
+    "getInTouch": "GET IN TOUCH",
+    "groups": {
+      "solutions": "Solutions",
+      "products": "Products",
+      "work": "Work & Insights",
+      "company": "Company"
+    },
+    "items": {
+      "servicesTitle": "Engineering Services",
+      "servicesDesc": "Legacy modernization, AI automation, ERP & custom platforms",
+      "processTitle": "How We Work",
+      "processDesc": "6 transparent sprint stages with full source code ownership",
+      "outsourceTitle": "IT Outsource Calculator",
+      "outsourceDesc": "Estimate monthly rates for developers, QA, DevOps & PMs",
+      "techTitle": "Technology Stack",
+      "techDesc": "Core production technologies our engineering teams master",
+      "allProductsTitle": "All Products & Case Studies",
+      "allProductsDesc": "Explore 6 SaaS, mobility, and enterprise platforms by Sundawa",
+      "portfolioTitle": "Client Project Portfolio",
+      "portfolioDesc": "Client case studies across banking, defense health & public sector",
+      "blogTitle": "Articles & Insights",
+      "blogDesc": "Engineering insights on system modernization and automation",
+      "aboutTitle": "About Sundawa",
+      "aboutDesc": "PT Sundawa Teknologi Indonesia profile, vision, values & leadership",
+      "valuesTitle": "Operational Transformation",
+      "valuesDesc": "How fragmented operations turn into dependable systems"
+    }
   },
   "hero": {
     "badge": "Software Modernization & Automation",
@@ -44,6 +70,7 @@
     "p1": "You need people who can understand why the system is failing, decide what should change, build it without creating another layer of complexity, and stay responsible after launch.",
     "p2": "We start with how your business actually operates — not with a preferred framework or a prepackaged solution.",
     "quote": "Software your team stops fighting with.",
+    "ctaAboutPage": "Company Profile & Leadership",
     "missions": [
       {
         "num": "01",
@@ -142,6 +169,8 @@
     "ctaOutsource": "View Pricing Estimate",
     "ctaProcess": "See How We Work",
     "outcomeLabel": "Outcome",
+    "viewDetail": "View details",
+    "close": "Close",
     "transition": "And these aren't capabilities we added to a sales page. They're the kind of systems we've already been trusted to build.",
     "items": [
       {
@@ -545,6 +574,7 @@
   },
   "contact": {
     "label": "Get In Touch",
+    "ctaForm": "Open Inquiry Form",
     "readyToStart": "Ready to fix what's broken?",
     "line1": "FIX WHAT'S",
     "line2": "SLOWING",
@@ -706,8 +736,8 @@
     "backToBlog": "Back to Blog",
     "empty": "No blog posts yet. Stay tuned for updates!",
     "searchPlaceholder": "Search articles...",
-    "searchNoResults": "No results for '{{query}}'",
-    "searchResultsCount": "{{count}} results for '{{query}}'"
+    "searchNoResults": "No results for \"{query}\"",
+    "searchResultsCount": "{count} results for \"{query}\""
   },
   "portfolio": {
     "navBack": "Back",
@@ -727,78 +757,232 @@
   "contactPage": {
     "navBack": "Back",
     "navTitle": "Contact Us",
-    "eyebrow": "Contact",
+    "eyebrow": "Official Contact",
     "title": "Let's Discuss Your Needs",
-    "subtitle": "Tell us about the system or workflow you want to improve. We'll help determine the right solution.",
+    "subtitle": "Tell us about the system, product demo, or engineering team capacity you need. We keep communication clear from the very first conversation.",
+    "topicLabel": "Consultation Topic",
+    "topics": [
+      "Legacy System Modernization",
+      "Automation & Data Integration",
+      "Sundawa Product Demo",
+      "IT Team Outsourcing",
+      "General Inquiry"
+    ],
     "name": "Full Name",
     "email": "Email",
-    "company": "Company",
-    "message": "Message",
+    "company": "Company / Organization",
+    "message": "Tell Us About Your Project",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "email@company.com",
-    "companyPlaceholder": "Company name (optional)",
-    "messagePlaceholder": "Tell us about the system or workflow you want to improve...",
-    "submit": "Send Message",
-    "submitting": "Sending...",
-    "success": "Your message has been sent successfully. We'll get back to you within 24 hours.",
-    "error": "Failed to send message. Please try again or contact us directly via WhatsApp.",
-    "whatsapp": "Or contact us directly via WhatsApp",
-    "emailLabel": "Email",
-    "phoneLabel": "Phone",
+    "companyPlaceholder": "Company or institution name (optional)",
+    "messagePlaceholder": "Describe the workflow, system bottleneck, or Sundawa product you would like to discuss...",
+    "submit": "Send via WhatsApp",
+    "submitEmail": "Send via Email",
+    "submitting": "Preparing...",
+    "success": "WhatsApp has opened with your message draft. You can also send it via email anytime.",
+    "error": "Unable to open the draft. Please reach out directly using our official email or WhatsApp details.",
+    "whatsapp": "Or chat directly with the Sundawa team",
+    "whatsappButton": "WhatsApp Chat (0823 1808 7980)",
+    "emailLabel": "Official Email",
+    "emailDesc": "Response within 24 business hours",
+    "phoneLabel": "Phone / WhatsApp",
+    "phoneDesc": "Mon–Fri, 9:00 AM–6:00 PM WIB",
+    "linkedinLabel": "LinkedIn",
+    "linkedinDesc": "PT Sundawa Teknologi Indonesia",
     "addressLabel": "Location",
     "addressValue": "Bandung, West Java, Indonesia"
   },
   "aboutPage": {
     "navBack": "Back",
     "navTitle": "About Us",
-    "eyebrow": "About Sundawa",
-    "title": "More Than Just a Team That Writes Code",
-    "subtitle": "We understand why systems fail, determine what needs to change, build it without adding complexity, and stay accountable after launch.",
-    "mission": {
-      "label": "Our Mission",
+    "eyebrow": "PT Sundawa Teknologi Indonesia",
+    "slogan": "Professional Precision, Customer Comfort",
+    "title": "About Sundawa Teknologi",
+    "profileLabel": "Company Profile",
+    "subtitle": "PT Sundawa Teknologi Indonesia is a technology company that designs and develops applications, websites, and information systems for businesses and organizations. We help clients translate operational requirements into practical digital solutions their teams can rely on every day.",
+    "heroCtaPrimary": "Schedule Executive Discussion",
+    "heroCtaSecondary": "Explore Products & Case Studies",
+    "studioCard": {
+      "badge": "Engineering Studio · Bandung, ID",
+      "title": "Precision Engineering for Mission-Critical Systems",
+      "caption": "PT Sundawa Teknologi Indonesia — Built for reliability and operational continuity."
+    },
+    "governance": {
+      "label": "Enterprise Engagement Governance",
+      "heading": "Senior-Led Core Team — Zero Handoff to Random Subcontractors",
+      "ctaProcess": "Inspect 6-Stage Delivery Process",
       "items": [
         {
+          "title": "Direct Principal Involvement",
+          "desc": "Strategic engagements are led directly by our CEO, CTO, and COO alongside our core Bandung engineering team—keeping architecture accountable."
+        },
+        {
+          "title": "Standard NDA From Discovery",
+          "desc": "Mutual non-disclosure protection is ready from the very first scoping call to safeguard proprietary corporate and institutional data."
+        },
+        {
+          "title": "100% Source Code & IP Ownership",
+          "desc": "Source code, repositories, and technical documentation transfer in full to the client at handover—no hidden vendor lock-in."
+        },
+        {
+          "title": "On-Premise DC/DRC & Local Cloud Ready",
+          "desc": "Systems can deploy into private bank/government data centers (Primary DC + DRC) or compliant local cloud infrastructure."
+        }
+      ]
+    },
+    "criticalSectors": {
+      "label": "Proven Across Regulated & Critical Sectors",
+      "ctaPortfolio": "View Project Track Record",
+      "items": [
+        {
+          "sector": "Banking & Payments",
+          "proof": "LAKUPANDAI Agent Banking, PPOB & EDC Channels"
+        },
+        {
+          "sector": "Defense & Government",
+          "proof": "SI-GEOMEDIK MoD, AHU Copies & Legacy Rebuild"
+        },
+        {
+          "sector": "Healthcare Systems",
+          "proof": "FHIR / ICD-10 Aligned EHR & Oetomo Hospital"
+        },
+        {
+          "sector": "International Organizations",
+          "proof": "DACAR by UNDP Digital Disbursement Platform"
+        },
+        {
+          "sector": "Energy, Utilities & ESG",
+          "proof": "Nawasanga Anti-Fraud & Scope 1 ESG, Power Utility Apps"
+        }
+      ]
+    },
+    "howWeWork": {
+      "label": "How We Work",
+      "heading": "Two Uncompromising Execution Disciplines",
+      "pillars": [
+        {
           "num": "01",
-          "title": "Understand Before Building",
-          "body": "We start from how your business actually works, not from a favorite framework or off-the-shelf solution."
+          "tag": "Engineering Rigor",
+          "title": "Professional Precision",
+          "body": "We begin by understanding your business workflows and user needs. Together with the client, we align on project scope and acceptance criteria—which then guide every phase of design, engineering, and testing before handover.",
+          "checkpoints": [
+            "Deep workflow & user requirement mapping",
+            "Mutual scope & written acceptance criteria",
+            "Strict QA validation prior to handover"
+          ]
         },
         {
           "num": "02",
-          "title": "Preserve What Works",
-          "body": "Modernization doesn't automatically mean rebuilding everything. We keep systems that still serve and replace only what limits the business."
+          "tag": "Partnership Governance",
+          "title": "Customer Comfort",
+          "body": "We make it easy for clients to track project progress and weigh decisions clearly. Whenever changes arise, we communicate their impact on scope and schedule transparently, and follow through on every question and piece of feedback.",
+          "checkpoints": [
+            "Clear visibility across project milestones",
+            "Transparent scope & timeline impact briefing",
+            "Responsive follow-through on client feedback"
+          ]
+        }
+      ]
+    },
+    "visionMission": {
+      "label": "Vision & Mission",
+      "visionLabel": "Company Vision",
+      "vision": "To become the trusted technology partner for companies and organizations across Indonesia in building dependable digital solutions through precise execution and comfortable collaboration.",
+      "missionLabel": "Company Mission",
+      "missions": [
+        {
+          "num": "01",
+          "body": "Understand end-user needs and client business objectives as the foundation of every digital solution design."
+        },
+        {
+          "num": "02",
+          "body": "Uphold delivery quality through clear planning, measurable engineering, and thorough testing prior to handover."
         },
         {
           "num": "03",
-          "title": "Build Based on Measurable Results",
-          "body": "Automation, AI, and software should reduce workload, remove bottlenecks, increase reliability, or unlock new capabilities."
+          "body": "Build lasting partnerships through transparent communication, responsive service, and diligent follow-through on feedback."
         },
         {
           "num": "04",
-          "title": "Stay Accountable After Launch",
-          "body": "We continue running, fixing, and evolving your platform, not disappearing after launch."
+          "body": "Grow team competence and adopt relevant practices and technologies to continuously raise service quality."
         }
       ]
     },
     "values": {
-      "label": "Core Values",
+      "label": "Company Values",
+      "heading": "The Foundation of Sundawa's Culture",
       "items": [
         {
-          "title": "Transparency",
-          "body": "Open communication at every stage, from estimation to launch."
+          "num": "01",
+          "title": "Client Focus",
+          "body": "We anchor project priorities directly to the agreed business outcomes."
         },
         {
-          "title": "Accountability",
-          "body": "We are responsible for results, not just processes."
+          "num": "02",
+          "title": "Care in Service",
+          "body": "We communicate in plain, approachable language and help clients evaluate practical options."
         },
         {
-          "title": "Measurability",
-          "body": "Every decision is based on data and measurable outcomes."
+          "num": "03",
+          "title": "Precision & Reliability",
+          "body": "We document agreements clearly, inspect deliverables thoroughly, and surface risks early."
         },
         {
-          "title": "Collaboration",
-          "body": "We work alongside your team, not replace your team."
+          "num": "04",
+          "title": "Open Collaboration",
+          "body": "We engage both internal engineers and client stakeholders when reviewing deliverables and scope updates."
+        },
+        {
+          "num": "05",
+          "title": "Professionalism",
+          "body": "We safeguard client confidentiality and stand accountable for every decision and deliverable."
+        },
+        {
+          "num": "06",
+          "title": "Innovation & Continuous Improvement",
+          "body": "We refine our workflows based on client feedback and lessons learned from every engagement."
         }
       ]
+    },
+    "leadership": {
+      "label": "Leadership Team",
+      "heading": "Led Directly by Technical & Operational Principals",
+      "avatarBadge": "Leadership",
+      "members": [
+        {
+          "id": "rocky",
+          "name": "Raden Rocky Erlianto",
+          "role": "Chief Executive Officer (CEO)",
+          "bio": "Leads company direction and drives strategic relationships with clients and partners."
+        },
+        {
+          "id": "akbar",
+          "name": "Mochamad Akbar",
+          "role": "Chief Technology Officer (CTO)",
+          "bio": "Directs technical strategy and safeguards engineering quality across Sundawa's solutions."
+        },
+        {
+          "id": "velia",
+          "name": "Velia Aprita Dewi",
+          "role": "Chief Operating Officer (COO)",
+          "bio": "Oversees company operations and coordinates end-to-end project execution."
+        }
+      ]
+    },
+    "ceoGreeting": {
+      "label": "Message from Our CEO",
+      "stoicQuote": {
+        "tag": "Leadership Philosophy · Stoicism",
+        "quote": "If it is not right, do not do it; if it is not true, do not say it.",
+        "author": "Marcus Aurelius — Meditations, XII.17",
+        "bridge": "That Stoic principle guides how I lead execution at Sundawa: focusing calmly on what lies within our engineering control—listening intently, building with precision, and speaking plainly on every risk, scope decision, and handover commitment."
+      },
+      "paragraphs": [
+        "For me, Sundawa's responsibility begins the moment we listen to the challenges our clients face. The people who use a system every day often understand where the bottleneck truly lies. That is why we take time to understand how they work before deciding what needs to be built.",
+        "I want every client to know what we are building, why we recommend each decision, and what to expect in the next milestone. At handover, the system must deliver the exact outcomes we agreed upon together. That is what Professional Precision, Customer Comfort means to me—and the standard we uphold at Sundawa."
+      ],
+      "authorName": "Raden Rocky Erlianto",
+      "authorRole": "Chief Executive Officer, PT Sundawa Teknologi Indonesia"
     },
     "stats": {
       "projects": "Completed Projects",
@@ -807,9 +991,11 @@
       "professionals": "Professionals"
     },
     "cta": {
-      "title": "Interested in Working Together?",
-      "subtitle": "Tell us what's happening. We'll help determine if it needs modernization, integration, automation, or something entirely new.",
-      "button": "Contact Us"
+      "eyebrow": "Strategic & Enterprise Partnerships",
+      "title": "Ready to Discuss Your Organization's Mission-Critical Systems?",
+      "subtitle": "From core modernization to cross-institution platforms — schedule an executive alignment briefing directly with Sundawa's leadership team.",
+      "button": "Contact Leadership Team",
+      "secondaryButton": "Explore Sundawa Products"
     }
   },
   "servicesPage": {
@@ -886,23 +1072,23 @@
       "description": "Insights on system modernization, workflow automation, data integration, and software development from Sundawa Teknologi."
     },
     "portfolio": {
-      "title": "Project Portfolio | Sundawa Teknologi",
+      "title": "Project Portfolio",
       "description": "See our system modernization, automation, and data integration projects completed for clients across Indonesia."
     },
     "contact": {
-      "title": "Contact Us | Sundawa Teknologi",
+      "title": "Contact Us",
       "description": "Ready to discuss system modernization, workflow automation, or IT outsourcing? Free consultation with Sundawa's team."
     },
     "about": {
-      "title": "About Us | Sundawa Teknologi",
-      "description": "Meet Sundawa Teknologi — a Bandung software house specializing in system modernization, automation, and data integration for businesses."
+      "title": "About Us",
+      "description": "Meet PT Sundawa Teknologi Indonesia — Bandung technology partner built on Professional Precision, Customer Comfort."
     },
     "services": {
-      "title": "Our Services | Sundawa Teknologi",
+      "title": "Our Services",
       "description": "Legacy system modernization, AI workflow automation, ERP and data integration, custom business platforms, and managed engineering."
     },
     "products": {
-      "title": "Sundawa Products & Case Studies | Sundawa Teknologi",
+      "title": "Sundawa Products & Case Studies",
       "description": "Explore Sundawa's ecosystem of products — Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, and Abo Rent Car with their case studies."
     }
   },
@@ -948,17 +1134,17 @@
       "inspectSelectedCaseStudy": "Read Case Study"
     },
     "caseStudySection": {
-      "eyebrow": "Product Case Studies",
-      "title": "Real Operational Impact",
-      "subtitle": "Explore the business challenges, system architecture, and measurable outcomes behind all six platforms engineered by Sundawa.",
+      "eyebrow": "Product Case Studies & Architecture",
+      "title": "Challenges, Architecture & Deployment Scenarios",
+      "subtitle": "Explore the operational problems addressed, technical architecture, and showcase use cases published across all six Sundawa ecosystem platforms.",
       "labels": {
         "subject": "Context & User Profile",
         "challenge": "Business Challenge",
         "solution": "Solution & Key Modules",
         "architecture": "Architecture & Security",
-        "impact": "Measurable Outcomes",
-        "highlights": "Key Indicators & Highlights",
-        "scenarios": "Case Studies & Real Scenarios",
+        "impact": "Outcomes & Platform Capabilities",
+        "highlights": "Published Site Highlights",
+        "scenarios": "Platform Use Cases & Illustrative Scenarios",
         "coreModules": "Core Modules",
         "accessNote": "Access Note",
         "liveDomain": "Live Domain",
@@ -971,7 +1157,7 @@
         "sector": "WeddingTech SaaS",
         "tagline": "Luxury of Tradition, Eternity of Love",
         "summary": "A digital wedding assistant crafted for Indonesian traditional weddings—unifying budgets, vendors, QR guest check-ins, and cultural ceremony rundowns in one workspace.",
-        "badgeMetric": "Saved IDR 18M & 60 Prep Hours",
+        "badgeMetric": "6 Core + 3 Nusantara Cultural Modules",
         "modules": [
           "Tasks, Real-Time Budget & Vendor Tracker",
           "Seserahan Tracker & Cultural Rundown",
@@ -983,7 +1169,7 @@
           "challenge": "Planning traditional Indonesian weddings spans dozens of sacred rituals across extended families—from seserahan and siraman to midodareni and panggih—typically scattered across 5+ apps and spreadsheets, leading to budget blowouts and scheduling confusion.",
           "solution": "Sewaka unifies 6 core management modules (Checklists, Real-time Budgets, Vendors, Digital RSVP & QR Check-in, Timelines, Galleries) with 3 cultural modules (Seserahan Tracker, Cultural Rundown, Cultural Encyclopedia) across Free, Premium (IDR 99k/mo), and Enterprise tiers.",
           "architecture": "Next.js SaaS application equipped with Email/Password & Google OAuth authentication, Row-Level Security (RLS) for couple and family workspace isolation, and real-time progress and budget allocation tracking.",
-          "impact": "According to published user case stories on the platform: up to 60 hours saved preparing seserahan, IDR 18 million saved against planned budgets through vendor swaps, and 100% on-schedule Day-H ceremony rundowns.",
+          "impact": "Consolidates vendor tracking, real-time budgets, QR guest invites, and traditional ceremony rundowns in one workspace. Published showcase stories on the Sewaka site illustrate up to 60 preparation hours and IDR 18 million saved.",
           "highlights": [
             "60 hours saved (Rina & Budi · Javanese Custom)",
             "IDR 18M budget saved (Dewi & Andi · Madurese Custom)",
@@ -1120,7 +1306,7 @@
         "sector": "Enterprise ESG & Fuel Anti-Fraud",
         "tagline": "From every corner, one unified view.",
         "summary": "Enterprise intelligence platform for fleet fuel anti-fraud and automated Scope 1 GHG emissions accounting (ISO 14064-1 & POJK 51) built for logistics, heavy mining, plantations, and industrial fleets.",
-        "badgeMetric": "24.6% Fuel Leakage Cut · 3-Min Audit Prep",
+        "badgeMetric": "Fuel Anti-Fraud + Scope 1 ISO 14064 / POJK 51",
         "modules": [
           "Sentinel Diesel Anti-Fraud (AI OCR + Geofence)",
           "IPCC Tier-2 Scope 1 GHG Engine (B35/B40)",
@@ -1132,7 +1318,7 @@
           "challenge": "Diesel theft—fake SPBU receipts, fuel siphoning, and over-tank billing—drains fleet budgets, while manual spreadsheet Scope 1 GHG audits for POJK 51 and ISO 14064-1 take up to 4 months per reporting cycle.",
           "solution": "Nawasanga combines an offline-ready Driver Mobile PWA (20-second receipt & odometer capture) with AI OCR verification, SPBU GPS geofencing, IPCC Tier-2 calculations (including B35/B40 biodiesel factors), and 1-click audit workpapers.",
           "architecture": "Multi-tenant enterprise platform with Row-Level Security, 5-level RBAC, GPS telematics integrations (Geotab, Cartrack, EasyGo), ERP webhooks (SAP/Oracle), and OpenAPI/Swagger endpoints.",
-          "impact": "Featured platform case studies report 24.6% fuel leakage cut (IDR 840M/year saved) & audit prep shrunk from 4 months to 3 minutes at PT Nusantara Logistik Prima (420 trucks), and 14.2% HSD waste reduction (IDR 2.4B/quarter) at PT Borneo Prima Mining (280 units).",
+          "impact": "Unifies SPBU anti-fraud checks, AI OCR, and automated B35/B40 Scope 1 reporting into a single workflow. Showcase use cases published on Nawasanga model up to 24.6% fuel leakage reduction (420 trucks) and 14.2% HSD waste reduction (280 mining units) alongside POJK 51 readiness.",
           "highlights": [
             "IDR 4.8B fuel leakage curbed across 520+ corporate fleets",
             "32,400 Tons CO₂e audited · 100% POJK 51 & SIMPEL pass rate",
@@ -1190,5 +1376,28 @@
         }
       }
     }
+  },
+  "footer": {
+    "legalName": "PT Sundawa Teknologi Indonesia",
+    "motto": "Professional Precision, Customer Comfort",
+    "summary": "Bandung-based technology company designing, modernizing, and operating custom applications, information systems, and digital product platforms.",
+    "location": "Bandung, West Java, Indonesia",
+    "columns": {
+      "solutions": "Solutions",
+      "products": "Product Ecosystem",
+      "company": "Company & Contact"
+    },
+    "links": {
+      "services": "Engineering Services",
+      "process": "Delivery Process (6 Stages)",
+      "outsource": "IT Outsource Calculator",
+      "portfolio": "Project Portfolio",
+      "allProducts": "All Products & Case Studies",
+      "about": "About Sundawa",
+      "blog": "Articles & Insights",
+      "contact": "Consultation Form"
+    },
+    "assurances": "Standard NDA · Full Code Ownership · On-Premise & Cloud",
+    "copyright": "© {year} PT Sundawa Teknologi Indonesia. All rights reserved."
   }
 }

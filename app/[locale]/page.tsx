@@ -6,7 +6,6 @@ import {
     ContactSection,
     FinalCtaSection,
     HeroSection,
-    Navbar,
     ObjectionsSection,
     ParticleField,
     ProblemSection,
@@ -24,7 +23,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <main className="relative noise-bg">
             <ParticleField />
             <div className="relative z-10">
-                <Navbar />
                 <HeroSection />
                 <div className="section-line" />
                 <ProblemSection />

@@ -9,7 +9,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
     const { q } = await searchParams
     if (q?.trim()) {
         return {
-            title: `Search results for "${q.trim()}" - Blog - Sundawa`,
+            title: `Search: "${q.trim()}" — Blog`,
             description: `Search results for "${q.trim()}" in Sundawa Teknologi blog.`,
             alternates: {
                 languages: {
@@ -46,8 +46,6 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
                 empty: t('empty'),
                 readMore: t('readMore'),
                 searchPlaceholder: t('searchPlaceholder'),
-                searchNoResults: t('searchNoResults'),
-                searchResultsCount: t('searchResultsCount'),
             }}
         />
         </>

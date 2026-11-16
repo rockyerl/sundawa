@@ -38,6 +38,9 @@ sundawa-web/
 │   │   ├── services/
 │   │   │   ├── page.tsx              # Thin adapter → ServicesPage
 │   │   │   └── [slug]/page.tsx       # Thin adapter → ServiceDetail
+│   │   ├── products/
+│   │   │   ├── page.tsx              # Thin adapter → ProductsArchive
+│   │   │   └── [slug]/page.tsx       # Thin adapter → ProductDetail
 │   │   ├── about/page.tsx            # Thin adapter → AboutPage
 │   │   ├── contact/page.tsx          # Thin adapter → ContactPage
 │   │   ├── outsource/page.tsx        # Thin adapter → Outsource
@@ -143,9 +146,28 @@ sundawa-web/
 │   │   │   │   ├── ServicesPage.tsx      # Services grid listing
 │   │   │   │   └── ServiceDetail.tsx     # Single service detail
 │   │   │   └── index.ts
+│   │   ├── products/
+│   │   │   ├── components/
+│   │   │   │   ├── ProductsSection.tsx
+│   │   │   │   ├── ProductCard.tsx
+│   │   │   │   ├── ProductCategoryFilter.tsx
+│   │   │   │   ├── ProductCaseStudiesSpotlight.tsx
+│   │   │   │   ├── ProductCaseStudyDialog.tsx
+│   │   │   │   ├── ProductsArchive.tsx
+│   │   │   │   └── ProductDetail.tsx
+│   │   │   ├── data.ts                   # PRODUCT_SPECS catalog (6 products)
+│   │   │   ├── domain.ts                 # Filters, adjacency, mappers
+│   │   │   ├── domain.test.ts            # Contract & i18n parity tests (4)
+│   │   │   ├── types.ts
+│   │   │   └── index.ts
 │   │   ├── about/
 │   │   │   ├── components/
-│   │   │   │   └── AboutPage.tsx         # About page with missions, values, stats
+│   │   │   │   ├── AboutPage.tsx         # Executive company showcase
+│   │   │   │   ├── AboutSectionHeader.tsx
+│   │   │   │   ├── CeoGreetingSpread.tsx
+│   │   │   │   └── LeadershipShowcase.tsx
+│   │   │   ├── team.ts                   # Leadership & studio avatar paths
+│   │   │   ├── team.test.ts              # Leadership asset & copy tests (2)
 │   │   │   └── index.ts
 │   │   └── contact/
 │   │       ├── components/
@@ -153,7 +175,8 @@ sundawa-web/
 │   │       └── index.ts
 │   ├── shared/
 │   │   └── ui/
-│   │       ├── SubpageNav.tsx            # Back-nav header for all subpages
+│   │       ├── SubpageNav.tsx            # Contextual breadcrumb header for subpages
+│   │       ├── Footer.tsx                # Corporate footer (PT Sundawa Teknologi Indonesia)
 │   │       ├── LangToggle.tsx
 │   │       ├── Introloader.tsx
 │   │       ├── Pagetransition.tsx
@@ -233,7 +256,7 @@ npm run dev        # http://localhost:3000
 | `npm run check` | **Quality gate**: lint + typecheck + test |
 | `npm run lint` | ESLint |
 | `npm run typecheck` | `tsc --noEmit` |
-| `npm run test` | Vitest (6 suites, 15 tests) |
+| `npm run test` | Vitest (10 suites, 27 tests) |
 | `npm run build` | Production build |
 | `npm run start` | Serve production build |
 
@@ -244,7 +267,7 @@ npm run dev        # http://localhost:3000
 ## Key Architectural Decisions
 
 ### Feature-First (Bulletproof) Architecture
-Every feature (`home`, `outsource`, `blog`, `process`, `portfolio`, `services`, `about`, `contact`) is self-contained in `src/features/<feature>/` with its own components, domain logic, data layer, types, and tests. External consumers import only from the feature's `index.ts`.
+Every feature (`home`, `outsource`, `blog`, `process`, `portfolio`, `services`, `products`, `about`, `contact`) is self-contained in `src/features/<feature>/` with its own components, domain logic, data layer, types, and tests. External consumers import only from the feature's `index.ts`.
 
 ### Thin Route Adapters
 `app/[locale]/*/page.tsx` files contain zero business logic. They:
@@ -286,8 +309,8 @@ Custom admin panel at `/admin` for managing blog posts:
 
 ### SEO & Structured Data
 The app follows SEO best practices with complete metadata and structured data:
-- **Metadata**: `pageMetadata()` helper covers 8 page keys with canonical URLs, hreflang, Open Graph, and Twitter cards
-- **Sitemap**: All static pages (home, outsource, proses-kerja, blog, portfolio, services, about, contact) + dynamic blog post slugs
+- **Metadata**: `pageMetadata()` helper covers 9 page keys with canonical URLs, hreflang, Open Graph, and Twitter cards
+- **Sitemap**: All static pages (home, outsource, proses-kerja, blog, portfolio, services, products, about, contact) + dynamic blog post, portfolio, and product detail slugs (`/products/[slug]`)
 - **Structured Data (JSON-LD)**: Organization + WebSite schema with ContactPoint and SearchAction; BlogPosting on blog posts
 - **Google Search Console**: Verification token configured in layout metadata
 - **Robots.txt**: Disallows `/offline` path, allows all other paths
@@ -299,12 +322,16 @@ The app follows SEO best practices with complete metadata and structured data:
 ## Testing
 
 ```
+lib/adminAuth.test.ts                     # Admin HMAC session token tests (2)
 lib/types.test.ts                         # Post type guard tests
+lib/contact.test.ts                       # Company contact & URL builder tests (2)
 lib/Seo.test.ts                           # SEO metadata helper tests
 lib/Sitemap.test.ts                       # Sitemap URL generator tests
 src/features/home/clients.test.ts         # Client data contract tests
 src/features/home/techCatalog.test.ts     # Tech catalog data contract tests (4)
 src/features/outsource/domain.test.ts     # Pricing domain logic tests (5)
+src/features/products/domain.test.ts      # Product catalog & i18n parity tests (4)
+src/features/about/team.test.ts           # Leadership avatar & copy tests (2)
 ```
 
 ---

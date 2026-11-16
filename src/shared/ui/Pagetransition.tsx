@@ -3,26 +3,35 @@ import { useEffect, useRef, useState } from 'react'
 import { usePathname } from '@/src/i18n/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { scrollToPendingOrLocationHash } from './IntroEvents'
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
     const pathname = usePathname()
     const [railVisible, setRailVisible] = useState(false)
     const [railDone, setRailDone] = useState(false)
     const prevPathname = useRef(pathname)
+    const hashScrolledForPath = useRef(false)
 
     useEffect(() => {
         if (prevPathname.current === pathname) return
         prevPathname.current = pathname
+        hashScrolledForPath.current = false
 
         setRailDone(false)
         setRailVisible(true)
 
         const doneTimer = setTimeout(() => setRailDone(true), 300)
         const hideTimer = setTimeout(() => setRailVisible(false), 560)
+        const hashFallbackTimer = setTimeout(() => {
+            if (!hashScrolledForPath.current && scrollToPendingOrLocationHash()) {
+                hashScrolledForPath.current = true
+            }
+        }, 380)
 
         return () => {
             clearTimeout(doneTimer)
             clearTimeout(hideTimer)
+            clearTimeout(hashFallbackTimer)
         }
     }, [pathname])
 
@@ -83,6 +92,11 @@ export default function PageTransition({ children }: { children: React.ReactNode
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.16, ease: 'easeInOut' }}
+                    onAnimationComplete={() => {
+                        if (!hashScrolledForPath.current && scrollToPendingOrLocationHash()) {
+                            hashScrolledForPath.current = true
+                        }
+                    }}
                 >
                     {children}
                 </motion.div>
