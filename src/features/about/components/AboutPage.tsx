@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
-import { ArrowRight, ArrowUpRight, CheckCircle2, Compass, ShieldCheck, Target } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, CheckCircle2, Compass, FileDown, ShieldCheck, Target } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
 import { SITE_URL } from '@/lib/Seo'
@@ -115,12 +115,15 @@ export default function AboutPage() {
                                     {t('title')}
                                 </motion.h1>
 
-                                <div className="mb-8 border-l-2 border-gold pl-5">
+                                <div className="mb-8 border-l-2 border-gold pl-5 space-y-4">
                                     <div className="mb-2 text-[0.65rem] font-black tracking-[0.2em] text-gold uppercase">
                                         {t('profileLabel')}
                                     </div>
                                     <p className="text-base leading-[1.85] font-light text-cream/85 sm:text-lg">
-                                        {t('subtitle')}
+                                        {t('aboutP1')}
+                                    </p>
+                                    <p className="text-base leading-[1.85] font-light text-cream/85 sm:text-lg">
+                                        {t('aboutP2')}
                                     </p>
                                 </div>
 
@@ -139,6 +142,16 @@ export default function AboutPage() {
                                         <span>{t('heroCtaSecondary')}</span>
                                         <ArrowRight size={14} aria-hidden="true" />
                                     </Link>
+                                    <a
+                                        href="/company-profile.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        download="Company-Profile-PT-Sundawa-Teknologi-Indonesia.pdf"
+                                        className="inline-flex items-center gap-2 border border-sky/35 bg-sky/[0.05] px-6 py-3.5 text-xs font-bold tracking-[0.16em] text-sky uppercase no-underline transition-colors hover:border-sky hover:bg-sky/15"
+                                    >
+                                        <FileDown size={14} aria-hidden="true" />
+                                        <span>{t('downloadCompanyProfile')}</span>
+                                    </a>
                                 </div>
                             </div>
 
@@ -181,6 +194,55 @@ export default function AboutPage() {
                                     ))}
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* CEO Message Spread + Portrait Avatar + Stoic Epigraph */}
+                    <CeoGreetingSpread
+                        label={t('ceoGreeting.label')}
+                        stoicQuote={stoicQuote}
+                        paragraphs={ceoParagraphs}
+                        authorName={t('ceoGreeting.authorName')}
+                        authorRole={t('ceoGreeting.authorRole')}
+                    />
+
+                    {/* Executive Leadership Showcase with Avatar Portraits */}
+                    <LeadershipShowcase
+                        label={t('leadership.label')}
+                        heading={t('leadership.heading')}
+                        members={leadership}
+                    />
+
+                    {/* How We Lead Projects (Governance) */}
+                    <div className="mb-20">
+                        <AboutSectionHeader
+                            label={t('governance.label')}
+                            heading={t('governance.heading')}
+                            action={
+                                <Link
+                                    href="/proses-kerja"
+                                    className="inline-flex flex-shrink-0 items-center gap-1 text-[0.65rem] font-extrabold tracking-[0.16em] text-gold uppercase no-underline transition-colors hover:text-cream"
+                                >
+                                    <span>{t('governance.ctaProcess')}</span>
+                                    <ArrowUpRight size={13} aria-hidden="true" />
+                                </Link>
+                            }
+                        />
+
+                        <div className="grid grid-cols-1 gap-[1px] border border-gold/20 bg-gold/20 sm:grid-cols-2 lg:grid-cols-4">
+                            {governanceItems.map((item, idx) => (
+                                <div key={item.title} className="bg-navy p-6">
+                                    <span className="mb-3 block text-[0.62rem] font-black tracking-[0.2em] text-gold/60">
+                                        {String(idx + 1).padStart(2, '0')}
+                                    </span>
+                                    <h3 className="mb-2.5 text-sm font-bold text-cream">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-xs leading-[1.75] font-light text-cream/70">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
@@ -261,55 +323,6 @@ export default function AboutPage() {
                                             </li>
                                         ))}
                                     </ul>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* CEO Message Spread + Portrait Avatar + Stoic Epigraph */}
-                    <CeoGreetingSpread
-                        label={t('ceoGreeting.label')}
-                        stoicQuote={stoicQuote}
-                        paragraphs={ceoParagraphs}
-                        authorName={t('ceoGreeting.authorName')}
-                        authorRole={t('ceoGreeting.authorRole')}
-                    />
-
-                    {/* Executive Leadership Showcase with Avatar Portraits */}
-                    <LeadershipShowcase
-                        label={t('leadership.label')}
-                        heading={t('leadership.heading')}
-                        members={leadership}
-                    />
-
-                    {/* Enterprise Engagement Governance Readiness */}
-                    <div className="mb-20">
-                        <AboutSectionHeader
-                            label={t('governance.label')}
-                            heading={t('governance.heading')}
-                            action={
-                                <Link
-                                    href="/proses-kerja"
-                                    className="inline-flex flex-shrink-0 items-center gap-1 text-[0.65rem] font-extrabold tracking-[0.16em] text-gold uppercase no-underline transition-colors hover:text-cream"
-                                >
-                                    <span>{t('governance.ctaProcess')}</span>
-                                    <ArrowUpRight size={13} aria-hidden="true" />
-                                </Link>
-                            }
-                        />
-
-                        <div className="grid grid-cols-1 gap-[1px] border border-gold/20 bg-gold/20 sm:grid-cols-2 lg:grid-cols-4">
-                            {governanceItems.map((item, idx) => (
-                                <div key={item.title} className="bg-navy p-6">
-                                    <span className="mb-3 block text-[0.62rem] font-black tracking-[0.2em] text-gold/60">
-                                        {String(idx + 1).padStart(2, '0')}
-                                    </span>
-                                    <h3 className="mb-2.5 text-sm font-bold text-cream">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-xs leading-[1.75] font-light text-cream/70">
-                                        {item.desc}
-                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -413,6 +426,16 @@ export default function AboutPage() {
                             >
                                 <span>{t('cta.secondaryButton')}</span>
                             </Link>
+                            <a
+                                href="/company-profile.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download="Company-Profile-PT-Sundawa-Teknologi-Indonesia.pdf"
+                                className="inline-flex items-center gap-2 border border-sky/35 bg-sky/[0.05] px-8 py-4 text-xs font-bold tracking-[0.16em] text-sky uppercase no-underline transition-colors hover:border-sky hover:bg-sky/15"
+                            >
+                                <FileDown size={14} aria-hidden="true" />
+                                <span>{t('downloadCompanyProfile')}</span>
+                            </a>
                         </div>
                     </div>
                 </div>

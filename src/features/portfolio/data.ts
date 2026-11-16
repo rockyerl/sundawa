@@ -1,6 +1,8 @@
 import { supabase } from '@/lib/supabase'
 import { isPortfolioProject, type PortfolioProject } from '@/lib/types'
 
+export * from './domain'
+
 export async function getPortfolioProjects(): Promise<PortfolioProject[]> {
     const { data, error } = await supabase
         .from('portfolio')

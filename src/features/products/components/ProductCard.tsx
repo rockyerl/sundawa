@@ -17,6 +17,8 @@ interface ProductCardProps {
 function getStatusBadgeClasses(statusKey: ProductStatusKey): string {
     switch (statusKey) {
         case 'authPortal':
+            return 'border-cyan-400/35 bg-cyan-400/10 text-cyan-300'
+        case 'enterpriseB2B':
             return 'border-amber-400/35 bg-amber-400/10 text-amber-300'
         case 'prototype':
             return 'border-sky/40 bg-sky/10 text-sky'

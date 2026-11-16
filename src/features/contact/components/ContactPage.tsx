@@ -1,18 +1,58 @@
 'use client'
 
-import { useState } from 'react'
-import { ArrowUpRight, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { ArrowUpRight, FileDown, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { buildMailtoUrl, buildWhatsAppUrl, COMPANY_CONTACT } from '@/lib/contact'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 
+const SERVICE_TO_TOPIC_INDEX: Record<string, number> = {
+    'modernisasi-sistem': 1,
+    'system-modernization': 1,
+    'otomatisasi-ai': 2,
+    'workflow-automation-ai': 2,
+    'integrasi-sistem': 2,
+    'system-integration': 2,
+    'platform-khusus': 0,
+    'custom-platform': 0,
+    'managed-engineering': 0,
+    'outsource': 4,
+}
+
 export default function ContactPage() {
     const t = useTranslations('contactPage')
     const topics = t.raw('topics') as string[]
+    const searchParams = useSearchParams()
 
-    const [selectedTopic, setSelectedTopic] = useState<string>(topics[0] ?? '')
+    const resolveTopicFromParams = () => {
+        const topicParam = searchParams.get('topic')
+        if (topicParam) {
+            const matched = topics.find((item) => item.toLowerCase() === topicParam.toLowerCase())
+            if (matched) return matched
+        }
+
+        const serviceParam = searchParams.get('service')
+        if (serviceParam) {
+            const mappedIndex = SERVICE_TO_TOPIC_INDEX[serviceParam.toLowerCase()]
+            if (mappedIndex !== undefined && topics[mappedIndex]) {
+                return topics[mappedIndex]
+            }
+        }
+
+        return topics[0] ?? ''
+    }
+
+    const [selectedTopic, setSelectedTopic] = useState<string>(resolveTopicFromParams)
     const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' })
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+    useEffect(() => {
+        const targetTopic = resolveTopicFromParams()
+        if (targetTopic && targetTopic !== selectedTopic) {
+            setSelectedTopic(targetTopic)
+        }
+    }, [searchParams, topics])
 
     const buildBriefText = () => {
         const lines = [
@@ -279,6 +319,34 @@ export default function ContactPage() {
                                     <div key={item.label}>{cardContent}</div>
                                 )
                             })}
+
+                            {/* Company Profile Procurement Material */}
+                            <div className="border border-gold/25 bg-gold/[0.04] p-5">
+                                <div className="mb-2 flex items-center justify-between">
+                                    <span className="text-[0.62rem] font-extrabold tracking-[0.2em] text-gold uppercase">
+                                        Procurement & Due Diligence
+                                    </span>
+                                    <span className="border border-gold/30 bg-gold/10 px-2 py-0.5 text-[0.6rem] font-bold text-gold">
+                                        PDF
+                                    </span>
+                                </div>
+                                <h3 className="mb-1 text-sm font-bold text-cream">
+                                    Company Profile Sundawa
+                                </h3>
+                                <p className="mb-4 text-xs leading-relaxed text-cream/65">
+                                    {t('companyProfileDesc')}
+                                </p>
+                                <a
+                                    href="/company-profile.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    download="Company-Profile-PT-Sundawa-Teknologi-Indonesia.pdf"
+                                    className="inline-flex items-center gap-2 border border-gold/40 bg-gold/15 px-4 py-2.5 text-xs font-bold tracking-[0.1em] text-gold uppercase no-underline transition-colors hover:border-gold hover:bg-gold/25"
+                                >
+                                    <FileDown size={14} aria-hidden="true" />
+                                    <span>{t('downloadCompanyProfile')}</span>
+                                </a>
+                            </div>
 
                             <div className="border border-gold/20 bg-dark-slate/30 p-6">
                                 <p className="mb-3 text-xs leading-relaxed text-cream/65">

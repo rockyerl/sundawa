@@ -1,9 +1,10 @@
 'use client'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { INITIAL_VISIBLE_CLIENTS } from '../clients'
 import type { PortfolioProject } from '@/lib/types'
+import { localizePortfolioProjects } from '@/src/features/portfolio'
 import ClientProjectDialog from './ClientProjectDialog'
 import ClientsStats from './ClientsStats'
 import ClientsGrid from './ClientsGrid'
@@ -60,10 +61,15 @@ export default function ClientsSection() {
         return () => clearInterval(interval)
     }, [])
 
-    const visibleClients = expanded ? projects : projects.slice(0, INITIAL_VISIBLE_CLIENTS)
-    const hasMore = projects.length > INITIAL_VISIBLE_CLIENTS
+    const clientItems = t.raw('items')
+    const localizedProjects = useMemo(() => {
+        return localizePortfolioProjects(projects, clientItems)
+    }, [projects, clientItems])
 
-    const selectedClient = selected !== null ? projects[selected] : null
+    const visibleClients = expanded ? localizedProjects : localizedProjects.slice(0, INITIAL_VISIBLE_CLIENTS)
+    const hasMore = localizedProjects.length > INITIAL_VISIBLE_CLIENTS
+
+    const selectedClient = selected !== null ? localizedProjects[selected] : null
 
     // 4 kolom detail, selalu tampil untuk setiap proyek
     const detailSections = selectedClient

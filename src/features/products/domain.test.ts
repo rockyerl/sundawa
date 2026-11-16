@@ -70,6 +70,12 @@ describe('products catalog and case studies', () => {
         expect(collectLeafKeys(idMessages.services).sort()).toEqual(
             collectLeafKeys(enMessages.services).sort(),
         )
+        expect(collectLeafKeys(idMessages.servicesPage).sort()).toEqual(
+            collectLeafKeys(enMessages.servicesPage).sort(),
+        )
+        expect(collectLeafKeys(idMessages.process).sort()).toEqual(
+            collectLeafKeys(enMessages.process).sort(),
+        )
         expect(collectLeafKeys(idMessages.footer).sort()).toEqual(
             collectLeafKeys(enMessages.footer).sort(),
         )
@@ -91,6 +97,9 @@ describe('products catalog and case studies', () => {
         expect(collectLeafKeys(idMessages.meta).sort()).toEqual(collectLeafKeys(enMessages.meta).sort())
         expect(collectLeafKeys(idMessages.products).sort()).toEqual(
             collectLeafKeys(enMessages.products).sort(),
+        )
+        expect(collectLeafKeys(idMessages.featuredProjects).sort()).toEqual(
+            collectLeafKeys(enMessages.featuredProjects).sort(),
         )
     })
 

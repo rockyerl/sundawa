@@ -127,21 +127,29 @@ export default async function LocaleLayout({ children, params }: Props) {
     }
 
     return (
-        <NextIntlClientProvider locale={locale} messages={messages}>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
-            />
-            <GoogleAnalytics />
-            <IntroLoader />
-            <SkipLink />
-            <Navbar />
-            <PWARegister />
-            <InstallPrompt />
-            <div id="main-content">
-                <PageTransition>{children}</PageTransition>
-            </div>
-            <Footer />
-        </NextIntlClientProvider>
+        <html
+            lang={locale}
+            suppressHydrationWarning
+            data-scroll-behavior="smooth"
+        >
+            <body>
+                <NextIntlClientProvider locale={locale} messages={messages}>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+                    />
+                    <GoogleAnalytics />
+                    <IntroLoader />
+                    <SkipLink />
+                    <Navbar />
+                    <PWARegister />
+                    <InstallPrompt />
+                    <div id="main-content">
+                        <PageTransition>{children}</PageTransition>
+                    </div>
+                    <Footer />
+                </NextIntlClientProvider>
+            </body>
+        </html>
     )
 }

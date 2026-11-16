@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { ContactPage } from '@/src/features/contact'
@@ -15,7 +16,9 @@ export default async function ContactRoute({ params }: { params: Promise<{ local
     return (
         <>
             <BreadcrumbJsonLd breadcrumbs={[{ name: 'Contact', url: `/${locale}/contact` }]}/>
-            <ContactPage />
+            <Suspense fallback={null}>
+                <ContactPage />
+            </Suspense>
         </>
     )
 }

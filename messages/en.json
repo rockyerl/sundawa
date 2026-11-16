@@ -43,8 +43,8 @@
     "line3": "than replacing it",
     "line4": "",
     "sub": "Manual workarounds, disconnected systems, slow reporting, and constant maintenance quietly drain time and money. We fix what's holding you back — without replacing what still works.",
-    "ctaServices": "See What's Worth Fixing",
-    "ctaAbout": "What We've Built",
+    "ctaServices": "Discuss Your System",
+    "ctaAbout": "View Case Studies",
     "scroll": "Scroll"
   },
   "problem": {
@@ -166,7 +166,7 @@
     "heading2": "To Change",
     "sub": "Five reasons businesses reach the point where existing software can no longer carry the operation forward.",
     "ctaContact": "Tell Us Where It Breaks Down",
-    "ctaOutsource": "View Pricing Estimate",
+    "ctaOutsource": "Calculate IT Team Cost",
     "ctaProcess": "See How We Work",
     "outcomeLabel": "Outcome",
     "viewDetail": "View details",
@@ -230,6 +230,51 @@
       {
         "num": "5+",
         "label": "Years Experience"
+      }
+    ]
+  },
+  "featuredProjects": {
+    "label": "Case Studies & Track Record",
+    "heading1": "Featured Projects",
+    "heading2": "Proven in Production",
+    "sub": "2–3 curated projects demonstrating how Sundawa partners with organizations from initial problem discovery to resilient, everyday operational systems.",
+    "ctaPortfolio": "Explore All 21+ Portfolio Projects",
+    "labels": {
+      "problem": "Problem",
+      "work": "Sundawa's Work",
+      "result": "Results",
+      "viewCaseStudy": "View Full Case Study"
+    },
+    "projects": [
+      {
+        "slug": "dacar-by-undp",
+        "num": "01",
+        "name": "DACAR by UNDP",
+        "client": "UNDP (United Nations Development Programme)",
+        "tag": "Digital Cash Disbursement Platform",
+        "problem": "Event-based cash fund distribution for organized field operations required strict compliance, rigorous recipient identity validation, and transparent audit trails with zero tolerance for delays or duplicate disbursements.",
+        "work": "Architected and engineered a comprehensive cross-platform digital ecosystem (field officer mobile app, administrative web portal, resilient backend services, and encrypted database infrastructure) ready for international cloud deployment standards.",
+        "result": "Successfully deployed an accountable digital disbursement platform featuring real-time recipient verification, complete transaction audit trails, and zero manual paper reconciliation in the field."
+      },
+      {
+        "slug": "e-office",
+        "num": "02",
+        "name": "E-Office",
+        "client": "Government Institutions & Corporations",
+        "tag": "Integrated Office Administration System",
+        "problem": "Managing incoming and outgoing official letters, executive dispositions, and physical paper archives caused coordination bottlenecks, risks of misplaced records, and zero tracking over executive directive follow-ups.",
+        "work": "Built a modular web administration platform featuring automated multi-tier disposition routing, systematic letter numbering, granular role-based access control (RBAC), and full-text indexed digital archive search.",
+        "result": "Enabled real-time end-to-end tracking of correspondence and document dispositions, accelerating cross-departmental administrative turnaround and significantly cutting paper dependency."
+      },
+      {
+        "slug": "oetomo-hospital-website",
+        "num": "03",
+        "name": "Oetomo Hospital Website",
+        "client": "Oetomo Hospital Bandung",
+        "tag": "Hospital Branding & Digital Healthcare Presence",
+        "problem": "Patients and families required a fast, trusted, and mobile-first official hospital portal to verify specialist doctor schedules, outpatient/inpatient facilities, and emergency care guidance.",
+        "work": "Engineered a high-speed responsive institutional website integrated with an intuitive CMS, dynamic specialist doctor scheduling directories, and patient-first medical information architecture.",
+        "result": "Established a centralized digital presence that strengthens hospital brand credibility, helps patients find medical schedules within seconds, and empowers internal staff to update content independently."
       }
     ]
   },
@@ -642,7 +687,8 @@
           "Requirements consultation session",
           "Technical feasibility analysis",
           "Initial timeline & cost estimate"
-        ]
+        ],
+        "deliverable": "Scope of work document, milestone schedule estimate, and initial architecture proposal."
       },
       {
         "num": "02",
@@ -653,7 +699,8 @@
           "Wireframe & user flow",
           "UI design & interactive prototype",
           "Joint review and approval"
-        ]
+        ],
+        "deliverable": "System architecture blueprint, user journey flows, and approved interactive UI prototype."
       },
       {
         "num": "03",
@@ -664,7 +711,8 @@
           "Weekly / bi-weekly sprints",
           "Regular progress demos",
           "Repository access throughout development"
-        ]
+        ],
+        "deliverable": "Live staging environment for milestone checks, periodic progress demos, and transparent Git access."
       },
       {
         "num": "04",
@@ -675,7 +723,8 @@
           "Functional & regression testing",
           "Basic performance and security checks",
           "Bug fixes before release"
-        ]
+        ],
+        "deliverable": "Comprehensive test report, resolved issue tracker, and pre-release QA verification sign-off."
       },
       {
         "num": "05",
@@ -686,7 +735,8 @@
           "Source code & technical documentation",
           "Full ownership of deliverables",
           "Handover session & usage training"
-        ]
+        ],
+        "deliverable": "Full source code access, technical & API documentation, and scope-aligned deployment runbooks."
       },
       {
         "num": "06",
@@ -697,7 +747,8 @@
           "Post-release bug fix warranty",
           "Ongoing technical support",
           "Long-term maintenance options"
-        ]
+        ],
+        "deliverable": "Post-release bug warranty coverage, early stability report, and dedicated emergency escalation contact."
       }
     ],
     "infoItems": [
@@ -723,7 +774,8 @@
       }
     ],
     "contactCta": "Ready to discuss your project needs?",
-    "contactButton": "Contact Us"
+    "contactButton": "Contact Us",
+    "deliverableLabel": "What you receive:"
   },
   "blog": {
     "navBack": "Back",
@@ -762,6 +814,7 @@
     "subtitle": "Tell us about the system, product demo, or engineering team capacity you need. We keep communication clear from the very first conversation.",
     "topicLabel": "Consultation Topic",
     "topics": [
+      "New System Development",
       "Legacy System Modernization",
       "Automation & Data Integration",
       "Sundawa Product Demo",
@@ -790,15 +843,19 @@
     "linkedinLabel": "LinkedIn",
     "linkedinDesc": "PT Sundawa Teknologi Indonesia",
     "addressLabel": "Location",
-    "addressValue": "Bandung, West Java, Indonesia"
+    "addressValue": "Bandung, West Java, Indonesia",
+    "downloadCompanyProfile": "Download Company Profile (PDF)",
+    "companyProfileDesc": "Corporate legal entity, service capabilities, reference projects, and procurement contacts in one concise PDF."
   },
   "aboutPage": {
     "navBack": "Back",
     "navTitle": "About Us",
     "eyebrow": "PT Sundawa Teknologi Indonesia",
-    "slogan": "Professional Precision, Customer Comfort",
+    "slogan": "Professional Precision,, Customer Comfort",
     "title": "About Sundawa Teknologi",
     "profileLabel": "Company Profile",
+    "aboutP1": "PT Sundawa Teknologi Indonesia is a Bandung-based technology engineering company that designs and builds mission-critical applications, enterprise information systems, and digital platforms for corporations, government institutions, and international organizations.",
+    "aboutP2": "Sundawa was founded to bridge the gap between complex software engineering and genuine client peace of mind. We eliminate convoluted agency bureaucracies, opaque estimates, and handoffs to random subcontractors—replacing them with transparent senior-led collaboration, high-standard code quality, and dependable long-term accountability.",
     "subtitle": "PT Sundawa Teknologi Indonesia is a technology company that designs and develops applications, websites, and information systems for businesses and organizations. We help clients translate operational requirements into practical digital solutions their teams can rely on every day.",
     "heroCtaPrimary": "Schedule Executive Discussion",
     "heroCtaSecondary": "Explore Products & Case Studies",
@@ -809,7 +866,7 @@
     },
     "governance": {
       "label": "Enterprise Engagement Governance",
-      "heading": "Senior-Led Core Team — Zero Handoff to Random Subcontractors",
+      "heading": "How We Lead Projects",
       "ctaProcess": "Inspect 6-Stage Delivery Process",
       "items": [
         {
@@ -996,7 +1053,8 @@
       "subtitle": "From core modernization to cross-institution platforms — schedule an executive alignment briefing directly with Sundawa's leadership team.",
       "button": "Contact Leadership Team",
       "secondaryButton": "Explore Sundawa Products"
-    }
+    },
+    "downloadCompanyProfile": "Download Company Profile (PDF)"
   },
   "servicesPage": {
     "navBack": "Back",
@@ -1016,7 +1074,21 @@
         "title": "Legacy System Modernization",
         "desc": "We fix legacy platforms without endangering ongoing operations — redesigning architecture, replacing weak components, and preparing systems for future growth.",
         "outcome": "Faster changes. Better reliability. Less technical debt.",
-        "details": "Legacy system modernization is a careful process. We don't rewrite everything from scratch. Instead, we analyze the existing system, identify components that still work well, and replace only the parts that hinder operations. This approach minimizes risk and ensures business continuity during modernization."
+        "details": "Legacy system modernization is a careful process. We don't rewrite everything from scratch. Instead, we analyze the existing system, identify components that still work well, and replace only the parts that hinder operations. This approach minimizes risk and ensures business continuity during modernization.",
+        "deliverables": [
+          {
+            "title": "System Dependency Map",
+            "desc": "Comprehensive architectural visualization mapping module relationships, databases, internal/external APIs, and single points of failure."
+          },
+          {
+            "title": "Retention & Refactor Matrix",
+            "desc": "Objective cost-benefit recommendations identifying which legacy components to preserve, which to wrap in APIs, and which require rewriting."
+          },
+          {
+            "title": "Phased Migration Plan & Runbook",
+            "desc": "Milestone rollout strategy (Strangler Fig pattern) with zero-downtime cutover procedures and safety-first rollback plans."
+          }
+        ]
       },
       "automation": {
         "slug": "workflow-automation-ai",
@@ -1024,7 +1096,21 @@
         "title": "Workflow Automation & AI",
         "desc": "We transform approvals, reporting, document processing, data entry, and repetitive operational tasks into controlled automated workflows.",
         "outcome": "Less repetitive work. Faster operations. Fewer errors.",
-        "details": "Automation isn't just about eliminating manual work. It's about creating consistent, measurable, and monitorable workflows. We identify repetitive tasks, design automated flows, and integrate them with existing systems. AI is used when it truly adds value, not as a gimmick."
+        "details": "Automation isn't just about eliminating manual work. It's about creating consistent, measurable, and monitorable workflows. We identify repetitive tasks, design automated flows, and integrate them with existing systems. AI is used when it truly adds value, not as a gimmick.",
+        "deliverables": [
+          {
+            "title": "Workflow & Bottleneck Diagnostic Map",
+            "desc": "Detailed operational audit pinpointing manual cycle times, human-error friction points, and measurable labor-hour savings per department."
+          },
+          {
+            "title": "Controlled Automation & AI Engine",
+            "desc": "Production-ready automation pipelines with human-in-the-loop safeguards for document parsing, rule-based approvals, and cross-platform sync."
+          },
+          {
+            "title": "Real-time Monitoring & Audit Logging Dashboard",
+            "desc": "Operational monitoring interface tracking execution health, end-to-end audit trails, and automated instant failure alerts."
+          }
+        ]
       },
       "integration": {
         "slug": "system-integration",
@@ -1032,7 +1118,21 @@
         "title": "System & Data Integration",
         "desc": "We connect ERP, financial systems, databases, APIs, operational systems, and external platforms so information flows to the right place.",
         "outcome": "One information flow, not isolated systems.",
-        "details": "System integration starts with understanding how data flows between existing systems. We map dependencies, identify integration points, and build reliable connectors. The result is information that flows automatically to the right place, without duplication or inconsistency."
+        "details": "System integration starts with understanding how data flows between existing systems. We map dependencies, identify integration points, and build reliable connectors. The result is information that flows automatically to the right place, without duplication or inconsistency.",
+        "deliverables": [
+          {
+            "title": "Unified API Catalog & Contract Specification",
+            "desc": "Standardized REST API or GraphQL specifications defining schema payloads, auth protocols, and data validation across subsystems."
+          },
+          {
+            "title": "Integration Middleware & Bi-Directional Connectors",
+            "desc": "Fault-tolerant bridging service connecting ERP, databases, and third-party gateways with strict transactional data integrity (ACID)."
+          },
+          {
+            "title": "Conflict Resolution & Message Queue Protocols",
+            "desc": "Resilient queue architecture with automated retry mechanisms and real-time reconciliation reporting."
+          }
+        ]
       },
       "custom": {
         "slug": "custom-platform",
@@ -1040,7 +1140,21 @@
         "title": "Custom Business Platform",
         "desc": "We build operational software tailored to how your business actually works — from internal systems and customer portals to SaaS platforms.",
         "outcome": "Software that adapts to your operations, not the other way around.",
-        "details": "Custom business platforms are designed from the ground up to meet your unique business needs. We start by understanding workflows, design a scalable architecture, and build a platform that can grow with your business. From internal systems to SaaS platforms, we ensure every feature delivers real value."
+        "details": "Custom business platforms are designed from the ground up to meet your unique business needs. We start by understanding workflows, design a scalable architecture, and build a platform that can grow with your business. From internal systems to SaaS platforms, we ensure every feature delivers real value.",
+        "deliverables": [
+          {
+            "title": "Interactive UI/UX Prototype & Design System",
+            "desc": "Complete design system featuring responsive wireframes, high-fidelity interfaces, and clickable user validation prototypes."
+          },
+          {
+            "title": "Production-Ready Scalable Platform",
+            "desc": "High-performance modular web/mobile platform with modern cloud architecture, strict security hardening, and 100% IP ownership."
+          },
+          {
+            "title": "CI/CD Pipelines & Developer Runbooks",
+            "desc": "Infrastructure as Code (IaC), automated deployment pipelines, architectural runbooks, and developer onboarding documentation."
+          }
+        ]
       },
       "managed": {
         "slug": "managed-engineering",
@@ -1048,9 +1162,25 @@
         "title": "Managed Product Engineering",
         "desc": "We continue monitoring, maintaining, optimizing, and developing your platform after release.",
         "outcome": "One engineering partner that stays accountable for your system.",
-        "details": "Managed product engineering means we don't disappear after launch. We continue monitoring performance, fixing bugs, optimizing speed, and developing new features. You get a long-term engineering partner that understands your system and stays accountable for its quality."
+        "details": "Managed product engineering means we don't disappear after launch. We continue monitoring performance, fixing bugs, optimizing speed, and developing new features. You get a long-term engineering partner that understands your system and stays accountable for its quality.",
+        "deliverables": [
+          {
+            "title": "Service Level Agreement (SLA) & Support Scope",
+            "desc": "Formal commitment covering uptime guarantees, incident response timeframes (15–30 mins for critical issues), and allocated engineering hours."
+          },
+          {
+            "title": "Dedicated Incident Desk & Escalation Matrix",
+            "desc": "Dedicated ticketing portal, priority escalation channel directly to lead engineers, and thorough Root Cause Analysis (RCA) reporting."
+          },
+          {
+            "title": "Backlog Prioritization & Scheduled Release Cycle",
+            "desc": "Transparent backlog board where feature requests and refinements are prioritized collaboratively, sprint-scheduled, and verified before deployment."
+          }
+        ]
       }
-    }
+    },
+    "deliverablesLabel": "What You Receive (Tangible Deliverables)",
+    "ctaProjectEstimate": "Request Project Estimate"
   },
   "meta": {
     "home": {
@@ -1096,13 +1226,13 @@
     "navBack": "Back",
     "navTitle": "Sundawa Products",
     "label": "Sundawa Products",
-    "heading1": "Proprietary Ecosystem",
-    "heading2": "Built by Sundawa",
+    "heading1": "6 Sundawa Products",
+    "heading2": "& Initiatives",
     "sub": "Beyond bespoke client engineering, Sundawa designs and operates SaaS platforms, smart mobility products, and enterprise infrastructure built for real operational demands.",
     "stats": [
       {
         "num": "6",
-        "label": "Active Products"
+        "label": "Products & Initiatives"
       },
       {
         "num": "5+",
@@ -1119,11 +1249,11 @@
       "saas": "SaaS & Mobility"
     },
     "statuses": {
-      "liveSaas": "Live SaaS",
-      "enterpriseB2B": "Enterprise B2B",
-      "prototype": "Live Prototype",
-      "authPortal": "Auth-Gated Portal",
-      "livePlatform": "Live Platform"
+      "liveSaas": "Live",
+      "enterpriseB2B": "Demo",
+      "prototype": "Prototype",
+      "authPortal": "Live (Auth-Gated)",
+      "livePlatform": "Live"
     },
     "actions": {
       "viewCaseStudy": "View Case Study",
@@ -1194,9 +1324,9 @@
       "laku-pandai": {
         "name": "LAKUPANDAI by Sundawa",
         "sector": "Enterprise Agent Banking",
-        "tagline": "Expand service reach. Maintain bank control.",
-        "summary": "End-to-end agent banking infrastructure for commercial banks, regional banks (BPD), and BPRs—connecting Flutter field agent apps, Maker-Checker backoffice, and on-premise core banking adapters.",
-        "badgeMetric": "On-Premise DC/DRC · Control by Design",
+        "tagline": "Enterprise Banking Capability & Implementation Scenario Showcase",
+        "summary": "Architecture capability showcase and implementation scenario demonstration for enterprise agent banking across commercial, regional (BPD), and rural banks (BPR)—showcasing Flutter agent apps, Maker-Checker backoffice workflows, 4-way reconciliation, and on-premise core banking adapters.",
+        "badgeMetric": "Capability & Scenario Demo (On-Premise Ready)",
         "modules": [
           "Flutter Agent App + Hardware Key Binding",
           "Backoffice Portal with SSO, RBAC & Maker-Checker",
@@ -1269,9 +1399,9 @@
         "name": "SI-GEOMEDIK",
         "sector": "Defense Healthcare (MoD)",
         "tagline": "Defense Geospatial & Healthcare Resource Information System",
-        "summary": "An authentication-gated geospatial portal for managing Indonesian Ministry of Defense healthcare facilities, medical personnel, medical equipment, and medical logistics with tiered RBAC.",
-        "badgeMetric": "Auth-Gated Portal · Dynamic RBAC + SEC-07",
-        "accessNote": "This portal is login-gated for authorized personnel. This case study strictly reflects observed authentication architecture, RBAC roles, and security posture visible on the portal.",
+        "summary": "An active operational implementation deployed for the Ministry of Defense of the Republic of Indonesia (Kemhan RI)—an auth-gated geospatial system managing military healthcare facilities, medical personnel, and defense medical supplies (restricted access for authorized defense personnel).",
+        "badgeMetric": "Active Operational Implementation (Authorized Personnel Only)",
+        "accessNote": "This system is an active operational implementation in production for the Ministry of Defense (Kemhan RI). The live link connects to the official auth gate; full system access is restricted to authorized defense personnel.",
         "modules": [
           "Geospatial Inventory of Faskes & Medical Staff",
           "Medical Equipment & Logistics Tracking",

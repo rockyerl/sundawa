@@ -1,0 +1,215 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 4530 >>
+stream
+0.04 0.08 0.15 rg 0 740 595.28 102 re f
+0.86 0.79 0.47 RG 2 w 0 740 595.28 0 re S
+BT
+/F2 18 Tf 1 1 1 rg 40 795 Td (PT SUNDAWA TEKNOLOGI INDONESIA) Tj ET
+BT
+/F1 9 Tf 0.86 0.79 0.47 rg 40 778 Td (COMPANY PROFILE & PROCUREMENT SPECIFICATION) Tj ET
+BT
+/F2 8 Tf 0.9 0.9 0.9 rg 40 758 Td (Client-Centric Comfort, Professional Precision) Tj ET
+BT
+/F2 11 Tf 0.1 0.25 0.45 rg 40 705 Td (1. IDENTITAS & LEGALITAS PERUSAHAAN) Tj ET
+0.86 0.79 0.47 RG 1 w 40 699 515 0 re S
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 683 Td (Nama Legalitas Perusahaan:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 683 Td (PT Sundawa Teknologi Indonesia) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 669 Td (Bentuk Badan Usaha:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 669 Td (Perseroan Terbatas \(PT\) Terdaftar Resmi di Kemenkumham RI) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 655 Td (Kantor Operasional / Studio:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 655 Td (Bandung, Jawa Barat, Indonesia) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 641 Td (Email Resmi Pengadaan & Bisnis:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 641 Td (contact@sundawa.net) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 627 Td (Telepon / Saluran Komunikasi:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 627 Td (+62 823-1808-7980) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 613 Td (Situs Resmi:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 613 Td (https://sundawa.net) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 599 Td (Model Tata Kelola Proyek:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 599 Td (Senior-Led Core Team \(Didampingi langsung Principal CEO/CTO/COO\)) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 585 Td (Kedaulatan Kode & HKI:) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 585 Td (100% Hak Cipta, Source Code Penuh, & Repositori diserahkan ke Klien) Tj ET
+BT
+/F2 8 Tf 0.2 0.2 0.2 rg 45 571 Td (Kerahasiaan Data \(NDA\):) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 210 571 Td (Mutual NDA standar tersedia sejak tahap Discovery & Scoping) Tj ET
+BT
+/F2 11 Tf 0.1 0.25 0.45 rg 40 547 Td (2. LAYANAN INTI & SPESIFIKASI SOLUSI) Tj ET
+0.86 0.79 0.47 RG 1 w 40 541 515 0 re S
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 525 Td (A. Modernisasi Sistem Lama \(Legacy System Modernization\)) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 514 Td (Membenahi platform usang tanpa mengganggu operasional yang berjalan. Deliverables mencakup: System) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 504 Td (Dependency Map, Matriks Komponen Dipertahankan vs. Refactor, dan Rencana Migrasi Bertahap \(Zero Downtime / Strangler Fig Pattern\).) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 490 Td (B. Otomatisasi Alur Kerja & AI \(Workflow Automation & AI\)) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 479 Td (Menghubungkan alur kerja tim, mengeliminasi entri data repetitif manual, dan menyematkan model AI cerdas) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 469 Td (\(OCR struk/dokumen, klasifikasi transaksi, verifikasi geofencing\).) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 455 Td (C. Integrasi Sistem & Data \(ERP, Databases & APIs\)) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 444 Td (Sinkronisasi real-time dua arah lintas sistem ERP, CRM, Core Banking, perbankan, dan data center.) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 434 Td (Dilengkapi spesifikasi kontrak API terstandarisasi, middleware webhook, dan audit trail rekonsiliasi data.) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 420 Td (D. Platform Bisnis Khusus \(Bespoke Enterprise Systems\)) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 409 Td (Rancang bangun sistem kustom berbasis web dan mobile untuk alur bisnis kompleks. Menjamin kepatuhan) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 399 Td (proses, performa tinggi, dan antarmuka ramah pengguna bagi staf operasional.) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 385 Td (E. Managed Product Engineering) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 374 Td (Kemitraan rekayasa jangka panjang pasca-peluncuran dengan cakupan SLA monitoring 24/7, alur pelaporan) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 364 Td (insiden darurat berjenjang \(P1-P4\), serta pengelolaan backlog dan prioritisasi sprint mingguan.) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 350 Td (F. Tim Alih Daya IT Terkelola \(Dedicated Engineering Outsourcing\)) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 339 Td (Penyediaan talenta engineer senior \(Frontend, Backend, Mobile, Fullstack, DevOps, QA, UI/UX, PM\) dengan) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 329 Td (model remote, hybrid, atau onsite terintegrasi dengan budaya kerja klien.) Tj ET
+BT
+/F1 7 Tf 0.5 0.5 0.5 rg 40 30 Td (PT Sundawa Teknologi Indonesia ∑ Dokumen Profil Resmi Perusahaan & Pengadaan ∑ Halaman 1 dari 2) Tj ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4951 >>
+stream
+0.04 0.08 0.15 rg 0 780 595.28 62 re f
+0.86 0.79 0.47 RG 1 w 0 780 595.28 0 re S
+BT
+/F2 13 Tf 1 1 1 rg 40 805 Td (PT SUNDAWA TEKNOLOGI INDONESIA) Tj ET
+BT
+/F1 8 Tf 0.86 0.79 0.47 rg 40 790 Td (REKAM JEJAK PROYEK, OPSI DEPLOYMENT & INFORMASI PENGADAAN) Tj ET
+BT
+/F2 11 Tf 0.1 0.25 0.45 rg 40 745 Td (3. PROYEK PILIHAN & REKAM JEJAK YANG BOLEH DIPUBLIKASIKAN) Tj ET
+0.86 0.79 0.47 RG 1 w 40 739 515 0 re S
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 723 Td (1. DACAR by UNDP \(United Nations Development Programme\)) Tj ET
+BT
+/F2 7.5 Tf 0.4 0.4 0.4 rg 55 712 Td (Kategori: Platform Distribusi Dana Tunai Digital Lintas Platform \(Mobile, Web, Backend Cloud\)) Tj ET
+BT
+/F1 7.5 Tf 0.3 0.3 0.3 rg 55 702 Td (Hasil: Memfasilitasi distribusi dana tunai lapangan secara akuntabel dengan validasi identitas real-time, audit log terenkripsi, dan meniadakan proses rekonsiliasi berbasis kertas.) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 688 Td (2. E-Office \(Instansi Pemerintahan & Korporasi\)) Tj ET
+BT
+/F2 7.5 Tf 0.4 0.4 0.4 rg 55 677 Td (Kategori: Sistem Administrasi Perkantoran & Persuratan Terintegrasi \(RBAC, Disposisi Berjenjang\)) Tj ET
+BT
+/F1 7.5 Tf 0.3 0.3 0.3 rg 55 667 Td (Hasil: Digitalisasi penuh tata usaha persuratan dinas, mempercepat alur disposisi pimpinan, dan menyediakan arsip digital terindeks dengan keamanan akses berbasis peran.) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 653 Td (3. Oetomo Hospital \(Layanan Kesehatan Bandung\)) Tj ET
+BT
+/F2 7.5 Tf 0.4 0.4 0.4 rg 55 642 Td (Kategori: Platform Informasi Institusional & Branding Kehadiran Digital Rumah Sakit) Tj ET
+BT
+/F1 7.5 Tf 0.3 0.3 0.3 rg 55 632 Td (Hasil: Membangun kanal komunikasi digital resmi yang terpercaya, memudahkan pasien mengakses jadwal dokter spesialis real-time, serta CMS mandiri bagi staf rumah sakit.) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 618 Td (4. SI-GEOMEDIK \(Kementerian Pertahanan RI\)) Tj ET
+BT
+/F2 7.5 Tf 0.4 0.4 0.4 rg 55 607 Td (Kategori: Portal Geospasial Sumber Daya Kesehatan Pertahanan Terproteksi \(Kemhan RI\)) Tj ET
+BT
+/F1 7.5 Tf 0.3 0.3 0.3 rg 55 597 Td (Hasil: Implementasi operasional berjalan untuk inventarisasi Faskes, SDM medis, Alkes, dan Matkes dengan 3 tingkatan wewenang \(Operator, Verifikator, Pusdatin\) & sesi HS256.) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.35 rg 45 583 Td (5. LAKUPANDAI by Sundawa \(Perbankan Komersial, BPD & BPR\)) Tj ET
+BT
+/F2 7.5 Tf 0.4 0.4 0.4 rg 55 572 Td (Kategori: Showcase Kapabilitas Arsitektur & Skenario Penerapan Agent Banking Enterprise) Tj ET
+BT
+/F1 7.5 Tf 0.3 0.3 0.3 rg 55 562 Td (Hasil: Menghadirkan kendali penuh bank: Android Keystore hardware key binding, geofencing GPS/WiFi BSSID, Maker-Checker, dan core banking adapter ISO 8583 / ISO 20022.) Tj ET
+BT
+/F2 11 Tf 0.1 0.25 0.45 rg 40 542 Td (4. OPSI DEPLOYMENT & KEPATUHAN KEAMANAN SISTEM) Tj ET
+0.86 0.79 0.47 RG 1 w 40 536 515 0 re S
+BT
+/F2 8 Tf 0.15 0.2 0.3 rg 45 520 Td (On-Premise Private Data Center:) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 510 Td (Mendukung instalasi di Primary DC & Hot Standby DRC internal institusi/bank \(RHEL 9, Podman/Docker, Kubernetes/OpenShift\). Memenuhi kedaulatan data penuh.) Tj ET
+BT
+/F2 8 Tf 0.15 0.2 0.3 rg 45 497 Td (Compliant Local Cloud:) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 487 Td (Kesiapan deployment di infrastruktur cloud berlokasi di region Indonesia \(Jakarta Region: AWS, GCP, Azure, atau Biznet/AliCloud\) sesuai kepatuhan regulasi.) Tj ET
+BT
+/F2 8 Tf 0.15 0.2 0.3 rg 45 474 Td (Keamanan & Standar Enkripsi:) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 464 Td (Sesi login terenkripsi HS256, mTLS + hardware device key binding, hashing ledger SHA-256, dan audit trail kepatuhan SUNDAWA SEC-07.) Tj ET
+BT
+/F2 8 Tf 0.15 0.2 0.3 rg 45 451 Td (Penyerahan Aset & Bebas Lock-in:) Tj ET
+BT
+/F1 7.5 Tf 0.35 0.35 0.35 rg 55 441 Td (Pada tahap BAST, klien menerima full source code, skema basis data, repositori Git, dan dokumentasi API tanpa keterikatan lisensi tertutup \(vendor lock-in\).) Tj ET
+BT
+/F2 11 Tf 0.1 0.25 0.45 rg 40 422 Td (5. KONTAK BISNIS & KONSULTASI PENGADAAN) Tj ET
+0.86 0.79 0.47 RG 1 w 40 416 515 0 re S
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 45 400 Td (Untuk diskusi NDA, permintaan proposal teknis, estimasi anggaran proyek, atau presentasi pimpinan, hubungi:) Tj ET
+0.95 0.95 0.97 rg 40 336 515 55 re f
+0.86 0.79 0.47 RG 1 w 40 336 515 55 re S
+BT
+/F2 8.5 Tf 0.1 0.2 0.4 rg 50 372 Td (Email Pengadaan: contact@sundawa.net) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.4 rg 50 358 Td (WhatsApp / Telepon Bisnis: +62 823-1808-7980) Tj ET
+BT
+/F2 8.5 Tf 0.1 0.2 0.4 rg 50 344 Td (Website Resmi: https://sundawa.net) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 320 372 Td (PT Sundawa Teknologi Indonesia) Tj ET
+BT
+/F1 8 Tf 0.3 0.3 0.3 rg 320 358 Td (Bandung, Jawa Barat, Indonesia) Tj ET
+BT
+/F2 8 Tf 0.86 0.6 0.1 rg 320 344 Td (Standard: Client-Centric Comfort, Professional Precision) Tj ET
+BT
+/F1 7 Tf 0.5 0.5 0.5 rg 40 30 Td (PT Sundawa Teknologi Indonesia ∑ Dokumen Profil Resmi Perusahaan & Pengadaan ∑ Halaman 2 dari 2) Tj ET
+
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000224 00000 n 
+0000000326 00000 n 
+0000000468 00000 n 
+0000005050 00000 n 
+0000005192 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+10195
+%%EOF

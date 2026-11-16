@@ -44,15 +44,20 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel }: 
 
                 {/* Header */}
                 <div className="mb-10">
-                    {post.published_at && (
-                        <span className="block text-[11px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/50 mb-4">
-                            {new Date(post.published_at).toLocaleDateString('id-ID', {
-                                day: 'numeric',
-                                month: 'long',
-                                year: 'numeric',
-                            })}
+                    <div className="flex items-center gap-3 mb-4">
+                        {post.published_at && (
+                            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/50">
+                                {new Date(post.published_at).toLocaleDateString('id-ID', {
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric',
+                                })}
+                            </span>
+                        )}
+                        <span className="inline-flex items-center border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[9px] font-extrabold tracking-[0.14em] text-gold uppercase">
+                            Bahasa Indonesia
                         </span>
-                    )}
+                    </div>
                     <h1 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-[#F8F8F8] leading-tight break-words">
                         {post.title}
                     </h1>

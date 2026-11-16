@@ -1,13 +1,26 @@
 "use client"
 
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowRight, PackageCheck } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
 import { SITE_URL } from '@/lib/Seo'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 
+export interface ServiceDeliverable {
+    title: string
+    desc: string
+}
+
 export interface ServiceDetailProps {
-    service: { slug: string; problem: string; title: string; desc: string; outcome: string; details: string }
+    service: {
+        slug: string
+        problem: string
+        title: string
+        desc: string
+        outcome: string
+        details: string
+        deliverables?: ServiceDeliverable[]
+    }
     translations: {
         navBack: string
         navTitle: string
@@ -15,6 +28,8 @@ export interface ServiceDetailProps {
         solution: string
         outcome: string
         backToServices: string
+        deliverablesLabel?: string
+        ctaProjectEstimate?: string
     }
 }
 
@@ -75,16 +90,47 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                         ))}
                     </div>
 
+                    {/* Deliverables Section ("Apa yang saya dapat?") */}
+                    {service.deliverables && service.deliverables.length > 0 && (
+                        <div className="mb-12 border border-sky/30 bg-sky/[0.03] p-6 sm:p-8 rounded-lg">
+                            <div className="mb-6 flex items-center gap-2.5">
+                                <PackageCheck className="text-sky flex-shrink-0" size={20} />
+                                <h2 className="text-xs font-black tracking-[0.2em] uppercase text-sky">
+                                    {translations.deliverablesLabel || 'Yang Anda Dapatkan (Contoh Keluaran Nyata)'}
+                                </h2>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {service.deliverables.map((item, idx) => (
+                                    <div key={idx} className="border border-sky/20 bg-navy/70 p-5 rounded">
+                                        <div className="text-[0.65rem] font-black tracking-[0.18em] text-gold uppercase mb-2">
+                                            0{idx + 1}
+                                        </div>
+                                        <h3 className="text-sm font-bold text-cream mb-2 leading-snug">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-xs text-cream/65 leading-relaxed">
+                                            {item.desc}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     {/* CTA */}
-                    <div className="mb-12 border border-gold/20 bg-gold/[0.03] p-6 sm:p-8 text-center">
-                        <h3 className="mb-4 text-xl font-bold text-cream">
+                    <div className="mb-12 border border-gold/20 bg-gold/[0.03] p-6 sm:p-8 text-center rounded-lg">
+                        <h3 className="mb-3 text-xl font-bold text-cream">
                             {t('ctaContact')}
                         </h3>
+                        <p className="text-sm text-cream/60 max-w-lg mx-auto mb-6">
+                            {service.desc}
+                        </p>
                         <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-2 bg-gold px-6 py-3.5 text-xs font-black tracking-[0.16em] text-navy uppercase no-underline transition-shadow hover:shadow-[0_0_24px_rgba(219,201,119,0.4)]"
+                            href={`/contact?service=${encodeURIComponent(service.slug)}`}
+                            className="inline-flex items-center gap-2 bg-gold px-7 py-3.5 text-xs font-black tracking-[0.16em] text-navy uppercase no-underline transition-shadow hover:shadow-[0_0_24px_rgba(219,201,119,0.4)]"
                         >
-                            {t('ctaContact')}
+                            <span>{translations.ctaProjectEstimate || t('ctaContact')}</span>
+                            <ArrowRight size={14} aria-hidden="true" />
                         </Link>
                     </div>
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useSyncExternalStore } from 'react'
 import { ChevronDown, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/src/i18n/navigation'
 import { getIntroSeenSnapshot, markIntroSeen, subscribeIntroSeen } from '@/src/shared/ui/IntroEvents'
 
 function getServerSnapshot() {
@@ -83,15 +84,15 @@ export default function HeroSection() {
                             transition={{ duration: 0.8, delay: 0.65 }}
                             className="hero-cta" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3.5rem' }}
                         >
-                            <a href="#services" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', overflow: 'hidden', transition: 'box-shadow 0.3s' }}
+                            <Link href="/contact" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', overflow: 'hidden', transition: 'box-shadow 0.3s', textDecoration: 'none' }}
                                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 40px rgba(219,201,119,0.5)')}
                                onMouseLeave={e => (e.currentTarget.style.boxShadow = 'none')}>
                                 {t('ctaServices')} <ArrowUpRight size={14} />
-                            </a>
-                            <a href="#about" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', border: '1px solid rgba(248,248,248,0.2)', color: 'rgba(248,248,248,0.7)', fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', transition: 'border-color 0.3s, color 0.3s' }}
+                            </Link>
+                            <a href="#featured-projects" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', border: '1px solid rgba(248,248,248,0.2)', color: 'rgba(248,248,248,0.7)', fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', transition: 'border-color 0.3s, color 0.3s', textDecoration: 'none' }}
                                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(248,248,248,0.6)'; e.currentTarget.style.color = '#F8F8F8' }}
                                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(248,248,248,0.2)'; e.currentTarget.style.color = 'rgba(248,248,248,0.7)' }}>
-                                {t('ctaAbout')}
+                                {t('ctaAbout')} <ArrowUpRight size={14} />
                             </a>
                         </motion.div>
 

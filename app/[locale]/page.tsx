@@ -1,9 +1,12 @@
+import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
+import { pageMetadata } from '@/lib/Seo'
 import {
     AboutSection,
     BlogSection,
     ClientsSection,
     ContactSection,
+    FeaturedProjectsSection,
     FinalCtaSection,
     HeroSection,
     ObjectionsSection,
@@ -14,6 +17,11 @@ import {
     ValuesSection,
 } from '@/src/features/home'
 import { ProductsSection } from '@/src/features/products'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params
+    return pageMetadata(locale, 'home', '')
+}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params
@@ -32,6 +40,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <ValuesSection />
                 <div className="section-line" />
                 <ServicesSection />
+                <div className="section-line" />
+                <FeaturedProjectsSection />
                 <div className="section-line" />
                 <TechSection />
                 <div className="section-line" />

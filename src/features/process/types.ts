@@ -4,6 +4,7 @@ export interface ProcessStep {
     title: string
     desc: string
     points: string[]
+    deliverable?: string
 }
 
 export interface ProcessInfoItem {

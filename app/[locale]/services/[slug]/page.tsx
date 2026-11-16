@@ -12,6 +12,7 @@ interface LocalizedServiceDetail {
     desc: string
     outcome: string
     details: string
+    deliverables?: Array<{ title: string; desc: string }>
 }
 
 export async function generateStaticParams() {
@@ -50,6 +51,9 @@ export async function generateMetadata({
     }
     const canonical = `${SITE_URL}/${locale}/services/${slug}`
 
+    const isModernization = serviceKey === 'modernization' || slug === 'modernisasi-sistem' || slug === 'system-modernization'
+    const ogImageUrl = isModernization ? '/og-modernisasi-sistem.png' : '/og-image.png'
+
     return {
         title: service.title,
         description: service.desc,
@@ -60,13 +64,13 @@ export async function generateMetadata({
             siteName: SITE_NAME,
             title: `${service.title} | ${SITE_NAME}`,
             description: service.desc,
-            images: [{ url: '/og-image.png', width: 1200, height: 630, alt: service.title }],
+            images: [{ url: ogImageUrl, width: 1200, height: 630, alt: service.title }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${service.title} | ${SITE_NAME}`,
             description: service.desc,
-            images: ['/og-image.png'],
+            images: [ogImageUrl],
         },
     }
 }
@@ -102,6 +106,8 @@ export default async function ServiceDetailRoute({
                     solution: t('solution'),
                     outcome: t('outcome'),
                     backToServices: t('backToServices'),
+                    deliverablesLabel: t('deliverablesLabel'),
+                    ctaProjectEstimate: t('ctaProjectEstimate'),
                 }}
             />
         </>

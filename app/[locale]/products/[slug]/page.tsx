@@ -35,6 +35,9 @@ export async function generateMetadata({
     const alternates = buildAlternates(locale, `/products/${slug}`)
     const title = `${localized.name} — ${localized.sector}`
 
+    const isLakupandai = spec.slug === 'laku-pandai'
+    const ogImageUrl = isLakupandai ? '/og-lakupandai.png' : '/og-image.png'
+
     return {
         title,
         description: localized.summary,
@@ -45,13 +48,13 @@ export async function generateMetadata({
             siteName: SITE_NAME,
             title: `${title} | ${SITE_NAME}`,
             description: localized.summary,
-            images: [{ url: '/og-image.png', width: 1200, height: 630, alt: localized.name }],
+            images: [{ url: ogImageUrl, width: 1200, height: 630, alt: localized.name }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${title} | ${SITE_NAME}`,
             description: localized.summary,
-            images: ['/og-image.png'],
+            images: [ogImageUrl],
         },
     }
 }

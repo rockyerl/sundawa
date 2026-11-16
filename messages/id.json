@@ -43,8 +43,8 @@
     "line3": "daripada menggantinya",
     "line4": "",
     "sub": "Solusi manual, sistem yang tidak saling terhubung, pelaporan yang lambat, dan pemeliharaan yang terus-menerus diam-diam menguras waktu dan biaya Anda. Kami memperbaiki apa yang menghambat Anda — tanpa mengganti apa yang masih berfungsi dengan baik.",
-    "ctaServices": "Lihat yang Perlu Diperbaiki",
-    "ctaAbout": "Yang Telah Kami Bangun",
+    "ctaServices": "Diskusikan Sistem Anda",
+    "ctaAbout": "Lihat Studi Kasus",
     "scroll": "Scroll"
   },
   "problem": {
@@ -166,7 +166,7 @@
     "heading2": "Perlu Diubah",
     "sub": "Lima alasan umum bisnis mencapai titik di mana perangkat lunak yang ada sudah tidak mampu lagi menopang operasional.",
     "ctaContact": "Sampaikan Titik Masalah Anda",
-    "ctaOutsource": "Lihat Estimasi Harga",
+    "ctaOutsource": "Hitung Biaya Tim IT",
     "ctaProcess": "Lihat Cara Kerja Kami",
     "outcomeLabel": "Hasil",
     "viewDetail": "Lihat detail",
@@ -230,6 +230,51 @@
       {
         "num": "5+",
         "label": "Tahun Pengalaman"
+      }
+    ]
+  },
+  "featuredProjects": {
+    "label": "Studi Kasus & Rekam Jejak",
+    "heading1": "Proyek Pilihan",
+    "heading2": "Bukti Eksekusi Nyata",
+    "sub": "2–3 proyek pilihan yang menunjukkan bagaimana Sundawa mendampingi mitra dari pemetaan masalah hingga sistem beroperasi di lingkungan produksi.",
+    "ctaPortfolio": "Lihat Semua 21+ Portfolio",
+    "labels": {
+      "problem": "Masalah",
+      "work": "Pekerjaan Sundawa",
+      "result": "Hasil",
+      "viewCaseStudy": "Lihat Studi Kasus Lengkap"
+    },
+    "projects": [
+      {
+        "slug": "dacar-by-undp",
+        "num": "01",
+        "name": "DACAR by UNDP",
+        "client": "UNDP (United Nations Development Programme)",
+        "tag": "Platform Distribusi Bantuan Digital",
+        "problem": "Penyaluran dana bantuan tunai untuk kegiatan darurat dan terorganisir di lapangan menuntut verifikasi penerima yang ketat, pencegahan duplikasi pencairan, dan audit trail transparan tanpa toleransi keterlambatan data.",
+        "work": "Merancang dan membangun ekosistem aplikasi lintas platform (aplikasi mobile petugas lapangan, portal backoffice admin, microservices backend, serta basis data terenkripsi) dengan kesiapan deployment cloud berstandar internasional.",
+        "result": "Platform berhasil memfasilitasi distribusi dana tunai secara digital dengan verifikasi penerima manfaat real-time, pencatatan transaksi terenkripsi, dan meniadakan proses rekonsiliasi berbasis kertas di lapangan."
+      },
+      {
+        "slug": "e-office",
+        "num": "02",
+        "name": "E-Office",
+        "client": "Instansi Pemerintahan & Korporasi",
+        "tag": "Sistem Administrasi Perkantoran Terintegrasi",
+        "problem": "Alur persuratan dinas, disposisi pimpinan, dan pengarsipan fisik menimbulkan hambatan koordinasi antar-unit, risiko dokumen tercecer, serta sulitnya memantau status penanganan instruksi secara terpadu.",
+        "work": "Mengembangkan sistem tata usaha perkantoran berbasis web modular dengan alur disposisi berjenjang otomatis, penomoran surat sistematis, manajemen hak akses berbasis peran (RBAC), serta pencarian arsip digital terindeks.",
+        "result": "Seluruh proses persuratan dan disposisi dokumen internal dapat dipantau secara real-time, mempercepat siklus tindak lanjut surat dinas antar-bagian, dan mengurangi ketergantungan dokumen fisik."
+      },
+      {
+        "slug": "oetomo-hospital-website",
+        "num": "03",
+        "name": "Oetomo Hospital Website",
+        "client": "Oetomo Hospital Bandung",
+        "tag": "Platform Informasi & Kehadiran Digital Rumah Sakit",
+        "problem": "Pasien dan keluarga membutuhkan saluran resmi rumah sakit yang cepat, akurat, dan mudah diakses untuk mengecek jadwal praktik dokter spesialis, fasilitas pelayanan rawat inap/jalan, dan panduan layanan darurat.",
+        "work": "Mengembangkan website institusional responsif berkecepatan tinggi dengan Content Management System (CMS) mandiri, direktori jadwal dokter spesialis dinamis, dan navigasi informasi medis yang ramah pengguna.",
+        "result": "Membangun kehadiran digital terpusat yang memperkuat reputasi rumah sakit, memudahkan pasien menemukan informasi medis yang tepat tanpa antre, dan memudahkan tim internal memperbarui jadwal secara mandiri."
       }
     ]
   },
@@ -642,7 +687,8 @@
           "Sesi konsultasi kebutuhan",
           "Analisis kelayakan teknis",
           "Estimasi jadwal & biaya awal"
-        ]
+        ],
+        "deliverable": "Dokumen ruang lingkup (scope of work), estimasi jadwal rilis, dan proposal arsitektur awal."
       },
       {
         "num": "02",
@@ -653,7 +699,8 @@
           "Kerangka desain & alur pengguna",
           "Desain antarmuka & prototipe interaktif",
           "Tinjauan dan persetujuan bersama"
-        ]
+        ],
+        "deliverable": "Cetak biru arsitektur sistem, alur proses bisnis, dan prototipe antarmuka interaktif yang disepakati."
       },
       {
         "num": "03",
@@ -664,7 +711,8 @@
           "Sprint mingguan / dua mingguan",
           "Demo kemajuan rutin",
           "Akses repositori selama pengembangan"
-        ]
+        ],
+        "deliverable": "Lingkungan staging aktif untuk verifikasi berkala, demo progres rutin, dan akses repositori Git transparan."
       },
       {
         "num": "04",
@@ -675,7 +723,8 @@
           "Pengujian fungsional & regresi",
           "Pengecekan performa dan keamanan dasar",
           "Perbaikan bug sebelum rilis"
-        ]
+        ],
+        "deliverable": "Ringkasan hasil pengujian (test report), daftar temuan bug yang telah diselesaikan, dan berita acara verifikasi mutu."
       },
       {
         "num": "05",
@@ -686,7 +735,8 @@
           "Kode sumber & dokumentasi teknis",
           "Kepemilikan penuh atas hasil kerja",
           "Sesi alih serah & pelatihan penggunaan"
-        ]
+        ],
+        "deliverable": "Kode sumber penuh (full source code), dokumentasi teknis & API, serta panduan deployment sesuai scope."
       },
       {
         "num": "06",
@@ -697,7 +747,8 @@
           "Garansi perbaikan bug pasca-rilis",
           "Dukungan teknis berkelanjutan",
           "Opsi pemeliharaan jangka panjang"
-        ]
+        ],
+        "deliverable": "Masa garansi perbaikan bug pasca-rilis, laporan stabilitas awal rilis, dan kontak eskalasi darurat."
       }
     ],
     "infoItems": [
@@ -723,7 +774,8 @@
       }
     ],
     "contactCta": "Siap mendiskusikan kebutuhan proyek Anda?",
-    "contactButton": "Hubungi Kami"
+    "contactButton": "Hubungi Kami",
+    "deliverableLabel": "Yang Anda terima:"
   },
   "blog": {
     "navBack": "Kembali",
@@ -762,6 +814,7 @@
     "subtitle": "Ceritakan sistem, produk, atau kebutuhan alih daya tim yang sedang Anda rencanakan. Kami menjaga komunikasi tetap jelas sejak percakapan pertama.",
     "topicLabel": "Topik Konsultasi",
     "topics": [
+      "Pengembangan Sistem Baru",
       "Modernisasi Sistem Lama",
       "Otomatisasi & Integrasi Data",
       "Demo Produk Sundawa",
@@ -790,7 +843,9 @@
     "linkedinLabel": "LinkedIn",
     "linkedinDesc": "PT Sundawa Teknologi Indonesia",
     "addressLabel": "Lokasi Kantor",
-    "addressValue": "Bandung, Jawa Barat, Indonesia"
+    "addressValue": "Bandung, Jawa Barat, Indonesia",
+    "downloadCompanyProfile": "Unduh Company Profile (PDF)",
+    "companyProfileDesc": "Profil legal PT, kapabilitas layanan, proyek rujukan, dan kontak pengadaan dalam satu dokumen ringkas."
   },
   "aboutPage": {
     "navBack": "Kembali",
@@ -799,6 +854,8 @@
     "slogan": "Professional Precision, Customer Comfort",
     "title": "Tentang Sundawa Teknologi",
     "profileLabel": "Profil Perusahaan",
+    "aboutP1": "PT Sundawa Teknologi Indonesia adalah perusahaan rekayasa teknologi asal Bandung yang merancang dan mengembangkan aplikasi, sistem informasi, dan platform digital misi-kritis untuk korporasi, institusi pemerintah, dan organisasi berskala luas.",
+    "aboutP2": "Sundawa dibangun untuk menjembatani jurang antara kerumitan rekayasa perangkat lunak dan ketenangan operasional klien. Kami meniadakan birokrasi agensi yang berbelit, estimasi yang membingungkan, serta penyerahan proyek ke pihak ketiga secara acak—menggantikannya dengan kolaborasi transparan yang dipimpin langsung oleh praktisi senior, kode berstandar tinggi, dan komitmen jangka panjang.",
     "subtitle": "PT Sundawa Teknologi Indonesia adalah perusahaan teknologi yang merancang dan mengembangkan aplikasi, website, dan sistem informasi untuk kebutuhan bisnis dan organisasi. Kami membantu klien menerjemahkan kebutuhan operasional menjadi solusi digital yang dapat digunakan oleh tim mereka sehari-hari.",
     "heroCtaPrimary": "Jadwalkan Diskusi Proyek",
     "heroCtaSecondary": "Jelajahi Produk & Case Studies",
@@ -809,7 +866,7 @@
     },
     "governance": {
       "label": "Kesiapan Tata Kelola Kemitraan",
-      "heading": "Tim Inti Senior — Tanpa Lempar ke Subkontraktor Lepas",
+      "heading": "Cara Kami Memimpin Proyek",
       "ctaProcess": "Lihat 6 Tahap Proses Kerja",
       "items": [
         {
@@ -996,7 +1053,8 @@
       "subtitle": "Dari modernisasi sistem inti hingga pengembangan platform lintas institusi — jadwalkan sesi penyelarasan awal langsung bersama tim pimpinan Sundawa.",
       "button": "Hubungi Tim Pimpinan",
       "secondaryButton": "Lihat Produk Sundawa"
-    }
+    },
+    "downloadCompanyProfile": "Unduh Company Profile (PDF)"
   },
   "servicesPage": {
     "navBack": "Kembali",
@@ -1016,7 +1074,21 @@
         "title": "Modernisasi Sistem Lama",
         "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan — merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.",
         "outcome": "Perubahan lebih cepat. Keandalan lebih baik. Utang teknis lebih sedikit.",
-        "details": "Modernisasi sistem lama adalah proses yang hati-hati. Kami tidak menulis ulang semuanya dari awal. Sebaliknya, kami menganalisis sistem yang ada, mengidentifikasi komponen yang masih berfungsi dengan baik, dan mengganti hanya bagian yang menghambat operasional. Pendekatan ini meminimalkan risiko dan memastikan bisnis tetap berjalan selama proses modernisasi."
+        "details": "Modernisasi sistem lama adalah proses yang hati-hati. Kami tidak menulis ulang semuanya dari awal. Sebaliknya, kami menganalisis sistem yang ada, mengidentifikasi komponen yang masih berfungsi dengan baik, dan mengganti hanya bagian yang menghambat operasional. Pendekatan ini meminimalkan risiko dan memastikan bisnis tetap berjalan selama proses modernisasi.",
+        "deliverables": [
+          {
+            "title": "Peta Ketergantungan Sistem (System Dependency Map)",
+            "desc": "Visualisasi visual dan arsitektural menyeluruh yang memetakan relasi antar modul, basis data, API internal/eksternal, serta titik kegagalan tunggal (single point of failure)."
+          },
+          {
+            "title": "Matriks Komponen Retensi & Refactor",
+            "desc": "Rekomendasi objektif berbasis analisis biaya-manfaat: komponen lama mana yang layak dipertahankan, mana yang perlu dibungkus API (wrapper), dan mana yang harus ditulis ulang."
+          },
+          {
+            "title": "Rencana Migrasi Bertahap (Phased Rollout Runbook)",
+            "desc": "Jadwal dan strategi rilis bertahap (Strangler Fig pattern) dengan rencana rollback aman tanpa downtime pada operasional bisnis aktif."
+          }
+        ]
       },
       "automation": {
         "slug": "otomatisasi-ai",
@@ -1024,7 +1096,21 @@
         "title": "Otomatisasi Alur Kerja & AI",
         "desc": "Kami ubah persetujuan, pelaporan, pengolahan dokumen, input data, dan tugas operasional yang berulang menjadi alur kerja otomatis yang terkendali.",
         "outcome": "Pekerjaan berulang lebih sedikit. Operasional lebih cepat. Kesalahan lebih jarang terjadi.",
-        "details": "Otomatisasi bukan hanya tentang menghilangkan pekerjaan manual. Ini tentang menciptakan alur kerja yang konsisten, terukur, dan bisa dipantau. Kami mengidentifikasi tugas yang berulang, merancang alur otomatis, dan mengintegrasikannya dengan sistem yang sudah ada. AI digunakan ketika benar-benar memberikan nilai, bukan sebagai gimmick."
+        "details": "Otomatisasi bukan hanya tentang menghilangkan pekerjaan manual. Ini tentang menciptakan alur kerja yang konsisten, terukur, dan bisa dipantau. Kami mengidentifikasi tugas yang berulang, merancang alur otomatis, dan mengintegrasikannya dengan sistem yang sudah ada. AI digunakan ketika benar-benar memberikan nilai, bukan sebagai gimmick.",
+        "deliverables": [
+          {
+            "title": "Peta Alur Kerja & Titik Hambat Operasional",
+            "desc": "Audit proses bisnis yang merinci durasi siklus manual, titik rawan kesalahan manusia, dan potensi efisiensi jam kerja per divisi."
+          },
+          {
+            "title": "Mesin Otomatisasi & Integrasi AI Terkendali",
+            "desc": "Pipeline otomatisasi teruji dengan validasi manusia (human-in-the-loop) untuk ekstraksi dokumen, persetujuan bersyarat, dan sinkronisasi lintas data."
+          },
+          {
+            "title": "Dasbor Monitoring & Audit Log Transparan",
+            "desc": "Antarmuka pemantauan status eksekusi otomatis secara real-time, pencatatan audit log lengkap, dan notifikasi peringatan kegagalan instan."
+          }
+        ]
       },
       "integration": {
         "slug": "integrasi-sistem",
@@ -1032,7 +1118,21 @@
         "title": "Integrasi Sistem & Data",
         "desc": "Kami hubungkan ERP, sistem keuangan, basis data, API, sistem operasional, dan platform eksternal agar informasi mengalir ke tempat yang tepat.",
         "outcome": "Satu aliran informasi, bukan sistem yang terisolasi.",
-        "details": "Integrasi sistem dimulai dengan memahami bagaimana data mengalir di antara sistem yang ada. Kami memetakan ketergantungan, mengidentifikasi titik integrasi, dan membangun konektor yang andal. Hasilnya adalah informasi yang mengalir otomatis ke tempat yang tepat, tanpa duplikasi atau inkonsistensi."
+        "details": "Integrasi sistem dimulai dengan memahami bagaimana data mengalir di antara sistem yang ada. Kami memetakan ketergantungan, mengidentifikasi titik integrasi, dan membangun konektor yang andal. Hasilnya adalah informasi yang mengalir otomatis ke tempat yang tepat, tanpa duplikasi atau inkonsistensi.",
+        "deliverables": [
+          {
+            "title": "Katalog & Spesifikasi Kontrak API Terpadu",
+            "desc": "Dokumentasi standar antarmuka REST API atau GraphQL yang mendefinisikan skema payload data, autentikasi, dan validasi antar subsistem."
+          },
+          {
+            "title": "Middleware Integrasi & Konektor Data Dua Arah",
+            "desc": "Layanan perantara yang menjembatani ERP, basis data relasional/NoSQL, dan gateway pihak ketiga dengan jaminan integritas data transaksi (ACID)."
+          },
+          {
+            "title": "Protokol Penanganan Konflik & Antrean Pesan (Message Queue)",
+            "desc": "Arsitektur antrean tahan banting dengan mekanisme retry otomatis dan pelaporan rekonsiliasi inkonsistensi data."
+          }
+        ]
       },
       "custom": {
         "slug": "platform-khusus",
@@ -1040,7 +1140,21 @@
         "title": "Platform Bisnis Khusus",
         "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal dan portal pelanggan hingga platform SaaS.",
         "outcome": "Perangkat lunak menyesuaikan operasional Anda, bukan sebaliknya.",
-        "details": "Platform bisnis khusus dirancang dari awal untuk memenuhi kebutuhan unik bisnis Anda. Kami mulai dengan memahami alur kerja, merancang arsitektur yang scalable, dan membangun platform yang bisa berkembang bersama bisnis Anda. Dari sistem internal hingga platform SaaS, kami memastikan setiap fitur memberikan nilai nyata."
+        "details": "Platform bisnis khusus dirancang dari awal untuk memenuhi kebutuhan unik bisnis Anda. Kami mulai dengan memahami alur kerja, merancang arsitektur yang scalable, dan membangun platform yang bisa berkembang bersama bisnis Anda. Dari sistem internal hingga platform SaaS, kami memastikan setiap fitur memberikan nilai nyata.",
+        "deliverables": [
+          {
+            "title": "Prototipe Desain Antarmuka & Alur Interaksi Interaktif",
+            "desc": "Design system lengkap dengan wireframe responsif, antarmuka berkualitas tinggi, dan prototipe klik yang telah divalidasi pemangku kepentingan."
+          },
+          {
+            "title": "Aplikasi Web/Mobile Siap Produksi & Skalabel",
+            "desc": "Platform modular berbasis arsitektur cloud modern dengan performa tinggi, proteksi keamanan data, dan hak kepemilikan kode sumber 100%."
+          },
+          {
+            "title": "Panduan Deployment, CI/CD, & Dokumentasi Pengembang",
+            "desc": "Infrastruktur sebagai kode (IaC), pipeline build otomatis, manual arsitektur, dan panduan onboarding tim internal klien."
+          }
+        ]
       },
       "managed": {
         "slug": "managed-engineering",
@@ -1048,9 +1162,25 @@
         "title": "Managed Product Engineering",
         "desc": "Kami terus memantau, memelihara, mengoptimalkan, dan mengembangkan platform Anda setelah rilis.",
         "outcome": "Satu mitra rekayasa yang tetap bertanggung jawab atas sistem Anda.",
-        "details": "Managed product engineering berarti kami tidak menghilang setelah peluncuran. Kami terus memantau performa, memperbaiki bug, mengoptimalkan kecepatan, dan mengembangkan fitur baru. Anda mendapatkan mitra rekayasa jangka panjang yang memahami sistem Anda dan tetap bertanggung jawab atas kualitasnya."
+        "details": "Managed product engineering berarti kami tidak menghilang setelah peluncuran. Kami terus memantau performa, memperbaiki bug, mengoptimalkan kecepatan, dan mengembangkan fitur baru. Anda mendapatkan mitra rekayasa jangka panjang yang memahami sistem Anda dan tetap bertanggung jawab atas kualitasnya.",
+        "deliverables": [
+          {
+            "title": "Perjanjian Tingkat Layanan (SLA) & Cakupan Dukungan",
+            "desc": "Dokumen komitmen resmi jaminan uptime, target waktu respons insiden (15–30 menit untuk isu kritis), dan alokasi jam rekayasa berkala."
+          },
+          {
+            "title": "Kanal Pelaporan Insiden & Eskalasi Siaga",
+            "desc": "Sistem tiket terdedikasi, grup komunikasi siaga langsung dengan lead engineer, dan prosedur investigasi akar masalah (Root Cause Analysis / RCA)."
+          },
+          {
+            "title": "Alur Manajemen Backlog & Rilis Fitur Berkala",
+            "desc": "Papan kanban transparan tempat permintaan perbaikan atau fitur baru diprioritaskan bersama, dijadwalkan ke sprint, dan diuji sebelum rilis."
+          }
+        ]
       }
-    }
+    },
+    "deliverablesLabel": "Yang Anda Dapatkan (Contoh Keluaran Nyata)",
+    "ctaProjectEstimate": "Minta Estimasi Proyek"
   },
   "meta": {
     "home": {
@@ -1096,13 +1226,13 @@
     "navBack": "Kembali",
     "navTitle": "Produk Sundawa",
     "label": "Produk Sundawa",
-    "heading1": "Ekosistem Produk",
-    "heading2": "Karya Sundawa",
+    "heading1": "6 Produk & Inisiatif",
+    "heading2": "Sundawa",
     "sub": "Selain membangun sistem khusus untuk klien, Sundawa merancang dan mengoperasikan produk SaaS, platform mobilitas, dan infrastruktur enterprise siap adopsi lintas industri.",
     "stats": [
       {
         "num": "6",
-        "label": "Produk Aktif"
+        "label": "Produk & Inisiatif"
       },
       {
         "num": "5+",
@@ -1119,11 +1249,11 @@
       "saas": "SaaS & Mobilitas"
     },
     "statuses": {
-      "liveSaas": "Live SaaS",
-      "enterpriseB2B": "Enterprise B2B",
-      "prototype": "Live Prototype",
-      "authPortal": "Portal Terproteksi",
-      "livePlatform": "Live Platform"
+      "liveSaas": "Live",
+      "enterpriseB2B": "Demo",
+      "prototype": "Prototipe",
+      "authPortal": "Live (Terproteksi)",
+      "livePlatform": "Live"
     },
     "actions": {
       "viewCaseStudy": "Lihat Case Study",
@@ -1194,9 +1324,9 @@
       "laku-pandai": {
         "name": "LAKUPANDAI by Sundawa",
         "sector": "Enterprise Agent Banking",
-        "tagline": "Perluas jangkauan layanan. Pertahankan kendali bank.",
-        "summary": "Platform infrastruktur agent banking end-to-end bagi bank komersial, BPD, dan BPR—menghubungkan aplikasi agen Flutter, backoffice Maker-Checker, dan adaptor core banking on-premise.",
-        "badgeMetric": "On-Premise DC/DRC · Control by Design",
+        "tagline": "Showcase Kapabilitas & Skenario Penerapan Sistem Perbankan",
+        "summary": "Showcase kapabilitas arsitektur dan skenario penerapan agent banking enterprise bagi bank komersial, BPD, dan BPR—menampilkan simulasi aplikasi agen Flutter, portal backoffice Maker-Checker, rekonsiliasi 4-arah, dan koneksi adaptor core banking on-premise.",
+        "badgeMetric": "Showcase Kapabilitas & Skenario Penerapan (Ready On-Premise)",
         "modules": [
           "Flutter Agent App + Hardware Key Binding",
           "Portal Backoffice SSO, RBAC & Maker-Checker",
@@ -1269,9 +1399,9 @@
         "name": "SI-GEOMEDIK",
         "sector": "Kesehatan Pertahanan (Kemhan RI)",
         "tagline": "Sistem Informasi Geospasial & Sumber Daya Kesehatan Pertahanan",
-        "summary": "Portal informasi geospasial terproteksi untuk inventarisasi dan pengelolaan Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan pertahanan Kemhan RI.",
-        "badgeMetric": "Portal Terproteksi · Dynamic RBAC + SEC-07",
-        "accessNote": "Aplikasi ini bersifat login-gated khusus personel berwenang. Ringkasan studi kasus disusun berdasarkan arsitektur autentikasi, peran RBAC, dan spesifikasi keamanan publik pada portal login.",
+        "summary": "Implementasi sistem yang sudah berjalan di lingkungan Kementerian Pertahanan RI—portal informasi geospasial terproteksi untuk inventarisasi dan pengelolaan Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan pertahanan (akses terproteksi khusus personel berwenang).",
+        "badgeMetric": "Implementasi Berjalan (Akses Khusus Personel Berwenang)",
+        "accessNote": "Aplikasi ini merupakan implementasi sistem yang sudah berjalan di lingkungan Kemhan RI. Tautan mengarah ke gerbang login resmi; akses penuh dibatasi khusus personel berwenang dengan hak akses dinas.",
         "modules": [
           "Inventarisasi Geospasial Faskes & SDM Medis",
           "Pengelolaan Alat Kesehatan & Material Kesehatan",

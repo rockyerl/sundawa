@@ -1,8 +1,8 @@
 export const COMPANY_CONTACT = {
     name: 'PT Sundawa Teknologi Indonesia',
     shortName: 'Sundawa Teknologi',
-    email: 'sundawateknologi@gmail.com',
-    emailHref: 'mailto:sundawateknologi@gmail.com',
+    email: 'contact@sundawa.net',
+    emailHref: 'mailto:contact@sundawa.net',
     phoneDisplay: '0823 1808 7980',
     phoneInternational: '+62 823-1808-7980',
     phoneSchema: '+6282318087980',

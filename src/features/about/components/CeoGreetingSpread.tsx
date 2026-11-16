@@ -92,7 +92,7 @@ export default function CeoGreetingSpread({
                             <div className="text-xs text-cream/55">{authorRole}</div>
                         </div>
                         <span className="border border-gold/25 bg-gold/[0.06] px-3 py-1 text-[0.6rem] font-extrabold tracking-[0.16em] text-gold/85 uppercase">
-                            Professional Precision · Customer Comfort
+                            Professional Precision · Customer Comfort 
                         </span>
                     </div>
                 </div>

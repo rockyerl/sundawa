@@ -92,6 +92,44 @@ export default function Process() {
                                         </li>
                                     ))}
                                 </ul>
+
+                                {s.deliverable && (
+                                    <div
+                                        style={{
+                                            marginTop: '1.25rem',
+                                            paddingTop: '0.85rem',
+                                            borderTop: '1px solid rgba(219,201,119,0.18)',
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '0.4rem',
+                                                fontSize: '0.62rem',
+                                                fontWeight: 800,
+                                                letterSpacing: '0.14em',
+                                                textTransform: 'uppercase',
+                                                color: '#DBC977',
+                                                marginBottom: '0.35rem',
+                                            }}
+                                        >
+                                            <PackageCheck size={13} style={{ color: '#DBC977' }} />
+                                            <span>{t('deliverableLabel')}</span>
+                                        </div>
+                                        <p
+                                            style={{
+                                                fontSize: '0.74rem',
+                                                lineHeight: 1.6,
+                                                fontWeight: 400,
+                                                color: 'rgba(248,248,248,0.75)',
+                                                margin: 0,
+                                            }}
+                                        >
+                                            {s.deliverable}
+                                        </p>
+                                    </div>
+                                )}
                             </motion.div>
                         )
                     })}

@@ -34,15 +34,20 @@ export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
             )}
 
             <div className="flex flex-col flex-1 p-5 md:p-6">
-                {post.published_at && (
-                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/50 mb-3">
-                        {new Date(post.published_at).toLocaleDateString('id-ID', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric',
-                        })}
+                <div className="flex items-center justify-between gap-2 mb-3">
+                    {post.published_at ? (
+                        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/50">
+                            {new Date(post.published_at).toLocaleDateString('id-ID', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric',
+                            })}
+                        </span>
+                    ) : <span />}
+                    <span className="inline-flex items-center border border-gold/30 bg-gold/10 px-2 py-0.5 text-[9px] font-extrabold tracking-[0.14em] text-gold uppercase">
+                        Bahasa Indonesia
                     </span>
-                )}
+                </div>
 
                 <h2 className="text-lg font-bold text-[#F8F8F8] leading-snug mb-3 break-words group-hover:text-[#DBC977] transition-colors duration-300">
                     {post.title}
