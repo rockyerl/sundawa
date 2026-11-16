@@ -1,33 +1,70 @@
 import type { MetadataRoute } from 'next'
 import { sitemapEntries, staticSitemapPaths } from '@/lib/Sitemap'
+import { SITE_URL } from '@/lib/Seo'
 import { getPostSlugs } from '@/src/features/blog'
 import { getPortfolioProjects } from '@/src/features/portfolio'
 import { getAllProductSlugs } from '@/src/features/products'
+import idMessages from '@/messages/id.json'
+import enMessages from '@/messages/en.json'
 
 export const revalidate = 3600 // rebuild the sitemap at most hourly so new posts appear
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    let slugs: { slug: string }[] = []
+    let blogPosts: { slug: string; published_at?: string; updated_at?: string }[] = []
     try {
-        slugs = await getPostSlugs()
+        blogPosts = await getPostSlugs()
     } catch (err) {
         console.error('[sitemap] failed to load blog slugs from Supabase:', err)
     }
 
-    let portfolioSlugs: { slug: string }[] = []
+    let portfolioProjects: { slug: string; updated_at?: string; created_at?: string }[] = []
     try {
         const projects = await getPortfolioProjects()
-        portfolioSlugs = projects.map(p => ({ slug: p.slug }))
+        portfolioProjects = projects.map(p => ({
+            slug: p.slug,
+            updated_at: p.updated_at,
+            created_at: p.created_at,
+        }))
     } catch (err) {
         console.error('[sitemap] failed to load portfolio slugs from Supabase:', err)
     }
 
     const productSlugs = getAllProductSlugs()
 
+    // Service detail pages with cross-locale pairing
+    const serviceKeys = Object.keys(idMessages.servicesPage?.detail || {}) as (keyof typeof idMessages.servicesPage.detail)[]
+    const serviceEntries: MetadataRoute.Sitemap = serviceKeys.flatMap((key) => {
+        const idSlug = (idMessages.servicesPage.detail[key] as { slug: string })?.slug
+        const enSlug = (enMessages.servicesPage.detail[key] as { slug: string })?.slug
+        if (!idSlug || !enSlug) return []
+
+        const languages = {
+            id: `${SITE_URL}/id/services/${idSlug}`,
+            en: `${SITE_URL}/en/services/${enSlug}`,
+            'x-default': `${SITE_URL}/id/services/${idSlug}`,
+        }
+
+        return [
+            {
+                url: `${SITE_URL}/id/services/${idSlug}`,
+                changeFrequency: 'monthly',
+                priority: 0.7,
+                alternates: { languages },
+            },
+            {
+                url: `${SITE_URL}/en/services/${enSlug}`,
+                changeFrequency: 'monthly',
+                priority: 0.7,
+                alternates: { languages },
+            },
+        ]
+    })
+
     return [
         ...staticSitemapPaths.flatMap(path => sitemapEntries(path, path === '' ? 1 : 0.7, path === '/blog' ? 'weekly' : 'monthly')),
-        ...slugs.flatMap(slug => sitemapEntries(`/blog/${slug.slug}`, 0.6, 'monthly')),
-        ...portfolioSlugs.flatMap(slug => sitemapEntries(`/portfolio/${slug.slug}`, 0.6, 'monthly')),
+        ...serviceEntries,
+        ...blogPosts.flatMap(post => sitemapEntries(`/blog/${post.slug}`, 0.6, 'monthly', post.updated_at || post.published_at)),
+        ...portfolioProjects.flatMap(proj => sitemapEntries(`/portfolio/${proj.slug}`, 0.6, 'monthly', proj.updated_at || proj.created_at)),
         ...productSlugs.flatMap(slug => sitemapEntries(`/products/${slug}`, 0.7, 'monthly')),
     ]
 }

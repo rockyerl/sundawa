@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase'
 import { isPost, type Post } from '@/lib/types'
 
-export type PostSlug = { slug: string }
+export type PostSlug = { slug: string; published_at?: string; updated_at?: string }
 
 export async function getPosts(): Promise<Post[]> {
     const { data, error } = await supabase
@@ -32,7 +32,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 export async function getPostSlugs(): Promise<PostSlug[]> {
     const { data, error } = await supabase
         .from('posts')
-        .select('slug')
+        .select('slug, published_at, updated_at')
         .not('published_at', 'is', null)
 
     if (error) {
@@ -40,7 +40,11 @@ export async function getPostSlugs(): Promise<PostSlug[]> {
         return []
     }
 
-    return (data ?? []).map(row => ({ slug: row.slug as string }))
+    return (data ?? []).map(row => ({
+        slug: row.slug as string,
+        published_at: row.published_at as string | undefined,
+        updated_at: row.updated_at as string | undefined,
+    }))
 }
 
 export async function searchPosts(query: string): Promise<Post[]> {

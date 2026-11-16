@@ -13,5 +13,13 @@ describe('sitemap entries', () => {
         ])
         expect(entries[0].alternates?.languages?.['x-default']).toBe(`${SITE_URL}/id/blog`)
         expect(entries[0].changeFrequency).toBe('weekly')
+        expect(entries[0].lastModified).toBeUndefined()
+    })
+
+    it('preserves lastModified when provided', () => {
+        const date = '2026-11-16T10:00:00Z'
+        const entries = sitemapEntries('/blog/test', 0.6, 'monthly', date)
+        expect(entries[0].lastModified).toBe(date)
+        expect(entries[1].lastModified).toBe(date)
     })
 })

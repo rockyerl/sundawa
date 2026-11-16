@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { pageMetadata } from '@/lib/Seo'
+import { pageMetadata, SITE_URL } from '@/lib/Seo'
 import { BlogArchive, getPosts, searchPosts } from '@/src/features/blog'
 import { BreadcrumbJsonLd } from '@/src/shared/ui'
 
@@ -8,13 +8,18 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
     const { locale } = await params
     const { q } = await searchParams
     if (q?.trim()) {
+        const query = q.trim()
         return {
-            title: `Search: "${q.trim()}" — Blog`,
-            description: `Search results for "${q.trim()}" in Sundawa Teknologi blog.`,
+            title: `Search: "${query}" — Blog`,
+            description: `Search results for "${query}" in Sundawa Teknologi blog.`,
+            robots: {
+                index: false,
+                follow: true,
+            },
             alternates: {
                 languages: {
-                    id: `/id/blog?q=${encodeURIComponent(q.trim())}`,
-                    en: `/en/blog?q=${encodeURIComponent(q.trim())}`,
+                    id: `${SITE_URL}/id/blog?q=${encodeURIComponent(query)}`,
+                    en: `${SITE_URL}/en/blog?q=${encodeURIComponent(query)}`,
                 },
             },
         }

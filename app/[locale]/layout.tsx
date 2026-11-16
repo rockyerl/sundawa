@@ -119,7 +119,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 publisher: { '@id': `${SITE_URL}/#organization` },
                 potentialAction: {
                     '@type': 'SearchAction',
-                    target: `${SITE_URL}/blog?q={search_term_string}`,
+                    target: `${SITE_URL}/${locale}/blog?q={search_term_string}`,
                     'query-input': 'required name=search_term_string',
                 },
             },

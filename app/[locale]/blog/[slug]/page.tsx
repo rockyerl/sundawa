@@ -3,21 +3,22 @@ import { notFound } from 'next/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { buildAlternates, SITE_NAME } from '@/lib/Seo'
 import { BlogPostDetail, getPostBySlug, getPostSlugs } from '@/src/features/blog'
+import { BreadcrumbJsonLd } from '@/src/shared/ui'
 import { routing } from '@/src/i18n/routing'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
     const { locale, slug } = await params
     const post = await getPostBySlug(slug)
     if (!post) return {}
-    const { canonical } = buildAlternates(locale, `/blog/${slug}`)
+    const alternates = buildAlternates(locale, `/blog/${slug}`)
     const image = post.main_image_url || '/og-image.png'
     return {
         title: post.title,
         description: post.excerpt,
-        alternates: { canonical },
+        alternates,
         openGraph: {
             type: 'article',
-            url: canonical,
+            url: alternates.canonical,
             siteName: SITE_NAME,
             title: post.title,
             description: post.excerpt,
@@ -53,10 +54,18 @@ export default async function BlogDetailPage({
     const { canonical } = buildAlternates(locale, `/blog/${slug}`)
 
     return (
-        <BlogPostDetail
-            post={post}
-            canonicalUrl={canonical}
-            backToBlogLabel={t('backToBlog')}
-        />
+        <>
+            <BreadcrumbJsonLd
+                breadcrumbs={[
+                    { name: t('navTitle'), url: `/${locale}/blog` },
+                    { name: post.title, url: `/${locale}/blog/${post.slug}` },
+                ]}
+            />
+            <BlogPostDetail
+                post={post}
+                canonicalUrl={canonical}
+                backToBlogLabel={t('backToBlog')}
+            />
+        </>
     )
 }

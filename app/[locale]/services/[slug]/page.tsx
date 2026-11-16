@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { buildAlternates, SITE_NAME } from '@/lib/Seo'
+import { SITE_NAME, SITE_URL } from '@/lib/Seo'
 import { ServiceDetail } from '@/src/features/services'
 import { BreadcrumbJsonLd } from '@/src/shared/ui'
 
@@ -14,6 +14,16 @@ interface LocalizedServiceDetail {
     details: string
 }
 
+export async function generateStaticParams() {
+    const idMessages = (await import('@/messages/id.json')).default
+    const enMessages = (await import('@/messages/en.json')).default
+
+    const idSlugs = Object.values(idMessages.servicesPage?.detail || {}).map((s: { slug: string }) => ({ locale: 'id', slug: s.slug }))
+    const enSlugs = Object.values(enMessages.servicesPage?.detail || {}).map((s: { slug: string }) => ({ locale: 'en', slug: s.slug }))
+
+    return [...idSlugs, ...enSlugs]
+}
+
 export async function generateMetadata({
     params,
 }: {
@@ -22,18 +32,31 @@ export async function generateMetadata({
     const { locale, slug } = await params
     const t = await getTranslations({ locale, namespace: 'servicesPage' })
     const services = t.raw('detail') as Record<string, LocalizedServiceDetail>
-    const service = Object.values(services).find((s) => s.slug === slug)
-    const alternates = buildAlternates(locale, `/services/${slug}`)
+    const serviceEntry = Object.entries(services).find(([, s]) => s.slug === slug)
 
-    if (!service) return {}
+    if (!serviceEntry) return {}
+    const [serviceKey, service] = serviceEntry
+
+    // Cross-locale alternate links using matching service key
+    const idMessages = (await import('@/messages/id.json')).default
+    const enMessages = (await import('@/messages/en.json')).default
+    const idSlug = (idMessages.servicesPage?.detail as Record<string, { slug: string }>)?.[serviceKey]?.slug ?? slug
+    const enSlug = (enMessages.servicesPage?.detail as Record<string, { slug: string }>)?.[serviceKey]?.slug ?? slug
+
+    const languages = {
+        id: `${SITE_URL}/id/services/${idSlug}`,
+        en: `${SITE_URL}/en/services/${enSlug}`,
+        'x-default': `${SITE_URL}/id/services/${idSlug}`,
+    }
+    const canonical = `${SITE_URL}/${locale}/services/${slug}`
 
     return {
         title: service.title,
         description: service.desc,
-        alternates,
+        alternates: { canonical, languages },
         openGraph: {
             type: 'website',
-            url: alternates.canonical,
+            url: canonical,
             siteName: SITE_NAME,
             title: `${service.title} | ${SITE_NAME}`,
             description: service.desc,
