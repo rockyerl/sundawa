@@ -5,6 +5,7 @@ export type ProductSlug =
     | 'si-geomedik'
     | 'nawasanga'
     | 'abo-rentcar'
+    | 'sundawa-people'
 
 export type ProductCategory = 'enterprise' | 'saas'
 

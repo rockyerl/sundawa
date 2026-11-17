@@ -25,7 +25,7 @@
       "techTitle": "Technology Stack",
       "techDesc": "Core production technologies our engineering teams master",
       "allProductsTitle": "All Products & Case Studies",
-      "allProductsDesc": "Explore 6 SaaS, mobility, and enterprise platforms by Sundawa",
+      "allProductsDesc": "Explore 7 SaaS, mobility, and enterprise platforms by Sundawa",
       "portfolioTitle": "Client Project Portfolio",
       "portfolioDesc": "Client case studies across banking, defense health & public sector",
       "blogTitle": "Articles & Insights",
@@ -1226,12 +1226,12 @@
     "navBack": "Back",
     "navTitle": "Sundawa Products",
     "label": "Sundawa Products",
-    "heading1": "6 Sundawa Products",
+    "heading1": "7 Sundawa Products",
     "heading2": "& Initiatives",
     "sub": "Beyond bespoke client engineering, Sundawa designs and operates SaaS platforms, smart mobility products, and enterprise infrastructure built for real operational demands.",
     "stats": [
       {
-        "num": "6",
+        "num": "7",
         "label": "Products & Initiatives"
       },
       {
@@ -1501,6 +1501,42 @@
             {
               "title": "Events & Corporate Mobility (/b2b)",
               "outcome": "Interactive calculator auto-prices weekday/weekend & multi-day trips directly into WhatsApp checkout."
+            }
+          ]
+        }
+      },
+      "sundawa-people": {
+        "name": "SUNDAWA People",
+        "sector": "Enterprise Autonomous HR & Payroll",
+        "tagline": "One Unified Intelligent Ecosystem for Workforce Performance & Financials",
+        "summary": "Enterprise HRIS and workforce operating system—automating multi-tier payroll, instant biometric IoT sync, intelligent shift scheduling, and self-service ESS under banking-grade security standards.",
+        "badgeMetric": "Enterprise Grade · SOC2 & ISO 27001 Certified",
+        "accessNote": "This application is a secured operational HRIS portal. The link leads to the official login gateway (TLS 1.3 & AES-256); full access is restricted to authorized employees and HR personnel.",
+        "modules": [
+          "Multi-Tier Automated Payroll & Tax/Benefit Deductions",
+          "Sub-Second Biometric IoT Live Sync & Geofenced Attendance",
+          "Dynamic Shift Management & Multi-Branch Approval Flows",
+          "Employee Self-Service (ESS) Portal with SOC2 Security"
+        ],
+        "caseStudy": {
+          "subject": "Multi-branch enterprises, growing corporations, and national People Operations teams",
+          "challenge": "Managing distributed workforce operations with complex shift rotations, intricate payroll components (overtime, loan deductions, taxes), and disconnected biometric attendance logs causes operational lag and reconciliation errors.",
+          "solution": "SUNDAWA People delivers instant biometric IoT device synchronization (< 1 second), a 99.98% zero-discrepancy automated payroll engine, multi-tier digital leave/overtime approvals, and encrypted Employee Self-Service (ESS).",
+          "architecture": "Modern enterprise Next.js architecture with end-to-end encryption (TLS 1.3 & AES-256), real-time IoT attendance event queues, granular Role-Based Access Control, and strict tenant data isolation.",
+          "impact": "Accelerates monthly HR reconciliation cycles by up to 10x, eliminates manual payroll discrepancies, and provides real-time multi-branch workforce visibility.",
+          "highlights": [
+            "99.98% Payroll Precision Zero Discrepancy",
+            "Sub-Second Live Sync IoT Biometric Webhook",
+            "10x Faster HR Efficiency with Multi-Tier Approvals"
+          ],
+          "scenarios": [
+            {
+              "title": "Multi-Branch Operations & Complex Rotations",
+              "outcome": "Real-time attendance sync across dozens of branch sites directly to central HR without manual logs."
+            },
+            {
+              "title": "Large-Scale Monthly Enterprise Payroll",
+              "outcome": "Overtime, base salary, deductions, and digital paystubs computed in minutes with 99.98% precision."
             }
           ]
         }

@@ -25,7 +25,7 @@
       "techTitle": "Stack Teknologi",
       "techDesc": "Rangkaian teknologi inti yang kami kuasai di produksi",
       "allProductsTitle": "Semua Produk & Case Studies",
-      "allProductsDesc": "Eksplorasi 6 produk ekosistem SaaS, mobilitas & enterprise Sundawa",
+      "allProductsDesc": "Eksplorasi 7 produk ekosistem SaaS, mobilitas & enterprise Sundawa",
       "portfolioTitle": "Portfolio Proyek Klien",
       "portfolioDesc": "Studi kasus sistem klien lintas perbankan, kesehatan & publik",
       "blogTitle": "Artikel & Insight",
@@ -1226,12 +1226,12 @@
     "navBack": "Kembali",
     "navTitle": "Produk Sundawa",
     "label": "Produk Sundawa",
-    "heading1": "6 Produk & Inisiatif",
+    "heading1": "7 Produk & Inisiatif",
     "heading2": "Sundawa",
     "sub": "Selain membangun sistem khusus untuk klien, Sundawa merancang dan mengoperasikan produk SaaS, platform mobilitas, dan infrastruktur enterprise siap adopsi lintas industri.",
     "stats": [
       {
-        "num": "6",
+        "num": "7",
         "label": "Produk & Inisiatif"
       },
       {
@@ -1501,6 +1501,42 @@
             {
               "title": "Kebutuhan Korporat & Acara (/b2b)",
               "outcome": "Kalkulator sewa menghitung otomatis tarif weekday/weekend & >2 hari sebelum diteruskan ke reservasi WhatsApp."
+            }
+          ]
+        }
+      },
+      "sundawa-people": {
+        "name": "SUNDAWA People",
+        "sector": "Enterprise Autonomous HR & Payroll",
+        "tagline": "Satu Ekosistem Cerdas untuk Seluruh Performa & Finansial SDM",
+        "summary": "Platform HRIS dan operasional tenaga kerja enterprise—mengotomatiskan payroll multi-tier, sinkronisasi mesin sidik jari biometrik instan, manajemen shift cerdas, serta ESS mandiri dalam standar keamanan perbankan.",
+        "badgeMetric": "Enterprise Grade · SOC2 & ISO 27001 Certified",
+        "accessNote": "Aplikasi ini merupakan portal HRIS operasional terproteksi. Tautan mengarah ke gerbang login resmi (TLS 1.3 & AES-256); akses penuh diperuntukkan bagi karyawan dan tim HR berwenang.",
+        "modules": [
+          "Otomatisasi Payroll Multi-Tier & Perhitungan PPh21/BPJS",
+          "Live Sync Biometrik IoT < 1 Detik & Geofence Presensi",
+          "Manajemen Shift & Multi-Branch Approval Workflow",
+          "Portal ESS Mandiri & Keamanan Standar SOC2 / TLS 1.3"
+        ],
+        "caseStudy": {
+          "subject": "Perusahaan multi-cabang, institusi enterprise, & tim People Operations skala nasional",
+          "challenge": "Pengelolaan ribuan karyawan lintas cabang dengan variasi pola shift kerja, kalkulasi payroll kompleks (lembur, potongan pinjaman, PPh21, BPJS), dan data mesin absensi terpisah kerap memakan waktu berhari-hari serta rentan selisih hitung.",
+          "solution": "SUNDAWA People mengintegrasikan webhook mesin sidik jari biometrik secara instan (< 1 detik), mesin payroll otomatis 99.98% zero-discrepancy, approval lembur/cuti multi-level, dan portal Employee Self-Service (ESS) terenkripsi.",
+          "architecture": "Arsitektur Next.js enterprise modern terenkripsi end-to-end (TLS 1.3 & AES-256), antrean data presensi IoT real-time, Role-Based Access Control bertingkat, dan isolasi data perusahaan tingkat tinggi.",
+          "impact": "Mempercepat siklus rekapitulasi HR hingga 10x lebih cepat, meniadakan selisih payroll manual, dan menghadirkan visibilitas kehadiran ribuan staf secara real-time antar-cabang.",
+          "highlights": [
+            "Presisi Payroll 99.98% Zero Discrepancy",
+            "Live Sync < 1 Detik IoT Webhook Biometrik",
+            "Efisiensi HR 10x Lebih Cepat Multi-Tier Approvals"
+          ],
+          "scenarios": [
+            {
+              "title": "Operasional Multi-Cabang & Shift Kompleks",
+              "outcome": "Sinkronisasi absensi real-time dari puluhan cabang ke pusat tanpa rekap manual akhir bulan."
+            },
+            {
+              "title": "Payroll Bulanan Skala Ribuan Karyawan",
+              "outcome": "Kalkulasi gaji, lembur, dan slip gaji digital selesai dalam hitungan menit dengan akurasi 99.98%."
             }
           ]
         }

@@ -11,6 +11,7 @@ const FOOTER_PRODUCTS = [
     { slug: 'si-geomedik', label: 'SI-GEOMEDIK' },
     { slug: 'nawasanga', label: 'Nawasanga' },
     { slug: 'abo-rentcar', label: 'Abo Rent Car' },
+    { slug: 'sundawa-people', label: 'SUNDAWA People' },
 ] as const
 
 export default async function Footer() {

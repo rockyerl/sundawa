@@ -22,10 +22,10 @@ function collectLeafKeys(record: unknown, prefix = ''): string[] {
 }
 
 describe('products catalog and case studies', () => {
-    it('defines all six Sundawa products with valid HTTPS URLs and unique slugs', () => {
-        expect(PRODUCT_SPECS).toHaveLength(6)
+    it('defines all seven Sundawa products with valid HTTPS URLs and unique slugs', () => {
+        expect(PRODUCT_SPECS).toHaveLength(7)
         const slugs = getAllProductSlugs()
-        expect(new Set(slugs).size).toBe(6)
+        expect(new Set(slugs).size).toBe(7)
         expect(slugs).toEqual([
             'sewaka',
             'laku-pandai',
@@ -33,10 +33,11 @@ describe('products catalog and case studies', () => {
             'si-geomedik',
             'nawasanga',
             'abo-rentcar',
+            'sundawa-people',
         ])
 
         for (const spec of PRODUCT_SPECS) {
-            expect(spec.url).toMatch(/^https:\/\/[a-z0-9-]+\.sundawa\.net$/)
+            expect(spec.url).toMatch(/^https:\/\/[a-z0-9-]+\.sundawa\.net(\/login)?$/)
             expect(spec.techTags.length).toBeGreaterThanOrEqual(3)
         }
     })
@@ -45,19 +46,24 @@ describe('products catalog and case studies', () => {
         const idItems = idMessages.products.items as Record<ProductSlug, LocalizedProductContent>
         const products = buildProducts(idItems)
 
-        expect(filterProducts(products, 'all')).toHaveLength(6)
-        expect(filterProducts(products, 'enterprise')).toHaveLength(3)
+        expect(filterProducts(products, 'all')).toHaveLength(7)
+        expect(filterProducts(products, 'enterprise')).toHaveLength(4)
         expect(filterProducts(products, 'saas')).toHaveLength(3)
 
         expect(getProductSpecBySlug('nawasanga')?.domain).toBe('nawasanga.sundawa.net')
+        expect(getProductSpecBySlug('sundawa-people')?.domain).toBe('hris.sundawa.net')
         expect(getProductSpecBySlug('unknown-product')).toBeUndefined()
 
         const adjFirst = getAdjacentProducts(products, 'sewaka')
         expect(adjFirst.prev).toBeNull()
         expect(adjFirst.next?.slug).toBe('laku-pandai')
 
-        const adjLast = getAdjacentProducts(products, 'abo-rentcar')
-        expect(adjLast.prev?.slug).toBe('nawasanga')
+        const adjMid = getAdjacentProducts(products, 'abo-rentcar')
+        expect(adjMid.prev?.slug).toBe('nawasanga')
+        expect(adjMid.next?.slug).toBe('sundawa-people')
+
+        const adjLast = getAdjacentProducts(products, 'sundawa-people')
+        expect(adjLast.prev?.slug).toBe('abo-rentcar')
         expect(adjLast.next).toBeNull()
     })
 

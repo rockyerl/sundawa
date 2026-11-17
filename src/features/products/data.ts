@@ -68,4 +68,16 @@ export const PRODUCT_SPECS: readonly ProductSpec[] = [
         accentColor: '#2d7dd2',
         techTags: ['Rate Calculator', 'Whoosh Padalarang', 'WhatsApp Booking', 'B2B Portal'],
     },
+    {
+        slug: 'sundawa-people',
+        num: '07',
+        initials: 'SP',
+        url: 'https://hris.sundawa.net/login',
+        domain: 'hris.sundawa.net',
+        category: 'enterprise',
+        statusKey: 'authPortal',
+        accentColor: '#DBC977',
+        techTags: ['Multi-Tier Payroll', 'IoT Biometric Webhook', 'Shift Management', 'SOC2 / TLS 1.3'],
+        isAuthGated: true,
+    },
 ] as const
