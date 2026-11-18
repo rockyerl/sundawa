@@ -42,10 +42,13 @@
     "line2": "bisa jadi lebih mahal",
     "line3": "daripada menggantinya",
     "line4": "",
-    "sub": "Solusi manual, sistem yang tidak saling terhubung, pelaporan yang lambat, dan pemeliharaan yang terus-menerus diam-diam menguras waktu dan biaya Anda. Kami memperbaiki apa yang menghambat Anda — tanpa mengganti apa yang masih berfungsi dengan baik.",
+    "sub": "Jasa modernisasi sistem, integrasi ERP, dan pengembangan aplikasi bisnis custom untuk perusahaan. Kami memperbaiki apa yang menghambat operasional Anda — tanpa mengganti apa yang masih berfungsi dengan baik.",
     "ctaServices": "Diskusikan Sistem Anda",
     "ctaAbout": "Lihat Studi Kasus",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "proof": "Bukti Pengerjaan",
+    "proofDacar": "DACAR by UNDP (Distribusi Bantuan Digital)",
+    "proofEoffice": "E-Office (Administrasi Terintegrasi)"
   },
   "problem": {
     "label": "Masalah Sesungguhnya",
@@ -845,7 +848,16 @@
     "addressLabel": "Lokasi Kantor",
     "addressValue": "Bandung, Jawa Barat, Indonesia",
     "downloadCompanyProfile": "Unduh Company Profile (PDF)",
-    "companyProfileDesc": "Profil legal PT, kapabilitas layanan, proyek rujukan, dan kontak pengadaan dalam satu dokumen ringkas."
+    "companyProfileDesc": "Profil legal PT, kapabilitas layanan, proyek rujukan, dan kontak pengadaan dalam satu dokumen ringkas.",
+    "submitDirect": "Kirim Brief Proyek",
+    "submitWhatsApp": "Kirim Cepat via WhatsApp",
+    "submitDirectSubmitting": "Mengirim Brief Proyek...",
+    "directSuccessTitle": "Brief Proyek Berhasil Diterima",
+    "directSuccessDesc": "Terima kasih telah mempercayakan kebutuhan Anda kepada Sundawa. Tim konsultan & rekayasa kami sedang meninjau detail brief Anda dan akan menghubungi Anda via email dalam 1x24 jam kerja.",
+    "directSuccessOrWa": "Butuh diskusi cepat hari ini?",
+    "directSuccessWaButton": "Buka Chat WhatsApp Langsung",
+    "directSuccessReset": "Kirim Brief Lainnya",
+    "errorDirect": "Terjadi kendala saat mengirimkan brief. Silakan coba lagi atau gunakan tombol WhatsApp di bawah."
   },
   "aboutPage": {
     "navBack": "Kembali",
@@ -1088,7 +1100,29 @@
             "title": "Rencana Migrasi Bertahap (Phased Rollout Runbook)",
             "desc": "Jadwal dan strategi rilis bertahap (Strangler Fig pattern) dengan rencana rollback aman tanpa downtime pada operasional bisnis aktif."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Studi Kasus Rujukan · Modernisasi Bertahap",
+          "name": "DACAR by UNDP",
+          "client": "United Nations Development Programme",
+          "problem": "Penyaluran dana bantuan darurat di lapangan sebelumnya bertumpu pada validasi berbasis kertas yang rawan duplikasi pencairan serta lambat direkonsiliasi.",
+          "role": "Sundawa merancang ulang arsitektur sistem lama menjadi microservices modular, aplikasi mobile petugas lapangan, portal verifikasi berjenjang, dan database terenkripsi.",
+          "metrics": [
+            {
+              "value": "0",
+              "label": "Kasus Pencairan Ganda"
+            },
+            {
+              "value": "100%",
+              "label": "Nirkertas & Transparan"
+            },
+            {
+              "value": "0 Menit",
+              "label": "Downtime Saat Migrasi"
+            }
+          ],
+          "href": "/portfolio/dacar-by-undp"
+        }
       },
       "automation": {
         "slug": "otomatisasi-ai",
@@ -1110,7 +1144,29 @@
             "title": "Dasbor Monitoring & Audit Log Transparan",
             "desc": "Antarmuka pemantauan status eksekusi otomatis secara real-time, pencatatan audit log lengkap, dan notifikasi peringatan kegagalan instan."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Studi Kasus Rujukan · Otomatisasi Alur Kerja & Arsip",
+          "name": "E-Office",
+          "client": "Instansi Pemerintahan & Korporasi",
+          "problem": "Surat dinas masuk, disposisi persetujuan pimpinan berjenjang, dan pengarsipan fisik memakan waktu 3–5 hari kerja dengan risiko surat tercecer.",
+          "role": "Sundawa membangun sistem alur kerja otomatis berbasis web dengan penomoran surat sistematis, disposisi berjenjang instan, dan pencarian arsip terindeks.",
+          "metrics": [
+            {
+              "value": "10x",
+              "label": "Lebih Cepat Siklus Disposisi"
+            },
+            {
+              "value": "100%",
+              "label": "Audit Trail Status Surat"
+            },
+            {
+              "value": "0",
+              "label": "Dokumen Tercecer"
+            }
+          ],
+          "href": "/portfolio/e-office"
+        }
       },
       "integration": {
         "slug": "integrasi-sistem",
@@ -1132,7 +1188,29 @@
             "title": "Protokol Penanganan Konflik & Antrean Pesan (Message Queue)",
             "desc": "Arsitektur antrean tahan banting dengan mekanisme retry otomatis dan pelaporan rekonsiliasi inkonsistensi data."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Studi Kasus Rujukan · Integrasi ERP & API Perusahaan",
+          "name": "Nawasanga",
+          "client": "Armada Logistik & Pengelolaan BBM Industri",
+          "problem": "Data pengisian BBM armada lapangan terpisah dari sistem ERP pembukuan keuangan dan GPS pelacak, memicu kebocoran bahan bakar dan rekonsiliasi manual mingguan.",
+          "role": "Sundawa membangun middleware integrasi dua arah yang menghubungkan sensor flow meter IoT, GPS tracker, mobile PWA pengemudi, dan REST API ERP pusat.",
+          "metrics": [
+            {
+              "value": "< 1 Dtk",
+              "label": "Transmisi Webhook IoT"
+            },
+            {
+              "value": "3 Sistem",
+              "label": "Terintegrasi Penuh (IoT, GPS, ERP)"
+            },
+            {
+              "value": "100%",
+              "label": "Rekonsiliasi Otomatis Real-Time"
+            }
+          ],
+          "href": "/products/nawasanga"
+        }
       },
       "custom": {
         "slug": "platform-khusus",
@@ -1154,7 +1232,29 @@
             "title": "Panduan Deployment, CI/CD, & Dokumentasi Pengembang",
             "desc": "Infrastruktur sebagai kode (IaC), pipeline build otomatis, manual arsitektur, dan panduan onboarding tim internal klien."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Studi Kasus Rujukan · Platform Enterprise Kustom",
+          "name": "SUNDAWA People",
+          "client": "Perusahaan Multi-Cabang & Tenaga Kerja Nasional",
+          "problem": "Operasional ribuan staf lintas cabang menghadapi selisih hitung lembur, absensi manual, dan penghitungan payroll bulanan yang lambat.",
+          "role": "Sundawa merancang platform operasional custom end-to-end yang menyatukan absensi biometrik IoT, shift management dinamis, ESS mandiri, dan mesin payroll multi-tier.",
+          "metrics": [
+            {
+              "value": "99.98%",
+              "label": "Presisi Payroll (Zero Discrepancy)"
+            },
+            {
+              "value": "10x",
+              "label": "Efisiensi Rekapitulasi HR"
+            },
+            {
+              "value": "< 1 Dtk",
+              "label": "Live Sync Biometrik IoT"
+            }
+          ],
+          "href": "/products/sundawa-people"
+        }
       },
       "managed": {
         "slug": "managed-engineering",
@@ -1176,11 +1276,35 @@
             "title": "Alur Manajemen Backlog & Rilis Fitur Berkala",
             "desc": "Papan kanban transparan tempat permintaan perbaikan atau fitur baru diprioritaskan bersama, dijadwalkan ke sprint, dan diuji sebelum rilis."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Studi Kasus Rujukan · Managed Engineering & Keandalan",
+          "name": "Oetomo Hospital Website & Portal",
+          "client": "RSGM Oetomo Hospital Bandung",
+          "problem": "Portal layanan rumah sakit menuntut keandalan informasi dokter spesialis dan ketersediaan sistem 24/7 tanpa risiko server down.",
+          "role": "Sundawa mengelola pemeliharaan platform, monitoring stabilitas, optimasi performa berkecepatan tinggi, dan respons siaga insiden.",
+          "metrics": [
+            {
+              "value": "99.99%",
+              "label": "Target Stabilitas Uptime"
+            },
+            {
+              "value": "< 15 Mnt",
+              "label": "Target Respon Eskalasi Kritis"
+            },
+            {
+              "value": "24/7",
+              "label": "Monitoring Keamanan & Kinerja"
+            }
+          ],
+          "href": "/portfolio/oetomo-hospital-website"
+        }
       }
     },
     "deliverablesLabel": "Yang Anda Dapatkan (Contoh Keluaran Nyata)",
-    "ctaProjectEstimate": "Minta Estimasi Proyek"
+    "ctaProjectEstimate": "Minta Estimasi Proyek",
+    "caseStudyLabel": "Bukti Pengerjaan & Studi Kasus Terverifikasi",
+    "caseStudyView": "Lihat Studi Kasus Lengkap"
   },
   "meta": {
     "home": {

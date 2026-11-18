@@ -1,10 +1,11 @@
 import { Link } from '@/src/i18n/navigation'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import { BlogCard, getPosts } from '@/src/features/blog'
 
 export default async function BlogSection() {
+    const locale = await getLocale()
     const t = await getTranslations('blog')
-    const posts = await getPosts()
+    const posts = await getPosts(locale)
 
     // Cuma tampilin 3 post terbaru di landing page
     const latestPosts = posts.slice(0, 3)

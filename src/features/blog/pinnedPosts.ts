@@ -35,6 +35,18 @@ Integrasi adalah opsi tercepat dan paling efisien dari segi investasi biaya jika
 <strong>Solusi yang diterapkan:</strong> Membangun middleware integrasi (API Gateway atau event-driven webhooks) yang menghubungkan sistem luar dengan ERP tanpa merombak database inti ERP.
 </p>
 
+<div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.3); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        🔗 Butuh Menghubungkan ERP Anda dengan Aplikasi Lain?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa menyediakan layanan integrasi API Gateway, sinkronisasi webhook, dan konektor pihak ketiga tanpa mengganggu database inti ERP Anda.
+    </p>
+    <a href="/id/services/integrasi-sistem" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Lihat Jasa Integrasi ERP &amp; API Perusahaan &rarr;
+    </a>
+</div>
+
 <h2>2. Kapan Perlu Dilakukan Modernisasi Bertahap?</h2>
 <p>
 Modernisasi bertahap (sering menggunakan arsitektur <em>Strangler Fig pattern</em>) adalah pilihan terbaik ketika sebagian modul ERP sudah sangat usang, namun modul lainnya masih krusial.
@@ -48,6 +60,18 @@ Modernisasi bertahap (sering menggunakan arsitektur <em>Strangler Fig pattern</e
 <p>
 <strong>Solusi yang diterapkan:</strong> Memotong modul yang bermasalah satu per satu, menggantikannya dengan modul modern berbasis cloud/web yang lebih lincah, lalu menyambungkannya kembali ke database utama dengan jaminan tanpa downtime.
 </p>
+
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.25); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        ⚡ Modul ERP Tertentu Lambat atau Sulit Digunakan?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Ganti modul bermasalah satu per satu dengan arsitektur modern tanpa risiko downtime operasional bisnis Anda.
+    </p>
+    <a href="/id/services/modernisasi-sistem" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Pelajari Jasa Modernisasi Sistem Lama Sundawa &rarr;
+    </a>
+</div>
 
 <h2>3. Kapan Penggantian Total Menjadi Keharusan?</h2>
 <p>
@@ -81,7 +105,7 @@ Penggantian total (re-platforming) hanya disarankan apabila sistem lama sudah me
         <tr>
             <td><strong>Risiko Disrupsi</strong></td>
             <td>Sangat Rendah</td>
-            <td>Terkendali & Bertahap</td>
+            <td>Terkendali &amp; Bertahap</td>
             <td>Tinggi (Perlu UAT masif)</td>
         </tr>
         <tr>
@@ -104,6 +128,18 @@ Penggantian total (re-platforming) hanya disarankan apabila sistem lama sudah me
 <p>
 Sebelum menerbitkan Term of Reference (TOR) pengadaan atau menandatangani kontrak lisensi baru, mintalah audit ketergantungan sistem independen. Di Sundawa, kami selalu memulai dengan memetakan proses bisnis riil di lapangan untuk memastikan setiap rupiah investasi teknologi Anda benar-benar menyelesaikan masalah operasional.
 </p>
+
+<div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
+        Bingung Menentukan Arah Sistem ERP Anda?
+    </h3>
+    <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
+        Konsultasikan arsitektur sistem Anda langsung dengan tim lead engineer Sundawa. Kami bantu petakan audit ketergantungan dan opsi yang paling efisien biaya.
+    </p>
+    <a href="/id/contact?service=integrasi-sistem" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Diskusikan Sistem Anda &rarr;
+    </a>
+</div>
         `,
     },
     {
@@ -132,7 +168,7 @@ Dalam sistem lama, sering kali terdapat <em>stored procedure</em>, <em>trigger</
     <li><strong>Cek integrasi tersembunyi:</strong> Apakah ada integrasi ke mesin absensi fisik, payment gateway lama, atau sistem perpajakan?</li>
 </ul>
 
-<h2>2. Pembersihan & Pemilahan Data: Data Aktif vs. Arsip Historis</h2>
+<h2>2. Pembersihan &amp; Pemilahan Data: Data Aktif vs. Arsip Historis</h2>
 <p>
 Jangan memindahkan data kotor ke dalam rumah yang baru. Memindahkan jutaan baris log transaksi usang hanya akan membebani database sistem baru dan memperlambat proses migrasi.
 </p>
@@ -154,6 +190,18 @@ Di Sundawa, kami selalu merekomendasikan strategi berdampingan (dual-run) selama
     <li>Staf operasional mendapatkan waktu transisi yang nyaman tanpa kepanikan di hari pertama rilis.</li>
 </ul>
 
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.25); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        🛠️ Butuh Pendamping Teknis untuk Audit &amp; Migrasi Sistem?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa membantu audit ketergantungan, pemisahan basis data, dan eksekusi dual-run tanpa mengganggu jam kerja operasional.
+    </p>
+    <a href="/id/services/modernisasi-sistem" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Eksplorasi Jasa Modernisasi Sistem Lama &rarr;
+    </a>
+</div>
+
 <h2>4. Acceptance Criteria Tertulis yang Disepakati Pengguna Akhir</h2>
 <p>
 Definisi "sukses" harus disepakati secara tertulis antara tim IT, manajemen pimpinan, dan staf operasional yang menggunakan sistem sehari-hari.
@@ -167,7 +215,7 @@ Contoh kriteria penerimaan yang konkret:
     <li><em>"Tidak ada selisih saldo antara buku besar sistem baru dengan sistem lama selama 14 hari pengujian paralel."</em></li>
 </ul>
 
-<h2>5. Protokol Rollback & Rencana Kontinjensi Keamanan</h2>
+<h2>5. Protokol Rollback &amp; Rencana Kontinjensi Keamanan</h2>
 <p>
 Kesiapan sejati diukur dari bagaimana tim merespons skenario terburuk. Sebelum peluncuran, pastikan terdapat:
 </p>
@@ -181,6 +229,271 @@ Kesiapan sejati diukur dari bagaimana tim merespons skenario terburuk. Sebelum p
 <p>
 Modernisasi sistem lama tidak harus menjadi pengalaman yang menegangkan. Dengan audit ketergantungan yang cermat, pemilahan data yang disiplin, dan strategi rilis bertahap, transisi teknologi dapat berlangsung mulus tanpa mengorbankan ketenangan operasional bisnis Anda.
 </p>
+
+<div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
+        Siapkan Rencana Migrasi yang Aman dan Terukur
+    </h3>
+    <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
+        Bicarakan checklist kesiapan sistem lama Anda dengan arsitek perangkat lunak kami sebelum membuat komitmen anggaran.
+    </p>
+    <a href="/id/contact?service=modernisasi-sistem" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Diskusikan Sistem Anda &rarr;
+    </a>
+</div>
         `,
     },
 ]
+
+export const PINNED_POSTS_EN: readonly Post[] = [
+    {
+        id: 'pinned-erp-decision-framework',
+        slug: 'kapan-erp-perlu-diintegrasikan-dimodernisasi-atau-diganti',
+        title: 'When Should an ERP Be Integrated, Modernized, or Replaced?',
+        excerpt:
+            'A practical evaluation framework for technology and operations leaders to determine whether an existing ERP requires API integration, modular modernization, or full replacement.',
+        published_at: '2026-11-15T09:00:00.000Z',
+        body_html: `
+<p class="lead">
+For many growing organizations and enterprises, the Enterprise Resource Planning (ERP) system is both the operational heartbeat and the primary source of operational friction. When business processes slow down, a strategic question inevitably reaches leadership: <strong>should we replace our ERP entirely, modernize problematic modules incrementally, or simply integrate it with external applications?</strong>
+</p>
+
+<p>
+Replacing an ERP system outright is an expensive, high-risk endeavor. New ERP implementations routinely take 9 to 18 months, consume core executive focus, and carry substantial risk of operational disruption. Conversely, leaving an outdated, rigid system unaddressed drains capital through manual labor and delayed reporting.
+</p>
+
+<p>
+Here is the objective evaluation framework we employ at Sundawa to help clients choose the most rational, risk-efficient trajectory.
+</p>
+
+<h2>1. When is an API Integration Approach Sufficient?</h2>
+<p>
+Integration is the fastest and most cost-effective path if your core transaction engine is fundamentally sound.
+</p>
+<p><strong>Choose integration when:</strong></p>
+<ul>
+    <li>Core accounting, general ledger, and tax compliance workflows in your ERP operate reliably and comply with local regulations.</li>
+    <li>User complaints stem primarily from <em>double-entry</em> (teams re-typing data from spreadsheets, sales apps, or courier portals into the ERP).</li>
+    <li>Your primary need is field operational software (sales rep mobile apps, driver delivery tracking, field inspections) requiring real-time sync with ERP tables.</li>
+</ul>
+<p>
+<strong>The technical solution:</strong> Build integration middleware (API Gateway or event-driven webhooks) connecting external systems to your ERP without tampering with core database schemas.
+</p>
+
+<div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.3); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        🔗 Need to Connect Your ERP with Other Business Applications?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa provides enterprise API Gateway integration, webhook synchronization, and third-party connectors without altering your core ERP database.
+    </p>
+    <a href="/en/services/system-integration" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Explore Enterprise ERP &amp; API Integration Services &rarr;
+    </a>
+</div>
+
+<h2>2. When is Gradual Modular Modernization Needed?</h2>
+<p>
+Gradual modular modernization (often adopting the <em>Strangler Fig pattern</em>) is the optimal strategy when specific ERP modules are deeply obsolete while others remain critical and functional.
+</p>
+<p><strong>Choose modular modernization when:</strong></p>
+<ul>
+    <li>Bottleneck modules (such as executive approvals, warehouse inventory tracking, or business intelligence dashboards) are painfully slow and difficult for frontline staff to navigate.</li>
+    <li>The underlying database still comfortably handles transaction volumes, but legacy vendor software no longer delivers modern feature updates.</li>
+    <li>The enterprise cannot tolerate the operational downtime risk of a sudden monolithic switchover.</li>
+</ul>
+<p>
+<strong>The technical solution:</strong> Decouple and re-engineer bottleneck modules one by one into agile web/cloud services, reconnecting them back to the central database with zero business downtime.
+</p>
+
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.25); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        ⚡ Are Specific ERP Modules Slow or Unusable for Your Team?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Replace legacy bottleneck modules incrementally with modern architectures without risking operational downtime.
+    </p>
+    <a href="/en/services/system-modernization" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Learn About Sundawa Legacy System Modernization &rarr;
+    </a>
+</div>
+
+<h2>3. When is Full Replacement Unavoidable?</h2>
+<p>
+A full re-platforming should only be pursued when the legacy infrastructure has become a critical operational liability.
+</p>
+<p><strong>Total replacement must be considered if:</strong></p>
+<ul>
+    <li>The system runs on obsolete runtimes no longer supported by security vendors, with zero documentation or open database access.</li>
+    <li>Annual proprietary maintenance and license fees exceed the projected 3-year cost of building a tailored modern system.</li>
+    <li>The legacy architecture fundamentally prevents automated data exchange (no APIs, locked proprietary databases).</li>
+</ul>
+
+<h2>Evaluation Matrix at a Glance</h2>
+<div class="table-responsive">
+<table class="table-border">
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>API Integration</th>
+            <th>Modular Modernization</th>
+            <th>Total Replacement</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Estimated Timeline</strong></td>
+            <td>4 – 8 Weeks</td>
+            <td>2 – 5 Months per module</td>
+            <td>9 – 18 Months</td>
+        </tr>
+        <tr>
+            <td><strong>Disruption Risk</strong></td>
+            <td>Very Low</td>
+            <td>Controlled &amp; Phased</td>
+            <td>High (Requires massive UAT)</td>
+        </tr>
+        <tr>
+            <td><strong>User Impact</strong></td>
+            <td>Seamless, zero retraining</td>
+            <td>Gradual improvement</td>
+            <td>Full staff retraining required</td>
+        </tr>
+        <tr>
+            <td><strong>Investment Level</strong></td>
+            <td>Most Cost-Efficient</td>
+            <td>Flexible per phase</td>
+            <td>Substantial Capital Allocation</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h2>Recommended Next Step</h2>
+<p>
+Before drafting a procurement Term of Reference (TOR) or locking into another multi-year proprietary license, commission an independent system dependency audit. At Sundawa, we begin by mapping real-world operational bottlenecks to ensure every technology dollar invested directly moves the business forward.
+</p>
+
+<div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
+        Unsure of the Right Path for Your ERP System?
+    </h3>
+    <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
+        Consult your system architecture directly with Sundawa lead engineers. We help map dependencies and identify the most cost-efficient path.
+    </p>
+    <a href="/en/contact?service=system-integration" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Discuss Your System &rarr;
+    </a>
+</div>
+        `,
+    },
+    {
+        id: 'pinned-migrasi-sistem-lama',
+        slug: 'apa-yang-perlu-disiapkan-sebelum-migrasi-sistem-lama',
+        title: 'What to Prepare Before Migrating a Legacy System?',
+        excerpt:
+            'Architectural readiness checklist, database dependency mapping, active vs. archive data segregation, and operational risk mitigation before modernizing mission-critical software.',
+        published_at: '2026-11-14T09:00:00.000Z',
+        body_html: `
+<p class="lead">
+Technology industry data indicates that over 65% of software modernization initiatives encounter delays or budget overruns not because engineers fail to write code, but due to <strong>inadequate data preparation and unmapped system dependencies prior to kickoff</strong>.
+</p>
+
+<p>
+When a system that has served a business for 5 to 10 years is relocated or re-architected, informal business rules and hidden data dependencies rarely appear in official documentation. Here are 5 fundamental prerequisites your team must prepare before launching a legacy modernization initiative.
+</p>
+
+<h2>1. Real Dependency Audit (Beyond Written SOPs)</h2>
+<p>
+Legacy software routinely harbors legacy stored procedures, hidden database triggers, or scheduled cron scripts on local servers written years ago without proper versioning.
+</p>
+<ul>
+    <li><strong>Map all database readers and writers:</strong> Which teams, departments, or third-party tools interact with the production database?</li>
+    <li><strong>Trace month-end reporting paths:</strong> Which executive reports still rely on ad-hoc SQL queries directly against historical tables?</li>
+    <li><strong>Identify hidden hardware/system integrations:</strong> Are there integrations to physical biometric devices, legacy payment terminals, or tax portals?</li>
+</ul>
+
+<h2>2. Data Cleansing &amp; Segregation: Active vs. Historical Archive</h2>
+<p>
+Never move dirty data into a modern architecture. Migrating millions of deprecated log rows only bloats the new schema and degrades initial performance.
+</p>
+<ul>
+    <li><strong>Active Data:</strong> Data required for day-to-day operations (typically past 1–2 years, active accounts, product catalogs, and open balances). This must be cleansed and validated with 100% integrity.</li>
+    <li><strong>Historical Archive:</strong> Multi-year historical records retained strictly for regulatory audit compliance. Export this to an encrypted data lake or cold storage, avoiding operational overhead.</li>
+</ul>
+
+<h2>3. Dual-Run / Parallel Run Transition Strategy</h2>
+<p>
+Avoid high-stakes <em>big-bang cutovers</em> where a legacy system is shut down on Friday night and the new build is deployed on Monday without side-by-side verification.
+</p>
+<p>
+At Sundawa, we advocate for structured dual-run execution during the transition phase:
+</p>
+<ul>
+    <li>Transaction data is ingested across both systems to automate numerical reconciliation.</li>
+    <li>Discrepancies are identified and resolved before the legacy application is decommissioned.</li>
+    <li>Frontline operators gain confidence navigating new workflows without first-day disruption.</li>
+</ul>
+
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.25); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        🛠️ Need an Engineering Partner for System Audit &amp; Migration?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa assists enterprise teams with dependency audits, database segregation, and zero-downtime dual-run transitions.
+    </p>
+    <a href="/en/services/system-modernization" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Explore Legacy System Modernization Services &rarr;
+    </a>
+</div>
+
+<h2>4. Written Acceptance Criteria Agreed by End Users</h2>
+<p>
+The definition of project success must be agreed upon in writing between technology leads, executive stakeholders, and daily operational staff.
+</p>
+<p>
+Examples of concrete acceptance criteria:
+</p>
+<ul>
+    <li><em>"Month-end financial statement generation runtime decreases from 4 hours to under 3 minutes."</em></li>
+    <li><em>"Field agent order entry functions offline and synchronizes automatically upon reconnecting."</em></li>
+    <li><em>"Zero ledger variance between new and legacy systems throughout 14 days of parallel execution."</em></li>
+</ul>
+
+<h2>5. Rollback Protocols &amp; Security Contingency Plans</h2>
+<p>
+True engineering readiness is measured by resilience in worst-case scenarios. Prior to launch, ensure:
+</p>
+<ul>
+    <li>A verified full database snapshot tested through a complete disaster restoration drill.</li>
+    <li>Rapid traffic re-routing procedures back to the previous environment within minutes if critical blockers emerge.</li>
+    <li>Strict Non-Disclosure Agreements (NDA) and Role-Based Access Controls (RBAC) governing access to sensitive production data.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+Modernizing mission-critical legacy software does not need to jeopardize business continuity. With thorough dependency mapping, disciplined data cleansing, and phased rollouts, technological transformation can proceed smoothly while safeguarding operational stability.
+</p>
+
+<div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
+        Build a Secure, Measured Migration Plan
+    </h3>
+    <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
+        Discuss your legacy readiness checklist with our software architects before making long-term capital commitments.
+    </p>
+    <a href="/en/contact?service=system-modernization" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Discuss Your System &rarr;
+    </a>
+</div>
+        `,
+    },
+]
+
+export function isPostTranslated(slug: string): boolean {
+    return PINNED_POSTS_EN.some((p) => p.slug === slug)
+}
+
+export function getPinnedPosts(locale = 'id'): readonly Post[] {
+    return locale === 'en' ? PINNED_POSTS_EN : PINNED_POSTS
+}

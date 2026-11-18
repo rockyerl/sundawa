@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { ArrowUpRight, FileDown, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { ArrowUpRight, CheckCircle2, FileDown, Mail, MapPin, MessageSquare, Phone, RotateCcw, Send } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { buildMailtoUrl, buildWhatsAppUrl, COMPANY_CONTACT } from '@/lib/contact'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
@@ -67,15 +67,55 @@ export default function ContactPage() {
         return lines.join('\n')
     }
 
-    const handleSubmitWhatsApp = (e: React.FormEvent) => {
+    const handleSubmitDirect = async (e: React.FormEvent) => {
         e.preventDefault()
         setStatus('submitting')
 
+        try {
+            const res = await fetch('/api/inquiries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    company: formData.company,
+                    topic: selectedTopic,
+                    message: formData.message,
+                    sourceUrl: searchParams.get('service')
+                        ? `/services/${searchParams.get('service')}`
+                        : typeof window !== 'undefined'
+                          ? window.location.pathname
+                          : null,
+                }),
+            })
+
+            if (res.ok) {
+                setStatus('success')
+                if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+                    ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'generate_lead', {
+                        event_category: 'lead',
+                        event_label: selectedTopic,
+                    })
+                }
+            } else {
+                setStatus('error')
+            }
+        } catch (err) {
+            console.error('[Inquiry submit error]', err)
+            setStatus('error')
+        }
+    }
+
+    const handleSubmitWhatsApp = (e?: React.MouseEvent | React.FormEvent) => {
+        if (e) e.preventDefault()
         const waUrl = buildWhatsAppUrl(buildBriefText())
-        setTimeout(() => {
-            window.open(waUrl, '_blank', 'noopener,noreferrer')
-            setStatus('success')
-        }, 250)
+        window.open(waUrl, '_blank', 'noopener,noreferrer')
+        if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+            ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'contact_whatsapp', {
+                event_category: 'lead',
+                event_label: selectedTopic,
+            })
+        }
     }
 
     const handleSendEmail = () => {
@@ -141,148 +181,190 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
                         {/* Inquiry Brief Form */}
                         <div className="border border-gold/15 bg-gold/[0.02] p-6 sm:p-8 lg:col-span-7">
-                            <form onSubmit={handleSubmitWhatsApp} className="grid gap-6">
-                                {/* Topic Pills */}
-                                <div>
-                                    <div className="mb-2.5 text-xs font-bold tracking-[0.12em] text-cream/60 uppercase">
-                                        {t('topicLabel')}
+                            {status === 'success' ? (
+                                <div className="border border-gold/40 bg-gold/[0.05] p-6 sm:p-8">
+                                    <div className="flex items-center gap-3 mb-4 text-gold">
+                                        <CheckCircle2 size={24} className="flex-shrink-0" />
+                                        <h3 className="text-base font-bold text-cream">{t('directSuccessTitle')}</h3>
                                     </div>
-                                    <div className="flex flex-wrap gap-2">
-                                        {topics.map((topic) => {
-                                            const active = selectedTopic === topic
-                                            return (
-                                                <button
-                                                    key={topic}
-                                                    type="button"
-                                                    onClick={() => setSelectedTopic(topic)}
-                                                    aria-pressed={active}
-                                                    className={`cursor-pointer border px-3.5 py-2 text-[0.7rem] font-bold transition-colors ${
-                                                        active
-                                                            ? 'border-gold bg-gold text-navy'
-                                                            : 'border-gold/20 bg-navy text-cream/70 hover:border-gold/45 hover:text-cream'
-                                                    }`}
-                                                >
-                                                    {topic}
-                                                </button>
-                                            )
-                                        })}
+                                    <p className="text-xs sm:text-sm text-cream/80 leading-relaxed mb-6">
+                                        {t('directSuccessDesc')}
+                                    </p>
+                                    <div className="border-t border-gold/20 pt-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                        <div className="text-xs text-cream/65">
+                                            <span>{t('directSuccessOrWa')}</span>{' '}
+                                            <a
+                                                href={buildWhatsAppUrl(buildBriefText())}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="font-bold text-[#25D366] underline hover:text-[#25D366]/80 ml-1 inline-flex items-center gap-1"
+                                            >
+                                                <MessageSquare size={13} />
+                                                <span>{t('directSuccessWaButton')}</span>
+                                            </a>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                setStatus('idle')
+                                                setFormData({ name: '', email: '', company: '', message: '' })
+                                            }}
+                                            className="inline-flex items-center gap-1.5 text-xs text-gold/80 hover:text-gold uppercase tracking-wider font-bold cursor-pointer"
+                                        >
+                                            <RotateCcw size={12} />
+                                            <span>{t('directSuccessReset')}</span>
+                                        </button>
                                     </div>
                                 </div>
+                            ) : (
+                                <form onSubmit={handleSubmitDirect} className="grid gap-6">
+                                    {/* Topic Pills */}
+                                    <div>
+                                        <div className="mb-2.5 text-xs font-bold tracking-[0.12em] text-cream/60 uppercase">
+                                            {t('topicLabel')}
+                                        </div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {topics.map((topic) => {
+                                                const active = selectedTopic === topic
+                                                return (
+                                                    <button
+                                                        key={topic}
+                                                        type="button"
+                                                        onClick={() => setSelectedTopic(topic)}
+                                                        aria-pressed={active}
+                                                        className={`cursor-pointer border px-3.5 py-2 text-[0.7rem] font-bold transition-colors ${
+                                                            active
+                                                                ? 'border-gold bg-gold text-navy'
+                                                                : 'border-gold/20 bg-navy text-cream/70 hover:border-gold/45 hover:text-cream'
+                                                        }`}
+                                                    >
+                                                        {topic}
+                                                    </button>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
 
-                                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                                        <div>
+                                            <label
+                                                htmlFor="contact-name"
+                                                className="mb-2 block text-xs font-bold tracking-[0.1em] text-cream/60 uppercase"
+                                            >
+                                                {t('name')}
+                                            </label>
+                                            <input
+                                                id="contact-name"
+                                                type="text"
+                                                name="name"
+                                                autoComplete="name"
+                                                required
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                placeholder={t('namePlaceholder')}
+                                                className="w-full border border-gold/15 bg-navy p-3 text-sm text-cream outline-none transition-colors focus:border-gold"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label
+                                                htmlFor="contact-email"
+                                                className="mb-2 block text-xs font-bold tracking-[0.1em] text-cream/60 uppercase"
+                                            >
+                                                {t('email')}
+                                            </label>
+                                            <input
+                                                id="contact-email"
+                                                type="email"
+                                                name="email"
+                                                autoComplete="email"
+                                                required
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                placeholder={t('emailPlaceholder')}
+                                                className="w-full border border-gold/15 bg-navy p-3 text-sm text-cream outline-none transition-colors focus:border-gold"
+                                            />
+                                        </div>
+                                    </div>
+
                                     <div>
                                         <label
-                                            htmlFor="contact-name"
+                                            htmlFor="contact-company"
                                             className="mb-2 block text-xs font-bold tracking-[0.1em] text-cream/60 uppercase"
                                         >
-                                            {t('name')}
+                                            {t('company')}
                                         </label>
                                         <input
-                                            id="contact-name"
+                                            id="contact-company"
                                             type="text"
-                                            name="name"
-                                            autoComplete="name"
-                                            required
-                                            value={formData.name}
+                                            name="company"
+                                            autoComplete="organization"
+                                            value={formData.company}
                                             onChange={handleChange}
-                                            placeholder={t('namePlaceholder')}
+                                            placeholder={t('companyPlaceholder')}
                                             className="w-full border border-gold/15 bg-navy p-3 text-sm text-cream outline-none transition-colors focus:border-gold"
                                         />
                                     </div>
 
                                     <div>
                                         <label
-                                            htmlFor="contact-email"
+                                            htmlFor="contact-message"
                                             className="mb-2 block text-xs font-bold tracking-[0.1em] text-cream/60 uppercase"
                                         >
-                                            {t('email')}
+                                            {t('message')}
                                         </label>
-                                        <input
-                                            id="contact-email"
-                                            type="email"
-                                            name="email"
-                                            autoComplete="email"
+                                        <textarea
+                                            id="contact-message"
+                                            name="message"
                                             required
-                                            value={formData.email}
+                                            value={formData.message}
                                             onChange={handleChange}
-                                            placeholder={t('emailPlaceholder')}
-                                            className="w-full border border-gold/15 bg-navy p-3 text-sm text-cream outline-none transition-colors focus:border-gold"
+                                            placeholder={t('messagePlaceholder')}
+                                            rows={5}
+                                            className="w-full resize-y border border-gold/15 bg-navy p-3 font-sans text-sm text-cream outline-none transition-colors focus:border-gold"
                                         />
                                     </div>
-                                </div>
 
-                                <div>
-                                    <label
-                                        htmlFor="contact-company"
-                                        className="mb-2 block text-xs font-bold tracking-[0.1em] text-cream/60 uppercase"
-                                    >
-                                        {t('company')}
-                                    </label>
-                                    <input
-                                        id="contact-company"
-                                        type="text"
-                                        name="company"
-                                        autoComplete="organization"
-                                        value={formData.company}
-                                        onChange={handleChange}
-                                        placeholder={t('companyPlaceholder')}
-                                        className="w-full border border-gold/15 bg-navy p-3 text-sm text-cream outline-none transition-colors focus:border-gold"
-                                    />
-                                </div>
+                                    <div className="flex flex-col gap-3">
+                                        <button
+                                            type="submit"
+                                            disabled={status === 'submitting'}
+                                            className={`inline-flex w-full cursor-pointer items-center justify-center gap-2 bg-gold px-6 py-4 text-xs font-black tracking-[0.16em] text-navy uppercase transition-shadow hover:shadow-[0_0_24px_rgba(219,201,119,0.4)] ${
+                                                status === 'submitting' ? 'cursor-not-allowed opacity-60' : ''
+                                            }`}
+                                        >
+                                            <Send size={14} aria-hidden="true" />
+                                            <span>{status === 'submitting' ? t('submitDirectSubmitting') : t('submitDirect')}</span>
+                                        </button>
 
-                                <div>
-                                    <label
-                                        htmlFor="contact-message"
-                                        className="mb-2 block text-xs font-bold tracking-[0.1em] text-cream/60 uppercase"
-                                    >
-                                        {t('message')}
-                                    </label>
-                                    <textarea
-                                        id="contact-message"
-                                        name="message"
-                                        required
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        placeholder={t('messagePlaceholder')}
-                                        rows={5}
-                                        className="w-full resize-y border border-gold/15 bg-navy p-3 font-sans text-sm text-cream outline-none transition-colors focus:border-gold"
-                                    />
-                                </div>
+                                        <div className="flex flex-wrap items-center gap-3 pt-1">
+                                            <button
+                                                type="button"
+                                                onClick={handleSubmitWhatsApp}
+                                                className="inline-flex flex-1 cursor-pointer items-center justify-center gap-2 border border-[#25D366]/40 bg-[#25D366]/10 px-4 py-3 text-xs font-bold tracking-[0.08em] text-[#25D366] transition-colors hover:bg-[#25D366]/20"
+                                            >
+                                                <MessageSquare size={14} aria-hidden="true" />
+                                                <span>{t('submitWhatsApp')}</span>
+                                            </button>
 
-                                <div className="flex flex-wrap gap-3">
-                                    <button
-                                        type="submit"
-                                        disabled={status === 'submitting'}
-                                        className={`inline-flex flex-1 cursor-pointer items-center justify-center gap-2 bg-gold px-6 py-3.5 text-xs font-black tracking-[0.16em] text-navy uppercase transition-shadow hover:shadow-[0_0_24px_rgba(219,201,119,0.4)] ${
-                                            status === 'submitting' ? 'cursor-not-allowed opacity-60' : ''
-                                        }`}
-                                    >
-                                        <Send size={14} aria-hidden="true" />
-                                        <span>{status === 'submitting' ? t('submitting') : t('submit')}</span>
-                                    </button>
+                                            <button
+                                                type="button"
+                                                onClick={handleSendEmail}
+                                                className="inline-flex cursor-pointer items-center justify-center gap-2 border border-gold/30 bg-transparent px-4 py-3 text-xs font-bold tracking-[0.08em] text-gold uppercase transition-colors hover:border-gold hover:bg-gold/10"
+                                            >
+                                                <Mail size={14} aria-hidden="true" />
+                                                <span>{t('submitEmail')}</span>
+                                            </button>
+                                        </div>
+                                    </div>
 
-                                    <button
-                                        type="button"
-                                        onClick={handleSendEmail}
-                                        className="inline-flex cursor-pointer items-center justify-center gap-2 border border-gold/35 bg-transparent px-6 py-3.5 text-xs font-bold tracking-[0.16em] text-gold uppercase transition-colors hover:border-gold hover:bg-gold/10"
-                                    >
-                                        <Mail size={14} aria-hidden="true" />
-                                        <span>{t('submitEmail')}</span>
-                                    </button>
-                                </div>
-
-                                {status === 'success' && (
-                                    <p className="border border-gold/30 bg-gold/10 p-4 text-xs leading-relaxed text-gold">
-                                        {t('success')}
-                                    </p>
-                                )}
-
-                                {status === 'error' && (
-                                    <p className="border border-red-500/25 bg-red-500/5 p-4 text-xs text-red-400">
-                                        {t('error')}
-                                    </p>
-                                )}
-                            </form>
+                                    {status === 'error' && (
+                                        <p className="border border-red-500/25 bg-red-500/5 p-4 text-xs text-red-400">
+                                            {t('errorDirect')}
+                                        </p>
+                                    )}
+                                </form>
+                            )}
                         </div>
 
                         {/* Official Channels */}

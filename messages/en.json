@@ -42,10 +42,13 @@
     "line2": "may be costing you more",
     "line3": "than replacing it",
     "line4": "",
-    "sub": "Manual workarounds, disconnected systems, slow reporting, and constant maintenance quietly drain time and money. We fix what's holding you back — without replacing what still works.",
+    "sub": "Enterprise system modernization, ERP integration, and custom business application engineering. We fix what slows your operations down — without replacing what already works well.",
     "ctaServices": "Discuss Your System",
     "ctaAbout": "View Case Studies",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "proof": "Verified Delivery",
+    "proofDacar": "DACAR by UNDP (Digital Aid Platform)",
+    "proofEoffice": "E-Office (Integrated Enterprise Administration)"
   },
   "problem": {
     "label": "The Real Problem",
@@ -845,7 +848,16 @@
     "addressLabel": "Location",
     "addressValue": "Bandung, West Java, Indonesia",
     "downloadCompanyProfile": "Download Company Profile (PDF)",
-    "companyProfileDesc": "Corporate legal entity, service capabilities, reference projects, and procurement contacts in one concise PDF."
+    "companyProfileDesc": "Corporate legal entity, service capabilities, reference projects, and procurement contacts in one concise PDF.",
+    "submitDirect": "Submit Project Brief",
+    "submitWhatsApp": "Quick Send via WhatsApp",
+    "submitDirectSubmitting": "Submitting Brief...",
+    "directSuccessTitle": "Project Brief Successfully Received",
+    "directSuccessDesc": "Thank you for reaching out to Sundawa. Our engineering & consulting team is reviewing your brief and will get back to you via email within 1 business day.",
+    "directSuccessOrWa": "Need an urgent discussion today?",
+    "directSuccessWaButton": "Open WhatsApp Chat Directly",
+    "directSuccessReset": "Submit Another Brief",
+    "errorDirect": "An error occurred while submitting your brief. Please try again or use the WhatsApp option below."
   },
   "aboutPage": {
     "navBack": "Back",
@@ -1088,7 +1100,29 @@
             "title": "Phased Migration Plan & Runbook",
             "desc": "Milestone rollout strategy (Strangler Fig pattern) with zero-downtime cutover procedures and safety-first rollback plans."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Reference Case Study · Phased Modernization",
+          "name": "DACAR by UNDP",
+          "client": "United Nations Development Programme",
+          "problem": "Field emergency cash distribution previously relied on paper-based validation susceptible to double-disbursement and slow reconciliation cycles.",
+          "role": "Sundawa re-architected legacy infrastructure into modular microservices, field mobile applications, tiered verification backoffice, and encrypted databases.",
+          "metrics": [
+            {
+              "value": "0",
+              "label": "Duplicate Disbursements"
+            },
+            {
+              "value": "100%",
+              "label": "Paperless & Transparent"
+            },
+            {
+              "value": "0 Min",
+              "label": "Migration Downtime"
+            }
+          ],
+          "href": "/portfolio/dacar-by-undp"
+        }
       },
       "automation": {
         "slug": "workflow-automation-ai",
@@ -1110,7 +1144,29 @@
             "title": "Real-time Monitoring & Audit Logging Dashboard",
             "desc": "Operational monitoring interface tracking execution health, end-to-end audit trails, and automated instant failure alerts."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Reference Case Study · Workflow Automation & Archiving",
+          "name": "E-Office",
+          "client": "Government Institutions & Enterprises",
+          "problem": "Incoming official mail, tiered leadership approval routing, and physical archiving took 3–5 business days per document with high misplacement risks.",
+          "role": "Sundawa developed an automated web workflow with systematic letter numbering, instant hierarchical routing, and indexed digital archiving.",
+          "metrics": [
+            {
+              "value": "10x",
+              "label": "Faster Routing Cycle"
+            },
+            {
+              "value": "100%",
+              "label": "Digital Status Audit Trail"
+            },
+            {
+              "value": "0",
+              "label": "Lost Documents"
+            }
+          ],
+          "href": "/portfolio/e-office"
+        }
       },
       "integration": {
         "slug": "system-integration",
@@ -1132,7 +1188,29 @@
             "title": "Conflict Resolution & Message Queue Protocols",
             "desc": "Resilient queue architecture with automated retry mechanisms and real-time reconciliation reporting."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Reference Case Study · Enterprise ERP & API Integration",
+          "name": "Nawasanga",
+          "client": "Logistics Fleets & Industrial Fuel Operations",
+          "problem": "Fleet fueling data was isolated from finance ERP systems and vehicle GPS trackers, causing fuel leakages and weekly manual reconciliations.",
+          "role": "Sundawa engineered bi-directional middleware bridging IoT flow meter sensors, GPS telematics, driver PWA apps, and central ERP REST APIs.",
+          "metrics": [
+            {
+              "value": "< 1 Sec",
+              "label": "IoT Webhook Transmission"
+            },
+            {
+              "value": "3 Systems",
+              "label": "Unified (IoT, GPS, ERP)"
+            },
+            {
+              "value": "100%",
+              "label": "Automated Real-Time Reconciliation"
+            }
+          ],
+          "href": "/products/nawasanga"
+        }
       },
       "custom": {
         "slug": "custom-platform",
@@ -1154,7 +1232,29 @@
             "title": "CI/CD Pipelines & Developer Runbooks",
             "desc": "Infrastructure as Code (IaC), automated deployment pipelines, architectural runbooks, and developer onboarding documentation."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Reference Case Study · Custom Enterprise Platform",
+          "name": "SUNDAWA People",
+          "client": "Multi-Branch Enterprises & National Workforce",
+          "problem": "Managing thousands of distributed staff led to overtime calculation errors, manual attendance logs, and delayed monthly payroll runs.",
+          "role": "Sundawa designed an end-to-end custom workforce platform unifying IoT biometric clock-ins, dynamic shift scheduling, self-service ESS, and multi-tier payroll.",
+          "metrics": [
+            {
+              "value": "99.98%",
+              "label": "Payroll Precision (Zero Discrepancy)"
+            },
+            {
+              "value": "10x",
+              "label": "HR Reconciliation Efficiency"
+            },
+            {
+              "value": "< 1 Sec",
+              "label": "Live IoT Biometric Sync"
+            }
+          ],
+          "href": "/products/sundawa-people"
+        }
       },
       "managed": {
         "slug": "managed-engineering",
@@ -1176,11 +1276,35 @@
             "title": "Backlog Prioritization & Scheduled Release Cycle",
             "desc": "Transparent backlog board where feature requests and refinements are prioritized collaboratively, sprint-scheduled, and verified before deployment."
           }
-        ]
+        ],
+        "caseStudy": {
+          "badge": "Reference Case Study · Managed Engineering & Reliability",
+          "name": "Oetomo Hospital Website & Portal",
+          "client": "RSGM Oetomo Hospital Bandung",
+          "problem": "Healthcare portal requires high availability for specialist scheduling and patient queries around the clock with zero tolerance for downtime.",
+          "role": "Sundawa manages continuous platform engineering, stability monitoring, high-speed performance tuning, and standby incident response.",
+          "metrics": [
+            {
+              "value": "99.99%",
+              "label": "Target Uptime Stability"
+            },
+            {
+              "value": "< 15 Min",
+              "label": "Critical Response Target"
+            },
+            {
+              "value": "24/7",
+              "label": "Continuous Security Monitoring"
+            }
+          ],
+          "href": "/portfolio/oetomo-hospital-website"
+        }
       }
     },
     "deliverablesLabel": "What You Receive (Tangible Deliverables)",
-    "ctaProjectEstimate": "Request Project Estimate"
+    "ctaProjectEstimate": "Request Project Estimate",
+    "caseStudyLabel": "Verified Delivery & Reference Case Study",
+    "caseStudyView": "View Full Case Study"
   },
   "meta": {
     "home": {

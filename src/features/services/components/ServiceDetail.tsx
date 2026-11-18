@@ -11,6 +11,21 @@ export interface ServiceDeliverable {
     desc: string
 }
 
+export interface ServiceCaseStudyMetric {
+    value: string
+    label: string
+}
+
+export interface ServiceCaseStudy {
+    badge: string
+    name: string
+    client: string
+    problem: string
+    role: string
+    metrics: ServiceCaseStudyMetric[]
+    href: string
+}
+
 export interface ServiceDetailProps {
     service: {
         slug: string
@@ -20,6 +35,7 @@ export interface ServiceDetailProps {
         outcome: string
         details: string
         deliverables?: ServiceDeliverable[]
+        caseStudy?: ServiceCaseStudy
     }
     translations: {
         navBack: string
@@ -30,6 +46,8 @@ export interface ServiceDetailProps {
         backToServices: string
         deliverablesLabel?: string
         ctaProjectEstimate?: string
+        caseStudyLabel?: string
+        caseStudyView?: string
     }
 }
 
@@ -111,6 +129,65 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                         <p className="text-xs text-cream/65 leading-relaxed">
                                             {item.desc}
                                         </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Relevant Case Study Proof Section */}
+                    {service.caseStudy && (
+                        <div className="mb-12 border border-gold/30 bg-gradient-to-br from-navy via-navy/90 to-dark-slate p-6 sm:p-8 rounded-lg">
+                            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-gold/15">
+                                <div>
+                                    <span className="text-[0.68rem] font-black tracking-[0.2em] text-gold uppercase block mb-1">
+                                        {service.caseStudy.badge}
+                                    </span>
+                                    <h2 className="text-xl sm:text-2xl font-black text-cream">
+                                        {service.caseStudy.name}
+                                    </h2>
+                                    <p className="text-xs text-sky font-semibold tracking-wider uppercase mt-0.5">
+                                        {service.caseStudy.client}
+                                    </p>
+                                </div>
+                                <Link
+                                    href={service.caseStudy.href}
+                                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-cream transition-colors no-underline uppercase tracking-wider"
+                                >
+                                    <span>{translations.caseStudyView || 'Lihat Studi Kasus'}</span>
+                                    <ArrowRight size={13} />
+                                </Link>
+                            </div>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+                                <div className="lg:col-span-6 bg-navy/60 p-4 border border-gold/10 rounded">
+                                    <div className="text-[0.62rem] font-bold text-gold/80 tracking-widest uppercase mb-1.5">
+                                        Masalah / Titik Hambat
+                                    </div>
+                                    <p className="text-xs text-cream/70 leading-relaxed">
+                                        {service.caseStudy.problem}
+                                    </p>
+                                </div>
+                                <div className="lg:col-span-6 bg-navy/60 p-4 border border-gold/10 rounded">
+                                    <div className="text-[0.62rem] font-bold text-sky tracking-widest uppercase mb-1.5">
+                                        Pekerjaan Sundawa
+                                    </div>
+                                    <p className="text-xs text-cream/70 leading-relaxed">
+                                        {service.caseStudy.role}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Verifiable Numerical Metrics */}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                                {service.caseStudy.metrics.map((m, mi) => (
+                                    <div key={mi} className="border border-gold/20 bg-gold/[0.03] p-4 text-center rounded">
+                                        <div className="text-xl sm:text-2xl font-black text-gold mb-1">
+                                            {m.value}
+                                        </div>
+                                        <div className="text-[0.68rem] font-medium text-cream/70 uppercase tracking-wider leading-snug">
+                                            {m.label}
+                                        </div>
                                     </div>
                                 ))}
                             </div>

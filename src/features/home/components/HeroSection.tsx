@@ -82,7 +82,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                             transition={{ duration: 0.8, delay: 0.65 }}
-                            className="hero-cta" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3.5rem' }}
+                            className="hero-cta" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}
                         >
                             <Link href="/contact" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', overflow: 'hidden', transition: 'box-shadow 0.3s', textDecoration: 'none' }}
                                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 40px rgba(219,201,119,0.5)')}
@@ -93,6 +93,22 @@ export default function HeroSection() {
                                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(248,248,248,0.6)'; e.currentTarget.style.color = '#F8F8F8' }}
                                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(248,248,248,0.2)'; e.currentTarget.style.color = 'rgba(248,248,248,0.7)' }}>
                                 {t('ctaAbout')} <ArrowUpRight size={14} />
+                            </a>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                            transition={{ duration: 0.8, delay: 0.8 }}
+                            className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-cream/55 mb-8"
+                        >
+                            <span className="text-cream/40 uppercase tracking-wider text-[0.68rem]">{t('proof')}:</span>
+                            <a href="#featured-projects" className="inline-flex items-center gap-1 text-gold hover:text-gold/80 transition-colors font-medium">
+                                <span>{t('proofDacar')}</span>
+                            </a>
+                            <span className="text-cream/25">·</span>
+                            <a href="#featured-projects" className="inline-flex items-center gap-1 text-gold hover:text-gold/80 transition-colors font-medium">
+                                <span>{t('proofEoffice')}</span>
                             </a>
                         </motion.div>
 

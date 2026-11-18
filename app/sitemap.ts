@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { sitemapEntries, staticSitemapPaths } from '@/lib/Sitemap'
 import { SITE_URL } from '@/lib/Seo'
-import { getPostSlugs } from '@/src/features/blog'
+import { getPostSlugs, isPostTranslated } from '@/src/features/blog'
 import { getPortfolioProjects } from '@/src/features/portfolio'
 import { getAllProductSlugs } from '@/src/features/products'
 import idMessages from '@/messages/id.json'
@@ -60,10 +60,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ]
     })
 
+    const blogEntries: MetadataRoute.Sitemap = blogPosts.flatMap((post) => {
+        const hasTranslation = isPostTranslated(post.slug)
+        if (hasTranslation) {
+            return sitemapEntries(`/blog/${post.slug}`, 0.6, 'monthly', post.updated_at || post.published_at)
+        }
+        // Indonesian-only posts — emit canonical id entry without invalid en alternate
+        const idUrl = `${SITE_URL}/id/blog/${post.slug}`
+        return [
+            {
+                url: idUrl,
+                changeFrequency: 'monthly',
+                priority: 0.6,
+                ...(post.updated_at || post.published_at ? { lastModified: post.updated_at || post.published_at } : {}),
+                alternates: {
+                    languages: {
+                        id: idUrl,
+                        'x-default': idUrl,
+                    },
+                },
+            },
+        ]
+    })
+
     return [
         ...staticSitemapPaths.flatMap(path => sitemapEntries(path, path === '' ? 1 : 0.7, path === '/blog' ? 'weekly' : 'monthly')),
         ...serviceEntries,
-        ...blogPosts.flatMap(post => sitemapEntries(`/blog/${post.slug}`, 0.6, 'monthly', post.updated_at || post.published_at)),
+        ...blogEntries,
         ...portfolioProjects.flatMap(proj => sitemapEntries(`/portfolio/${proj.slug}`, 0.6, 'monthly', proj.updated_at || proj.created_at)),
         ...productSlugs.flatMap(slug => sitemapEntries(`/products/${slug}`, 0.7, 'monthly')),
     ]

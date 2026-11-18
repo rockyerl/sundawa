@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { Link } from '@/src/i18n/navigation'
+import { useLocale } from 'next-intl'
 import type { Post } from '@/lib/types'
+import { isPostTranslated } from '../pinnedPosts'
 
 interface BlogCardProps {
     post: Post
@@ -8,9 +10,14 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
+    const locale = useLocale()
+    const translated = isPostTranslated(post.slug)
+    const isUntranslatedInEn = locale === 'en' && !translated
+
     return (
         <Link
             href={`/blog/${post.slug}`}
+            {...(isUntranslatedInEn ? { locale: 'id' as const } : {})}
             className="group relative flex flex-col overflow-hidden rounded-2xl transition-all duration-300 min-w-0"
             style={{ background: 'rgba(248,248,248,0.03)', border: '1px solid rgba(219,201,119,0.12)' }}
         >
@@ -37,7 +44,7 @@ export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
                 <div className="flex items-center justify-between gap-2 mb-3">
                     {post.published_at ? (
                         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#DBC977]/50">
-                            {new Date(post.published_at).toLocaleDateString('id-ID', {
+                            {new Date(post.published_at).toLocaleDateString(locale === 'en' ? 'en-US' : 'id-ID', {
                                 day: 'numeric',
                                 month: 'long',
                                 year: 'numeric',
@@ -45,7 +52,7 @@ export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
                         </span>
                     ) : <span />}
                     <span className="inline-flex items-center border border-gold/30 bg-gold/10 px-2 py-0.5 text-[9px] font-extrabold tracking-[0.14em] text-gold uppercase">
-                        Bahasa Indonesia
+                        {translated && locale === 'en' ? 'English' : 'Bahasa Indonesia'}
                     </span>
                 </div>
 
@@ -67,4 +74,3 @@ export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
         </Link>
     )
 }
-

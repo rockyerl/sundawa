@@ -34,7 +34,7 @@ export default async function BlogPage({ params, searchParams }: { params: Promi
 
     const t = await getTranslations({ locale, namespace: 'blog' })
     const query = q?.trim() ?? ''
-    const posts = query ? await searchPosts(query) : await getPosts()
+    const posts = query ? await searchPosts(query, locale) : await getPosts(locale)
 
     return (
         <>

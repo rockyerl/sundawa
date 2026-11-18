@@ -13,6 +13,15 @@ interface LocalizedServiceDetail {
     outcome: string
     details: string
     deliverables?: Array<{ title: string; desc: string }>
+    caseStudy?: {
+        badge: string
+        name: string
+        client: string
+        problem: string
+        role: string
+        metrics: Array<{ value: string; label: string }>
+        href: string
+    }
 }
 
 export async function generateStaticParams() {
@@ -108,6 +117,8 @@ export default async function ServiceDetailRoute({
                     backToServices: t('backToServices'),
                     deliverablesLabel: t('deliverablesLabel'),
                     ctaProjectEstimate: t('ctaProjectEstimate'),
+                    caseStudyLabel: t('caseStudyLabel'),
+                    caseStudyView: t('caseStudyView'),
                 }}
             />
         </>
