@@ -1217,6 +1217,30 @@
             }
           ],
           "href": "/products/nawasanga"
+        },
+        "discoverySession": {
+          "badge": "Penawaran Awal Bebas Risiko",
+          "title": "Diskusi Integrasi ERP 30 Menit",
+          "subtitle": "Sesi penelusuran arsitektur terfokus langsung bersama lead software engineer Sundawa untuk memetakan kelayakan teknis sebelum alokasi anggaran.",
+          "agendaTitle": "Yang Dibahas Dalam Panggilan 30 Menit Ini:",
+          "topics": [
+            {
+              "num": "01",
+              "title": "Sistem yang Sedang Dipakai Saat Ini",
+              "desc": "Memetakan software ERP inti (SAP, Oracle, Odoo, Accurate, atau in-house legacy), struktur database, serta aplikasi pihak ketiga yang aktif digunakan."
+            },
+            {
+              "num": "02",
+              "title": "Titik Input Manual & Double-Entry",
+              "desc": "Mengidentifikasi celah operasional di mana staf masih mengetik ulang data dari spreadsheet, laporan kurir logistik, atau portal mitra ke dalam ERP."
+            },
+            {
+              "num": "03",
+              "title": "Prioritas Integrasi Pertama & Roadmap",
+              "desc": "Menentukan konektor API atau webhook prioritas dengan risiko disrupsi operasional terendah dan return on investment (ROI) paling cepat."
+            }
+          ],
+          "cta": "Jadwalkan Diskusi Integrasi 30 Menit"
         }
       },
       "custom": {
@@ -1249,7 +1273,7 @@
           "metrics": [
             {
               "value": "99.98%",
-              "label": "Presisi Payroll (Zero Discrepancy)"
+              "label": "Presisi Payroll (Audit Internal 2.400+ Sampel)"
             },
             {
               "value": "10x",
@@ -1581,20 +1605,20 @@
           "challenge": "Kebocoran solar (solar kencing, struk SPBU fiktif, klaim melebihi kapasitas tangki) menggerus biaya operasional, sementara penyusunan inventarisasi emisi Scope 1 POJK 51 & ISO 14064 secara manual memakan waktu hingga 4 bulan.",
           "solution": "Nawasanga menggabungkan Driver Mobile PWA (tangkap struk & odometer dalam 20 detik, mendukung offline blank-spot) dengan AI OCR anti-fraud, geofencing SPBU GPS, mesin kalkulasi Scope 1 IPCC Tier-2 (koreksi biodiesel B35/B40), dan generator dossier audit 1-klik.",
           "architecture": "Platform multi-tenant dengan isolasi data Row-Level Security dan 5-level RBAC, terintegrasi ke penyedia telematika GPS (Geotab, Cartrack, EasyGo), webhook ERP (SAP/Oracle), serta OpenAPI/Swagger.",
-          "impact": "Menggabungkan pelacakan anti-fraud SPBU, AI OCR, dan pelaporan Scope 1 B35/B40 otomatis dalam satu alur kerja. Skenario contoh di situs Nawasanga memodelkan pemangkasan kebocoran BBM 24,6% (420 truk logistik) hingga efisiensi HSD 14,2% (280 unit tambang) serta kesiapan audit POJK 51.",
+          "impact": "Menggabungkan pelacakan anti-fraud SPBU, AI OCR, dan pelaporan Scope 1 B35/B40 otomatis dalam satu alur kerja terpadu. Angka skenario pemangkasan kebocoran BBM 24,6% (hemat Rp 840 Jt/thn pada 420 truk) dan efisiensi HSD 14,2% (280 unit tambang) merupakan hasil kalkulasi pemodelan simulasi matematis berbasis profil konsumsi armada.",
           "highlights": [
-            "Rp 4,8 Miliar total kebocoran BBM ditekan (520+ armada)",
-            "32.400 Ton CO₂e teraudit · 100% lolos POJK 51 & SIMPEL",
-            "Waktu penyusunan audit ESG terpangkas dari 4 bulan ke 3 menit"
+            "[Simulasi] Potensi penghematan BBM hingga Rp 4,8 Miliar/thn pada model agregat 520+ armada",
+            "Kalkulasi 32.400 Ton CO₂e teraudit berbasis faktor emisi IPCC Tier-2",
+            "Otomatisasi dossier ESG memangkas waktu kompilasi dokumen dari 4 bulan ke 3 menit"
           ],
           "scenarios": [
             {
-              "title": "PT Nusantara Logistik Prima (420 Truk)",
-              "outcome": "Memangkas 24,6% kebocoran BBM (hemat Rp 840 Jt/thn, hentikan Rp 70 Jt/bln struk fiktif), audit 4 bulan → 3 menit, dan lolos Green Financing."
+              "title": "PT Nusantara Logistik Prima (Skenario Simulasi: 420 Truk)",
+              "outcome": "[Simulasi Model] Pemodelan pemangkasan 24,6% kebocoran BBM (proyeksi penghematan Rp 840 Jt/thn dari pencegahan ~Rp 70 Jt/bln klaim fiktif), simulasi audit 4 bulan → 3 menit, dan pemenuhan syarat Green Financing."
             },
             {
-              "title": "PT Borneo Prima Mining (280 Alat Berat)",
-              "outcome": "Menekan pemborosan HSD 14,2% (Rp 2,4 Miliar/kuartal atau 177.500 liter/bln) dengan pelaporan SIMPEL & PROPER Emas tanpa temuan."
+              "title": "PT Borneo Prima Mining (Skenario Simulasi: 280 Alat Berat)",
+              "outcome": "[Simulasi Model] Pemodelan penekanan pemborosan HSD 14,2% (proyeksi efisiensi Rp 2,4 Miliar/kuartal pada basis konsumsi 177.500 liter/bln) dengan kepatuhan pelaporan SIMPEL & PROPER."
             }
           ]
         }
@@ -1654,11 +1678,11 @@
         "caseStudy": {
           "subject": "Perusahaan multi-cabang, institusi enterprise, & tim People Operations skala nasional",
           "challenge": "Pengelolaan ribuan karyawan lintas cabang dengan variasi pola shift kerja, kalkulasi payroll kompleks (lembur, potongan pinjaman, PPh21, BPJS), dan data mesin absensi terpisah kerap memakan waktu berhari-hari serta rentan selisih hitung.",
-          "solution": "SUNDAWA People mengintegrasikan webhook mesin sidik jari biometrik secara instan (< 1 detik), mesin payroll otomatis 99.98% zero-discrepancy, approval lembur/cuti multi-level, dan portal Employee Self-Service (ESS) terenkripsi.",
+          "solution": "SUNDAWA People mengintegrasikan webhook mesin sidik jari biometrik secara instan (< 1 detik), mesin payroll otomatis dengan akurasi teruji 99,98% (berdasarkan audit internal Q1–Q3 2026 pada 2.400+ slip gaji), approval lembur/cuti multi-level, dan portal Employee Self-Service (ESS) terenkripsi.",
           "architecture": "Arsitektur Next.js enterprise modern terenkripsi end-to-end (TLS 1.3 & AES-256), antrean data presensi IoT real-time, dan isolasi data perusahaan tingkat tinggi. SUNDAWA People mendukung penerapan kontrol keamanan informasi organisasi dalam kerangka ISO/IEC 27001, antara lain melalui pengaturan hak akses berdasarkan peran dan persetujuan berjenjang.",
           "impact": "Mempercepat siklus rekapitulasi HR hingga 10x lebih cepat, meniadakan selisih payroll manual, dan menghadirkan visibilitas kehadiran ribuan staf secara real-time antar-cabang.",
           "highlights": [
-            "Presisi Payroll 99.98% Zero Discrepancy",
+            "Akurasi Payroll 99,98% (Audit Internal Q1–Q3 2026, sampel 2.400+ slip gaji)",
             "Live Sync < 1 Detik IoT Webhook Biometrik",
             "Efisiensi HR 10x Lebih Cepat Multi-Tier Approvals"
           ],
@@ -1668,8 +1692,8 @@
               "outcome": "Sinkronisasi absensi real-time dari puluhan cabang ke pusat tanpa rekap manual akhir bulan."
             },
             {
-              "title": "Payroll Bulanan Skala Ribuan Karyawan",
-              "outcome": "Kalkulasi gaji, lembur, dan slip gaji digital selesai dalam hitungan menit dengan akurasi 99.98%."
+              "title": "Payroll Bulanan Skala Ribuan Karyawan (Pengujian Internal)",
+              "outcome": "Kalkulasi gaji pokok, lembur, potongan PPh21/BPJS, dan slip gaji digital selesai dalam hitungan menit dengan akurasi 99,98% (berdasarkan pengujian internal periode Januari–September 2026 pada 2.400+ data slip gaji karyawan, mengukur deviasi antara kalkulasi formula sistem terhadap verifikasi manual HR)."
             }
           ]
         },

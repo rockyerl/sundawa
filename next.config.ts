@@ -24,6 +24,30 @@ const nextConfig: NextConfig = {
             },
         ],
     },
+    async redirects() {
+        return [
+            {
+                source: '/en/services/modernisasi-sistem',
+                destination: '/en/services/system-modernization',
+                permanent: true,
+            },
+            {
+                source: '/en/services/otomatisasi-ai',
+                destination: '/en/services/workflow-automation-ai',
+                permanent: true,
+            },
+            {
+                source: '/en/services/integrasi-sistem',
+                destination: '/en/services/system-integration',
+                permanent: true,
+            },
+            {
+                source: '/en/services/platform-khusus',
+                destination: '/en/services/custom-platform',
+                permanent: true,
+            },
+        ];
+    },
     async headers() {
         return [
             {

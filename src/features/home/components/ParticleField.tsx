@@ -12,9 +12,9 @@ export default function ParticleField() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // Check for reduced motion preference
+    // Check for reduced motion preference or mobile screen (save mobile CPU/battery)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion || window.innerWidth < 768) {
       return
     }
 

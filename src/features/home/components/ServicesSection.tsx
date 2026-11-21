@@ -2,12 +2,12 @@
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { MessageSquare, Palette, TestTube, Code2, Smartphone, Globe, Users, ArrowUpRight, X } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
 
 const icons = [MessageSquare, Palette, TestTube, Code2, Smartphone, Globe, Users]
 
-const SERVICE_SLUGS = [
+const SERVICE_SLUGS_ID = [
     'modernisasi-sistem',
     'otomatisasi-ai',
     'integrasi-sistem',
@@ -15,8 +15,18 @@ const SERVICE_SLUGS = [
     'managed-engineering',
 ]
 
+const SERVICE_SLUGS_EN = [
+    'system-modernization',
+    'workflow-automation-ai',
+    'system-integration',
+    'custom-platform',
+    'managed-engineering',
+]
+
 export default function ServicesSection() {
     const t = useTranslations('services')
+    const locale = useLocale()
+    const serviceSlugs = locale === 'en' ? SERVICE_SLUGS_EN : SERVICE_SLUGS_ID
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-80px' })
     const [active, setActive] = useState<number | null>(null)
@@ -121,7 +131,7 @@ export default function ServicesSection() {
                                     {!isLast && (
                                         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.1rem' }}>
                                             <Link
-                                                href={`/services/${SERVICE_SLUGS[i]}`}
+                                                href={`/services/${serviceSlugs[i]}`}
                                                 aria-label={`${s.title} - ${t('viewDetail')}`}
                                                 style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: active === i ? '#DBC977' : 'rgba(219,201,119,0.75)', textDecoration: 'none', transition: 'all 0.25s' }}
                                                 onMouseEnter={e => (e.currentTarget.style.color = '#F8F8F8')}
@@ -199,7 +209,7 @@ export default function ServicesSection() {
 
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', paddingTop: '1rem', borderTop: '1px solid rgba(248,248,248,0.05)', flexWrap: 'wrap' }}>
                                 <Link
-                                    href={selected !== null ? `/services/${SERVICE_SLUGS[selected]}` : '/services'}
+                                    href={selected !== null ? `/services/${serviceSlugs[selected]}` : '/services'}
                                     onClick={() => setSelected(null)}
                                     style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#DBC977', textDecoration: 'none' }}
                                 >

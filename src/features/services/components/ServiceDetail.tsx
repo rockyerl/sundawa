@@ -26,6 +26,21 @@ export interface ServiceCaseStudy {
     href: string
 }
 
+export interface ServiceDiscoveryTopic {
+    num: string
+    title: string
+    desc: string
+}
+
+export interface ServiceDiscoverySession {
+    badge: string
+    title: string
+    subtitle: string
+    agendaTitle: string
+    topics: ServiceDiscoveryTopic[]
+    cta: string
+}
+
 export interface ServiceDetailProps {
     service: {
         slug: string
@@ -35,6 +50,7 @@ export interface ServiceDetailProps {
         outcome: string
         details: string
         deliverables?: ServiceDeliverable[]
+        discoverySession?: ServiceDiscoverySession
         caseStudy?: ServiceCaseStudy
     }
     translations: {
@@ -131,6 +147,51 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                         </p>
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* 30-Minute Discovery Session Offering */}
+                    {service.discoverySession && (
+                        <div className="mb-12 border border-gold/40 bg-gradient-to-br from-[#0E1E30] via-navy to-[#071322] p-6 sm:p-8 rounded-xl shadow-2xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 left-0 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent" />
+                            <div className="max-w-3xl">
+                                <span className="inline-flex items-center gap-1.5 border border-gold/30 bg-gold/10 px-3 py-1 text-[0.62rem] font-extrabold tracking-[0.2em] text-gold uppercase mb-3 rounded-sm">
+                                    {service.discoverySession.badge}
+                                </span>
+                                <h2 className="text-2xl sm:text-3xl font-black text-cream mb-2 leading-tight">
+                                    {service.discoverySession.title}
+                                </h2>
+                                <p className="text-sm text-cream/70 leading-relaxed font-light mb-6">
+                                    {service.discoverySession.subtitle}
+                                </p>
+
+                                <div className="text-[0.68rem] font-bold tracking-[0.16em] uppercase text-sky mb-4">
+                                    {service.discoverySession.agendaTitle}
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                                    {service.discoverySession.topics.map((topic) => (
+                                        <div key={topic.num} className="border border-gold/15 bg-navy/90 p-4 rounded-lg">
+                                            <span className="text-[0.65rem] font-black tracking-wider text-gold uppercase block mb-1.5">
+                                                {topic.num}
+                                            </span>
+                                            <h3 className="text-xs font-bold text-cream mb-2 leading-snug">
+                                                {topic.title}
+                                            </h3>
+                                            <p className="text-[0.72rem] text-cream/60 leading-relaxed font-light">
+                                                {topic.desc}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <Link
+                                    href={`/contact?service=${encodeURIComponent(service.slug)}`}
+                                    className="inline-flex items-center gap-2 bg-gold px-6 py-3.5 text-xs font-black tracking-[0.16em] text-navy uppercase no-underline transition-shadow hover:shadow-[0_0_24px_rgba(219,201,119,0.45)]"
+                                >
+                                    <span>{service.discoverySession.cta}</span>
+                                    <ArrowRight size={14} aria-hidden="true" />
+                                </Link>
                             </div>
                         </div>
                     )}

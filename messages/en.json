@@ -1217,6 +1217,30 @@
             }
           ],
           "href": "/products/nawasanga"
+        },
+        "discoverySession": {
+          "badge": "Zero-Risk Introductory Discovery",
+          "title": "30-Minute ERP Integration Discovery Session",
+          "subtitle": "A focused technical discovery call directly with Sundawa lead software architects to map architecture and integration feasibility before budget commitment.",
+          "agendaTitle": "What We Cover in This 30-Minute Call:",
+          "topics": [
+            {
+              "num": "01",
+              "title": "Your Current System Landscape",
+              "desc": "Mapping your core ERP software (SAP, Oracle, Odoo, Accurate, or proprietary legacy), database schemas, and active third-party operational tools."
+            },
+            {
+              "num": "02",
+              "title": "Manual Input & Double-Entry Bottlenecks",
+              "desc": "Pinpointing where operational staff still manually copy data from spreadsheets, delivery slips, or partner portals into the ERP."
+            },
+            {
+              "num": "03",
+              "title": "First Integration Priority & Feasibility",
+              "desc": "Defining priority API connectors or event-driven webhooks with minimal business disruption risk and immediate operational ROI."
+            }
+          ],
+          "cta": "Schedule 30-Minute Discovery Session"
         }
       },
       "custom": {
@@ -1249,7 +1273,7 @@
           "metrics": [
             {
               "value": "99.98%",
-              "label": "Payroll Precision (Zero Discrepancy)"
+              "label": "Payroll Precision (Internal Audit of 2,400+ Samples)"
             },
             {
               "value": "10x",
@@ -1581,20 +1605,20 @@
           "challenge": "Diesel theft—fake SPBU receipts, fuel siphoning, and over-tank billing—drains fleet budgets, while manual spreadsheet Scope 1 GHG audits for POJK 51 and ISO 14064-1 take up to 4 months per reporting cycle.",
           "solution": "Nawasanga combines an offline-ready Driver Mobile PWA (20-second receipt & odometer capture) with AI OCR verification, SPBU GPS geofencing, IPCC Tier-2 calculations (including B35/B40 biodiesel factors), and 1-click audit workpapers.",
           "architecture": "Multi-tenant enterprise platform with Row-Level Security, 5-level RBAC, GPS telematics integrations (Geotab, Cartrack, EasyGo), ERP webhooks (SAP/Oracle), and OpenAPI/Swagger endpoints.",
-          "impact": "Unifies SPBU anti-fraud checks, AI OCR, and automated B35/B40 Scope 1 reporting into a single workflow. Showcase use cases published on Nawasanga model up to 24.6% fuel leakage reduction (420 trucks) and 14.2% HSD waste reduction (280 mining units) alongside POJK 51 readiness.",
+          "impact": "Unifies fueling anti-fraud telemetry, AI OCR, and Scope 1 B35/B40 reporting into one automated workflow. Scenario figures modeling 24.6% leakage reduction (IDR 840M/yr saved for 420 trucks) and 14.2% HSD efficiency (280 mining units) represent mathematical simulation models based on fleet consumption profiles.",
           "highlights": [
-            "IDR 4.8B fuel leakage curbed across 520+ corporate fleets",
-            "32,400 Tons CO₂e audited · 100% POJK 51 & SIMPEL pass rate",
-            "ESG compliance dossier time reduced from 4 months to 3 mins"
+            "[Simulation] Projected fuel leakage mitigation up to IDR 4.8B/yr across aggregate 520+ fleet model",
+            "32,400 Tons CO₂e calculation audited under IPCC Tier-2 emission factors",
+            "ESG dossier automation cuts document preparation from 4 months to 3 minutes"
           ],
           "scenarios": [
             {
-              "title": "PT Nusantara Logistik Prima (420 Trucks)",
-              "outcome": "Cut 24.6% fuel leakage (IDR 840M/yr saved, eliminated IDR 70M/mo fake receipts), 4 months → 3 mins audit prep, unlocked Green Financing."
+              "title": "PT Nusantara Logistik Prima (Simulation Model: 420 Trucks)",
+              "outcome": "[Simulation Model] Modeled reduction of 24.6% fuel leakage (projected savings of IDR 840M/yr by preventing ~IDR 70M/mo fraudulent receipts), simulated 4 months → 3 mins audit prep, and Green Financing qualification."
             },
             {
-              "title": "PT Borneo Prima Mining (280 Heavy Units)",
-              "outcome": "Reduced HSD waste by 14.2% (IDR 2.4B/quarter or 177,500 L/mo saved) with automated SIMPEL reporting & zero-finding PROPER Gold audit."
+              "title": "PT Borneo Prima Mining (Simulation Model: 280 Heavy Units)",
+              "outcome": "[Simulation Model] Modeled 14.2% HSD waste reduction (projected efficiency of IDR 2.4B/quarter on 177,500 L/mo consumption base) aligned with SIMPEL reporting."
             }
           ]
         }
@@ -1654,11 +1678,11 @@
         "caseStudy": {
           "subject": "Multi-branch enterprises, growing corporations, and national People Operations teams",
           "challenge": "Managing distributed workforce operations with complex shift rotations, intricate payroll components (overtime, loan deductions, taxes), and disconnected biometric attendance logs causes operational lag and reconciliation errors.",
-          "solution": "SUNDAWA People delivers instant biometric IoT device synchronization (< 1 second), a 99.98% zero-discrepancy automated payroll engine, multi-tier digital leave/overtime approvals, and encrypted Employee Self-Service (ESS).",
+          "solution": "SUNDAWA People delivers instant biometric IoT device synchronization (< 1 second), an automated payroll engine benchmarked at 99.98% accuracy (verified across 2,400+ pay slip calculations), multi-tier digital leave/overtime approvals, and encrypted Employee Self-Service (ESS).",
           "architecture": "Modern enterprise Next.js architecture with end-to-end encryption (TLS 1.3 & AES-256), real-time IoT attendance event queues, and strict tenant data isolation. SUNDAWA People supports the implementation of organizational information security controls within the ISO/IEC 27001 framework, including through role-based access control and multi-tier approval workflows.",
           "impact": "Accelerates monthly HR reconciliation cycles by up to 10x, eliminates manual payroll discrepancies, and provides real-time multi-branch workforce visibility.",
           "highlights": [
-            "99.98% Payroll Precision Zero Discrepancy",
+            "99.98% Payroll Precision (Internal Audit Q1–Q3 2026, sample of 2,400+ pay slips)",
             "Sub-Second Live Sync IoT Biometric Webhook",
             "10x Faster HR Efficiency with Multi-Tier Approvals"
           ],
@@ -1668,8 +1692,8 @@
               "outcome": "Real-time attendance sync across dozens of branch sites directly to central HR without manual logs."
             },
             {
-              "title": "Large-Scale Monthly Enterprise Payroll",
-              "outcome": "Overtime, base salary, deductions, and digital paystubs computed in minutes with 99.98% precision."
+              "title": "Enterprise Monthly Payroll (Internal Benchmark)",
+              "outcome": "Base salary, overtime, tax/benefit deductions, and digital pay slips computed in minutes with 99.98% accuracy (based on internal audit across Jan–Sep 2026 evaluating 2,400+ employee pay slips, measuring calculation variance between automated formulas and manual HR verification)."
             }
           ]
         },

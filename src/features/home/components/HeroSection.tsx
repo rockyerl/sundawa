@@ -46,9 +46,8 @@ export default function HeroSection() {
                     {/* LEFT */}
                     <div>
                         <motion.div
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            initial={false}
+                            animate={{ opacity: 1, y: 0 }}
                             className="hero-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem', maxWidth: '100%', padding: '0.4rem 1rem', border: '1px solid rgba(219,201,119,0.3)', background: 'rgba(219,201,119,0.05)' }}
                         >
                             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#DBC977', animation: 'pulse 2s infinite' }} />
@@ -58,9 +57,8 @@ export default function HeroSection() {
                         </motion.div>
 
                         <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                            transition={{ duration: 0.9, delay: 0.3 }}
+                            initial={false}
+                            animate={{ opacity: 1, y: 0 }}
                             style={{ fontWeight: 900, lineHeight: 1.02, marginBottom: '1.75rem', letterSpacing: '-0.02em' }}
                         >
                             <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: '#F8F8F8' }}>{t('line1')}</span>
@@ -70,18 +68,16 @@ export default function HeroSection() {
                         </motion.h1>
 
                         <motion.p
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                            transition={{ duration: 0.8, delay: 0.5 }}
+                            initial={false}
+                            animate={{ opacity: 1, y: 0 }}
                             style={{ color: 'rgba(248,248,248,0.85)', fontWeight: 400, fontSize: '1.08rem', lineHeight: 1.8, maxWidth: '36rem', marginBottom: '2.25rem' }}
                         >
                             {t('sub')}
                         </motion.p>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                            transition={{ duration: 0.8, delay: 0.65 }}
+                            initial={false}
+                            animate={{ opacity: 1, y: 0 }}
                             className="hero-cta" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}
                         >
                             <Link href="/contact" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', background: '#DBC977', color: '#0E1E30', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', overflow: 'hidden', transition: 'box-shadow 0.3s', textDecoration: 'none' }}

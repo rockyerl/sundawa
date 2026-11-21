@@ -1,22 +1,25 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { setRequestLocale } from 'next-intl/server'
 import { pageMetadata } from '@/lib/Seo'
 import {
     AboutSection,
     BlogSection,
-    ClientsSection,
-    ContactSection,
     FeaturedProjectsSection,
     FinalCtaSection,
     HeroSection,
-    ObjectionsSection,
     ParticleField,
     ProblemSection,
     ServicesSection,
-    TechSection,
     ValuesSection,
 } from '@/src/features/home'
 import { ProductsSection } from '@/src/features/products'
+
+// Defer non-critical JavaScript for below-the-fold sections to optimize mobile LCP & TBT
+const TechSection = dynamic(() => import('@/src/features/home/components/TechSection'))
+const ClientsSection = dynamic(() => import('@/src/features/home/components/ClientsSection'))
+const ObjectionsSection = dynamic(() => import('@/src/features/home/components/ObjectionsSection'))
+const ContactSection = dynamic(() => import('@/src/features/home/components/ContactSection'))
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params

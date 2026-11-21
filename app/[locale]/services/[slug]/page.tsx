@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { SITE_NAME, SITE_URL } from '@/lib/Seo'
 import { ServiceDetail } from '@/src/features/services'
@@ -13,6 +13,14 @@ interface LocalizedServiceDetail {
     outcome: string
     details: string
     deliverables?: Array<{ title: string; desc: string }>
+    discoverySession?: {
+        badge: string
+        title: string
+        subtitle: string
+        agendaTitle: string
+        topics: Array<{ num: string; title: string; desc: string }>
+        cta: string
+    }
     caseStudy?: {
         badge: string
         name: string
@@ -84,6 +92,20 @@ export async function generateMetadata({
     }
 }
 
+const ID_TO_EN_SERVICES: Record<string, string> = {
+    'modernisasi-sistem': 'system-modernization',
+    'otomatisasi-ai': 'workflow-automation-ai',
+    'integrasi-sistem': 'system-integration',
+    'platform-khusus': 'custom-platform',
+}
+
+const EN_TO_ID_SERVICES: Record<string, string> = {
+    'system-modernization': 'modernisasi-sistem',
+    'workflow-automation-ai': 'otomatisasi-ai',
+    'system-integration': 'integrasi-sistem',
+    'custom-platform': 'platform-khusus',
+}
+
 export default async function ServiceDetailRoute({
     params,
 }: {
@@ -96,7 +118,15 @@ export default async function ServiceDetailRoute({
     const services = t.raw('detail') as Record<string, LocalizedServiceDetail>
 
     const service = Object.values(services).find((s) => s.slug === slug)
-    if (!service) notFound()
+    if (!service) {
+        if (locale === 'en' && ID_TO_EN_SERVICES[slug]) {
+            redirect(`/en/services/${ID_TO_EN_SERVICES[slug]}`)
+        }
+        if (locale === 'id' && EN_TO_ID_SERVICES[slug]) {
+            redirect(`/id/services/${EN_TO_ID_SERVICES[slug]}`)
+        }
+        notFound()
+    }
 
     return (
         <>

@@ -38,17 +38,24 @@ export default function IntroLoader() {
     }, [])
 
     useEffect(() => {
+        // Skip intro immediately on mobile screens to ensure instant LCP
+        if (typeof window !== 'undefined' && window.innerWidth < 768) {
+            document.body.style.overflow = ''
+            markIntroSeen()
+            return
+        }
+
         if (!show) return
 
         document.body.style.overflow = 'hidden'
 
         const skipTimer = window.setTimeout(() => {
             setShowSkip(true)
-        }, 1000)
+        }, 500)
 
         const autoHideTimer = window.setTimeout(() => {
             finish()
-        }, 3400)
+        }, 1200)
 
         return () => {
             window.clearTimeout(skipTimer)
@@ -64,9 +71,10 @@ export default function IntroLoader() {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{
-                        duration: 2,
+                        duration: 0.45,
                         ease: 'easeInOut',
                     }}
+                    className="hidden md:flex"
                     onClick={() => {
                         if (showSkip) {
                             finish()
@@ -77,7 +85,6 @@ export default function IntroLoader() {
                         inset: 0,
                         zIndex: 9999,
                         background: '#0E1E30',
-                        display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
