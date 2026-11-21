@@ -65,7 +65,7 @@ export default function HeroSection() {
                         >
                             <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: '#F8F8F8' }}>{t('line1')}</span>
                             <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)' }} className="shimmer-text">{t('line2')}</span>
-                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: 'rgba(248,248,248,0.55)' }}>{t('line3')}</span>
+                            <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: 'rgba(248,248,248,0.72)' }}>{t('line3')}</span>
                             <span style={{ display: 'block', fontSize: 'clamp(2rem, 3.6vw, 3.5rem)', color: '#F8F8F8' }}>{t('line4')}</span>
                         </motion.h1>
 
@@ -73,7 +73,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                             transition={{ duration: 0.8, delay: 0.5 }}
-                            style={{ color: 'rgba(248,248,248,0.5)', fontWeight: 300, fontSize: '1.05rem', lineHeight: 1.8, maxWidth: '35rem', marginBottom: '2.25rem' }}
+                            style={{ color: 'rgba(248,248,248,0.85)', fontWeight: 400, fontSize: '1.08rem', lineHeight: 1.8, maxWidth: '36rem', marginBottom: '2.25rem' }}
                         >
                             {t('sub')}
                         </motion.p>
@@ -100,16 +100,16 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
-                            className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-cream/55 mb-8"
+                            className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-cream/70 mb-8"
                         >
-                            <span className="text-cream/40 uppercase tracking-wider text-[0.68rem]">{t('proof')}:</span>
-                            <a href="#featured-projects" className="inline-flex items-center gap-1 text-gold hover:text-gold/80 transition-colors font-medium">
+                            <span className="text-cream/50 uppercase tracking-wider text-[0.68rem]">{t('proof')}:</span>
+                            <Link href="/portfolio/dacar-by-undp" className="inline-flex items-center gap-1 text-gold hover:text-gold/80 transition-colors font-medium underline underline-offset-4 decoration-gold/40">
                                 <span>{t('proofDacar')}</span>
-                            </a>
-                            <span className="text-cream/25">·</span>
-                            <a href="#featured-projects" className="inline-flex items-center gap-1 text-gold hover:text-gold/80 transition-colors font-medium">
+                            </Link>
+                            <span className="text-cream/35">·</span>
+                            <Link href="/portfolio/e-office" className="inline-flex items-center gap-1 text-gold hover:text-gold/80 transition-colors font-medium underline underline-offset-4 decoration-gold/40">
                                 <span>{t('proofEoffice')}</span>
-                            </a>
+                            </Link>
                         </motion.div>
 
                         <motion.div initial={{ opacity: 0 }}

@@ -75,6 +75,13 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
                 role: t('role'),
                 impact: t('impact'),
                 backToPortfolio: t('backToPortfolio'),
+                ctaEyebrow: t('ctaEyebrow'),
+                ctaTitle: t('ctaTitle'),
+                ctaDacarTitle: t('ctaDacarTitle'),
+                ctaSubtitle: t('ctaSubtitle'),
+                ctaIntegrationButton: t('ctaIntegrationButton'),
+                ctaModernizationButton: t('ctaModernizationButton'),
+                ctaDefaultButton: t('ctaDefaultButton'),
             }}
         />
     )

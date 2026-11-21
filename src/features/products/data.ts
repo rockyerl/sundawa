@@ -77,7 +77,7 @@ export const PRODUCT_SPECS: readonly ProductSpec[] = [
         category: 'enterprise',
         statusKey: 'authPortal',
         accentColor: '#DBC977',
-        techTags: ['Multi-Tier Payroll', 'IoT Biometric Webhook', 'Shift Management', 'SOC2 / TLS 1.3'],
+        techTags: ['Multi-Tier Payroll', 'IoT Biometric Webhook', 'Shift Management', 'ISO/IEC 27001 / TLS 1.3'],
         isAuthGated: true,
     },
 ] as const

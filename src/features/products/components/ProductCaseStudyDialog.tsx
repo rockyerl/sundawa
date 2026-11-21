@@ -148,6 +148,19 @@ export default function ProductCaseStudyDialog({
                     </div>
                 )}
 
+                {/* Compliance notice when applicable */}
+                {product.complianceNote && (
+                    <div className="mb-5 flex items-start gap-2.5 border border-emerald-500/30 bg-emerald-500/[0.06] px-4 py-3 text-xs leading-relaxed text-emerald-200/90">
+                        <ShieldCheck size={14} className="mt-0.5 flex-shrink-0 text-emerald-400" aria-hidden="true" />
+                        <div>
+                            <span className="font-bold uppercase tracking-wider text-emerald-300">
+                                {labels.complianceNote || 'Keamanan & Kepatuhan'}:{' '}
+                            </span>
+                            {product.complianceNote}
+                        </div>
+                    </div>
+                )}
+
                 {/* Subject context */}
                 <div className="mb-5 border border-gold/15 bg-dark-slate/40 p-4">
                     <div className="mb-1 text-[0.58rem] font-black tracking-[0.2em] text-gold uppercase">

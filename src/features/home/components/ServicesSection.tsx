@@ -7,6 +7,14 @@ import { Link } from '@/src/i18n/navigation'
 
 const icons = [MessageSquare, Palette, TestTube, Code2, Smartphone, Globe, Users]
 
+const SERVICE_SLUGS = [
+    'modernisasi-sistem',
+    'otomatisasi-ai',
+    'integrasi-sistem',
+    'platform-khusus',
+    'managed-engineering',
+]
+
 export default function ServicesSection() {
     const t = useTranslations('services')
     const ref = useRef(null)
@@ -112,13 +120,16 @@ export default function ServicesSection() {
 
                                     {!isLast && (
                                         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.1rem' }}>
-                                            <button
-                                                onClick={() => setSelected(i)}
-                                                aria-label={t('viewDetail')}
-                                                style={{ width: 36, height: 36, border: `1px solid ${active === i ? 'rgba(219,201,119,0.4)' : 'rgba(248,248,248,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: active === i ? '#DBC977' : 'rgba(248,248,248,0.2)', transition: 'all 0.3s', background: 'transparent', cursor: 'pointer', padding: 0 }}
+                                            <Link
+                                                href={`/services/${SERVICE_SLUGS[i]}`}
+                                                aria-label={`${s.title} - ${t('viewDetail')}`}
+                                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: active === i ? '#DBC977' : 'rgba(219,201,119,0.75)', textDecoration: 'none', transition: 'all 0.25s' }}
+                                                onMouseEnter={e => (e.currentTarget.style.color = '#F8F8F8')}
+                                                onMouseLeave={e => (e.currentTarget.style.color = active === i ? '#DBC977' : 'rgba(219,201,119,0.75)')}
                                             >
+                                                <span>{t('viewDetail')}</span>
                                                 <ArrowUpRight size={13} />
-                                            </button>
+                                            </Link>
                                         </div>
                                     )}
                                 </motion.div>
@@ -186,8 +197,15 @@ export default function ServicesSection() {
                                 <span style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(219,201,119,0.85)' }}>{selectedItem.outcome}</span>
                             </div>
 
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1rem', borderTop: '1px solid rgba(248,248,248,0.05)' }}>
-                                <span style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.15em', color: 'rgba(248,248,248,0.25)' }}>{selectedItem.num}</span>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', paddingTop: '1rem', borderTop: '1px solid rgba(248,248,248,0.05)', flexWrap: 'wrap' }}>
+                                <Link
+                                    href={selected !== null ? `/services/${SERVICE_SLUGS[selected]}` : '/services'}
+                                    onClick={() => setSelected(null)}
+                                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#DBC977', textDecoration: 'none' }}
+                                >
+                                    <span>{t('viewDetail')}</span>
+                                    <ArrowUpRight size={12} />
+                                </Link>
                                 <Link href="#contact" onClick={() => setSelected(null)}
                                       style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#DBC977', padding: '0.5rem 1rem', border: '1px solid rgba(219,201,119,0.35)', background: 'rgba(219,201,119,0.07)', textDecoration: 'none', transition: 'all 0.25s' }}
                                       onMouseEnter={e => { e.currentTarget.style.background = 'rgba(219,201,119,0.15)'; e.currentTarget.style.borderColor = 'rgba(219,201,119,0.6)' }}

@@ -87,6 +87,7 @@ export default async function BlogDetailPage({
                 post={post}
                 canonicalUrl={canonical}
                 backToBlogLabel={t('backToBlog')}
+                locale={locale}
             />
         </>
     )

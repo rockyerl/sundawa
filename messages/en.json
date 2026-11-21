@@ -807,7 +807,14 @@
     "architecture": "Architecture",
     "role": "Our Role",
     "impact": "Impact",
-    "backToPortfolio": "Back to Portfolio"
+    "backToPortfolio": "Back to Portfolio",
+    "ctaEyebrow": "Consultation & Transformation",
+    "ctaTitle": "Have a Similar System Requirement?",
+    "ctaDacarTitle": "Ready to Build a Distribution Platform or Data Integration?",
+    "ctaSubtitle": "Consult your system architecture, API integration, or technology transformation roadmap with Sundawa software engineers.",
+    "ctaIntegrationButton": "Discuss Your Integration Needs",
+    "ctaModernizationButton": "Discuss Your Modernization Needs",
+    "ctaDefaultButton": "Discuss Your System Needs"
   },
   "contactPage": {
     "navBack": "Back",
@@ -1385,7 +1392,8 @@
       "fullDetail": "Full Case Study",
       "close": "Close",
       "backToProducts": "Back to Products",
-      "inspectSelectedCaseStudy": "Read Case Study"
+      "inspectSelectedCaseStudy": "Read Case Study",
+      "viewAllProducts": "View All Sundawa Products"
     },
     "caseStudySection": {
       "eyebrow": "Product Case Studies & Architecture",
@@ -1402,7 +1410,8 @@
         "coreModules": "Core Modules",
         "accessNote": "Access Note",
         "liveDomain": "Live Domain",
-        "techStack": "Stack & Capabilities"
+        "techStack": "Stack & Capabilities",
+        "complianceNote": "Security & Compliance"
       }
     },
     "items": {
@@ -1634,19 +1643,19 @@
         "sector": "Enterprise Autonomous HR & Payroll",
         "tagline": "One Unified Intelligent Ecosystem for Workforce Performance & Financials",
         "summary": "Enterprise HRIS and workforce operating system—automating multi-tier payroll, instant biometric IoT sync, intelligent shift scheduling, and self-service ESS under banking-grade security standards.",
-        "badgeMetric": "Enterprise Grade · SOC2 & ISO 27001 Certified",
+        "badgeMetric": "Supports ISO/IEC 27001 Implementation",
         "accessNote": "This application is a secured operational HRIS portal. The link leads to the official login gateway (TLS 1.3 & AES-256); full access is restricted to authorized employees and HR personnel.",
         "modules": [
           "Multi-Tier Automated Payroll & Tax/Benefit Deductions",
           "Sub-Second Biometric IoT Live Sync & Geofenced Attendance",
           "Dynamic Shift Management & Multi-Branch Approval Flows",
-          "Employee Self-Service (ESS) Portal with SOC2 Security"
+          "Employee Self-Service (ESS) Portal with Granular Access & TLS 1.3"
         ],
         "caseStudy": {
           "subject": "Multi-branch enterprises, growing corporations, and national People Operations teams",
           "challenge": "Managing distributed workforce operations with complex shift rotations, intricate payroll components (overtime, loan deductions, taxes), and disconnected biometric attendance logs causes operational lag and reconciliation errors.",
           "solution": "SUNDAWA People delivers instant biometric IoT device synchronization (< 1 second), a 99.98% zero-discrepancy automated payroll engine, multi-tier digital leave/overtime approvals, and encrypted Employee Self-Service (ESS).",
-          "architecture": "Modern enterprise Next.js architecture with end-to-end encryption (TLS 1.3 & AES-256), real-time IoT attendance event queues, granular Role-Based Access Control, and strict tenant data isolation.",
+          "architecture": "Modern enterprise Next.js architecture with end-to-end encryption (TLS 1.3 & AES-256), real-time IoT attendance event queues, and strict tenant data isolation. SUNDAWA People supports the implementation of organizational information security controls within the ISO/IEC 27001 framework, including through role-based access control and multi-tier approval workflows.",
           "impact": "Accelerates monthly HR reconciliation cycles by up to 10x, eliminates manual payroll discrepancies, and provides real-time multi-branch workforce visibility.",
           "highlights": [
             "99.98% Payroll Precision Zero Discrepancy",
@@ -1663,7 +1672,8 @@
               "outcome": "Overtime, base salary, deductions, and digital paystubs computed in minutes with 99.98% precision."
             }
           ]
-        }
+        },
+        "complianceNote": "SUNDAWA People supports the implementation of organizational information security controls within the ISO/IEC 27001 framework, including through role-based access control and multi-tier approval workflows."
       }
     }
   },

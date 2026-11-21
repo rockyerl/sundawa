@@ -1,13 +1,13 @@
 'use client'
 
 import { useMemo, useRef, useState } from 'react'
-import { AnimatePresence, motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/src/i18n/navigation'
 import { buildProducts, extractProductUiTranslations, filterProducts } from '../domain'
-import type { ProductFilterCategory, ProductSlug, SundawaProduct } from '../types'
+import type { ProductFilterCategory } from '../types'
 import ProductCard from './ProductCard'
-import ProductCaseStudiesSpotlight from './ProductCaseStudiesSpotlight'
-import ProductCaseStudyDialog from './ProductCaseStudyDialog'
 import ProductCategoryFilter from './ProductCategoryFilter'
 
 export default function ProductsSection() {
@@ -16,8 +16,6 @@ export default function ProductsSection() {
     const inView = useInView(ref, { once: true, margin: '-80px' })
 
     const [activeFilter, setActiveFilter] = useState<ProductFilterCategory>('all')
-    const [selectedSpotlightSlug, setSelectedSpotlightSlug] = useState<ProductSlug>('sewaka')
-    const [dialogProduct, setDialogProduct] = useState<SundawaProduct | null>(null)
 
     const translations = useMemo(() => extractProductUiTranslations(t), [t])
     const allProducts = useMemo(() => buildProducts(translations.items), [translations.items])
@@ -26,13 +24,8 @@ export default function ProductsSection() {
         [allProducts, activeFilter],
     )
 
-    const handleOpenDialog = (product: SundawaProduct) => {
-        setSelectedSpotlightSlug(product.slug)
-        setDialogProduct(product)
-    }
-
     return (
-        <section id="products" ref={ref} className="relative overflow-hidden">
+        <section id="products" ref={ref} className="relative overflow-hidden py-16 md:py-24">
             <div
                 className="pointer-events-none absolute inset-0"
                 style={{
@@ -46,7 +39,7 @@ export default function ProductsSection() {
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
-                    className="mb-10 flex items-center gap-4"
+                    className="mb-8 flex items-center gap-4"
                 >
                     <span className="text-[0.65rem] font-extrabold tracking-[0.3em] text-gold uppercase">
                         — {translations.label}
@@ -104,7 +97,7 @@ export default function ProductsSection() {
                     onChange={setActiveFilter}
                 />
 
-                {/* Product Showcase Grid */}
+                {/* Product Showcase Grid - Concise Cards */}
                 <div className="grid grid-cols-1 gap-[1px] border border-gold/15 bg-gold/15 md:grid-cols-2 lg:grid-cols-3">
                     {visibleProducts.map((product, index) => (
                         <ProductCard
@@ -115,30 +108,21 @@ export default function ProductsSection() {
                             statusLabel={translations.statuses[product.statusKey]}
                             viewCaseStudyLabel={translations.actions.viewCaseStudy}
                             visitSiteLabel={translations.actions.visitSite}
-                            onSelect={handleOpenDialog}
                         />
                     ))}
                 </div>
 
-                {/* Integrated Interactive Case Studies Spotlight */}
-                <ProductCaseStudiesSpotlight
-                    products={allProducts}
-                    selectedSlug={selectedSpotlightSlug}
-                    translations={translations}
-                    onSelectSlug={setSelectedSpotlightSlug}
-                />
+                {/* Bottom CTA to all products */}
+                <div className="mt-12 flex justify-center">
+                    <Link
+                        href="/products"
+                        className="inline-flex items-center gap-2 border border-gold/30 bg-gold/[0.05] px-6 py-3.5 text-xs font-bold tracking-[0.16em] text-gold uppercase no-underline transition-all hover:border-gold hover:bg-gold/15"
+                    >
+                        <span>{translations.actions.viewAllProducts || 'Lihat Semua 7 Produk Sundawa'}</span>
+                        <ArrowUpRight size={14} aria-hidden="true" />
+                    </Link>
+                </div>
             </div>
-
-            {/* Deep Case Study Dialog */}
-            <AnimatePresence>
-                {dialogProduct && (
-                    <ProductCaseStudyDialog
-                        product={dialogProduct}
-                        translations={translations}
-                        onClose={() => setDialogProduct(null)}
-                    />
-                )}
-            </AnimatePresence>
         </section>
     )
 }

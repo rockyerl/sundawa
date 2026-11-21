@@ -33,19 +33,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div className="relative z-10">
                 <HeroSection />
                 <div className="section-line" />
+                <FeaturedProjectsSection />
+                <div className="section-line" />
                 <ProblemSection />
+                <div className="section-line" />
+                <ServicesSection />
+                <div className="section-line" />
+                <ProductsSection />
                 <div className="section-line" />
                 <AboutSection />
                 <div className="section-line" />
                 <ValuesSection />
                 <div className="section-line" />
-                <ServicesSection />
-                <div className="section-line" />
-                <FeaturedProjectsSection />
-                <div className="section-line" />
                 <TechSection />
-                <div className="section-line" />
-                <ProductsSection />
                 <div className="section-line" />
                 <ClientsSection />
                 <div className="section-line" />

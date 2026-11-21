@@ -52,6 +52,7 @@ export interface LocalizedProductContent {
     tagline: string
     summary: string
     badgeMetric: string
+    complianceNote?: string
     accessNote?: string
     modules: string[]
     caseStudy: ProductCaseStudyContent
@@ -81,6 +82,7 @@ export interface ProductUiTranslations {
         close: string
         backToProducts: string
         inspectSelectedCaseStudy: string
+        viewAllProducts?: string
     }
     caseStudySection: {
         eyebrow: string
@@ -96,6 +98,7 @@ export interface ProductUiTranslations {
             scenarios: string
             coreModules: string
             accessNote: string
+            complianceNote?: string
             liveDomain: string
             techStack: string
         }

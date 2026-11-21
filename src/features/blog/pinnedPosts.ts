@@ -124,6 +124,22 @@ Penggantian total (re-platforming) hanya disarankan apabila sistem lama sudah me
 </table>
 </div>
 
+<h2>Studi Kasus Terkait: Arsitektur Integrasi Multi-Platform</h2>
+<div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.35); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+    <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #00F0FF; display: block; margin-bottom: 0.5rem;">
+        📂 Studi Kasus Terkait
+    </span>
+    <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
+        DACAR by UNDP: Integrasi Data &amp; Platform Penyaluran Dana Digital
+    </h3>
+    <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa merancang arsitektur aplikasi lintas platform, microservices API terenkripsi, dan verifikasi real-time untuk penyaluran dana bantuan tanpa toleransi keterlambatan data.
+    </p>
+    <a href="/id/portfolio/dacar-by-undp" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Pelajari Studi Kasus DACAR by UNDP &rarr;
+    </a>
+</div>
+
 <h2>Langkah Pertama yang Direkomendasikan</h2>
 <p>
 Sebelum menerbitkan Term of Reference (TOR) pengadaan atau menandatangani kontrak lisensi baru, mintalah audit ketergantungan sistem independen. Di Sundawa, kami selalu memulai dengan memetakan proses bisnis riil di lapangan untuk memastikan setiap rupiah investasi teknologi Anda benar-benar menyelesaikan masalah operasional.
@@ -225,6 +241,22 @@ Kesiapan sejati diukur dari bagaimana tim merespons skenario terburuk. Sebelum p
     <li>Perjanjian Kerahasiaan (NDA) dan kontrol akses berbasis peran (RBAC) yang membatasi hak akses personel teknis ke data produksi sensitif.</li>
 </ul>
 
+<h2>Studi Kasus Terkait: Modernisasi Sistem Misi-Kritis</h2>
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.3); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+    <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #DBC977; display: block; margin-bottom: 0.5rem;">
+        📂 Studi Kasus Terkait
+    </span>
+    <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
+        E-Office: Modernisasi Tata Usaha &amp; Alur Disposisi Terintegrasi
+    </h3>
+    <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
+        Bagaimana Sundawa mentransformasikan persuratan fisik dan alur disposisi birokrasi menjadi platform web modular berjenjang dengan RBAC dan indeks arsip real-time tanpa disrupsi operasional.
+    </p>
+    <a href="/id/portfolio/e-office" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Lihat Studi Kasus E-Office &rarr;
+    </a>
+</div>
+
 <h2>Kesimpulan</h2>
 <p>
 Modernisasi sistem lama tidak harus menjadi pengalaman yang menegangkan. Dengan audit ketergantungan yang cermat, pemilahan data yang disiplin, dan strategi rilis bertahap, transisi teknologi dapat berlangsung mulus tanpa mengorbankan ketenangan operasional bisnis Anda.
@@ -239,6 +271,93 @@ Modernisasi sistem lama tidak harus menjadi pengalaman yang menegangkan. Dengan 
     </p>
     <a href="/id/contact?service=modernisasi-sistem" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
         Diskusikan Sistem Anda &rarr;
+    </a>
+</div>
+        `,
+    },
+    {
+        id: 'pinned-custom-business-app',
+        slug: 'kapan-perusahaan-membutuhkan-aplikasi-bisnis-custom',
+        title: 'Kapan Perusahaan Membutuhkan Aplikasi Bisnis Custom Dibanding Software Jadi?',
+        excerpt:
+            'Panduan strategis bagi pimpinan bisnis untuk mengevaluasi batas kapabilitas software jadi (off-the-shelf SaaS) vs. investasi aplikasi bisnis custom yang dirancang presisi sesuai alur kerja unik perusahaan.',
+        published_at: '2026-11-16T09:00:00.000Z',
+        body_html: `
+<p class="lead">
+Dalam era percepatan transformasi digital, hampir setiap kebutuhan operasional memiliki produk perangkat lunak siap pakai (off-the-shelf SaaS). Mulai dari CRM, manajemen inventaris gudang, sistem pemesanan armada, hingga portal layanan pelanggan. Namun, banyak organisasi mencapai titik di mana <strong>perangkat lunak jadi justru menjadi penghambat inovasi bisnis</strong> karena membatasi fleksibilitas alur kerja.
+</p>
+
+<p>
+Kapan saat yang tepat untuk terus menggunakan aplikasi siap pakai, dan kapan perusahaan perlu berinvestasi membangun aplikasi bisnis custom? Berikut adalah panduan evaluasi strategis berdasarkan pengalaman rekayasa perangkat lunak tim Sundawa.
+</p>
+
+<h2>1. Jebakan Software Jadi (Off-the-Shelf SaaS) di Fase Pertumbuhan</h2>
+<p>
+Software jadi sangat ideal pada tahap awal pembentukan bisnis karena waktu adopsinya cepat dan biaya bulanannya terjangkau. Namun, ketika model operasional perusahaan mulai memiliki keunikan kompetitif, hambatan berikut mulai muncul:
+</p>
+<ul>
+    <li><strong>Biaya lisensi per-user yang membengkak:</strong> Ketika tim bertambah dari puluhan menjadi ratusan pengguna, biaya subscription bulanan/tahunan melonjak drastis tanpa penambahan nilai strategis baru.</li>
+    <li><strong>Alur kerja dipaksa mengikuti software:</strong> Tim operasional terpaksa mengubah SOP internal semata-mata agar sesuai dengan batas logika sistem vendor yang kaku.</li>
+    <li><strong>Ketergantungan data (Vendor Lock-in):</strong> Mengekstrak data riil dalam format lengkap untuk kebutuhan analitik mandiri sering kali dibatasi atau dikenakan biaya API berbayar.</li>
+</ul>
+
+<h2>2. Kapan Aplikasi Bisnis Custom Menjadi Solusi Terbaik?</h2>
+<p>
+Investasi aplikasi bisnis custom tepat diambil jika proses bisnis Anda adalah pembeda utama (keunggulan bersaing) di mata pelanggan Anda.
+</p>
+<p><strong>Pertimbangkan pengembangan custom jika:</strong></p>
+<ul>
+    <li>Proses operasional Anda melibatkan aturan bisnis unik, regulasi kepatuhan khusus, atau kalkulasi harga berjenjang yang tidak didukung solusi SaaS generik.</li>
+    <li>Anda membutuhkan antarmuka terpadu yang menggabungkan berbagai sumber data lapangan, IoT, atau integrasi hardware khusus ke dalam satu dashboard kendali.</li>
+    <li>Perusahaan menginginkan kepemilikan aset kode sumber penuh (full IP ownership) untuk meningkatkan valuasi dan independensi teknologi.</li>
+</ul>
+
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.25); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        ⚡ Butuh Platform yang Menyesuaikan Operasional Bisnis Anda?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa membangun platform bisnis custom, portal pelanggan terpadu, dan sistem manajemen operasional yang dirancang spesifik untuk kebutuhan organisasi Anda.
+    </p>
+    <a href="/id/services/platform-khusus" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Jelajahi Jasa Platform Bisnis Khusus Sundawa &rarr;
+    </a>
+</div>
+
+<h2>3. Studi Kasus Relevan: Platform Informasi &amp; Kehadiran Medis Rumah Sakit</h2>
+<p>
+Contoh nyata pentingnya platform custom terlihat pada sektor layanan kesehatan, di mana sistem generik tidak mampu mengakomodasi dinamika jadwal dokter spesialis dan interaksi pasien secara terpadu.
+</p>
+
+<div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.35); border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+    <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #00F0FF; display: block; margin-bottom: 0.5rem;">
+        📂 Studi Kasus Terkait
+    </span>
+    <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
+        Oetomo Hospital Website: Platform Informasi &amp; Kehadiran Digital Rumah Sakit
+    </h3>
+    <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa mengembangkan platform institusional responsif berkecepatan tinggi dengan Content Management System (CMS) mandiri, direktori jadwal dokter spesialis dinamis, dan navigasi informasi medis terpusat.
+    </p>
+    <a href="/id/portfolio/oetomo-hospital-website" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Pelajari Studi Kasus Oetomo Hospital &rarr;
+    </a>
+</div>
+
+<h2>Kesimpulan</h2>
+<p>
+Aplikasi bisnis custom bukan berarti mengganti semua sistem yang ada. Solusi paling cerdas sering kali berupa kombinasi: mempertahankan software jadi yang masih efektif untuk fungsi standar, dan membangun platform custom untuk fungsi diferensiasi bisnis Anda.
+</p>
+
+<div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
+        Rencanakan Aplikasi Bisnis Custom Anda
+    </h3>
+    <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
+        Diskusikan alur operasional dan rancangan antarmuka sistem baru Anda langsung bersama software engineer Sundawa.
+    </p>
+    <a href="/id/contact?service=platform-khusus" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Diskusikan Aplikasi Custom Anda &rarr;
     </a>
 </div>
         `,
@@ -369,6 +488,22 @@ A full re-platforming should only be pursued when the legacy infrastructure has 
 </table>
 </div>
 
+<h2>Relevant Case Study: Multi-Platform Integration Architecture</h2>
+<div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.35); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+    <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #00F0FF; display: block; margin-bottom: 0.5rem;">
+        📂 Relevant Case Study
+    </span>
+    <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
+        DACAR by UNDP: Digital Aid Platform &amp; Enterprise API Integration
+    </h3>
+    <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa engineered cross-platform apps, encrypted microservices APIs, and real-time beneficiary verification for mission-critical digital cash disbursement.
+    </p>
+    <a href="/en/portfolio/dacar-by-undp" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Explore the DACAR by UNDP Case Study &rarr;
+    </a>
+</div>
+
 <h2>Recommended Next Step</h2>
 <p>
 Before drafting a procurement Term of Reference (TOR) or locking into another multi-year proprietary license, commission an independent system dependency audit. At Sundawa, we begin by mapping real-world operational bottlenecks to ensure every technology dollar invested directly moves the business forward.
@@ -470,6 +605,22 @@ True engineering readiness is measured by resilience in worst-case scenarios. Pr
     <li>Strict Non-Disclosure Agreements (NDA) and Role-Based Access Controls (RBAC) governing access to sensitive production data.</li>
 </ul>
 
+<h2>Relevant Case Study: Mission-Critical System Modernization</h2>
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.3); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+    <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #DBC977; display: block; margin-bottom: 0.5rem;">
+        📂 Relevant Case Study
+    </span>
+    <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
+        E-Office: Integrated Workflow Modernization &amp; Digital Administration
+    </h3>
+    <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
+        How Sundawa transformed paper-based filing and approval hierarchies into an agile modular web system with role-based access control and zero operational disruption.
+    </p>
+    <a href="/en/portfolio/e-office" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Explore the E-Office Case Study &rarr;
+    </a>
+</div>
+
 <h2>Conclusion</h2>
 <p>
 Modernizing mission-critical legacy software does not need to jeopardize business continuity. With thorough dependency mapping, disciplined data cleansing, and phased rollouts, technological transformation can proceed smoothly while safeguarding operational stability.
@@ -484,6 +635,93 @@ Modernizing mission-critical legacy software does not need to jeopardize busines
     </p>
     <a href="/en/contact?service=system-modernization" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
         Discuss Your System &rarr;
+    </a>
+</div>
+        `,
+    },
+    {
+        id: 'pinned-custom-business-app',
+        slug: 'kapan-perusahaan-membutuhkan-aplikasi-bisnis-custom',
+        title: 'When Do Enterprises Need Custom Business Software Over Off-the-Shelf Packages?',
+        excerpt:
+            'A strategic evaluation guide for enterprise leaders to evaluate the boundaries of off-the-shelf SaaS packages versus investing in custom business software tailored to proprietary workflows.',
+        published_at: '2026-11-16T09:00:00.000Z',
+        body_html: `
+<p class="lead">
+In an era of accelerated digital transformation, almost every operational requirement has ready-made software packages (off-the-shelf SaaS)—from CRM and warehouse inventory to courier booking and customer service portals. However, many growing organizations eventually reach a critical juncture where <strong>generic software becomes a bottleneck to business innovation</strong> by constraining proprietary workflows.
+</p>
+
+<p>
+When is the right time to continue with off-the-shelf software, and when should an enterprise invest in custom business software development? Here is an objective strategic guide based on Sundawa engineering experience.
+</p>
+
+<h2>1. The Traps of Off-the-Shelf SaaS During Growth Phases</h2>
+<p>
+Off-the-shelf SaaS packages are ideal during initial formation stages due to fast adoption and predictable entry pricing. However, as business operational models develop competitive differentiators, the following friction points emerge:
+</p>
+<ul>
+    <li><strong>Escalating per-seat licensing:</strong> As teams scale from dozens to hundreds of operators, recurring subscription fees surge without yielding proportional strategic value.</li>
+    <li><strong>Forced workflow conformity:</strong> Operations teams are coerced into modifying internal SOPs simply to comply with rigid third-party vendor paradigms.</li>
+    <li><strong>Data lock-in:</strong> Accessing granular transaction logs for independent analytics is frequently throttled or locked behind steep API fees.</li>
+</ul>
+
+<h2>2. When Does Custom Business Software Deliver Strategic Value?</h2>
+<p>
+Custom business application engineering is justified whenever operational execution serves as your fundamental competitive advantage.
+</p>
+<p><strong>Consider custom development if:</strong></p>
+<ul>
+    <li>Your operations incorporate unique business rules, multi-tiered compliance requirements, or pricing algorithms unsupported by standard SaaS tools.</li>
+    <li>You require unified operational dashboards integrating disparate field data feeds, IoT telemetry, or specialized hardware peripherals.</li>
+    <li>Your organization values full intellectual property (IP) ownership of core software assets to maximize enterprise valuation and technological independence.</li>
+</ul>
+
+<div style="background: rgba(219, 201, 119, 0.06); border: 1px solid rgba(219, 201, 119, 0.25); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 700; color: #F8F8F8; font-size: 1rem;">
+        ⚡ Need a Platform Tailored to Your Exact Business Workflows?
+    </p>
+    <p style="margin: 0 0 0.75rem; color: rgba(248, 248, 248, 0.7); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa engineers tailored business platforms, integrated client portals, and operational management systems designed specifically for your organizational structure.
+    </p>
+    <a href="/en/services/custom-platform" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Explore Sundawa Custom Business Platform Services &rarr;
+    </a>
+</div>
+
+<h2>3. Relevant Case Study: Hospital Digital Presence &amp; Healthcare Scheduling</h2>
+<p>
+A concrete example of tailored platforms is evident in healthcare, where generic website builders fail to handle the dynamic scheduling requirements of specialist medical practitioners.
+</p>
+
+<div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.35); border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+    <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #00F0FF; display: block; margin-bottom: 0.5rem;">
+        📂 Relevant Case Study
+    </span>
+    <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
+        Oetomo Hospital Website: Hospital Information &amp; Digital Presence
+    </h3>
+    <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
+        Sundawa developed a high-performance responsive institutional website with an independent CMS, dynamic specialist doctor directories, and centralized medical navigation.
+    </p>
+    <a href="/en/portfolio/oetomo-hospital-website" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Read the Oetomo Hospital Case Study &rarr;
+    </a>
+</div>
+
+<h2>Conclusion</h2>
+<p>
+Custom business software does not require abandoning existing systems. The most cost-effective architecture is often hybrid: retaining generic SaaS tools for standard back-office functions while developing custom proprietary applications for your core differentiator.
+</p>
+
+<div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
+    <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
+        Plan Your Custom Business Application
+    </h3>
+    <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
+        Discuss your operational requirements and technical architecture directly with Sundawa software engineers.
+    </p>
+    <a href="/en/contact?service=custom-platform" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Discuss Your Custom Platform &rarr;
     </a>
 </div>
         `,

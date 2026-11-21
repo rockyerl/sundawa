@@ -807,7 +807,14 @@
     "architecture": "Arsitektur",
     "role": "Peran Kami",
     "impact": "Dampak",
-    "backToPortfolio": "Kembali ke Portfolio"
+    "backToPortfolio": "Kembali ke Portfolio",
+    "ctaEyebrow": "Konsultasi & Transformasi",
+    "ctaTitle": "Punya Kebutuhan Sistem Serupa?",
+    "ctaDacarTitle": "Siap Membangun Platform Distribusi atau Integrasi Data?",
+    "ctaSubtitle": "Konsultasikan arsitektur sistem, integrasi API, atau rencana transformasi teknologi Anda bersama tim rekayasa perangkat lunak Sundawa.",
+    "ctaIntegrationButton": "Diskusikan Kebutuhan Integrasi Anda",
+    "ctaModernizationButton": "Diskusikan Modernisasi Sistem Anda",
+    "ctaDefaultButton": "Diskusikan Kebutuhan Sistem Anda"
   },
   "contactPage": {
     "navBack": "Kembali",
@@ -1385,7 +1392,8 @@
       "fullDetail": "Halaman Detail",
       "close": "Tutup",
       "backToProducts": "Kembali ke Produk",
-      "inspectSelectedCaseStudy": "Baca Studi Kasus"
+      "inspectSelectedCaseStudy": "Baca Studi Kasus",
+      "viewAllProducts": "Lihat Semua Produk Sundawa"
     },
     "caseStudySection": {
       "eyebrow": "Case Studies & Arsitektur Produk",
@@ -1402,7 +1410,8 @@
         "coreModules": "Modul Utama",
         "accessNote": "Catatan Akses",
         "liveDomain": "Domain Aktif",
-        "techStack": "Teknologi & Kapabilitas"
+        "techStack": "Teknologi & Kapabilitas",
+        "complianceNote": "Keamanan & Kepatuhan"
       }
     },
     "items": {
@@ -1634,19 +1643,19 @@
         "sector": "Enterprise Autonomous HR & Payroll",
         "tagline": "Satu Ekosistem Cerdas untuk Seluruh Performa & Finansial SDM",
         "summary": "Platform HRIS dan operasional tenaga kerja enterprise—mengotomatiskan payroll multi-tier, sinkronisasi mesin sidik jari biometrik instan, manajemen shift cerdas, serta ESS mandiri dalam standar keamanan perbankan.",
-        "badgeMetric": "Enterprise Grade · SOC2 & ISO 27001 Certified",
+        "badgeMetric": "Mendukung Penerapan ISO/IEC 27001",
         "accessNote": "Aplikasi ini merupakan portal HRIS operasional terproteksi. Tautan mengarah ke gerbang login resmi (TLS 1.3 & AES-256); akses penuh diperuntukkan bagi karyawan dan tim HR berwenang.",
         "modules": [
           "Otomatisasi Payroll Multi-Tier & Perhitungan PPh21/BPJS",
           "Live Sync Biometrik IoT < 1 Detik & Geofence Presensi",
           "Manajemen Shift & Multi-Branch Approval Workflow",
-          "Portal ESS Mandiri & Keamanan Standar SOC2 / TLS 1.3"
+          "Portal ESS Mandiri & Hak Akses Berperan / TLS 1.3"
         ],
         "caseStudy": {
           "subject": "Perusahaan multi-cabang, institusi enterprise, & tim People Operations skala nasional",
           "challenge": "Pengelolaan ribuan karyawan lintas cabang dengan variasi pola shift kerja, kalkulasi payroll kompleks (lembur, potongan pinjaman, PPh21, BPJS), dan data mesin absensi terpisah kerap memakan waktu berhari-hari serta rentan selisih hitung.",
           "solution": "SUNDAWA People mengintegrasikan webhook mesin sidik jari biometrik secara instan (< 1 detik), mesin payroll otomatis 99.98% zero-discrepancy, approval lembur/cuti multi-level, dan portal Employee Self-Service (ESS) terenkripsi.",
-          "architecture": "Arsitektur Next.js enterprise modern terenkripsi end-to-end (TLS 1.3 & AES-256), antrean data presensi IoT real-time, Role-Based Access Control bertingkat, dan isolasi data perusahaan tingkat tinggi.",
+          "architecture": "Arsitektur Next.js enterprise modern terenkripsi end-to-end (TLS 1.3 & AES-256), antrean data presensi IoT real-time, dan isolasi data perusahaan tingkat tinggi. SUNDAWA People mendukung penerapan kontrol keamanan informasi organisasi dalam kerangka ISO/IEC 27001, antara lain melalui pengaturan hak akses berdasarkan peran dan persetujuan berjenjang.",
           "impact": "Mempercepat siklus rekapitulasi HR hingga 10x lebih cepat, meniadakan selisih payroll manual, dan menghadirkan visibilitas kehadiran ribuan staf secara real-time antar-cabang.",
           "highlights": [
             "Presisi Payroll 99.98% Zero Discrepancy",
@@ -1663,7 +1672,8 @@
               "outcome": "Kalkulasi gaji, lembur, dan slip gaji digital selesai dalam hitungan menit dengan akurasi 99.98%."
             }
           ]
-        }
+        },
+        "complianceNote": "SUNDAWA People mendukung penerapan kontrol keamanan informasi organisasi dalam kerangka ISO/IEC 27001, antara lain melalui pengaturan hak akses berdasarkan peran dan persetujuan berjenjang."
       }
     }
   },

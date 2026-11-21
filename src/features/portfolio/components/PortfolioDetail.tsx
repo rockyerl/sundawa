@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import { ArrowLeft, Lock } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, Lock } from 'lucide-react'
 import { Link } from '@/src/i18n/navigation'
 import { SITE_URL } from '@/lib/Seo'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
@@ -18,6 +18,13 @@ export interface PortfolioDetailProps {
         role: string
         impact: string
         backToPortfolio: string
+        ctaEyebrow?: string
+        ctaTitle?: string
+        ctaDacarTitle?: string
+        ctaSubtitle?: string
+        ctaIntegrationButton?: string
+        ctaModernizationButton?: string
+        ctaDefaultButton?: string
     }
 }
 
@@ -114,6 +121,50 @@ export default function PortfolioDetail({ project, translations }: PortfolioDeta
                             </div>
                         ))}
                     </div>
+
+                    {/* Consultation CTA Block after Impact */}
+                    {(() => {
+                        const isDacar = project.slug === 'dacar-by-undp'
+                        const isEoffice = project.slug === 'e-office'
+                        const consultationHref = isDacar
+                            ? '/contact?service=integrasi-sistem'
+                            : isEoffice
+                              ? '/contact?service=modernisasi-sistem'
+                              : '/contact?service=platform-khusus'
+
+                        const ctaHeading = isDacar
+                            ? (translations.ctaDacarTitle || 'Siap Membangun Platform Distribusi atau Integrasi Data?')
+                            : (translations.ctaTitle || 'Punya Kebutuhan Sistem Serupa?')
+
+                        const ctaButtonLabel = isDacar
+                            ? (translations.ctaIntegrationButton || 'Diskusikan Kebutuhan Integrasi Anda')
+                            : isEoffice
+                              ? (translations.ctaModernizationButton || 'Diskusikan Modernisasi Sistem Anda')
+                              : (translations.ctaDefaultButton || 'Diskusikan Kebutuhan Sistem Anda')
+
+                        return (
+                            <div className="mt-12 p-6 sm:p-8 border border-gold/30 bg-gradient-to-br from-[#0E1E30] via-navy to-[#0A192F] rounded-lg">
+                                <div className="max-w-2xl">
+                                    <span className="text-[0.65rem] font-extrabold tracking-[0.2em] text-gold uppercase mb-2 block">
+                                        — {translations.ctaEyebrow || 'Konsultasi & Transformasi'}
+                                    </span>
+                                    <h3 className="text-xl sm:text-2xl font-black text-cream mb-3">
+                                        {ctaHeading}
+                                    </h3>
+                                    <p className="text-sm text-cream/70 leading-relaxed mb-6 font-light">
+                                        {translations.ctaSubtitle || 'Konsultasikan arsitektur sistem, integrasi API, atau rencana transformasi teknologi Anda bersama tim rekayasa perangkat lunak Sundawa.'}
+                                    </p>
+                                    <Link
+                                        href={consultationHref}
+                                        className="inline-flex items-center gap-2 bg-gold px-6 py-3.5 text-xs font-black tracking-[0.14em] text-navy uppercase no-underline transition-shadow hover:shadow-[0_0_24px_rgba(219,201,119,0.45)]"
+                                    >
+                                        <span>{ctaButtonLabel}</span>
+                                        <ArrowUpRight size={14} aria-hidden="true" />
+                                    </Link>
+                                </div>
+                            </div>
+                        )
+                    })()}
 
                     {/* Back Link */}
                     <div className="mt-12">

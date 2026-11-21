@@ -65,6 +65,10 @@ export default function ProductDetail({
                                 {product.isAuthGated && <Lock size={11} aria-hidden="true" />}
                                 {translations.statuses[product.statusKey]}
                             </span>
+                            <span className="inline-flex items-center gap-1.5 border border-gold/30 bg-gold/[0.08] px-3 py-1 text-[0.62rem] font-bold tracking-[0.12em] text-gold">
+                                <ShieldCheck size={12} className="text-gold" aria-hidden="true" />
+                                {product.badgeMetric}
+                            </span>
                         </div>
 
                         <h1 className="mb-2 text-[clamp(2rem,4vw,3.1rem)] leading-tight font-black text-cream">
@@ -100,6 +104,18 @@ export default function ProductDetail({
                                         {labels.accessNote}:{' '}
                                     </span>
                                     {product.accessNote}
+                                </div>
+                            </div>
+                        )}
+
+                        {product.complianceNote && (
+                            <div className="mt-4 flex items-start gap-2.5 border border-emerald-500/30 bg-emerald-500/[0.06] px-4 py-3 text-xs leading-relaxed text-emerald-200/90">
+                                <ShieldCheck size={14} className="mt-0.5 flex-shrink-0 text-emerald-400" aria-hidden="true" />
+                                <div>
+                                    <span className="font-bold uppercase tracking-wider text-emerald-300">
+                                        {labels.complianceNote || 'Keamanan & Kepatuhan'}:{' '}
+                                    </span>
+                                    {product.complianceNote}
                                 </div>
                             </div>
                         )}

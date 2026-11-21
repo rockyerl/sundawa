@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, ExternalLink, Lock, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from '@/src/i18n/navigation'
 import type { ProductStatusKey, SundawaProduct } from '../types'
 
 interface ProductCardProps {
@@ -11,7 +12,7 @@ interface ProductCardProps {
     statusLabel: string
     viewCaseStudyLabel: string
     visitSiteLabel: string
-    onSelect: (product: SundawaProduct) => void
+    onSelect?: (product: SundawaProduct) => void
 }
 
 function getStatusBadgeClasses(statusKey: ProductStatusKey): string {
@@ -107,14 +108,13 @@ export default function ProductCard({
 
             {/* Footer Action Row */}
             <div className="mt-auto flex flex-wrap items-center justify-between gap-2.5 border-t border-cream/[0.06] pt-4">
-                <button
-                    type="button"
-                    onClick={() => onSelect(product)}
-                    className="inline-flex cursor-pointer items-center gap-1.5 border border-gold/35 bg-gold/[0.08] px-3.5 py-2 text-[0.65rem] font-extrabold tracking-[0.14em] text-gold uppercase transition-all duration-200 hover:border-gold hover:bg-gold hover:text-navy"
+                <Link
+                    href={`/products/${product.slug}`}
+                    className="inline-flex cursor-pointer items-center gap-1.5 border border-gold/35 bg-gold/[0.08] px-3.5 py-2 text-[0.65rem] font-extrabold tracking-[0.14em] text-gold uppercase no-underline transition-all duration-200 hover:border-gold hover:bg-gold hover:text-navy"
                 >
                     <span>{viewCaseStudyLabel}</span>
                     <ArrowUpRight size={13} aria-hidden="true" />
-                </button>
+                </Link>
 
                 <a
                     href={product.url}
