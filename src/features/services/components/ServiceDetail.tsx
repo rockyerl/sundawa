@@ -241,16 +241,27 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
 
                             {/* Verifiable Numerical Metrics */}
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                                {service.caseStudy.metrics.map((m, mi) => (
-                                    <div key={mi} className="border border-gold/20 bg-gold/[0.03] p-4 text-center rounded">
-                                        <div className="text-xl sm:text-2xl font-black text-gold mb-1">
-                                            {m.value}
+                                {service.caseStudy.metrics.map((m, mi) => {
+                                    const tagMatch = m.value.match(/^(.*?)\s*\[(.*?)\]$/)
+                                    const val = tagMatch ? tagMatch[1] : m.value
+                                    const tag = tagMatch ? tagMatch[2] : null
+
+                                    return (
+                                        <div key={mi} className="border border-gold/20 bg-gold/[0.03] p-4 text-center rounded flex flex-col justify-center">
+                                            <div className="text-xl sm:text-2xl font-black text-gold mb-1 flex items-center justify-center gap-1.5 flex-wrap">
+                                                <span>{val}</span>
+                                                {tag && (
+                                                    <span className="text-[0.62rem] font-extrabold tracking-wider px-1.5 py-0.5 border border-gold/40 bg-gold/15 text-gold rounded uppercase">
+                                                        {tag}
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <div className="text-[0.68rem] font-medium text-cream/70 uppercase tracking-wider leading-snug">
+                                                {m.label}
+                                            </div>
                                         </div>
-                                        <div className="text-[0.68rem] font-medium text-cream/70 uppercase tracking-wider leading-snug">
-                                            {m.label}
-                                        </div>
-                                    </div>
-                                ))}
+                                    )
+                                })}
                             </div>
                         </div>
                     )}

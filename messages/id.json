@@ -1197,23 +1197,23 @@
           }
         ],
         "caseStudy": {
-          "badge": "Studi Kasus Rujukan · Integrasi ERP & API Perusahaan",
+          "badge": "Studi Rekayasa Integrasi ERP & Telematika IoT · Nawasanga",
           "name": "Nawasanga",
           "client": "Armada Logistik & Pengelolaan BBM Industri",
           "problem": "Data pengisian BBM armada lapangan terpisah dari sistem ERP pembukuan keuangan dan GPS pelacak, memicu kebocoran bahan bakar dan rekonsiliasi manual mingguan.",
           "role": "Sundawa membangun middleware integrasi dua arah yang menghubungkan sensor flow meter IoT, GPS tracker, mobile PWA pengemudi, dan REST API ERP pusat.",
           "metrics": [
             {
-              "value": "< 1 Dtk",
-              "label": "Transmisi Webhook IoT"
+              "value": "< 1 Dtk [Uji Beban]",
+              "label": "Transmisi Webhook IoT (Latensi Uji Staging)"
             },
             {
               "value": "3 Sistem",
-              "label": "Terintegrasi Penuh (IoT, GPS, ERP)"
+              "label": "Terintegrasi Penuh (Sensor IoT, Telematika GPS, REST API ERP)"
             },
             {
-              "value": "100%",
-              "label": "Rekonsiliasi Otomatis Real-Time"
+              "value": "100% [Pengujian Demo]",
+              "label": "Rekonsiliasi Otomatis (Uji Bebas Deviasi Data Staging ERP)"
             }
           ],
           "href": "/products/nawasanga"

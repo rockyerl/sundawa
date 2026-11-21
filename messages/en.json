@@ -1197,23 +1197,23 @@
           }
         ],
         "caseStudy": {
-          "badge": "Reference Case Study · Enterprise ERP & API Integration",
+          "badge": "Engineering Case Study · Enterprise ERP & IoT Telematics Integration (Nawasanga)",
           "name": "Nawasanga",
           "client": "Logistics Fleets & Industrial Fuel Operations",
           "problem": "Fleet fueling data was isolated from finance ERP systems and vehicle GPS trackers, causing fuel leakages and weekly manual reconciliations.",
           "role": "Sundawa engineered bi-directional middleware bridging IoT flow meter sensors, GPS telematics, driver PWA apps, and central ERP REST APIs.",
           "metrics": [
             {
-              "value": "< 1 Sec",
-              "label": "IoT Webhook Transmission"
+              "value": "< 1 Sec [Load Test]",
+              "label": "IoT Webhook Transmission (Staging Latency Benchmark)"
             },
             {
               "value": "3 Systems",
-              "label": "Unified (IoT, GPS, ERP)"
+              "label": "Fully Integrated (IoT Sensors, GPS Telematics, ERP REST API)"
             },
             {
-              "value": "100%",
-              "label": "Automated Real-Time Reconciliation"
+              "value": "100% [Demo Test]",
+              "label": "Automated Reconciliation (Zero-Deviation Staging ERP Benchmark)"
             }
           ],
           "href": "/products/nawasanga"

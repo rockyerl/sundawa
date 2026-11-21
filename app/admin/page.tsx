@@ -23,17 +23,31 @@ interface PortfolioProject {
     slug: string
 }
 
+interface Inquiry {
+    id: string
+    name: string
+    email: string
+    company?: string | null
+    topic: string
+    message: string
+    source_url?: string | null
+    status?: string
+    created_at: string
+}
+
 export default function AdminDashboard() {
-    const [tab, setTab] = useState<'blog' | 'portfolio'>('blog')
+    const [tab, setTab] = useState<'blog' | 'portfolio' | 'inquiries'>('blog')
     const [posts, setPosts] = useState<Post[]>([])
     const [projects, setProjects] = useState<PortfolioProject[]>([])
+    const [inquiries, setInquiries] = useState<Inquiry[]>([])
     const [loading, setLoading] = useState(true)
 
     const loadAll = useCallback(async () => {
         try {
-            const [postsRes, projectsRes] = await Promise.all([
+            const [postsRes, projectsRes, inquiriesRes] = await Promise.all([
                 fetch('/api/blog/posts'),
-                fetch('/api/blog/portfolio?page=1&per_page=50')
+                fetch('/api/blog/portfolio?page=1&per_page=50'),
+                fetch('/api/inquiries'),
             ])
             if (postsRes.ok) {
                 const data = await postsRes.json()
@@ -42,6 +56,10 @@ export default function AdminDashboard() {
             if (projectsRes.ok) {
                 const result = await projectsRes.json()
                 setProjects(result.data)
+            }
+            if (inquiriesRes.ok) {
+                const inqResult = await inquiriesRes.json()
+                setInquiries(inqResult.data || [])
             }
         } catch (err) {
             console.error('Failed to fetch data:', err)
@@ -138,6 +156,21 @@ export default function AdminDashboard() {
                 >
                     Portfolio
                 </button>
+                <button
+                    onClick={() => setTab('inquiries')}
+                    className={`px-4 py-2 text-sm font-bold transition-colors border-b-2 flex items-center gap-1.5 ${
+                        tab === 'inquiries'
+                            ? 'text-[#DBC977] border-[#DBC977]'
+                            : 'text-[#F8F8F8]/50 border-transparent hover:text-[#F8F8F8]/70'
+                    }`}
+                >
+                    <span>Inquiries / Leads</span>
+                    {inquiries.length > 0 && (
+                        <span className="px-1.5 py-0.5 text-[10px] rounded-full bg-[#DBC977]/20 text-[#DBC977]">
+                            {inquiries.length}
+                        </span>
+                    )}
+                </button>
             </div>
 
             {tab === 'blog' ? (
@@ -195,7 +228,7 @@ export default function AdminDashboard() {
                         </div>
                     )}
                 </div>
-            ) : (
+            ) : tab === 'portfolio' ? (
                 <div>
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-lg font-bold text-[#F8F8F8]">Portfolio Projects</h2>
@@ -249,6 +282,71 @@ export default function AdminDashboard() {
                                         >
                                             Delete
                                         </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            ) : (
+                <div>
+                    <div className="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 className="text-lg font-bold text-[#F8F8F8]">Website Inquiries / Client Briefs</h2>
+                            <p className="text-xs text-[#F8F8F8]/50 mt-0.5">Semua brief konsultasi & leads yang masuk dari formulir website</p>
+                        </div>
+                    </div>
+
+                    {loading ? (
+                        <div className="space-y-3">
+                            {Array.from({ length: 3 }).map((_, i) => (
+                                <Skeleton key={i} className="h-16 w-full rounded-xl" />
+                            ))}
+                        </div>
+                    ) : inquiries.length === 0 ? (
+                        <div className="text-[#F8F8F8]/50 p-8 text-center border border-[#DBC977]/10 rounded-xl">
+                            Belum ada inquiry yang masuk.
+                        </div>
+                    ) : (
+                        <div className="space-y-4">
+                            {inquiries.map((inq) => (
+                                <div
+                                    key={inq.id}
+                                    className="p-5 rounded-xl border border-[#DBC977]/15 bg-[rgba(248,248,248,0.02)] space-y-3"
+                                >
+                                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#DBC977]/10 pb-3">
+                                        <div className="flex items-center gap-2">
+                                            <span className="font-bold text-[#F8F8F8] text-base">{inq.name}</span>
+                                            {inq.company && (
+                                                <span className="text-xs px-2 py-0.5 rounded bg-[#DBC977]/10 text-[#DBC977] font-medium">
+                                                    {inq.company}
+                                                </span>
+                                            )}
+                                        </div>
+                                        <div className="text-xs text-[#F8F8F8]/40">
+                                            {new Date(inq.created_at).toLocaleString('id-ID')}
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                        <div>
+                                            <span className="text-[#DBC977]/70 uppercase tracking-wider block text-[10px] font-bold">Email:</span>
+                                            <a href={`mailto:${inq.email}`} className="text-[#F8F8F8] hover:text-[#DBC977] transition-colors underline">
+                                                {inq.email}
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <span className="text-[#DBC977]/70 uppercase tracking-wider block text-[10px] font-bold">Topik / Layanan:</span>
+                                            <span className="text-[#F8F8F8]">{inq.topic}</span>
+                                            {inq.source_url && (
+                                                <span className="text-[#F8F8F8]/40 block text-[11px] truncate">Halaman: {inq.source_url}</span>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    <div className="border border-white/5 bg-black/20 p-3 rounded-lg">
+                                        <span className="text-[#DBC977]/70 uppercase tracking-wider block text-[10px] font-bold mb-1">Brief Pesan:</span>
+                                        <p className="text-xs text-[#F8F8F8]/80 whitespace-pre-wrap leading-relaxed">{inq.message}</p>
                                     </div>
                                 </div>
                             ))}

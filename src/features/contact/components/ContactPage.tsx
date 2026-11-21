@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { ArrowUpRight, CheckCircle2, FileDown, Mail, MapPin, MessageSquare, Phone, RotateCcw, Send } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { buildMailtoUrl, buildWhatsAppUrl, COMPANY_CONTACT } from '@/lib/contact'
+import { trackLeadConversion, trackWhatsAppClick } from '@/lib/analytics'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 
 const SERVICE_TO_TOPIC_INDEX: Record<string, number> = {
@@ -91,12 +92,16 @@ export default function ContactPage() {
 
             if (res.ok) {
                 setStatus('success')
-                if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
-                    ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'generate_lead', {
-                        event_category: 'lead',
-                        event_label: selectedTopic,
-                    })
-                }
+                trackLeadConversion({
+                    topic: selectedTopic,
+                    service: searchParams.get('service'),
+                    sourceUrl: searchParams.get('service')
+                        ? `/services/${searchParams.get('service')}`
+                        : typeof window !== 'undefined'
+                          ? window.location.pathname
+                          : null,
+                    company: formData.company,
+                })
             } else {
                 setStatus('error')
             }
@@ -109,13 +114,16 @@ export default function ContactPage() {
     const handleSubmitWhatsApp = (e?: React.MouseEvent | React.FormEvent) => {
         if (e) e.preventDefault()
         const waUrl = buildWhatsAppUrl(buildBriefText())
+        trackWhatsAppClick({
+            topic: selectedTopic,
+            service: searchParams.get('service'),
+            sourceUrl: searchParams.get('service')
+                ? `/services/${searchParams.get('service')}`
+                : typeof window !== 'undefined'
+                  ? window.location.pathname
+                  : null,
+        })
         window.open(waUrl, '_blank', 'noopener,noreferrer')
-        if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
-            ;(window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'contact_whatsapp', {
-                event_category: 'lead',
-                event_label: selectedTopic,
-            })
-        }
     }
 
     const handleSendEmail = () => {

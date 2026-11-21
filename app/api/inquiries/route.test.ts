@@ -1,12 +1,38 @@
 import { describe, expect, it, vi } from 'vitest'
-import { POST } from './route'
+import { NextRequest } from 'next/server'
+import { GET, POST } from './route'
+
+const mockInquiries = [
+    {
+        id: '123e4567-e89b-12d3-a456-426614174000',
+        name: 'Arief Setiawan',
+        email: 'arief@example.com',
+        company: 'PT Maju Bersama',
+        topic: 'Integrasi Sistem & API',
+        message: 'Kami ingin menjadwalkan Diskusi Integrasi ERP 30 Menit.',
+        source_url: '/id/services/integrasi-sistem',
+        status: 'new',
+        created_at: new Date().toISOString(),
+    },
+]
 
 vi.mock('@/lib/supabase', () => ({
     supabase: {
         from: vi.fn(() => ({
             insert: vi.fn().mockResolvedValue({ error: null }),
+            select: vi.fn(() => ({
+                order: vi.fn().mockResolvedValue({ data: mockInquiries, error: null }),
+            })),
         })),
     },
+}))
+
+vi.mock('@/lib/adminAuth', () => ({
+    requireAdminAuth: vi.fn((req: NextRequest) => {
+        const authHeader = req.headers.get('authorization')
+        if (authHeader === 'Bearer mock-valid-token') return null
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 })
+    }),
 }))
 
 describe('POST /api/inquiries', () => {
@@ -40,14 +66,14 @@ describe('POST /api/inquiries', () => {
         expect(json.error).toBe('Invalid email address')
     })
 
-    it('returns 200 with success: true when payload is valid', async () => {
+    it('returns 200 with success: true and inquiry object when payload is valid', async () => {
         const req = new Request('http://localhost:3000/api/inquiries', {
             method: 'POST',
             body: JSON.stringify({
                 name: 'Arief Setiawan',
                 email: 'arief@example.com',
                 company: 'PT Maju Bersama',
-                topic: 'Integrasi Sistem & API',
+                topic: 'Otomatisasi & Integrasi Data',
                 message: 'Kami ingin menjadwalkan Diskusi Integrasi ERP 30 Menit.',
                 sourceUrl: '/id/services/integrasi-sistem',
             }),
@@ -59,5 +85,33 @@ describe('POST /api/inquiries', () => {
         const json = await res.json()
         expect(json.success).toBe(true)
         expect(json.message).toBe('Inquiry received successfully')
+        expect(json.inquiry.name).toBe('Arief Setiawan')
+        expect(json.inquiry.topic).toBe('Otomatisasi & Integrasi Data')
+    })
+})
+
+describe('GET /api/inquiries', () => {
+    it('returns 401 when request is unauthorized', async () => {
+        const req = new NextRequest('http://localhost:3000/api/inquiries', {
+            headers: { 'Content-Type': 'application/json' },
+        })
+
+        const res = await GET(req)
+        expect(res.status).toBe(401)
+    })
+
+    it('returns 200 and data when admin authorized', async () => {
+        const req = new NextRequest('http://localhost:3000/api/inquiries', {
+            headers: {
+                'Content-Type': 'application/json',
+                authorization: 'Bearer mock-valid-token',
+            },
+        })
+
+        const res = await GET(req)
+        expect(res.status).toBe(200)
+        const json = await res.json()
+        expect(json.data).toHaveLength(1)
+        expect(json.data[0].name).toBe('Arief Setiawan')
     })
 })
