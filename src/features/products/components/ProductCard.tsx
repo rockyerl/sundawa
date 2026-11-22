@@ -83,7 +83,7 @@ export default function ProductCard({
             </p>
 
             {/* Summary */}
-            <p className="mb-4 text-xs leading-relaxed font-light text-cream/60">
+            <p className="mb-4 text-xs leading-relaxed font-light text-cream/75">
                 {product.summary}
             </p>
 
@@ -92,7 +92,7 @@ export default function ProductCard({
                 {product.modules.slice(0, 3).map((mod) => (
                     <li
                         key={mod}
-                        className="flex items-start gap-2 text-[0.72rem] leading-snug text-cream/70"
+                        className="flex items-start gap-2 text-[0.72rem] leading-snug text-cream/80"
                     >
                         <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-gold/60" aria-hidden="true" />
                         <span>{mod}</span>
@@ -121,7 +121,7 @@ export default function ProductCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${visitSiteLabel}: ${product.name} (${product.domain})`}
-                    className="inline-flex items-center gap-1.5 text-[0.65rem] font-semibold tracking-[0.06em] text-cream/55 no-underline transition-colors duration-200 hover:text-gold"
+                    className="inline-flex items-center gap-1.5 text-[0.65rem] font-semibold tracking-[0.06em] text-cream/80 no-underline transition-colors duration-200 hover:text-gold"
                 >
                     <span className="truncate max-w-[9.5rem]">{product.domain}</span>
                     <ExternalLink size={12} className="flex-shrink-0" aria-hidden="true" />

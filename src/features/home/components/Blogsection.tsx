@@ -55,7 +55,6 @@ export default async function BlogSection() {
                     </div>
                 )}
 
-                {/* CTA lihat semua blog — cuma muncul kalau ada post */}
                 {latestPosts.length > 0 && (
                     <div className="flex justify-center mt-12">
                         <Link

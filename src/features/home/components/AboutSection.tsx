@@ -21,12 +21,11 @@ export default function AboutSection() {
                     initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}
                     style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: 'clamp(2rem, 6vw, 4rem)' }}
                 >
-                    <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>— {t('label')}</span>
+                    <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}><span style={{ display: 'inline-block', width: '1rem', height: '2px', background: '#DBC977', marginRight: '0.5rem', verticalAlign: 'middle' }} />{t('label')}</span>
                     <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </motion.div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '3.5rem', alignItems: 'start' }} className="lg-grid-2col">
-                    {/* Left */}
                     <div>
                         <motion.h2
                             initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }}
@@ -39,14 +38,14 @@ export default function AboutSection() {
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.4 }}
-                            style={{ color: 'rgba(248,248,248,0.55)', fontWeight: 300, fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.25rem' }}
+                            style={{ color: 'rgba(248,248,248,0.8)', fontWeight: 300, fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.25rem' }}
                         >
                             {t('p1')}
                         </motion.p>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.5 }}
-                            style={{ color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8 }}
+                            style={{ color: 'rgba(248,248,248,0.75)', fontWeight: 300, lineHeight: 1.8 }}
                         >
                             {t('p2')}
                         </motion.p>
@@ -76,7 +75,6 @@ export default function AboutSection() {
                         </motion.div>
                     </div>
 
-                    {/* Right — Mission stepper / journey */}
                     <div>
                         {missions.map((m, i) => (
                             <motion.div

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
 import { buildWhatsAppUrl, COMPANY_CONTACT } from '@/lib/contact'
+import { trackWhatsAppClick } from '@/lib/analytics'
 
 const LinkedInIcon = () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -52,19 +53,18 @@ export default function ContactSection() {
 
                 <div className="container-main relative z-10">
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} className="flex items-center gap-4 mb-12 md:mb-20">
-                        <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#DBC977]">— {t('label')}</span>
+                        <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#DBC977]"><span className="inline-block w-4 h-0.5 bg-[#DBC977] mr-2 align-middle" />{t('label')}</span>
                         <div className="flex-1 h-px bg-gradient-to-r from-[#DBC977]/40 to-transparent" />
                     </motion.div>
 
                     <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-14 xl:gap-20 items-center">
-                        {/* LEFT */}
                         <div className="min-w-0">
                             <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}>
                                 <div className="relative">
-                                    <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#DBC977]/60 mb-4 block">{t('readyToStart')}</span>
+                                    <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#DBC977] mb-4 block">{t('readyToStart')}</span>
                                     <div style={{ lineHeight: 1.08 }}>
                                         <span className="block font-black break-words" style={{ fontSize: 'clamp(1.35rem, 5.2vw, 2.75rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line1')}</span>
-                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.45rem, 5.8vw, 3.1rem)', color: '#DBC977', letterSpacing: '-0.03em', textShadow: '0 0 60px rgba(219,201,119,0.25)' }}>{t('line2')}</span>
+                                        <span className="block font-black break-words" style={{ fontSize: 'clamp(1.45rem, 5.8vw, 3.1rem)', color: '#DBC977', letterSpacing: '-0.03em' }}>{t('line2')}</span>
                                         <span className="block font-black break-words" style={{ fontSize: 'clamp(1.35rem, 5.2vw, 2.75rem)', color: '#F8F8F8', letterSpacing: '-0.02em' }}>{t('line3')}</span>
                                     </div>
                                     <div className="flex items-center gap-3 mt-5">
@@ -79,9 +79,9 @@ export default function ContactSection() {
                                 <Link
                                     href="/contact"
                                     className="inline-flex items-center gap-4 group"
-                                    style={{ padding: '16px 32px', background: '#DBC977', color: '#0E1E30', fontWeight: 900, fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', transition: 'background 0.25s, color 0.25s, box-shadow 0.25s', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
-                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.background = '#F8F8F8'; e.currentTarget.style.boxShadow = '0 0 40px rgba(219,201,119,0.35)' }}
-                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.background = '#DBC977'; e.currentTarget.style.boxShadow = 'none' }}
+                                    style={{ padding: '16px 32px', background: '#DBC977', color: '#0E1E30', fontWeight: 900, fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', transition: 'background 0.25s, color 0.25s', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
+                                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.background = '#F8F8F8' }}
+                                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.background = '#DBC977' }}
                                 >
                                     <span>{t('ctaForm')}</span>
                                     <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -96,36 +96,34 @@ export default function ContactSection() {
                             </motion.div>
                         </div>
 
-                        {/* RIGHT */}
                         <div className="flex flex-col gap-4">
                             {contacts.map((c, i) => (
                                 <motion.a key={c.label} href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
                                           initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.2 + i * 0.12 }}
-                                          className="group relative flex items-center gap-4 p-4 sm:gap-6 sm:p-6 transition-all duration-500 hover:-translate-y-0.5"
-                                          style={{ background: 'rgba(29,52,81,0.35)', backdropFilter: 'blur(16px)', border: '1px solid rgba(219,201,119,0.12)', clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))', textDecoration: 'none' }}>
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(219,201,119,0.06) 0%, transparent 60%)' }} />
+                                          className="group relative flex items-center gap-4 p-4 sm:gap-6 sm:p-6 transition-all duration-300 hover:-translate-y-0.5"
+                                          style={{ background: '#0E1E30', border: '1px solid rgba(219,201,119,0.18)', clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))', textDecoration: 'none' }}>
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(219,201,119,0.06) 0%, transparent 60%)' }} />
                                     <div className="relative flex-shrink-0">
-                                        <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center text-[#DBC977] transition-all duration-300 group-hover:scale-110"
+                                        <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center text-[#DBC977] transition-all duration-300 group-hover:scale-105"
                                              style={{ background: 'rgba(219,201,119,0.08)', border: '1px solid rgba(219,201,119,0.25)', clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))' }}>
                                             <c.icon size={18} strokeWidth={1.5} />
                                         </div>
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <div className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#F8F8F8]/45 mb-1">{c.label}</div>
-                                        <div className="text-sm font-semibold text-[#F8F8F8]/75 group-hover:text-[#DBC977] transition-colors duration-300 break-words sm:truncate">{c.value}</div>
-                                        <div className="text-[11px] text-[#F8F8F8]/45 mt-0.5">{c.desc}</div>
+                                        <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#DBC977] mb-1">{c.label}</div>
+                                        <div className="text-sm font-semibold text-[#F8F8F8] group-hover:text-[#DBC977] transition-colors duration-300 break-words sm:truncate">{c.value}</div>
+                                        <div className="text-xs text-[#F8F8F8]/75 mt-0.5">{c.desc}</div>
                                     </div>
-                                    <ArrowUpRight size={14} className="flex-shrink-0 text-[#DBC977]/0 group-hover:text-[#DBC977]/60 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                    <div className="absolute bottom-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(90deg, transparent, rgba(219,201,119,0.4), transparent)' }} />
+                                    <ArrowUpRight size={14} className="flex-shrink-0 text-[#DBC977]/0 group-hover:text-[#DBC977]/80 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                    <div className="absolute bottom-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(90deg, transparent, rgba(219,201,119,0.4), transparent)' }} />
                                 </motion.a>
                             ))}
 
                             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.6 }} className="flex items-center gap-2 mt-2 pl-2">
-                                <MapPin size={11} className="text-[#DBC977]/40" />
-                                <span className="text-[11px] text-[#F8F8F8]/40 tracking-widest uppercase">{t('location')}</span>
+                                <MapPin size={11} className="text-[#DBC977]/80" />
+                                <span className="text-xs text-[#F8F8F8]/75 tracking-wider uppercase">{t('location')}</span>
                             </motion.div>
 
-                            {/* Clutch Widget - div biasa, tanpa motion */}
                             <div className="mt-4 pl-2 max-w-full overflow-x-auto">
                                 <div
                                     className="clutch-widget"
@@ -144,8 +142,8 @@ export default function ContactSection() {
                 </div>
             </section>
 
-            {/* Sticky WhatsApp Button — mascot is the face of it now */}
             <motion.a href={buildWhatsAppUrl(t('waMessage'))} target="_blank" rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick({ topic: 'Floating WhatsApp Mascot', sourceUrl: '/' })}
                       initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.2, duration: 0.4 }}
                       className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 group flex items-center gap-3" style={{ textDecoration: 'none' }}>
                 <span className="hidden md:block text-[11px] font-bold tracking-[0.15em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300"

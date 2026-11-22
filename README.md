@@ -1,6 +1,6 @@
 # Sundawa Web
 
-Official web application for **Sundawa Teknologi** — built for performance, modern aesthetics, and seamless Bahasa Indonesia / English internationalization.
+Official web application for **Sundawa Teknologi** — engineered for enterprise performance, modern aesthetics, high-contrast accessibility, and fluid Bahasa Indonesia & English internationalization.
 
 ---
 
@@ -8,22 +8,23 @@ Official web application for **Sundawa Teknologi** — built for performance, mo
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js 16.2.7 — App Router, Turbopack |
-| UI | React 19.2.4, TypeScript 5 (strict) |
-| Styling | Tailwind CSS v4 |
-| Animation | Framer Motion v12 |
-| Icons | Lucide React, SimpleIcons CDN |
-| i18n | next-intl v4 (`id` default, `en`; prefix: `always`) |
-| CMS | Supabase (`@supabase/supabase-js`) + TipTap rich text editor + custom admin |
-| Testing | Vitest v2 |
-| Linting | ESLint 9 |
-| CI | GitHub Actions |
+| **Framework** | Next.js 16.2.7 — App Router, Turbopack |
+| **Runtime & UI** | React 19.2.4, TypeScript 5 (strict) |
+| **Styling** | Tailwind CSS v4 (`@tailwindcss/postcss`) |
+| **Design System** | Anti-Slop Core (Dial: Energy 2, Rhythm 2, Motion 2; WCAG AA $\ge$ 4.5:1) |
+| **Animation** | Framer Motion v12 |
+| **Icons** | Lucide React, SimpleIcons CDN |
+| **i18n** | next-intl v4 (`id` default, `en`; prefix: `always`) |
+| **CMS & Database** | Supabase (`@supabase/supabase-js`) + TipTap rich text editor + custom unified admin |
+| **Testing** | Vitest v2 (13 test suites, 40 tests) |
+| **Linting & Types** | ESLint 9, `tsc --noEmit` |
+| **CI/CD** | GitHub Actions (`.github/workflows/ci.yml`) |
 
 ---
 
 ## Architecture: Bulletproof Feature-First
 
-The codebase follows a strict **feature-first modular architecture**. All domain logic, components, and tests live inside `src/features/<feature>/`. Route files in `app/[locale]/` are thin adapters only.
+The codebase follows a strict **feature-first modular architecture**. All domain logic, components, data queries, and unit tests live inside `src/features/<feature>/`. Route files in `app/[locale]/` are thin adapters only.
 
 ```
 sundawa-web/
@@ -45,7 +46,7 @@ sundawa-web/
 │   │   ├── contact/page.tsx          # Thin adapter → ContactPage
 │   │   ├── outsource/page.tsx        # Thin adapter → Outsource
 │   │   ├── proses-kerja/page.tsx     # Thin adapter → ProcessSection
-│   │   ├── layout.tsx
+│   │   ├── layout.tsx                # Locale provider, font loading, intro loader
 │   │   ├── page.tsx                  # Thin adapter → home sections
 │   │   ├── loading.tsx
 │   │   ├── error.tsx
@@ -53,36 +54,37 @@ sundawa-web/
 │   ├── error.tsx
 │   ├── layout.tsx
 │   ├── not-found.tsx
-│   ├── offline/page.tsx          # PWA offline fallback
-│   ├── globals.css
-│   ├── Robots.ts
-│   ├── sitemap.ts
-│   └── admin/                    # Custom admin panel (unified CMS)
-│       ├── layout.tsx            # Auth guard + ToastContainer
-│       ├── page.tsx              # Dashboard — tabs (Blog | Portfolio)
-│       ├── components/
-│       │   ├── TipTapEditor.tsx  # Rich text editor
-│       │   └── Toast.tsx         # Toast notifications + real-time refresh
-│       ├── posts/
-│       │   ├── PostForm.tsx      # Create/edit form with TipTap
-│       │   ├── new/page.tsx      # Create new post
-│       │   └── [id]/edit/page.tsx # Edit post
-│       └── portfolio/
-│           ├── page.tsx          # Portfolio dashboard with pagination
-│           ├── PortfolioForm.tsx # Create/edit form with cover image
-│           ├── new/page.tsx      # Create new project
-│           └── [id]/edit/page.tsx # Edit project
+│   ├── offline/page.tsx              # PWA offline fallback
+│   ├── globals.css                   # Tailwind v4 styles & theme tokens
+│   ├── Robots.ts                     # Dynamic robots.txt
+│   ├── sitemap.ts                    # Dynamic sitemap (static + blog/portfolio/product slugs)
+│   ├── admin/                        # Custom admin panel (unified CMS)
+│   │   ├── layout.tsx                # Auth guard + ToastContainer
+│   │   ├── page.tsx                  # Dashboard — tabs (Blog | Portfolio)
+│   │   ├── components/
+│   │   │   ├── TipTapEditor.tsx      # Rich text editor
+│   │   │   └── Toast.tsx             # Toast notifications + event refresh
+│   │   ├── posts/
+│   │   │   ├── PostForm.tsx          # Shared blog form with TipTap & cover upload
+│   │   │   ├── new/page.tsx          # Create new post
+│   │   │   └── [id]/edit/page.tsx    # Edit post
+│   │   └── portfolio/
+│   │       ├── page.tsx              # Portfolio dashboard with pagination
+│   │       ├── PortfolioForm.tsx     # Shared portfolio form with cover upload
+│   │       ├── new/page.tsx          # Create new project
+│   │       └── [id]/edit/page.tsx    # Edit project
 │   └── api/
-│       ├── admin/auth/route.ts   # Admin login/logout
-│       ├── blog/posts/route.ts   # CRUD API for blog posts
-│       ├── blog/portfolio/route.ts # CRUD API for portfolio (with pagination)
-│       └── blog/upload/route.ts  # Image upload to Supabase Storage
+│       ├── admin/auth/route.ts       # Admin login/logout (cookie session)
+│       ├── blog/posts/route.ts       # CRUD API for blog posts
+│       ├── blog/portfolio/route.ts   # CRUD API for portfolio (with pagination)
+│       ├── blog/upload/route.ts      # Image upload to Supabase Storage
+│       └── inquiries/route.ts        # Lead capture endpoint with honeypot spam protection
 ├── messages/
-│   ├── id.json                       # Indonesian (default)
-│   └── en.json                       # English (must mirror id.json 1:1)
+│   ├── id.json                       # Indonesian translations (primary)
+│   └── en.json                       # English translations (1:1 key parity)
 ├── src/
 │   ├── features/
-│   │   ├── home/
+│   │   ├── home/                     # Landing page sections, clients modal, tech grid
 │   │   │   ├── components/
 │   │   │   │   ├── Navbar.tsx
 │   │   │   │   ├── HeroSection.tsx
@@ -90,13 +92,14 @@ sundawa-web/
 │   │   │   │   ├── AboutSection.tsx
 │   │   │   │   ├── ValuesSection.tsx
 │   │   │   │   ├── ServicesSection.tsx
-│   │   │   │   ├── TechSection.tsx       # Imports data from techCatalog.ts
-│   │   │   │   ├── TechIcon.tsx          # SVG renderer — uses `unoptimized` for CDN SVGs
-│   │   │   │   ├── ClientsSection.tsx    # Fetches from Supabase portfolio
+│   │   │   │   ├── TechSection.tsx   # Imports data from techCatalog.ts
+│   │   │   │   ├── TechIcon.tsx      # SVG renderer — uses unoptimized for CDN SVGs
+│   │   │   │   ├── ClientsSection.tsx# Fetches from Supabase portfolio
 │   │   │   │   ├── ObjectionsSection.tsx
 │   │   │   │   ├── FinalCtaSection.tsx
-│   │   │   │   ├── ContactSection.tsx
-│   │   │   │   ├── Blogsection.tsx       # Uses BlogCard
+│   │   │   │   ├── ContactSection.tsx# Form & floating WhatsApp launcher
+│   │   │   │   ├── Blogsection.tsx   # Uses BlogCard
+│   │   │   │   ├── FeaturedProjectsSection.tsx
 │   │   │   │   ├── ParticleField.tsx
 │   │   │   │   ├── ParticleFieldClient.tsx
 │   │   │   │   ├── Introcontext.tsx
@@ -105,48 +108,45 @@ sundawa-web/
 │   │   │   │   └── ClientsStats.tsx
 │   │   │   ├── clients.ts
 │   │   │   ├── clients.test.ts
-│   │   │   ├── tech.ts                   # Tech, TechCategory types
-│   │   │   ├── techCatalog.ts            # Source of truth: techs[], categories[]
-│   │   │   ├── techCatalog.test.ts       # 4 contract tests
+│   │   │   ├── tech.ts               # Tech, TechCategory types
+│   │   │   ├── techCatalog.ts        # Source of truth: techs[], categories[]
+│   │   │   ├── techCatalog.test.ts   # 4 contract tests
 │   │   │   └── index.ts
-│   │   ├── outsource/
+│   │   ├── outsource/                # Outsource rate card & estimator
 │   │   │   ├── components/
-│   │   │   │   ├── Outsource.tsx         # Main calculator (exported as OutsourceCalculator)
+│   │   │   │   ├── Outsource.tsx     # Main calculator (exported as OutsourceCalculator)
 │   │   │   │   ├── TalentSelector.tsx
-│   │   │   │   ├── EstimateCart.tsx
+│   │   │   │   ├── EstimateCart.tsx  # Cart breakdown & WhatsApp estimate link
 │   │   │   │   ├── ContactCta.tsx
 │   │   │   │   ├── InfoStrip.tsx
 │   │   │   │   └── ModeBadge.tsx
-│   │   │   ├── data.ts                   # PRICING constant
-│   │   │   ├── domain.ts                 # Pure calculations & WA message builder
-│   │   │   ├── domain.test.ts            # 5 unit tests
+│   │   │   ├── data.ts               # PRICING constant
+│   │   │   ├── domain.ts             # Pure calculations & WA message builder
+│   │   │   ├── domain.test.ts        # 5 unit tests
 │   │   │   └── index.ts
-│   │   ├── blog/
+│   │   ├── blog/                     # Blog queries & detail
 │   │   │   ├── components/
-│   │   │   │   ├── BlogCard.tsx          # Reusable post card
-│   │   │   │   ├── BlogArchive.tsx       # Post listing with SubpageNav
-│   │   │   │   ├── BlogPostDetail.tsx    # Post renderer with JSON-LD schema
-│   │   │   │   └── MdxRenderer.tsx         # HTML renderer (TipTap output)
-│   │   │   ├── data.ts                   # getPosts, getPostBySlug (Supabase, no cache)
+│   │   │   │   ├── BlogCard.tsx      # Reusable post card
+│   │   │   │   ├── BlogArchive.tsx   # Post listing with search & SubpageNav
+│   │   │   │   ├── BlogPostDetail.tsx# Post renderer with JSON-LD schema
+│   │   │   │   └── MdxRenderer.tsx   # HTML renderer for TipTap output
+│   │   │   ├── data.ts               # Supabase queries (no cache)
+│   │   │   ├── pinnedPosts.ts        # Featured technical blog guides
 │   │   │   └── index.ts
-│   │   └── process/
-│   │       ├── components/
-│   │       │   └── ProcessSection.tsx    # Uses SubpageNav
-│   │       ├── types.ts                  # ProcessStep, ProcessInfoItem
-│   │       └── index.ts
-│   │   ├── portfolio/              # Supabase backed
+│   │   ├── portfolio/                # Supabase backed project portfolio
 │   │   │   ├── components/
-│   │   │   │   ├── PortfolioArchive.tsx  # Grid with cover images
-│   │   │   │   └── PortfolioDetail.tsx   # Detail with hero banner
-│   │   │   ├── types.ts                  # Re-exports from lib/types.ts
-│   │   │   ├── data.ts                   # Supabase queries (no cache)
+│   │   │   │   ├── PortfolioArchive.tsx # Grid with cover images
+│   │   │   │   └── PortfolioDetail.tsx  # Detail with hero banner
+│   │   │   ├── data.ts               # Supabase queries (no cache)
+│   │   │   ├── portfolio.test.ts     # 3 contract & type guard tests
+│   │   │   ├── types.ts              # Re-exports from lib/types.ts
 │   │   │   └── index.ts
-│   │   ├── services/
+│   │   ├── services/                 # Services listing & detail
 │   │   │   ├── components/
-│   │   │   │   ├── ServicesPage.tsx      # Services grid listing
-│   │   │   │   └── ServiceDetail.tsx     # Single service detail
+│   │   │   │   ├── ServicesPage.tsx  # Services grid listing
+│   │   │   │   └── ServiceDetail.tsx # Service detail with consultation CTA
 │   │   │   └── index.ts
-│   │   ├── products/
+│   │   ├── products/                 # Proprietary products & case studies
 │   │   │   ├── components/
 │   │   │   │   ├── ProductsSection.tsx
 │   │   │   │   ├── ProductCard.tsx
@@ -155,69 +155,71 @@ sundawa-web/
 │   │   │   │   ├── ProductCaseStudyDialog.tsx
 │   │   │   │   ├── ProductsArchive.tsx
 │   │   │   │   └── ProductDetail.tsx
-│   │   │   ├── data.ts                   # PRODUCT_SPECS catalog (6 products)
-│   │   │   ├── domain.ts                 # Filters, adjacency, mappers
-│   │   │   ├── domain.test.ts            # Contract & i18n parity tests (4)
+│   │   │   ├── data.ts               # PRODUCT_SPECS catalog (6 products)
+│   │   │   ├── domain.ts             # Filters, adjacency, mappers
+│   │   │   ├── domain.test.ts        # Contract & i18n parity tests (4)
 │   │   │   ├── types.ts
 │   │   │   └── index.ts
-│   │   ├── about/
+│   │   ├── about/                    # About company & leadership showcase
 │   │   │   ├── components/
-│   │   │   │   ├── AboutPage.tsx         # Executive company showcase
+│   │   │   │   ├── AboutPage.tsx     # Executive company showcase
 │   │   │   │   ├── AboutSectionHeader.tsx
 │   │   │   │   ├── CeoGreetingSpread.tsx
 │   │   │   │   └── LeadershipShowcase.tsx
-│   │   │   ├── team.ts                   # Leadership & studio avatar paths
-│   │   │   ├── team.test.ts              # Leadership asset & copy tests (2)
+│   │   │   ├── team.ts               # Leadership & studio avatar paths
+│   │   │   ├── team.test.ts          # Leadership asset & copy tests (2)
 │   │   │   └── index.ts
-│   │   └── contact/
+│   │   ├── contact/                  # Contact form feature
+│   │   │   ├── components/
+│   │   │   │   └── ContactPage.tsx   # Contact form with WhatsApp integration
+│   │   │   └── index.ts
+│   │   └── process/                  # Working process feature
 │   │       ├── components/
-│   │       │   └── ContactPage.tsx       # Contact form with WhatsApp integration
+│   │       │   └── ProcessSection.tsx# Uses SubpageNav
+│   │       ├── types.ts              # ProcessStep, ProcessInfoItem
 │   │       └── index.ts
 │   ├── shared/
-│   │   └── ui/
-│   │       ├── SubpageNav.tsx            # Contextual breadcrumb header for subpages
-│   │       ├── Footer.tsx                # Corporate footer (PT Sundawa Teknologi Indonesia)
+│   │   └── ui/                       # Cross-feature UI components
+│   │       ├── SubpageNav.tsx        # Contextual breadcrumb header for subpages
+│   │       ├── Footer.tsx            # Corporate footer (PT Sundawa Teknologi Indonesia)
 │   │       ├── LangToggle.tsx
 │   │       ├── Introloader.tsx
 │   │       ├── Pagetransition.tsx
 │   │       ├── IntroEvents.ts
-│   │       ├── GoogleAnalytics.tsx       # GA4 & GTM script injection
-│   │       ├── SkipLink.tsx              # Skip navigation (a11y)
-│   │       ├── PWARegister.tsx           # Service worker registration
-│   │       ├── InstallPrompt.tsx         # PWA install banner
+│   │       ├── GoogleAnalytics.tsx   # GA4 & GTM script injection
+│   │       ├── SkipLink.tsx          # Skip navigation (a11y)
+│   │       ├── PWARegister.tsx       # Service worker registration
+│   │       ├── InstallPrompt.tsx     # PWA install banner
 │   │       └── index.ts
-│   └── i18n/
-│       ├── routing.ts
-│       ├── request.ts
-│       └── navigation.ts                 # Always import Link/useRouter from here
-├── lib/
-│   ├── env.ts                            # Fail-fast env validation
-│   ├── supabase.ts                       # Supabase client
-│   ├── types.ts                          # Post interface & isPost type guard
-│   ├── types.test.ts
-│   ├── Seo.ts                            # pageMetadata() with hreflang
-│   ├── Seo.test.ts
-│   ├── Sitemap.ts
-│   ├── Sitemap.test.ts
-│   └── analytics.ts                      # Google Analytics & GTM ID utilities
-├── public/
-│   ├── manifest.json                     # PWA web app manifest
-│   ├── sw.js                             # Service worker (native Cache API)
-│   ├── og-image.png                      # Open Graph image 1200x630
-│   ├── favicon.ico                       # Favicon
-│   ├── favicon-16x16.png                 # Favicon 16x16
-│   ├── favicon-32x32.png                 # Favicon 32x32
-│   ├── apple-touch-icon.png              # Apple touch icon 180x180
-│   └── icons/
-│       ├── icon-192x192.png              # PWA icon 192x192
-│       └── icon-512x512.png              # PWA icon 512x512
+│   └── i18n/                         # next-intl configuration & routing
+│       ├── routing.ts                # Supported locales, default locale, prefix rule
+│       ├── request.ts                # Server request configuration for messages
+│       └── navigation.ts             # Wrapped Link, useRouter, usePathname
+├── lib/                              # Infrastructure, Supabase, SEO & utils
+│   ├── adminAuth.ts                  # HMAC admin session cookie signing & route guard
+│   ├── adminAuth.test.ts             # 2 session token tests
+│   ├── analytics.ts                  # GA4 & GTM lead and WhatsApp tracking utilities
+│   ├── analytics.test.ts             # 4 analytics tracking tests
+│   ├── contact.ts                    # Single source of truth for company contacts & URLs
+│   ├── contact.test.ts               # 2 contact helper tests
+│   ├── env.ts                        # Fail-fast env validation
+│   ├── supabase.ts                   # Supabase client configuration
+│   ├── types.ts                      # Post & PortfolioProject interfaces + runtime guards
+│   ├── types.test.ts                 # 4 type guard tests
+│   ├── Seo.ts                        # pageMetadata() with alternate hreflang
+│   ├── Seo.test.ts                   # 2 SEO metadata tests
+│   ├── Sitemap.ts                    # Sitemap URL generator
+│   └── Sitemap.test.ts               # 2 sitemap helper tests
+├── anti-slop/                        # Anti-Slop Audit reports & remediation tracking
+│   ├── audit-001-remediation-report.md
+│   └── audit-002-deep-pass-report.md
+├── DESIGN.md                         # Anti-Slop design guidelines & dial settings
+├── antislop.md                       # Anti-Slop framework configuration
+├── public/                           # Static assets, icons, service worker & manifest
 └── .github/
-    ├── agents/
-    │   ├── sundawa-web.agent.md          # Lead Engineering Agent
-    │   ├── sundawa-ui.agent.md           # UI/UX & Localization Specialist
-    │   └── sundawa-content.agent.md      # Supabase CMS & Data Specialist
+    ├── agents/                       # Custom GitHub Copilot agents
     ├── copilot-instructions.md
-    └── workflows/ci.yml
+    └── workflows/ci.yml              # CI quality gate & production build
 ```
 
 ---
@@ -233,11 +235,34 @@ Create a `.env.local` file:
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-# Optional: Admin panel password
+
+# Admin panel authentication
 ADMIN_PASSWORD=your_secure_password
-# Optional: Google Analytics
+
+# Google Analytics & Tag Manager (optional)
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXX
+```
+
+### Database Setup
+Execute in your Supabase SQL Editor:
+```sql
+-- Inquiries table for lead capture
+CREATE TABLE IF NOT EXISTS inquiries (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    company TEXT,
+    topic TEXT NOT NULL,
+    message TEXT NOT NULL,
+    source_url TEXT,
+    status TEXT DEFAULT 'new',
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Allow public lead submissions (handled safely via API honeypot validation)
+ALTER TABLE inquiries DISABLE ROW LEVEL SECURITY;
 ```
 
 ### Development
@@ -254,88 +279,92 @@ npm run dev        # http://localhost:3000
 |---|---|
 | `npm run dev` | Start development server (Turbopack) |
 | `npm run check` | **Quality gate**: lint + typecheck + test |
-| `npm run lint` | ESLint |
+| `npm run lint` | ESLint 9 |
 | `npm run typecheck` | `tsc --noEmit` |
-| `npm run test` | Vitest (10 suites, 27 tests) |
-| `npm run build` | Production build |
+| `npm run test` | Vitest (13 suites, 40 tests) |
+| `npm run build` | Next.js production build (73 static/dynamic pages) |
 | `npm run start` | Serve production build |
 
-> **Windows**: Use `npm.cmd run check` instead of `npm run check` to avoid PowerShell execution policy errors.
+> **Windows**: Use `npm.cmd run check` if PowerShell restricts npm script chaining.
 
 ---
 
 ## Key Architectural Decisions
 
-### Feature-First (Bulletproof) Architecture
-Every feature (`home`, `outsource`, `blog`, `process`, `portfolio`, `services`, `products`, `about`, `contact`) is self-contained in `src/features/<feature>/` with its own components, domain logic, data layer, types, and tests. External consumers import only from the feature's `index.ts`.
+### 1. Anti-Slop Editorial & Visual Standards
+The repository strictly adheres to the **Anti-Slop Core Design & Editorial System** defined in `DESIGN.md` (Dial settings: Energy 2, Rhythm 2, Motion 2):
+- **Architectural Eyebrow Bars**: Standardized across 11 files with `<span className="inline-block w-4 h-0.5 bg-gold mr-2 align-middle" />` instead of lazy em-dashes (`— {label}`).
+- **High-Contrast Secondary Copy**: All subtitles, card descriptions, and table rows meet or exceed WCAG AA ($\ge$ 4.5:1), with target ratios $\ge$ 9.6:1 (`text-cream/75` to `text-cream/80` against `#0A192F` dark navy).
+- **Zero AI Buzzwords**: Words such as `seamlessly`, `cutting-edge`, `unparalleled`, and `game-changing` are prohibited and replaced with direct, grounded technical descriptions.
+- **Clean Scaffolding**: No mechanical layout comments (`/* Left */`, `/* Right */`) in the JSX tree.
 
-### Thin Route Adapters
-`app/[locale]/*/page.tsx` files contain zero business logic. They:
+### 2. Feature-First (Bulletproof) Architecture
+Every feature domain is self-contained in `src/features/<feature>/` with its own components, domain logic, data layer, types, and tests. External consumers import only from the feature's `index.ts`.
+
+### 3. Thin Route Adapters
+`app/[locale]/*/page.tsx` files contain zero business logic:
 1. Call `setRequestLocale(locale)`
 2. Fetch data (Supabase or static)
 3. Resolve translations via `getTranslations()`
 4. Render a single feature component with typed props
 
-### SVG Icon Handling
-SimpleIcons are served from `cdn.simpleicons.org`. `next.config.ts` enables `dangerouslyAllowSVG: true` for this domain with a strict Content-Security-Policy. `TechIcon.tsx` uses the `unoptimized` prop on `next/image` for all CDN SVG URLs.
+### 4. Unified Admin CMS
+Custom admin panel at `/admin` for managing both **Blog Posts** and **Portfolio Projects**:
+- **Auth**: Password-protected via `ADMIN_PASSWORD` HMAC cookie session.
+- **TipTap Rich Text Editor**: Dark-themed editor supporting headings, lists, links, images, and formatting.
+- **Media Upload**: Direct image uploads to Supabase Storage (`blog-images` bucket).
+- **Real-Time Data Refresh**: Optimistic UI feedback paired with event emitter reload triggers.
+- **Pagination**: Dedicated portfolio management with 10 items per page.
 
-### Technology Catalog
-All tech stack data (`techs[]`, `categories[]`) lives in `src/features/home/techCatalog.ts` — never duplicated inline in components.
+### 5. Lead Capture & Conversion Analytics
+- **API Endpoint**: `/api/inquiries` records contact submissions into Supabase with honeypot anti-spam verification.
+- **Universal WhatsApp Attribution**: All WhatsApp CTAs use `buildWhatsAppUrl()` with topic-specific query parameters and dispatch `contact_whatsapp` analytics events.
+- **GA4 / GTM**: Google Analytics 4 events (`generate_lead`, `contact_whatsapp`) dispatched through unified helpers in `lib/analytics.ts`.
 
-### Shared Navigation Component
-`SubpageNav` (`src/shared/ui/SubpageNav.tsx`) is the standard back-navigation header used across all subpages (`/blog`, `/portfolio`, `/services`, `/about`, `/contact`, `/outsource`, `/proses-kerja`). New subpages should use it.
+### 6. Internationalization (next-intl)
+- Locales: Indonesian (`id`, default) and English (`en`).
+- **100% Key Parity**: `messages/id.json` and `messages/en.json` maintain matching structures across all namespaces.
+- Navigation utilities must always be imported from `@/src/i18n/navigation` (`Link`, `useRouter`, `usePathname`).
 
-### i18n Key Parity
-`messages/id.json` and `messages/en.json` must always have identical key structures. All subpage namespaces (`blog`, `portfolio`, `services`, `about`, `contact`) include `navBack` and `navTitle` for the `SubpageNav` component.
+### 7. Progressive Web App (PWA)
+- **Manifest**: `public/manifest.json` configured with theme colors and PWA masks.
+- **Service Worker**: Native Cache API in `public/sw.js` (cache-first for static assets, network-first for dynamic navigation).
+- **Offline Fallback**: `/offline` page styled with Sundawa branding.
 
-### Analytics Integration
-Google Analytics (GA4) and Google Tag Manager are supported via `lib/analytics.ts` and `src/shared/ui/GoogleAnalytics.tsx`. Enable by setting `NEXT_PUBLIC_GA_MEASUREMENT_ID` and/or `NEXT_PUBLIC_GTM_ID` environment variables. Scripts are injected conditionally in `app/[locale]/layout.tsx`.
-
-### Progressive Web App (PWA)
-The app is installable as a PWA with offline support:
-- **Manifest**: `public/manifest.json` with Sundawa branding and theme colors
-- **Service Worker**: `public/sw.js` using native Cache API (cache-first for assets, network-first for API/navigation)
-- **Install Prompt**: `InstallPrompt` component shows a banner on supported browsers
-- **Offline Fallback**: `/offline` page displays when the user loses connectivity
-- **Icons**: 192x192 and 512x512 PNG icons generated from the existing logo
-
-### Admin Panel
-Custom admin panel at `/admin` for managing blog posts:
-- **Auth**: Password-protected (via `ADMIN_PASSWORD` env var)
-- **Dashboard**: List all posts with edit/delete actions
-- **TipTap Editor**: Rich text editing with bold, italic, headings, lists, links, images, code blocks
-- **Image Upload**: Cover images and inline images uploaded to Supabase Storage (`blog-images` bucket)
-- **API Routes**: `/api/admin/auth` (login), `/api/blog/posts` (CRUD), `/api/blog/upload` (images)
-
-### SEO & Structured Data
-The app follows SEO best practices with complete metadata and structured data:
-- **Metadata**: `pageMetadata()` helper covers 9 page keys with canonical URLs, hreflang, Open Graph, and Twitter cards
-- **Sitemap**: All static pages (home, outsource, proses-kerja, blog, portfolio, services, products, about, contact) + dynamic blog post, portfolio, and product detail slugs (`/products/[slug]`)
-- **Structured Data (JSON-LD)**: Organization + WebSite schema with ContactPoint and SearchAction; BlogPosting on blog posts
-- **Google Search Console**: Verification token configured in layout metadata
-- **Robots.txt**: Disallows `/offline` path, allows all other paths
-- **Open Graph**: `/og-image.png` (1200x630) for social sharing previews
-- **Favicons**: Complete set (ICO, 16x16, 32x32, Apple touch icon) generated from logo
+### 8. SEO & Structured Data
+- **Dynamic Sitemap**: Covers all static pages across both locales plus dynamic slugs for blog posts, portfolio projects, and products.
+- **Structured Data**: Organization, WebSite, Service, and BlogPosting JSON-LD schemas embedded for rich search engine indexing.
 
 ---
 
-## Testing
+## Testing Matrix
 
 ```
-lib/adminAuth.test.ts                     # Admin HMAC session token tests (2)
-lib/types.test.ts                         # Post type guard tests
-lib/contact.test.ts                       # Company contact & URL builder tests (2)
-lib/Seo.test.ts                           # SEO metadata helper tests
-lib/Sitemap.test.ts                       # Sitemap URL generator tests
-src/features/home/clients.test.ts         # Client data contract tests
-src/features/home/techCatalog.test.ts     # Tech catalog data contract tests (4)
-src/features/outsource/domain.test.ts     # Pricing domain logic tests (5)
-src/features/products/domain.test.ts      # Product catalog & i18n parity tests (4)
-src/features/about/team.test.ts           # Leadership avatar & copy tests (2)
+app/api/inquiries/route.test.ts           # Lead capture API, payload validation & honeypot tests (5)
+lib/adminAuth.test.ts                     # Admin HMAC session token signing & verification (2)
+lib/analytics.test.ts                     # GA4 dataLayer & window.gtag event dispatch tests (4)
+lib/contact.test.ts                       # Company contact constants & URL builder tests (2)
+lib/Seo.test.ts                           # Canonical SEO metadata & alternate hreflang tests (2)
+lib/Sitemap.test.ts                       # Sitemap URL generator & priority tests (2)
+lib/types.test.ts                         # Post type guard runtime validation tests (4)
+src/features/about/team.test.ts           # Leadership asset paths & copy parity tests (2)
+src/features/home/clients.test.ts         # Client data contract & constant tests (1)
+src/features/home/techCatalog.test.ts     # Tech catalog schema & category tests (4)
+src/features/outsource/domain.test.ts     # Pricing models, cart math & WA message builder tests (5)
+src/features/portfolio/portfolio.test.ts  # Portfolio project type guards & data contracts (3)
+src/features/products/domain.test.ts      # Product catalog specs, filtering & i18n parity tests (4)
 ```
+
+**Total**: 13 test suites, 40 tests passing in ~1.4s.
 
 ---
 
-## Known Issues
+## Production Build Verification
 
-- **Turbopack build panic**: `npm run build` may fail with an internal Turbopack error on `app/globals.css` in Next.js 16.2.7. This is an upstream bug — not a code issue. Use `npm run check` (not `npm run build`) as the quality gate.
+Next.js 16.2.7 Turbopack builds cleanly:
+```bash
+npm run build
+# ✓ Compiled successfully
+# ✓ Generating static pages using 7 workers (73/73) in ~5s
+```
+All 73 SSG and dynamic routes compile without errors or warnings.

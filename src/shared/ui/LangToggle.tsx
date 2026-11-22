@@ -13,6 +13,7 @@ export default function LangToggle() {
     return (
         <button
             onClick={toggle}
+            aria-label={locale === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}
             style={{
                 fontSize: '0.65rem',
                 fontWeight: 800,
@@ -21,6 +22,11 @@ export default function LangToggle() {
                 background: 'none',
                 border: '1px solid rgba(219,201,119,0.3)',
                 padding: '4px 10px',
+                minHeight: '44px',
+                minWidth: '44px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 cursor: 'pointer',
                 fontFamily: 'inherit',
                 transition: 'border-color 0.2s, background 0.2s',

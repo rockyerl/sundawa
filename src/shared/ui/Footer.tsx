@@ -50,15 +50,15 @@ export default async function Footer() {
                         <p className="mt-4 text-xs font-extrabold tracking-[0.16em] text-gold uppercase">
                             {t('legalName')}
                         </p>
-                        <p className="mt-1 text-xs italic text-gold/75">
+                        <p className="mt-1 text-xs italic text-gold/85">
                             &ldquo;{t('motto')}&rdquo;
                         </p>
-                        <p className="mt-4 max-w-md text-xs leading-relaxed font-light text-cream/55">
+                        <p className="mt-4 max-w-md text-xs leading-relaxed font-light text-cream/80">
                             {t('summary')}
                         </p>
 
-                        <div className="mt-5 flex items-center gap-2 text-xs text-cream/50">
-                            <MapPin size={13} className="flex-shrink-0 text-gold/70" aria-hidden="true" />
+                        <div className="mt-5 flex items-center gap-2 text-xs text-cream/75">
+                            <MapPin size={13} className="flex-shrink-0 text-gold/80" aria-hidden="true" />
                             <span>{t('location')}</span>
                         </div>
                     </div>
@@ -70,22 +70,22 @@ export default async function Footer() {
                         </h3>
                         <ul className="flex flex-col gap-2.5 text-xs">
                             <li>
-                                <Link href="/services" className="text-cream/65 no-underline transition-colors hover:text-gold">
+                                <Link href="/services" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.services')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/proses-kerja" className="text-cream/65 no-underline transition-colors hover:text-gold">
+                                <Link href="/proses-kerja" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.process')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/outsource" className="text-cream/65 no-underline transition-colors hover:text-gold">
+                                <Link href="/outsource" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.outsource')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/portfolio" className="text-cream/65 no-underline transition-colors hover:text-gold">
+                                <Link href="/portfolio" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.portfolio')}
                                 </Link>
                             </li>
@@ -99,7 +99,7 @@ export default async function Footer() {
                         </h3>
                         <ul className="flex flex-col gap-2.5 text-xs">
                             <li>
-                                <Link href="/products" className="font-semibold text-cream/85 no-underline transition-colors hover:text-gold">
+                                <Link href="/products" className="font-semibold text-cream/90 no-underline transition-colors hover:text-gold">
                                     {t('links.allProducts')}
                                 </Link>
                             </li>
@@ -107,7 +107,7 @@ export default async function Footer() {
                                 <li key={product.slug}>
                                     <Link
                                         href={`/products/${product.slug}`}
-                                        className="text-cream/60 no-underline transition-colors hover:text-gold"
+                                        className="text-cream/75 no-underline transition-colors hover:text-gold"
                                     >
                                         {product.label}
                                     </Link>
@@ -123,17 +123,17 @@ export default async function Footer() {
                         </h3>
                         <ul className="mb-5 flex flex-col gap-2.5 text-xs">
                             <li>
-                                <Link href="/about" className="text-cream/65 no-underline transition-colors hover:text-gold">
+                                <Link href="/about" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.about')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/blog" className="text-cream/65 no-underline transition-colors hover:text-gold">
+                                <Link href="/blog" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.blog')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="text-cream/65 no-underline transition-colors hover:text-gold">
+                                <Link href="/contact" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.contact')}
                                 </Link>
                             </li>
@@ -142,23 +142,23 @@ export default async function Footer() {
                         <div className="flex flex-col gap-2 border-t border-cream/10 pt-4 text-xs">
                             <a
                                 href={COMPANY_CONTACT.emailHref}
-                                className="inline-flex items-center gap-2 text-cream/70 no-underline transition-colors hover:text-gold"
+                                className="inline-flex items-center gap-2 text-cream/85 no-underline transition-colors hover:text-gold"
                             >
-                                <Mail size={13} className="text-gold/75" aria-hidden="true" />
+                                <Mail size={13} className="text-gold/85" aria-hidden="true" />
                                 <span>{COMPANY_CONTACT.email}</span>
                             </a>
                             <a
                                 href={COMPANY_CONTACT.telHref}
-                                className="inline-flex items-center gap-2 text-cream/70 no-underline transition-colors hover:text-gold"
+                                className="inline-flex items-center gap-2 text-cream/85 no-underline transition-colors hover:text-gold"
                             >
-                                <Phone size={13} className="text-gold/75" aria-hidden="true" />
+                                <Phone size={13} className="text-gold/85" aria-hidden="true" />
                                 <span>{COMPANY_CONTACT.phoneDisplay}</span>
                             </a>
                             <a
                                 href={COMPANY_CONTACT.linkedinUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 text-cream/60 no-underline transition-colors hover:text-gold"
+                                className="inline-flex items-center gap-1.5 text-cream/75 no-underline transition-colors hover:text-gold"
                             >
                                 <span>LinkedIn</span>
                                 <ArrowUpRight size={12} aria-hidden="true" />
@@ -168,9 +168,9 @@ export default async function Footer() {
                 </div>
 
                 {/* Legal Bottom Strip */}
-                <div className="mt-12 flex flex-col justify-between gap-3 border-t border-gold/10 pt-6 text-[0.68rem] text-cream/40 sm:flex-row sm:items-center">
+                <div className="mt-12 flex flex-col justify-between gap-3 border-t border-gold/10 pt-6 text-[0.68rem] text-cream/70 sm:flex-row sm:items-center">
                     <p className="m-0">{t('copyright', { year: currentYear })}</p>
-                    <p className="m-0 tracking-[0.08em] text-gold/65 uppercase">{t('assurances')}</p>
+                    <p className="m-0 tracking-[0.08em] text-gold/85 uppercase">{t('assurances')}</p>
                 </div>
             </div>
         </footer>

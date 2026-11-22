@@ -61,7 +61,7 @@ export default function BlogCard({ post, readMoreLabel }: BlogCardProps) {
                 </h2>
 
                 {post.excerpt && (
-                    <p className="text-sm text-[#F8F8F8]/55 leading-relaxed line-clamp-3 mb-4">
+                    <p className="text-sm text-[#F8F8F8]/75 leading-relaxed line-clamp-3 mb-4">
                         {post.excerpt}
                     </p>
                 )}

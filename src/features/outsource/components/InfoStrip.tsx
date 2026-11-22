@@ -16,7 +16,7 @@ export default function InfoStrip() {
                     <div key={item.title}>
                         <div style={{ fontSize: '0.8rem', color: '#DBC977', marginBottom: 6, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{item.icon}</div>
                         <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#DBC977', marginBottom: 6 }}>{item.title}</div>
-                        <p style={{ fontSize: '0.7rem', color: 'rgba(248,248,248,0.35)', lineHeight: 1.7, fontWeight: 300 }}>{item.desc}</p>
+                        <p style={{ fontSize: '0.7rem', color: 'rgba(248,248,248,0.75)', lineHeight: 1.7, fontWeight: 300 }}>{item.desc}</p>
                     </div>
                 ))}
             </div>

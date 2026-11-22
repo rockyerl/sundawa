@@ -31,7 +31,6 @@ export default function ObjectionsSection() {
             />
             <div className="container-main">
                 <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '2.5rem', alignItems: 'start' }} className="objections-grid">
-                    {/* LEFT — the fear + reassurance */}
                     <div>
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}
@@ -49,13 +48,12 @@ export default function ObjectionsSection() {
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.25 }}
-                            style={{ color: 'rgba(248,248,248,0.5)', fontWeight: 300, fontSize: '0.95rem', lineHeight: 1.85, maxWidth: '32rem' }}
+                            style={{ color: 'rgba(248,248,248,0.75)', fontWeight: 300, fontSize: '0.95rem', lineHeight: 1.85, maxWidth: '32rem' }}
                         >
                             {t('reassuranceBody')}
                         </motion.p>
                     </div>
 
-                    {/* RIGHT — objections list */}
                     <div>
                         {items.map((o, i) => (
                             <motion.div

@@ -124,36 +124,36 @@ Penggantian total (re-platforming) hanya disarankan apabila sistem lama sudah me
 </table>
 </div>
 
-<h2>Studi Kasus Terkait: Arsitektur Integrasi Multi-Platform</h2>
+<h2>Studi Kasus Terkait: Integrasi ERP &amp; Telematika IoT Korporat</h2>
 <div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.35); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
     <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #00F0FF; display: block; margin-bottom: 0.5rem;">
-        📂 Studi Kasus Terkait
+        📂 Studi Kasus Rujukan
     </span>
     <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
-        DACAR by UNDP: Integrasi Data &amp; Platform Penyaluran Dana Digital
+        Nawasanga: Integrasi ERP &amp; Sensor Telematika BBM Real-Time
     </h3>
     <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
-        Sundawa merancang arsitektur aplikasi lintas platform, microservices API terenkripsi, dan verifikasi real-time untuk penyaluran dana bantuan tanpa toleransi keterlambatan data.
+        Sundawa merancang middleware integrasi dua arah yang menghubungkan sensor IoT lapangan, GPS tracker armada, dan REST API ERP pusat untuk otomatisasi rekonsiliasi tanpa deviasi data.
     </p>
-    <a href="/id/portfolio/dacar-by-undp" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
-        Pelajari Studi Kasus DACAR by UNDP &rarr;
+    <a href="/id/products/nawasanga" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Pelajari Studi Kasus Nawasanga &rarr;
     </a>
 </div>
 
 <h2>Langkah Pertama yang Direkomendasikan</h2>
 <p>
-Sebelum menerbitkan Term of Reference (TOR) pengadaan atau menandatangani kontrak lisensi baru, mintalah audit ketergantungan sistem independen. Di Sundawa, kami selalu memulai dengan memetakan proses bisnis riil di lapangan untuk memastikan setiap rupiah investasi teknologi Anda benar-benar menyelesaikan masalah operasional.
+Sebelum menerbitkan Term of Reference (TOR) pengadaan atau menandatangani kontrak lisensi baru, jadwalkan diskusi evaluasi awal. Di Sundawa, kami membedah arsitektur nyata di lapangan agar investasi teknologi Anda langsung menghasilkan efisiensi biaya terukur.
 </p>
 
 <div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
     <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
-        Bingung Menentukan Arah Sistem ERP Anda?
+        Diskusi Integrasi ERP 30 Menit
     </h3>
     <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
-        Konsultasikan arsitektur sistem Anda langsung dengan tim lead engineer Sundawa. Kami bantu petakan audit ketergantungan dan opsi yang paling efisien biaya.
+        Konsultasikan arsitektur sistem Anda langsung dengan tim lead engineer Sundawa. Dalam 30 menit, kita bahas: (1) Sistem ERP &amp; database yang sedang dipakai, (2) Titik input manual &amp; rekonsiliasi yang memakan waktu, dan (3) Prioritas integrasi pertama dengan risiko terendah.
     </p>
-    <a href="/id/contact?service=integrasi-sistem" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
-        Diskusikan Sistem Anda &rarr;
+    <a href="/id/contact?service=integrasi-sistem&amp;topic=Otomatisasi%20%26%20Integrasi%20Data" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Jadwalkan Diskusi Integrasi ERP 30 Menit &rarr;
     </a>
 </div>
         `,
@@ -474,7 +474,7 @@ A full re-platforming should only be pursued when the legacy infrastructure has 
         </tr>
         <tr>
             <td><strong>User Impact</strong></td>
-            <td>Seamless, zero retraining</td>
+            <td>Smooth transition, zero retraining</td>
             <td>Gradual improvement</td>
             <td>Full staff retraining required</td>
         </tr>
@@ -488,36 +488,36 @@ A full re-platforming should only be pursued when the legacy infrastructure has 
 </table>
 </div>
 
-<h2>Relevant Case Study: Multi-Platform Integration Architecture</h2>
+<h2>Relevant Case Study: Enterprise ERP &amp; IoT Telematics Integration</h2>
 <div style="background: rgba(0, 86, 170, 0.08); border: 1px solid rgba(0, 86, 170, 0.35); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
     <span style="font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #00F0FF; display: block; margin-bottom: 0.5rem;">
-        📂 Relevant Case Study
+        📂 Reference Case Study
     </span>
     <h3 style="margin: 0 0 0.5rem; color: #F8F8F8; font-size: 1.15rem; font-weight: 800;">
-        DACAR by UNDP: Digital Aid Platform &amp; Enterprise API Integration
+        Nawasanga: Real-Time ERP &amp; Telematics IoT Sensor Integration
     </h3>
     <p style="margin: 0 0 1rem; color: rgba(248, 248, 248, 0.75); font-size: 0.92rem; line-height: 1.6;">
-        Sundawa engineered cross-platform apps, encrypted microservices APIs, and real-time beneficiary verification for mission-critical digital cash disbursement.
+        Sundawa engineered bi-directional integration middleware bridging field IoT sensors, fleet GPS telematics, and central ERP REST APIs for zero-deviation reconciliation.
     </p>
-    <a href="/en/portfolio/dacar-by-undp" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
-        Explore the DACAR by UNDP Case Study &rarr;
+    <a href="/en/products/nawasanga" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #DBC977; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+        Explore the Nawasanga Case Study &rarr;
     </a>
 </div>
 
 <h2>Recommended Next Step</h2>
 <p>
-Before drafting a procurement Term of Reference (TOR) or locking into another multi-year proprietary license, commission an independent system dependency audit. At Sundawa, we begin by mapping real-world operational bottlenecks to ensure every technology dollar invested directly moves the business forward.
+Before drafting a procurement Term of Reference (TOR) or locking into another multi-year proprietary license, schedule an initial discovery call. At Sundawa, we assess real-world field architectures so your technology investment delivers measurable operational ROI.
 </p>
 
 <div style="background: linear-gradient(135deg, rgba(14, 30, 48, 0.95), rgba(10, 25, 47, 0.95)); border: 1px solid rgba(219, 201, 119, 0.35); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center;">
     <h3 style="margin: 0 0 0.75rem; font-size: 1.35rem; color: #F8F8F8; font-weight: 800;">
-        Unsure of the Right Path for Your ERP System?
+        30-Minute ERP Integration Discovery Session
     </h3>
     <p style="margin: 0 auto 1.5rem; max-width: 580px; color: rgba(248, 248, 248, 0.7); font-size: 0.95rem; line-height: 1.6;">
-        Consult your system architecture directly with Sundawa lead engineers. We help map dependencies and identify the most cost-efficient path.
+        Consult your system architecture directly with Sundawa lead engineers. In 30 minutes, we review: (1) Your current ERP software &amp; database schemas, (2) Manual input &amp; reconciliation bottlenecks, and (3) The first priority integration connector with lowest risk.
     </p>
-    <a href="/en/contact?service=system-integration" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
-        Discuss Your System &rarr;
+    <a href="/en/contact?service=system-integration&amp;topic=Otomatisasi%20%26%20Integrasi%20Data" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #DBC977; color: #0E1E30; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;">
+        Schedule 30-Minute ERP Discovery &rarr;
     </a>
 </div>
         `,

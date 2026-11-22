@@ -101,7 +101,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                         <h1 className="font-black text-[clamp(1.8rem,3vw,2.5rem)] text-cream leading-tight mb-4">
                             {service.title}
                         </h1>
-                        <p className="text-lg text-cream/60 max-w-[700px] leading-relaxed">
+                        <p className="text-lg text-cream/75 max-w-[700px] leading-relaxed">
                             {service.desc}
                         </p>
                     </div>
@@ -117,7 +117,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                 <h3 className="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-gold mb-4">
                                     {section.label}
                                 </h3>
-                                <p className="text-base text-cream/70 leading-[1.7]">
+                                <p className="text-base text-cream/80 leading-[1.7]">
                                     {section.content}
                                 </p>
                             </div>
@@ -142,7 +142,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                         <h3 className="text-sm font-bold text-cream mb-2 leading-snug">
                                             {item.title}
                                         </h3>
-                                        <p className="text-xs text-cream/65 leading-relaxed">
+                                        <p className="text-xs text-cream/75 leading-relaxed">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -162,7 +162,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                 <h2 className="text-2xl sm:text-3xl font-black text-cream mb-2 leading-tight">
                                     {service.discoverySession.title}
                                 </h2>
-                                <p className="text-sm text-cream/70 leading-relaxed font-light mb-6">
+                                <p className="text-sm text-cream/75 leading-relaxed font-light mb-6">
                                     {service.discoverySession.subtitle}
                                 </p>
 
@@ -178,7 +178,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                             <h3 className="text-xs font-bold text-cream mb-2 leading-snug">
                                                 {topic.title}
                                             </h3>
-                                            <p className="text-[0.72rem] text-cream/60 leading-relaxed font-light">
+                                            <p className="text-[0.72rem] text-cream/75 leading-relaxed font-light">
                                                 {topic.desc}
                                             </p>
                                         </div>
@@ -225,7 +225,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                     <div className="text-[0.62rem] font-bold text-gold/80 tracking-widest uppercase mb-1.5">
                                         Masalah / Titik Hambat
                                     </div>
-                                    <p className="text-xs text-cream/70 leading-relaxed">
+                                    <p className="text-xs text-cream/80 leading-relaxed">
                                         {service.caseStudy.problem}
                                     </p>
                                 </div>
@@ -233,7 +233,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                     <div className="text-[0.62rem] font-bold text-sky tracking-widest uppercase mb-1.5">
                                         Pekerjaan Sundawa
                                     </div>
-                                    <p className="text-xs text-cream/70 leading-relaxed">
+                                    <p className="text-xs text-cream/80 leading-relaxed">
                                         {service.caseStudy.role}
                                     </p>
                                 </div>
@@ -256,7 +256,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                                                     </span>
                                                 )}
                                             </div>
-                                            <div className="text-[0.68rem] font-medium text-cream/70 uppercase tracking-wider leading-snug">
+                                            <div className="text-[0.68rem] font-medium text-cream/75 uppercase tracking-wider leading-snug">
                                                 {m.label}
                                             </div>
                                         </div>
@@ -271,7 +271,7 @@ export default function ServiceDetail({ service, translations }: ServiceDetailPr
                         <h3 className="mb-3 text-xl font-bold text-cream">
                             {t('ctaContact')}
                         </h3>
-                        <p className="text-sm text-cream/60 max-w-lg mx-auto mb-6">
+                        <p className="text-sm text-cream/75 max-w-lg mx-auto mb-6">
                             {service.desc}
                         </p>
                         <Link

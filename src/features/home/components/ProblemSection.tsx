@@ -20,7 +20,7 @@ export default function ProblemSection() {
                     initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}
                     style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}
                 >
-                    <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>— {t('label')}</span>
+                    <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}><span style={{ display: 'inline-block', width: '1rem', height: '2px', background: '#DBC977', marginRight: '0.5rem', verticalAlign: 'middle' }} />{t('label')}</span>
                     <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </motion.div>
 
@@ -33,7 +33,6 @@ export default function ProblemSection() {
                 </motion.h2>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '2.5rem', alignItems: 'center' }} className="problem-grid">
-                    {/* LEFT — cascading points */}
                     <div>
                         {points.map((p, i) => (
                             <motion.div
@@ -44,14 +43,13 @@ export default function ProblemSection() {
                                 <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.1em', color: 'rgba(219,201,119,0.5)', minWidth: '1.6rem', paddingTop: '0.15rem' }}>
                                     {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <p style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(248,248,248,0.65)', margin: 0 }}>
+                                <p style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(248,248,248,0.8)', margin: 0 }}>
                                     {p}
                                 </p>
                             </motion.div>
                         ))}
                     </div>
 
-                    {/* RIGHT — closing + transition */}
                     <div style={{ padding: 'clamp(1.25rem, 5vw, 2rem)', border: '1px solid rgba(219,201,119,0.15)', background: 'rgba(219,201,119,0.03)' }}>
                         <motion.blockquote
                             initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.7 }}

@@ -47,14 +47,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         return [
             {
                 url: `${SITE_URL}/id/services/${idSlug}`,
-                changeFrequency: 'monthly',
-                priority: 0.7,
+                changeFrequency: 'weekly',
+                priority: 0.85,
                 alternates: { languages },
             },
             {
                 url: `${SITE_URL}/en/services/${enSlug}`,
-                changeFrequency: 'monthly',
-                priority: 0.7,
+                changeFrequency: 'weekly',
+                priority: 0.85,
                 alternates: { languages },
             },
         ]

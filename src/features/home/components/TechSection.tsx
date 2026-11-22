@@ -26,15 +26,13 @@ export default function TechSection() {
                     style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}
                 >
                     <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>
-                        — {t('label')}
+                        <span style={{ display: 'inline-block', width: '1rem', height: '2px', background: '#DBC977', marginRight: '0.5rem', verticalAlign: 'middle' }} />{t('label')}
                     </span>
                     <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </motion.div>
 
                 {/* Main layout */}
                 <div className="tech-layout" style={{ marginBottom: '4rem' }}>
-
-                    {/* ── Left — category selector ── */}
                     <div className="tech-left">
                         <motion.h2
                             initial={{ opacity: 0, y: 30 }}
@@ -50,7 +48,7 @@ export default function TechSection() {
                             initial={{ opacity: 0 }}
                             animate={inView ? { opacity: 1 } : {}}
                             transition={{ delay: 0.2 }}
-                            style={{ color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8, fontSize: '0.85rem', marginBottom: '2.5rem' }}
+                            style={{ color: 'rgba(248,248,248,0.75)', fontWeight: 300, lineHeight: 1.8, fontSize: '0.85rem', marginBottom: '2.5rem' }}
                         >
                             {t('sub')}
                         </motion.p>
@@ -118,7 +116,6 @@ export default function TechSection() {
                         </div>
                     </div>
 
-                    {/* ── Right — filtered tech grid with AnimatePresence ── */}
                     <div className="tech-right" style={{ alignSelf: 'start' }}>
 
                         {/* Active category header */}

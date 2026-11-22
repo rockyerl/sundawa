@@ -96,7 +96,7 @@ export default function ProductsArchive() {
                                         href={product.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 text-[0.65rem] text-cream/55 no-underline hover:text-gold"
+                                        className="inline-flex items-center gap-1 text-[0.65rem] text-cream/75 no-underline hover:text-gold"
                                     >
                                         <span>{product.domain}</span>
                                         <ExternalLink size={12} aria-hidden="true" />

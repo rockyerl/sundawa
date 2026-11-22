@@ -99,12 +99,11 @@ export default function ClientsSection() {
             <div className="container-main">
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}}
                     className="flex items-center gap-4 mb-10">
-                    <span className="text-[0.65rem] font-extrabold tracking-[0.3em] uppercase text-gold">— {t('label')}</span>
+                    <span className="text-[0.65rem] font-extrabold tracking-[0.3em] uppercase text-gold"><span className="inline-block w-4 h-0.5 bg-gold mr-2 align-middle" />{t('label')}</span>
                     <div className="flex-1 h-px bg-gradient-to-r from-gold/40 to-transparent" />
                 </motion.div>
 
                 <div className="clients-layout">
-                    {/* Left */}
                     <div className="clients-left">
                         <motion.h2 initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
                                    className="font-black text-[clamp(2rem,3.5vw,2.8rem)] text-cream leading-tight mb-4">
@@ -112,14 +111,13 @@ export default function ClientsSection() {
                         </motion.h2>
 
                         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
-                                  className="text-cream/40 font-light leading-relaxed text-sm mb-8">
+                                  className="text-cream/75 font-light leading-relaxed text-sm mb-8">
                             {t('sub')}
                         </motion.p>
 
                         <ClientsStats stats={stats} confidentialNotice={t('confidentialNotice')} inView={inView} />
                     </div>
 
-                    {/* Right */}
                     <ClientsGrid
                         clients={visibleClients}
                         inView={inView}

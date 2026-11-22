@@ -106,7 +106,7 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                         {query.trim() && (
                             <button
                                 onClick={() => setQuery('')}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#F8F8F8]/40 hover:text-[#F8F8F8]/80 transition-colors text-lg leading-none"
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#F8F8F8]/75 hover:text-[#F8F8F8] transition-colors text-lg leading-none"
                                 aria-label="Clear search"
                             >
                                 ×
@@ -114,7 +114,7 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                         )}
                     </div>
                     {isSearching && (
-                        <p className="mt-3 text-xs text-[#F8F8F8]/40 text-center">
+                        <p className="mt-3 text-xs text-[#F8F8F8]/75 text-center">
                             {filteredPosts.length > 0
                                 ? tBlog('searchResultsCount', {
                                       count: filteredPosts.length,
@@ -130,7 +130,7 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                         className="flex flex-col items-center justify-center text-center py-16 rounded-2xl"
                         style={{ background: 'rgba(248,248,248,0.03)', border: '1px dashed rgba(219,201,119,0.2)' }}
                     >
-                        <p className="text-sm text-[#F8F8F8]/50">
+                        <p className="text-sm text-[#F8F8F8]/75">
                             {isSearching
                                 ? tBlog('searchNoResults', { query: effectiveQuery })
                                 : translations.empty}

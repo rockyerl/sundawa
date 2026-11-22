@@ -285,7 +285,7 @@ export default function Navbar() {
                                                                         />
                                                                     </div>
                                                                     {item.desc && (
-                                                                        <p className="mt-0.5 text-[0.68rem] leading-snug font-light text-cream/50">
+                                                                        <p className="mt-0.5 text-[0.68rem] leading-snug font-light text-cream/75">
                                                                             {item.desc}
                                                                         </p>
                                                                     )}
@@ -413,7 +413,7 @@ export default function Navbar() {
                                                                 {item.label}
                                                             </div>
                                                             {item.desc && (
-                                                                <div className="mt-0.5 text-[0.68rem] text-cream/45">
+                                                                <div className="mt-0.5 text-[0.68rem] text-cream/75">
                                                                     {item.desc}
                                                                 </div>
                                                             )}

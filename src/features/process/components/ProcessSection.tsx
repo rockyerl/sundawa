@@ -41,14 +41,14 @@ export default function Process() {
                     textTransform: 'uppercase', color: '#DBC977', marginBottom: '0.75rem',
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                 }}>
-                    <span>— {t('label')}</span>
+                    <span><span style={{ display: 'inline-block', width: '1rem', height: '2px', background: '#DBC977', marginRight: '0.5rem', verticalAlign: 'middle' }} />{t('label')}</span>
                     <div style={{ height: 1, width: 60, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </div>
                 <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '0.75rem' }}>
                     {t('heading1')}<br />
                     <span className="gold-gradient">{t('heading2')}</span>
                 </h1>
-                <p style={{ fontSize: '0.82rem', color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8, maxWidth: 520 }}>
+                <p style={{ fontSize: '0.82rem', color: 'rgba(248,248,248,0.75)', fontWeight: 300, lineHeight: 1.8, maxWidth: 520 }}>
                     {t('sub')}
                 </p>
             </motion.div>
@@ -136,22 +136,20 @@ export default function Process() {
                 </div>
             </div>
 
-            {/* ── Info strip — pola persis Outsource.tsx ── */}
             <div style={{ background: 'rgba(29,52,81,0.3)', borderTop: '1px solid rgba(219,201,119,0.1)', padding: '2rem clamp(1.25rem, 5vw, 2rem)' }}>
                 <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
                     {infoItems.map(item => (
                         <div key={item.title}>
                             <div style={{ fontSize: '1.1rem', marginBottom: 6 }}>{item.icon}</div>
                             <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#DBC977', marginBottom: 6, letterSpacing: '0.03em' }}>{item.title}</div>
-                            <p style={{ fontSize: '0.7rem', color: 'rgba(248,248,248,0.35)', lineHeight: 1.7, fontWeight: 300 }}>{item.desc}</p>
+                            <p style={{ fontSize: '0.7rem', color: 'rgba(248,248,248,0.75)', lineHeight: 1.7, fontWeight: 300 }}>{item.desc}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* ── Contact CTA — pola persis Outsource.tsx ── */}
             <div style={{ padding: '3rem clamp(1.25rem, 5vw, 2rem)', textAlign: 'center' }}>
-                <p style={{ fontSize: '0.72rem', color: 'rgba(248,248,248,0.35)', marginBottom: '1rem' }}>
+                <p style={{ fontSize: '0.72rem', color: 'rgba(248,248,248,0.75)', marginBottom: '1rem' }}>
                     {t('contactCta')}
                 </p>
                 <Link

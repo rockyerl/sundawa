@@ -175,13 +175,16 @@ export default function ContactPage() {
             <section className="py-14 md:py-20">
                 <div className="container-main">
                     <div className="mb-12">
-                        <p className="mb-4 text-xs font-extrabold tracking-[0.24em] text-gold uppercase">
-                            — {t('eyebrow')}
-                        </p>
+                        <div className="flex items-center gap-2 mb-4">
+                            <div className="w-6 h-[2px] bg-gold" />
+                            <span className="text-xs font-extrabold tracking-[0.2em] text-gold uppercase">
+                                {t('eyebrow')}
+                            </span>
+                        </div>
                         <h1 className="mb-4 text-[clamp(2rem,3.6vw,3rem)] leading-tight font-black text-cream">
                             {t('title')}
                         </h1>
-                        <p className="max-w-2xl text-base leading-relaxed font-light text-cream/65">
+                        <p className="max-w-2xl text-base leading-relaxed font-light text-cream/80">
                             {t('subtitle')}
                         </p>
                     </div>

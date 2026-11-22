@@ -42,12 +42,11 @@ export default function ServicesSection() {
         <section id="services" ref={ref} style={{ position: 'relative' }}>
             <div className="container-main">
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-                    <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>— {t('label')}</span>
+                    <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}><span style={{ display: 'inline-block', width: '1rem', height: '2px', background: '#DBC977', marginRight: '0.5rem', verticalAlign: 'middle' }} />{t('label')}</span>
                     <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </motion.div>
 
                 <div className="services-layout">
-                    {/* Left */}
                     <div className="services-left">
                         <motion.h2 initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.15 }}
                                    style={{ fontWeight: 900, fontSize: 'clamp(1.9rem, 6.5vw, 3.2rem)', color: '#F8F8F8', lineHeight: 1.1, marginBottom: '1.25rem' }}>
@@ -55,7 +54,7 @@ export default function ServicesSection() {
                         </motion.h2>
 
                         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.25 }}
-                                  style={{ color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8, fontSize: '0.85rem', marginBottom: '2rem' }}>
+                                  style={{ color: 'rgba(248,248,248,0.75)', fontWeight: 300, lineHeight: 1.8, fontSize: '0.85rem', marginBottom: '2rem' }}>
                             {t('sub')}
                         </motion.p>
 
@@ -64,7 +63,7 @@ export default function ServicesSection() {
                             {stats.map((s) => (
                                 <div key={s.label} style={{ background: '#0E1E30', padding: '1.1rem 1rem' }}>
                                     <div style={{ fontSize: '1.6rem', fontWeight: 900, color: '#DBC977', lineHeight: 1, marginBottom: '0.25rem' }}>{s.num}</div>
-                                    <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.35)' }}>{s.label}</div>
+                                    <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.7)' }}>{s.label}</div>
                                 </div>
                             ))}
                         </motion.div>
@@ -86,7 +85,6 @@ export default function ServicesSection() {
                         </div>
                     </div>
 
-                    {/* Right */}
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: 'rgba(219,201,119,0.1)', border: '1px solid rgba(219,201,119,0.1)', alignSelf: 'start' }} className="services-right">
                         {items.map((s, i) => {
                             const Icon = icons[i]

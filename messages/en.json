@@ -42,7 +42,7 @@
     "line2": "may be costing you more",
     "line3": "than replacing it",
     "line4": "",
-    "sub": "Enterprise system modernization, ERP integration, and custom business application engineering. We fix what slows your operations down — without replacing what already works well.",
+    "sub": "Enterprise system modernization, ERP integration, and custom business application engineering. We fix what slows your operations down without replacing what already works well.",
     "ctaServices": "Discuss Your System",
     "ctaAbout": "View Case Studies",
     "scroll": "Scroll",
@@ -71,14 +71,14 @@
     "heading2": "Another Team",
     "heading3": "That Only Writes Code",
     "p1": "You need people who can understand why the system is failing, decide what should change, build it without creating another layer of complexity, and stay responsible after launch.",
-    "p2": "We start with how your business actually operates — not with a preferred framework or a prepackaged solution.",
+    "p2": "We start with how your business actually operates, not with a preferred framework or a prepackaged product.",
     "quote": "Software your team stops fighting with.",
     "ctaAboutPage": "Company Profile & Leadership",
     "missions": [
       {
         "num": "01",
         "title": "Understand Before Building",
-        "body": "We start with how your business actually operates, not with a preferred framework or prepackaged solution."
+        "body": "We start with how your business actually operates, not with a preferred framework or a prepackaged product."
       },
       {
         "num": "02",
@@ -285,7 +285,7 @@
     "label": "Technology",
     "heading1": "Technologies",
     "heading2": "We Use",
-    "sub": "The modern tech stack we master to deliver the best solutions in every project.",
+    "sub": "Technology stack evaluated and deployed to engineer mission-critical backends, real-time data pipelines, and dependable enterprise platforms.",
     "technologies": "technologies"
   },
   "clients": {
@@ -640,7 +640,7 @@
     "label": "IT Outsourcing",
     "heading1": "Pricing Estimate",
     "heading2": "IT Outsource Team",
-    "sub": "Build your dream team of developers, QA, DevOps, or IT Managers. Choose position, level, and work mode — we calculate the estimate in real time.",
+    "sub": "Build your engineering team: developers, QA, DevOps, or IT Managers. Choose position, level, and work mode, we calculate the estimate in real time.",
     "addTitle": "Add Talent",
     "labelCategory": "Category",
     "labelPosition": "Position",
@@ -665,13 +665,13 @@
     "infoHybrid": "A mix of remote and onsite work based on project needs. Our baseline pricing.",
     "infoOnsite": "Talent fully on-site at the client's location. Ideal for projects requiring intensive coordination.",
     "infoNote": "Price excludes BPJS (~7.7%), THR (~8.3%), and operational overhead. Contact us for a formal proposal.",
-    "infoTitleRemote": "Remote — Bandung",
+    "infoTitleRemote": "Remote (Bandung)",
     "infoTitleHybrid": "Hybrid",
     "infoTitleOnsite": "Onsite",
     "infoTitleNote": "Pricing Notes",
-    "selectCategory": "— Select Category —",
-    "selectPosition": "— Select Position —",
-    "selectLevel": "— Level —"
+    "selectCategory": "Select Category",
+    "selectPosition": "Select Position",
+    "selectLevel": "Select Level"
   },
   "process": {
     "navBack": "Back",
@@ -679,7 +679,7 @@
     "label": "Our Process",
     "heading1": "Transparent, Measured,",
     "heading2": "Accountable",
-    "sub": "Every stage, every decision — you know exactly what's happening.",
+    "sub": "At every stage and architecture decision, you stay fully informed of progress.",
     "steps": [
       {
         "num": "01",
@@ -763,7 +763,7 @@
       {
         "icon": "🔐",
         "title": "Code Ownership",
-        "desc": "Source code and documentation fully belong to you after project completion — no hidden terms."
+        "desc": "Source code and documentation fully belong to you after project completion, with no hidden terms."
       },
       {
         "icon": "📄",
@@ -874,14 +874,14 @@
     "title": "About Sundawa Teknologi",
     "profileLabel": "Company Profile",
     "aboutP1": "PT Sundawa Teknologi Indonesia is a Bandung-based technology engineering company that designs and builds mission-critical applications, enterprise information systems, and digital platforms for corporations, government institutions, and international organizations.",
-    "aboutP2": "Sundawa was founded to bridge the gap between complex software engineering and genuine client peace of mind. We eliminate convoluted agency bureaucracies, opaque estimates, and handoffs to random subcontractors—replacing them with transparent senior-led collaboration, high-standard code quality, and dependable long-term accountability.",
-    "subtitle": "PT Sundawa Teknologi Indonesia is a technology company that designs and develops applications, websites, and information systems for businesses and organizations. We help clients translate operational requirements into practical digital solutions their teams can rely on every day.",
+    "aboutP2": "Sundawa was founded to bridge the gap between complex software engineering and genuine client peace of mind. We eliminate convoluted agency bureaucracies, opaque estimates, and handoffs to random subcontractors. We replace them with transparent senior-led collaboration, high-standard code quality, and dependable long-term accountability.",
+    "subtitle": "PT Sundawa Teknologi Indonesia is an engineering company designing applications and information systems for businesses and organizations. We help clients transform operational workflows into dependable software systems used daily by their teams.",
     "heroCtaPrimary": "Schedule Executive Discussion",
     "heroCtaSecondary": "Explore Products & Case Studies",
     "studioCard": {
       "badge": "Engineering Studio · Bandung, ID",
       "title": "Precision Engineering for Mission-Critical Systems",
-      "caption": "PT Sundawa Teknologi Indonesia — Built for reliability and operational continuity."
+      "caption": "PT Sundawa Teknologi Indonesia: Built for reliability and operational continuity."
     },
     "governance": {
       "label": "Enterprise Engagement Governance",
@@ -890,7 +890,7 @@
       "items": [
         {
           "title": "Direct Principal Involvement",
-          "desc": "Strategic engagements are led directly by our CEO, CTO, and COO alongside our core Bandung engineering team—keeping architecture accountable."
+          "desc": "Strategic engagements are led directly by our CEO, CTO, and COO alongside our core Bandung engineering team to keep architecture accountable."
         },
         {
           "title": "Standard NDA From Discovery",
@@ -898,7 +898,7 @@
         },
         {
           "title": "100% Source Code & IP Ownership",
-          "desc": "Source code, repositories, and technical documentation transfer in full to the client at handover—no hidden vendor lock-in."
+          "desc": "Source code, repositories, and technical documentation transfer in full to the client at handover without hidden vendor lock-in."
         },
         {
           "title": "On-Premise DC/DRC & Local Cloud Ready",
@@ -940,7 +940,7 @@
           "num": "01",
           "tag": "Engineering Rigor",
           "title": "Professional Precision",
-          "body": "We begin by understanding your business workflows and user needs. Together with the client, we align on project scope and acceptance criteria—which then guide every phase of design, engineering, and testing before handover.",
+          "body": "We begin by understanding your business workflows and user needs. Together with the client, we align on project scope and acceptance criteria, which then guide every phase of design, engineering, and testing before handover.",
           "checkpoints": [
             "Deep workflow & user requirement mapping",
             "Mutual scope & written acceptance criteria",
@@ -963,12 +963,12 @@
     "visionMission": {
       "label": "Vision & Mission",
       "visionLabel": "Company Vision",
-      "vision": "To become the trusted technology partner for companies and organizations across Indonesia in building dependable digital solutions through precise execution and comfortable collaboration.",
+      "vision": "To be the trusted software engineering partner for enterprises and organizations across Indonesia through disciplined technical precision and dependable long-term commitment.",
       "missionLabel": "Company Mission",
       "missions": [
         {
           "num": "01",
-          "body": "Understand end-user needs and client business objectives as the foundation of every digital solution design."
+          "body": "Understand end-user workflows and client operational goals as the bedrock of architecture design."
         },
         {
           "num": "02",
@@ -1051,11 +1051,11 @@
         "tag": "Leadership Philosophy · Stoicism",
         "quote": "If it is not right, do not do it; if it is not true, do not say it.",
         "author": "Marcus Aurelius — Meditations, XII.17",
-        "bridge": "That Stoic principle guides how I lead execution at Sundawa: focusing calmly on what lies within our engineering control—listening intently, building with precision, and speaking plainly on every risk, scope decision, and handover commitment."
+        "bridge": "That Stoic principle guides how I lead execution at Sundawa: focusing calmly on what lies within our engineering control: listening intently, building with precision, and speaking plainly on every risk, scope decision, and handover commitment."
       },
       "paragraphs": [
         "For me, Sundawa's responsibility begins the moment we listen to the challenges our clients face. The people who use a system every day often understand where the bottleneck truly lies. That is why we take time to understand how they work before deciding what needs to be built.",
-        "I want every client to know what we are building, why we recommend each decision, and what to expect in the next milestone. At handover, the system must deliver the exact outcomes we agreed upon together. That is what Professional Precision, Customer Comfort means to me—and the standard we uphold at Sundawa."
+        "I want every client to know what we are building, why we recommend each decision, and what to expect in the next milestone. At handover, the system must deliver the exact outcomes we agreed upon together. That is what Professional Precision, Customer Comfort means to me, and the standard we uphold at Sundawa."
       ],
       "authorName": "Raden Rocky Erlianto",
       "authorRole": "Chief Executive Officer, PT Sundawa Teknologi Indonesia"
@@ -1069,7 +1069,7 @@
     "cta": {
       "eyebrow": "Strategic & Enterprise Partnerships",
       "title": "Ready to Discuss Your Organization's Mission-Critical Systems?",
-      "subtitle": "From core modernization to cross-institution platforms — schedule an executive alignment briefing directly with Sundawa's leadership team.",
+      "subtitle": "From core modernization to cross-institution platforms, schedule an executive alignment briefing directly with Sundawa's leadership team.",
       "button": "Contact Leadership Team",
       "secondaryButton": "Explore Sundawa Products"
     },
@@ -1091,7 +1091,7 @@
         "slug": "system-modernization",
         "problem": "Your software can no longer keep up with business needs",
         "title": "Legacy System Modernization",
-        "desc": "We fix legacy platforms without endangering ongoing operations — redesigning architecture, replacing weak components, and preparing systems for future growth.",
+        "desc": "We fix legacy platforms without endangering ongoing operations: redesigning architecture, replacing weak components, and preparing systems for future growth.",
         "outcome": "Faster changes. Better reliability. Less technical debt.",
         "details": "Legacy system modernization is a careful process. We don't rewrite everything from scratch. Instead, we analyze the existing system, identify components that still work well, and replace only the parts that hinder operations. This approach minimizes risk and ensures business continuity during modernization.",
         "deliverables": [
@@ -1247,7 +1247,7 @@
         "slug": "custom-platform",
         "problem": "Off-the-shelf software doesn't always fit",
         "title": "Custom Business Platform",
-        "desc": "We build operational software tailored to how your business actually works — from internal systems and customer portals to SaaS platforms.",
+        "desc": "We build operational software tailored to how your business actually works, from internal systems and customer portals to SaaS platforms.",
         "outcome": "Software that adapts to your operations, not the other way around.",
         "details": "Custom business platforms are designed from the ground up to meet your unique business needs. We start by understanding workflows, design a scalable architecture, and build a platform that can grow with your business. From internal systems to SaaS platforms, we ensure every feature delivers real value.",
         "deliverables": [
@@ -1366,7 +1366,7 @@
     },
     "about": {
       "title": "About Us",
-      "description": "Meet PT Sundawa Teknologi Indonesia — Bandung technology partner built on Professional Precision, Customer Comfort."
+      "description": "Meet PT Sundawa Teknologi Indonesia, Bandung software engineering studio built on Professional Precision, Customer Comfort."
     },
     "services": {
       "title": "Our Services",
@@ -1374,7 +1374,7 @@
     },
     "products": {
       "title": "Sundawa Products & Case Studies",
-      "description": "Explore Sundawa's ecosystem of products — Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, and Abo Rent Car with their case studies."
+      "description": "Explore Sundawa's ecosystem of products: Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, and Abo Rent Car with their case studies."
     }
   },
   "products": {
@@ -1443,7 +1443,7 @@
         "name": "Sewaka",
         "sector": "WeddingTech SaaS",
         "tagline": "Luxury of Tradition, Eternity of Love",
-        "summary": "A digital wedding assistant crafted for Indonesian traditional weddings—unifying budgets, vendors, QR guest check-ins, and cultural ceremony rundowns in one workspace.",
+        "summary": "A digital wedding assistant crafted for Indonesian traditional weddings, unifying budgets, vendors, QR guest check-ins, and cultural ceremony rundowns in one workspace.",
         "badgeMetric": "6 Core + 3 Nusantara Cultural Modules",
         "modules": [
           "Tasks, Real-Time Budget & Vendor Tracker",
@@ -1453,7 +1453,7 @@
         ],
         "caseStudy": {
           "subject": "Couples, extended families, & planners organizing traditional Indonesian weddings (Javanese, Sundanese, Minang, Madurese)",
-          "challenge": "Planning traditional Indonesian weddings spans dozens of sacred rituals across extended families—from seserahan and siraman to midodareni and panggih—typically scattered across 5+ apps and spreadsheets, leading to budget blowouts and scheduling confusion.",
+          "challenge": "Planning traditional Indonesian weddings spans dozens of sacred rituals across extended families (from seserahan and siraman to midodareni and panggih), typically scattered across 5+ apps and spreadsheets, leading to budget blowouts and scheduling confusion.",
           "solution": "Sewaka unifies 6 core management modules (Checklists, Real-time Budgets, Vendors, Digital RSVP & QR Check-in, Timelines, Galleries) with 3 cultural modules (Seserahan Tracker, Cultural Rundown, Cultural Encyclopedia) across Free, Premium (IDR 99k/mo), and Enterprise tiers.",
           "architecture": "Next.js SaaS application equipped with Email/Password & Google OAuth authentication, Row-Level Security (RLS) for couple and family workspace isolation, and real-time progress and budget allocation tracking.",
           "impact": "Consolidates vendor tracking, real-time budgets, QR guest invites, and traditional ceremony rundowns in one workspace. Published showcase stories on the Sewaka site illustrate up to 60 preparation hours and IDR 18 million saved.",
@@ -1482,7 +1482,7 @@
         "name": "LAKUPANDAI by Sundawa",
         "sector": "Enterprise Agent Banking",
         "tagline": "Enterprise Banking Capability & Implementation Scenario Showcase",
-        "summary": "Architecture capability showcase and implementation scenario demonstration for enterprise agent banking across commercial, regional (BPD), and rural banks (BPR)—showcasing Flutter agent apps, Maker-Checker backoffice workflows, 4-way reconciliation, and on-premise core banking adapters.",
+        "summary": "Architecture capability showcase and implementation scenario demonstration for enterprise agent banking across commercial, regional (BPD), and rural banks (BPR), showcasing Flutter agent apps, Maker-Checker backoffice workflows, 4-way reconciliation, and on-premise core banking adapters.",
         "badgeMetric": "Capability & Scenario Demo (On-Premise Ready)",
         "modules": [
           "Flutter Agent App + Hardware Key Binding",
@@ -1491,7 +1491,7 @@
           "On-Prem Core Adapter (ISO 8583 / ISO 20022)"
         ],
         "caseStudy": {
-          "subject": "Commercial Banks, Regional Banks (BPD) & BPRs — Branchless Banking Ops, Risk & Compliance, and Enterprise Architecture",
+          "subject": "Commercial Banks, Regional Banks (BPD) & BPRs: Branchless Banking Ops, Risk & Compliance, and Enterprise Architecture",
           "challenge": "Scaling field agent networks across low-signal regions risks double-debits or stuck UNKNOWN transactions, outlet location spoofing, agent float shortages, slow manual reconciliation, and unapproved fee or limit modifications.",
           "solution": "A 3-layer Control by Design architecture pairing a Flutter field agent mobile app (hardware-bound device keys & GPS/WiFi BSSID geofencing) with a Maker-Checker bank operations portal, 4-way reconciliation, and real-time operations cockpit.",
           "architecture": "On-premise container cluster (RHEL 9 Podman/Docker, Kubernetes/OpenShift) across Primary DC + Hot Standby DRC, ISO 8583/20022/REST/SOAP Core Adapters, OAuth2/SAML IAM, SHA-256 hash-chained ledger, and zero-payload FCM wake signals.",
@@ -1547,7 +1547,7 @@
             },
             {
               "title": "18+ Gating & Subscriber Paywall",
-              "outcome": "Enforces age verification and subscriber-only episode gating seamlessly inside the web reader."
+              "outcome": "Enforces age verification and subscriber-only episode gating directly inside the web reader."
             }
           ]
         }
@@ -1556,7 +1556,7 @@
         "name": "SI-GEOMEDIK",
         "sector": "Defense Healthcare (MoD)",
         "tagline": "Defense Geospatial & Healthcare Resource Information System",
-        "summary": "An active operational implementation deployed for the Ministry of Defense of the Republic of Indonesia (Kemhan RI)—an auth-gated geospatial system managing military healthcare facilities, medical personnel, and defense medical supplies (restricted access for authorized defense personnel).",
+        "summary": "An active operational implementation deployed for the Ministry of Defense of the Republic of Indonesia (Kemhan RI): an auth-gated geospatial system managing military healthcare facilities, medical personnel, and defense medical supplies (restricted access for authorized defense personnel).",
         "badgeMetric": "Active Operational Implementation (Authorized Personnel Only)",
         "accessNote": "This system is an active operational implementation in production for the Ministry of Defense (Kemhan RI). The live link connects to the official auth gate; full system access is restricted to authorized defense personnel.",
         "modules": [
@@ -1566,8 +1566,8 @@
           "HS256 Encrypted Sessions & SEC-07 Audit Trail"
         ],
         "caseStudy": {
-          "subject": "Indonesian Ministry of Defense — Pusdatin, Ditkes Kuathan Verifiers, & Faskes/Kesdam Operators",
-          "challenge": "Defense medical assets—encompassing healthcare facilities (Faskes), medical personnel, equipment, and medical logistics—are distributed across regional units, requiring centralized geospatial visibility, layered verification, and hardened access security.",
+          "subject": "Indonesian Ministry of Defense: Pusdatin, Ditkes Kuathan Verifiers, & Faskes/Kesdam Operators",
+          "challenge": "Defense medical assets (encompassing healthcare facilities, medical personnel, equipment, and medical logistics) are distributed across regional units, requiring centralized geospatial visibility, layered verification, and hardened access security.",
           "solution": "SI-GEOMEDIK separates duties across 3 defined organizational roles: Operator (Faskes/Kesdam) for unit data entry, Verifikator (Ditkes Kuathan) for verification, and Pusdatin as central Super Admin oversight.",
           "architecture": "Auth-gated personnel web portal secured by official email sign-in, HS256-encrypted sessions, Dynamic RBAC across all three command levels, and SUNDAWA SEC-07 compliant audit trails.",
           "impact": "Establishes a secure, accountable single-portal foundation for defense healthcare resource readiness and verification spanning regional clinics to central ministry oversight.",
@@ -1602,7 +1602,7 @@
         ],
         "caseStudy": {
           "subject": "Logistics Fleets, Heavy Mining, Palm Plantations & Industrial Operations (520+ Corporate Fleets)",
-          "challenge": "Diesel theft—fake SPBU receipts, fuel siphoning, and over-tank billing—drains fleet budgets, while manual spreadsheet Scope 1 GHG audits for POJK 51 and ISO 14064-1 take up to 4 months per reporting cycle.",
+          "challenge": "Diesel theft (fake SPBU receipts, fuel siphoning, and over-tank billing) drains fleet budgets, while manual spreadsheet Scope 1 GHG audits for POJK 51 and ISO 14064-1 take up to 4 months per reporting cycle.",
           "solution": "Nawasanga combines an offline-ready Driver Mobile PWA (20-second receipt & odometer capture) with AI OCR verification, SPBU GPS geofencing, IPCC Tier-2 calculations (including B35/B40 biodiesel factors), and 1-click audit workpapers.",
           "architecture": "Multi-tenant enterprise platform with Row-Level Security, 5-level RBAC, GPS telematics integrations (Geotab, Cartrack, EasyGo), ERP webhooks (SAP/Oracle), and OpenAPI/Swagger endpoints.",
           "impact": "Unifies fueling anti-fraud telemetry, AI OCR, and Scope 1 B35/B40 reporting into one automated workflow. Scenario figures modeling 24.6% leakage reduction (IDR 840M/yr saved for 420 trucks) and 14.2% HSD efficiency (280 mining units) represent mathematical simulation models based on fleet consumption profiles.",
@@ -1627,7 +1627,7 @@
         "name": "Abo Rent Car",
         "sector": "Smart Mobility & Car Rental",
         "tagline": "Pick a car. Ready to roll.",
-        "summary": "Deposit-free car rental platform serving Greater Bandung, Cimahi, and Padalarang—featuring a 14+ late-model fleet catalog, real-time rate calculator, free Whoosh Padalarang pickup, and WhatsApp booking.",
+        "summary": "Deposit-free car rental platform serving Greater Bandung, Cimahi, and Padalarang, featuring a 14+ late-model fleet catalog, real-time rate calculator, free Whoosh Padalarang pickup, and WhatsApp booking.",
         "badgeMetric": "4.95/5 Rating · 1,200+ Renters",
         "modules": [
           "14+ Unit Fleet Catalog (MPV, SUV & City Car)",
@@ -1666,7 +1666,7 @@
         "name": "SUNDAWA People",
         "sector": "Enterprise Autonomous HR & Payroll",
         "tagline": "One Unified Intelligent Ecosystem for Workforce Performance & Financials",
-        "summary": "Enterprise HRIS and workforce operating system—automating multi-tier payroll, instant biometric IoT sync, intelligent shift scheduling, and self-service ESS under banking-grade security standards.",
+        "summary": "Enterprise HRIS and workforce operating system that automates multi-tier payroll, instant biometric IoT sync, intelligent shift scheduling, and self-service ESS under banking-grade security standards.",
         "badgeMetric": "Supports ISO/IEC 27001 Implementation",
         "accessNote": "This application is a secured operational HRIS portal. The link leads to the official login gateway (TLS 1.3 & AES-256); full access is restricted to authorized employees and HR personnel.",
         "modules": [

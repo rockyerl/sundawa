@@ -100,7 +100,7 @@ export default function PortfolioDetail({ project, translations }: PortfolioDeta
 
             <section className="py-12 md:py-16">
                 <div className="container-main">
-                    <p className="mb-8 text-lg text-[#F8F8F8]/60 max-w-[700px] leading-relaxed">
+                    <p className="mb-8 text-lg text-cream/75 max-w-[700px] leading-relaxed">
                         {project.desc}
                     </p>
 
@@ -115,7 +115,7 @@ export default function PortfolioDetail({ project, translations }: PortfolioDeta
                                 <h3 className="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-gold mb-4">
                                     {section.label}
                                 </h3>
-                                <p className="text-base text-cream/70 leading-[1.7]">
+                                <p className="text-base text-cream/80 leading-[1.7]">
                                     {section.content}
                                 </p>
                             </div>
@@ -145,13 +145,14 @@ export default function PortfolioDetail({ project, translations }: PortfolioDeta
                         return (
                             <div className="mt-12 p-6 sm:p-8 border border-gold/30 bg-gradient-to-br from-[#0E1E30] via-navy to-[#0A192F] rounded-lg">
                                 <div className="max-w-2xl">
-                                    <span className="text-[0.65rem] font-extrabold tracking-[0.2em] text-gold uppercase mb-2 block">
-                                        — {translations.ctaEyebrow || 'Konsultasi & Transformasi'}
+                                    <span className="text-[0.65rem] font-extrabold tracking-[0.2em] text-gold uppercase mb-2 flex items-center gap-2">
+                                        <span className="h-0.5 w-4 bg-gold inline-block" aria-hidden="true" />
+                                        {translations.ctaEyebrow || 'Konsultasi & Transformasi'}
                                     </span>
                                     <h3 className="text-xl sm:text-2xl font-black text-cream mb-3">
                                         {ctaHeading}
                                     </h3>
-                                    <p className="text-sm text-cream/70 leading-relaxed mb-6 font-light">
+                                    <p className="text-sm text-cream/75 leading-relaxed mb-6 font-light">
                                         {translations.ctaSubtitle || 'Konsultasikan arsitektur sistem, integrasi API, atau rencana transformasi teknologi Anda bersama tim rekayasa perangkat lunak Sundawa.'}
                                     </p>
                                     <Link

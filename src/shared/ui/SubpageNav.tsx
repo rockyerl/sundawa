@@ -16,10 +16,10 @@ export default function SubpageNav({ backLabel, titleLabel, backHref = '/' }: Su
                 aria-label="Breadcrumb"
                 className="border-b border-gold/15 bg-navy/95 backdrop-blur-md"
             >
-                <div className="container-main flex items-center justify-between gap-4 py-3.5">
+                <div className="container-main flex items-center justify-between gap-4 py-2">
                     <Link
                         href={backHref}
-                        className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.15em] text-cream/55 uppercase no-underline transition-colors duration-200 hover:text-gold"
+                        className="inline-flex min-h-[44px] items-center gap-2 text-xs font-bold tracking-[0.15em] text-cream/80 uppercase no-underline transition-colors duration-200 hover:text-gold"
                     >
                         <ArrowLeft size={14} aria-hidden="true" />
                         <span>{backLabel}</span>

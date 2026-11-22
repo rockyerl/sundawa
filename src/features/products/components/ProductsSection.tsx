@@ -41,8 +41,9 @@ export default function ProductsSection() {
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     className="mb-8 flex items-center gap-4"
                 >
-                    <span className="text-[0.65rem] font-extrabold tracking-[0.3em] text-gold uppercase">
-                        — {translations.label}
+                    <span className="flex items-center gap-2 text-[0.65rem] font-extrabold tracking-[0.3em] text-gold uppercase">
+                        <span className="h-0.5 w-4 bg-gold" aria-hidden="true" />
+                        {translations.label}
                     </span>
                     <div className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
                 </motion.div>
@@ -64,7 +65,7 @@ export default function ProductsSection() {
                             initial={{ opacity: 0 }}
                             animate={inView ? { opacity: 1 } : {}}
                             transition={{ delay: 0.2 }}
-                            className="max-w-2xl text-sm leading-relaxed font-light text-cream/55 sm:text-base"
+                            className="max-w-2xl text-sm leading-relaxed font-light text-cream/75 sm:text-base"
                         >
                             {translations.sub}
                         </motion.p>

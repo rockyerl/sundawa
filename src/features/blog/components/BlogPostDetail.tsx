@@ -29,11 +29,11 @@ function getArticleGateway(slug: string, isEn: boolean): ArticleGateway {
             serviceHref: isEn ? '/services/system-integration' : '/services/integrasi-sistem',
             serviceName: isEn ? 'Enterprise ERP & System Integration' : 'Integrasi ERP & Sistem Perusahaan',
             serviceTag: isEn ? 'Core Service' : 'Layanan Terkait',
-            caseStudyHref: '/portfolio/dacar-by-undp',
-            caseStudyName: 'DACAR by UNDP: Multi-Platform Digital Aid Distribution',
-            caseStudyTag: isEn ? 'Verified Case Study' : 'Studi Kasus Relevan',
-            contactHref: isEn ? '/contact?service=system-integration' : '/contact?service=integrasi-sistem',
-            contactLabel: isEn ? 'Discuss Your ERP & Integration Needs' : 'Diskusikan Kebutuhan Integrasi ERP Anda',
+            caseStudyHref: '/products/nawasanga',
+            caseStudyName: isEn ? 'Nawasanga: Enterprise ERP & IoT Telematics Integration' : 'Nawasanga: Integrasi ERP & Telematika IoT Korporat',
+            caseStudyTag: isEn ? 'Reference Case Study' : 'Studi Kasus Rujukan',
+            contactHref: isEn ? '/contact?service=system-integration&topic=Otomatisasi%20%26%20Integrasi%20Data' : '/contact?service=integrasi-sistem&topic=Otomatisasi%20%26%20Integrasi%20Data',
+            contactLabel: isEn ? 'Schedule 30-Minute ERP Discovery' : 'Jadwalkan Diskusi Integrasi ERP 30 Menit',
         }
     }
 
@@ -42,10 +42,10 @@ function getArticleGateway(slug: string, isEn: boolean): ArticleGateway {
             serviceHref: isEn ? '/services/system-modernization' : '/services/modernisasi-sistem',
             serviceName: isEn ? 'Legacy System Modernization' : 'Modernisasi Sistem Lama',
             serviceTag: isEn ? 'Core Service' : 'Layanan Terkait',
-            caseStudyHref: '/portfolio/e-office',
-            caseStudyName: isEn ? 'E-Office: Integrated Digital Administration' : 'E-Office: Tata Usaha Perkantoran Terintegrasi',
+            caseStudyHref: '/portfolio/dacar-by-undp',
+            caseStudyName: isEn ? 'DACAR by UNDP: Multi-Platform Modernization' : 'DACAR by UNDP: Modernisasi Sistem Misi-Kritis',
             caseStudyTag: isEn ? 'Verified Case Study' : 'Studi Kasus Relevan',
-            contactHref: isEn ? '/contact?service=system-modernization' : '/contact?service=modernisasi-sistem',
+            contactHref: isEn ? '/contact?service=system-modernization&topic=Modernisasi%20Sistem%20Lama' : '/contact?service=modernisasi-sistem&topic=Modernisasi%20Sistem%20Lama',
             contactLabel: isEn ? 'Consult Your System Migration Plan' : 'Konsultasikan Rencana Migrasi Anda',
         }
     }
@@ -55,10 +55,10 @@ function getArticleGateway(slug: string, isEn: boolean): ArticleGateway {
             serviceHref: isEn ? '/services/custom-platform' : '/services/platform-khusus',
             serviceName: isEn ? 'Custom Business Platform Engineering' : 'Platform Bisnis Khusus & Custom Apps',
             serviceTag: isEn ? 'Core Service' : 'Layanan Terkait',
-            caseStudyHref: '/portfolio/oetomo-hospital-website',
-            caseStudyName: isEn ? 'Oetomo Hospital: Institutional Medical Platform' : 'Oetomo Hospital: Platform Informasi Medis Rumah Sakit',
+            caseStudyHref: '/portfolio/e-office',
+            caseStudyName: isEn ? 'E-Office: Integrated Digital Administration' : 'E-Office: Tata Usaha Perkantoran Terintegrasi',
             caseStudyTag: isEn ? 'Verified Case Study' : 'Studi Kasus Relevan',
-            contactHref: isEn ? '/contact?service=custom-platform' : '/contact?service=platform-khusus',
+            contactHref: isEn ? '/contact?service=custom-platform&topic=Pengembangan%20Aplikasi%20Baru' : '/contact?service=platform-khusus&topic=Pengembangan%20Aplikasi%20Baru',
             contactLabel: isEn ? 'Discuss Your Custom Platform Requirements' : 'Diskusikan Aplikasi Bisnis Custom Anda',
         }
     }
@@ -129,7 +129,7 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel, lo
                         {post.title}
                     </h1>
                     {post.excerpt && (
-                        <p className="mt-5 text-base md:text-lg text-[#F8F8F8]/60 leading-relaxed">
+                        <p className="mt-5 text-base md:text-lg text-cream/75 leading-relaxed">
                             {post.excerpt}
                         </p>
                     )}
@@ -157,13 +157,14 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel, lo
                 {/* Related Service, Case Study, & Consultation Gateway */}
                 <div className="mt-16 border border-gold/30 bg-gradient-to-br from-[#0E1E30] via-navy to-[#071322] p-6 sm:p-8 rounded-xl shadow-xl">
                     <div className="mb-6 border-b border-gold/15 pb-4">
-                        <span className="text-[0.65rem] font-extrabold tracking-[0.24em] text-gold uppercase block mb-1">
-                            — {isEn ? 'Engineering & Transformation Gateway' : 'Pintu Masuk Layanan & Rekam Jejak'}
+                        <span className="text-[0.65rem] font-extrabold tracking-[0.24em] text-gold uppercase flex items-center gap-2 mb-1">
+                            <span className="h-0.5 w-4 bg-gold inline-block" aria-hidden="true" />
+                            {isEn ? 'Engineering & Transformation Gateway' : 'Pintu Masuk Layanan & Rekam Jejak'}
                         </span>
                         <h3 className="text-xl sm:text-2xl font-black text-cream">
                             {isEn ? 'Connect Strategy with Direct Execution' : 'Hubungkan Strategi dengan Eksekusi Nyata'}
                         </h3>
-                        <p className="mt-1 text-xs text-cream/65 leading-relaxed font-light">
+                        <p className="mt-1 text-xs text-cream/75 leading-relaxed font-light">
                             {isEn
                                 ? 'Explore the corresponding Sundawa service, review verified production case studies, or consult with our software architects.'
                                 : 'Pelajari spesifikasi layanan teknis kami, telusuri studi kasus pengerjaan nyata di lingkungan produksi, atau jadwalkan konsultasi arsitektur.'}

@@ -41,8 +41,9 @@ export default function FeaturedProjectsSection() {
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     className="mb-8 flex items-center gap-4"
                 >
-                    <span className="text-[0.65rem] font-extrabold tracking-[0.3em] text-gold uppercase">
-                        — {t('label')}
+                    <span className="flex items-center gap-2 text-[0.65rem] font-extrabold tracking-[0.3em] text-gold uppercase">
+                        <span className="h-0.5 w-4 bg-gold" aria-hidden="true" />
+                        {t('label')}
                     </span>
                     <div className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
                 </motion.div>
@@ -115,7 +116,7 @@ export default function FeaturedProjectsSection() {
                                 <h3 className="mb-1 text-xl font-black text-cream transition-colors duration-200 group-hover:text-gold">
                                     {project.name}
                                 </h3>
-                                <p className="mb-6 text-xs text-cream/45">
+                                <p className="mb-6 text-xs text-cream/75">
                                     {project.client}
                                 </p>
 

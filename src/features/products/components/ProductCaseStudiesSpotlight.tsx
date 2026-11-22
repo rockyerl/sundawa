@@ -36,13 +36,13 @@ export default function ProductCaseStudiesSpotlight({
                 <div>
                     <div className="mb-2 flex items-center gap-3">
                         <span className="text-[0.65rem] font-extrabold tracking-[0.28em] text-gold uppercase">
-                            — {eyebrow}
+                            <span className="inline-block w-4 h-0.5 bg-gold mr-2 align-middle" />{eyebrow}
                         </span>
                     </div>
                     <h3 className="text-2xl font-black tracking-tight text-cream sm:text-3xl">
                         {title}
                     </h3>
-                    <p className="mt-2 max-w-2xl text-xs leading-relaxed font-light text-cream/55 sm:text-sm">
+                    <p className="mt-2 max-w-2xl text-xs leading-relaxed font-light text-cream/75 sm:text-sm">
                         {subtitle}
                     </p>
                 </div>

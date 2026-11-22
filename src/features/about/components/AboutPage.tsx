@@ -95,8 +95,9 @@ export default function AboutPage() {
                     {/* Executive Hero & Company Profile + Studio Visual Frame */}
                     <div className="mb-16 border-b border-gold/20 pb-16">
                         <div className="mb-5 flex flex-wrap items-center gap-3">
-                            <span className="text-xs font-extrabold tracking-[0.26em] text-gold uppercase">
-                                — {t('eyebrow')}
+                            <div className="w-5 h-[2px] bg-gold" />
+                            <span className="text-xs font-extrabold tracking-[0.2em] text-gold uppercase">
+                                {t('eyebrow')}
                             </span>
                             <span className="border border-gold/35 bg-gold/[0.08] px-3 py-1 text-[0.65rem] font-extrabold tracking-[0.16em] text-gold uppercase">
                                 {t('slogan')}
@@ -175,7 +176,7 @@ export default function AboutPage() {
                                         <p className="text-sm font-bold text-cream">
                                             {t('studioCard.title')}
                                         </p>
-                                        <p className="mt-0.5 text-[0.65rem] text-cream/55">
+                                        <p className="mt-0.5 text-[0.65rem] text-cream/75">
                                             {t('studioCard.caption')}
                                         </p>
                                     </div>
@@ -187,7 +188,7 @@ export default function AboutPage() {
                                             <div className="mb-1 text-2xl font-black leading-none text-gold sm:text-3xl">
                                                 {stat.num}
                                             </div>
-                                            <div className="text-[0.58rem] font-bold tracking-[0.14em] text-cream/50 uppercase">
+                                            <div className="text-[0.58rem] font-bold tracking-[0.14em] text-cream/75 uppercase">
                                                 {stat.label}
                                             </div>
                                         </div>
@@ -404,7 +405,7 @@ export default function AboutPage() {
                     {/* Boardroom Executive CTA */}
                     <div className="border border-gold/30 bg-gradient-to-br from-dark-slate/50 via-navy to-navy p-8 text-center sm:p-14">
                         <span className="mb-3 inline-block text-[0.65rem] font-extrabold tracking-[0.26em] text-gold uppercase">
-                            — {t('cta.eyebrow')}
+                            <span className="inline-block w-4 h-0.5 bg-gold mr-2 align-middle" />{t('cta.eyebrow')}
                         </span>
                         <h2 className="mx-auto mb-4 max-w-2xl text-[clamp(1.6rem,2.8vw,2.4rem)] leading-tight font-black text-cream">
                             {t('cta.title')}

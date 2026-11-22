@@ -1,33 +1,14 @@
 'use client'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef, useSyncExternalStore } from 'react'
+import { useRef } from 'react'
 import { ChevronDown, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
-import { getIntroSeenSnapshot, markIntroSeen, subscribeIntroSeen } from '@/src/shared/ui/IntroEvents'
-
-function getServerSnapshot() {
-    return false
-}
 
 export default function HeroSection() {
     const t = useTranslations('hero')
-    const introDone = useSyncExternalStore(subscribeIntroSeen, getIntroSeenSnapshot, getServerSnapshot)
     const ref = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        if (introDone) return
-
-        // Failsafe: if IntroLoader isn't mounted on this page (or the
-        // event never fires for some reason), still reveal the hero
-        // after a short delay instead of leaving it hidden forever.
-        const failsafeTimer = window.setTimeout(() => {
-            markIntroSeen()
-        }, 4000)
-
-        return () => window.clearTimeout(failsafeTimer)
-    }, [introDone])
 
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
@@ -93,9 +74,8 @@ export default function HeroSection() {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                            transition={{ duration: 0.8, delay: 0.8 }}
+                            initial={false}
+                            animate={{ opacity: 1, y: 0 }}
                             className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-cream/70 mb-8"
                         >
                             <span className="text-cream/50 uppercase tracking-wider text-[0.68rem]">{t('proof')}:</span>
@@ -108,17 +88,11 @@ export default function HeroSection() {
                             </Link>
                         </motion.div>
 
-                        <motion.div initial={{ opacity: 0 }}
-                                    animate={introDone ? { opacity: 1 } : { opacity: 0 }}
-                                    transition={{ duration: 1, delay: 0.9 }}
-                                    style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', paddingTop: '2rem', borderTop: '1px solid rgba(248,248,248,0.08)' }} />
+                        <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', paddingTop: '2rem', borderTop: '1px solid rgba(248,248,248,0.08)' }} />
                     </div>
 
                     {/* RIGHT — Mascot (desktop only, hidden entirely on mobile) */}
-                    <motion.div initial={{ opacity: 0, scale: 0.85 }}
-                                animate={introDone ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
-                                transition={{ duration: 1.1, delay: 0.4 }}
-                                className="hero-logo-col" style={{ display: 'none', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: 380 }}>
+                    <div className="hero-logo-col" style={{ display: 'none', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: 380 }}>
                         <div style={{ position: 'absolute', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,86,170,0.28), transparent 70%)', filter: 'blur(40px)' }} />
                         <div style={{ position: 'absolute', width: 340, height: 340, borderRadius: '50%', border: '1px solid rgba(219,201,119,0.15)', animation: 'spin 22s linear infinite' }} />
                         <div style={{ position: 'absolute', width: 270, height: 270, borderRadius: '50%', border: '1px solid rgba(0,86,170,0.25)', animation: 'spin 16s linear infinite reverse' }} />
@@ -143,17 +117,14 @@ export default function HeroSection() {
                                 style={{ width: '100%', height: 'auto' }}
                             />
                         </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }}
-                        animate={introDone ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ delay: 1.6 }}
-                        className="hero-scroll" style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', color: 'rgba(248,248,248,0.25)' }}>
+            <div className="hero-scroll" style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', color: 'rgba(248,248,248,0.4)' }}>
                 <span style={{ fontSize: '0.6rem', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600 }}>{t('scroll')}</span>
                 <ChevronDown size={14} style={{ animation: 'bounce 1.5s infinite' }} />
-            </motion.div>
+            </div>
 
             <style>{`
                 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.5fr 0.5fr !important; } .hero-logo-col { display: flex !important; } }

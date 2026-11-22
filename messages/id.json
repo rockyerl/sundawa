@@ -42,7 +42,7 @@
     "line2": "bisa jadi lebih mahal",
     "line3": "daripada menggantinya",
     "line4": "",
-    "sub": "Jasa modernisasi sistem, integrasi ERP, dan pengembangan aplikasi bisnis custom untuk perusahaan. Kami memperbaiki apa yang menghambat operasional Anda — tanpa mengganti apa yang masih berfungsi dengan baik.",
+    "sub": "Jasa modernisasi sistem, integrasi ERP, dan pengembangan aplikasi bisnis custom untuk perusahaan. Kami memperbaiki apa yang menghambat operasional Anda tanpa mengganti apa yang masih berfungsi dengan baik.",
     "ctaServices": "Diskusikan Sistem Anda",
     "ctaAbout": "Lihat Studi Kasus",
     "scroll": "Scroll",
@@ -71,14 +71,14 @@
     "heading2": "Tim yang",
     "heading3": "Menulis Kode",
     "p1": "Anda butuh tim yang memahami mengapa sistem gagal, menentukan apa yang perlu diubah, membangunnya tanpa menambah lapisan kerumitan baru, dan tetap bertanggung jawab setelah peluncuran.",
-    "p2": "Kami mulai dari cara bisnis Anda benar-benar berjalan — bukan dari kerangka kerja favorit atau solusi yang sudah jadi.",
+    "p2": "Kami mulai dari cara bisnis Anda benar-benar berjalan, bukan dari kerangka kerja favorit atau produk jadi yang dipaksakan.",
     "quote": "Perangkat lunak yang tidak lagi dilawan oleh tim Anda.",
     "ctaAboutPage": "Profil Perusahaan & Tim Pimpinan",
     "missions": [
       {
         "num": "01",
         "title": "Memahami Sebelum Membangun",
-        "body": "Kami mulai dari cara bisnis Anda benar-benar berjalan, bukan dari kerangka kerja favorit atau solusi yang sudah jadi."
+        "body": "Kami mulai dari cara bisnis Anda benar-benar berjalan, bukan dari kerangka kerja favorit atau produk jadi yang dipaksakan."
       },
       {
         "num": "02",
@@ -181,7 +181,7 @@
         "problem": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis",
         "tag": "Modernisasi",
         "title": "Modernisasi Sistem Lama",
-        "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan — merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.",
+        "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan. Kami merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.",
         "outcome": "Perubahan lebih cepat. Keandalan lebih baik. Utang teknis lebih sedikit."
       },
       {
@@ -205,7 +205,7 @@
         "problem": "Perangkat lunak siap pakai tidak selalu cocok",
         "tag": "Bangun Khusus",
         "title": "Platform Bisnis Khusus",
-        "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal dan portal pelanggan hingga platform SaaS.",
+        "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan, mulai dari sistem internal dan portal pelanggan hingga platform SaaS.",
         "outcome": "Perangkat lunak menyesuaikan operasional Anda, bukan sebaliknya."
       },
       {
@@ -285,7 +285,7 @@
     "label": "Teknologi",
     "heading1": "Teknologi",
     "heading2": "yang Kami Gunakan",
-    "sub": "Rangkaian teknologi modern yang kami kuasai untuk memberikan solusi terbaik di setiap proyek.",
+    "sub": "Stack teknologi yang kami evaluasi dan gunakan untuk membangun sistem backend misi-kritis, integrasi data real-time, dan aplikasi enterprise berkeandalan tinggi.",
     "technologies": "teknologi"
   },
   "clients": {
@@ -640,7 +640,7 @@
     "label": "Alih Daya TI",
     "heading1": "Estimasi Harga",
     "heading2": "Tim Alih Daya TI",
-    "sub": "Bangun tim impian Anda — developer, QA, DevOps, atau Manajer TI. Pilih posisi, level, dan mode kerja — kami hitung estimasinya secara waktu nyata.",
+    "sub": "Bangun tim rekayasa perangkat lunak: developer, QA, DevOps, atau Manajer TI. Pilih posisi, level, dan mode kerja, kami hitung estimasinya secara waktu nyata.",
     "addTitle": "Tambah Talenta",
     "labelCategory": "Kategori",
     "labelPosition": "Posisi",
@@ -665,13 +665,13 @@
     "infoHybrid": "Kombinasi kerja remote dan onsite sesuai kebutuhan proyek. Harga dasar kami.",
     "infoOnsite": "Talenta bekerja sepenuhnya di lokasi klien. Ideal untuk proyek yang membutuhkan koordinasi intensif.",
     "infoNote": "Harga belum termasuk BPJS (~7.7%), THR (~8.3%), dan beban operasional tambahan. Hubungi kami untuk proposal resmi.",
-    "infoTitleRemote": "Remote — Bandung",
+    "infoTitleRemote": "Remote (Bandung)",
     "infoTitleHybrid": "Hybrid",
     "infoTitleOnsite": "Onsite",
     "infoTitleNote": "Catatan Harga",
-    "selectCategory": "— Pilih Kategori —",
-    "selectPosition": "— Pilih Posisi —",
-    "selectLevel": "— Level —"
+    "selectCategory": "Pilih Kategori",
+    "selectPosition": "Pilih Posisi",
+    "selectLevel": "Pilih Level"
   },
   "process": {
     "navBack": "Kembali",
@@ -679,7 +679,7 @@
     "label": "Proses Kami",
     "heading1": "Transparan, Terukur,",
     "heading2": "Akuntabel",
-    "sub": "Setiap tahap, setiap keputusan — Anda tahu persis apa yang terjadi.",
+    "sub": "Di setiap tahap dan keputusan teknis, Anda selalu mengetahui apa yang sedang dikerjakan.",
     "steps": [
       {
         "num": "01",
@@ -763,7 +763,7 @@
       {
         "icon": "🔐",
         "title": "Kepemilikan Kode",
-        "desc": "Kode sumber dan dokumentasi sepenuhnya menjadi milik Anda setelah proyek selesai — tanpa ketentuan tersembunyi."
+        "desc": "Kode sumber dan dokumentasi sepenuhnya menjadi milik Anda setelah proyek selesai, tanpa ketentuan tersembunyi."
       },
       {
         "icon": "📄",
@@ -874,14 +874,14 @@
     "title": "Tentang Sundawa Teknologi",
     "profileLabel": "Profil Perusahaan",
     "aboutP1": "PT Sundawa Teknologi Indonesia adalah perusahaan rekayasa teknologi asal Bandung yang merancang dan mengembangkan aplikasi, sistem informasi, dan platform digital misi-kritis untuk korporasi, institusi pemerintah, dan organisasi berskala luas.",
-    "aboutP2": "Sundawa dibangun untuk menjembatani jurang antara kerumitan rekayasa perangkat lunak dan ketenangan operasional klien. Kami meniadakan birokrasi agensi yang berbelit, estimasi yang membingungkan, serta penyerahan proyek ke pihak ketiga secara acak—menggantikannya dengan kolaborasi transparan yang dipimpin langsung oleh praktisi senior, kode berstandar tinggi, dan komitmen jangka panjang.",
-    "subtitle": "PT Sundawa Teknologi Indonesia adalah perusahaan teknologi yang merancang dan mengembangkan aplikasi, website, dan sistem informasi untuk kebutuhan bisnis dan organisasi. Kami membantu klien menerjemahkan kebutuhan operasional menjadi solusi digital yang dapat digunakan oleh tim mereka sehari-hari.",
+    "aboutP2": "Sundawa dibangun untuk menjembatani jurang antara kerumitan rekayasa perangkat lunak dan ketenangan operasional klien. Kami meniadakan birokrasi agensi yang berbelit, estimasi yang membingungkan, serta penyerahan proyek ke pihak ketiga secara acak. Kami menggantikannya dengan kolaborasi transparan yang dipimpin langsung oleh praktisi senior, kode berstandar tinggi, dan komitmen jangka panjang.",
+    "subtitle": "PT Sundawa Teknologi Indonesia adalah perusahaan teknologi yang merancang dan mengembangkan aplikasi, website, dan sistem informasi untuk kebutuhan bisnis dan organisasi. Kami membantu klien menerjemahkan proses operasional menjadi sistem perangkat lunak yang andal dan dipakai langsung oleh tim mereka setiap hari.",
     "heroCtaPrimary": "Jadwalkan Diskusi Proyek",
     "heroCtaSecondary": "Jelajahi Produk & Case Studies",
     "studioCard": {
       "badge": "Engineering Studio · Bandung, ID",
       "title": "Arsitektur Berpresisi Tinggi untuk Sistem Misi-Kritis",
-      "caption": "PT Sundawa Teknologi Indonesia — Fokus pada keandalan & keberlanjutan operasional."
+      "caption": "PT Sundawa Teknologi Indonesia: Fokus pada keandalan & keberlanjutan operasional."
     },
     "governance": {
       "label": "Kesiapan Tata Kelola Kemitraan",
@@ -890,7 +890,7 @@
       "items": [
         {
           "title": "Keterlibatan Pimpinan Langsung",
-          "desc": "Proyek strategis didampingi langsung oleh jajaran CEO, CTO, dan COO bersama tim inti engineer Bandung — menjaga arsitektur tetap konsisten."
+          "desc": "Proyek strategis didampingi langsung oleh jajaran CEO, CTO, dan COO bersama tim inti engineer Bandung untuk menjaga konsistensi arsitektur."
         },
         {
           "title": "NDA & Kerahasiaan Sejak Penjajakan",
@@ -898,7 +898,7 @@
         },
         {
           "title": "100% Hak Kepemilikan Kode & HKI",
-          "desc": "Kode sumber, repositori, dan dokumentasi teknis diserahkan sepenuhnya kepada klien pada tahap serah terima — tanpa lock-in vendor."
+          "desc": "Kode sumber, repositori, dan dokumentasi teknis diserahkan sepenuhnya kepada klien pada tahap serah terima tanpa risiko vendor lock-in."
         },
         {
           "title": "Opsi On-Premise DC/DRC & Cloud Lokal",
@@ -963,12 +963,12 @@
     "visionMission": {
       "label": "Visi & Misi",
       "visionLabel": "Visi Perusahaan",
-      "vision": "Menjadi mitra teknologi tepercaya bagi perusahaan dan organisasi di Indonesia dalam membangun solusi digital yang andal melalui kerja yang presisi dan kolaborasi yang nyaman bagi klien.",
+      "vision": "Menjadi mitra rekayasa perangkat lunak tepercaya bagi perusahaan dan organisasi di Indonesia dengan standar kerja presisi dan komitmen jangka panjang.",
       "missionLabel": "Misi Perusahaan",
       "missions": [
         {
           "num": "01",
-          "body": "Memahami kebutuhan pengguna dan tujuan bisnis klien sebagai dasar perancangan solusi digital."
+          "body": "Memahami kebutuhan pengguna dan tujuan operasional klien sebagai dasar perancangan arsitektur sistem."
         },
         {
           "num": "02",
@@ -1069,7 +1069,7 @@
     "cta": {
       "eyebrow": "Kemitraan Strategis & Enterprise",
       "title": "Siap Mendiskusikan Sistem Misi-Kritis Organisasi Anda?",
-      "subtitle": "Dari modernisasi sistem inti hingga pengembangan platform lintas institusi — jadwalkan sesi penyelarasan awal langsung bersama tim pimpinan Sundawa.",
+      "subtitle": "Dari modernisasi sistem inti hingga pengembangan platform lintas institusi, jadwalkan sesi penyelarasan awal langsung bersama tim pimpinan Sundawa.",
       "button": "Hubungi Tim Pimpinan",
       "secondaryButton": "Lihat Produk Sundawa"
     },
@@ -1091,7 +1091,7 @@
         "slug": "modernisasi-sistem",
         "problem": "Perangkat lunak Anda sudah tidak mampu mengikuti kebutuhan bisnis",
         "title": "Modernisasi Sistem Lama",
-        "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan — merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.",
+        "desc": "Kami membenahi platform lama tanpa membahayakan operasional yang sedang berjalan. Kami merancang ulang arsitektur, mengganti komponen yang lemah, dan menyiapkan sistem untuk pertumbuhan ke depan.",
         "outcome": "Perubahan lebih cepat. Keandalan lebih baik. Utang teknis lebih sedikit.",
         "details": "Modernisasi sistem lama adalah proses yang hati-hati. Kami tidak menulis ulang semuanya dari awal. Sebaliknya, kami menganalisis sistem yang ada, mengidentifikasi komponen yang masih berfungsi dengan baik, dan mengganti hanya bagian yang menghambat operasional. Pendekatan ini meminimalkan risiko dan memastikan bisnis tetap berjalan selama proses modernisasi.",
         "deliverables": [
@@ -1247,7 +1247,7 @@
         "slug": "platform-khusus",
         "problem": "Perangkat lunak siap pakai tidak selalu cocok",
         "title": "Platform Bisnis Khusus",
-        "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan — dari sistem internal dan portal pelanggan hingga platform SaaS.",
+        "desc": "Kami bangun perangkat lunak operasional sesuai cara bisnis Anda benar-benar berjalan, mulai dari sistem internal dan portal pelanggan hingga platform SaaS.",
         "outcome": "Perangkat lunak menyesuaikan operasional Anda, bukan sebaliknya.",
         "details": "Platform bisnis khusus dirancang dari awal untuk memenuhi kebutuhan unik bisnis Anda. Kami mulai dengan memahami alur kerja, merancang arsitektur yang scalable, dan membangun platform yang bisa berkembang bersama bisnis Anda. Dari sistem internal hingga platform SaaS, kami memastikan setiap fitur memberikan nilai nyata.",
         "deliverables": [
@@ -1366,7 +1366,7 @@
     },
     "about": {
       "title": "Tentang Kami",
-      "description": "Kenali PT Sundawa Teknologi Indonesia — perusahaan teknologi Bandung dengan standar Professional Precision, Customer Comfort."
+      "description": "Kenali PT Sundawa Teknologi Indonesia, studio rekayasa perangkat lunak Bandung dengan standar Professional Precision, Customer Comfort."
     },
     "services": {
       "title": "Layanan Kami",
@@ -1374,7 +1374,7 @@
     },
     "products": {
       "title": "Produk Sundawa & Case Studies",
-      "description": "Eksplorasi produk ekosistem Sundawa — Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, dan Abo Rent Car beserta studi kasusnya."
+      "description": "Eksplorasi produk ekosistem Sundawa: Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, dan Abo Rent Car beserta studi kasusnya."
     }
   },
   "products": {
@@ -1443,7 +1443,7 @@
         "name": "Sewaka",
         "sector": "WeddingTech SaaS",
         "tagline": "Kemewahan Tradisi, Keabadian Cinta",
-        "summary": "Asisten pernikahan digital untuk pernikahan adat Nusantara—menyatukan anggaran, vendor, undangan tamu QR, dan panduan prosesi adat dalam satu workspace.",
+        "summary": "Asisten pernikahan digital untuk pernikahan adat Nusantara yang menyatukan anggaran, vendor, undangan tamu QR, dan panduan prosesi adat dalam satu workspace.",
         "badgeMetric": "6 Modul Inti + 3 Modul Adat Nusantara",
         "modules": [
           "Task, Budget Real-Time & Vendor Tracker",
@@ -1453,7 +1453,7 @@
         ],
         "caseStudy": {
           "subject": "Calon pengantin, keluarga besar, & wedding organizer pernikahan adat (Jawa, Sunda, Minang, Madura)",
-          "challenge": "Persiapan pernikahan adat melibatkan puluhan tahapan sakral lintas keluarga besar—dari seserahan, siraman, midodareni, hingga panggih—yang kerap tercecer di 5+ aplikasi dan spreadsheet terpisah sehingga memicu pembengkakan budget dan miskomunikasi jadwal.",
+          "challenge": "Persiapan pernikahan adat melibatkan puluhan tahapan sakral lintas keluarga besar (dari seserahan, siraman, midodareni, hingga panggih) yang kerap tercecer di 5+ aplikasi dan spreadsheet terpisah sehingga memicu pembengkakan budget dan miskomunikasi jadwal.",
           "solution": "Sewaka menggabungkan 6 modul perencanaan inti (Checklist, Budget, Vendor, Tamu & QR Check-in, Timeline, Galeri) dengan 3 modul khas budaya (Seserahan Tracker, Cultural Rundown, Ensiklopedia Budaya) dalam paket Gratis, Premium (Rp99rb/bln), dan Enterprise.",
           "architecture": "Aplikasi web Next.js dengan autentikasi Email/Password & Google OAuth, Row-Level Security (RLS) untuk isolasi ruang kerja pasangan dan keluarga, serta pelacakan progres persiapan dan alokasi anggaran secara real-time.",
           "impact": "Menyatukan manajemen vendor, anggaran, QR tamu, dan rundown adat dalam satu workspace. Contoh skenario yang ditampilkan pada situs Sewaka mencantumkan penghematan 60 jam persiapan seserahan dan efisiensi anggaran Rp 18 juta.",
@@ -1482,7 +1482,7 @@
         "name": "LAKUPANDAI by Sundawa",
         "sector": "Enterprise Agent Banking",
         "tagline": "Showcase Kapabilitas & Skenario Penerapan Sistem Perbankan",
-        "summary": "Showcase kapabilitas arsitektur dan skenario penerapan agent banking enterprise bagi bank komersial, BPD, dan BPR—menampilkan simulasi aplikasi agen Flutter, portal backoffice Maker-Checker, rekonsiliasi 4-arah, dan koneksi adaptor core banking on-premise.",
+        "summary": "Showcase kapabilitas arsitektur dan skenario penerapan agent banking enterprise bagi bank komersial, BPD, dan BPR, menampilkan simulasi aplikasi agen Flutter, portal backoffice Maker-Checker, rekonsiliasi 4-arah, dan koneksi adaptor core banking on-premise.",
         "badgeMetric": "Showcase Kapabilitas & Skenario Penerapan (Ready On-Premise)",
         "modules": [
           "Flutter Agent App + Hardware Key Binding",
@@ -1491,7 +1491,7 @@
           "Core Adapter ISO 8583 / ISO 20022 (On-Prem)"
         ],
         "caseStudy": {
-          "subject": "Bank Komersial, BPD, & BPR — Retail Banking, Ops Branchless, Risk & Compliance, serta Enterprise Architecture",
+          "subject": "Bank Komersial, BPD, & BPR: Retail Banking, Ops Branchless, Risk & Compliance, serta Enterprise Architecture",
           "challenge": "Ekspansi jaringan agen di area sinyal terbatas rentan memicu double-debit atau status transaksi menggantung (UNKNOWN), manipulasi lokasi outlet, kelangkaan likuiditas kas agen, rekonsiliasi manual lambat, dan perubahan biaya tanpa kontrol otorisasi.",
           "solution": "Arsitektur 3 lapis Control by Design yang memadukan aplikasi mobile agen Flutter (hardware device key binding & geofencing GPS/WiFi BSSID) dengan portal backoffice Maker-Checker, rekonsiliasi 4-arah harian, dan cockpit operasi real-time.",
           "architecture": "Cluster container on-premise (RHEL 9 Podman/Docker, Kubernetes/OpenShift) di Primary DC + Hot Standby DRC, Core Adapter ISO 8583/20022/REST/SOAP, IAM OAuth2/SAML, ledger append-only SHA-256, serta FCM wake signal tanpa payload data nasabah.",
@@ -1556,7 +1556,7 @@
         "name": "SI-GEOMEDIK",
         "sector": "Kesehatan Pertahanan (Kemhan RI)",
         "tagline": "Sistem Informasi Geospasial & Sumber Daya Kesehatan Pertahanan",
-        "summary": "Implementasi sistem yang sudah berjalan di lingkungan Kementerian Pertahanan RI—portal informasi geospasial terproteksi untuk inventarisasi dan pengelolaan Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan pertahanan (akses terproteksi khusus personel berwenang).",
+        "summary": "Implementasi sistem yang sudah berjalan di lingkungan Kementerian Pertahanan RI: portal informasi geospasial terproteksi untuk inventarisasi dan pengelolaan Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan pertahanan (akses terproteksi khusus personel berwenang).",
         "badgeMetric": "Implementasi Berjalan (Akses Khusus Personel Berwenang)",
         "accessNote": "Aplikasi ini merupakan implementasi sistem yang sudah berjalan di lingkungan Kemhan RI. Tautan mengarah ke gerbang login resmi; akses penuh dibatasi khusus personel berwenang dengan hak akses dinas.",
         "modules": [
@@ -1566,8 +1566,8 @@
           "Sesi Terenkripsi HS256 & Audit Trail SEC-07"
         ],
         "caseStudy": {
-          "subject": "Kementerian Pertahanan RI — Pusdatin, Verifikator Ditkes Kuathan, & Operator Faskes/Kesdam",
-          "challenge": "Sumber daya kesehatan pertahanan—mencakup Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan—tersebar di unit Kesdam/Faskes sehingga menuntut konsolidasi geospasial terpadu serta pengamanan data ketat.",
+          "subject": "Kementerian Pertahanan RI: Pusdatin, Verifikator Ditkes Kuathan, & Operator Faskes/Kesdam",
+          "challenge": "Sumber daya kesehatan pertahanan (mencakup Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan) tersebar di unit Kesdam/Faskes sehingga menuntut konsolidasi geospasial terpadu serta pengamanan data ketat.",
           "solution": "SI-GEOMEDIK menstrukturkan alur verifikasi lintas 3 peran: Operator (Faskes/Kesdam) di lapangan, Verifikator (Ditkes Kuathan) sebagai penelaah berjenjang, dan Pusdatin sebagai pengawas pusat (Super Admin Penuh).",
           "architecture": "Portal web tertutup dengan autentikasi email dinas, sesi terenkripsi HS256, Dynamic RBAC lintas tiga tingkatan kewenangan, serta Audit Trail keamanan berstandar SUNDAWA SEC-07.",
           "impact": "Menyediakan satu portal geospasial yang terstruktur dan akuntabel untuk konsolidasi data Faskes, SDM, Alkes, dan Matkes pertahanan dengan pemisahan wewenang yang jelas.",
@@ -1627,7 +1627,7 @@
         "name": "Abo Rent Car",
         "sector": "Mobilitas & Rental Cerdas",
         "tagline": "Pilih mobil. Siap jalan.",
-        "summary": "Platform rental mobil wilayah Bandung Raya, Cimahi, dan Padalarang tanpa deposit tunai—dilengkapi katalog 14+ unit, kalkulator biaya real-time, gratis antar-jemput Whoosh Padalarang, dan booking WhatsApp.",
+        "summary": "Platform rental mobil wilayah Bandung Raya, Cimahi, dan Padalarang tanpa deposit tunai. Dilengkapi katalog 14+ unit, kalkulator biaya real-time, gratis antar-jemput Whoosh Padalarang, dan booking WhatsApp.",
         "badgeMetric": "Rating 4,95/5 · 1.200+ Penyewa",
         "modules": [
           "Katalog 14+ Armada (MPV, SUV, & City Car)",
@@ -1666,7 +1666,7 @@
         "name": "SUNDAWA People",
         "sector": "Enterprise Autonomous HR & Payroll",
         "tagline": "Satu Ekosistem Cerdas untuk Seluruh Performa & Finansial SDM",
-        "summary": "Platform HRIS dan operasional tenaga kerja enterprise—mengotomatiskan payroll multi-tier, sinkronisasi mesin sidik jari biometrik instan, manajemen shift cerdas, serta ESS mandiri dalam standar keamanan perbankan.",
+        "summary": "Platform HRIS dan operasional tenaga kerja enterprise yang mengotomatiskan payroll multi-tier, sinkronisasi mesin sidik jari biometrik instan, manajemen shift cerdas, serta ESS mandiri dalam standar keamanan perbankan.",
         "badgeMetric": "Mendukung Penerapan ISO/IEC 27001",
         "accessNote": "Aplikasi ini merupakan portal HRIS operasional terproteksi. Tautan mengarah ke gerbang login resmi (TLS 1.3 & AES-256); akses penuh diperuntukkan bagi karyawan dan tim HR berwenang.",
         "modules": [

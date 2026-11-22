@@ -39,7 +39,7 @@ export default function PortfolioArchive({ projects, translations }: PortfolioAr
                     </div>
 
                     {projects.length === 0 ? (
-                        <p className="text-[#F8F8F8]/40">{translations.empty}</p>
+                        <p className="text-[#F8F8F8]/75">{translations.empty}</p>
                     ) : (
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {projects.map((project, index) => (
@@ -97,7 +97,7 @@ export default function PortfolioArchive({ projects, translations }: PortfolioAr
                                         <h3 className="mb-1 text-base font-bold text-[#F8F8F8] transition-colors group-hover:text-[#DBC977]">
                                             {project.name}
                                         </h3>
-                                        <p className="mb-3 text-xs tracking-[0.1em] uppercase text-[#F8F8F8]/40">
+                                        <p className="mb-3 text-xs tracking-[0.1em] uppercase text-[#F8F8F8]/75">
                                             {project.type}
                                         </p>
                                         <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-[#F8F8F8]/60">

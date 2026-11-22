@@ -132,14 +132,14 @@ export default function OutsourcePage() {
                     textTransform: 'uppercase', color: '#DBC977', marginBottom: '0.75rem',
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                 }}>
-                    <span>— {t('label')}</span>
+                    <span><span style={{ display: 'inline-block', width: '1rem', height: '2px', background: '#DBC977', marginRight: '0.5rem', verticalAlign: 'middle' }} />{t('label')}</span>
                     <div style={{ height: 1, width: 60, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </div>
                 <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '0.75rem' }}>
                     {t('heading1')}<br />
                     <span className="gold-gradient">{t('heading2')}</span>
                 </h1>
-                <p style={{ fontSize: '0.82rem', color: 'rgba(248,248,248,0.4)', fontWeight: 300, lineHeight: 1.8, maxWidth: 520 }}>
+                <p style={{ fontSize: '0.82rem', color: 'rgba(248,248,248,0.75)', fontWeight: 300, lineHeight: 1.8, maxWidth: 520 }}>
                     {t('sub')}
                 </p>
             </motion.div>

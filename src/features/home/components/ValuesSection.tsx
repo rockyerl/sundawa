@@ -17,7 +17,7 @@ export default function ValuesSection() {
 
             <div className="container-main">
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-                    <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}>— {t('label')}</span>
+                    <span style={{ fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#DBC977' }}><span style={{ display: 'inline-block', width: '1rem', height: '2px', background: '#DBC977', marginRight: '0.5rem', verticalAlign: 'middle' }} />{t('label')}</span>
                     <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, rgba(219,201,119,0.4), transparent)' }} />
                 </motion.div>
 
@@ -33,7 +33,7 @@ export default function ValuesSection() {
                     <div className="values-table-row values-header" style={{ background: 'rgba(219,201,119,0.05)', borderBottom: '1px solid rgba(219,201,119,0.15)' }}>
                         <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                             <X size={13} style={{ color: 'rgba(248,248,248,0.3)' }} />
-                            <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.4)' }}>{t('todayLabel')}</span>
+                            <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(248,248,248,0.75)' }}>{t('todayLabel')}</span>
                         </div>
                         <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }} className="values-cell-with">
                             <Check size={13} style={{ color: '#DBC977' }} />
@@ -47,7 +47,7 @@ export default function ValuesSection() {
                                     initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 + i * 0.07, duration: 0.5 }}
                                     className="values-table-row"
                                     style={{ borderBottom: i < rows.length - 1 ? '1px solid rgba(219,201,119,0.08)' : 'none', background: i % 2 === 0 ? 'transparent' : 'rgba(29,52,81,0.2)' }}>
-                            <div style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(248,248,248,0.4)' }}>
+                            <div style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 300, lineHeight: 1.6, color: 'rgba(248,248,248,0.75)' }}>
                                 <span className="values-cell-label" style={{ color: 'rgba(248,248,248,0.35)' }}>{t('todayLabel')}</span>{r.today}
                             </div>
                             <div className="values-cell-with" style={{ padding: '1.1rem 1.5rem', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.6, color: 'rgba(248,248,248,0.85)' }}>
