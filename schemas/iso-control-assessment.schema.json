@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sundawa ISO Control Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "standard_id",
+    "assessed_at",
+    "scope",
+    "assessor",
+    "methodology",
+    "control_assessments",
+    "limitations",
+    "overall_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "assessment_id": {
+      "type": "string"
+    },
+    "standard_id": {
+      "const": "ISO-27001"
+    },
+    "assessed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 3
+    },
+    "assessor": {
+      "type": "string"
+    },
+    "methodology": {
+      "type": "string",
+      "minLength": 10
+    },
+    "control_assessments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "control_id",
+          "source_verified",
+          "applicable",
+          "rationale",
+          "owner",
+          "implementation",
+          "evidence_ids",
+          "gap",
+          "action",
+          "due_date"
+        ],
+        "properties": {
+          "control_id": {
+            "type": "string"
+          },
+          "source_verified": {
+            "type": "boolean"
+          },
+          "applicable": {
+            "type": "boolean"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "implementation": {
+            "enum": [
+              "implemented",
+              "partially-implemented",
+              "not-implemented",
+              "not-assessed",
+              "not-applicable"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "gap": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "due_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "evidence_links": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "overall_status": {
+      "enum": [
+        "assessment-incomplete",
+        "gaps-identified",
+        "ready-for-independent-audit"
+      ]
+    }
+  }
+}

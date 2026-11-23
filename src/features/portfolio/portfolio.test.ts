@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest'
-import idMessages from '@/messages/id.json'
 import enMessages from '@/messages/en.json'
 import type { PortfolioProject } from '@/lib/types'
 import {

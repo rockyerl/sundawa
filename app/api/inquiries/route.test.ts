@@ -66,6 +66,25 @@ describe('POST /api/inquiries', () => {
         expect(json.error).toBe('Invalid email address')
     })
 
+    it('silently ignores spam submission when honeypot field is filled', async () => {
+        const req = new Request('http://localhost:3000/api/inquiries', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: 'Spam Bot',
+                email: 'bot@spam.com',
+                message: 'Buy our fake crypto service now.',
+                hp: 'im-a-bot-filled-honeypot',
+            }),
+            headers: { 'Content-Type': 'application/json' },
+        })
+
+        const res = await POST(req)
+        expect(res.status).toBe(200)
+        const json = await res.json()
+        expect(json.success).toBe(true)
+        expect(json.message).toBe('Inquiry received successfully')
+    })
+
     it('returns 200 with success: true and inquiry object when payload is valid', async () => {
         const req = new Request('http://localhost:3000/api/inquiries', {
             method: 'POST',

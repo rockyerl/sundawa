@@ -1,0 +1,158 @@
+{
+  "pack_version": "1.1.0",
+  "skills": [
+    {
+      "name": "visual-antislop",
+      "description": "Audit and improve visually generic, repetitive or inconsistent product interfaces. Use during UI review, design handoff, or before releasing screens; preserve product brand and accessibility.",
+      "standards": [
+        "ISO-9241-210",
+        "ISO-25010",
+        "WCAG-2.2",
+        "ISO-40500"
+      ],
+      "path": "skills/visual-antislop/SKILL.md"
+    },
+    {
+      "name": "ui-ux-auditor",
+      "description": "Evaluate usability, accessibility, navigation and interaction behavior using observable evidence. Use for user journeys, design reviews, and pre-release UX quality gates.",
+      "standards": [
+        "ISO-9241-210",
+        "ISO-25010",
+        "WCAG-2.2",
+        "ISO-40500",
+        "ISO-29148"
+      ],
+      "path": "skills/ui-ux-auditor/SKILL.md"
+    },
+    {
+      "name": "requirements-validator",
+      "description": "Validate clarity, completeness, feasibility and traceability of business/system requirements. Use before estimation, architecture, coding or QA test generation.",
+      "standards": [
+        "ISO-29148",
+        "ISO-12207",
+        "ISO-25010",
+        "ISO-27001"
+      ],
+      "path": "skills/requirements-validator/SKILL.md"
+    },
+    {
+      "name": "architecture-reviewer",
+      "description": "Review software architecture against functional and quality attributes, trade-offs, security boundaries and operational constraints. Use for ADRs, service design and major changes.",
+      "standards": [
+        "ISO-42010",
+        "ISO-25010",
+        "ISO-12207",
+        "NIST-SSDF",
+        "ISO-27001"
+      ],
+      "path": "skills/architecture-reviewer/SKILL.md"
+    },
+    {
+      "name": "clean-code-auditor",
+      "description": "Inspect code maintainability, correctness and engineering conventions with reproducible evidence. Use for PR review, refactoring decisions and technical-debt triage.",
+      "standards": [
+        "ISO-25010",
+        "ISO-12207",
+        "NIST-SSDF",
+        "OWASP-ASVS"
+      ],
+      "path": "skills/clean-code-auditor/SKILL.md"
+    },
+    {
+      "name": "database-auditor",
+      "description": "Review database schema, query performance, integrity and operational safety. Use before schema migrations, performance work, and releases affecting persistent data.",
+      "standards": [
+        "ISO-25010",
+        "ISO-27001",
+        "ISO-27701",
+        "NIST-SSDF",
+        "ISO-12207"
+      ],
+      "path": "skills/database-auditor/SKILL.md"
+    },
+    {
+      "name": "bug-hunter",
+      "description": "Find, reproduce, triage and verify software defects using controlled tests and traceable evidence. Use during QA, incident reproduction, and regression analysis.",
+      "standards": [
+        "ISO-29119",
+        "ISO-25010",
+        "ISO-29148",
+        "OWASP-WSTG"
+      ],
+      "path": "skills/bug-hunter/SKILL.md"
+    },
+    {
+      "name": "test-case-generator",
+      "description": "Generate traceable, risk-based software test cases and coverage matrices from approved requirements. Use before test implementation, QA execution or release regression planning.",
+      "standards": [
+        "ISO-29119",
+        "ISO-29148",
+        "ISO-25010",
+        "OWASP-ASVS",
+        "WCAG-2.2"
+      ],
+      "path": "skills/test-case-generator/SKILL.md"
+    },
+    {
+      "name": "security-auditor",
+      "description": "Perform authorized, evidence-based application security review using OWASP ASVS and WSTG. Use for secure design, PR checks, and pre-release security verification.",
+      "standards": [
+        "OWASP-ASVS",
+        "OWASP-WSTG",
+        "OWASP-TOP10",
+        "ISO-27001",
+        "ISO-27002",
+        "NIST-SSDF"
+      ],
+      "path": "skills/security-auditor/SKILL.md"
+    },
+    {
+      "name": "iso27001-gap-auditor",
+      "description": "Assess an ISMS scope against ISO/IEC 27001:2022 and 2024 amendment with verified control applicability and traceable evidence. Use for readiness or internal gap assessments, not certification claims.",
+      "standards": [
+        "ISO-27001",
+        "ISO-27002",
+        "ISO-19011",
+        "ISO-9001",
+        "ISO-27701"
+      ],
+      "path": "skills/iso27001-gap-auditor/SKILL.md"
+    },
+    {
+      "name": "cicd-security-auditor",
+      "description": "Evaluate CI/CD pipeline integrity, privileges, provenance and deployment safety. Use when reviewing GitHub Actions, GitLab CI, runners, IaC and release supply chains.",
+      "standards": [
+        "NIST-SSDF",
+        "OWASP-CICD",
+        "ISO-27001",
+        "ISO-12207",
+        "OWASP-ASVS"
+      ],
+      "path": "skills/cicd-security-auditor/SKILL.md"
+    },
+    {
+      "name": "audit-evidence-validator",
+      "description": "Validate provenance, relevance, integrity, timeliness and sufficiency of audit evidence and claims. Use before compliance reviews, release sign-off and external audits.",
+      "standards": [
+        "ISO-19011",
+        "ISO-27001",
+        "ISO-9001",
+        "NIST-SSDF",
+        "ISO-12207"
+      ],
+      "path": "skills/audit-evidence-validator/SKILL.md"
+    },
+    {
+      "name": "cobit-governance-auditor",
+      "description": "Assess enterprise IT governance readiness through COBIT 7 themes, provisional COBIT 2019 traceability, evidence-backed risks, RACI, process assessment and monitoring; never manufacture official ISACA scores.",
+      "standards": [
+        "COBIT-7",
+        "COBIT-2019",
+        "ISO-27001",
+        "ISO-19011",
+        "ISO-9001"
+      ],
+      "path": "skills/cobit-governance-auditor/SKILL.md"
+    }
+  ]
+}

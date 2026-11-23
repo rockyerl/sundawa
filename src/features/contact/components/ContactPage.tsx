@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { ArrowUpRight, CheckCircle2, FileDown, Mail, MapPin, MessageSquare, Phone, RotateCcw, Send } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -44,16 +44,12 @@ export default function ContactPage() {
         return topics[0] ?? ''
     }
 
-    const [selectedTopic, setSelectedTopic] = useState<string>(resolveTopicFromParams)
-    const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' })
+    const [customTopic, setCustomTopic] = useState<string | null>(null)
+    const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '', hp: '' })
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
-    useEffect(() => {
-        const targetTopic = resolveTopicFromParams()
-        if (targetTopic && targetTopic !== selectedTopic) {
-            setSelectedTopic(targetTopic)
-        }
-    }, [searchParams, topics])
+    const defaultTopic = resolveTopicFromParams()
+    const selectedTopic = customTopic ?? defaultTopic
 
     const buildBriefText = () => {
         const lines = [
@@ -82,6 +78,7 @@ export default function ContactPage() {
                     company: formData.company,
                     topic: selectedTopic,
                     message: formData.message,
+                    hp: formData.hp,
                     sourceUrl: searchParams.get('service')
                         ? `/services/${searchParams.get('service')}`
                         : typeof window !== 'undefined'
@@ -218,7 +215,8 @@ export default function ContactPage() {
                                             type="button"
                                             onClick={() => {
                                                 setStatus('idle')
-                                                setFormData({ name: '', email: '', company: '', message: '' })
+                                                setCustomTopic(null)
+                                                setFormData({ name: '', email: '', company: '', message: '', hp: '' })
                                             }}
                                             className="inline-flex items-center gap-1.5 text-xs text-gold/80 hover:text-gold uppercase tracking-wider font-bold cursor-pointer"
                                         >
@@ -229,6 +227,18 @@ export default function ContactPage() {
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmitDirect} className="grid gap-6">
+                                    {/* Anti-spam honeypot */}
+                                    <input
+                                        type="text"
+                                        name="hp"
+                                        value={formData.hp}
+                                        onChange={handleChange}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                        aria-hidden="true"
+                                        className="sr-only opacity-0 pointer-events-none absolute -left-[9999px]"
+                                    />
+
                                     {/* Topic Pills */}
                                     <div>
                                         <div className="mb-2.5 text-xs font-bold tracking-[0.12em] text-cream/60 uppercase">
@@ -241,7 +251,7 @@ export default function ContactPage() {
                                                     <button
                                                         key={topic}
                                                         type="button"
-                                                        onClick={() => setSelectedTopic(topic)}
+                                                        onClick={() => setCustomTopic(topic)}
                                                         aria-pressed={active}
                                                         className={`cursor-pointer border px-3.5 py-2 text-[0.7rem] font-bold transition-colors ${
                                                             active

@@ -6,7 +6,15 @@ import { supabase } from '@/lib/supabase'
 export async function POST(request: Request) {
     try {
         const body = await request.json()
-        const { name, email, company, topic, message, sourceUrl } = body
+        const { name, email, company, topic, message, sourceUrl, hp } = body
+
+        // Anti-spam honeypot verification
+        if (hp) {
+            return NextResponse.json({
+                success: true,
+                message: 'Inquiry received successfully',
+            })
+        }
 
         if (!name || !email || !message) {
             return NextResponse.json(

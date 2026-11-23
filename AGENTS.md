@@ -1,6 +1,39 @@
-# AGENTS.md — Sundawa Web Repository Guide
+# AGENTS.md — Sundawa Web Repository Guide & AI Engineering Standard
 
-This document is the authoritative instruction and architectural manual for all AI coding agents working in the `sundawa-web` repository.
+This document is the authoritative instruction, governance manual, and architectural guide for all AI coding agents working in the `sundawa-web` repository.
+
+---
+
+## 0. Sundawa AI Engineering Standards (v1.1.0 Governance & Compliance)
+
+When asked to review, validate, develop, test, or audit software in this repository:
+
+1. **Hierarchy of Truth**: Regulations & Client Contracts > Approved Requirements > Technical Standards (`standards/registry.json`) > Internal Governance (`governance/OPERATING-RULES.md`) > AI Suggestions.
+2. **Never Fabricate**: Separate **Observed**, **Reproduced**, **Inferred**, and **Unknown**. All claims require verifiable evidence.
+3. **Execution Routing**: Select the smallest relevant set of skills from `skills/` using the invocation map below:
+
+### Skill Invocation Map
+
+| Domain | Task / Trigger | Associated Skill |
+|---|---|---|
+| **Product & UI** | Generic design, visual slop, brand compliance | `skills/visual-antislop` |
+| **UX & Accessibility** | Workflows, keyboard navigability, WCAG 2.2 AA, touch targets | `skills/ui-ux-auditor` |
+| **Requirements** | Feature scope, acceptance criteria, traceability (RTM) | `skills/requirements-validator` |
+| **Architecture** | System boundaries, NFRs, ADRs, state management | `skills/architecture-reviewer` |
+| **Clean Code** | PR review, maintainability, type strictness, modularity | `skills/clean-code-auditor` |
+| **Database** | Schema migrations, indexing, RLS safety, connection safety | `skills/database-auditor` |
+| **Defect Triage** | Reproducing defects, edge cases, regression triage | `skills/bug-hunter` |
+| **Test Cases** | Risk-based test planning, integration coverage matrices | `skills/test-case-generator` |
+| **Security** | OWASP Top 10, ASVS, XSS, CSRF, auth & authorization | `skills/security-auditor` |
+| **CI/CD Security** | GitHub Actions security, secrets handling, supply chain | `skills/cicd-security-auditor` |
+| **Assurance** | ISO 27001 readiness, SoA control traceability | `skills/iso27001-gap-auditor` |
+| **Audit Evidence** | Verifiable release evidence, tamper-resistance | `skills/audit-evidence-validator` |
+| **IT Governance** | COBIT 7 / 2019 alignment, risk register, RACI, control checks | `skills/cobit-governance-auditor` |
+
+### Release Quality Gates (`config/quality-gates.json`)
+`sundawa-web` operates under the **`web`** and **`enterprise`** quality profiles:
+- Mandatory Gates: `REQ-TRACE`, `UX-A11Y`, `TEST-RESULTS`, `SEC-SCOPE`, `SEC-VERIFY`, `BUILD-INTEGRITY`, `EVIDENCE`, `ARCH-REVIEW`, `DB-SAFETY`.
+- Blocking Severities: `critical` and `high`. No deployment or release is certified without resolving blocking findings or documenting human risk acceptance.
 
 ---
 
@@ -359,10 +392,10 @@ Before submitting any changes, always execute:
 ```bash
 npm.cmd run check
 ```
-This runs ESLint, TypeScript compiler verification, and the Vitest test suite (10 suites, 27 tests).
+This runs ESLint, TypeScript strict verification (`tsc --noEmit`), and Vitest (13 suites, 40 tests).
 
-### Known Issues
-- **Turbopack build panic**: `npm run build` may fail with a Turbopack internal panic on `app/globals.css` in Next.js 16.2.7. This is a known upstream bug — not a code issue. The dev server works fine; use `npm run check` as the quality gate, not `npm run build`.
+### Production Build Verification
+Execute `npm run build` to verify that Next.js Turbopack generates all static SSG and dynamic routes cleanly.
 
 ---
 

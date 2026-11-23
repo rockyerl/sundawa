@@ -16,7 +16,7 @@ Official web application for **Sundawa Teknologi** — engineered for enterprise
 | **Icons** | Lucide React, SimpleIcons CDN |
 | **i18n** | next-intl v4 (`id` default, `en`; prefix: `always`) |
 | **CMS & Database** | Supabase (`@supabase/supabase-js`) + TipTap rich text editor + custom unified admin |
-| **Testing** | Vitest v2 (13 test suites, 40 tests) |
+| **Testing** | Vitest v2 (13 test suites, 41 tests) |
 | **Linting & Types** | ESLint 9, `tsc --noEmit` |
 | **CI/CD** | GitHub Actions (`.github/workflows/ci.yml`) |
 
@@ -261,8 +261,10 @@ CREATE TABLE IF NOT EXISTS inquiries (
     updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Allow public lead submissions (handled safely via API honeypot validation)
-ALTER TABLE inquiries DISABLE ROW LEVEL SECURITY;
+-- Secure Row Level Security (public can insert, but only authenticated admins/service role can read)
+ALTER TABLE inquiries ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow public insert on inquiries" ON inquiries FOR INSERT TO anon, authenticated WITH CHECK (true);
+CREATE POLICY "Restrict read to service role" ON inquiries FOR SELECT TO service_role USING (true);
 ```
 
 ### Development
@@ -281,7 +283,7 @@ npm run dev        # http://localhost:3000
 | `npm run check` | **Quality gate**: lint + typecheck + test |
 | `npm run lint` | ESLint 9 |
 | `npm run typecheck` | `tsc --noEmit` |
-| `npm run test` | Vitest (13 suites, 40 tests) |
+| `npm run test` | Vitest (13 suites, 41 tests) |
 | `npm run build` | Next.js production build (73 static/dynamic pages) |
 | `npm run start` | Serve production build |
 
@@ -340,7 +342,7 @@ Custom admin panel at `/admin` for managing both **Blog Posts** and **Portfolio 
 ## Testing Matrix
 
 ```
-app/api/inquiries/route.test.ts           # Lead capture API, payload validation & honeypot tests (5)
+app/api/inquiries/route.test.ts           # Lead capture API, payload validation & honeypot tests (6)
 lib/adminAuth.test.ts                     # Admin HMAC session token signing & verification (2)
 lib/analytics.test.ts                     # GA4 dataLayer & window.gtag event dispatch tests (4)
 lib/contact.test.ts                       # Company contact constants & URL builder tests (2)
@@ -355,7 +357,7 @@ src/features/portfolio/portfolio.test.ts  # Portfolio project type guards & data
 src/features/products/domain.test.ts      # Product catalog specs, filtering & i18n parity tests (4)
 ```
 
-**Total**: 13 test suites, 40 tests passing in ~1.4s.
+**Total**: 13 test suites, 41 tests passing in ~1.4s.
 
 ---
 

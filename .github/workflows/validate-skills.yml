@@ -1,0 +1,44 @@
+name: Validate Sundawa AI Skills
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout (immutable ref)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install dependencies
+        run: python3 -m pip install -r requirements.txt
+      - name: Validate pack structure
+        run: python3 scripts/validate_pack.py
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Validate synthetic examples
+        run: |
+          python3 scripts/validate_artifact.py --schema audit-report --file examples/audit-report.example.json
+          python3 scripts/validate_artifact.py --schema test-cases --file examples/test-cases.example.json
+          python3 scripts/validate_artifact.py --schema iso-control-assessment --file examples/iso-control-assessment.example.json
+      - name: Validate synthetic governance records (shape and semantics only)
+        run: |
+          for kind in risk-register raci-matrix capability-assessment control-monitoring; do
+            python3 scripts/validate_governance.py --kind "$kind" --file "examples/$kind.example.json"
+          done
+      - name: Verify synthetic governance is fail-closed
+        run: |
+          set +e
+          python3 scripts/evaluate_governance.py \
+            --risk examples/risk-register.example.json \
+            --raci examples/raci-matrix.example.json \
+            --assessment examples/capability-assessment.example.json \
+            --monitoring examples/control-monitoring.example.json \
+            --out /tmp/governance-demo.json
+          code=$?
+          set -e
+          test "$code" -eq 1
+          python3 scripts/validate_governance.py --kind governance-gate-results --file /tmp/governance-demo.json
+          python3 -c "import json; x=json.load(open('/tmp/governance-demo.json')); assert x['overall']=='BLOCK'"

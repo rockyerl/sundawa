@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.1.0",
+  "project": "SYNTHETIC-ONLY",
+  "as_of": "2026-11-23",
+  "evidence_catalog": [
+    {
+      "id": "EV-CAP-DEMO",
+      "uri": "synthetic://example-only/EV-CAP-DEMO",
+      "summary": "Synthetic illustration only; not actual test evidence",
+      "captured_at": "2026-11-23T00:00:00Z",
+      "verified": false
+    }
+  ],
+  "framework_target": "COBIT-7",
+  "compatibility_framework": "COBIT-2019",
+  "assessment_method": "sundawa-internal-evidence-readiness",
+  "official_isaca_assessment": false,
+  "assessments": [
+    {
+      "cobit2019_id": "APO13",
+      "cobit7_theme": "security-management",
+      "owner": "Security Lead",
+      "selected": true,
+      "rationale": "Critical security management governance area",
+      "readiness_status": "not-assessed",
+      "evidence_ids": [],
+      "process_checks": [
+        {
+          "check_id": "POLICY-REVIEW",
+          "statement": "Security governance policy reviewed and approved",
+          "status": "not-assessed",
+          "evidence_ids": []
+        }
+      ]
+    }
+  ],
+  "assessment_scope": "DEMO scope pending governance approval",
+  "scope_approved_by": "UNASSIGNED",
+  "scope_approval_reference": "synthetic://approval-required"
+}

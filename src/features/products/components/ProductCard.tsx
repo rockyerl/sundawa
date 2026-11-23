@@ -35,7 +35,6 @@ export default function ProductCard({
     statusLabel,
     viewCaseStudyLabel,
     visitSiteLabel,
-    onSelect,
 }: ProductCardProps) {
     return (
         <motion.article

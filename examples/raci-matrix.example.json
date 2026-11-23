@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.1.0",
+  "project": "SYNTHETIC-ONLY",
+  "as_of": "2026-11-23",
+  "evidence_catalog": [
+    {
+      "id": "EV-RACI-DEMO",
+      "uri": "synthetic://example-only/EV-RACI-DEMO",
+      "summary": "Synthetic illustration only; not actual test evidence",
+      "captured_at": "2026-11-23T00:00:00Z",
+      "verified": false
+    }
+  ],
+  "roles": [
+    {
+      "id": "governance-owner",
+      "title": "Governance Owner"
+    },
+    {
+      "id": "cto",
+      "title": "Cto"
+    },
+    {
+      "id": "delivery-lead",
+      "title": "Delivery Lead"
+    },
+    {
+      "id": "qa-lead",
+      "title": "Qa Lead"
+    },
+    {
+      "id": "security-lead",
+      "title": "Security Lead"
+    },
+    {
+      "id": "product-owner",
+      "title": "Product Owner"
+    },
+    {
+      "id": "independent-reviewer",
+      "title": "Independent Reviewer"
+    }
+  ],
+  "activities": [
+    {
+      "activity_id": "GOV-STRATEGY",
+      "description": "Gov Strategy",
+      "accountable": "governance-owner",
+      "responsible": [
+        "cto"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "independent-reviewer",
+      "evidence_ids": []
+    },
+    {
+      "activity_id": "RISK-ACCEPTANCE",
+      "description": "Risk Acceptance",
+      "accountable": "governance-owner",
+      "responsible": [
+        "cto"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "independent-reviewer",
+      "evidence_ids": []
+    },
+    {
+      "activity_id": "SECURITY-EXCEPTION",
+      "description": "Security Exception",
+      "accountable": "governance-owner",
+      "responsible": [
+        "cto"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "independent-reviewer",
+      "evidence_ids": []
+    },
+    {
+      "activity_id": "ARCH-APPROVAL",
+      "description": "Arch Approval",
+      "accountable": "cto",
+      "responsible": [
+        "cto"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "independent-reviewer",
+      "evidence_ids": []
+    },
+    {
+      "activity_id": "RELEASE-APPROVAL",
+      "description": "Release Approval",
+      "accountable": "delivery-lead",
+      "responsible": [
+        "cto"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "independent-reviewer",
+      "evidence_ids": []
+    },
+    {
+      "activity_id": "CONTROL-ATTEST",
+      "description": "Control Attest",
+      "accountable": "security-lead",
+      "responsible": [
+        "cto"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "independent-reviewer",
+      "evidence_ids": []
+    },
+    {
+      "activity_id": "AUDIT-REVIEW",
+      "description": "Audit Review",
+      "accountable": "independent-reviewer",
+      "responsible": [
+        "security-lead"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "governance-owner",
+      "evidence_ids": []
+    },
+    {
+      "activity_id": "INCIDENT-ESCALATION",
+      "description": "Incident Escalation",
+      "accountable": "security-lead",
+      "responsible": [
+        "cto"
+      ],
+      "consulted": [
+        "qa-lead"
+      ],
+      "informed": [
+        "product-owner"
+      ],
+      "independent_reviewer": "independent-reviewer",
+      "evidence_ids": []
+    }
+  ],
+  "approved_by": "UNASSIGNED",
+  "approved_at": "2026-11-23T00:00:00Z",
+  "approval_reference": "synthetic://approval-required"
+}

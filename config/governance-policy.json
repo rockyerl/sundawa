@@ -1,0 +1,43 @@
+{
+  "version": "1.1.0",
+  "source": "Sundawa internal governance policy, not official COBIT/ISACA assessment scoring",
+  "required_raci_activities": [
+    "GOV-STRATEGY",
+    "RISK-ACCEPTANCE",
+    "SECURITY-EXCEPTION",
+    "ARCH-APPROVAL",
+    "RELEASE-APPROVAL",
+    "CONTROL-ATTEST",
+    "AUDIT-REVIEW",
+    "INCIDENT-ESCALATION"
+  ],
+  "independent_reviewer_activities": [
+    "RISK-ACCEPTANCE",
+    "SECURITY-EXCEPTION",
+    "RELEASE-APPROVAL",
+    "AUDIT-REVIEW"
+  ],
+  "risk_high_score_default": 15,
+  "required_governance_gates": [
+    "GOV-RISK",
+    "GOV-RACI",
+    "GOV-CAPABILITY",
+    "GOV-MONITOR"
+  ],
+  "governance_required_profiles": [
+    "enterprise",
+    "regulated"
+  ],
+  "high_risk_treatment": [
+    "mitigated",
+    "accepted",
+    "closed"
+  ],
+  "minimum_selected_objectives": 1,
+  "minimum_applicable_controls": 1,
+  "notes": [
+    "Risk threshold is internal and approved per project; not an ISACA scoring rubric.",
+    "Audit evidence must be verified and not merely referenced.",
+    "No automatic assessment/certification/release approval."
+  ]
+}
