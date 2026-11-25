@@ -122,6 +122,18 @@ describe('products catalog and case studies', () => {
         expect(collectLeafKeys(idMessages.resourcesPage).sort()).toEqual(
             collectLeafKeys(enMessages.resourcesPage).sort(),
         )
+        expect(collectLeafKeys(idMessages.demandTools).sort()).toEqual(
+            collectLeafKeys(enMessages.demandTools).sort(),
+        )
+        expect(collectLeafKeys(idMessages.cookieConsent).sort()).toEqual(
+            collectLeafKeys(enMessages.cookieConsent).sort(),
+        )
+        expect(collectLeafKeys(idMessages.legalCommon).sort()).toEqual(
+            collectLeafKeys(enMessages.legalCommon).sort(),
+        )
+        expect(collectLeafKeys(idMessages.legalDocs).sort()).toEqual(
+            collectLeafKeys(enMessages.legalDocs).sort(),
+        )
     })
 
     it('includes non-empty case study pillars, highlights, and scenarios for every product in both locales', () => {

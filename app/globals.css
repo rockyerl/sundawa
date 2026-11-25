@@ -51,6 +51,36 @@ h1, h2, h3 {
     text-wrap: balance;
 }
 
+/* Executive PDF / Print-to-PDF layout for Assessment, Calculator, Resources, and Partnership Brief */
+@media print {
+    header,
+    footer,
+    nav,
+    .print-hidden {
+        display: none !important;
+    }
+
+    body,
+    .bg-navy,
+    [class*="bg-[#0"] {
+        background: #ffffff !important;
+        color: #111827 !important;
+    }
+
+    .text-cream,
+    [class*="text-cream"],
+    .text-gold,
+    .text-sky {
+        color: #111827 !important;
+    }
+
+    article,
+    section {
+        break-inside: avoid;
+        border-color: #d1d5db !important;
+    }
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* anchor links (#services, #contact) no longer hide under the fixed navbar */

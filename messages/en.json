@@ -875,7 +875,11 @@
     "directSuccessOrWa": "Need an urgent discussion today?",
     "directSuccessWaButton": "Open WhatsApp Chat Directly",
     "directSuccessReset": "Submit Another Brief",
-    "errorDirect": "An error occurred while submitting your brief. Please try again or use the WhatsApp option below."
+    "errorDirect": "An error occurred while submitting your brief. Please try again or use the WhatsApp option below.",
+    "marketingOptIn": "Optional: I would like to receive architecture insights and B2B service updates from Sundawa Teknologi (unsubscribe anytime).",
+    "privacyNoticePrefix": "Your submission is used strictly to respond to your inquiry (12-month standard retention) in accordance with our",
+    "privacyLinkLabel": "Privacy Policy",
+    "privacyNoticeSuffix": "."
   },
   "aboutPage": {
     "navBack": "Back",
@@ -1406,6 +1410,30 @@
     "resources": {
       "title": "Enterprise Resource Center — ERP Checklists & Vendor Evaluation Guides",
       "description": "Executive checklists for ERP modernization, system integration playbooks, and IT vendor evaluation matrices for CEOs, COOs, CTOs, and IT Managers."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy — Personal Data Protection",
+      "description": "Official Privacy Policy of PT Sundawa Teknologi Indonesia aligned with Indonesia UU PDP No. 27/2022, GDPR/UK GDPR transparency, 12-month retention, and data subject rights."
+    },
+    "termsOfUse": {
+      "title": "Terms of Use",
+      "description": "Terms governing access to sundawa.net, intellectual property rights, non-binding online estimators, and governing law."
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy & Tracking Technologies",
+      "description": "Details on strictly necessary, opt-in analytics, and optional marketing cookies used on sundawa.net and how to manage preferences."
+    },
+    "disclaimer": {
+      "title": "Legal Disclaimer & Estimation Scope",
+      "description": "Important disclaimers regarding online cost calculators, outsource estimators, system health assessments, and standards alignment notices."
+    },
+    "responsibleDisclosure": {
+      "title": "Responsible Vulnerability Disclosure Policy",
+      "description": "Good-faith security vulnerability reporting guidelines, scope, safe harbor, and contact process for sundawa.net."
+    },
+    "dpa": {
+      "title": "B2B Data Processing Agreement (DPA) Overview",
+      "description": "Overview of PT Sundawa Teknologi Indonesia’s standard B2B Data Processing Agreement framework for enterprise engagements."
     }
   },
   "products": {
@@ -1742,9 +1770,10 @@
     "summary": "Bandung-based technology company designing, modernizing, and operating custom applications, information systems, and digital product platforms.",
     "location": "Bandung, West Java, Indonesia",
     "columns": {
-      "solutions": "Solutions",
+      "solutions": "Resources & Tools",
       "products": "Product Ecosystem",
-      "company": "Company & Contact"
+      "company": "Company",
+      "legal": "Legal & Trust"
     },
     "links": {
       "services": "Engineering Services",
@@ -1759,7 +1788,14 @@
       "calculator": "Legacy Cost Calculator",
       "trustCenter": "Enterprise Trust Center",
       "partners": "Partner With Sundawa",
-      "resources": "Enterprise Resource Center"
+      "resources": "Enterprise Resource Center",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfUse": "Terms of Use",
+      "cookiePolicy": "Cookie Policy",
+      "cookiePreferences": "Cookie Preferences",
+      "responsibleDisclosure": "Responsible Disclosure",
+      "dpa": "Data Processing Agreement (DPA)",
+      "disclaimer": "Legal Disclaimer"
     },
     "assurances": "Standard NDA · Full Code Ownership · On-Premise & Cloud",
     "copyright": "© {year} PT Sundawa Teknologi Indonesia. All rights reserved."
@@ -1962,6 +1998,33 @@
       "primary": "Request NDA & Technical Review",
       "secondary": "Discuss via WhatsApp",
       "whatsappMessage": "Hello Sundawa team, we would like to discuss your Enterprise Trust Center, Mutual NDA, and security practices for an upcoming project."
+    },
+    "dueDiligence": {
+      "eyebrow": "Due Diligence Evidence Pack (Under NDA)",
+      "heading": "Verifiable Control Artifacts for Enterprise Procurement",
+      "sub": "To support corporate vendor assessments and IT security due diligence, PT Sundawa Teknologi Indonesia provides the following artifact pack upon Mutual NDA execution:",
+      "items": [
+        {
+          "title": "Security & Architecture Overview",
+          "format": "TECHNICAL BRIEF",
+          "desc": "Deployment topology options (On-Premise / Private Cloud), TLS encryption, RBAC boundaries, and environment isolation."
+        },
+        {
+          "title": "Release Quality Gate Reports",
+          "format": "CI/CD EVIDENCE",
+          "desc": "Sample outputs covering static linting, strict TypeScript checks, automated Vitest suites, and OWASP checklists."
+        },
+        {
+          "title": "Backup, DR & Handover SOP",
+          "format": "OPERATIONAL SOP",
+          "desc": "Encrypted backup schedules, recovery runbooks, and our 100% source code & documentation handover checklist."
+        },
+        {
+          "title": "Standard Mutual NDA & B2B DPA",
+          "format": "LEGAL TEMPLATES",
+          "desc": "Ready-to-review mutual confidentiality agreement and B2B Data Processing Agreement drafts for client legal teams."
+        }
+      ]
     }
   },
   "assessmentPage": {
@@ -2110,7 +2173,12 @@
       "errorRequired": "Please enter your full name and work email.",
       "errorGeneric": "Unable to submit your assessment. Please try again or reach out via WhatsApp.",
       "whatsappCta": "Discuss Score on WhatsApp",
-      "calculatorCta": "Quantify Costs in Legacy Calculator"
+      "calculatorCta": "Quantify Costs in Legacy Calculator",
+      "printPdfCta": "Download Diagnostic Report (PDF)",
+      "marketingOptIn": "Optional: I agree to receive executive engineering insights, ERP modernization guides, and service updates from Sundawa Teknologi (opt out anytime).",
+      "privacyNoticePrefix": "By submitting this snapshot, you acknowledge that PT Sundawa Teknologi Indonesia processes your details to respond to your request (12-month standard retention) in accordance with our",
+      "privacyLinkLabel": "Privacy Policy",
+      "privacyNoticeSuffix": "."
     },
     "summaryLabels": {
       "header": "System Health Assessment Result",
@@ -2208,7 +2276,8 @@
       "sub": "Schedule a 30-minute partner intro with Sundawa leadership to explore co-delivery structures, rate cards, or upcoming client RFPs.",
       "primary": "Initiate Partnership Discussion",
       "secondary": "Connect via WhatsApp",
-      "whatsappMessage": "Hello Sundawa leadership, we would like to explore a strategic engineering partnership (Co-Delivery / SI / International Partner)."
+      "whatsappMessage": "Hello Sundawa leadership, we would like to explore a strategic engineering partnership (Co-Delivery / SI / International Partner).",
+      "downloadBrief": "Save Capability Brief (PDF)"
     }
   },
   "calculatorPage": {
@@ -2260,9 +2329,17 @@
     },
     "cta": {
       "primary": "Discuss Modernization ROI",
-      "whatsapp": "Share Estimate via WhatsApp"
+      "whatsapp": "Share Estimate via WhatsApp",
+      "printPdf": "Save Business Case (PDF)"
     },
-    "whatsappSummary": "Hello Sundawa team, I used your Legacy System Cost Calculator. Our estimated annual inefficiency cost is {annualCost} (3-year projection {threeYearCost}, manual workarounds {manualWaste}). Let us discuss a phased modernization plan."
+    "whatsappSummary": "Hello Sundawa team, I used your Legacy System Cost Calculator. Our estimated annual inefficiency cost is {annualCost} (3-year projection {threeYearCost}, manual workarounds {manualWaste}). Let us discuss a phased modernization plan.",
+    "assumptions": {
+      "toggle": "View Calculation Formulas & Assumptions",
+      "manualFormula": "• Annual Manual Workarounds = Affected Staff × Weekly Manual Hours × {weeks} Working Weeks × Loaded Hourly Cost.",
+      "maintenanceFormula": "• Annual Legacy Maintenance = Monthly Legacy Maintenance & Licensing × {months} Months.",
+      "downtimeFormula": "• Annual Downtime Exposure = Monthly Unplanned Downtime Hours × {months} Months × Cost per Downtime Hour.",
+      "savingsFormula": "• Efficiency Gain Range (40%–60%) represents a conservative modeled benchmark from workflow automation and system stabilization; actual savings depend on scope."
+    }
   },
   "resourcesPage": {
     "navBack": "Home",
@@ -2350,6 +2427,540 @@
           "Strict separation of development, staging, and production infrastructure and datasets"
         ]
       }
-    ]
+    ],
+    "exportCsv": "Download Checklist (Excel / CSV)",
+    "exportPdf": "Print / Save PDF"
+  },
+  "demandTools": {
+    "eyebrow": "Self-Service Diagnostic Tools",
+    "heading1": "Quantify System Risk & Hidden Costs",
+    "heading2": "Before Committing Budget",
+    "sub": "Use our two executive evaluation tools to benchmark architecture readiness and assemble an objective internal modernization business case.",
+    "assessment": {
+      "badge": "2 Mins · 8 Questions",
+      "title": "System Health Assessment",
+      "desc": "Score your legacy architecture, data integration, security governance, and operational bottlenecks from 0–100 with immediate priority recommendations.",
+      "cta": "Start Free Assessment"
+    },
+    "calculator": {
+      "badge": "IDR · USD · GBP · EUR",
+      "title": "Legacy System Cost Calculator",
+      "desc": "Estimate annual financial exposure from manual workarounds, legacy maintenance drain, and downtime to support executive ROI discussions.",
+      "cta": "Calculate Legacy Cost"
+    },
+    "trustStrip": {
+      "text": "Every engagement is backed by standard Mutual NDA, 100% source code ownership, and engineering controls aligned with ISO 27001 & OWASP.",
+      "cta": "Open Enterprise Trust Center"
+    }
+  },
+  "cookieConsent": {
+    "bannerAriaLabel": "Cookie Consent Banner",
+    "tagline": "PROFESSIONAL PRECISION · CUSTOMER COMFORT",
+    "heading": "Your privacy matters.",
+    "body": "We use essential cookies to keep the website functioning reliably, plus optional analytics cookies to understand visitor interactions. Non-essential tracking never runs without your consent.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "cookie": "Cookie Policy"
+    },
+    "actions": {
+      "rejectAll": "Reject All",
+      "customize": "Customize",
+      "acceptAll": "Accept All",
+      "savePreferences": "Save Preferences",
+      "close": "Close cookie preferences"
+    },
+    "modal": {
+      "title": "Manage Cookie Preferences",
+      "desc": "Choose which cookie categories you allow on sundawa.net. You can update or withdraw your consent at any time using the Cookie Preferences link in the footer."
+    },
+    "categories": {
+      "necessary": {
+        "title": "Strictly Necessary Cookies",
+        "desc": "Required for locale routing (ID/EN), remembering your consent choice, admin session protection, and core website operation.",
+        "badge": "Always Active"
+      },
+      "analytics": {
+        "title": "Analytics Cookies (Optional)",
+        "desc": "Enables aggregated Google Analytics 4 (GA4) / GTM measurement to evaluate service pages, assessments, and calculators. Blocked unless enabled."
+      },
+      "marketing": {
+        "title": "Marketing Cookies (Optional)",
+        "desc": "Reserved for optional future B2B campaign attribution tags (such as Google Ads or LinkedIn Insight Tag) if deployed."
+      }
+    }
+  },
+  "legalCommon": {
+    "navBack": "Home",
+    "lastUpdatedLabel": "Last Updated",
+    "manageCookiesCta": "Manage Cookie Preferences",
+    "tocHeading": "Table of Contents",
+    "sectionPrefix": "Section",
+    "relatedHeading": "Related Legal & Trust Documents",
+    "contactBox": {
+      "title": "Official Legal & Privacy Contact",
+      "subjectHint": "Please include \"{subject}\" in the email subject line for priority routing."
+    },
+    "links": {
+      "trustCenter": "Enterprise Trust Center",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfUse": "Terms of Use",
+      "cookiePolicy": "Cookie Policy",
+      "disclaimer": "Legal Disclaimer",
+      "responsibleDisclosure": "Responsible Disclosure",
+      "dpa": "Data Processing Agreement (DPA)"
+    }
+  },
+  "legalDocs": {
+    "privacyPolicy": {
+      "navTitle": "Privacy Policy",
+      "eyebrow": "Personal Data Protection · UU PDP & GDPR",
+      "title": "Privacy Policy",
+      "subtitle": "This Privacy Policy transparently explains how PT Sundawa Teknologi Indonesia collects, processes, retains, and safeguards personal information from visitors and B2B prospects on sundawa.net.",
+      "lastUpdated": "November 25, 2026",
+      "jurisdictionBadge": "UU PDP No. 27/2022 · GDPR · UK GDPR",
+      "sections": [
+        {
+          "id": "introduction-scope",
+          "heading": "Introduction & Scope",
+          "paragraphs": [
+            "This Privacy Policy applies to all visitors, prospective enterprise clients, technology partners, and users of interactive features on https://sundawa.net, including our Consultation Form, System Health Assessment, Legacy System Cost Calculator, IT Outsource Calculator, and Partnership pages.",
+            "Our privacy practices are structured around Indonesia’s Personal Data Protection Law (UU No. 27 Tahun 2022 — UU PDP) alongside EU GDPR and UK GDPR transparency principles for international prospects and partners."
+          ]
+        },
+        {
+          "id": "data-controller",
+          "heading": "Data Controller Identity",
+          "paragraphs": [
+            "The Data Controller responsible for personal data collected through this website is PT Sundawa Teknologi Indonesia, located in Bandung, Jawa Barat, Indonesia.",
+            "All privacy inquiries, consent withdrawals, or data subject requests may be directed to our official email at contact@sundawa.net with subject \"[Privacy Request]\"."
+          ]
+        },
+        {
+          "id": "information-collected",
+          "heading": "Personal Information We Collect",
+          "paragraphs": [
+            "We apply strict data minimization and collect only business information directly relevant to your inquiry:"
+          ],
+          "bullets": [
+            "Business Identity & Contact Details: Full name, work email address, company/organization name, and selected inquiry topic.",
+            "Submission Content: Project brief message, System Health Assessment score snapshot (only if you choose to submit it), and optional marketing opt-in preference.",
+            "Technical & Aggregated Analytics Data (Consent-Gated): Originating page path (source URL) and pseudonymous site interaction metrics strictly when you explicitly opt in to Analytics cookies."
+          ]
+        },
+        {
+          "id": "how-collected",
+          "heading": "How We Collect Information",
+          "paragraphs": [
+            "We collect personal data directly when you submit our Consultation Form, send your System Health Assessment snapshot, or initiate communication via email or our official WhatsApp channel.",
+            "Calculations in the Legacy System Cost Calculator and IT Outsource Calculator run exclusively in your browser and are never stored on Sundawa servers unless you voluntarily transmit them to us."
+          ]
+        },
+        {
+          "id": "purpose-processing",
+          "heading": "Purpose of Data Processing",
+          "paragraphs": [
+            "We process your personal information strictly for the following business purposes:"
+          ],
+          "bullets": [
+            "Responding to engineering consultations, project scoping requests, Mutual NDA requests, and partnership inquiries.",
+            "Preparing tailored preliminary architecture recommendations from submitted System Health Assessments.",
+            "Sending B2B technology insights or service updates solely where you have granted explicit opt-in consent.",
+            "Protecting website security, preventing automated spam abuse, and complying with applicable legal obligations."
+          ]
+        },
+        {
+          "id": "legal-basis",
+          "heading": "Legal Basis for Processing",
+          "paragraphs": [
+            "In line with UU PDP Article 20 and applicable GDPR/UK GDPR principles, our lawful bases include:"
+          ],
+          "bullets": [
+            "Explicit Consent: For non-essential analytics/marketing cookies and optional B2B marketing communications.",
+            "Pre-Contractual Steps: Responding to proposals, architecture reviews, NDAs, or scoping discussions initiated at your request.",
+            "Legitimate Business Interest: Maintaining website integrity, preventing spam/abuse, and internal operational governance without overriding your privacy rights.",
+            "Legal Obligation: Where required under applicable laws of the Republic of Indonesia."
+          ]
+        },
+        {
+          "id": "cookies-tracking",
+          "heading": "Cookies & Tracking Technologies",
+          "paragraphs": [
+            "This website uses strictly necessary cookies and browser local storage (localStorage) to preserve your language preference (ID/EN), remember your cookie consent choices, and support core application stability.",
+            "Full details appear in our Cookie Policy (/en/cookie-policy), and you can adjust your choices anytime via the Cookie Preferences control."
+          ]
+        },
+        {
+          "id": "analytics-advertising",
+          "heading": "Analytics & Advertising",
+          "paragraphs": [
+            "When—and only when—you opt in to Analytics cookies, this website loads Google Analytics 4 (GA4) and/or Google Tag Manager (GTM) with IP anonymization enabled to measure aggregate traffic and lead-form performance.",
+            "If you choose \"Reject All\", GA4 and GTM scripts are not loaded in your browser. We never sell or rent personal data to third-party data brokers."
+          ]
+        },
+        {
+          "id": "third-party-providers",
+          "heading": "Third-Party Service Providers",
+          "paragraphs": [
+            "To operate sundawa.net reliably, we rely on a minimal set of vetted third-party service providers limited to their operational function:"
+          ],
+          "bullets": [
+            "Supabase: Cloud PostgreSQL storage for submitted website inquiries protected with Row-Level Security (RLS).",
+            "Resend (optional): Encrypted transactional email delivery notifying our internal team when a new inquiry arrives.",
+            "Google Analytics / Tag Manager: Strictly gated behind explicit user consent for Analytics cookies.",
+            "WhatsApp & LinkedIn: Engaged only when you proactively click outbound links to contact us on those platforms."
+          ]
+        },
+        {
+          "id": "international-transfers",
+          "heading": "International Data Transfers",
+          "paragraphs": [
+            "Modern cloud infrastructure providers (including Supabase database hosting and global edge networks) may process or route encrypted traffic through data centers in Southeast Asia or other jurisdictions under TLS encryption.",
+            "We select providers maintaining strong security safeguards consistent with cross-border transfer standards under UU PDP and GDPR principles."
+          ]
+        },
+        {
+          "id": "data-retention",
+          "heading": "Data Retention (12 Months)",
+          "paragraphs": [
+            "Website consultation inquiries, submitted System Health Assessment snapshots, and B2B outreach records are retained for a standard period of up to 12 (twelve) months from your last interaction with us.",
+            "After 12 months—or earlier upon your verified deletion request—personal data is permanently deleted or anonymized, unless longer retention is required for an active client agreement or statutory compliance."
+          ]
+        },
+        {
+          "id": "information-security",
+          "heading": "Information Security",
+          "paragraphs": [
+            "We apply disciplined technical and organizational safeguards including HTTPS/TLS encryption in transit, Role-Based Access Control (RBAC), database Row-Level Security (RLS), server-side payload validation, and anti-spam protections.",
+            "Additional engineering security details are published transparently in our Enterprise Trust Center (/en/trust-center)."
+          ]
+        },
+        {
+          "id": "business-confidentiality",
+          "heading": "Confidentiality of Business Information",
+          "paragraphs": [
+            "We recognize that details shared regarding legacy architectures, operational bottlenecks, and corporate transformation roadmaps are commercially sensitive.",
+            "PT Sundawa Teknologi Indonesia treats all inquiry briefs confidentially and offers a standard Mutual NDA prior to deep technical discovery."
+          ]
+        },
+        {
+          "id": "data-subject-rights",
+          "heading": "Data Subject Rights",
+          "paragraphs": [
+            "Under Indonesia’s UU PDP No. 27/2022 and applicable international privacy laws (including GDPR/UK GDPR where applicable), you have the right to:"
+          ],
+          "bullets": [
+            "Request access to and a copy of the personal data we hold about you.",
+            "Request correction or updating of inaccurate personal data.",
+            "Request permanent deletion of your personal data or restriction of processing.",
+            "Withdraw consent for analytics cookies or marketing communications at any time without affecting prior lawful processing.",
+            "Object to specific processing activities or request data portability in a structured format."
+          ]
+        },
+        {
+          "id": "marketing-opt-out",
+          "heading": "Marketing Communications & Opt-Out",
+          "paragraphs": [
+            "We do not send unsolicited mass marketing emails. Educational guides or service updates are sent only if you voluntarily check our optional opt-in checkbox.",
+            "You may opt out at any time by replying to our email or writing to contact@sundawa.net with subject \"[Privacy Request] Opt-Out\"."
+          ]
+        },
+        {
+          "id": "childrens-privacy",
+          "heading": "Children’s Privacy",
+          "paragraphs": [
+            "Sundawa’s website and B2B engineering services are intended exclusively for business professionals and organizations. We do not knowingly collect personal data from individuals under 18 years of age."
+          ]
+        },
+        {
+          "id": "third-party-links",
+          "heading": "Third-Party Links",
+          "paragraphs": [
+            "This website may link to external websites or partner resources. We are not responsible for the privacy practices of external sites beyond our control and encourage you to review their privacy policies."
+          ]
+        },
+        {
+          "id": "policy-changes",
+          "heading": "Changes to This Privacy Policy",
+          "paragraphs": [
+            "We may update this Privacy Policy periodically to reflect operational, technical, or regulatory changes. The effective \"Last Updated\" date is always displayed clearly at the top of this page."
+          ]
+        },
+        {
+          "id": "contact-information",
+          "heading": "Contact Information",
+          "paragraphs": [
+            "To exercise your data subject rights or raise any privacy question, please contact our Data Controller:",
+            "PT Sundawa Teknologi Indonesia — Bandung, Jawa Barat, Indonesia · Email: contact@sundawa.net (Subject: \"[Privacy Request]\"). We acknowledge verified privacy requests within 3 business days."
+          ]
+        }
+      ]
+    },
+    "termsOfUse": {
+      "navTitle": "Terms of Use",
+      "eyebrow": "Website Access Terms",
+      "title": "Terms of Use",
+      "subtitle": "These terms govern your access to sundawa.net and use of our online calculators, diagnostic tools, and executive guides provided by PT Sundawa Teknologi Indonesia.",
+      "lastUpdated": "November 25, 2026",
+      "jurisdictionBadge": "Laws of the Republic of Indonesia",
+      "sections": [
+        {
+          "id": "acceptance",
+          "heading": "Acceptance of Terms",
+          "paragraphs": [
+            "By accessing or using sundawa.net, you agree to these Terms of Use and our Privacy Policy. If you access this website on behalf of an organization, you represent that you have authority to bind that organization."
+          ]
+        },
+        {
+          "id": "non-binding-tools",
+          "heading": "Non-Binding Nature of Online Estimators & Diagnostics",
+          "paragraphs": [
+            "Outputs from our Legacy System Cost Calculator, IT Outsource Calculator, and System Health Assessment are provided strictly as preliminary planning models.",
+            "Online estimates do not constitute legally binding commercial offers. Binding pricing, timelines, and deliverables apply solely upon execution of a formal Proposal, Statement of Work (SOW), or Master Services Agreement (MSA)."
+          ]
+        },
+        {
+          "id": "intellectual-property",
+          "heading": "Website Intellectual Property",
+          "paragraphs": [
+            "All copy, interface designs, Sundawa trademarks, diagrams, website source code, and executive guides on sundawa.net remain the intellectual property of PT Sundawa Teknologi Indonesia or its licensors.",
+            "You may export checklists or print diagnostic/calculator summaries for internal corporate evaluation, provided you do not commercially redistribute our materials without written permission.",
+            "Full 100% client source-code ownership for bespoke engineering projects is governed separately under each client’s executed software agreement."
+          ]
+        },
+        {
+          "id": "acceptable-use",
+          "heading": "Acceptable Use & Restrictions",
+          "paragraphs": [
+            "When interacting with sundawa.net, you agree not to:"
+          ],
+          "bullets": [
+            "Conduct Denial-of-Service (DoS) attacks, aggressive automated scraping, or spam submissions against public forms.",
+            "Attempt unauthorized access to administrative interfaces (/admin) or third-party records.",
+            "Impersonate PT Sundawa Teknologi Indonesia or misuse our brand identity."
+          ]
+        },
+        {
+          "id": "liability-limitation",
+          "heading": "Limitation of Liability",
+          "paragraphs": [
+            "This website is provided on an \"as-is\" basis. While we maintain high accuracy and engineering standards, PT Sundawa Teknologi Indonesia is not liable for indirect damages or business decisions made solely from preliminary online calculator models without formal technical discovery."
+          ]
+        },
+        {
+          "id": "governing-law",
+          "heading": "Governing Law & Dispute Resolution",
+          "paragraphs": [
+            "These Terms of Use are governed by the laws of the Republic of Indonesia. Any dispute arising out of website usage shall first be addressed in good faith through amicable discussion before pursuing legal remedies in Indonesia."
+          ]
+        }
+      ]
+    },
+    "cookiePolicy": {
+      "navTitle": "Cookie Policy",
+      "eyebrow": "Tracking Transparency & Consent",
+      "title": "Cookie Policy",
+      "subtitle": "A transparent breakdown of the cookies and browser storage used by sundawa.net, and how you control optional analytics or marketing technologies.",
+      "lastUpdated": "November 25, 2026",
+      "jurisdictionBadge": "Opt-In Analytics · ePrivacy · UK PECR",
+      "table": {
+        "title": "Active Cookie & Browser Storage Inventory",
+        "headers": [
+          "Name / Category",
+          "Type",
+          "Operational Purpose",
+          "Retention"
+        ],
+        "rows": [
+          [
+            "NEXT_LOCALE",
+            "Strictly Necessary",
+            "Stores your selected interface language (English / Indonesian).",
+            "Session / 1 Year"
+          ],
+          [
+            "sundawa_cookie_consent_v1",
+            "Strictly Necessary",
+            "Stores your consent preferences in browser localStorage.",
+            "Up to 12 Months"
+          ],
+          [
+            "Admin Session (HMAC)",
+            "Strictly Necessary (Admin)",
+            "Protects CMS administrator sessions; never set for public visitors.",
+            "Admin Session"
+          ],
+          [
+            "Google Analytics 4 (_ga, _ga_*)",
+            "Analytics (Opt-In)",
+            "Aggregated traffic and lead-form conversion analytics. Loaded strictly after opt-in.",
+            "Per GA4 Standard"
+          ],
+          [
+            "Marketing Tags (Reserved)",
+            "Marketing (Opt-In)",
+            "Inactive by default; reserved for optional future B2B ad attribution if enabled with consent.",
+            "Currently Inactive"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "id": "what-are-cookies",
+          "heading": "What Are Cookies & Local Storage?",
+          "paragraphs": [
+            "Cookies and browser local storage are small text files saved on your device to remember essential settings such as your preferred language and privacy consent record."
+          ]
+        },
+        {
+          "id": "consent-first",
+          "heading": "Consent-First Architecture",
+          "paragraphs": [
+            "sundawa.net enforces consent-before-tracking: non-essential analytics scripts (Google Analytics 4 & Google Tag Manager) remain completely unloaded until you click \"Accept All\" or enable Analytics inside \"Customize\"."
+          ]
+        },
+        {
+          "id": "manage-withdraw",
+          "heading": "Managing or Withdrawing Consent",
+          "paragraphs": [
+            "You can update or withdraw your consent anytime using the \"Manage Cookie Preferences\" button at the top of this page or the \"Cookie Preferences\" link in the site footer. You may also clear cookies directly in your browser settings."
+          ]
+        }
+      ]
+    },
+    "disclaimer": {
+      "navTitle": "Legal Disclaimer",
+      "eyebrow": "Estimation Scope & Standards Transparency",
+      "title": "Legal Disclaimer",
+      "subtitle": "Important scope clarifications regarding online financial calculators, case-study metrics, and international standards references on sundawa.net.",
+      "lastUpdated": "November 25, 2026",
+      "jurisdictionBadge": "B2B Information Transparency",
+      "sections": [
+        {
+          "id": "estimators-disclaimer",
+          "heading": "Online Calculators, Estimators & Diagnostics",
+          "paragraphs": [
+            "Cost projections, 3-year inefficiency estimates, System Health Assessment scores, and monthly IT outsourcing rates displayed on sundawa.net are indicative planning models.",
+            "Actual commercial terms and ROI outcomes are established through technical discovery, architecture audits, and executed written contracts."
+          ]
+        },
+        {
+          "id": "non-certification-notice",
+          "heading": "Standards Alignment & Non-Certification Notice",
+          "paragraphs": [
+            "References to ISO/IEC 27001, ISO/IEC 25010, ISO/IEC 27701, OWASP ASVS/WSTG, and COBIT 2019/7 describe internal engineering frameworks and governance controls actively practiced by PT Sundawa Teknologi Indonesia.",
+            "These references do not represent third-party certification claims unless explicitly accompanied by a valid certificate identifier."
+          ]
+        },
+        {
+          "id": "case-studies-nda",
+          "heading": "NDA Anonymization & Case Study Metrics",
+          "paragraphs": [
+            "Certain institutional and defense client identities are intentionally anonymized to respect binding confidentiality obligations (NDAs). Internal benchmarks and modeled scenarios are transparently labeled."
+          ]
+        }
+      ]
+    },
+    "responsibleDisclosure": {
+      "navTitle": "Responsible Disclosure",
+      "eyebrow": "Information Security · Safe Harbor",
+      "title": "Responsible Vulnerability Disclosure Policy",
+      "subtitle": "PT Sundawa Teknologi Indonesia welcomes good-faith security researchers who responsibly report potential vulnerabilities affecting our public web properties.",
+      "lastUpdated": "November 25, 2026",
+      "jurisdictionBadge": "Good-Faith Safe Harbor",
+      "sections": [
+        {
+          "id": "scope",
+          "heading": "Authorized Reporting Scope",
+          "paragraphs": [
+            "This policy applies to https://sundawa.net and public endpoints operated directly by PT Sundawa Teknologi Indonesia.",
+            "Client-owned systems or third-party hosted portals not explicitly listed here are outside authorized testing scope without prior written consent."
+          ]
+        },
+        {
+          "id": "how-to-report",
+          "heading": "How to Submit a Report",
+          "paragraphs": [
+            "Email your findings to contact@sundawa.net with subject \"[Security Disclosure]\". Please include:"
+          ],
+          "bullets": [
+            "Clear description of the vulnerability and affected URL/endpoint.",
+            "Minimal, non-destructive proof-of-concept reproduction steps.",
+            "Estimated security impact and optional remediation notes."
+          ]
+        },
+        {
+          "id": "prohibited-testing",
+          "heading": "Prohibited Testing Activities",
+          "paragraphs": [
+            "To protect service availability and user privacy, researchers must refrain from:"
+          ],
+          "bullets": [
+            "Denial-of-Service (DoS/DDoS), automated form spamming, or disruptive load testing.",
+            "Accessing, copying, modifying, or exfiltrating data belonging to other users or clients.",
+            "Phishing, social engineering, or physical intrusion attempts targeting Sundawa staff or facilities."
+          ]
+        },
+        {
+          "id": "commitment",
+          "heading": "Our Good-Faith Safe Harbor Commitment",
+          "paragraphs": [
+            "We aim to acknowledge valid reports within 3 business days and maintain transparent communication throughout remediation.",
+            "PT Sundawa Teknologi Indonesia will not pursue legal action against researchers who act in good faith, adhere to this policy, and allow reasonable remediation time before public disclosure."
+          ]
+        }
+      ]
+    },
+    "dpa": {
+      "navTitle": "Data Processing Agreement (DPA)",
+      "eyebrow": "B2B Compliance · UU PDP & GDPR",
+      "title": "B2B Data Processing Agreement (DPA) Overview",
+      "subtitle": "Summary of PT Sundawa Teknologi Indonesia’s standard B2B data processing commitments when acting as a Data Processor on behalf of enterprise and institutional clients.",
+      "lastUpdated": "November 25, 2026",
+      "jurisdictionBadge": "B2B Enterprise · UU PDP · GDPR Art. 28",
+      "sections": [
+        {
+          "id": "roles",
+          "heading": "Controller & Processor Roles",
+          "paragraphs": [
+            "During bespoke software engineering, system integration, or managed post-launch support where Sundawa receives authorized access to client data environments, the Client acts as Data Controller and PT Sundawa Teknologi Indonesia acts as Data Processor."
+          ]
+        },
+        {
+          "id": "processing-instructions",
+          "heading": "Documented Client Instructions",
+          "paragraphs": [
+            "Sundawa processes client data exclusively under documented written instructions defined in the executed MSA/SOW and never repurposes client operational data for unrelated commercial use or public AI model training."
+          ]
+        },
+        {
+          "id": "toms",
+          "heading": "Technical & Organizational Measures (TOMs)",
+          "paragraphs": [
+            "Our standard B2B DPA incorporates concrete engineering safeguards:"
+          ],
+          "bullets": [
+            "Binding confidentiality obligations (NDA) across all assigned engineering personnel.",
+            "Least-privilege access controls, isolated environment credentials, and prompt access revocation upon project completion.",
+            "Secure coding practices aligned with OWASP ASVS and TLS encryption in transit.",
+            "Prompt security incident notification assistance if an event impacts Sundawa-managed scope."
+          ]
+        },
+        {
+          "id": "subprocessors-return",
+          "heading": "Sub-Processors & Data Return / Deletion",
+          "paragraphs": [
+            "Sundawa does not engage additional sub-processors on client production data without prior written client authorization.",
+            "Upon contract termination, any client datasets or temporary credentials held under Sundawa’s control are securely returned or permanently deleted per written client instruction."
+          ]
+        },
+        {
+          "id": "request-dpa",
+          "heading": "Requesting Our Standard B2B DPA",
+          "paragraphs": [
+            "To request a review copy of PT Sundawa Teknologi Indonesia’s standard B2B Data Processing Agreement for procurement or legal review, email contact@sundawa.net with subject \"[Legal / DPA Request]\"."
+          ]
+        }
+      ]
+    }
   }
 }

@@ -34,6 +34,12 @@ type PageKey =
     | 'partners'
     | 'calculator'
     | 'resources'
+    | 'privacyPolicy'
+    | 'termsOfUse'
+    | 'cookiePolicy'
+    | 'disclaimer'
+    | 'responsibleDisclosure'
+    | 'dpa'
 
 /** One call per page: title, description, canonical, hreflang, Open Graph and Twitter, all in the active locale. */
 export async function pageMetadata(locale: string, key: PageKey, path = ''): Promise<Metadata> {

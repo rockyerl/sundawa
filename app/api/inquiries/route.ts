@@ -6,7 +6,8 @@ import { supabase } from '@/lib/supabase'
 export async function POST(request: Request) {
     try {
         const body = await request.json()
-        const { name, email, company, topic, message, sourceUrl, hp } = body
+        const { name, email, company, topic, message, sourceUrl, hp, marketingConsent } = body
+        const hasMarketingConsent = Boolean(marketingConsent)
 
         // Anti-spam honeypot verification
         if (hp) {
@@ -63,7 +64,7 @@ export async function POST(request: Request) {
                         from: 'Sundawa Inquiries <inquiries@sundawa.net>',
                         to: [process.env.INQUIRY_NOTIFICATION_EMAIL || 'contact@sundawa.net'],
                         subject: `[Lead Baru] ${inquiryData.topic} - ${inquiryData.name}`,
-                        text: `Ada inquiry baru dari website:\n\nNama: ${inquiryData.name}\nEmail: ${inquiryData.email}\nPerusahaan: ${inquiryData.company || '-'}\nTopik: ${inquiryData.topic}\nHalaman Asal: ${inquiryData.source_url || '-'}\n\nPesan:\n${inquiryData.message}`,
+                        text: `Ada inquiry baru dari website:\n\nNama: ${inquiryData.name}\nEmail: ${inquiryData.email}\nPerusahaan: ${inquiryData.company || '-'}\nTopik: ${inquiryData.topic}\nHalaman Asal: ${inquiryData.source_url || '-'}\nIzin Marketing Opt-In: ${hasMarketingConsent ? 'Ya' : 'Tidak'}\n\nPesan:\n${inquiryData.message}`,
                     }),
                 })
             } catch (mailErr) {

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { AlertCircle, ArrowUpRight, CheckCircle2, FileDown, Mail, MapPin, MessageSquare, Phone, RotateCcw, Send } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/src/i18n/navigation'
 import { buildMailtoUrl, buildWhatsAppUrl, COMPANY_CONTACT } from '@/lib/contact'
 import { trackLeadConversion, trackWhatsAppClick } from '@/lib/analytics'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
@@ -46,6 +47,7 @@ export default function ContactPage() {
 
     const [customTopic, setCustomTopic] = useState<string | null>(null)
     const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '', hp: '' })
+    const [marketingConsent, setMarketingConsent] = useState(false)
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
     const defaultTopic = resolveTopicFromParams()
@@ -79,6 +81,7 @@ export default function ContactPage() {
                     topic: selectedTopic,
                     message: formData.message,
                     hp: formData.hp,
+                    marketingConsent,
                     sourceUrl: searchParams.get('service')
                         ? `/services/${searchParams.get('service')}`
                         : typeof window !== 'undefined'
@@ -347,6 +350,31 @@ export default function ContactPage() {
                                     </div>
 
                                     <div className="flex flex-col gap-3">
+                                        {/* Optional Marketing Opt-in + Privacy Notice */}
+                                        <div className="space-y-2.5 border border-cream/10 bg-navy/70 p-4 text-xs text-cream/80">
+                                            <label className="flex cursor-pointer items-start gap-2.5">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={marketingConsent}
+                                                    onChange={(e) => setMarketingConsent(e.target.checked)}
+                                                    className="mt-0.5 h-4 w-4 accent-[#DBC977]"
+                                                />
+                                                <span className="leading-relaxed">
+                                                    {t('marketingOptIn')}
+                                                </span>
+                                            </label>
+                                            <p className="text-[0.7rem] leading-relaxed text-cream/75">
+                                                {t('privacyNoticePrefix')}{' '}
+                                                <Link
+                                                    href="/privacy-policy"
+                                                    className="font-semibold text-gold underline underline-offset-2 hover:text-cream"
+                                                >
+                                                    {t('privacyLinkLabel')}
+                                                </Link>
+                                                {t('privacyNoticeSuffix')}
+                                            </p>
+                                        </div>
+
                                         <button
                                             type="submit"
                                             disabled={status === 'submitting'}

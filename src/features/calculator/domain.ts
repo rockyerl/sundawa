@@ -1,4 +1,6 @@
-export type CalculatorCurrency = 'IDR' | 'USD'
+export type CalculatorCurrency = 'IDR' | 'USD' | 'GBP' | 'EUR'
+
+export const CALCULATOR_CURRENCIES: readonly CalculatorCurrency[] = ['IDR', 'USD', 'GBP', 'EUR'] as const
 
 export interface LegacyCostInputs {
     staffCount: number
@@ -36,12 +38,30 @@ export const DEFAULT_INPUTS_BY_CURRENCY: Record<CalculatorCurrency, LegacyCostIn
         downtimeHoursPerMonth: 8,
         downtimeCostPerHour: 600,
     },
+    GBP: {
+        staffCount: 15,
+        manualHoursPerWeek: 6,
+        hourlyCost: 28,
+        monthlyMaintenance: 2_800,
+        downtimeHoursPerMonth: 8,
+        downtimeCostPerHour: 480,
+    },
+    EUR: {
+        staffCount: 15,
+        manualHoursPerWeek: 6,
+        hourlyCost: 32,
+        monthlyMaintenance: 3_200,
+        downtimeHoursPerMonth: 8,
+        downtimeCostPerHour: 550,
+    },
 }
 
-const WEEKS_PER_YEAR = 50
-const MONTHS_PER_YEAR = 12
-const SAVINGS_RATE_LOW = 0.4
-const SAVINGS_RATE_HIGH = 0.6
+export const CALCULATOR_ASSUMPTIONS = {
+    weeksPerYear: 50,
+    monthsPerYear: 12,
+    savingsRateLow: 0.4,
+    savingsRateHigh: 0.6,
+} as const
 
 function clampNonNegative(value: number): number {
     return Number.isFinite(value) && value > 0 ? value : 0
@@ -55,9 +75,15 @@ export function calculateLegacyCost(inputs: LegacyCostInputs): LegacyCostBreakdo
     const downtimeHours = clampNonNegative(inputs.downtimeHoursPerMonth)
     const downtimeCost = clampNonNegative(inputs.downtimeCostPerHour)
 
-    const annualManualWaste = Math.round(staff * manualHours * WEEKS_PER_YEAR * hourlyCost)
-    const annualMaintenanceDrain = Math.round(monthlyMaintenance * MONTHS_PER_YEAR)
-    const annualDowntimeLoss = Math.round(downtimeHours * MONTHS_PER_YEAR * downtimeCost)
+    const annualManualWaste = Math.round(
+        staff * manualHours * CALCULATOR_ASSUMPTIONS.weeksPerYear * hourlyCost,
+    )
+    const annualMaintenanceDrain = Math.round(
+        monthlyMaintenance * CALCULATOR_ASSUMPTIONS.monthsPerYear,
+    )
+    const annualDowntimeLoss = Math.round(
+        downtimeHours * CALCULATOR_ASSUMPTIONS.monthsPerYear * downtimeCost,
+    )
 
     const totalAnnualCost = annualManualWaste + annualMaintenanceDrain + annualDowntimeLoss
     const threeYearCumulativeCost = totalAnnualCost * 3
@@ -68,22 +94,26 @@ export function calculateLegacyCost(inputs: LegacyCostInputs): LegacyCostBreakdo
         annualDowntimeLoss,
         totalAnnualCost,
         threeYearCumulativeCost,
-        estimatedAnnualSavingsLow: Math.round(totalAnnualCost * SAVINGS_RATE_LOW),
-        estimatedAnnualSavingsHigh: Math.round(totalAnnualCost * SAVINGS_RATE_HIGH),
+        estimatedAnnualSavingsLow: Math.round(
+            totalAnnualCost * CALCULATOR_ASSUMPTIONS.savingsRateLow,
+        ),
+        estimatedAnnualSavingsHigh: Math.round(
+            totalAnnualCost * CALCULATOR_ASSUMPTIONS.savingsRateHigh,
+        ),
     }
 }
 
+const CURRENCY_LOCALES: Record<CalculatorCurrency, string> = {
+    IDR: 'id-ID',
+    USD: 'en-US',
+    GBP: 'en-GB',
+    EUR: 'de-DE',
+}
+
 export function formatCurrencyAmount(amount: number, currency: CalculatorCurrency): string {
-    if (currency === 'IDR') {
-        return new Intl.NumberFormat('id-ID', {
-            style: 'currency',
-            currency: 'IDR',
-            maximumFractionDigits: 0,
-        }).format(amount)
-    }
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(CURRENCY_LOCALES[currency], {
         style: 'currency',
-        currency: 'USD',
+        currency,
         maximumFractionDigits: 0,
     }).format(amount)
 }

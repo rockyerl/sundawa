@@ -17,6 +17,12 @@ export const staticSitemapPaths = [
     '/partners',
     '/calculator',
     '/resources',
+    '/privacy-policy',
+    '/terms-of-use',
+    '/cookie-policy',
+    '/disclaimer',
+    '/responsible-disclosure',
+    '/dpa',
 ]
 
 export function sitemapEntries(

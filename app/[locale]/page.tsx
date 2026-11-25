@@ -5,6 +5,7 @@ import { pageMetadata } from '@/lib/Seo'
 import {
     AboutSection,
     BlogSection,
+    DemandToolsSection,
     FeaturedProjectsSection,
     FinalCtaSection,
     HeroSection,
@@ -41,6 +42,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <div className="section-line" />
                 <ServicesSection />
                 <ProductsSection />
+                <div className="section-line" />
+                <DemandToolsSection />
                 <div className="section-line" />
                 <AboutSection />
                 <ValuesSection />

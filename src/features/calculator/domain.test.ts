@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+    CALCULATOR_CURRENCIES,
     calculateLegacyCost,
     DEFAULT_INPUTS_BY_CURRENCY,
     formatCurrencyAmount,
@@ -16,11 +17,8 @@ describe('legacy system cost calculator domain', () => {
             downtimeCostPerHour: 1_000_000,
         })
 
-        // 10 * 5 * 50 * 100,000 = 250,000,000
         expect(result.annualManualWaste).toBe(250_000_000)
-        // 10,000,000 * 12 = 120,000,000
         expect(result.annualMaintenanceDrain).toBe(120_000_000)
-        // 4 * 12 * 1,000,000 = 48,000,000
         expect(result.annualDowntimeLoss).toBe(48_000_000)
         expect(result.totalAnnualCost).toBe(418_000_000)
         expect(result.threeYearCumulativeCost).toBe(1_254_000_000)
@@ -42,13 +40,16 @@ describe('legacy system cost calculator domain', () => {
         expect(result.threeYearCumulativeCost).toBe(0)
     })
 
-    it('formats IDR and USD outputs cleanly using defaults', () => {
-        const idr = calculateLegacyCost(DEFAULT_INPUTS_BY_CURRENCY.IDR)
-        const usd = calculateLegacyCost(DEFAULT_INPUTS_BY_CURRENCY.USD)
+    it('supports IDR, USD, GBP, and EUR defaults and formatting', () => {
+        expect(CALCULATOR_CURRENCIES).toEqual(['IDR', 'USD', 'GBP', 'EUR'])
+        for (const currency of CALCULATOR_CURRENCIES) {
+            const out = calculateLegacyCost(DEFAULT_INPUTS_BY_CURRENCY[currency])
+            expect(out.totalAnnualCost).toBeGreaterThan(0)
+        }
 
-        expect(idr.totalAnnualCost).toBeGreaterThan(0)
-        expect(usd.totalAnnualCost).toBeGreaterThan(0)
         expect(formatCurrencyAmount(1000, 'USD')).toBe('$1,000')
+        expect(formatCurrencyAmount(1000, 'GBP')).toBe('£1,000')
+        expect(formatCurrencyAmount(1000, 'EUR')).toContain('€')
         expect(formatCurrencyAmount(1000000, 'IDR')).toContain('1.000.000')
     })
 })

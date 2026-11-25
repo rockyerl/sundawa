@@ -6,6 +6,7 @@ import { routing } from '@/src/i18n/routing'
 import { SITE_URL, SITE_NAME } from '@/lib/Seo'
 import { COMPANY_CONTACT } from '@/lib/contact'
 import { Navbar } from '@/src/features/home'
+import { CookieConsentManager } from '@/src/features/legal'
 import { Footer, GoogleAnalytics, InstallPrompt, IntroLoader, PageTransition, PWARegister, SkipLink } from '@/src/shared/ui'
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
@@ -148,6 +149,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                         <PageTransition>{children}</PageTransition>
                     </div>
                     <Footer />
+                    <CookieConsentManager />
                 </NextIntlClientProvider>
             </body>
         </html>

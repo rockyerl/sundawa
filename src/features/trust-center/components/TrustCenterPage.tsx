@@ -46,6 +46,7 @@ export default async function TrustCenterPage() {
     const pillars = t.raw('pillars') as TrustPillar[]
     const standards = t.raw('standardsTable.rows') as StandardAlignmentRow[]
     const gates = t.raw('qualityGates.items') as { code: string; name: string; desc: string }[]
+    const dueDiligenceItems = t.raw('dueDiligence.items') as { title: string; format: string; desc: string }[]
 
     return (
         <div className="min-h-screen bg-navy text-cream">
@@ -257,6 +258,38 @@ export default async function TrustCenterPage() {
                                 </p>
                             </div>
                         ))}
+                    </div>
+
+                    {/* Due Diligence Evidence Pack */}
+                    <div className="mt-14 border border-sky/25 bg-[#081320] p-7 sm:p-9">
+                        <div className="mb-6 max-w-3xl">
+                            <div className="mb-2 flex items-center gap-2 text-[0.65rem] font-extrabold tracking-[0.26em] text-sky uppercase">
+                                <span className="h-0.5 w-4 bg-sky" aria-hidden="true" />
+                                {t('dueDiligence.eyebrow')}
+                            </div>
+                            <h2 className="mb-2 text-xl font-black text-cream sm:text-2xl">
+                                {t('dueDiligence.heading')}
+                            </h2>
+                            <p className="text-xs leading-relaxed font-light text-cream/80 sm:text-sm">
+                                {t('dueDiligence.sub')}
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            {dueDiligenceItems.map((artifact) => (
+                                <div key={artifact.title} className="border border-cream/15 bg-navy p-4">
+                                    <div className="mb-2 font-mono text-[0.6rem] font-bold tracking-[0.16em] text-gold uppercase">
+                                        {artifact.format}
+                                    </div>
+                                    <h3 className="mb-1.5 text-sm font-extrabold text-cream">
+                                        {artifact.title}
+                                    </h3>
+                                    <p className="text-xs leading-relaxed font-light text-cream/80">
+                                        {artifact.desc}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Final Enterprise CTA */}

@@ -363,6 +363,12 @@ Engineered for strict enterprise compliance and risk traceability (`.agents/`):
 - **Release Quality Gates**: Operates under `web` and `enterprise` profiles (`config/quality-gates.json`). Mandatory release gates (`REQ-TRACE`, `UX-A11Y`, `TEST-RESULTS`, `SEC-SCOPE`, `SEC-VERIFY`, `BUILD-INTEGRITY`, `EVIDENCE`, `ARCH-REVIEW`, `DB-SAFETY`).
 - **Audit Tooling**: Integrated TypeScript validation utilities in `scripts/` (`evaluate-gates.ts`, `validate-artifact.ts`, `validate-governance.ts`).
 
+### 11. Legal, Privacy & Consent-Gated Analytics (Framework v1.0)
+- **Framework Specs**: `docs/legal-privacy-framework/` documents the verified processor inventory, 12-month lead retention schedule, DSR workflow, and UU PDP / GDPR / UK GDPR alignment.
+- **Bilingual Legal Pages**: `/privacy-policy` (19 sections), `/terms-of-use`, `/cookie-policy`, `/disclaimer`, `/responsible-disclosure`, and `/dpa` across both `/id` and `/en`.
+- **Consent-First Analytics**: `CookieConsentManager` provides equal-prominence **Reject All**, **Customize**, and **Accept All** controls (re-openable anytime from the Footer **Cookie Preferences** button); `GoogleAnalytics.tsx` strictly blocks GA4 & GTM scripts until explicit analytics consent is granted.
+- **Form Transparency**: `ContactPage` and `AssessmentPage` include Privacy Notices (12-month retention) and unchecked-by-default optional marketing opt-in checkboxes.
+
 
 ---
 

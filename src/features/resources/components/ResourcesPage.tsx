@@ -2,6 +2,7 @@ import { ArrowUpRight, BookOpen, CheckSquare, ClipboardList, Layers, ShieldAlert
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/src/i18n/navigation'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
+import ResourceExportButtons from './ResourceExportButtons'
 
 interface ResourceGuide {
     id: string
@@ -100,21 +101,31 @@ export default async function ResourcesPage() {
                                             {guide.summary}
                                         </p>
 
-                                        <div className="flex flex-wrap gap-3">
-                                            <Link
-                                                href={guide.relatedServiceHref}
-                                                className="inline-flex min-h-[44px] items-center gap-1.5 border border-gold/35 bg-gold/[0.06] px-4 py-2.5 text-[0.68rem] font-bold tracking-[0.15em] text-gold uppercase no-underline transition-colors hover:border-gold hover:bg-gold/15"
-                                            >
-                                                <span>{guide.relatedServiceLabel}</span>
-                                                <ArrowUpRight size={13} aria-hidden="true" />
-                                            </Link>
-                                            <Link
-                                                href="/contact"
-                                                className="inline-flex min-h-[44px] items-center gap-1.5 border border-cream/20 px-4 py-2.5 text-[0.68rem] font-bold tracking-[0.15em] text-cream/85 uppercase no-underline transition-colors hover:border-gold/50 hover:text-gold"
-                                            >
-                                                <BookOpen size={13} aria-hidden="true" />
-                                                <span>{t('requestWalkthrough')}</span>
-                                            </Link>
+                                        <div className="flex flex-col gap-3">
+                                            <div className="flex flex-wrap gap-2">
+                                                <Link
+                                                    href={guide.relatedServiceHref}
+                                                    className="inline-flex min-h-[44px] items-center gap-1.5 border border-gold/35 bg-gold/[0.06] px-4 py-2.5 text-[0.68rem] font-bold tracking-[0.15em] text-gold uppercase no-underline transition-colors hover:border-gold hover:bg-gold/15"
+                                                >
+                                                    <span>{guide.relatedServiceLabel}</span>
+                                                    <ArrowUpRight size={13} aria-hidden="true" />
+                                                </Link>
+                                                <Link
+                                                    href="/contact"
+                                                    className="inline-flex min-h-[44px] items-center gap-1.5 border border-cream/20 px-4 py-2.5 text-[0.68rem] font-bold tracking-[0.15em] text-cream/85 uppercase no-underline transition-colors hover:border-gold/50 hover:text-gold"
+                                                >
+                                                    <BookOpen size={13} aria-hidden="true" />
+                                                    <span>{t('requestWalkthrough')}</span>
+                                                </Link>
+                                            </div>
+                                            <ResourceExportButtons
+                                                guideId={guide.id}
+                                                title={guide.title}
+                                                pillar={guide.pillar}
+                                                checklist={guide.checklist}
+                                                csvLabel={t('exportCsv')}
+                                                pdfLabel={t('exportPdf')}
+                                            />
                                         </div>
                                     </div>
 

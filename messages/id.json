@@ -875,7 +875,11 @@
     "directSuccessOrWa": "Butuh diskusi cepat hari ini?",
     "directSuccessWaButton": "Buka Chat WhatsApp Langsung",
     "directSuccessReset": "Kirim Brief Lainnya",
-    "errorDirect": "Terjadi kendala saat mengirimkan brief. Silakan coba lagi atau gunakan tombol WhatsApp di bawah."
+    "errorDirect": "Terjadi kendala saat mengirimkan brief. Silakan coba lagi atau gunakan tombol WhatsApp di bawah.",
+    "marketingOptIn": "Opsional: Saya bersedia menerima insight arsitektur dan pembaruan layanan B2B dari Sundawa Teknologi (dapat berhenti kapan saja).",
+    "privacyNoticePrefix": "Data yang Anda kirimkan digunakan semata-mata untuk menanggapi permintaan konsultasi Anda (masa retensi standar 12 bulan) sesuai",
+    "privacyLinkLabel": "Kebijakan Privasi",
+    "privacyNoticeSuffix": " kami."
   },
   "aboutPage": {
     "navBack": "Kembali",
@@ -1406,6 +1410,30 @@
     "resources": {
       "title": "Pusat Panduan Enterprise — Checklist Modernisasi ERP & Vendor",
       "description": "Panduan eksekutif, checklist kesiapan modernisasi ERP, playbook integrasi data, dan matriks evaluasi vendor IT untuk CTO, COO, dan IT Manager."
+    },
+    "privacyPolicy": {
+      "title": "Kebijakan Privasi — Pelindungan Data Pribadi",
+      "description": "Kebijakan Privasi resmi PT Sundawa Teknologi Indonesia selaras UU PDP No. 27/2022, transparansi GDPR/UK GDPR, masa retensi 12 bulan, dan hak subjek data."
+    },
+    "termsOfUse": {
+      "title": "Syarat Penggunaan Website",
+      "description": "Syarat dan ketentuan penggunaan website sundawa.net, hak kekayaan intelektual, sifat estimasi kalkulator online, dan hukum yang berlaku."
+    },
+    "cookiePolicy": {
+      "title": "Kebijakan Cookie & Teknologi Pelacakan",
+      "description": "Penjelasan kategori cookie esensial, analitik (opt-in), dan pemasaran pada sundawa.net beserta cara mengatur preferensi privasi Anda."
+    },
+    "disclaimer": {
+      "title": "Disclaimer Legal & Batasan Estimasi",
+      "description": "Penjelasan batasan model perhitungan kalkulator biaya, estimator alih daya, diagnostik sistem, dan status referensi standar industri di sundawa.net."
+    },
+    "responsibleDisclosure": {
+      "title": "Kebijakan Pengungkapan Kerentanan Keamanan (Responsible Disclosure)",
+      "description": "Panduan pelaporan kerentanan keamanan secara bertanggung jawab untuk domain sundawa.net beserta komitmen itikad baik PT Sundawa Teknologi Indonesia."
+    },
+    "dpa": {
+      "title": "Perjanjian Pemrosesan Data B2B (Data Processing Agreement)",
+      "description": "Ringkasan kerangka Data Processing Agreement (DPA) B2B PT Sundawa Teknologi Indonesia untuk klien korporat dan instansi."
     }
   },
   "products": {
@@ -1742,9 +1770,10 @@
     "summary": "Perusahaan teknologi berbasis di Bandung yang merancang, memodernisasi, dan mengelola aplikasi, sistem informasi, serta platform produk digital.",
     "location": "Bandung, Jawa Barat, Indonesia",
     "columns": {
-      "solutions": "Solusi & Layanan",
+      "solutions": "Perangkat & Panduan",
       "products": "Ekosistem Produk",
-      "company": "Perusahaan & Kontak"
+      "company": "Perusahaan",
+      "legal": "Legal & Kepercayaan"
     },
     "links": {
       "services": "Layanan Engineering",
@@ -1759,7 +1788,14 @@
       "calculator": "Kalkulator Biaya Sistem Lama",
       "trustCenter": "Trust Center & Keamanan",
       "partners": "Program Kemitraan",
-      "resources": "Pusat Panduan Enterprise"
+      "resources": "Pusat Panduan Enterprise",
+      "privacyPolicy": "Kebijakan Privasi",
+      "termsOfUse": "Syarat Penggunaan",
+      "cookiePolicy": "Kebijakan Cookie",
+      "cookiePreferences": "Preferensi Cookie",
+      "responsibleDisclosure": "Pengungkapan Kerentanan",
+      "dpa": "Perjanjian Pemrosesan Data (DPA)",
+      "disclaimer": "Disclaimer Legal"
     },
     "assurances": "NDA Standar · 100% Kepemilikan Kode · On-Premise & Cloud",
     "copyright": "© {year} PT Sundawa Teknologi Indonesia. Seluruh hak cipta dilindungi."
@@ -1962,6 +1998,33 @@
       "primary": "Ajukan NDA & Diskusi Teknis",
       "secondary": "Hubungi via WhatsApp",
       "whatsappMessage": "Halo tim Sundawa, kami ingin berdiskusi mengenai Enterprise Trust Center, Mutual NDA, dan standar keamanan untuk rencana proyek kami."
+    },
+    "dueDiligence": {
+      "eyebrow": "Bukti Due Diligence (Under NDA)",
+      "heading": "Artefak Kontrol yang Dapat Diverifikasi Tim Pengadaan",
+      "sub": "Untuk kebutuhan evaluasi vendor dan audit TI korporat, PT Sundawa Teknologi Indonesia dapat membagikan paket artefak berikut setelah penandatanganan Mutual NDA:",
+      "items": [
+        {
+          "title": "Ringkasan Arsitektur & Keamanan",
+          "format": "DOKUMEN TEKNIS",
+          "desc": "Diagram topologi deployment (On-Premise / Private Cloud), enkripsi transport, RBAC, dan isolasi lingkungan."
+        },
+        {
+          "title": "Laporan Release Quality Gates",
+          "format": "BUKTI CI/CD",
+          "desc": "Contoh keluaran pipeline ESLint, TypeScript strict, automated unit test Vitest, dan review checklist OWASP."
+        },
+        {
+          "title": "SOP Backup, Recovery & Handover",
+          "format": "PROSEDUR OPERASIONAL",
+          "desc": "Prosedur pencadangan terenkripsi, rencana pemulihan bencana, serta daftar periksa alih serah 100% source code."
+        },
+        {
+          "title": "Template Mutual NDA & B2B DPA",
+          "format": "DOKUMEN LEGAL",
+          "desc": "Draf standar perjanjian kerahasiaan timbal balik dan Data Processing Agreement untuk ditinjau tim legal klien."
+        }
+      ]
     }
   },
   "assessmentPage": {
@@ -2110,7 +2173,12 @@
       "errorRequired": "Mohon isi nama lengkap dan email perusahaan Anda.",
       "errorGeneric": "Gagal mengirim hasil assessment. Silakan coba lagi atau hubungi kami via WhatsApp.",
       "whatsappCta": "Diskusikan Skor via WhatsApp",
-      "calculatorCta": "Lanjut ke Kalkulator Biaya Sistem Lama"
+      "calculatorCta": "Lanjut ke Kalkulator Biaya Sistem Lama",
+      "printPdfCta": "Unduh Laporan Diagnostik (PDF)",
+      "marketingOptIn": "Opsional: Saya bersedia menerima insight teknis, panduan modernisasi ERP, dan pembaruan layanan dari Sundawa Teknologi (dapat berhenti berlangganan kapan saja).",
+      "privacyNoticePrefix": "Dengan mengirimkan hasil ini, Anda memahami bahwa data Anda diproses oleh PT Sundawa Teknologi Indonesia untuk menindaklanjuti permintaan Anda (retensi standar 12 bulan) sesuai",
+      "privacyLinkLabel": "Kebijakan Privasi",
+      "privacyNoticeSuffix": "."
     },
     "summaryLabels": {
       "header": "Hasil Diagnostik Kesehatan Sistem",
@@ -2208,7 +2276,8 @@
       "sub": "Jadwalkan sesi pengenalan 30 menit bersama Direktur & pimpinan teknis Sundawa untuk membahas struktur co-delivery atau kebutuhan proyek klien Anda.",
       "primary": "Ajukan Diskusi Kemitraan",
       "secondary": "Hubungi via WhatsApp",
-      "whatsappMessage": "Halo pimpinan Sundawa, kami tertarik menjajaki kemitraan strategis (Co-Delivery / System Integrator / International Partner)."
+      "whatsappMessage": "Halo pimpinan Sundawa, kami tertarik menjajaki kemitraan strategis (Co-Delivery / System Integrator / International Partner).",
+      "downloadBrief": "Simpan Capability Brief (PDF)"
     }
   },
   "calculatorPage": {
@@ -2260,9 +2329,17 @@
     },
     "cta": {
       "primary": "Diskusikan ROI Modernisasi",
-      "whatsapp": "Kirim Estimasi ke WhatsApp"
+      "whatsapp": "Kirim Estimasi ke WhatsApp",
+      "printPdf": "Simpan Business Case (PDF)"
     },
-    "whatsappSummary": "Halo tim Sundawa, saya baru menggunakan Kalkulator Biaya Sistem Lama. Estimasi biaya inefisiensi tahunan kami sekitar {annualCost} (proyeksi 3 tahun {threeYearCost}, beban kerja manual {manualWaste}). Mari diskusikan opsi modernisasi bertahap."
+    "whatsappSummary": "Halo tim Sundawa, saya baru menggunakan Kalkulator Biaya Sistem Lama. Estimasi biaya inefisiensi tahunan kami sekitar {annualCost} (proyeksi 3 tahun {threeYearCost}, beban kerja manual {manualWaste}). Mari diskusikan opsi modernisasi bertahap.",
+    "assumptions": {
+      "toggle": "Lihat Rumus & Asumsi Perhitungan",
+      "manualFormula": "• Beban Kerja Manual Tahunan = Jumlah Staf × Jam Manual/Minggu × {weeks} Minggu Kerja × Biaya Staf/Jam.",
+      "maintenanceFormula": "• Biaya Pemeliharaan Tahunan = Biaya Maintenance & Lisensi Bulanan × {months} Bulan.",
+      "downtimeFormula": "• Dampak Downtime Tahunan = Jam Downtime/Bulan × {months} Bulan × Dampak Kerugian/Jam.",
+      "savingsFormula": "• Kisaran Potensi Efisiensi (40%–60%) merupakan tolok ukur pemodelan konservatif dari otomatisasi rekonsiliasi & stabilisasi sistem; hasil aktual bergantung pada ruang lingkup modernisasi."
+    }
   },
   "resourcesPage": {
     "navBack": "Beranda",
@@ -2350,6 +2427,540 @@
           "Pemisahan ketat lingkungan development, staging, dan production beserta data uji"
         ]
       }
-    ]
+    ],
+    "exportCsv": "Unduh Checklist (Excel / CSV)",
+    "exportPdf": "Cetak / Simpan PDF"
+  },
+  "demandTools": {
+    "eyebrow": "Perangkat Evaluasi Mandiri",
+    "heading1": "Ukur Risiko Sistem & Biaya Inefisiensi",
+    "heading2": "Sebelum Mengambil Keputusan",
+    "sub": "Gunakan dua perangkat diagnostik cepat kami untuk memetakan kesiapan arsitektur dan membangun business case modernisasi secara objektif.",
+    "assessment": {
+      "badge": "2 Menit · 8 Pertanyaan",
+      "title": "Diagnostik Kesehatan Sistem",
+      "desc": "Nilai tingkat risiko sistem lama, data silo, keamanan akses, dan hambatan operasional Anda untuk memperoleh skor 0–100 beserta prioritas modernisasi.",
+      "cta": "Mulai Diagnostik Gratis"
+    },
+    "calculator": {
+      "badge": "IDR · USD · GBP · EUR",
+      "title": "Kalkulator Biaya Sistem Lama",
+      "desc": "Hitung estimasi biaya tahunan kerja manual, maintenance legacy, dan downtime operasional untuk menyusun business case ROI internal.",
+      "cta": "Hitung Biaya Sistem Lama"
+    },
+    "trustStrip": {
+      "text": "Seluruh proses penjajakan dilindungi opsi Mutual NDA, kepemilikan kode penuh 100%, dan praktik keamanan selaras ISO 27001 & OWASP.",
+      "cta": "Buka Trust Center & Keamanan"
+    }
+  },
+  "cookieConsent": {
+    "bannerAriaLabel": "Pemberitahuan Preferensi Cookie",
+    "tagline": "PROFESSIONAL PRECISION · CUSTOMER COMFORT",
+    "heading": "Privasi Anda penting bagi kami.",
+    "body": "Kami menggunakan cookie esensial agar website berfungsi dengan baik, serta cookie analitik opsional untuk memahami interaksi pengunjung. Tracking non-esensial tidak dijalankan tanpa persetujuan Anda.",
+    "links": {
+      "privacy": "Kebijakan Privasi",
+      "cookie": "Kebijakan Cookie"
+    },
+    "actions": {
+      "rejectAll": "Tolak Semua",
+      "customize": "Atur Preferensi",
+      "acceptAll": "Terima Semua",
+      "savePreferences": "Simpan Preferensi",
+      "close": "Tutup pengaturan cookie"
+    },
+    "modal": {
+      "title": "Pengaturan Preferensi Cookie",
+      "desc": "Atur kategori cookie yang Anda izinkan pada sundawa.net. Anda dapat mengubah atau mencabut persetujuan ini kapan saja melalui tautan Preferensi Cookie di footer."
+    },
+    "categories": {
+      "necessary": {
+        "title": "Cookie Esensial (Wajib)",
+        "desc": "Diperlukan untuk navigasi bahasa (ID/EN), penyimpanan preferensi cookie Anda, keamanan sesi admin, dan fungsi dasar aplikasi.",
+        "badge": "Selalu Aktif"
+      },
+      "analytics": {
+        "title": "Cookie Analitik (Opsional)",
+        "desc": "Mengaktifkan Google Analytics 4 (GA4) / GTM secara agregat untuk mengukur efektivitas halaman layanan, assessment, dan kalkulator. Tidak aktif jika Anda menolak."
+      },
+      "marketing": {
+        "title": "Cookie Pemasaran (Opsional)",
+        "desc": "Dicadangkan untuk pengukuran kampanye B2B berbayar di masa mendatang (seperti Google Ads atau LinkedIn Insight Tag) bila diaktifkan."
+      }
+    }
+  },
+  "legalCommon": {
+    "navBack": "Beranda",
+    "lastUpdatedLabel": "Terakhir Diperbarui",
+    "manageCookiesCta": "Atur Preferensi Cookie",
+    "tocHeading": "Daftar Isi Dokumen",
+    "sectionPrefix": "Bagian",
+    "relatedHeading": "Dokumen Legal & Kepercayaan Terkait",
+    "contactBox": {
+      "title": "Kontak Resmi Legal & Privasi",
+      "subjectHint": "Gunakan subjek email \"{subject}\" untuk percepatan penelusuran tim kami."
+    },
+    "links": {
+      "trustCenter": "Trust Center & Keamanan",
+      "privacyPolicy": "Kebijakan Privasi",
+      "termsOfUse": "Syarat Penggunaan",
+      "cookiePolicy": "Kebijakan Cookie",
+      "disclaimer": "Disclaimer Legal",
+      "responsibleDisclosure": "Pengungkapan Kerentanan",
+      "dpa": "Perjanjian Pemrosesan Data (DPA)"
+    }
+  },
+  "legalDocs": {
+    "privacyPolicy": {
+      "navTitle": "Kebijakan Privasi",
+      "eyebrow": "Pelindungan Data Pribadi · UU PDP & GDPR",
+      "title": "Kebijakan Privasi",
+      "subtitle": "Kebijakan ini menjelaskan secara transparan bagaimana PT Sundawa Teknologi Indonesia mengumpulkan, memproses, menyimpan, dan melindungi data pribadi pengunjung serta calon klien bisnis di sundawa.net.",
+      "lastUpdated": "25 November 2026",
+      "jurisdictionBadge": "UU PDP No. 27/2022 · GDPR · UK GDPR",
+      "sections": [
+        {
+          "id": "introduction-scope",
+          "heading": "Pendahuluan & Ruang Lingkup",
+          "paragraphs": [
+            "Kebijakan Privasi ini berlaku bagi seluruh pengunjung, calon klien, mitra bisnis, dan pengguna fitur interaktif pada website https://sundawa.net, termasuk Formulir Konsultasi, Diagnostik Kesehatan Sistem, Kalkulator Biaya Sistem Lama, Kalkulator Alih Daya IT, dan Program Kemitraan.",
+            "Kami merancang praktik privasi ini dengan mengacu pada Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP) Republik Indonesia serta prinsip transparansi EU GDPR dan UK GDPR bagi mitra maupun prospek internasional."
+          ]
+        },
+        {
+          "id": "data-controller",
+          "heading": "Identitas Pengendali Data Pribadi",
+          "paragraphs": [
+            "Pengendali Data Pribadi (Data Controller) atas data yang dikumpulkan melalui website ini adalah PT Sundawa Teknologi Indonesia, berdomisili di Bandung, Jawa Barat, Indonesia.",
+            "Seluruh pertanyaan terkait privasi, pelaksanaan hak subjek data, atau penghapusan data dapat disampaikan melalui email resmi contact@sundawa.net dengan subjek \"[Privacy Request]\"."
+          ]
+        },
+        {
+          "id": "information-collected",
+          "heading": "Data Pribadi yang Kami Kumpulkan",
+          "paragraphs": [
+            "Kami menerapkan prinsip minimalisasi data dan hanya mengumpulkan informasi bisnis yang relevan dengan permintaan Anda:"
+          ],
+          "bullets": [
+            "Data Identitas & Kontak Bisnis: Nama lengkap, alamat email perusahaan, nama perusahaan/instansi, serta topik kebutuhan proyek.",
+            "Data Isi Permintaan: Pesan brief proyek, ringkasan skor Diagnostik Kesehatan Sistem (bila Anda memilih mengirimkannya), serta pilihan opsional izin komunikasi pemasaran.",
+            "Data Teknis & Analitik (Hanya dengan Persetujuan): Halaman sumber kunjungan (source URL) dan data agregat interaksi perangkat apabila Anda secara eksplisit menyetujui cookie analitik."
+          ]
+        },
+        {
+          "id": "how-collected",
+          "heading": "Cara Pengumpulan Data",
+          "paragraphs": [
+            "Data dikumpulkan secara langsung saat Anda mengisi dan mengirimkan Formulir Konsultasi, Formulir Tindak Lanjut Diagnostik Kesehatan Sistem, atau memulai komunikasi melalui email maupun WhatsApp resmi kami.",
+            "Perhitungan pada Kalkulator Biaya Sistem Lama dan Kalkulator Alih Daya IT diproses sepenuhnya di browser perangkat Anda dan tidak disimpan ke server kami kecuali Anda secara sadar mengirimkannya kepada kami."
+          ]
+        },
+        {
+          "id": "purpose-processing",
+          "heading": "Tujuan Pemrosesan Data",
+          "paragraphs": [
+            "Kami memproses data pribadi Anda terbatas untuk tujuan bisnis berikut:"
+          ],
+          "bullets": [
+            "Menanggapi permintaan konsultasi teknis, estimasi proyek, permintaan Mutual NDA, dan penjajakan kemitraan.",
+            "Menyusun rekomendasi arsitektur awal berdasarkan hasil Diagnostik Kesehatan Sistem yang Anda kirimkan.",
+            "Mengirimkan informasi atau insight teknologi B2B hanya apabila Anda memberikan persetujuan opt-in secara eksplisit.",
+            "Menjaga keamanan operasional website, mencegah penyalahgunaan/spam, dan memenuhi kewajiban hukum yang berlaku."
+          ]
+        },
+        {
+          "id": "legal-basis",
+          "heading": "Dasar Hukum Pemrosesan Data",
+          "paragraphs": [
+            "Sesuai Pasal 20 UU PDP dan ketentuan GDPR/UK GDPR yang relevan, pemrosesan data kami didasarkan pada:"
+          ],
+          "bullets": [
+            "Persetujuan Eksplisit (Consent): Untuk cookie analitik/pemasaran dan komunikasi pemasaran B2B opsional.",
+            "Langkah Pra-Kontrak (Pre-Contractual Steps): Untuk menindaklanjuti permintaan proposal, review arsitektur, NDA, atau diskusi proyek atas inisiatif Anda.",
+            "Kepentingan Sah yang Wajar (Legitimate Interest): Untuk pengamanan sistem, pencegahan spam, dan tata kelola operasional internal tanpa mengesampingkan hak privasi Anda.",
+            "Kewajiban Hukum: Apabila diwajibkan oleh peraturan perundang-undangan yang berlaku di Republik Indonesia."
+          ]
+        },
+        {
+          "id": "cookies-tracking",
+          "heading": "Cookie & Teknologi Penyimpanan Lokal",
+          "paragraphs": [
+            "Website ini menggunakan cookie esensial dan penyimpanan lokal browser (localStorage) untuk mengingat bahasa pilihan (ID/EN), preferensi persetujuan cookie Anda, serta fungsi dasar aplikasi.",
+            "Rincian kategori dan durasi penyimpanan tersedia lengkap pada halaman Kebijakan Cookie (/id/cookie-policy), dan Anda dapat mengubah pilihan kapan saja melalui tombol Preferensi Cookie."
+          ]
+        },
+        {
+          "id": "analytics-advertising",
+          "heading": "Analitik & Pengukuran Kampanye",
+          "paragraphs": [
+            "Apabila Anda memberikan persetujuan pada kategori Cookie Analitik, website ini memuat Google Analytics 4 (GA4) dan/atau Google Tag Manager (GTM) dengan pengaturan anonimisasi IP untuk memahami performa konten dan konversi formulir.",
+            "Apabila Anda menolak cookie non-esensial (\"Tolak Semua\"), skrip analitik GA4/GTM tidak akan dimuat di browser Anda. Kami tidak menjual data pribadi pengunjung kepada pihak ketiga atau broker data mana pun."
+          ]
+        },
+        {
+          "id": "third-party-providers",
+          "heading": "Penyedia Layanan Pihak Ketiga (Sub-Processor)",
+          "paragraphs": [
+            "Untuk mengoperasikan website dan menindaklanjuti permintaan Anda secara andal, kami memanfaatkan penyedia infrastruktur pihak ketiga berikut secara terbatas sesuai fungsinya:"
+          ],
+          "bullets": [
+            "Supabase: Penyimpanan basis data aman untuk catatan inquiry website dengan kontrol Row-Level Security (RLS).",
+            "Resend (opsional): Pengiriman notifikasi email transaksional internal saat formulir konsultasi masuk.",
+            "Google Analytics / Tag Manager: Hanya aktif bila Anda menyetujui Cookie Analitik.",
+            "WhatsApp & LinkedIn: Hanya terlibat apabila Anda secara aktif mengklik tautan keluar untuk menghubungi kami di platform tersebut."
+          ]
+        },
+        {
+          "id": "international-transfers",
+          "heading": "Transfer Data Lintas Batas",
+          "paragraphs": [
+            "Sebagian infrastruktur cloud modern (seperti basis data cloud Supabase dan jaringan pengiriman konten/CDN global) dapat memproses atau meneruskan data melalui pusat data di kawasan Asia Tenggara atau yurisdiksi lain dengan perlindungan enkripsi TLS.",
+            "Kami memastikan pemilihan penyedia infrastruktur menerapkan standar keamanan modern yang memadai sesuai ketentuan transfer data lintas batas UU PDP dan prinsip kehati-hatian GDPR."
+          ]
+        },
+        {
+          "id": "data-retention",
+          "heading": "Masa Retensi Data (12 Bulan)",
+          "paragraphs": [
+            "Data formulir konsultasi, hasil diagnostik yang dikirimkan, dan catatan penjajakan B2B disimpan selama maksimal 12 (dua belas) bulan sejak interaksi terakhir Anda bersama kami.",
+            "Setelah melewati masa retensi 12 bulan—atau lebih cepat apabila Anda mengajukan permintaan penghapusan yang terverifikasi—data pribadi akan dihapus secara permanen atau dianonimkan, kecuali diperlukan lebih lama untuk pelaksanaan kontrak aktif klien atau kewajiban hukum perpajakan/peraturan yang berlaku."
+          ]
+        },
+        {
+          "id": "information-security",
+          "heading": "Keamanan Informasi",
+          "paragraphs": [
+            "Kami menerapkan kontrol pengamanan teknis dan organisasional secara disiplin, meliputi enkripsi transmisi HTTPS/TLS, pembatasan akses berbasis peran (RBAC) dan Row-Level Security (RLS), validasi input sisi server, serta proteksi anti-spam.",
+            "Informasi lebih lengkap mengenai praktik keamanan informasi kami tersedia pada halaman Trust Center & Keamanan (/id/trust-center)."
+          ]
+        },
+        {
+          "id": "business-confidentiality",
+          "heading": "Kerahasiaan Informasi Bisnis & NDA",
+          "paragraphs": [
+            "Kami memahami bahwa informasi mengenai arsitektur sistem lama, hambatan operasional, atau rencana transformasi perusahaan Anda bersifat rahasia.",
+            "PT Sundawa Teknologi Indonesia memperlakukan setiap brief bisnis secara konfidensial dan menyediakan Mutual NDA standar sejak sesi penjajakan awal sebelum Anda membagikan detail teknis sensitif."
+          ]
+        },
+        {
+          "id": "data-subject-rights",
+          "heading": "Hak Subjek Data Pribadi",
+          "paragraphs": [
+            "Sesuai UU PDP No. 27/2022 dan hak privasi yang berlaku secara internasional, Anda berhak untuk:"
+          ],
+          "bullets": [
+            "Mengakses dan memperoleh salinan data pribadi Anda yang kami simpan.",
+            "Meminta perbaikan atau pemutakhiran data pribadi yang tidak akurat.",
+            "Meminta penghapusan data pribadi atau mengakhiri pemrosesan data Anda.",
+            "Menarik kembali persetujuan cookie atau komunikasi pemasaran kapan saja tanpa memengaruhi keabsahan pemrosesan sebelumnya.",
+            "Mengajukan keberatan atas pemrosesan tertentu atau meminta portabilitas data dalam format terstruktur."
+          ]
+        },
+        {
+          "id": "marketing-opt-out",
+          "heading": "Komunikasi Pemasaran & Berhenti Berlangganan",
+          "paragraphs": [
+            "Kami tidak mengirimkan email pemasaran massal tanpa persetujuan. Komunikasi edukasi atau pembaruan layanan hanya dikirim apabila Anda secara sadar mencentang kotak persetujuan opsional.",
+            "Anda dapat berhenti berlangganan kapan saja dengan membalas email kami atau mengirimkan pesan ke contact@sundawa.net dengan subjek \"[Privacy Request] Opt-Out\"."
+          ]
+        },
+        {
+          "id": "childrens-privacy",
+          "heading": "Privasi Anak di Bawah Umur",
+          "paragraphs": [
+            "Layanan dan website PT Sundawa Teknologi Indonesia ditujukan secara eksklusif untuk profesional bisnis, korporasi, dan instansi (B2B). Kami tidak dengan sengaja mengumpulkan data pribadi dari individu berusia di bawah 18 tahun."
+          ]
+        },
+        {
+          "id": "third-party-links",
+          "heading": "Tautan ke Situs Pihak Ketiga",
+          "paragraphs": [
+            "Website ini dapat memuat tautan ke situs eksternal atau portal produk tertentu. Kami tidak bertanggung jawab atas praktik privasi situs pihak ketiga di luar kendali kami dan menyarankan Anda meninjau kebijakan privasi masing-masing situs tersebut."
+          ]
+        },
+        {
+          "id": "policy-changes",
+          "heading": "Perubahan Kebijakan Privasi",
+          "paragraphs": [
+            "Kami dapat memperbarui Kebijakan Privasi ini secara berkala untuk mencerminkan perkembangan layanan, infrastruktur, atau ketentuan hukum. Tanggal pembaruan terbaru selalu dicantumkan secara transparan di bagian atas halaman ini."
+          ]
+        },
+        {
+          "id": "contact-information",
+          "heading": "Informasi Kontak Privasi",
+          "paragraphs": [
+            "Untuk melaksanakan hak subjek data, mengajukan pertanyaan privasi, atau melaporkan kekhawatiran terkait data pribadi, hubungi Pengendali Data kami:",
+            "PT Sundawa Teknologi Indonesia — Bandung, Jawa Barat, Indonesia · Email: contact@sundawa.net (Subjek: \"[Privacy Request]\"). Kami mengonfirmasi penerimaan permintaan dalam maksimal 3×24 jam kerja."
+          ]
+        }
+      ]
+    },
+    "termsOfUse": {
+      "navTitle": "Syarat Penggunaan",
+      "eyebrow": "Ketentuan Akses Website",
+      "title": "Syarat Penggunaan Website",
+      "subtitle": "Ketentuan berikut mengatur akses dan penggunaan website sundawa.net beserta seluruh kalkulator, alat diagnostik, dan panduan eksekutif yang disediakan oleh PT Sundawa Teknologi Indonesia.",
+      "lastUpdated": "25 November 2026",
+      "jurisdictionBadge": "Hukum Republik Indonesia",
+      "sections": [
+        {
+          "id": "acceptance",
+          "heading": "Penerimaan Syarat",
+          "paragraphs": [
+            "Dengan mengakses atau menggunakan sundawa.net, Anda menyetujui untuk terikat oleh Syarat Penggunaan ini serta Kebijakan Privasi kami. Jika Anda mengakses atas nama perusahaan atau instansi, Anda menyatakan berwenang mewakili organisasi tersebut."
+          ]
+        },
+        {
+          "id": "non-binding-tools",
+          "heading": "Sifat Non-Mengikat Perangkat Estimasi & Diagnostik",
+          "paragraphs": [
+            "Seluruh keluaran dari Kalkulator Biaya Sistem Lama, Kalkulator Alih Daya IT, dan Diagnostik Kesehatan Sistem disediakan semata-mata sebagai pemodelan awal untuk membantu penyusunan business case internal Anda.",
+            "Hasil perhitungan online tidak merupakan penawaran komersial yang mengikat secara hukum. Harga, jadwal, dan ruang lingkup proyek resmi hanya berlaku setelah disepakati secara tertulis dalam Proposal, Statement of Work (SOW), atau Master Services Agreement (MSA)."
+          ]
+        },
+        {
+          "id": "intellectual-property",
+          "heading": "Hak Kekayaan Intelektual Website",
+          "paragraphs": [
+            "Seluruh teks, desain antarmuka, merek dagang Sundawa, grafik, struktur kode website, dan panduan publikasi pada sundawa.net merupakan kekayaan intelektual PT Sundawa Teknologi Indonesia atau pemegang lisensinya.",
+            "Anda diperkenankan mengunduh checklist atau mencetak ringkasan hasil diagnostik/kalkulator untuk evaluasi internal organisasi Anda, namun dilarang mendistribusikan ulang secara komersial tanpa izin tertulis.",
+            "Kepemilikan penuh (100%) atas kode sumber hasil proyek khusus klien diatur secara terpisah dalam kontrak pengembangan perangkat lunak masing-masing klien."
+          ]
+        },
+        {
+          "id": "acceptable-use",
+          "heading": "Penggunaan yang Diperbolehkan & Larangan",
+          "paragraphs": [
+            "Pengguna dilarang melakukan tindakan berikut terhadap infrastruktur sundawa.net:"
+          ],
+          "bullets": [
+            "Melakukan serangan Denial-of-Service (DoS), scraping otomatis agresif, atau pengiriman spam ke formulir publik.",
+            "Mencoba mengakses area administrasi (/admin) atau data pihak lain tanpa otorisasi sah.",
+            "Menyalahgunakan identitas PT Sundawa Teknologi Indonesia untuk penipuan atau rekayasa sosial."
+          ]
+        },
+        {
+          "id": "liability-limitation",
+          "heading": "Batasan Tanggung Jawab",
+          "paragraphs": [
+            "Website ini disediakan \"sebagaimana adanya\" (as-is). Meskipun kami menjaga akurasi informasi dan ketersediaan layanan secara serius, PT Sundawa Teknologi Indonesia tidak bertanggung jawab atas kerugian tidak langsung atau keputusan bisnis yang diambil semata-mata berdasarkan estimasi kalkulator online tanpa sesi evaluasi teknis resmi."
+          ]
+        },
+        {
+          "id": "governing-law",
+          "heading": "Hukum yang Berlaku & Penyelesaian Sengketa",
+          "paragraphs": [
+            "Syarat Penggunaan ini diatur dan ditafsirkan berdasarkan hukum Negara Republik Indonesia. Setiap sengketa yang timbul akan diupayakan penyelesaiannya secara musyawarah terlebih dahulu sebelum menempuh jalur hukum yang berlaku di wilayah hukum Indonesia."
+          ]
+        }
+      ]
+    },
+    "cookiePolicy": {
+      "navTitle": "Kebijakan Cookie",
+      "eyebrow": "Transparansi Pelacakan & Consent",
+      "title": "Kebijakan Cookie",
+      "subtitle": "Penjelasan lengkap mengenai cookie dan penyimpanan browser yang digunakan sundawa.net, serta kendali penuh Anda untuk menolak atau menyesuaikan cookie non-esensial.",
+      "lastUpdated": "25 November 2026",
+      "jurisdictionBadge": "Opt-In Analitik · ePrivacy · UU PDP",
+      "table": {
+        "title": "Inventaris Cookie & Penyimpanan Lokal Aktif",
+        "headers": [
+          "Nama / Kategori",
+          "Tipe",
+          "Tujuan Penggunaan",
+          "Retensi"
+        ],
+        "rows": [
+          [
+            "NEXT_LOCALE",
+            "Esensial (Wajib)",
+            "Menyimpan pilihan bahasa tampilan website (Indonesia / Inggris).",
+            "Sesi / 1 Tahun"
+          ],
+          [
+            "sundawa_cookie_consent_v1",
+            "Esensial (Wajib)",
+            "Menyimpan pilihan persetujuan cookie Anda di localStorage browser.",
+            "Hingga 12 Bulan"
+          ],
+          [
+            "Admin Session (HMAC)",
+            "Esensial (Admin Only)",
+            "Autentikasi sesi pengelola CMS; tidak pernah dibuat bagi pengunjung publik.",
+            "Sesi Admin"
+          ],
+          [
+            "Google Analytics 4 (_ga, _ga_*)",
+            "Analitik (Opt-In)",
+            "Pengukuran lalu lintas agregat dan konversi halaman. Hanya aktif jika Anda menyetujui Cookie Analitik.",
+            "Sesuai Kebijakan GA4"
+          ],
+          [
+            "Marketing Tags (Cadangan)",
+            "Pemasaran (Opt-In)",
+            "Tidak aktif secara default; dicadangkan bila kampanye B2B terukur diaktifkan dengan persetujuan.",
+            "Tidak Aktif Saat Ini"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "id": "what-are-cookies",
+          "heading": "Apa Itu Cookie & Local Storage?",
+          "paragraphs": [
+            "Cookie dan penyimpanan lokal browser (localStorage) adalah berkas teks kecil yang disimpan di perangkat Anda saat mengunjungi website agar fitur inti seperti bahasa pilihan dan preferensi privasi dapat berfungsi konsisten."
+          ]
+        },
+        {
+          "id": "consent-first",
+          "heading": "Prinsip Persetujuan Sebelum Pelacakan",
+          "paragraphs": [
+            "sundawa.net menerapkan pendekatan consent-first: seluruh skrip analitik non-esensial (Google Analytics 4 & Google Tag Manager) ditahan dan tidak dijalankan sampai Anda memilih \"Terima Semua\" atau mengaktifkan kategori Analitik di menu \"Atur Preferensi\"."
+          ]
+        },
+        {
+          "id": "manage-withdraw",
+          "heading": "Cara Mengubah atau Mencabut Persetujuan",
+          "paragraphs": [
+            "Anda dapat mengubah atau mencabut persetujuan cookie kapan saja melalui tombol \"Atur Preferensi Cookie\" di bagian atas halaman ini atau tautan \"Preferensi Cookie\" di footer setiap halaman. Anda juga dapat menghapus cookie secara langsung melalui pengaturan browser Anda."
+          ]
+        }
+      ]
+    },
+    "disclaimer": {
+      "navTitle": "Disclaimer Legal",
+      "eyebrow": "Batasan Informasi & Transparansi Klaim",
+      "title": "Disclaimer Legal",
+      "subtitle": "Kejelasan ruang lingkup mengenai alat simulasi online, materi studi kasus, dan rujukan standar internasional pada sundawa.net.",
+      "lastUpdated": "25 November 2026",
+      "jurisdictionBadge": "Transparansi Informasi B2B",
+      "sections": [
+        {
+          "id": "estimators-disclaimer",
+          "heading": "Kalkulator Biaya, Estimator & Diagnostik Online",
+          "paragraphs": [
+            "Angka penghematan, proyeksi biaya 3 tahun, skor kesiapan sistem, dan tarif alih daya IT pada website ini merupakan pemodelan indikatif untuk tujuan edukasi dan perencanaan awal.",
+            "Nilai proyek sesungguhnya ditentukan melalui sesi technical discovery, audit arsitektur aktual, dan kesepakatan tertulis resmi."
+          ]
+        },
+        {
+          "id": "non-certification-notice",
+          "heading": "Penyelarasan Standar & Status Non-Sertifikasi",
+          "paragraphs": [
+            "Penyebutan ISO/IEC 27001, ISO/IEC 25010, ISO/IEC 27701, OWASP ASVS/WSTG, dan COBIT 2019/7 di seluruh website ini merujuk pada kerangka praktik operasional dan kontrol rekayasa internal yang diterapkan PT Sundawa Teknologi Indonesia.",
+            "Penyebutan tersebut bukan merupakan klaim kepemilikan sertifikat akreditasi pihak ketiga kecuali dinyatakan secara eksplisit beserta nomor sertifikat resmi yang berlaku."
+          ]
+        },
+        {
+          "id": "case-studies-nda",
+          "heading": "Kerahasiaan Studi Kasus & Metrik",
+          "paragraphs": [
+            "Beberapa identitas klien atau instansi (seperti implementasi pada sektor pertahanan dan pemerintahan) dianonimkan secara sengaja demi menghormati kewajiban kerahasiaan (NDA). Setiap metrik pengujian internal atau simulasi model diberi label konteks secara transparan."
+          ]
+        }
+      ]
+    },
+    "responsibleDisclosure": {
+      "navTitle": "Pengungkapan Kerentanan",
+      "eyebrow": "Keamanan Informasi · Responsible Disclosure",
+      "title": "Kebijakan Pengungkapan Kerentanan Keamanan",
+      "subtitle": "PT Sundawa Teknologi Indonesia menghargai kontribusi peneliti keamanan yang melaporkan potensi celah secara bertanggung jawab demi melindungi ekosistem digital kami dan klien.",
+      "lastUpdated": "25 November 2026",
+      "jurisdictionBadge": "Safe Harbor Itikad Baik",
+      "sections": [
+        {
+          "id": "scope",
+          "heading": "Ruang Lingkup Pelaporan",
+          "paragraphs": [
+            "Kebijakan ini mencakup domain utama https://sundawa.net beserta halaman dan endpoint publik yang dikelola langsung oleh PT Sundawa Teknologi Indonesia.",
+            "Sistem milik klien atau portal terproteksi pihak ketiga yang tidak secara eksplisit tercakup di sini berada di luar ruang lingkup pengujian tanpa otorisasi tertulis."
+          ]
+        },
+        {
+          "id": "how-to-report",
+          "heading": "Cara Melaporkan Kerentanan",
+          "paragraphs": [
+            "Kirimkan laporan Anda ke contact@sundawa.net dengan subjek \"[Security Disclosure]\". Sertakan informasi berikut agar tim kami dapat memvalidasi dengan cepat:"
+          ],
+          "bullets": [
+            "Deskripsi kerentanan beserta URL/endpoint terdampak.",
+            "Langkah reproduksi yang jelas (proof-of-concept minimal tanpa merusak sistem).",
+            "Penilaian dampak potensial dan saran mitigasi (bila ada)."
+          ]
+        },
+        {
+          "id": "prohibited-testing",
+          "heading": "Batasan Pengujian yang Dilarang",
+          "paragraphs": [
+            "Demi menjaga keamanan operasional dan data pengguna, peneliti keamanan wajib menghindari:"
+          ],
+          "bullets": [
+            "Serangan Denial-of-Service (DoS/DDoS), spam massal, atau pengujian beban yang mengganggu ketersediaan layanan.",
+            "Mengakses, menyalin, mengubah, atau menghapus data milik pengguna atau klien lain.",
+            "Rekayasa sosial (phishing) terhadap karyawan, mitra, atau infrastruktur fisik Sundawa."
+          ]
+        },
+        {
+          "id": "commitment",
+          "heading": "Komitmen Kami (Safe Harbor)",
+          "paragraphs": [
+            "Kami menargetkan konfirmasi penerimaan laporan dalam maksimal 3 (tiga) hari kerja dan berkomitmen menjaga komunikasi transparan hingga remediasi selesai.",
+            "PT Sundawa Teknologi Indonesia tidak akan mengambil tindakan hukum terhadap peneliti keamanan yang bertindak dengan itikad baik, mematuhi batasan kebijakan ini, dan memberi waktu wajar bagi kami sebelum publikasi."
+          ]
+        }
+      ]
+    },
+    "dpa": {
+      "navTitle": "Perjanjian Pemrosesan Data (DPA)",
+      "eyebrow": "Kepatuhan B2B · UU PDP & GDPR",
+      "title": "Kerangka Perjanjian Pemrosesan Data B2B (DPA)",
+      "subtitle": "Ringkasan komitmen pemrosesan data PT Sundawa Teknologi Indonesia saat bertindak sebagai Prosesor Data bagi klien perusahaan dan instansi dalam proyek pengembangan maupun managed engineering.",
+      "lastUpdated": "25 November 2026",
+      "jurisdictionBadge": "B2B Enterprise · UU PDP · GDPR Art. 28",
+      "sections": [
+        {
+          "id": "roles",
+          "heading": "Peran Pengendali & Prosesor Data",
+          "paragraphs": [
+            "Dalam proyek rekayasa perangkat lunak, integrasi sistem, atau pemeliharaan pasca-rilis di mana Sundawa memperoleh akses terbatas ke lingkungan data klien, Klien bertindak sebagai Pengendali Data (Data Controller) dan PT Sundawa Teknologi Indonesia bertindak sebagai Prosesor Data (Data Processor)."
+          ]
+        },
+        {
+          "id": "processing-instructions",
+          "heading": "Pemrosesan Berdasarkan Instruksi Tertulis",
+          "paragraphs": [
+            "Sundawa hanya memproses data klien semata-mata sesuai instruksi tertulis dalam kontrak induk (MSA/SOW) dan tidak pernah menggunakan data operasional klien untuk kepentingan komersial lain atau pelatihan model AI publik."
+          ]
+        },
+        {
+          "id": "toms",
+          "heading": "Langkah Teknis & Organisasional (TOMs)",
+          "paragraphs": [
+            "Sebagai bagian dari DPA standar kami, Sundawa menerapkan kontrol pengamanan berikut:"
+          ],
+          "bullets": [
+            "Kewajiban kerahasiaan (NDA) bagi seluruh personel engineering yang terlibat.",
+            "Prinsip akses minimum (least privilege), isolasi kredensial, dan penghapusan akses segera setelah proyek selesai.",
+            "Praktik pengkodean aman selaras OWASP ASVS dan enkripsi komunikasi TLS.",
+            "Bantuan pelaporan insiden keamanan data secara segera apabila ditemukan indikasi pelanggaran pada cakupan layanan Sundawa."
+          ]
+        },
+        {
+          "id": "subprocessors-return",
+          "heading": "Sub-Prosesor & Pengembalian / Penghapusan Data",
+          "paragraphs": [
+            "Sundawa tidak melibatkan sub-prosesor tambahan atas data produksi klien tanpa persetujuan tertulis dari Klien.",
+            "Pada akhir masa kontrak, seluruh salinan data klien atau akses sementara yang berada dalam kendali Sundawa akan dikembalikan atau dihapus secara aman sesuai instruksi tertulis Klien."
+          ]
+        },
+        {
+          "id": "request-dpa",
+          "heading": "Permintaan Draf DPA Resmi",
+          "paragraphs": [
+            "Untuk meminta salinan lengkap B2B Data Processing Agreement (DPA) kami guna tinjauan tim legal atau pengadaan perusahaan Anda, kirimkan email ke contact@sundawa.net dengan subjek \"[Legal / DPA Request]\"."
+          ]
+        }
+      ]
+    }
   }
 }

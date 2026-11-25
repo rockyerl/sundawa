@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server'
 import { Link } from '@/src/i18n/navigation'
 import { buildWhatsAppUrl } from '@/lib/contact'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
+import PrintBriefButton from './PrintBriefButton'
 
 interface PartnerTrack {
     code: string
@@ -202,6 +203,7 @@ export default async function PartnersPage() {
                                     <span>{t('cta.secondary')}</span>
                                     <ArrowUpRight size={14} aria-hidden="true" />
                                 </a>
+                                <PrintBriefButton label={t('cta.downloadBrief')} />
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { AlertCircle, ArrowUpRight, CheckCircle2, ClipboardCheck, RotateCcw, Send } from 'lucide-react'
+import { AlertCircle, ArrowUpRight, CheckCircle2, ClipboardCheck, Printer, RotateCcw, Send } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
 import { buildWhatsAppUrl } from '@/lib/contact'
@@ -28,6 +28,7 @@ export default function AssessmentPage() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [company, setCompany] = useState('')
+    const [marketingConsent, setMarketingConsent] = useState(false)
     const [honeypot, setHoneypot] = useState('')
     const [submitting, setSubmitting] = useState(false)
     const [submitted, setSubmitted] = useState(false)
@@ -104,7 +105,8 @@ export default function AssessmentPage() {
                     topic: `${t('navTitle')} (${result.percentage}/100 - ${tierLabel})`,
                     message: summary,
                     sourceUrl: typeof window !== 'undefined' ? window.location.pathname : '/assessment',
-                    website: honeypot,
+                    hp: honeypot,
+                    marketingConsent,
                 }),
             })
 
@@ -333,7 +335,15 @@ export default function AssessmentPage() {
                                             {t('leadForm.desc')}
                                         </p>
 
-                                        <div className="flex flex-col gap-3">
+                                        <div className="print-hidden flex flex-col gap-3">
+                                            <button
+                                                type="button"
+                                                onClick={() => window.print()}
+                                                className="inline-flex min-h-[44px] cursor-pointer items-center justify-center gap-2 border border-sky/40 bg-sky/10 px-5 py-3 text-xs font-bold tracking-[0.15em] text-sky uppercase transition-colors hover:border-sky hover:bg-sky/20"
+                                            >
+                                                <Printer size={14} aria-hidden="true" />
+                                                <span>{t('leadForm.printPdfCta')}</span>
+                                            </button>
                                             <a
                                                 href={buildWhatsAppUrl(waSummary)}
                                                 target="_blank"
@@ -437,6 +447,31 @@ export default function AssessmentPage() {
                                                         onChange={(e) => setCompany(e.target.value)}
                                                         className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm text-cream outline-none focus:border-gold"
                                                     />
+                                                </div>
+
+                                                {/* Optional Marketing Opt-in + Privacy Notice */}
+                                                <div className="space-y-2.5 border border-cream/10 bg-navy/70 p-3.5 text-xs text-cream/80">
+                                                    <label className="flex cursor-pointer items-start gap-2.5">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={marketingConsent}
+                                                            onChange={(e) => setMarketingConsent(e.target.checked)}
+                                                            className="mt-0.5 h-4 w-4 accent-[#DBC977]"
+                                                        />
+                                                        <span className="leading-relaxed">
+                                                            {t('leadForm.marketingOptIn')}
+                                                        </span>
+                                                    </label>
+                                                    <p className="text-[0.7rem] leading-relaxed text-cream/75">
+                                                        {t('leadForm.privacyNoticePrefix')}{' '}
+                                                        <Link
+                                                            href="/privacy-policy"
+                                                            className="font-semibold text-gold underline underline-offset-2 hover:text-cream"
+                                                        >
+                                                            {t('leadForm.privacyLinkLabel')}
+                                                        </Link>
+                                                        {t('leadForm.privacyNoticeSuffix')}
+                                                    </p>
                                                 </div>
 
                                                 <button

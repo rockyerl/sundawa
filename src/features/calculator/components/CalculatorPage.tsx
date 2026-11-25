@@ -1,13 +1,15 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { ArrowUpRight, Calculator, Info, RotateCcw } from 'lucide-react'
+import { ArrowUpRight, Calculator, ChevronDown, Info, Printer, RotateCcw } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/src/i18n/navigation'
 import { buildWhatsAppUrl } from '@/lib/contact'
 import { trackWhatsAppClick } from '@/lib/analytics'
 import SubpageNav from '@/src/shared/ui/SubpageNav'
 import {
+    CALCULATOR_ASSUMPTIONS,
+    CALCULATOR_CURRENCIES,
     calculateLegacyCost,
     DEFAULT_INPUTS_BY_CURRENCY,
     formatCurrencyAmount,
@@ -21,6 +23,7 @@ export default function CalculatorPage() {
     const initialCurrency: CalculatorCurrency = locale === 'en' ? 'USD' : 'IDR'
     const [currency, setCurrency] = useState<CalculatorCurrency>(initialCurrency)
     const [inputs, setInputs] = useState<LegacyCostInputs>(DEFAULT_INPUTS_BY_CURRENCY[initialCurrency])
+    const [showAssumptions, setShowAssumptions] = useState(false)
 
     const result = useMemo(() => calculateLegacyCost(inputs), [inputs])
 
@@ -42,6 +45,8 @@ export default function CalculatorPage() {
         threeYearCost: formatCurrencyAmount(result.threeYearCumulativeCost, currency),
         manualWaste: formatCurrencyAmount(result.annualManualWaste, currency),
     })
+
+    const isLargeUnit = currency === 'IDR'
 
     return (
         <div className="min-h-screen bg-navy text-cream">
@@ -69,15 +74,15 @@ export default function CalculatorPage() {
                             </p>
                         </div>
 
-                        {/* Currency Selector */}
-                        <div className="inline-flex border border-gold/30 bg-[#0E1E30] p-1">
-                            {(['IDR', 'USD'] as const).map((curr) => (
+                        {/* Currency Selector: IDR, USD, GBP, EUR */}
+                        <div className="print-hidden inline-flex flex-wrap border border-gold/30 bg-[#0E1E30] p-1">
+                            {CALCULATOR_CURRENCIES.map((curr) => (
                                 <button
                                     key={curr}
                                     type="button"
                                     onClick={() => handleCurrencyChange(curr)}
                                     aria-pressed={currency === curr}
-                                    className={`min-h-[44px] cursor-pointer px-5 text-xs font-extrabold tracking-[0.16em] uppercase transition-colors ${
+                                    className={`min-h-[44px] cursor-pointer px-4 text-xs font-extrabold tracking-[0.16em] uppercase transition-colors ${
                                         currency === curr
                                             ? 'bg-gold text-navy'
                                             : 'text-cream/80 hover:text-gold'
@@ -96,132 +101,159 @@ export default function CalculatorPage() {
                 <div className="container-main">
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
                         {/* Input Panel */}
-                        <div className="space-y-6 border border-gold/20 bg-[#0E1E30] p-6 sm:p-8 lg:col-span-7">
-                            <div className="flex items-center justify-between border-b border-gold/15 pb-4">
-                                <div className="flex items-center gap-2.5">
-                                    <Calculator size={18} className="text-gold" aria-hidden="true" />
-                                    <h2 className="text-base font-black text-cream uppercase">
-                                        {t('inputsSection.title')}
-                                    </h2>
+                        <div className="space-y-6 lg:col-span-7">
+                            <div className="space-y-6 border border-gold/20 bg-[#0E1E30] p-6 sm:p-8">
+                                <div className="flex items-center justify-between border-b border-gold/15 pb-4">
+                                    <div className="flex items-center gap-2.5">
+                                        <Calculator size={18} className="text-gold" aria-hidden="true" />
+                                        <h2 className="text-base font-black text-cream uppercase">
+                                            {t('inputsSection.title')}
+                                        </h2>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={() => setInputs(DEFAULT_INPUTS_BY_CURRENCY[currency])}
+                                        className="print-hidden inline-flex min-h-[44px] cursor-pointer items-center gap-1.5 px-3 text-xs font-bold tracking-wider text-cream/75 uppercase hover:text-gold"
+                                    >
+                                        <RotateCcw size={13} aria-hidden="true" />
+                                        <span>{t('inputsSection.reset')}</span>
+                                    </button>
                                 </div>
-                                <button
-                                    type="button"
-                                    onClick={() => setInputs(DEFAULT_INPUTS_BY_CURRENCY[currency])}
-                                    className="inline-flex min-h-[44px] cursor-pointer items-center gap-1.5 px-3 text-xs font-bold tracking-wider text-cream/75 uppercase hover:text-gold"
-                                >
-                                    <RotateCcw size={13} aria-hidden="true" />
-                                    <span>{t('inputsSection.reset')}</span>
-                                </button>
+
+                                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                                    <div>
+                                        <label htmlFor="calc-staff" className="mb-1.5 block text-xs font-bold text-cream">
+                                            {t('fields.staffCount.label')}
+                                        </label>
+                                        <p className="mb-2 text-[0.72rem] font-light text-cream/75">
+                                            {t('fields.staffCount.hint')}
+                                        </p>
+                                        <input
+                                            id="calc-staff"
+                                            type="number"
+                                            min={0}
+                                            max={5000}
+                                            value={inputs.staffCount}
+                                            onChange={(e) => updateField('staffCount', e.target.value)}
+                                            className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="calc-hours" className="mb-1.5 block text-xs font-bold text-cream">
+                                            {t('fields.manualHoursPerWeek.label')}
+                                        </label>
+                                        <p className="mb-2 text-[0.72rem] font-light text-cream/75">
+                                            {t('fields.manualHoursPerWeek.hint')}
+                                        </p>
+                                        <input
+                                            id="calc-hours"
+                                            type="number"
+                                            min={0}
+                                            max={40}
+                                            value={inputs.manualHoursPerWeek}
+                                            onChange={(e) => updateField('manualHoursPerWeek', e.target.value)}
+                                            className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="calc-hourly" className="mb-1.5 block text-xs font-bold text-cream">
+                                            {t('fields.hourlyCost.label', { currency })}
+                                        </label>
+                                        <p className="mb-2 text-[0.72rem] font-light text-cream/75">
+                                            {t('fields.hourlyCost.hint')}
+                                        </p>
+                                        <input
+                                            id="calc-hourly"
+                                            type="number"
+                                            min={0}
+                                            step={isLargeUnit ? 5000 : 5}
+                                            value={inputs.hourlyCost}
+                                            onChange={(e) => updateField('hourlyCost', e.target.value)}
+                                            className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="calc-maint" className="mb-1.5 block text-xs font-bold text-cream">
+                                            {t('fields.monthlyMaintenance.label', { currency })}
+                                        </label>
+                                        <p className="mb-2 text-[0.72rem] font-light text-cream/75">
+                                            {t('fields.monthlyMaintenance.hint')}
+                                        </p>
+                                        <input
+                                            id="calc-maint"
+                                            type="number"
+                                            min={0}
+                                            step={isLargeUnit ? 1000000 : 250}
+                                            value={inputs.monthlyMaintenance}
+                                            onChange={(e) => updateField('monthlyMaintenance', e.target.value)}
+                                            className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="calc-downtime-hrs" className="mb-1.5 block text-xs font-bold text-cream">
+                                            {t('fields.downtimeHoursPerMonth.label')}
+                                        </label>
+                                        <p className="mb-2 text-[0.72rem] font-light text-cream/75">
+                                            {t('fields.downtimeHoursPerMonth.hint')}
+                                        </p>
+                                        <input
+                                            id="calc-downtime-hrs"
+                                            type="number"
+                                            min={0}
+                                            max={720}
+                                            value={inputs.downtimeHoursPerMonth}
+                                            onChange={(e) => updateField('downtimeHoursPerMonth', e.target.value)}
+                                            className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="calc-downtime-cost" className="mb-1.5 block text-xs font-bold text-cream">
+                                            {t('fields.downtimeCostPerHour.label', { currency })}
+                                        </label>
+                                        <p className="mb-2 text-[0.72rem] font-light text-cream/75">
+                                            {t('fields.downtimeCostPerHour.hint')}
+                                        </p>
+                                        <input
+                                            id="calc-downtime-cost"
+                                            type="number"
+                                            min={0}
+                                            step={isLargeUnit ? 250000 : 100}
+                                            value={inputs.downtimeCostPerHour}
+                                            onChange={(e) => updateField('downtimeCostPerHour', e.target.value)}
+                                            className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                                <div>
-                                    <label htmlFor="calc-staff" className="mb-1.5 block text-xs font-bold text-cream">
-                                        {t('fields.staffCount.label')}
-                                    </label>
-                                    <p className="mb-2 text-[0.72rem] font-light text-cream/75">
-                                        {t('fields.staffCount.hint')}
-                                    </p>
-                                    <input
-                                        id="calc-staff"
-                                        type="number"
-                                        min={0}
-                                        max={5000}
-                                        value={inputs.staffCount}
-                                        onChange={(e) => updateField('staffCount', e.target.value)}
-                                        className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
+                            {/* Transparent Formula & Assumptions Accordion */}
+                            <div className="border border-gold/15 bg-[#081320]">
+                                <button
+                                    type="button"
+                                    onClick={() => setShowAssumptions((prev) => !prev)}
+                                    aria-expanded={showAssumptions}
+                                    className="flex min-h-[48px] w-full cursor-pointer items-center justify-between px-6 py-4 text-left text-xs font-bold tracking-[0.14em] text-gold uppercase"
+                                >
+                                    <span>{t('assumptions.toggle')}</span>
+                                    <ChevronDown
+                                        size={15}
+                                        aria-hidden="true"
+                                        className={`transition-transform duration-200 ${showAssumptions ? 'rotate-180' : ''}`}
                                     />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="calc-hours" className="mb-1.5 block text-xs font-bold text-cream">
-                                        {t('fields.manualHoursPerWeek.label')}
-                                    </label>
-                                    <p className="mb-2 text-[0.72rem] font-light text-cream/75">
-                                        {t('fields.manualHoursPerWeek.hint')}
-                                    </p>
-                                    <input
-                                        id="calc-hours"
-                                        type="number"
-                                        min={0}
-                                        max={40}
-                                        value={inputs.manualHoursPerWeek}
-                                        onChange={(e) => updateField('manualHoursPerWeek', e.target.value)}
-                                        className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="calc-hourly" className="mb-1.5 block text-xs font-bold text-cream">
-                                        {t('fields.hourlyCost.label', { currency })}
-                                    </label>
-                                    <p className="mb-2 text-[0.72rem] font-light text-cream/75">
-                                        {t('fields.hourlyCost.hint')}
-                                    </p>
-                                    <input
-                                        id="calc-hourly"
-                                        type="number"
-                                        min={0}
-                                        step={currency === 'IDR' ? 5000 : 5}
-                                        value={inputs.hourlyCost}
-                                        onChange={(e) => updateField('hourlyCost', e.target.value)}
-                                        className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="calc-maint" className="mb-1.5 block text-xs font-bold text-cream">
-                                        {t('fields.monthlyMaintenance.label', { currency })}
-                                    </label>
-                                    <p className="mb-2 text-[0.72rem] font-light text-cream/75">
-                                        {t('fields.monthlyMaintenance.hint')}
-                                    </p>
-                                    <input
-                                        id="calc-maint"
-                                        type="number"
-                                        min={0}
-                                        step={currency === 'IDR' ? 1000000 : 250}
-                                        value={inputs.monthlyMaintenance}
-                                        onChange={(e) => updateField('monthlyMaintenance', e.target.value)}
-                                        className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="calc-downtime-hrs" className="mb-1.5 block text-xs font-bold text-cream">
-                                        {t('fields.downtimeHoursPerMonth.label')}
-                                    </label>
-                                    <p className="mb-2 text-[0.72rem] font-light text-cream/75">
-                                        {t('fields.downtimeHoursPerMonth.hint')}
-                                    </p>
-                                    <input
-                                        id="calc-downtime-hrs"
-                                        type="number"
-                                        min={0}
-                                        max={720}
-                                        value={inputs.downtimeHoursPerMonth}
-                                        onChange={(e) => updateField('downtimeHoursPerMonth', e.target.value)}
-                                        className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="calc-downtime-cost" className="mb-1.5 block text-xs font-bold text-cream">
-                                        {t('fields.downtimeCostPerHour.label', { currency })}
-                                    </label>
-                                    <p className="mb-2 text-[0.72rem] font-light text-cream/75">
-                                        {t('fields.downtimeCostPerHour.hint')}
-                                    </p>
-                                    <input
-                                        id="calc-downtime-cost"
-                                        type="number"
-                                        min={0}
-                                        step={currency === 'IDR' ? 250000 : 100}
-                                        value={inputs.downtimeCostPerHour}
-                                        onChange={(e) => updateField('downtimeCostPerHour', e.target.value)}
-                                        className="w-full border border-cream/20 bg-navy px-4 py-3 text-sm font-semibold text-cream outline-none focus:border-gold"
-                                    />
-                                </div>
+                                </button>
+                                {showAssumptions && (
+                                    <div className="space-y-2 border-t border-gold/15 px-6 py-5 text-xs leading-relaxed text-cream/80">
+                                        <p>{t('assumptions.manualFormula', { weeks: CALCULATOR_ASSUMPTIONS.weeksPerYear })}</p>
+                                        <p>{t('assumptions.maintenanceFormula', { months: CALCULATOR_ASSUMPTIONS.monthsPerYear })}</p>
+                                        <p>{t('assumptions.downtimeFormula', { months: CALCULATOR_ASSUMPTIONS.monthsPerYear })}</p>
+                                        <p>{t('assumptions.savingsFormula')}</p>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -283,7 +315,7 @@ export default function CalculatorPage() {
                                 </div>
                             </div>
 
-                            <div className="mt-8 flex flex-col gap-3">
+                            <div className="print-hidden mt-8 flex flex-col gap-3">
                                 <Link
                                     href="/contact?service=modernisasi-sistem"
                                     className="inline-flex min-h-[48px] items-center justify-center gap-2 bg-gold px-5 py-3.5 text-xs font-extrabold tracking-[0.16em] text-navy uppercase no-underline transition-colors hover:bg-[#e5d68a]"
@@ -307,6 +339,14 @@ export default function CalculatorPage() {
                                     <span>{t('cta.whatsapp')}</span>
                                     <ArrowUpRight size={14} aria-hidden="true" />
                                 </a>
+                                <button
+                                    type="button"
+                                    onClick={() => window.print()}
+                                    className="inline-flex min-h-[44px] cursor-pointer items-center justify-center gap-2 border border-cream/20 px-5 py-3 text-xs font-bold tracking-[0.15em] text-cream/85 uppercase transition-colors hover:border-gold/50 hover:text-gold"
+                                >
+                                    <Printer size={14} aria-hidden="true" />
+                                    <span>{t('cta.printPdf')}</span>
+                                </button>
                             </div>
                         </div>
                     </div>
