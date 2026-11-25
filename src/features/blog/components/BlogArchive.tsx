@@ -93,10 +93,14 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                         <input
                             id="blog-search"
                             name="q"
-                            type="text"
+                            type="search"
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                             placeholder={translations.searchPlaceholder}
+                            aria-label={translations.searchPlaceholder}
+                            autoComplete="off"
+                            autoCorrect="off"
+                            spellCheck={false}
                             className="w-full rounded-xl px-5 py-3.5 text-sm text-[#F8F8F8] outline-none transition-colors focus:ring-2 focus:ring-[#DBC977]/60"
                             style={{
                                 background: 'rgba(248,248,248,0.05)',
@@ -105,8 +109,9 @@ export default function BlogArchive({ posts, initialQuery, translations }: BlogA
                         />
                         {query.trim() && (
                             <button
+                                type="button"
                                 onClick={() => setQuery('')}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#F8F8F8]/75 hover:text-[#F8F8F8] transition-colors text-lg leading-none"
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#F8F8F8]/75 hover:text-[#F8F8F8] transition-colors text-lg leading-none cursor-pointer"
                                 aria-label="Clear search"
                             >
                                 ×

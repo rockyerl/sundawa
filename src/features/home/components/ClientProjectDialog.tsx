@@ -111,7 +111,7 @@ export default function ClientProjectDialog({ client, details, confidentialLabel
                         color: 'rgba(248,248,248,0.7)',
                     }}
                 >
-                    <X size={14} />
+                    <X size={14} aria-hidden="true" />
                 </button>
                 {client.main_image_url && (
                     <div

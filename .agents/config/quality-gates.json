@@ -1,0 +1,114 @@
+{
+  "version": "1.1.0",
+  "note": "Sundawa policy defaults only. Owner project can tighten, never silently loosen. Human approval required for risk acceptance. Enterprise and regulated also require dedicated governance artifacts; no auto PASS.",
+  "profiles": {
+    "prototype": {
+      "blocking_severities": [
+        "critical"
+      ],
+      "required_gates": [
+        "REQ-TRACE",
+        "TEST-RESULTS",
+        "SEC-SCOPE"
+      ],
+      "human_approval_required": true
+    },
+    "web": {
+      "blocking_severities": [
+        "critical",
+        "high"
+      ],
+      "required_gates": [
+        "REQ-TRACE",
+        "UX-A11Y",
+        "TEST-RESULTS",
+        "SEC-SCOPE",
+        "SEC-VERIFY",
+        "BUILD-INTEGRITY",
+        "EVIDENCE"
+      ],
+      "human_approval_required": true
+    },
+    "api": {
+      "blocking_severities": [
+        "critical",
+        "high"
+      ],
+      "required_gates": [
+        "REQ-TRACE",
+        "API-CONTRACT",
+        "TEST-RESULTS",
+        "SEC-SCOPE",
+        "SEC-VERIFY",
+        "DB-SAFETY",
+        "BUILD-INTEGRITY",
+        "EVIDENCE"
+      ],
+      "human_approval_required": true
+    },
+    "enterprise": {
+      "blocking_severities": [
+        "critical",
+        "high"
+      ],
+      "required_gates": [
+        "REQ-TRACE",
+        "ARCH-REVIEW",
+        "TEST-RESULTS",
+        "SEC-SCOPE",
+        "SEC-VERIFY",
+        "DB-SAFETY",
+        "BUILD-INTEGRITY",
+        "EVIDENCE",
+        "RISK-OWNER",
+        "GOV-RISK",
+        "GOV-RACI",
+        "GOV-CAPABILITY",
+        "GOV-MONITOR"
+      ],
+      "human_approval_required": true
+    },
+    "regulated": {
+      "blocking_severities": [
+        "critical",
+        "high"
+      ],
+      "required_gates": [
+        "REQ-TRACE",
+        "ARCH-REVIEW",
+        "UX-A11Y",
+        "TEST-RESULTS",
+        "SEC-SCOPE",
+        "SEC-VERIFY",
+        "DB-SAFETY",
+        "BUILD-INTEGRITY",
+        "EVIDENCE",
+        "RISK-OWNER",
+        "ISMS-MAPPING",
+        "GOV-RISK",
+        "GOV-RACI",
+        "GOV-CAPABILITY",
+        "GOV-MONITOR"
+      ],
+      "human_approval_required": true
+    }
+  },
+  "gates": {
+    "REQ-TRACE": "Requirement ber-ID, approved, acceptance criteria terukur dan RTM",
+    "UX-A11Y": "UI critical flow tested keyboard, contrast, semantics, error handling; known exceptions documented",
+    "API-CONTRACT": "Versioned API contract compatibility, auth and error states validated",
+    "ARCH-REVIEW": "ADRs, diagram, NFRs, risk dan dependency disetujui",
+    "TEST-RESULTS": "Evidence dari eksekusi test pada commit/environment tertentu; failed tests ditangani",
+    "SEC-SCOPE": "Otorisasi dan scope security assessment tercatat",
+    "SEC-VERIFY": "ASVS-based controls applicable dievaluasi dan high/critical findings resolved/approved exception",
+    "DB-SAFETY": "Schema migrations, rollback, performance dan data integrity ditinjau",
+    "BUILD-INTEGRITY": "CI tests, artifact integrity, dependency/security scans, deployment approvals tercatat",
+    "EVIDENCE": "Setiap temuan/claim merujuk ke evidence yang valid dan terotorisasi",
+    "RISK-OWNER": "Risk register, treatment, owners, approval dan expiry relevan lengkap",
+    "ISMS-MAPPING": "ISMS boundary, scope, risk methodology, SoA/control map dan evidence tervalidasi",
+    "GOV-RISK": "Owned risks with documented appetite; high untreated risk blocked; acceptance current and approved",
+    "GOV-RACI": "Accountable decision rights, segregation of duties, signed RACI and traceable evidence",
+    "GOV-CAPABILITY": "Evidence-backed internal process readiness for selected governance objectives; NOT COBIT official capability score",
+    "GOV-MONITOR": "Applicable critical control effectiveness checked on schedule with verified evidence and remediation"
+  }
+}

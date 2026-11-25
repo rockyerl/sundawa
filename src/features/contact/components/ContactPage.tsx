@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { ArrowUpRight, CheckCircle2, FileDown, Mail, MapPin, MessageSquare, Phone, RotateCcw, Send } from 'lucide-react'
+import { AlertCircle, ArrowUpRight, CheckCircle2, FileDown, Mail, MapPin, MessageSquare, Phone, RotateCcw, Send } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { buildMailtoUrl, buildWhatsAppUrl, COMPANY_CONTACT } from '@/lib/contact'
 import { trackLeadConversion, trackWhatsAppClick } from '@/lib/analytics'
@@ -380,9 +380,14 @@ export default function ContactPage() {
                                     </div>
 
                                     {status === 'error' && (
-                                        <p className="border border-red-500/25 bg-red-500/5 p-4 text-xs text-red-400">
-                                            {t('errorDirect')}
-                                        </p>
+                                        <div
+                                            role="alert"
+                                            aria-live="assertive"
+                                            className="flex items-center gap-3 border border-red-500/35 bg-red-500/10 p-4 text-xs text-red-300"
+                                        >
+                                            <AlertCircle size={16} aria-hidden="true" className="flex-shrink-0 text-red-400" />
+                                            <span>{t('errorDirect')}</span>
+                                        </div>
                                     )}
                                 </form>
                             )}

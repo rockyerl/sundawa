@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "project": "SYNTHETIC-ONLY",
+  "generated_at": "2026-11-23T08:00:00+07:00",
+  "source_requirements": [
+    "REQ-001"
+  ],
+  "cases": [
+    {
+      "id": "TC-001",
+      "requirement_ids": [
+        "REQ-001"
+      ],
+      "category": "positive",
+      "priority": "P1",
+      "preconditions": [
+        "Synthetic user exists"
+      ],
+      "test_data": [
+        "fixture-account"
+      ],
+      "steps": [
+        "Open the synthetic login page",
+        "Enter fixture credential",
+        "Submit form"
+      ],
+      "expected": [
+        "User receives a synthetic successful login status"
+      ],
+      "automation_candidate": true,
+      "execution_status": "not-run",
+      "evidence_ids": []
+    },
+    {
+      "id": "TC-002",
+      "requirement_ids": [
+        "REQ-001"
+      ],
+      "category": "negative",
+      "priority": "P1",
+      "preconditions": [
+        "Synthetic user exists"
+      ],
+      "test_data": [
+        "invalid synthetic credential"
+      ],
+      "steps": [
+        "Submit invalid credential in fixture"
+      ],
+      "expected": [
+        "Generic error shown without account enumeration"
+      ],
+      "automation_candidate": true,
+      "execution_status": "not-run",
+      "evidence_ids": []
+    }
+  ],
+  "coverage_notes": [
+    "Illustrative design only: no testcase has been executed."
+  ]
+}

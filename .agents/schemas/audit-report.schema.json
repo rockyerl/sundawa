@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sundawa.net/schemas/audit-report.schema.json",
+  "title": "Sundawa Skill Audit Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "skill",
+    "generated_at",
+    "scope",
+    "method",
+    "standards_used",
+    "evidence",
+    "findings",
+    "limitations",
+    "gate_results",
+    "release_recommendation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "skill": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project",
+        "target",
+        "commit",
+        "environment",
+        "authorized",
+        "exclusions"
+      ],
+      "properties": {
+        "project": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "environment": {
+          "type": "string"
+        },
+        "authorized": {
+          "type": "boolean"
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "method": {
+      "enum": [
+        "static-review",
+        "manual-test",
+        "automated-test",
+        "mixed",
+        "document-review"
+      ]
+    },
+    "standards_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gate_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gate_id",
+          "status",
+          "rationale",
+          "evidence_ids"
+        ],
+        "properties": {
+          "gate_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "not-tested",
+              "not-applicable",
+              "waived"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 5
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "release_recommendation": {
+      "enum": [
+        "pass",
+        "review",
+        "block"
+      ]
+    },
+    "reviewed_by": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "uri",
+        "summary",
+        "captured_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "screenshot",
+            "log",
+            "test-run",
+            "source",
+            "document",
+            "ticket",
+            "scan",
+            "observation",
+            "other"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 5
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "access": {
+          "enum": [
+            "public",
+            "internal",
+            "restricted"
+          ]
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "severity",
+        "confidence",
+        "status",
+        "description",
+        "location",
+        "standard_refs",
+        "evidence_ids",
+        "recommendation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5
+        },
+        "severity": {
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low",
+            "info"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "suspected",
+            "resolved",
+            "risk-accepted",
+            "not-applicable"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 10
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "standard_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "expected": {
+          "type": "string"
+        },
+        "actual": {
+          "type": "string"
+        },
+        "reproduction_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "root_cause": {
+          "type": "string"
+        },
+        "recommendation": {
+          "type": "string",
+          "minLength": 5
+        },
+        "owner": {
+          "type": "string"
+        },
+        "acceptance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "approved_by",
+            "reason",
+            "expires_at"
+          ],
+          "properties": {
+            "approved_by": {
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "compensating_control": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

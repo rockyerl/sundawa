@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "SYNTHETIC-UI-001",
+  "skill": "visual-antislop",
+  "generated_at": "2026-11-23T08:00:00+07:00",
+  "scope": {
+    "project": "SYNTHETIC-ONLY",
+    "target": "mock checkout screen",
+    "commit": "example-not-real",
+    "environment": "synthetic-fixture",
+    "authorized": true,
+    "exclusions": [
+      "No live app tested",
+      "No real user research"
+    ]
+  },
+  "method": "static-review",
+  "standards_used": [
+    "ISO-25010",
+    "WCAG-2.2"
+  ],
+  "evidence": [
+    {
+      "id": "E-001",
+      "kind": "document",
+      "uri": "example://mock-ui-review",
+      "summary": "Synthetic fixture for schema testing only; not an observed client artifact.",
+      "captured_at": "2026-11-23T08:00:00+07:00",
+      "access": "internal"
+    }
+  ],
+  "findings": [
+    {
+      "id": "UX-SYN-001",
+      "title": "Synthetic placeholder error-state gap",
+      "severity": "medium",
+      "confidence": "low",
+      "status": "suspected",
+      "description": "Fictional example used to exercise the audit-report schema; requires real inspection before confirmation.",
+      "location": "example://mock-ui-review#checkout",
+      "standard_refs": [
+        "WCAG-2.2"
+      ],
+      "evidence_ids": [
+        "E-001"
+      ],
+      "recommendation": "Verify the actual checkout error-state implementation and accessible error explanation."
+    }
+  ],
+  "limitations": [
+    "SYNTHETIC EXAMPLE: no production/test environment, screenshots or test runs were examined."
+  ],
+  "gate_results": [
+    {
+      "gate_id": "REQ-TRACE",
+      "status": "not-tested",
+      "rationale": "Illustrative fixture has no approved requirements baseline.",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "EVIDENCE",
+      "status": "not-tested",
+      "rationale": "Synthetic URI is not real test evidence.",
+      "evidence_ids": []
+    }
+  ],
+  "release_recommendation": "review"
+}

@@ -109,7 +109,7 @@ export default function ProductCaseStudyDialog({
                     aria-label={translations.actions.close}
                     className="absolute top-4 right-4 z-20 flex h-9 w-9 cursor-pointer items-center justify-center border border-cream/15 bg-navy/80 text-cream/70 transition-colors hover:border-gold hover:text-gold"
                 >
-                    <X size={15} />
+                    <X size={15} aria-hidden="true" />
                 </button>
 
                 {/* Header */}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sundawa.net/schemas/governance-gate-results.schema.json",
+  "title": "Governance Gate Results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project",
+    "as_of",
+    "overall",
+    "gates",
+    "blocking_items",
+    "limitations",
+    "approver"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "overall": {
+      "enum": [
+        "BLOCK",
+        "REVIEW"
+      ]
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "evidence_ids",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "GOV-RISK",
+              "GOV-RACI",
+              "GOV-CAPABILITY",
+              "GOV-MONITOR"
+            ]
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "not-tested"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "blocking_items": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "approver": {
+      "type": "null"
+    }
+  }
+}

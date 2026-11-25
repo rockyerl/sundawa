@@ -70,3 +70,23 @@ Sundawa menggunakan palet gelap arsitektural (*dark architectural palette*):
 4. **Ergonomi Mobile**:
    - Seluruh target interaktif (tombol, link, switch) memiliki ukuran sentuh minimal **44x44px**.
    - Bebas *horizontal scroll/overflow* yang merusak tata letak di smartphone.
+
+---
+
+## 6. UI/UX Pro Max Intelligence & Ergonomic Rules
+
+Repository ini mengintegrasikan standar kecerdasan desain dari framework **UI/UX Pro Max** (`.agents/skills/ui-ux-pro-max/`):
+
+1. **Pemberhentian Scroll Navigasi (Anchor Jump Clearance)**:
+   - Setiap seksi ber-ID (`section[id]`) wajib memiliki `scroll-margin-top: 5.5rem` di `app/globals.css` berpasangan dengan `scroll-padding-top: 5rem` pada `html`.
+   - Mencegah header seksi terpotong atau tertutup oleh navigasi melayang (*sticky navbar*) saat pengguna melompat melalui tautan menu (`#services`, `#products`, `#clients`, `#contact`).
+
+2. **Keseimbangan Tipografi & Pencegahan Orphan (`text-wrap: balance`)**:
+   - Seluruh elemen judul (`h1`, `h2`, `h3`) diatur dengan `text-wrap: balance` native CSS.
+   - Mengeliminasi kata tunggal yang menggantung di baris terakhir (*typographic orphan*) pada viewport tablet dan seluler tanpa perlu manual `<br />`.
+
+3. **Semantik & Aksesibilitas Asistif (WCAG 2.2 AA)**:
+   - **Ikon Dekoratif**: Seluruh ikon grafis yang mendampingi teks eksplisit wajib menyematkan `aria-hidden="true"` agar tidak dibaca ganda oleh *screen reader*.
+   - **Status Alert Formulir**: Pesan kesalahan atau umpan balik formulir dinamis wajib mengimplementasikan `role="alert"` dan `aria-live="assertive"` disertai ikon peringatan (`AlertCircle`).
+   - **Semantik Pencarian**: Input pencarian arsip/katalog menggunakan `type="search"`, `aria-label`, serta menonaktifkan koreksi otomatis (`autoComplete="off"`, `autoCorrect="off"`, `spellCheck={false}`) untuk menjaga kenyamanan saat mencari kata kunci teknis.
+

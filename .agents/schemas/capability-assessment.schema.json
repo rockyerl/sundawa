@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sundawa.net/schemas/capability-assessment.schema.json",
+  "title": "Capability Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project",
+    "as_of",
+    "evidence_catalog",
+    "framework_target",
+    "compatibility_framework",
+    "assessment_method",
+    "official_isaca_assessment",
+    "assessments",
+    "assessment_scope",
+    "scope_approved_by",
+    "scope_approval_reference"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "evidence_catalog": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "uri",
+          "summary",
+          "captured_at",
+          "verified"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uri": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 5
+          },
+          "captured_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "verified_by": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verified_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "classification": {
+            "enum": [
+              "internal",
+              "restricted",
+              "public"
+            ]
+          }
+        }
+      }
+    },
+    "framework_target": {
+      "const": "COBIT-7"
+    },
+    "compatibility_framework": {
+      "const": "COBIT-2019"
+    },
+    "assessment_method": {
+      "const": "sundawa-internal-evidence-readiness"
+    },
+    "official_isaca_assessment": {
+      "const": false
+    },
+    "assessments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cobit2019_id",
+          "cobit7_theme",
+          "owner",
+          "selected",
+          "rationale",
+          "readiness_status",
+          "evidence_ids",
+          "process_checks"
+        ],
+        "properties": {
+          "cobit2019_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cobit7_theme": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 8
+          },
+          "readiness_status": {
+            "enum": [
+              "evidenced",
+              "gap",
+              "not-assessed",
+              "not-applicable"
+            ]
+          },
+          "assessed_by": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "process_checks": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "check_id",
+                "statement",
+                "status",
+                "evidence_ids"
+              ],
+              "properties": {
+                "check_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "statement": {
+                  "type": "string",
+                  "minLength": 5
+                },
+                "status": {
+                  "enum": [
+                    "evidenced",
+                    "gap",
+                    "not-assessed",
+                    "not-applicable"
+                  ]
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "minItems": 0,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "corrective_action_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "assessment_scope": {
+      "type": "string",
+      "minLength": 8
+    },
+    "scope_approved_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope_approval_reference": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

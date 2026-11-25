@@ -13,6 +13,7 @@
 # testing & coverage
 /coverage
 .vitest/
+.pytest_cache/
 
 # next.js
 /.next/
@@ -21,6 +22,16 @@
 
 # production
 /build
+
+# scratch & temporary audit scripts
+scratch/
+evidence-private/
+audit-evidence/
+
+# python cache
+__pycache__/
+*.py[cod]
+*$py.class
 
 # misc & OS
 .DS_Store

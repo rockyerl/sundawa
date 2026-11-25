@@ -41,6 +41,16 @@ section, nav, footer {
     width: 100%;
 }
 
+/* UI/UX Pro Max: Section anchor jump clearance for sticky navbar */
+section[id] {
+    scroll-margin-top: 5.5rem;
+}
+
+/* UI/UX Pro Max: Typographic balance to eliminate awkward single-word orphans */
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* anchor links (#services, #contact) no longer hide under the fixed navbar */

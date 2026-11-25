@@ -84,14 +84,14 @@ export default function ContactSection() {
                                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.background = '#DBC977' }}
                                 >
                                     <span>{t('ctaForm')}</span>
-                                    <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                                    <ArrowUpRight size={18} aria-hidden="true" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                                 </Link>
                                 <a
                                     href={COMPANY_CONTACT.emailHref}
                                     className="inline-flex items-center gap-2 border border-gold/30 px-6 py-4 text-xs font-extrabold tracking-[0.18em] text-gold uppercase no-underline transition-colors duration-200 hover:border-gold hover:bg-gold/10"
                                 >
                                     <span>{t('label')}</span>
-                                    <ArrowUpRight size={15} />
+                                    <ArrowUpRight size={15} aria-hidden="true" />
                                 </a>
                             </motion.div>
                         </div>
@@ -106,7 +106,7 @@ export default function ContactSection() {
                                     <div className="relative flex-shrink-0">
                                         <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center text-[#DBC977] transition-all duration-300 group-hover:scale-105"
                                              style={{ background: 'rgba(219,201,119,0.08)', border: '1px solid rgba(219,201,119,0.25)', clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))' }}>
-                                            <c.icon size={18} strokeWidth={1.5} />
+                                            <c.icon size={18} strokeWidth={1.5} aria-hidden="true" />
                                         </div>
                                     </div>
                                     <div className="flex-1 min-w-0">
@@ -114,13 +114,13 @@ export default function ContactSection() {
                                         <div className="text-sm font-semibold text-[#F8F8F8] group-hover:text-[#DBC977] transition-colors duration-300 break-words sm:truncate">{c.value}</div>
                                         <div className="text-xs text-[#F8F8F8]/75 mt-0.5">{c.desc}</div>
                                     </div>
-                                    <ArrowUpRight size={14} className="flex-shrink-0 text-[#DBC977]/0 group-hover:text-[#DBC977]/80 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                    <ArrowUpRight size={14} aria-hidden="true" className="flex-shrink-0 text-[#DBC977]/0 group-hover:text-[#DBC977]/80 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     <div className="absolute bottom-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(90deg, transparent, rgba(219,201,119,0.4), transparent)' }} />
                                 </motion.a>
                             ))}
 
                             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.6 }} className="flex items-center gap-2 mt-2 pl-2">
-                                <MapPin size={11} className="text-[#DBC977]/80" />
+                                <MapPin size={11} aria-hidden="true" className="text-[#DBC977]/80" />
                                 <span className="text-xs text-[#F8F8F8]/75 tracking-wider uppercase">{t('location')}</span>
                             </motion.div>
 

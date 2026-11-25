@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.1.0",
+  "source_framework": "COBIT-2019",
+  "target_framework": "COBIT-7",
+  "verified_as_of": "2026-11-23",
+  "owner": "Governance Lead (role; assign a person per project)",
+  "cobit7_source": "https://www.isaca.org/resources/cobit",
+  "cobit2019_source": "https://www.isaca.org/resources/news-and-trends/industry-news/2019/employing-cobit-2019-for-enterprise-governance-strategy",
+  "status": "internal-provisional",
+  "limitation": "COBIT 7 objective-to-objective mapping NOT independently verified. Theme labels are Sundawa internal categories. No proprietary ISACA content reproduced.",
+  "objectives": [
+    {
+      "cobit2019_id": "EDM01",
+      "cobit2019_name": "Ensured Governance Framework Setting and Maintenance",
+      "cobit7_theme": "governance-oversight",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "cobit-governance-auditor",
+        "audit-evidence-validator"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "EDM03",
+      "cobit2019_name": "Ensured Risk Optimization",
+      "cobit7_theme": "risk-management",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "cobit-governance-auditor",
+        "security-auditor",
+        "iso27001-gap-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "EDM05",
+      "cobit2019_name": "Ensured Stakeholder Engagement",
+      "cobit7_theme": "stakeholder-accountability",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "cobit-governance-auditor",
+        "requirements-validator"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "APO01",
+      "cobit2019_name": "Managed I&T Management Framework",
+      "cobit7_theme": "policy-and-accountability",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "cobit-governance-auditor",
+        "audit-evidence-validator"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "APO03",
+      "cobit2019_name": "Managed Enterprise Architecture",
+      "cobit7_theme": "enterprise-architecture",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "architecture-reviewer"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "APO11",
+      "cobit2019_name": "Managed Quality",
+      "cobit7_theme": "quality-management",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "visual-antislop",
+        "ui-ux-auditor",
+        "clean-code-auditor",
+        "test-case-generator"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "APO12",
+      "cobit2019_name": "Managed Risk",
+      "cobit7_theme": "risk-management",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "security-auditor",
+        "iso27001-gap-auditor",
+        "cobit-governance-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "APO13",
+      "cobit2019_name": "Managed Security",
+      "cobit7_theme": "security-management",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "security-auditor",
+        "iso27001-gap-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "BAI02",
+      "cobit2019_name": "Managed Requirements Definition",
+      "cobit7_theme": "requirements",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "requirements-validator",
+        "test-case-generator"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "BAI03",
+      "cobit2019_name": "Managed Solutions Identification and Build",
+      "cobit7_theme": "solution-delivery",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "architecture-reviewer",
+        "clean-code-auditor",
+        "database-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "BAI06",
+      "cobit2019_name": "Managed IT Changes",
+      "cobit7_theme": "change-management",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "cicd-security-auditor",
+        "database-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "BAI07",
+      "cobit2019_name": "Managed IT Change Acceptance and Transitioning",
+      "cobit7_theme": "release-transition",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "cicd-security-auditor",
+        "test-case-generator",
+        "bug-hunter"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "DSS03",
+      "cobit2019_name": "Managed Problems",
+      "cobit7_theme": "problem-management",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "bug-hunter",
+        "database-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "DSS05",
+      "cobit2019_name": "Managed Security Services",
+      "cobit7_theme": "security-operations",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "security-auditor",
+        "cicd-security-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "MEA02",
+      "cobit2019_name": "Managed System of Internal Control",
+      "cobit7_theme": "internal-controls",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "audit-evidence-validator",
+        "iso27001-gap-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "MEA03",
+      "cobit2019_name": "Managed Compliance With External Requirements",
+      "cobit7_theme": "regulatory-compliance",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "iso27001-gap-auditor",
+        "audit-evidence-validator"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    },
+    {
+      "cobit2019_id": "MEA04",
+      "cobit2019_name": "Managed Assurance",
+      "cobit7_theme": "independent-assurance",
+      "cobit7_objective_id": null,
+      "cobit7_equivalence": "not-verified",
+      "skills": [
+        "audit-evidence-validator",
+        "cobit-governance-auditor"
+      ],
+      "mapping_basis": "SUNDAWA thematic interpretation; validate with licensed COBIT 7 source before external representation",
+      "evidence_expectations": [
+        "reviewed process record",
+        "named accountable role",
+        "dated objective-specific evidence"
+      ],
+      "mapping_status": "internal-provisional"
+    }
+  ]
+}

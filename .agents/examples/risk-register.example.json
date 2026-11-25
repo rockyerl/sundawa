@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.1.0",
+  "project": "SYNTHETIC-ONLY",
+  "as_of": "2026-11-23",
+  "evidence_catalog": [
+    {
+      "id": "EV-RISK-DEMO",
+      "uri": "synthetic://example-only/EV-RISK-DEMO",
+      "summary": "Synthetic illustration only; not actual test evidence",
+      "captured_at": "2026-11-23T00:00:00Z",
+      "verified": false
+    }
+  ],
+  "risk_appetite": {
+    "high_threshold": 15,
+    "accepted_by_role": "Governance Owner",
+    "approved_reference": "synthetic://approval-required"
+  },
+  "risks": [
+    {
+      "id": "RISK-DEMO-01",
+      "title": "Unverified production secret management",
+      "category": "security",
+      "risk_owner": "Security Lead",
+      "likelihood": 4,
+      "impact": 5,
+      "status": "open",
+      "planned_treatment": "Implement secrets scanning and validate restricted access",
+      "due_date": "2026-12-01",
+      "evidence_ids": [],
+      "cobit2019_ids": [
+        "APO13",
+        "DSS05"
+      ]
+    }
+  ]
+}

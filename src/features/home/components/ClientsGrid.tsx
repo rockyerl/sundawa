@@ -80,7 +80,7 @@ export default function ClientsGrid({ clients, inView, activeIndex, expanded, ha
                                 </span>
                                 {client.confidential && (
                                     <div className="absolute top-2 right-2.5 flex items-center gap-1 py-0.5 px-2 border border-gold/30 bg-navy/75 text-[0.52rem] font-extrabold tracking-[0.18em] uppercase text-gold/80">
-                                        <Lock size={9} />{confidentialLabel}
+                                        <Lock size={9} aria-hidden="true" />{confidentialLabel}
                                     </div>
                                 )}
                             </div>
@@ -95,7 +95,7 @@ export default function ClientsGrid({ clients, inView, activeIndex, expanded, ha
                                     {client.name}
                                 </h3>
 
-                                <p className="text-[0.74rem] leading-snug font-light text-cream/42 margin-0 overflow-hidden"
+                                <p className="text-[0.74rem] leading-snug font-light text-cream/75 margin-0 overflow-hidden"
                                    style={{ minHeight: '2.37rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                                     {client.desc}
                                 </p>
@@ -105,9 +105,9 @@ export default function ClientsGrid({ clients, inView, activeIndex, expanded, ha
                                     <button
                                         type="button"
                                         aria-label={`${viewProjectLabel}: ${client.name}`}
-                                        className={`inline-flex items-center gap-1 p-0 border-none bg-transparent cursor-pointer text-[0.6rem] font-extrabold tracking-[0.15em] uppercase transition-colors duration-300 ${active ? 'text-gold' : 'text-cream/35'}`}
+                                        className={`inline-flex items-center gap-1 p-0 border-none bg-transparent cursor-pointer text-[0.6rem] font-extrabold tracking-[0.15em] uppercase transition-colors duration-300 ${active ? 'text-gold' : 'text-cream/75'}`}
                                     >
-                                        {viewProjectLabel}<ArrowUpRight size={12} />
+                                        {viewProjectLabel}<ArrowUpRight size={12} aria-hidden="true" />
                                     </button>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@ export default function ClientsGrid({ clients, inView, activeIndex, expanded, ha
                         className="inline-flex items-center gap-2 py-3 px-6 border border-gold/35 bg-gold/5 text-gold text-[0.68rem] font-extrabold tracking-[0.15em] uppercase cursor-pointer"
                     >
                         {expanded ? showLessLabel : showAllLabel}
-                        <ChevronDown size={14} style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
+                        <ChevronDown size={14} aria-hidden="true" style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
                     </button>
                 </div>
             )}

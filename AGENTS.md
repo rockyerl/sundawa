@@ -16,7 +16,8 @@ When asked to review, validate, develop, test, or audit software in this reposit
 
 | Domain | Task / Trigger | Associated Skill |
 |---|---|---|
-| **Product & UI** | Generic design, visual slop, brand compliance | `skills/visual-antislop` |
+| **Product & UI** | Generic design, visual slop, brand compliance | `skills/visual-antislop`, `.agents/skills/brand` |
+| **UX & Design Intelligence** | UI styling, 120 UX rules, design tokens, color profiles | `.agents/skills/ui-ux-pro-max`, `.agents/skills/ui-styling`, `.agents/skills/design-system` |
 | **UX & Accessibility** | Workflows, keyboard navigability, WCAG 2.2 AA, touch targets | `skills/ui-ux-auditor` |
 | **Requirements** | Feature scope, acceptance criteria, traceability (RTM) | `skills/requirements-validator` |
 | **Architecture** | System boundaries, NFRs, ADRs, state management | `skills/architecture-reviewer` |

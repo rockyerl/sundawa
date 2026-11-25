@@ -12,6 +12,8 @@ Official web application for **Sundawa Teknologi** — engineered for enterprise
 | **Runtime & UI** | React 19.2.4, TypeScript 5 (strict) |
 | **Styling** | Tailwind CSS v4 (`@tailwindcss/postcss`) |
 | **Design System** | Anti-Slop Core (Dial: Energy 2, Rhythm 2, Motion 2; WCAG AA $\ge$ 4.5:1) |
+| **UX & Design Intelligence** | UI/UX Pro Max (120 UX guidelines, 79 design styles, 192 color palettes) |
+| **Governance & Compliance** | Sundawa AI Engineering Standards v1.1.0 (ISO 27001, COBIT 7/2019, OWASP ASVS) |
 | **Animation** | Framer Motion v12 |
 | **Icons** | Lucide React, SimpleIcons CDN |
 | **i18n** | next-intl v4 (`id` default, `en`; prefix: `always`) |
@@ -213,8 +215,18 @@ sundawa-web/
 ├── anti-slop/                        # Anti-Slop Audit reports & remediation tracking
 │   ├── audit-001-remediation-report.md
 │   └── audit-002-deep-pass-report.md
-├── DESIGN.md                         # Anti-Slop design guidelines & dial settings
+├── DESIGN.md                         # Anti-Slop & UI/UX Pro Max design guidelines
 ├── antislop.md                       # Anti-Slop framework configuration
+├── .agents/                          # Sundawa AI Engineering Standards (v1.1.0 Governance & Compliance)
+│   ├── governance/                   # Operating rules, RACI, continuous compliance, COBIT 7
+│   ├── skills/                       # 22 engineering, design, and compliance skills
+│   │   ├── ui-ux-pro-max/            # UI/UX intelligence dataset (120 rules, palettes, styles)
+│   │   ├── visual-antislop/          # Anti-slop visual auditor
+│   │   ├── architecture-reviewer/    # System boundaries, ADRs, state management
+│   │   ├── security-auditor/         # OWASP ASVS, WSTG, auth security review
+│   │   ├── clean-code-auditor/       # Code maintainability & strict type safety
+│   │   └── ...                       # Database, ISO 27001, COBIT, test-case-generator
+│   └── config/quality-gates.json     # Release quality profiles (web & enterprise gates)
 ├── public/                           # Static assets, icons, service worker & manifest
 └── .github/
     ├── agents/                       # Custom GitHub Copilot agents
@@ -336,6 +348,21 @@ Custom admin panel at `/admin` for managing both **Blog Posts** and **Portfolio 
 ### 8. SEO & Structured Data
 - **Dynamic Sitemap**: Covers all static pages across both locales plus dynamic slugs for blog posts, portfolio projects, and products.
 - **Structured Data**: Organization, WebSite, Service, and BlogPosting JSON-LD schemas embedded for rich search engine indexing.
+
+### 9. UI/UX Pro Max Ergonomics & Accessibility
+The codebase integrates design intelligence and a11y criteria from `ui-ux-pro-max`:
+- **Anchor Navigation Clearance**: `section[id] { scroll-margin-top: 5.5rem; }` ensures sticky navigation never occludes target sections upon hash jumping (`#services`, `#products`, `#clients`, `#contact`).
+- **Typographic Orphan Prevention**: `h1, h2, h3 { text-wrap: balance; }` prevents awkward single-word wrapping across breakpoints.
+- **Assistive Technology Semantics**: Decorative icons carry `aria-hidden="true"`; dynamic form error feedback uses `role="alert"` and `aria-live="assertive"`.
+- **Search Usability**: Catalog/blog inputs use `type="search"`, explicit `aria-label`, and suppress aggressive mobile autocompletion (`autoComplete="off"`, `autoCorrect="off"`, `spellCheck={false}`).
+- **WCAG AA Contrast**: Secondary copy maintains $\ge 4.5:1$ contrast against the `#0A192F` dark navy background.
+
+### 10. Sundawa AI Engineering Governance (v1.1.0)
+Engineered for strict enterprise compliance and risk traceability (`.agents/`):
+- **Hierarchy of Truth**: Regulations & Contracts > Approved Requirements > Technical Standards (`standards/`) > Internal Governance (`governance/`) > AI Suggestions.
+- **Release Quality Gates**: Operates under `web` and `enterprise` profiles (`config/quality-gates.json`). Mandatory release gates (`REQ-TRACE`, `UX-A11Y`, `TEST-RESULTS`, `SEC-SCOPE`, `SEC-VERIFY`, `BUILD-INTEGRITY`, `EVIDENCE`, `ARCH-REVIEW`, `DB-SAFETY`).
+- **Audit Tooling**: Integrated TypeScript validation utilities in `scripts/` (`evaluate-gates.ts`, `validate-artifact.ts`, `validate-governance.ts`).
+
 
 ---
 

@@ -190,7 +190,7 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel, lo
                             </div>
                             <span className="mt-4 inline-flex items-center gap-1 text-[0.68rem] font-bold tracking-wider uppercase text-gold">
                                 <span>{isEn ? 'View Service' : 'Lihat Layanan'}</span>
-                                <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                <ArrowUpRight size={12} aria-hidden="true" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </span>
                         </Link>
 
@@ -212,7 +212,7 @@ export default function BlogPostDetail({ post, canonicalUrl, backToBlogLabel, lo
                             </div>
                             <span className="mt-4 inline-flex items-center gap-1 text-[0.68rem] font-bold tracking-wider uppercase text-gold">
                                 <span>{isEn ? 'View Case Study' : 'Lihat Studi Kasus'}</span>
-                                <ArrowUpRight size={12} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                <ArrowUpRight size={12} aria-hidden="true" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </span>
                         </Link>
                     </div>

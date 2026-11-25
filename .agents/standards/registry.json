@@ -1,0 +1,160 @@
+{
+  "verified_as_of": "2026-11-23",
+  "licensing_note": "Metadata dan ringkasan internal saja, tidak mereproduksi teks normatif berlisensi ISO. Kontrol klausul rinci wajib diverifikasi dari salinan resmi yang berlaku.",
+  "standards": {
+    "AGENT-SKILLS": {
+      "title": "Agent Skills open format",
+      "version": "current",
+      "url": "https://agentskills.io/specification",
+      "type": "packaging",
+      "usage_note": "Format SKILL.md dan progressive disclosure"
+    },
+    "ISO-9001": {
+      "title": "ISO 9001",
+      "version": "2026",
+      "url": "https://www.iso.org/9001-2026",
+      "type": "management-system",
+      "usage_note": "QMS dan perbaikan berkelanjutan"
+    },
+    "ISO-19011": {
+      "title": "ISO 19011",
+      "version": "2026",
+      "url": "https://www.iso.org/standard/19011",
+      "type": "guideline",
+      "usage_note": "Prinsip dan proses audit sistem manajemen; bukan standar sertifikasi"
+    },
+    "ISO-27001": {
+      "title": "ISO/IEC 27001",
+      "version": "2022+Amd1:2024",
+      "url": "https://www.iso.org/standard/27001",
+      "type": "management-system",
+      "usage_note": "ISMS, risk treatment, SoA, bukti dan proses"
+    },
+    "ISO-27002": {
+      "title": "ISO/IEC 27002",
+      "version": "2022",
+      "url": "https://www.iso.org/standard/75652.html",
+      "type": "guideline",
+      "usage_note": "Panduan security controls; bukan bukti penerapan otomatis"
+    },
+    "ISO-27701": {
+      "title": "ISO/IEC 27701",
+      "version": "2025",
+      "url": "https://www.iso.org/standard/27701",
+      "type": "management-system",
+      "usage_note": "Privacy information management"
+    },
+    "ISO-25010": {
+      "title": "ISO/IEC 25010",
+      "version": "2023",
+      "url": "https://www.iso.org/standard/78176.html",
+      "type": "quality-model",
+      "usage_note": "Product quality model; ukuran dan target didefinisikan proyek"
+    },
+    "ISO-29148": {
+      "title": "ISO/IEC/IEEE 29148",
+      "version": "2018",
+      "url": "https://www.iso.org/standard/72089.html",
+      "type": "requirements",
+      "usage_note": "Requirements engineering; revisi sedang berjalan per Nov 2026, jangan gunakan draft sebagai final"
+    },
+    "ISO-12207": {
+      "title": "ISO/IEC/IEEE 12207",
+      "version": "2026",
+      "url": "https://www.iso.org/standard/90219.html",
+      "type": "lifecycle",
+      "usage_note": "Software life-cycle processes"
+    },
+    "ISO-42010": {
+      "title": "ISO/IEC/IEEE 42010",
+      "version": "2022",
+      "url": "https://www.iso.org/standard/74393.html",
+      "type": "architecture",
+      "usage_note": "Architecture descriptions, viewpoints, stakeholder concerns"
+    },
+    "ISO-29119": {
+      "title": "ISO/IEC/IEEE 29119-1",
+      "version": "2022",
+      "url": "https://www.iso.org/standard/81291.html",
+      "type": "testing",
+      "usage_note": "General concepts; metode dan dokumen rujuk bagian seri lain yang berlaku"
+    },
+    "ISO-9241-210": {
+      "title": "ISO 9241-210",
+      "version": "2019",
+      "url": "https://www.iso.org/standard/77520.html",
+      "type": "human-centered",
+      "usage_note": "Human-centred design"
+    },
+    "ISO-40500": {
+      "title": "ISO/IEC 40500",
+      "version": "2025",
+      "url": "https://www.w3.org/WAI/news/2025-10-21/wcag22-iso/",
+      "type": "accessibility",
+      "usage_note": "Adopsi ISO/IEC WCAG 2.2"
+    },
+    "WCAG-2.2": {
+      "title": "W3C WCAG",
+      "version": "2.2 AA target",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "type": "accessibility",
+      "usage_note": "Level AA sebagai baseline proyek; audit manual tetap diperlukan"
+    },
+    "OWASP-ASVS": {
+      "title": "OWASP ASVS",
+      "version": "5.0.0",
+      "url": "https://asvs.owasp.org/",
+      "type": "verification",
+      "usage_note": "Verifikasi requirement aplikasi; profil/level berdasarkan risiko"
+    },
+    "OWASP-WSTG": {
+      "title": "OWASP WSTG",
+      "version": "4.2 pinned",
+      "url": "https://wstg.owasp.org/v4.2/",
+      "type": "testing",
+      "usage_note": "Metode pengujian security; cek latest secara terpisah"
+    },
+    "OWASP-TOP10": {
+      "title": "OWASP Top 10",
+      "version": "2025",
+      "url": "https://owasp.org/projects/top-ten/",
+      "type": "awareness",
+      "usage_note": "Daftar awareness, bukan checklist pengganti ASVS"
+    },
+    "NIST-SSDF": {
+      "title": "NIST SP 800-218 SSDF",
+      "version": "1.1 final",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+      "type": "guideline",
+      "usage_note": "Secure software development practices; revision 1.2 belum final pada baseline"
+    },
+    "NIST-AI-RMF": {
+      "title": "NIST AI Risk Management Framework",
+      "version": "1.0",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "type": "guideline",
+      "usage_note": "Risiko AI ketika skill diterapkan ke sistem AI"
+    },
+    "OWASP-CICD": {
+      "title": "OWASP Top 10 CI/CD Security Risks",
+      "version": "project reference",
+      "url": "https://owasp.org/www-project-top-10-ci-cd-security-risks/",
+      "type": "guideline",
+      "usage_note": "Checklist ancaman pipeline dan konfigurasi CI/CD"
+    },
+    "COBIT-7": {
+      "title": "COBIT 7 — Governance of Enterprise Information and Technology",
+      "version": "7 (released 2026-11-19)",
+      "url": "https://www.isaca.org/about-us/newsroom/press-releases/2026/isaca-launches-updated-cobit-7-with-enhanced-assessment-model-and-modern-digital-platform",
+      "type": "governance-framework",
+      "usage_note": "ISACA 2026 governance target. Do not manufacture official maturity scores, objective equivalences or COBIT 7 assessment results. Obtain authorized ISACA material for detailed practices and assessment."
+    },
+    "COBIT-2019": {
+      "title": "COBIT 2019 governance and management objectives",
+      "version": "2019",
+      "url": "https://www.isaca.org/resources/news-and-trends/industry-news/2019/employing-cobit-2019-for-enterprise-governance-strategy",
+      "type": "governance-framework",
+      "usage_note": "Compatibility crosswalk only. 2019 IDs and labels are not asserted to be unchanged in COBIT 7. Mapping is internal and provisional."
+    }
+  }
+}
