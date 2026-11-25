@@ -5,13 +5,13 @@ import { Link } from '@/src/i18n/navigation'
 import { COMPANY_CONTACT } from '@/lib/contact'
 
 const FOOTER_PRODUCTS = [
-    { slug: 'sewaka', label: 'Sewaka' },
     { slug: 'laku-pandai', label: 'LAKUPANDAI' },
-    { slug: 'vellumia', label: 'Vellumia' },
     { slug: 'si-geomedik', label: 'SI-GEOMEDIK' },
     { slug: 'nawasanga', label: 'Nawasanga' },
-    { slug: 'abo-rentcar', label: 'Abo Rent Car' },
     { slug: 'sundawa-people', label: 'SUNDAWA People' },
+    { slug: 'sewaka', label: 'Sewaka' },
+    { slug: 'vellumia', label: 'Vellumia' },
+    { slug: 'abo-rentcar', label: 'Abo Rent Car' },
 ] as const
 
 export default async function Footer() {
@@ -75,6 +75,16 @@ export default async function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/assessment" className="text-cream/80 no-underline transition-colors hover:text-gold">
+                                    {t('links.assessment')}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/calculator" className="text-cream/80 no-underline transition-colors hover:text-gold">
+                                    {t('links.calculator')}
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/proses-kerja" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.process')}
                                 </Link>
@@ -125,6 +135,21 @@ export default async function Footer() {
                             <li>
                                 <Link href="/about" className="text-cream/80 no-underline transition-colors hover:text-gold">
                                     {t('links.about')}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/trust-center" className="font-semibold text-cream/90 no-underline transition-colors hover:text-gold">
+                                    {t('links.trustCenter')}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/partners" className="text-cream/80 no-underline transition-colors hover:text-gold">
+                                    {t('links.partners')}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/resources" className="text-cream/80 no-underline transition-colors hover:text-gold">
+                                    {t('links.resources')}
                                 </Link>
                             </li>
                             <li>

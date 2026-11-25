@@ -33,7 +33,17 @@
       "aboutTitle": "About Sundawa",
       "aboutDesc": "PT Sundawa Teknologi Indonesia profile, vision, values & leadership",
       "valuesTitle": "Operational Transformation",
-      "valuesDesc": "How fragmented operations turn into dependable systems"
+      "valuesDesc": "How fragmented operations turn into dependable systems",
+      "assessmentTitle": "System Health Assessment",
+      "assessmentDesc": "2-minute diagnostic scoring legacy risk, integration & security",
+      "calculatorTitle": "Legacy System Cost Calculator",
+      "calculatorDesc": "Estimate annual manual workarounds, downtime & maintenance drain",
+      "resourcesTitle": "Enterprise Resource Center",
+      "resourcesDesc": "ERP modernization checklists, integration guides & vendor templates",
+      "trustCenterTitle": "Enterprise Trust Center",
+      "trustCenterDesc": "Information security, SSDLC governance, NDA & full code ownership",
+      "partnersTitle": "Partner With Sundawa",
+      "partnersDesc": "Co-delivery partnerships for consulting firms, SIs & global partners"
     }
   },
   "hero": {
@@ -240,9 +250,10 @@
     "label": "Case Studies & Track Record",
     "heading1": "Featured Projects",
     "heading2": "Proven in Production",
-    "sub": "2–3 curated projects demonstrating how Sundawa partners with organizations from initial problem discovery to resilient, everyday operational systems.",
+    "sub": "Selected production deployments demonstrating how Sundawa partners with organizations from initial problem discovery to resilient, everyday operational systems.",
     "ctaPortfolio": "Explore All 21+ Portfolio Projects",
     "labels": {
+      "projectPrefix": "PROJECT",
       "problem": "Problem",
       "work": "Sundawa's Work",
       "result": "Results",
@@ -916,7 +927,7 @@
         },
         {
           "sector": "Defense & Government",
-          "proof": "SI-GEOMEDIK MoD, AHU Copies & Legacy Rebuild"
+          "proof": "SI-GEOMEDIK (National Defense & Health Agency — NDA), Public Sector Modernization"
         },
         {
           "sector": "Healthcare Systems",
@@ -1375,12 +1386,36 @@
     "products": {
       "title": "Sundawa Products & Case Studies",
       "description": "Explore Sundawa's ecosystem of products: Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, and Abo Rent Car with their case studies."
+    },
+    "trustCenter": {
+      "title": "Enterprise Trust Center — Security, SSDLC & Governance",
+      "description": "Information security controls, software engineering governance, QA framework, SSDLC, full IP ownership, NDA, and alignment with ISO 27001, ISO 25010, OWASP, and COBIT 2019 at PT Sundawa Teknologi Indonesia."
+    },
+    "assessment": {
+      "title": "System Health Assessment — Enterprise Readiness Diagnostic",
+      "description": "Evaluate your legacy architecture, data integration, security governance, and operational bottlenecks in 2 minutes and receive actionable engineering recommendations."
+    },
+    "partners": {
+      "title": "Partner With Sundawa — Consulting, SI & Global Delivery Partnerships",
+      "description": "Partner with PT Sundawa Teknologi Indonesia for co-delivery engineering, international delivery hub overlap (Indonesia, UK, Europe), and enterprise system integration."
+    },
+    "calculator": {
+      "title": "Legacy System Cost Calculator — Quantify Operational Inefficiency",
+      "description": "Calculate the annual cost of manual workarounds, legacy maintenance drain, and operational downtime to build a grounded software modernization business case."
+    },
+    "resources": {
+      "title": "Enterprise Resource Center — ERP Checklists & Vendor Evaluation Guides",
+      "description": "Executive checklists for ERP modernization, system integration playbooks, and IT vendor evaluation matrices for CEOs, COOs, CTOs, and IT Managers."
     }
   },
   "products": {
     "navBack": "Back",
     "navTitle": "Sundawa Products",
-    "label": "Sundawa Products",
+    "label": "Enterprise Product Ecosystem",
+    "homeHeading1": "4 Core Enterprise",
+    "homeHeading2": "Platforms",
+    "homeSub": "Beyond bespoke client engineering, Sundawa designs and operates enterprise platforms built for financial inclusion, strategic healthcare, fleet ESG compliance, and multi-entity HR operations.",
+    "homeEcosystemNote": "Looking for our full 7-product ecosystem including SaaS & mobility initiatives (Sewaka, Vellumia, Abo Rent Car)?",
     "heading1": "7 Sundawa Products",
     "heading2": "& Initiatives",
     "sub": "Beyond bespoke client engineering, Sundawa designs and operates SaaS platforms, smart mobility products, and enterprise infrastructure built for real operational demands.",
@@ -1554,32 +1589,32 @@
       },
       "si-geomedik": {
         "name": "SI-GEOMEDIK",
-        "sector": "Defense Healthcare (MoD)",
+        "sector": "National Defense & Health Agency (NDA Protected)",
         "tagline": "Defense Geospatial & Healthcare Resource Information System",
-        "summary": "An active operational implementation deployed for the Ministry of Defense of the Republic of Indonesia (Kemhan RI): an auth-gated geospatial system managing military healthcare facilities, medical personnel, and defense medical supplies (restricted access for authorized defense personnel).",
-        "badgeMetric": "Active Operational Implementation (Authorized Personnel Only)",
-        "accessNote": "This system is an active operational implementation in production for the Ministry of Defense (Kemhan RI). The live link connects to the official auth gate; full system access is restricted to authorized defense personnel.",
+        "summary": "An active operational implementation deployed for a National Defense & Health Agency (NDA Protected): an auth-gated geospatial system managing healthcare facilities, medical personnel, equipment, and medical logistics (restricted access for authorized personnel).",
+        "badgeMetric": "Active Operational Implementation (NDA Protected)",
+        "accessNote": "This system is an active operational implementation in production for a National Defense & Health Agency (NDA Protected). The live link connects to the official auth gate; full system access is restricted to authorized personnel.",
         "modules": [
-          "Geospatial Inventory of Faskes & Medical Staff",
+          "Geospatial Inventory of Facilities & Medical Staff",
           "Medical Equipment & Logistics Tracking",
           "3-Tier Dynamic RBAC Approval Workflow",
           "HS256 Encrypted Sessions & SEC-07 Audit Trail"
         ],
         "caseStudy": {
-          "subject": "Indonesian Ministry of Defense: Pusdatin, Ditkes Kuathan Verifiers, & Faskes/Kesdam Operators",
-          "challenge": "Defense medical assets (encompassing healthcare facilities, medical personnel, equipment, and medical logistics) are distributed across regional units, requiring centralized geospatial visibility, layered verification, and hardened access security.",
-          "solution": "SI-GEOMEDIK separates duties across 3 defined organizational roles: Operator (Faskes/Kesdam) for unit data entry, Verifikator (Ditkes Kuathan) for verification, and Pusdatin as central Super Admin oversight.",
+          "subject": "National Defense & Health Agency (NDA Protected): Central Data Unit, National Verifiers, & Regional Facility Operators",
+          "challenge": "Strategic healthcare assets (encompassing healthcare facilities, medical personnel, equipment, and medical logistics) are distributed across regional units, requiring centralized geospatial visibility, layered verification, and hardened access security.",
+          "solution": "SI-GEOMEDIK separates duties across 3 defined organizational roles: Regional Facility Operator for unit data entry, National Verifier for tiered review, and Central Data Unit as Super Admin oversight.",
           "architecture": "Auth-gated personnel web portal secured by official email sign-in, HS256-encrypted sessions, Dynamic RBAC across all three command levels, and SUNDAWA SEC-07 compliant audit trails.",
-          "impact": "Establishes a secure, accountable single-portal foundation for defense healthcare resource readiness and verification spanning regional clinics to central ministry oversight.",
+          "impact": "Establishes a secure, accountable single-portal foundation for defense healthcare resource readiness and verification spanning regional clinics to central oversight.",
           "highlights": [
-            "3-tier RBAC: Operator, Verifier, & Pusdatin",
-            "Unified scope: Faskes, HR, Medical Gear & Logistics",
+            "3-tier RBAC: Regional Operator, National Verifier, & Central Data Unit",
+            "Unified scope: Facilities, HR, Medical Gear & Logistics",
             "HS256 encrypted sessions & SUNDAWA SEC-07 Audit Trail"
           ],
           "scenarios": [
             {
               "title": "Hierarchical Verification Workflow",
-              "outcome": "Regional Faskes/Kesdam updates pass through Ditkes Kuathan verification under central Pusdatin governance."
+              "outcome": "Regional facility updates pass through tiered central verification under central data unit governance."
             },
             {
               "title": "Hardened Login-Gated Security Posture",
@@ -1719,9 +1754,602 @@
       "allProducts": "All Products & Case Studies",
       "about": "About Sundawa",
       "blog": "Articles & Insights",
-      "contact": "Consultation Form"
+      "contact": "Consultation Form",
+      "assessment": "System Health Assessment",
+      "calculator": "Legacy Cost Calculator",
+      "trustCenter": "Enterprise Trust Center",
+      "partners": "Partner With Sundawa",
+      "resources": "Enterprise Resource Center"
     },
     "assurances": "Standard NDA · Full Code Ownership · On-Premise & Cloud",
     "copyright": "© {year} PT Sundawa Teknologi Indonesia. All rights reserved."
+  },
+  "trustCenter": {
+    "navBack": "Home",
+    "navTitle": "Enterprise Trust Center",
+    "eyebrow": "Security, Governance & Compliance",
+    "heading1": "Enterprise Trust Center",
+    "heading2": "Transparent Engineering & Security",
+    "subtitle": "Enterprise buyers do not simply procure code—they require verifiable data protection, auditable release governance, full intellectual property ownership, and clear post-launch accountability.",
+    "commitmentBox": {
+      "label": "Pre-Engagement Verification",
+      "desc": "Need our standard mutual NDA, vendor security questionnaire response, or an architecture review with our technical leadership?",
+      "ctaNda": "Request NDA & Security Review"
+    },
+    "transparencyNotice": {
+      "title": "Transparency & Non-Certification Notice",
+      "body": "ISO/IEC 27001, ISO/IEC 25010, OWASP ASVS/WSTG, and COBIT 2019/7 are referenced on this page as internal engineering frameworks and operational controls actively practiced by our team. PT Sundawa Teknologi Indonesia does not claim third-party certifications that have not been formally issued."
+    },
+    "pillarsSection": {
+      "eyebrow": "8 Enterprise Trust Pillars",
+      "heading": "Operational Controls Across Every Delivery Phase"
+    },
+    "pillars": [
+      {
+        "id": "infosec",
+        "code": "TC-01",
+        "title": "Information Security & Data Protection",
+        "summary": "Defense-in-depth data protection across application, network, and database tiers from day-one architecture design.",
+        "controls": [
+          "Encryption in transit (TLS 1.3) and protected handling of sensitive records at rest",
+          "Role-Based Access Control (RBAC) and database Row-Level Security (RLS) enforcement",
+          "Fail-fast environment variable validation with zero hardcoded credentials in source code",
+          "Strict separation between development, staging, and production environments"
+        ]
+      },
+      {
+        "id": "governance",
+        "code": "TC-02",
+        "title": "Software Development Governance",
+        "summary": "All engineering changes are governed under Sundawa AI Engineering Standards (v1.1.0) with auditable decision trails.",
+        "controls": [
+          "Written hierarchy of truth: Regulations & Contracts > Approved Requirements > Technical Standards",
+          "Architecture Decision Records (ADRs) for structural boundary and schema changes",
+          "Mandatory peer code review and separation of duties before merging to production branches",
+          "Sprint reporting backed by verifiable build and test artifacts rather than verbal claims"
+        ]
+      },
+      {
+        "id": "qa",
+        "code": "TC-03",
+        "title": "Quality Assurance Framework",
+        "summary": "Layered automated and structured verification safeguarding functional reliability, security, and UI consistency.",
+        "controls": [
+          "Automated unit & domain contract tests (Vitest) paired with strict TypeScript checking",
+          "Static analysis (ESLint) enforced inside continuous integration pipelines",
+          "Written Acceptance Criteria and structured User Acceptance Testing (UAT) sign-offs",
+          "WCAG 2.2 AA accessibility and cross-device ergonomic verification"
+        ]
+      },
+      {
+        "id": "ssdlc",
+        "code": "TC-04",
+        "title": "Secure Software Development Lifecycle (SSDLC)",
+        "summary": "Security engineered directly into discovery, coding, and deployment—never bolted on after release.",
+        "controls": [
+          "Early threat modeling covering authentication, authorization, and API integration surfaces",
+          "Pre-release security verification aligned with OWASP ASVS & WSTG checklists",
+          "Dependency hygiene and CI/CD supply-chain safeguards",
+          "Server-side input validation and structured audit logging for critical administrative actions"
+        ]
+      },
+      {
+        "id": "bcp",
+        "code": "TC-05",
+        "title": "Business Continuity & Disaster Recovery",
+        "summary": "Operational resilience and flexible deployment topologies tailored to regulated enterprise sectors.",
+        "controls": [
+          "Flexible hosting models: On-Premise, Private Cloud, or sovereign institutional infrastructure",
+          "Automated encrypted database backup routines with documented recovery procedures",
+          "Reproducible infrastructure and environment setup documentation",
+          "Structured post-launch support and incident escalation aligned with agreed SLAs"
+        ]
+      },
+      {
+        "id": "ip",
+        "code": "TC-06",
+        "title": "Intellectual Property & Code Ownership",
+        "summary": "Clients retain complete ownership of every digital asset we engineer without hidden licensing traps.",
+        "controls": [
+          "100% ownership of source code, database schemas, and technical documentation transferred to client",
+          "Transparent Git repository visibility from sprint one—not withheld until final invoice",
+          "Comprehensive operational handover documentation and internal team enablement sessions",
+          "Zero vendor lock-in: built on open, industry-standard frameworks and tooling"
+        ]
+      },
+      {
+        "id": "nda",
+        "code": "TC-07",
+        "title": "NDA & Client Confidentiality",
+        "summary": "Strict confidentiality protecting business logic, operational data, and sensitive institutional identities.",
+        "controls": [
+          "Standard Mutual NDA executed prior to technical discovery and architecture sharing",
+          "Strict isolation of credentials, repositories, and project environments across clients",
+          "Public case studies anonymized by default unless explicit written publication approval exists",
+          "Prompt revocation of temporary Sundawa access upon project handover or retainer completion"
+        ]
+      },
+      {
+        "id": "compliance",
+        "code": "TC-08",
+        "title": "Standards & Compliance Alignment",
+        "summary": "Our internal engineering practices align with recognized international frameworks understood by enterprise audit teams.",
+        "controls": [
+          "ISO/IEC 27001 — Reference framework for information security controls and access governance",
+          "ISO/IEC 25010 — Reference model for software quality, reliability, and maintainability",
+          "OWASP ASVS & WSTG — Verification baseline for web application and API security",
+          "COBIT 2019 / COBIT 7 — Governance reference for IT risk, RACI accountability, and release gates"
+        ]
+      }
+    ],
+    "standardsTable": {
+      "eyebrow": "Standards Alignment Matrix",
+      "heading": "How International Frameworks Translate Into Daily Practice",
+      "sub": "Each framework maps to concrete engineering procedures verifiable by client IT, security, and internal audit stakeholders.",
+      "headers": {
+        "framework": "Reference Framework",
+        "scope": "Domain Scope",
+        "practice": "Operational Practice at Sundawa",
+        "status": "Alignment Posture"
+      },
+      "rows": [
+        {
+          "framework": "ISO/IEC 27001",
+          "scope": "Information Security & Access",
+          "practice": "Tiered RBAC, encrypted transport & sessions, isolated environment secrets, and mutual NDA controls.",
+          "statusLabel": "Internal Reference Controls"
+        },
+        {
+          "framework": "ISO/IEC 25010",
+          "scope": "Software Product Quality",
+          "practice": "Modular feature-first architecture, strict type safety, automated contract tests, and WCAG AA compliance.",
+          "statusLabel": "Internal Engineering Standard"
+        },
+        {
+          "framework": "OWASP ASVS / WSTG",
+          "scope": "Application & API Security",
+          "practice": "Server payload validation, HMAC session protection, XSS/CSRF mitigation, and pre-release security reviews.",
+          "statusLabel": "Active Verification Checklist"
+        },
+        {
+          "framework": "COBIT 2019 / COBIT 7",
+          "scope": "IT Governance & Release Risk",
+          "practice": "Mandatory release quality gates, review separation of duties, and traceable release evidence.",
+          "statusLabel": "Governance Alignment"
+        }
+      ]
+    },
+    "qualityGates": {
+      "eyebrow": "Sundawa AI Engineering Standards v1.1.0",
+      "heading": "Mandatory Release Quality Gates",
+      "sub": "Every production release must pass automated and peer-reviewed verification gates before promotion.",
+      "items": [
+        {
+          "code": "REQ-TRACE",
+          "name": "Requirements Traceability",
+          "desc": "Every deliverable maps to approved business scope and written acceptance criteria."
+        },
+        {
+          "code": "ARCH-REVIEW",
+          "name": "Architecture Boundary Review",
+          "desc": "Enforces feature modularity, server/client separation, and clean data contracts."
+        },
+        {
+          "code": "SEC-VERIFY",
+          "name": "Security Control Verification",
+          "desc": "Audits authentication, authorization, payload validation, and credential safety."
+        },
+        {
+          "code": "DB-SAFETY",
+          "name": "Database & RLS Safety",
+          "desc": "Reviews schema migrations, query indexing, and Row-Level Security policies."
+        },
+        {
+          "code": "UX-A11Y",
+          "name": "UX & WCAG 2.2 AA Gate",
+          "desc": "Validates color contrast, keyboard navigation, 44px touch targets, and assistive semantics."
+        },
+        {
+          "code": "BUILD-INTEGRITY",
+          "name": "CI Build & Test Integrity",
+          "desc": "Requires zero lint errors, clean TypeScript strict check, 100% test pass, and clean build."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Ready for a Vendor Security & Governance Review?",
+      "sub": "Share your organization security questionnaire or schedule a 30-minute architecture walkthrough with our technical leads.",
+      "primary": "Request NDA & Technical Review",
+      "secondary": "Discuss via WhatsApp",
+      "whatsappMessage": "Hello Sundawa team, we would like to discuss your Enterprise Trust Center, Mutual NDA, and security practices for an upcoming project."
+    }
+  },
+  "assessmentPage": {
+    "navBack": "Home",
+    "navTitle": "System Health Assessment",
+    "eyebrow": "Enterprise Readiness Diagnostic",
+    "heading1": "System Health",
+    "heading2": "Assessment",
+    "subtitle": "Answer 8 focused questions across legacy architecture, data integration, security, and operations to receive an instant readiness score and modernization priorities.",
+    "progressLabel": "Answered {answered} of {total} questions",
+    "dimensions": {
+      "legacy": {
+        "label": "Legacy Architecture",
+        "recommendationTitle": "Prioritize Phased Modernization (Strangler Pattern)",
+        "recommendationDesc": "Avoid high-risk big-bang rewrites. Decouple and modernize the most fragile operational modules first while keeping daily business workflows uninterrupted."
+      },
+      "integration": {
+        "label": "Data & ERP Integration",
+        "recommendationTitle": "Eliminate Data Silos & Manual Spreadsheet Reconciliation",
+        "recommendationDesc": "Introduce reliable API integration middleware across ERP, finance, and operations so leadership operates from one real-time source of truth."
+      },
+      "security": {
+        "label": "Security & IT Governance",
+        "recommendationTitle": "Harden Access Controls, Audit Trails & Recovery Readiness",
+        "recommendationDesc": "Enforce tiered RBAC, tamper-evident audit logging, tested encrypted backups, and SSDLC release gates to prepare for internal and regulatory audits."
+      },
+      "operations": {
+        "label": "Operational Efficiency & Ownership",
+        "recommendationTitle": "Automate Repetitive Workflows & Secure Full Code Ownership",
+        "recommendationDesc": "Eliminate manual approvals and reporting delays through targeted workflow/AI automation while ensuring 100% repository and documentation ownership."
+      }
+    },
+    "questions": {
+      "legacy_maintenance": {
+        "prompt": "What share of your IT time and budget is consumed simply maintaining or patching legacy software?",
+        "options": [
+          "Over 70% spent firefighting recurring bugs and emergency patches",
+          "Roughly 50–70% on maintenance; new business initiatives stall frequently",
+          "Roughly 30–50% on maintenance; periodic feature delivery still happens",
+          "Under 30%; architecture is stable and easy to extend"
+        ]
+      },
+      "legacy_release": {
+        "prompt": "How predictable is shipping a business change or new workflow on your core system today?",
+        "options": [
+          "High risk; releases frequently disrupt operations and take months",
+          "Slow and manual; heavily dependent on a legacy vendor or single engineer",
+          "Moderately predictable, though regression testing remains mostly manual",
+          "Fast, CI/CD automated, and backed by automated regression verification"
+        ]
+      },
+      "integration_manual": {
+        "prompt": "How often do operational staff manually copy data between ERP, internal apps, and spreadsheets?",
+        "options": [
+          "Daily across most departments with frequent reconciliation errors",
+          "Weekly for finance, inventory, or operational consolidation",
+          "Only for select month-end management reports",
+          "Near zero; core platforms synchronize automatically via APIs/webhooks"
+        ]
+      },
+      "integration_visibility": {
+        "prompt": "How long does leadership wait for accurate, cross-department operational reporting?",
+        "options": [
+          "Over 1 week due to manual file consolidation across departments",
+          "2–5 business days for verification and error correction",
+          "Next-day reporting via scheduled overnight batch sync",
+          "Real-time visibility directly inside unified dashboards"
+        ]
+      },
+      "security_access": {
+        "prompt": "How mature are role-based access controls (RBAC) and audit trails across your core business applications?",
+        "options": [
+          "Unstructured; shared accounts still exist and change logs are incomplete",
+          "Individual logins exist, but role boundaries and audit trails are uneven",
+          "RBAC enforced on primary apps; audit logging partially implemented",
+          "Strict RBAC, encrypted sessions, and full audit trails across critical modules"
+        ]
+      },
+      "security_recovery": {
+        "prompt": "Are encrypted backups and disaster recovery procedures tested on a regular cadence?",
+        "options": [
+          "No automated backup cadence or recovery has never been tested",
+          "Manual or partial backups exist without defined RTO/RPO targets",
+          "Automated backups run regularly, but restore drills are rare",
+          "Encrypted automated backups with scheduled, documented recovery drills"
+        ]
+      },
+      "operations_bottleneck": {
+        "prompt": "Do manual approvals, billing cycles, or routine reporting bottleneck business scaling?",
+        "options": [
+          "Yes—directly slows down branch expansion or transaction volume growth",
+          "Noticeable slowdowns during month-end peaks or high transaction periods",
+          "Manageable today, though targeted workflow automation would help",
+          "Fully automated and built to absorb higher transaction volume smoothly"
+        ]
+      },
+      "operations_ownership": {
+        "prompt": "What is the ownership status of your core system source code and technical documentation?",
+        "options": [
+          "Controlled by a legacy vendor; our organization lacks source code access",
+          "Partial code access exists, but documentation is missing or outdated",
+          "We own the code; architecture and handover docs are being consolidated",
+          "100% source code, Git history, and documentation owned internally"
+        ]
+      }
+    },
+    "tiers": {
+      "critical": {
+        "label": "Critical Risk (Immediate Action Advised)",
+        "summary": "Legacy constraints and manual workarounds are creating measurable operational risk, cost leakage, and leadership blind spots. A phased modernization plan is strongly advised."
+      },
+      "fragmented": {
+        "label": "Fragmented (Integration Priority)",
+        "summary": "Core systems keep operations running, but data silos, spreadsheet reconciliation, and governance gaps are slowing down execution."
+      },
+      "stabilizing": {
+        "label": "Stabilizing (Ready for Automation)",
+        "summary": "Your technical foundation is reasonably stable. Focus next on eliminating remaining operational bottlenecks through workflow automation and release governance."
+      },
+      "resilient": {
+        "label": "Resilient (Enterprise Scale Ready)",
+        "summary": "Your systems and operational discipline operate at high maturity. Sundawa can support your team through managed product engineering or targeted AI automation."
+      }
+    },
+    "actions": {
+      "reset": "Clear Answers",
+      "calculate": "Calculate Score & Recommendations",
+      "retake": "Retake Assessment"
+    },
+    "results": {
+      "scoreLabel": "System Health Score",
+      "breakdownTitle": "4-Dimension Readiness Breakdown",
+      "priorityBadge": "Top Priority"
+    },
+    "leadForm": {
+      "eyebrow": "Executive Next Step",
+      "heading": "Request a 30-Minute Architecture Review Based on Your Score",
+      "desc": "Share this diagnostic snapshot with our senior engineering leads to receive a tailored modernization roadmap—no obligation and mutual NDA available upfront.",
+      "nameLabel": "Full Name",
+      "emailLabel": "Work Email",
+      "companyLabel": "Company / Organization",
+      "submit": "Submit Score & Schedule Review",
+      "submitting": "Sending Assessment Snapshot...",
+      "successTitle": "Assessment Snapshot Received",
+      "successBody": "Sundawa engineering leads have received your readiness score and will follow up within 1 business day with initial recommendations.",
+      "errorRequired": "Please enter your full name and work email.",
+      "errorGeneric": "Unable to submit your assessment. Please try again or reach out via WhatsApp.",
+      "whatsappCta": "Discuss Score on WhatsApp",
+      "calculatorCta": "Quantify Costs in Legacy Calculator"
+    },
+    "summaryLabels": {
+      "header": "System Health Assessment Result",
+      "company": "Company",
+      "priority": "Priority Areas"
+    }
+  },
+  "partnersPage": {
+    "navBack": "Home",
+    "navTitle": "Partner With Sundawa",
+    "eyebrow": "Strategic Alliances & Global Delivery",
+    "heading1": "Partner With Sundawa",
+    "heading2": "Your Dedicated Engineering Arm",
+    "subtitle": "We partner with consulting firms, system integrators (SIs), and international technology agencies across Indonesia, the UK, and Europe to deliver complex modernization and enterprise platforms reliably.",
+    "regions": {
+      "items": [
+        {
+          "label": "Indonesia & APAC",
+          "detail": "Onsite/hybrid delivery from Bandung & Jakarta with local regulatory fluency."
+        },
+        {
+          "label": "United Kingdom & Europe",
+          "detail": "Effective GMT/CET morning overlap with English-proficient senior engineers."
+        },
+        {
+          "label": "Co-Delivery & White-Label",
+          "detail": "Clean commercial governance backed by mutual NDA & non-solicitation."
+        }
+      ]
+    },
+    "modelsSection": {
+      "eyebrow": "Partnership Models",
+      "heading": "Three Structured B2B Collaboration Tracks"
+    },
+    "tracks": [
+      {
+        "code": "PARTNER-01",
+        "audience": "Management & ERP Consulting Firms",
+        "title": "Co-Delivery & Engineering Extension",
+        "summary": "You lead business strategy, change management, and client advisory—Sundawa provides the disciplined software engineering team to execute on time.",
+        "benefits": [
+          "Cross-functional squads (Architects, Fullstack, Mobile, QA, DevOps) ready in weeks",
+          "Operates cleanly as co-branded engineering partner or white-label delivery unit",
+          "Auditable sprint artifacts, architecture docs, and written acceptance criteria"
+        ]
+      },
+      {
+        "code": "PARTNER-02",
+        "audience": "UK, European & Global Tech Partners",
+        "title": "International Engineering Hub (Bandung)",
+        "summary": "Establish a reliable long-term engineering bench in Bandung—Indonesia’s premier university engineering hub—with international governance standards.",
+        "benefits": [
+          "Productive WIB (UTC+7) timezone overlap with UK/European mornings for live ceremonies",
+          "Engineering workflows aligned with ISO 27001, OWASP ASVS, and strict data privacy hygiene",
+          "Transparent monthly rate cards with zero hidden overhead and strong engineer retention"
+        ]
+      },
+      {
+        "code": "PARTNER-03",
+        "audience": "System Integrators & Sector Resellers",
+        "title": "Enterprise Product & Sector Deployment",
+        "summary": "Deploy, integrate, or bundle Sundawa’s proven enterprise platforms (LAKUPANDAI, Nawasanga ESG, SUNDAWA People, SI-GEOMEDIK) into your client accounts.",
+        "benefits": [
+          "Deep customization for ERP, core banking, or private on-premise client infrastructure",
+          "Structured revenue-share, implementation licensing, and principal Tier-2/3 engineering support",
+          "Dedicated sandbox environments and technical pre-sales support for enterprise RFPs"
+        ]
+      }
+    ],
+    "assurances": {
+      "eyebrow": "Partner Protections",
+      "heading": "Commercial Governance Built to Protect Your Reputation",
+      "trustCenterCta": "Inspect Enterprise Trust Center",
+      "items": [
+        {
+          "title": "Mutual NDA & Non-Solicitation",
+          "desc": "Contractual guarantees safeguarding your client pipeline, confidentiality, and account ownership."
+        },
+        {
+          "title": "100% IP & Code Ownership",
+          "desc": "Full source code and documentation handover aligned with your end-client agreement."
+        },
+        {
+          "title": "Strict QA & Release Gates",
+          "desc": "Every release verified via automated tests, strict type safety, and architecture reviews."
+        },
+        {
+          "title": "Direct Executive Communication",
+          "desc": "Early risk surfacing, realistic scoping, and a dedicated technical lead accountable for delivery."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Build a Long-Term Engineering Partnership",
+      "sub": "Schedule a 30-minute partner intro with Sundawa leadership to explore co-delivery structures, rate cards, or upcoming client RFPs.",
+      "primary": "Initiate Partnership Discussion",
+      "secondary": "Connect via WhatsApp",
+      "whatsappMessage": "Hello Sundawa leadership, we would like to explore a strategic engineering partnership (Co-Delivery / SI / International Partner)."
+    }
+  },
+  "calculatorPage": {
+    "navBack": "Home",
+    "navTitle": "Legacy System Cost Calculator",
+    "eyebrow": "Modernization Business Case",
+    "heading1": "Legacy System",
+    "heading2": "Cost Calculator",
+    "subtitle": "Quantify the hidden annual cost of manual spreadsheet workarounds, legacy maintenance drain, and operational downtime to build a clear modernization business case.",
+    "inputsSection": {
+      "title": "Your Operational Parameters",
+      "reset": "Reset Defaults"
+    },
+    "fields": {
+      "staffCount": {
+        "label": "Affected Operational Staff",
+        "hint": "Operations, finance, warehouse, or admin staff performing manual cross-system workarounds."
+      },
+      "manualHoursPerWeek": {
+        "label": "Manual Hours / Staff / Week",
+        "hint": "Average weekly hours spent re-entering data, reconciling spreadsheets, or fixing sync errors."
+      },
+      "hourlyCost": {
+        "label": "Loaded Hourly Staff Cost ({currency})",
+        "hint": "Average fully-loaded hourly labor cost per employee."
+      },
+      "monthlyMaintenance": {
+        "label": "Monthly Legacy Maintenance ({currency})",
+        "hint": "Legacy servers, vendor retainers, license renewals, and emergency patching costs."
+      },
+      "downtimeHoursPerMonth": {
+        "label": "Unplanned Downtime (Hours / Month)",
+        "hint": "Monthly hours lost to outages, severe slowdowns, or broken batch integrations."
+      },
+      "downtimeCostPerHour": {
+        "label": "Estimated Cost per Downtime Hour ({currency})",
+        "hint": "Delayed billing, idle teams, SLA penalties, or overtime recovery cost per hour."
+      }
+    },
+    "results": {
+      "eyebrow": "Estimated Financial Exposure",
+      "annualTotal": "Estimated Annual Cost of Inefficiency",
+      "threeYearLabel": "3-Year Cumulative Exposure",
+      "manualWaste": "Manual Workarounds & Reconciliation",
+      "maintenanceDrain": "Legacy Maintenance & Patch Drain",
+      "downtimeLoss": "Operational Downtime Impact",
+      "savingsLabel": "[Model Estimate] Potential Annual Efficiency Gain (40%–60%)",
+      "modelNote": "Figures above are modeled estimates derived from your inputs to support internal business-case planning, not guaranteed financial outcomes."
+    },
+    "cta": {
+      "primary": "Discuss Modernization ROI",
+      "whatsapp": "Share Estimate via WhatsApp"
+    },
+    "whatsappSummary": "Hello Sundawa team, I used your Legacy System Cost Calculator. Our estimated annual inefficiency cost is {annualCost} (3-year projection {threeYearCost}, manual workarounds {manualWaste}). Let us discuss a phased modernization plan."
+  },
+  "resourcesPage": {
+    "navBack": "Home",
+    "navTitle": "Enterprise Resource Center",
+    "eyebrow": "Executive Guides & Technical Checklists",
+    "heading1": "Enterprise Resource",
+    "heading2": "Center",
+    "subtitle": "Actionable frameworks, ERP modernization checklists, system integration playbooks, and IT vendor evaluation matrices written specifically for CEOs, COOs, CTOs, and IT Managers.",
+    "quickTools": {
+      "assessment": "Take System Health Assessment",
+      "calculator": "Run Legacy Cost Calculator"
+    },
+    "checklistHeading": "Core Evaluation Checklist",
+    "requestWalkthrough": "Request Walkthrough",
+    "guides": [
+      {
+        "id": "erp-modernization",
+        "pillar": "Enterprise System Modernization",
+        "audience": "For COOs, CIOs & IT Managers",
+        "title": "ERP & Legacy System Modernization Readiness Checklist",
+        "summary": "Validate these 8 technical and operational foundations before deciding whether to integrate, incrementally modernize, or replace a legacy system.",
+        "relatedServiceHref": "/services/system-modernization",
+        "relatedServiceLabel": "Explore Modernization Service",
+        "checklist": [
+          "Inventory all mission-critical workflows and shadow spreadsheets running outside the ERP",
+          "Audit source code ownership, database schema access, and legacy vendor contract terms",
+          "Separate healthy core modules from high-friction bottlenecks causing daily slowdowns",
+          "Assess master data cleanliness (customers, SKUs, chart of accounts) prior to migration",
+          "Plan phased migration (Strangler Pattern) to avoid high-risk big-bang cutover downtime",
+          "Define written User Acceptance Criteria (UAT) signed off by operations and finance leads",
+          "Prepare tested rollback procedures in case anomalies surface during cutover",
+          "Budget for 3–6 months of post-launch stabilization and internal team enablement"
+        ]
+      },
+      {
+        "id": "system-integration",
+        "pillar": "Systems & Data Integration",
+        "audience": "For CTOs, Heads of Ops & Finance",
+        "title": "Enterprise System Integration & Silo Elimination Playbook",
+        "summary": "Architectural principles for connecting ERPs, CRMs, field applications, and executive dashboards without destabilizing working core systems.",
+        "relatedServiceHref": "/services/system-integration",
+        "relatedServiceLabel": "Explore Integration Service",
+        "checklist": [
+          "Designate a clear Single Source of Truth (SSOT) for every core business entity",
+          "Use decoupled API middleware instead of fragile direct database-to-database coupling",
+          "Enforce idempotency keys so retried sync events never create duplicate financial entries",
+          "Implement dead-letter queues and automated alerting whenever data sync jobs fail",
+          "Separate heavy management analytics (read replicas/warehouse) from transactional DBs",
+          "Standardize timestamps (ISO 8601), currency precision, and reference IDs across apps"
+        ]
+      },
+      {
+        "id": "vendor-evaluation",
+        "pillar": "Business & Digital Transformation",
+        "audience": "For CEOs, Procurement & VPs of Engineering",
+        "title": "IT Vendor & Software Engineering Partner Evaluation Matrix",
+        "summary": "Objective criteria to distinguish a long-term enterprise engineering partner from a short-term project shop before signing a contract.",
+        "relatedServiceHref": "/trust-center",
+        "relatedServiceLabel": "Inspect Sundawa Trust Center",
+        "checklist": [
+          "100% source code ownership and live Git repository transparency from sprint one",
+          "Willingness to sign a standard Mutual NDA prior to initial technical discovery",
+          "Verifiable production track record (Problem → Execution → Results), not just UI mockups",
+          "Automated QA testing, strict type checking, and enforced CI/CD release quality gates",
+          "Direct involvement of named senior architects and technical leads—not bait-and-switch",
+          "Support for on-premise/private cloud deployment with zero vendor lock-in guarantees",
+          "Structured handover documentation, team training, and post-launch SLA support options",
+          "Transparent pricing, explicit change-management rules, and milestone-based accountability"
+        ]
+      },
+      {
+        "id": "security-governance",
+        "pillar": "Security & Engineering Governance",
+        "audience": "For CISOs, Internal Audit & IT Leads",
+        "title": "Enterprise Application Security & SSDLC Governance Brief",
+        "summary": "Baseline security controls every corporate or institutional software platform should verify before entering production.",
+        "relatedServiceHref": "/trust-center",
+        "relatedServiceLabel": "Open Enterprise Trust Center",
+        "checklist": [
+          "End-to-end TLS 1.3 encryption with hardened credential hashing and isolated secret vaults",
+          "Server-enforced Role-Based Access Control (RBAC) following least-privilege principles",
+          "Tamper-evident audit trails capturing logins, permission updates, and sensitive transactions",
+          "OWASP Top 10 / ASVS verification covering input validation, XSS/CSRF/SQLi, and rate limits",
+          "Automated encrypted database backups paired with scheduled disaster recovery drills",
+          "Strict separation of development, staging, and production infrastructure and datasets"
+        ]
+      }
+    ]
   }
 }

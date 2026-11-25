@@ -19,7 +19,21 @@ export function buildAlternates(locale: string, path = '') {
     return { canonical: `${SITE_URL}${localizedPath(locale, path)}`, languages }
 }
 
-type PageKey = 'home' | 'outsource' | 'process' | 'blog' | 'portfolio' | 'contact' | 'about' | 'services' | 'products'
+type PageKey =
+    | 'home'
+    | 'outsource'
+    | 'process'
+    | 'blog'
+    | 'portfolio'
+    | 'contact'
+    | 'about'
+    | 'services'
+    | 'products'
+    | 'trustCenter'
+    | 'assessment'
+    | 'partners'
+    | 'calculator'
+    | 'resources'
 
 /** One call per page: title, description, canonical, hreflang, Open Graph and Twitter, all in the active locale. */
 export async function pageMetadata(locale: string, key: PageKey, path = ''): Promise<Metadata> {

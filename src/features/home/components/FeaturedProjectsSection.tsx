@@ -65,7 +65,7 @@ export default function FeaturedProjectsSection() {
                             initial={{ opacity: 0 }}
                             animate={inView ? { opacity: 1 } : {}}
                             transition={{ delay: 0.2 }}
-                            className="mt-4 max-w-2xl text-sm leading-relaxed font-light text-cream/60 sm:text-base"
+                            className="mt-4 max-w-2xl text-sm leading-relaxed font-light text-cream/75 sm:text-base"
                         >
                             {t('sub')}
                         </motion.p>
@@ -106,7 +106,7 @@ export default function FeaturedProjectsSection() {
                                 {/* Card Header */}
                                 <div className="mb-4 flex items-center justify-between border-b border-gold/15 pb-4">
                                     <span className="text-[0.65rem] font-black tracking-[0.2em] text-gold uppercase">
-                                        PROYEK {project.num}
+                                        {t('labels.projectPrefix')} {project.num}
                                     </span>
                                     <span className="border border-sky/30 bg-sky/10 px-2.5 py-0.5 text-[0.6rem] font-bold tracking-wider text-sky uppercase">
                                         {project.tag}

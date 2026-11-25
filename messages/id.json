@@ -33,7 +33,17 @@
       "aboutTitle": "Tentang Sundawa",
       "aboutDesc": "Profil PT Sundawa Teknologi Indonesia, visi misi & pimpinan",
       "valuesTitle": "Transformasi Operasional",
-      "valuesDesc": "Perubahan alur kerja sebelum vs bersama tim Sundawa"
+      "valuesDesc": "Perubahan alur kerja sebelum vs bersama tim Sundawa",
+      "assessmentTitle": "Diagnostik Kesehatan Sistem",
+      "assessmentDesc": "Diagnostik 2 menit untuk mengukur risiko legacy, integrasi & keamanan",
+      "calculatorTitle": "Kalkulator Biaya Sistem Lama",
+      "calculatorDesc": "Hitung potensi kebocoran kerja manual, downtime & maintenance tahunan",
+      "resourcesTitle": "Pusat Panduan Enterprise",
+      "resourcesDesc": "Checklist modernisasi ERP, playbook integrasi & evaluasi vendor IT",
+      "trustCenterTitle": "Trust Center & Keamanan",
+      "trustCenterDesc": "Keamanan informasi, tata kelola SSDLC, NDA & kepemilikan kode penuh",
+      "partnersTitle": "Program Kemitraan",
+      "partnersDesc": "Kolaborasi co-delivery untuk konsultan, SI & mitra internasional"
     }
   },
   "hero": {
@@ -240,9 +250,10 @@
     "label": "Studi Kasus & Rekam Jejak",
     "heading1": "Proyek Pilihan",
     "heading2": "Bukti Eksekusi Nyata",
-    "sub": "2–3 proyek pilihan yang menunjukkan bagaimana Sundawa mendampingi mitra dari pemetaan masalah hingga sistem beroperasi di lingkungan produksi.",
+    "sub": "Studi kasus produksi pilihan yang menunjukkan bagaimana Sundawa mendampingi organisasi dari pemetaan masalah hingga sistem beroperasi andal setiap hari.",
     "ctaPortfolio": "Lihat Semua 21+ Portfolio",
     "labels": {
+      "projectPrefix": "PROYEK",
       "problem": "Masalah",
       "work": "Pekerjaan Sundawa",
       "result": "Hasil",
@@ -916,7 +927,7 @@
         },
         {
           "sector": "Pertahanan & Pemerintahan",
-          "proof": "SI-GEOMEDIK Kemhan RI, AHU Salinan & Rebuild"
+          "proof": "SI-GEOMEDIK (Instansi Pertahanan & Kesehatan Nasional — NDA), Sistem Pemerintahan"
         },
         {
           "sector": "Layanan Kesehatan",
@@ -1375,12 +1386,36 @@
     "products": {
       "title": "Produk Sundawa & Case Studies",
       "description": "Eksplorasi produk ekosistem Sundawa: Sewaka, LAKUPANDAI, Vellumia, SI-GEOMEDIK, Nawasanga, dan Abo Rent Car beserta studi kasusnya."
+    },
+    "trustCenter": {
+      "title": "Trust Center & Keamanan Enterprise — SSDLC & Tata Kelola",
+      "description": "Praktik keamanan informasi, tata kelola rekayasa perangkat lunak, QA, SSDLC, kepemilikan kode penuh, NDA, dan keselarasan kerangka ISO 27001, OWASP, & COBIT 2019 di PT Sundawa Teknologi Indonesia."
+    },
+    "assessment": {
+      "title": "Diagnostik Kesehatan Sistem — Evaluasi Risiko Enterprise",
+      "description": "Ukur kesiapan arsitektur legacy, integrasi data, keamanan, dan efisiensi operasional organisasi Anda dalam 2 menit beserta rekomendasi teknis awal."
+    },
+    "partners": {
+      "title": "Program Kemitraan — Konsultan, SI & Global Delivery",
+      "description": "Bangun kemitraan co-delivery, engineering hub lintas zona waktu (Indonesia, UK, Eropa), dan integrasi sistem bersama PT Sundawa Teknologi Indonesia."
+    },
+    "calculator": {
+      "title": "Kalkulator Biaya Sistem Lama — Estimasi Inefisiensi Tahunan",
+      "description": "Hitung estimasi biaya tahunan pekerjaan manual, downtime, dan pemeliharaan sistem lama untuk membangun business case modernisasi perangkat lunak."
+    },
+    "resources": {
+      "title": "Pusat Panduan Enterprise — Checklist Modernisasi ERP & Vendor",
+      "description": "Panduan eksekutif, checklist kesiapan modernisasi ERP, playbook integrasi data, dan matriks evaluasi vendor IT untuk CTO, COO, dan IT Manager."
     }
   },
   "products": {
     "navBack": "Kembali",
     "navTitle": "Produk Sundawa",
-    "label": "Produk Sundawa",
+    "label": "Ekosistem Produk Enterprise",
+    "homeHeading1": "4 Platform Enterprise",
+    "homeHeading2": "Siap Adopsi",
+    "homeSub": "Selain rekayasa sistem khusus untuk klien, Sundawa merancang dan mengoperasikan platform enterprise untuk perbankan, kesehatan strategis, ESG armada, dan operasional SDM skala besar.",
+    "homeEcosystemNote": "Ingin melihat seluruh 7 produk Sundawa termasuk platform SaaS & mobilitas (Sewaka, Vellumia, Abo Rent Car)?",
     "heading1": "7 Produk & Inisiatif",
     "heading2": "Sundawa",
     "sub": "Selain membangun sistem khusus untuk klien, Sundawa merancang dan mengoperasikan produk SaaS, platform mobilitas, dan infrastruktur enterprise siap adopsi lintas industri.",
@@ -1554,11 +1589,11 @@
       },
       "si-geomedik": {
         "name": "SI-GEOMEDIK",
-        "sector": "Kesehatan Pertahanan (Kemhan RI)",
+        "sector": "Instansi Pertahanan & Kesehatan Nasional (NDA Protected)",
         "tagline": "Sistem Informasi Geospasial & Sumber Daya Kesehatan Pertahanan",
-        "summary": "Implementasi sistem yang sudah berjalan di lingkungan Kementerian Pertahanan RI: portal informasi geospasial terproteksi untuk inventarisasi dan pengelolaan Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan pertahanan (akses terproteksi khusus personel berwenang).",
-        "badgeMetric": "Implementasi Berjalan (Akses Khusus Personel Berwenang)",
-        "accessNote": "Aplikasi ini merupakan implementasi sistem yang sudah berjalan di lingkungan Kemhan RI. Tautan mengarah ke gerbang login resmi; akses penuh dibatasi khusus personel berwenang dengan hak akses dinas.",
+        "summary": "Implementasi sistem berjalan untuk Instansi Pertahanan & Kesehatan Nasional (NDA Protected): portal informasi geospasial terproteksi untuk inventarisasi dan pengelolaan Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan (akses khusus personel berwenang).",
+        "badgeMetric": "Implementasi Berjalan (NDA Protected)",
+        "accessNote": "Aplikasi ini merupakan implementasi sistem berjalan untuk Instansi Pertahanan & Kesehatan Nasional (NDA Protected). Tautan mengarah ke gerbang login resmi; akses penuh dibatasi khusus personel berwenang.",
         "modules": [
           "Inventarisasi Geospasial Faskes & SDM Medis",
           "Pengelolaan Alat Kesehatan & Material Kesehatan",
@@ -1566,19 +1601,19 @@
           "Sesi Terenkripsi HS256 & Audit Trail SEC-07"
         ],
         "caseStudy": {
-          "subject": "Kementerian Pertahanan RI: Pusdatin, Verifikator Ditkes Kuathan, & Operator Faskes/Kesdam",
-          "challenge": "Sumber daya kesehatan pertahanan (mencakup Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan) tersebar di unit Kesdam/Faskes sehingga menuntut konsolidasi geospasial terpadu serta pengamanan data ketat.",
-          "solution": "SI-GEOMEDIK menstrukturkan alur verifikasi lintas 3 peran: Operator (Faskes/Kesdam) di lapangan, Verifikator (Ditkes Kuathan) sebagai penelaah berjenjang, dan Pusdatin sebagai pengawas pusat (Super Admin Penuh).",
-          "architecture": "Portal web tertutup dengan autentikasi email dinas, sesi terenkripsi HS256, Dynamic RBAC lintas tiga tingkatan kewenangan, serta Audit Trail keamanan berstandar SUNDAWA SEC-07.",
-          "impact": "Menyediakan satu portal geospasial yang terstruktur dan akuntabel untuk konsolidasi data Faskes, SDM, Alkes, dan Matkes pertahanan dengan pemisahan wewenang yang jelas.",
+          "subject": "Instansi Pertahanan & Kesehatan Nasional (NDA Protected): Unit Pusat Data, Verifikator Pusat, & Operator Faskes Wilayah",
+          "challenge": "Sumber daya kesehatan strategis (mencakup Fasilitas Kesehatan, SDM medis, Alat Kesehatan, dan Material Kesehatan) tersebar di berbagai unit wilayah sehingga menuntut konsolidasi geospasial terpadu serta pengamanan data ketat.",
+          "solution": "SI-GEOMEDIK menstrukturkan alur verifikasi lintas 3 peran: Operator Faskes Wilayah di lapangan, Verifikator Pusat sebagai penelaah berjenjang, dan Unit Pusat Data sebagai pengawas pusat (Super Admin Penuh).",
+          "architecture": "Portal web tertutup dengan autentikasi resmi, sesi terenkripsi HS256, Dynamic RBAC lintas tiga tingkatan kewenangan, serta Audit Trail keamanan berstandar SUNDAWA SEC-07.",
+          "impact": "Menyediakan satu portal geospasial yang terstruktur dan akuntabel untuk konsolidasi data Faskes, SDM, Alkes, dan Matkes dengan pemisahan wewenang yang jelas.",
           "highlights": [
-            "3 tingkat RBAC: Operator, Verifikator, & Pusdatin",
+            "3 tingkat RBAC: Operator Wilayah, Verifikator Pusat, & Pusat Data",
             "Cakupan sumber daya: Faskes, SDM, Alkes, & Matkes",
             "Sesi terenkripsi HS256 & Audit Trail SUNDAWA SEC-07"
           ],
           "scenarios": [
             {
-              "title": "Hierarki Data Faskes → Ditkes Kuathan → Pusdatin",
+              "title": "Hierarki Data Faskes Wilayah → Verifikator Pusat → Pusat Data",
               "outcome": "Memisahkan wewenang input unit daerah, verifikasi berjenjang, dan pengawasan pusat."
             },
             {
@@ -1719,9 +1754,602 @@
       "allProducts": "Semua Produk & Case Studies",
       "about": "Tentang Sundawa",
       "blog": "Artikel & Insight",
-      "contact": "Formulir Konsultasi"
+      "contact": "Formulir Konsultasi",
+      "assessment": "Diagnostik Kesehatan Sistem",
+      "calculator": "Kalkulator Biaya Sistem Lama",
+      "trustCenter": "Trust Center & Keamanan",
+      "partners": "Program Kemitraan",
+      "resources": "Pusat Panduan Enterprise"
     },
     "assurances": "NDA Standar · 100% Kepemilikan Kode · On-Premise & Cloud",
     "copyright": "© {year} PT Sundawa Teknologi Indonesia. Seluruh hak cipta dilindungi."
+  },
+  "trustCenter": {
+    "navBack": "Beranda",
+    "navTitle": "Trust Center & Keamanan",
+    "eyebrow": "Keamanan, Tata Kelola & Kepatuhan",
+    "heading1": "Enterprise Trust Center",
+    "heading2": "Transparansi Rekayasa & Keamanan",
+    "subtitle": "Organisasi enterprise tidak hanya membeli kode—mereka menuntut kepastian keamanan data, tata kelola rilis yang dapat diaudit, kepemilikan kekayaan intelektual penuh, dan kejelasan tanggung jawab pasca-produksi.",
+    "commitmentBox": {
+      "label": "Verifikasi Sebelum Penjajakan",
+      "desc": "Butuh dokumen NDA timbal balik, kuesioner keamanan vendor, atau diskusi arsitektur dengan tim pimpinan teknis kami?",
+      "ctaNda": "Minta NDA & Review Keamanan"
+    },
+    "transparencyNotice": {
+      "title": "Catatan Transparansi & Non-Sertifikasi",
+      "body": "Kerangka ISO/IEC 27001, ISO/IEC 25010, OWASP ASVS/WSTG, dan COBIT 2019/7 pada halaman ini merupakan referensi standar operasional dan kontrol rekayasa internal yang kami terapkan secara disiplin. PT Sundawa Teknologi Indonesia tidak mengklaim kepemilikan sertifikasi pihak ketiga yang belum resmi diterbitkan."
+    },
+    "pillarsSection": {
+      "eyebrow": "8 Pilar Kepercayaan Enterprise",
+      "heading": "Kontrol Operasional di Setiap Fase Proyek"
+    },
+    "pillars": [
+      {
+        "id": "infosec",
+        "code": "TC-01",
+        "title": "Keamanan Informasi & Perlindungan Data",
+        "summary": "Perlindungan data lintas lapisan aplikasi, jaringan, dan basis data sejak tahap desain arsitektur.",
+        "controls": [
+          "Enkripsi data dalam transmisi (TLS 1.3) dan perlindungan data sensitif saat tersimpan",
+          "Kontrol akses berbasis peran (RBAC) dan Row-Level Security (RLS) di lapisan basis data",
+          "Validasi ketat variabel lingkungan (fail-fast) tanpa kredensial tertanam di repositori kode",
+          "Pemisahan lingkungan development, staging, dan production secara tegas"
+        ]
+      },
+      {
+        "id": "governance",
+        "code": "TC-02",
+        "title": "Tata Kelola Pengembangan Perangkat Lunak",
+        "summary": "Setiap perubahan sistem dikendalikan oleh Sundawa AI Engineering Standards (v1.1.0) dengan jejak keputusan yang dapat diaudit.",
+        "controls": [
+          "Hierarki kebenaran tertulis: Regulasi & Kontrak > Spesifikasi Disetujui > Standar Teknis",
+          "Dokumentasi Architecture Decision Records (ADR) untuk perubahan batas sistem dan data",
+          "Pemisahan peran pengerjaan dan tinjauan (peer review) sebelum penggabungan ke cabang utama",
+          "Pelaporan progres sprint berbasis artefak terverifikasi, bukan klaim lisan"
+        ]
+      },
+      {
+        "id": "qa",
+        "code": "TC-03",
+        "title": "Kerangka Penjaminan Mutu (QA)",
+        "summary": "Pengujian berlapis untuk menjaga keandalan fungsional, keamanan, dan konsistensi antarmuka sebelum rilis.",
+        "controls": [
+          "Pengujian otomatis unit & kontrak domain (Vitest) serta pemeriksaan tipe ketat (TypeScript strict)",
+          "Pemeriksaan kualitas kode statis (ESLint) terintegrasi ke pipeline CI/CD",
+          "Kriteria penerimaan tertulis (Acceptance Criteria) & User Acceptance Testing (UAT) terstruktur",
+          "Verifikasi aksesibilitas WCAG 2.2 AA dan ergonomi responsif lintas perangkat"
+        ]
+      },
+      {
+        "id": "ssdlc",
+        "code": "TC-04",
+        "title": "Siklus Pengembangan Aman (SSDLC)",
+        "summary": "Keamanan diintegrasikan ke dalam siklus pengembangan, bukan ditambal setelah sistem berjalan di produksi.",
+        "controls": [
+          "Identifikasi ancaman awal (threat modeling) untuk autentikasi, otorisasi, dan integrasi API",
+          "Verifikasi kontrol berdasarkan daftar periksa OWASP ASVS & WSTG (XSS, CSRF, injeksi, sesi)",
+          "Audit dependensi pihak ketiga dan kebersihan rantai pasok CI/CD",
+          "Validasi input sisi server dan pencatatan jejak audit (audit trail) untuk aksi kritis"
+        ]
+      },
+      {
+        "id": "bcp",
+        "code": "TC-05",
+        "title": "Kelangsungan Bisnis & Pemulihan Bencana (BCP/DR)",
+        "summary": "Kesiapan pemulihan operasional dan fleksibilitas penempatan infrastruktur sesuai regulasi sektor klien.",
+        "controls": [
+          "Opsi deployment fleksibel: On-Premise, Private Cloud, maupun Sovereign Cloud instansi",
+          "Strategi pencadangan basis data terenkripsi berkala dan prosedur pemulihan teruji",
+          "Konfigurasi infrastruktur terdokumentasi untuk reproduktibilitas lingkungan cepat",
+          "Skema dukungan pasca-rilis dan eskalasi insiden berdasarkan SLA yang disepakati"
+        ]
+      },
+      {
+        "id": "ip",
+        "code": "TC-06",
+        "title": "Kepemilikan Kode & Kekayaan Intelektual (IP)",
+        "summary": "Klien memegang kendali penuh atas aset digital yang dibangun tanpa ketergantungan lisensi tersembunyi.",
+        "controls": [
+          "100% kepemilikan source code, skema database, dan dokumentasi teknis diserahkan ke klien",
+          "Akses repositori Git transparan sejak sprint pertama, bukan baru di akhir kontrak",
+          "Dokumentasi handover operasional dan pelatihan tim internal klien sebelum serah terima",
+          "Nol vendor lock-in: arsitektur dibangun di atas teknologi terbuka berstandar industri"
+        ]
+      },
+      {
+        "id": "nda",
+        "code": "TC-07",
+        "title": "NDA & Kerahasiaan Klien",
+        "summary": "Kerahasiaan data bisnis, struktur proses internal, dan identitas proyek klien dijaga secara ketat.",
+        "controls": [
+          "Perjanjian kerahasiaan (Mutual NDA) standar tersedia sejak sesi penjajakan pertama",
+          "Isolasi data, kredensial, dan repositori antar proyek klien secara menyeluruh",
+          "Studi kasus publik dianonimkan secara default kecuali terdapat izin publikasi tertulis",
+          "Penghapusan akses sementara tim Sundawa segera setelah masa proyek atau retainer berakhir"
+        ]
+      },
+      {
+        "id": "compliance",
+        "code": "TC-08",
+        "title": "Penyelarasan Standar & Kepatuhan",
+        "summary": "Penyelarasan praktik rekayasa kami dengan standar internasional yang dipahami tim audit dan pengadaan enterprise.",
+        "controls": [
+          "ISO/IEC 27001 — Referensi kontrol keamanan informasi dan manajemen akses",
+          "ISO/IEC 25010 — Referensi atribut mutu perangkat lunak (reliabilitas, keamanan, maintainability)",
+          "OWASP ASVS & WSTG — Referensi verifikasi keamanan aplikasi web dan API",
+          "COBIT 2019 / COBIT 7 — Referensi tata kelola TI, pemetaan risiko, dan akuntabilitas RACI"
+        ]
+      }
+    ],
+    "standardsTable": {
+      "eyebrow": "Matriks Penyelarasan Standar",
+      "heading": "Bagaimana Standar Internasional Diterapkan dalam Praktik",
+      "sub": "Setiap standar dipetakan menjadi prosedur teknis yang dapat diverifikasi oleh tim TI, keamanan, dan audit internal klien.",
+      "headers": {
+        "framework": "Kerangka Referensi",
+        "scope": "Cakupan Penerapan",
+        "practice": "Implementasi Nyata di Sundawa",
+        "status": "Status Klaim"
+      },
+      "rows": [
+        {
+          "framework": "ISO/IEC 27001",
+          "scope": "Keamanan Informasi & Akses",
+          "practice": "RBAC berjenjang, enkripsi sesi & transport, isolasi rahasia lingkungan, dan prosedur NDA.",
+          "statusLabel": "Praktik Terkelola (Referensi Internal)"
+        },
+        {
+          "framework": "ISO/IEC 25010",
+          "scope": "Kualitas Produk Perangkat Lunak",
+          "practice": "Arsitektur modular feature-first, type-safety ketat, uji kontrak otomatis, dan standar WCAG AA.",
+          "statusLabel": "Standar Rekayasa Internal"
+        },
+        {
+          "framework": "OWASP ASVS / WSTG",
+          "scope": "Keamanan Aplikasi & API",
+          "practice": "Validasi payload server, proteksi HMAC sesi admin, mitigasi XSS/CSRF, dan review keamanan pre-rilis.",
+          "statusLabel": "Checklist Verifikasi Aktif"
+        },
+        {
+          "framework": "COBIT 2019 / COBIT 7",
+          "scope": "Tata Kelola TI & Risiko Rilis",
+          "practice": "Release quality gates wajib, pemisahan kewenangan review, dan bukti rilis yang terdokumentasi.",
+          "statusLabel": "Penyelarasan Tata Kelola"
+        }
+      ]
+    },
+    "qualityGates": {
+      "eyebrow": "Sundawa AI Engineering Standards v1.1.0",
+      "heading": "Gerbang Mutu Rilis (Release Quality Gates)",
+      "sub": "Setiap pembaruan sistem wajib melewati gerbang verifikasi otomatis dan manual sebelum dapat dipromosikan ke lingkungan produksi.",
+      "items": [
+        {
+          "code": "REQ-TRACE",
+          "name": "Ketertelusuran Kebutuhan (Requirements)",
+          "desc": "Setiap fitur terpetakan ke kebutuhan bisnis dan kriteria penerimaan tertulis."
+        },
+        {
+          "code": "ARCH-REVIEW",
+          "name": "Tinjauan Batas Arsitektur",
+          "desc": "Kepatuhan batas modul, pemisahan server/client, dan kejelasan kontrak data."
+        },
+        {
+          "code": "SEC-VERIFY",
+          "name": "Verifikasi Kontrol Keamanan",
+          "desc": "Pemeriksaan autentikasi, otorisasi, validasi input, dan keamanan rahasia."
+        },
+        {
+          "code": "DB-SAFETY",
+          "name": "Keamanan Database & RLS",
+          "desc": "Keamanan migrasi skema, indeks kueri, dan kebijakan Row-Level Security."
+        },
+        {
+          "code": "UX-A11Y",
+          "name": "Gerbang UX & WCAG 2.2 AA",
+          "desc": "Kontras warna, navigasi keyboard, target sentuh 44px, dan semantik asistif."
+        },
+        {
+          "code": "BUILD-INTEGRITY",
+          "name": "Integritas Build & Uji Otomatis",
+          "desc": "Zero lint error, strict TypeScript pass, 100% unit test pass, dan build produksi bersih."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Siap Melakukan Vendor Security & Governance Review?",
+      "sub": "Bagikan kuesioner keamanan organisasi Anda atau jadwalkan sesi teknis 30 menit bersama tim arsitektur Sundawa.",
+      "primary": "Ajukan NDA & Diskusi Teknis",
+      "secondary": "Hubungi via WhatsApp",
+      "whatsappMessage": "Halo tim Sundawa, kami ingin berdiskusi mengenai Enterprise Trust Center, Mutual NDA, dan standar keamanan untuk rencana proyek kami."
+    }
+  },
+  "assessmentPage": {
+    "navBack": "Beranda",
+    "navTitle": "Diagnostik Kesehatan Sistem",
+    "eyebrow": "Diagnostik Kesiapan Sistem Enterprise",
+    "heading1": "Diagnostik Kesehatan",
+    "heading2": "Sistem Enterprise",
+    "subtitle": "Jawab 8 pertanyaan singkat seputar sistem lama, integrasi data, keamanan, dan alur operasional Anda untuk mendapatkan skor kesehatan awal serta prioritas modernisasi.",
+    "progressLabel": "Terjawab {answered} dari {total} pertanyaan",
+    "dimensions": {
+      "legacy": {
+        "label": "Arsitektur & Sistem Lama",
+        "recommendationTitle": "Prioritaskan Modernisasi Bertahap (Strangler Pattern)",
+        "recommendationDesc": "Hindari penggantian total berisiko tinggi. Pecah modul paling kritis menjadi layanan modern terlebih dahulu sambil menjaga operasional harian tetap berjalan stabil."
+      },
+      "integration": {
+        "label": "Integrasi Data & ERP",
+        "recommendationTitle": "Hilangkan Data Silo & Rekonsiliasi Excel Manual",
+        "recommendationDesc": "Bangun middleware integrasi API dan pipeline sinkronisasi antar ERP, keuangan, serta operasional agar pimpinan memperoleh data real-time dari satu sumber kebenaran."
+      },
+      "security": {
+        "label": "Keamanan & Tata Kelola TI",
+        "recommendationTitle": "Perkuat Kontrol Akses, Audit Trail & Kesiapan Pemulihan",
+        "recommendationDesc": "Terapkan RBAC terstruktur, pencatatan aktivitas (audit log), backup teruji, dan prosedur SSDLC agar sistem siap menghadapi audit internal maupun regulasi."
+      },
+      "operations": {
+        "label": "Efisiensi Operasional & Kepemilikan",
+        "recommendationTitle": "Otomatiskan Alur Kerja Repetitif & Amankan Kepemilikan Kode",
+        "recommendationDesc": "Otomatisasi proses persetujuan dan pelaporan berulang menggunakan workflow/AI, sembari memastikan kepemilikan penuh atas repositori dan dokumentasi sistem."
+      }
+    },
+    "questions": {
+      "legacy_maintenance": {
+        "prompt": "Seberapa besar porsi waktu dan anggaran tim TI yang habis hanya untuk merawat atau menambal sistem lama?",
+        "options": [
+          "Lebih dari 70% waktu habis untuk perbaikan darurat & bug berulang",
+          "Sekitar 50–70% habis untuk maintenance, fitur baru sering tertunda",
+          "Sekitar 30–50% untuk maintenance, masih bisa merilis fitur berkala",
+          "Di bawah 30%, arsitektur stabil dan mudah dikembangkan"
+        ]
+      },
+      "legacy_release": {
+        "prompt": "Bagaimana proses perubahan atau rilis fitur bisnis baru pada sistem inti Anda saat ini?",
+        "options": [
+          "Sangat berisiko; sering menyebabkan gangguan operasional dan memakan waktu berbulan-bulan",
+          "Lambat dan manual; bergantung pada satu vendor atau satu orang kunci",
+          "Cukup terkelola, namun pengujian masih sebagian besar manual",
+          "Cepat, terotomatisasi dengan CI/CD, dan memiliki pengujian regresi"
+        ]
+      },
+      "integration_manual": {
+        "prompt": "Seberapa sering staf operasional harus menyalin data secara manual antar ERP, aplikasi internal, dan Excel?",
+        "options": [
+          "Setiap hari di hampir seluruh divisi dengan tingkat human error tinggi",
+          "Setiap minggu untuk kebutuhan rekonsiliasi keuangan atau stok",
+          "Hanya pada beberapa laporan bulanan tertentu",
+          "Hampir nol; sistem utama terhubung otomatis melalui API/webhook"
+        ]
+      },
+      "integration_visibility": {
+        "prompt": "Berapa lama waktu yang dibutuhkan manajemen untuk mendapatkan laporan operasional lintas divisi yang akurat?",
+        "options": [
+          "Lebih dari 1 minggu karena harus menggabungkan file dari banyak departemen",
+          "2–5 hari kerja untuk verifikasi dan pencocokan ulang data",
+          "H+1 melalui proses sinkronisasi harian",
+          "Real-time langsung melalui dashboard terintegrasi"
+        ]
+      },
+      "security_access": {
+        "prompt": "Bagaimana pengelolaan hak akses pengguna (RBAC) dan jejak audit (audit trail) pada sistem bisnis Anda?",
+        "options": [
+          "Belum terstruktur; akun bersama masih dipakai dan log perubahan tidak lengkap",
+          "Ada login per pengguna, namun pemisahan peran dan audit log belum merata",
+          "RBAC diterapkan di sistem utama, audit log tersedia secara parsial",
+          "RBAC ketat, sesi terenkripsi, dan jejak audit lengkap di seluruh modul kritis"
+        ]
+      },
+      "security_recovery": {
+        "prompt": "Apakah prosedur pencadangan (backup) dan pemulihan bencana (disaster recovery) diuji secara berkala?",
+        "options": [
+          "Belum ada jadwal backup otomatis atau belum pernah diuji pemulihannya",
+          "Backup berjalan manual/parsial, belum ada target pemulihan (RTO/RPO)",
+          "Backup otomatis rutin, namun simulasi pemulihan jarang dilakukan",
+          "Backup terenkripsi otomatis dengan uji pemulihan terjadwal dan terdokumentasi"
+        ]
+      },
+      "operations_bottleneck": {
+        "prompt": "Apakah proses persetujuan (approval), penagihan, atau pelaporan rutin masih menjadi hambatan pertumbuhan?",
+        "options": [
+          "Ya, sangat menghambat ekspansi cabang atau penambahan volume transaksi",
+          "Sering melambat pada akhir bulan atau saat volume meningkat",
+          "Berjalan cukup baik, namun masih butuh beberapa otomatisasi tambahan",
+          "Sepenuhnya terotomatisasi dan siap mendukung skala transaksi lebih besar"
+        ]
+      },
+      "operations_ownership": {
+        "prompt": "Bagaimana status kepemilikan kode sumber (source code) dan dokumentasi teknis sistem inti Anda?",
+        "options": [
+          "Dipegang penuh oleh vendor lama; perusahaan tidak memiliki akses kode sumber",
+          "Kode tersedia sebagian, namun tanpa dokumentasi sehingga sulit dilanjutkan",
+          "Kode dimiliki perusahaan, dokumentasi sedang dirapikan",
+          "100% kode sumber, repositori, dan dokumentasi dikuasai penuh oleh perusahaan"
+        ]
+      }
+    },
+    "tiers": {
+      "critical": {
+        "label": "Risiko Kritis (Perlu Intervensi Segera)",
+        "summary": "Sistem lama dan proses manual mulai menciptakan risiko operasional, kebocoran biaya, dan hambatan keputusan. Modernisasi bertahap yang terukur sangat disarankan."
+      },
+      "fragmented": {
+        "label": "Terfragmentasi (Prioritas Integrasi)",
+        "summary": "Sistem inti masih menopang bisnis, tetapi data silo, rekonsiliasi manual, dan celah tata kelola mulai memperlambat tim operasional Anda."
+      },
+      "stabilizing": {
+        "label": "Terkendali (Siap Optimasi & Otomatisasi)",
+        "summary": "Fondasi sistem sudah cukup solid. Fokus berikutnya adalah menghilangkan sisa bottleneck melalui otomatisasi alur kerja dan penguatan tata kelola rilis."
+      },
+      "resilient": {
+        "label": "Tangguh (Siap Skala Enterprise)",
+        "summary": "Arsitektur dan disiplin operasional Anda berada pada tingkat kematangan tinggi. Sundawa dapat membantu melalui managed engineering atau inisiatif inovasi AI terukur."
+      }
+    },
+    "actions": {
+      "reset": "Ulangi Jawaban",
+      "calculate": "Lihat Skor & Rekomendasi",
+      "retake": "Isi Ulang Assessment"
+    },
+    "results": {
+      "scoreLabel": "Skor Kesehatan Sistem",
+      "breakdownTitle": "Rincian 4 Dimensi Kesiapan",
+      "priorityBadge": "Prioritas Utama"
+    },
+    "leadForm": {
+      "eyebrow": "Tindak Lanjut Eksekutif",
+      "heading": "Dapatkan Review Arsitektur 30 Menit Berdasarkan Skor Ini",
+      "desc": "Kirimkan hasil diagnostik ini ke tim engineering kami untuk mendapatkan peta jalan modernisasi awal—tanpa komitmen kontrak dan dilengkapi opsi NDA standar.",
+      "nameLabel": "Nama Lengkap",
+      "emailLabel": "Email Perusahaan",
+      "companyLabel": "Nama Perusahaan / Instansi",
+      "submit": "Kirim Hasil & Jadwalkan Review",
+      "submitting": "Mengirim Hasil Assessment...",
+      "successTitle": "Hasil Assessment Diterima",
+      "successBody": "Tim arsitektur Sundawa telah menerima profil skor sistem Anda dan akan menghubungi Anda dalam 1 hari kerja dengan rekomendasi awal.",
+      "errorRequired": "Mohon isi nama lengkap dan email perusahaan Anda.",
+      "errorGeneric": "Gagal mengirim hasil assessment. Silakan coba lagi atau hubungi kami via WhatsApp.",
+      "whatsappCta": "Diskusikan Skor via WhatsApp",
+      "calculatorCta": "Lanjut ke Kalkulator Biaya Sistem Lama"
+    },
+    "summaryLabels": {
+      "header": "Hasil Diagnostik Kesehatan Sistem",
+      "company": "Perusahaan / Instansi",
+      "priority": "Area Prioritas"
+    }
+  },
+  "partnersPage": {
+    "navBack": "Beranda",
+    "navTitle": "Program Kemitraan",
+    "eyebrow": "Aliansi Strategis & Global Delivery",
+    "heading1": "Bermitra Bersama Sundawa",
+    "heading2": "Mitra Eksekusi Engineering Anda",
+    "subtitle": "Kami berkolaborasi dengan firma konsultan manajemen, system integrator (SI), dan mitra teknologi di Indonesia, Inggris (UK), serta Eropa untuk mengeksekusi proyek modernisasi sistem dan pengembangan platform enterprise secara andal.",
+    "regions": {
+      "items": [
+        {
+          "label": "Indonesia & APAC",
+          "detail": "Eksekusi onsite/hybrid di Bandung & Jakarta dengan dukungan regulasi lokal."
+        },
+        {
+          "label": "United Kingdom & Eropa",
+          "detail": "Overlap jam kerja pagi UK/CET bersama senior engineer berbahasa Inggris."
+        },
+        {
+          "label": "Co-Delivery & White-Label",
+          "detail": "Struktur kontrak rapi dengan perlindungan non-solisitasi & NDA timbal balik."
+        }
+      ]
+    },
+    "modelsSection": {
+      "eyebrow": "Model Kemitraan",
+      "heading": "Tiga Jalur Kolaborasi B2B yang Terstruktur"
+    },
+    "tracks": [
+      {
+        "code": "PARTNER-01",
+        "audience": "Konsultan Manajemen & ERP",
+        "title": "Co-Delivery & Ekstensi Tim Engineering",
+        "summary": "Anda memimpin strategi bisnis, perubahan organisasi, dan hubungan klien—Sundawa menjadi lengan eksekusi rekayasa perangkat lunak yang berpresisi.",
+        "benefits": [
+          "Tim lintas fungsi (Arsitek, Fullstack, Mobile, QA, DevOps) siap dalam hitungan minggu",
+          "Dapat beroperasi secara co-branded maupun white-label di bawah struktur delivery Anda",
+          "Artefak sprint transparan, dokumentasi arsitektur, dan kriteria penerimaan tertulis"
+        ]
+      },
+      {
+        "code": "PARTNER-02",
+        "audience": "Mitra Teknologi UK, Eropa & Internasional",
+        "title": "Hub Engineering Internasional (Bandung)",
+        "summary": "Bangun kapasitas engineering jangka panjang di pusat talenta teknologi Bandung dengan disiplin tata kelola internasional dan efisiensi biaya yang sehat.",
+        "benefits": [
+          "Overlap jam kerja efektif WIB (UTC+7) dengan pagi hari GMT/CET untuk daily standup",
+          "Praktik rekayasa selaras ISO 27001, OWASP ASVS, dan kesadaran privasi data",
+          "Rate card bulanan transparan tanpa biaya tersembunyi dan kepastian retensi tim"
+        ]
+      },
+      {
+        "code": "PARTNER-03",
+        "audience": "System Integrator & Reseller Sektor",
+        "title": "Implementasi Produk & Solusi Sektor",
+        "summary": "Distribusikan atau integrasikan platform siap adopsi Sundawa (LAKUPANDAI, Nawasanga ESG, SUNDAWA People, SI-GEOMEDIK) ke portofolio klien industri Anda.",
+        "benefits": [
+          "Kustomisasi integrasi ERP, core banking, atau infrastruktur on-premise klien",
+          "Skema bagi hasil, lisensi implementasi, dan dukungan teknis tier-2/tier-3 dari prinsipal",
+          "Demo lingkungan terisolasi dan dukungan pre-sales teknis untuk tender korporat"
+        ]
+      }
+    ],
+    "assurances": {
+      "eyebrow": "Perlindungan Mitra",
+      "heading": "Tata Kelola Komersial yang Melindungi Reputasi Anda",
+      "trustCenterCta": "Tinjau Trust Center & Keamanan",
+      "items": [
+        {
+          "title": "Mutual NDA & Non-Solisitasi",
+          "desc": "Komitmen tertulis melindungi kerahasiaan pipeline, klien akhir, dan integritas hubungan bisnis Anda."
+        },
+        {
+          "title": "100% Kepemilikan IP & Kode",
+          "desc": "Kode sumber dan dokumentasi diserahkan penuh sesuai struktur kontrak Anda dengan klien akhir."
+        },
+        {
+          "title": "Disiplin QA & Release Gates",
+          "desc": "Setiap rilis melalui verifikasi automated test, TypeScript strict, dan review arsitektur."
+        },
+        {
+          "title": "Komunikasi Eksekutif Jelas",
+          "desc": "Pelaporan risiko dini, estimasi realistis, dan satu pimpinan teknis penanggung jawab."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Mari Bangun Kemitraan Engineering Jangka Panjang",
+      "sub": "Jadwalkan sesi pengenalan 30 menit bersama Direktur & pimpinan teknis Sundawa untuk membahas struktur co-delivery atau kebutuhan proyek klien Anda.",
+      "primary": "Ajukan Diskusi Kemitraan",
+      "secondary": "Hubungi via WhatsApp",
+      "whatsappMessage": "Halo pimpinan Sundawa, kami tertarik menjajaki kemitraan strategis (Co-Delivery / System Integrator / International Partner)."
+    }
+  },
+  "calculatorPage": {
+    "navBack": "Beranda",
+    "navTitle": "Kalkulator Biaya Sistem Lama",
+    "eyebrow": "Business Case Modernisasi Sistem",
+    "heading1": "Kalkulator Biaya",
+    "heading2": "Sistem Lama",
+    "subtitle": "Hitung estimasi biaya tersembunyi dari pekerjaan manual berulang, pemeliharaan sistem lama, dan gangguan operasional (downtime) untuk membantu menyusun business case modernisasi.",
+    "inputsSection": {
+      "title": "Parameter Operasional Anda",
+      "reset": "Atur Ulang"
+    },
+    "fields": {
+      "staffCount": {
+        "label": "Jumlah Staf Terdampak",
+        "hint": "Staf admin, keuangan, gudang, atau operasional yang menyalin data manual antar sistem."
+      },
+      "manualHoursPerWeek": {
+        "label": "Jam Kerja Manual / Staf / Minggu",
+        "hint": "Rata-rata jam per minggu untuk input ulang, rekonsiliasi Excel, atau koreksi data."
+      },
+      "hourlyCost": {
+        "label": "Estimasi Biaya Staf per Jam ({currency})",
+        "hint": "Biaya rata-rata gaji + tunjangan operasional per jam kerja."
+      },
+      "monthlyMaintenance": {
+        "label": "Biaya Maintenance & Lisensi / Bulan ({currency})",
+        "hint": "Server lama, lisensi vendor legacy, atau biaya perbaikan darurat bulanan."
+      },
+      "downtimeHoursPerMonth": {
+        "label": "Gangguan / Downtime (Jam / Bulan)",
+        "hint": "Total jam sistem lambat, macet, atau gagal sinkronisasi dalam sebulan."
+      },
+      "downtimeCostPerHour": {
+        "label": "Dampak Kerugian per Jam Downtime ({currency})",
+        "hint": "Estimasi tertundanya transaksi, lembur tim, atau keterlambatan layanan per jam."
+      }
+    },
+    "results": {
+      "eyebrow": "Estimasi Dampak Finansial",
+      "annualTotal": "Total Estimasi Biaya Inefisiensi per Tahun",
+      "threeYearLabel": "Proyeksi Akumulasi 3 Tahun",
+      "manualWaste": "Beban Kerja Manual & Rekonsiliasi",
+      "maintenanceDrain": "Biaya Pemeliharaan Sistem Lama",
+      "downtimeLoss": "Estimasi Dampak Gangguan / Downtime",
+      "savingsLabel": "[Estimasi Model] Potensi Penghematan Tahunan (40%–60%)",
+      "modelNote": "Angka di atas adalah pemodelan estimasi berdasarkan input Anda untuk kebutuhan penyusunan business case awal, bukan jaminan penghematan tetap."
+    },
+    "cta": {
+      "primary": "Diskusikan ROI Modernisasi",
+      "whatsapp": "Kirim Estimasi ke WhatsApp"
+    },
+    "whatsappSummary": "Halo tim Sundawa, saya baru menggunakan Kalkulator Biaya Sistem Lama. Estimasi biaya inefisiensi tahunan kami sekitar {annualCost} (proyeksi 3 tahun {threeYearCost}, beban kerja manual {manualWaste}). Mari diskusikan opsi modernisasi bertahap."
+  },
+  "resourcesPage": {
+    "navBack": "Beranda",
+    "navTitle": "Pusat Panduan Enterprise",
+    "eyebrow": "Panduan Eksekutif & Checklist Teknis",
+    "heading1": "Pusat Panduan",
+    "heading2": "& Checklist Enterprise",
+    "subtitle": "Kerangka kerja praktis, checklist kesiapan migrasi ERP, playbook integrasi sistem, dan matriks evaluasi vendor IT yang dirancang khusus untuk CEO, COO, CTO, dan IT Manager.",
+    "quickTools": {
+      "assessment": "Mulai Diagnostik Kesehatan Sistem",
+      "calculator": "Hitung Biaya Sistem Lama"
+    },
+    "checklistHeading": "Checklist & Poin Evaluasi Inti",
+    "requestWalkthrough": "Minta Sesi Pembahasan",
+    "guides": [
+      {
+        "id": "erp-modernization",
+        "pillar": "Modernisasi Sistem Enterprise",
+        "audience": "Untuk COO, CIO & IT Manager",
+        "title": "Checklist Kesiapan Modernisasi ERP & Sistem Legacy",
+        "summary": "Pastikan 8 fondasi teknis dan bisnis berikut terpetakan sebelum memutuskan apakah sistem lama perlu diintegrasikan, dimodernisasi bertahap, atau diganti.",
+        "relatedServiceHref": "/services/modernisasi-sistem",
+        "relatedServiceLabel": "Layanan Modernisasi Sistem",
+        "checklist": [
+          "Inventarisasi seluruh proses bisnis kritis dan ketergantungan Excel di luar ERP",
+          "Audit kepemilikan source code, skema database, dan kontrak vendor sistem lama",
+          "Klasifikasi modul mana yang masih sehat vs modul yang paling sering menghambat operasional",
+          "Pemetaan kualitas data master (pelanggan, SKU, akun keuangan) sebelum migrasi",
+          "Rencana migrasi bertahap (Strangler Pattern) untuk menghindari downtime operasional total",
+          "Kriteria penerimaan terukur (UAT) yang disepakati perwakilan operasional & keuangan",
+          "Rencana rollback darurat apabila ditemukan anomali pasca cutover",
+          "Anggaran dukungan stabilisasi pasca-rilis minimal 3–6 bulan pertama"
+        ]
+      },
+      {
+        "id": "system-integration",
+        "pillar": "Integrasi Sistem & Data",
+        "audience": "Untuk CTO, Head of Ops & Finance",
+        "title": "Playbook Integrasi Sistem & Eliminasi Data Silo",
+        "summary": "Panduan arsitektur untuk menghubungkan ERP, CRM, aplikasi lapangan, dan pelaporan manajemen tanpa merusak sistem inti yang sudah stabil.",
+        "relatedServiceHref": "/services/integrasi-sistem",
+        "relatedServiceLabel": "Layanan Integrasi Sistem",
+        "checklist": [
+          "Tetapkan Single Source of Truth (SSOT) untuk setiap entitas data utama",
+          "Gunakan lapisan API middleware terpisah alih-alih koneksi langsung antar database",
+          "Terapkan idempotency key agar pengiriman ulang transaksi tidak menimbulkan duplikasi",
+          "Sediakan antrean gagal (dead-letter queue) & alert otomatis bila sinkronisasi gagal",
+          "Pisahkan jalur pelaporan analitik (read replica/warehouse) dari database transaksi harian",
+          "Standarisasi format waktu (ISO 8601), mata uang, dan kode referensi lintas aplikasi"
+        ]
+      },
+      {
+        "id": "vendor-evaluation",
+        "pillar": "Transformasi Bisnis & Digital",
+        "audience": "Untuk CEO, Procurement & VP Engineering",
+        "title": "Matriks Evaluasi Vendor & Mitra Rekayasa Perangkat Lunak",
+        "summary": "Kriteria objektif untuk membedakan mitra engineering enterprise sejati dari agensi proyek jangka pendek sebelum menandatangani kontrak.",
+        "relatedServiceHref": "/trust-center",
+        "relatedServiceLabel": "Lihat Standar di Trust Center",
+        "checklist": [
+          "Kepemilikan 100% source code & akses repositori Git transparan sejak sprint pertama",
+          "Kesediaan menandatangani Mutual NDA sebelum sesi discovery dimulai",
+          "Rekam jejak sistem produksi nyata (Masalah → Eksekusi → Hasil), bukan sekadar mockup UI",
+          "Keberadaan proses QA otomatis, strict type-checking, dan gerbang mutu rilis (CI/CD)",
+          "Kejelasan arsitek & pimpinan teknis yang terlibat langsung dalam pengerjaan proyek",
+          "Kesiapan opsi deployment on-premise/private cloud dan jaminan zero vendor lock-in",
+          "Skema transfer pengetahuan, dokumentasi teknis, dan dukungan SLA pasca-rilis",
+          "Transparansi estimasi biaya, manajemen risiko perubahan scope, dan milestone tertulis"
+        ]
+      },
+      {
+        "id": "security-governance",
+        "pillar": "Keamanan & Tata Kelola Engineering",
+        "audience": "Untuk CISO, Audit Internal & IT Lead",
+        "title": "Brief Tata Kelola Keamanan Aplikasi Enterprise (SSDLC)",
+        "summary": "Daftar kontrol keamanan minimum yang wajib ada pada setiap sistem informasi korporat atau instansi sebelum dibuka ke pengguna produksi.",
+        "relatedServiceHref": "/trust-center",
+        "relatedServiceLabel": "Buka Enterprise Trust Center",
+        "checklist": [
+          "Enkripsi TLS 1.3 end-to-end serta penyimpanan kredensial dengan hashing kuat & rahasia terisolasi",
+          "Kontrol akses berbasis peran (RBAC) dengan prinsip least privilege dan verifikasi sisi server",
+          "Pencatatan jejak audit (audit trail) untuk login, perubahan hak akses, dan transaksi sensitif",
+          "Mitigasi OWASP Top 10 / ASVS (validasi input, proteksi XSS/CSRF/SQL injection, rate limit)",
+          "Backup basis data terenkripsi otomatis dengan uji pemulihan berkala (DR drill)",
+          "Pemisahan ketat lingkungan development, staging, dan production beserta data uji"
+        ]
+      }
+    ]
   }
 }
