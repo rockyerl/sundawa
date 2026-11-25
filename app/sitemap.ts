@@ -4,6 +4,7 @@ import { SITE_URL } from '@/lib/Seo'
 import { getPostSlugs, isPostTranslated } from '@/src/features/blog'
 import { getPortfolioProjects } from '@/src/features/portfolio'
 import { getAllProductSlugs } from '@/src/features/products'
+import { getAllIndustrySlugs } from '@/src/features/industries'
 import idMessages from '@/messages/id.json'
 import enMessages from '@/messages/en.json'
 
@@ -30,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     const productSlugs = getAllProductSlugs()
+    const industrySlugs = getAllIndustrySlugs()
 
     // Service detail pages with cross-locale pairing
     const serviceKeys = Object.keys(idMessages.servicesPage?.detail || {}) as (keyof typeof idMessages.servicesPage.detail)[]
@@ -89,5 +91,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...blogEntries,
         ...portfolioProjects.flatMap(proj => sitemapEntries(`/portfolio/${proj.slug}`, 0.6, 'monthly', proj.updated_at || proj.created_at)),
         ...productSlugs.flatMap(slug => sitemapEntries(`/products/${slug}`, 0.7, 'monthly')),
+        ...industrySlugs.flatMap(slug => sitemapEntries(`/industries/${slug}`, 0.85, 'monthly')),
     ]
 }

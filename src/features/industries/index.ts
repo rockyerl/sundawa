@@ -1,0 +1,5 @@
+export { default as IndustriesArchive } from './components/IndustriesArchive'
+export { default as IndustryDetail } from './components/IndustryDetail'
+export * from './data'
+export * from './domain'
+export * from './types'

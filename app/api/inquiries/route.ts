@@ -17,15 +17,19 @@ export async function POST(request: Request) {
             })
         }
 
-        if (!name || !email || !message) {
+        const trimmedName = typeof name === 'string' ? name.trim() : ''
+        const trimmedEmail = typeof email === 'string' ? email.trim().toLowerCase() : ''
+        const trimmedMessage = typeof message === 'string' ? message.trim() : ''
+
+        if (!trimmedName || !trimmedEmail || !trimmedMessage) {
             return NextResponse.json(
                 { error: 'Name, email, and message are required' },
                 { status: 400 }
             )
         }
 
-        // Email basic validation
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        // Email basic validation (after trimming accidental whitespace)
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
             return NextResponse.json(
                 { error: 'Invalid email address' },
                 { status: 400 }
@@ -33,11 +37,11 @@ export async function POST(request: Request) {
         }
 
         const inquiryData = {
-            name: String(name).trim(),
-            email: String(email).trim().toLowerCase(),
+            name: trimmedName,
+            email: trimmedEmail,
             company: company ? String(company).trim() : null,
             topic: topic ? String(topic).trim() : 'Konsultasi Umum',
-            message: String(message).trim(),
+            message: trimmedMessage,
             source_url: sourceUrl ? String(sourceUrl).trim() : null,
             status: 'new',
             created_at: new Date().toISOString(),

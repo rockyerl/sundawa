@@ -134,6 +134,9 @@ describe('products catalog and case studies', () => {
         expect(collectLeafKeys(idMessages.legalDocs).sort()).toEqual(
             collectLeafKeys(enMessages.legalDocs).sort(),
         )
+        expect(collectLeafKeys(idMessages.industriesPage).sort()).toEqual(
+            collectLeafKeys(enMessages.industriesPage).sort(),
+        )
     })
 
     it('includes non-empty case study pillars, highlights, and scenarios for every product in both locales', () => {

@@ -52,9 +52,10 @@ export default function Navbar() {
                 id: 'solutions',
                 label: t('groups.solutions'),
                 href: '/services',
-                activePrefixes: ['/services', '/proses-kerja', '/outsource', '/assessment', '/calculator'],
+                activePrefixes: ['/services', '/industries', '/proses-kerja', '/outsource', '/assessment', '/calculator'],
                 items: [
                     { href: '/services', label: t('items.servicesTitle'), desc: t('items.servicesDesc') },
+                    { href: '/industries', label: t('items.industriesTitle'), desc: t('items.industriesDesc') },
                     { href: '/assessment', label: t('items.assessmentTitle'), desc: t('items.assessmentDesc') },
                     { href: '/calculator', label: t('items.calculatorTitle'), desc: t('items.calculatorDesc') },
                     { href: '/proses-kerja', label: t('items.processTitle'), desc: t('items.processDesc') },

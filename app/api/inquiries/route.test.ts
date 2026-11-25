@@ -107,6 +107,28 @@ describe('POST /api/inquiries', () => {
         expect(json.inquiry.name).toBe('Arief Setiawan')
         expect(json.inquiry.topic).toBe('Otomatisasi & Integrasi Data')
     })
+
+    it('normalizes email casing and accepts optional marketingConsent flag cleanly', async () => {
+        const req = new Request('http://localhost:3000/api/inquiries', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: '  Budi Santoso  ',
+                email: '  Budi.Santoso@Enterprise.CO.ID  ',
+                company: 'PT Industri Nusantara',
+                topic: 'System Health Assessment',
+                message: 'Hasil diagnostik 54/100.',
+                marketingConsent: true,
+            }),
+            headers: { 'Content-Type': 'application/json' },
+        })
+
+        const res = await POST(req)
+        expect(res.status).toBe(200)
+        const json = await res.json()
+        expect(json.success).toBe(true)
+        expect(json.inquiry.name).toBe('Budi Santoso')
+        expect(json.inquiry.email).toBe('budi.santoso@enterprise.co.id')
+    })
 })
 
 describe('GET /api/inquiries', () => {

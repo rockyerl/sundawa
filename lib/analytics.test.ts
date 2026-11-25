@@ -92,4 +92,32 @@ describe('analytics utilities', () => {
             trackWhatsAppClick({ topic: 'Test' })
         }).not.toThrow()
     })
+
+    it('suppresses GA4/GTM event dispatch when visitor explicitly declined analytics consent', () => {
+        const mockGtag = vi.fn()
+        const mockDataLayer: Array<Record<string, unknown>> = []
+
+        ;(globalThis as unknown as { window: unknown }).window = {
+            gtag: mockGtag,
+            dataLayer: mockDataLayer,
+            location: { pathname: '/en/assessment' },
+            localStorage: {
+                getItem: vi.fn(() =>
+                    JSON.stringify({
+                        version: '1.0',
+                        updatedAt: '2026-11-25T12:00:00.000Z',
+                        necessary: true,
+                        analytics: false,
+                        marketing: false,
+                    }),
+                ),
+            },
+        }
+
+        trackLeadConversion({ topic: 'System Health Assessment' })
+        trackWhatsAppClick({ topic: 'System Health Assessment' })
+
+        expect(mockGtag).not.toHaveBeenCalled()
+        expect(mockDataLayer).toHaveLength(0)
+    })
 })

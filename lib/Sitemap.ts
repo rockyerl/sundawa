@@ -23,6 +23,7 @@ export const staticSitemapPaths = [
     '/disclaimer',
     '/responsible-disclosure',
     '/dpa',
+    '/industries',
 ]
 
 export function sitemapEntries(

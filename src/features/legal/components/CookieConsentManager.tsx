@@ -109,7 +109,7 @@ export default function CookieConsentManager() {
                                 >
                                     {t('links.privacy')}
                                 </Link>
-                                <span className="text-cream/40" aria-hidden="true">·</span>
+                                <span className="text-cream/70" aria-hidden="true">·</span>
                                 <Link
                                     href="/cookie-policy"
                                     className="font-semibold text-gold/90 underline underline-offset-4 hover:text-gold"

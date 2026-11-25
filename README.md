@@ -369,6 +369,10 @@ Engineered for strict enterprise compliance and risk traceability (`.agents/`):
 - **Consent-First Analytics**: `CookieConsentManager` provides equal-prominence **Reject All**, **Customize**, and **Accept All** controls (re-openable anytime from the Footer **Cookie Preferences** button); `GoogleAnalytics.tsx` strictly blocks GA4 & GTM scripts until explicit analytics consent is granted.
 - **Form Transparency**: `ContactPage` and `AssessmentPage` include Privacy Notices (12-month retention) and unchecked-by-default optional marketing opt-in checkboxes.
 
+### 12. Industry Solutions Verticals (`/industries` & `/industries/[slug]`)
+- **6 Targeted Enterprise Verticals**: Banking & Financial Services, Manufacturing & Industrial, Logistics & Supply Chain, Healthcare, Government & Public Sector, and International Organizations (`src/features/industries/`).
+- **SEO & ABM Ready**: Pure Server Components with SSG (`generateStaticParams`), `Service` + `BreadcrumbList` JSON-LD schemas, canonical/hreflang sitemap coverage, and direct vertical-specific conversion funnels.
+
 
 ---
 

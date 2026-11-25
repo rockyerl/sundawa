@@ -43,7 +43,9 @@
       "trustCenterTitle": "Trust Center & Keamanan",
       "trustCenterDesc": "Keamanan informasi, tata kelola SSDLC, NDA & kepemilikan kode penuh",
       "partnersTitle": "Program Kemitraan",
-      "partnersDesc": "Kolaborasi co-delivery untuk konsultan, SI & mitra internasional"
+      "partnersDesc": "Kolaborasi co-delivery untuk konsultan, SI & mitra internasional",
+      "industriesTitle": "Solusi per Industri",
+      "industriesDesc": "Arsitektur khusus Perbankan, Manufaktur, Logistik, Kesehatan & Publik"
     }
   },
   "hero": {
@@ -912,8 +914,8 @@
           "desc": "Perjanjian kerahasiaan (NDA) standar tersedia sejak diskusi awal untuk melindungi data sensitif perusahaan maupun instansi."
         },
         {
-          "title": "100% Hak Kepemilikan Kode & HKI",
-          "desc": "Kode sumber, repositori, dan dokumentasi teknis diserahkan sepenuhnya kepada klien pada tahap serah terima tanpa risiko vendor lock-in."
+          "title": "Kepemilikan Penuh Kode Khusus & HKI",
+          "desc": "Kode sumber khusus proyek, repositori, dan dokumentasi teknis diserahkan penuh kepada klien sesuai kontrak MSA (tidak termasuk lisensi pihak ketiga/open-source dan pustaka prabangun Sundawa), dengan arsitektur terbuka yang meminimalkan ketergantungan vendor."
         },
         {
           "title": "Opsi On-Premise DC/DRC & Cloud Lokal",
@@ -1434,6 +1436,10 @@
     "dpa": {
       "title": "Perjanjian Pemrosesan Data B2B (Data Processing Agreement)",
       "description": "Ringkasan kerangka Data Processing Agreement (DPA) B2B PT Sundawa Teknologi Indonesia untuk klien korporat dan instansi."
+    },
+    "industries": {
+      "title": "Solusi per Industri — Perbankan, Manufaktur, Logistik, Kesehatan & Publik",
+      "description": "Solusi modernisasi sistem, integrasi ERP, dan rekayasa perangkat lunak enterprise yang disesuaikan dengan regulasi serta realitas operasional 6 sektor industri utama."
     }
   },
   "products": {
@@ -1441,12 +1447,12 @@
     "navTitle": "Produk Sundawa",
     "label": "Ekosistem Produk Enterprise",
     "homeHeading1": "4 Platform Enterprise",
-    "homeHeading2": "Siap Adopsi",
+    "homeHeading2": "Unggulan",
     "homeSub": "Selain rekayasa sistem khusus untuk klien, Sundawa merancang dan mengoperasikan platform enterprise untuk perbankan, kesehatan strategis, ESG armada, dan operasional SDM skala besar.",
     "homeEcosystemNote": "Ingin melihat seluruh 7 produk Sundawa termasuk platform SaaS & mobilitas (Sewaka, Vellumia, Abo Rent Car)?",
     "heading1": "7 Produk & Inisiatif",
     "heading2": "Sundawa",
-    "sub": "Selain membangun sistem khusus untuk klien, Sundawa merancang dan mengoperasikan produk SaaS, platform mobilitas, dan infrastruktur enterprise siap adopsi lintas industri.",
+    "sub": "Selain membangun sistem khusus untuk klien, Sundawa merancang dan mengoperasikan produk SaaS, platform mobilitas, dan infrastruktur enterprise unggulan lintas industri.",
     "stats": [
       {
         "num": "7",
@@ -1467,15 +1473,15 @@
       "saas": "SaaS & Mobilitas"
     },
     "statuses": {
-      "liveSaas": "Live",
+      "liveSaas": "Produksi",
       "enterpriseB2B": "Demo",
       "prototype": "Prototipe",
-      "authPortal": "Live (Terproteksi)",
-      "livePlatform": "Live"
+      "authPortal": "Produksi (Terproteksi)",
+      "livePlatform": "Produksi"
     },
     "actions": {
       "viewCaseStudy": "Lihat Case Study",
-      "visitSite": "Buka Situs",
+      "visitSite": "Buka Platform",
       "fullDetail": "Halaman Detail",
       "close": "Tutup",
       "backToProducts": "Kembali ke Produk",
@@ -1485,7 +1491,7 @@
     "caseStudySection": {
       "eyebrow": "Case Studies & Arsitektur Produk",
       "title": "Masalah, Arsitektur & Skenario Penerapan",
-      "subtitle": "Pelajari tantangan bisnis yang diselesaikan, desain arsitektur sistem, serta skenario penerapan dari keenam produk ekosistem Sundawa (termasuk studi kasus showcase yang dipublikasikan pada situs masing-masing produk).",
+      "subtitle": "Pelajari tantangan bisnis yang diselesaikan, desain arsitektur sistem, serta skenario penerapan dari ketujuh produk ekosistem Sundawa (termasuk studi kasus showcase yang dipublikasikan pada situs masing-masing produk).",
       "labels": {
         "subject": "Konteks & Profil Pengguna",
         "challenge": "Tantangan Bisnis",
@@ -1729,7 +1735,7 @@
         "name": "SUNDAWA People",
         "sector": "Enterprise Autonomous HR & Payroll",
         "tagline": "Satu Ekosistem Cerdas untuk Seluruh Performa & Finansial SDM",
-        "summary": "Platform HRIS dan operasional tenaga kerja enterprise yang mengotomatiskan payroll multi-tier, sinkronisasi mesin sidik jari biometrik instan, manajemen shift cerdas, serta ESS mandiri dalam standar keamanan perbankan.",
+        "summary": "Platform HRIS dan operasional tenaga kerja enterprise yang mengotomatiskan payroll multi-tier, sinkronisasi mesin sidik jari biometrik instan, manajemen shift cerdas, serta ESS mandiri dalam enkripsi TLS 1.3, perlindungan data AES-256, dan kontrol akses berbasis peran (RBAC).",
         "badgeMetric": "Mendukung Penerapan ISO/IEC 27001",
         "accessNote": "Aplikasi ini merupakan portal HRIS operasional terproteksi. Tautan mengarah ke gerbang login resmi (TLS 1.3 & AES-256); akses penuh diperuntukkan bagi karyawan dan tim HR berwenang.",
         "modules": [
@@ -1795,7 +1801,8 @@
       "cookiePreferences": "Preferensi Cookie",
       "responsibleDisclosure": "Pengungkapan Kerentanan",
       "dpa": "Perjanjian Pemrosesan Data (DPA)",
-      "disclaimer": "Disclaimer Legal"
+      "disclaimer": "Disclaimer Legal",
+      "industries": "Solusi per Industri"
     },
     "assurances": "NDA Standar · 100% Kepemilikan Kode · On-Premise & Cloud",
     "copyright": "© {year} PT Sundawa Teknologi Indonesia. Seluruh hak cipta dilindungi."
@@ -1887,10 +1894,10 @@
         "title": "Kepemilikan Kode & Kekayaan Intelektual (IP)",
         "summary": "Klien memegang kendali penuh atas aset digital yang dibangun tanpa ketergantungan lisensi tersembunyi.",
         "controls": [
-          "100% kepemilikan source code, skema database, dan dokumentasi teknis diserahkan ke klien",
+          "Kepemilikan penuh atas source code khusus proyek, skema database, dan dokumentasi teknis diserahkan ke klien sesuai MSA (di luar lisensi open-source/pihak ketiga dan komponen prabangun Sundawa)",
           "Akses repositori Git transparan sejak sprint pertama, bukan baru di akhir kontrak",
           "Dokumentasi handover operasional dan pelatihan tim internal klien sebelum serah terima",
-          "Nol vendor lock-in: arsitektur dibangun di atas teknologi terbuka berstandar industri"
+          "Arsitektur berstandar terbuka yang dirancang meminimalkan ketergantungan vendor (vendor lock-in)"
         ]
       },
       {
@@ -2258,8 +2265,8 @@
           "desc": "Komitmen tertulis melindungi kerahasiaan pipeline, klien akhir, dan integritas hubungan bisnis Anda."
         },
         {
-          "title": "100% Kepemilikan IP & Kode",
-          "desc": "Kode sumber dan dokumentasi diserahkan penuh sesuai struktur kontrak Anda dengan klien akhir."
+          "title": "Kepemilikan Kode Khusus & HKI Jelas",
+          "desc": "Kode sumber khusus proyek diserahkan penuh sesuai struktur MSA Anda dengan klien akhir (tidak termasuk lisensi pihak ketiga & pustaka prabangun)."
         },
         {
           "title": "Disiplin QA & Release Gates",
@@ -2400,12 +2407,12 @@
         "relatedServiceHref": "/trust-center",
         "relatedServiceLabel": "Lihat Standar di Trust Center",
         "checklist": [
-          "Kepemilikan 100% source code & akses repositori Git transparan sejak sprint pertama",
+          "Kepemilikan penuh kode khusus proyek (di luar lisensi pihak ketiga/komponen prabangun) & akses Git transparan",
           "Kesediaan menandatangani Mutual NDA sebelum sesi discovery dimulai",
           "Rekam jejak sistem produksi nyata (Masalah → Eksekusi → Hasil), bukan sekadar mockup UI",
           "Keberadaan proses QA otomatis, strict type-checking, dan gerbang mutu rilis (CI/CD)",
           "Kejelasan arsitek & pimpinan teknis yang terlibat langsung dalam pengerjaan proyek",
-          "Kesiapan opsi deployment on-premise/private cloud dan jaminan zero vendor lock-in",
+          "Kesiapan opsi deployment on-premise/private cloud dengan arsitektur terbuka yang meminimalkan ketergantungan vendor",
           "Skema transfer pengetahuan, dokumentasi teknis, dan dukungan SLA pasca-rilis",
           "Transparansi estimasi biaya, manajemen risiko perubahan scope, dan milestone tertulis"
         ]
@@ -2449,7 +2456,7 @@
       "cta": "Hitung Biaya Sistem Lama"
     },
     "trustStrip": {
-      "text": "Seluruh proses penjajakan dilindungi opsi Mutual NDA, kepemilikan kode penuh 100%, dan praktik keamanan selaras ISO 27001 & OWASP.",
+      "text": "Seluruh penjajakan dilindungi opsi Mutual NDA, kepemilikan penuh kode khusus proyek (sesuai MSA), dan kontrol rekayasa selaras ISO 27001 & OWASP.",
       "cta": "Buka Trust Center & Keamanan"
     }
   },
@@ -2660,8 +2667,8 @@
           "id": "marketing-opt-out",
           "heading": "Komunikasi Pemasaran & Berhenti Berlangganan",
           "paragraphs": [
-            "Kami tidak mengirimkan email pemasaran massal tanpa persetujuan. Komunikasi edukasi atau pembaruan layanan hanya dikirim apabila Anda secara sadar mencentang kotak persetujuan opsional.",
-            "Anda dapat berhenti berlangganan kapan saja dengan membalas email kami atau mengirimkan pesan ke contact@sundawa.net dengan subjek \"[Privacy Request] Opt-Out\"."
+            "Untuk langganan newsletter atau pembaruan materi melalui formulir website, kami hanya mengirimkannya berdasarkan persetujuan opt-in eksplisit Anda. Untuk komunikasi perkenalan bisnis B2B langsung kepada pemangku kepentingan korporat yang relevan, kami mengedepankan relevansi profesional dengan mekanisme penolakan (opt-out) instan.",
+            "Anda dapat berhenti menerima komunikasi apa pun kapan saja dengan membalas pesan kami atau mengirim email ke contact@sundawa.net dengan subjek \"[Privacy Request] Opt-Out\"."
           ]
         },
         {
@@ -2724,7 +2731,7 @@
           "paragraphs": [
             "Seluruh teks, desain antarmuka, merek dagang Sundawa, grafik, struktur kode website, dan panduan publikasi pada sundawa.net merupakan kekayaan intelektual PT Sundawa Teknologi Indonesia atau pemegang lisensinya.",
             "Anda diperkenankan mengunduh checklist atau mencetak ringkasan hasil diagnostik/kalkulator untuk evaluasi internal organisasi Anda, namun dilarang mendistribusikan ulang secara komersial tanpa izin tertulis.",
-            "Kepemilikan penuh (100%) atas kode sumber hasil proyek khusus klien diatur secara terpisah dalam kontrak pengembangan perangkat lunak masing-masing klien."
+            "Kepemilikan penuh atas kode sumber khusus hasil proyek klien diatur secara tertulis dalam kontrak pengembangan masing-masing klien (MSA/SOW), dengan pengecualian wajar atas lisensi perangkat lunak pihak ketiga/open-source serta pustaka prabangun yang sebelumnya telah dimiliki PT Sundawa Teknologi Indonesia."
           ]
         },
         {
@@ -2961,6 +2968,238 @@
           ]
         }
       ]
+    }
+  },
+  "industriesPage": {
+    "navBack": "Beranda",
+    "navTitle": "Solusi per Industri",
+    "eyebrow": "Spesialisasi Sektor Enterprise",
+    "heading1": "Arsitektur yang Memahami",
+    "heading2": "Realitas Industri Anda",
+    "subtitle": "Setiap sektor memiliki regulasi, beban transaksi, dan sistem lama yang berbeda. Sundawa merancang integrasi, modernisasi, dan platform khusus berdasarkan pengalaman nyata di produksi lintas 6 vertikal utama.",
+    "ctaAssessment": "Mulai Diagnostik Sistem",
+    "ctaTrust": "Tinjau Trust Center",
+    "labels": {
+      "backToIndustries": "Semua Industri",
+      "exploreSector": "Pelajari Arsitektur Sektor",
+      "sectorProfile": "Profil Operasional Sektor",
+      "typicalSystems": "Sistem Umum yang Ditangani",
+      "deploymentModel": "Topologi Deployment",
+      "governanceFocus": "Fokus Keamanan & Tata Kelola",
+      "challengeEyebrow": "Masalah Lapangan → Desain Arsitektur",
+      "challengeHeading": "Bagaimana Sundawa Menyelesaikan Hambatan Sektor Ini",
+      "challengeSub": "Pendekatan kami dimulai dari sistem yang sudah ada—memperbaiki titik hambatan operasional tanpa mengganggu proses inti yang masih stabil.",
+      "deliverablesTitle": "Keluaran Rekayasa Utama",
+      "scenarioPrefix": "Skenario",
+      "problemCol": "Tantangan Operasional",
+      "architectureCol": "Pendekatan Arsitektur Sundawa",
+      "proofEyebrow": "Referensi Rekam Jejak & Ekosistem",
+      "ctaConsult": "Jadwalkan Diskusi Arsitektur",
+      "ctaWhatsapp": "Diskusi via WhatsApp",
+      "whatsappTemplate": "Halo tim Sundawa, kami dari sektor {sector} ingin menjadwalkan diskusi arsitektur sistem dan modernisasi.",
+      "sectorNavAria": "Navigasi antar sektor industri",
+      "prevSector": "Sektor Sebelumnya",
+      "nextSector": "Sektor Berikutnya"
+    },
+    "items": {
+      "banking-financial-services": {
+        "name": "Perbankan & Layanan Keuangan",
+        "shortTag": "Finansial & Regulasi Ketat",
+        "headline": "Integrasi Core Banking, Agent Banking & Rekonsiliasi Tanpa Celah Audit",
+        "summary": "Membantu bank, lembaga keuangan, dan operator jaringan pembayaran menghubungkan kanal lapangan dengan sistem inti melalui arsitektur terenkripsi dan jejak audit menyeluruh.",
+        "typicalSystems": "Core Banking, Switching ISO 8583 / ISO 20022, Agent Banking (Laku Pandai), PPOB, EDC & Settlement.",
+        "deploymentModel": "On-Premise Data Center Bank, Private Cloud (RHEL / OpenShift), & Hybrid Terisolasi.",
+        "governanceFocus": "Kontrol akses mTLS + Hardware Key, RBAC ketat, jejak audit transaksi, dan kesiapan audit OJK/BI.",
+        "challengePairs": [
+          {
+            "challenge": "Kanal layanan lapangan (agen/EDC/mobile) terpisah dari core banking sehingga memicu selisih rekonsiliasi harian.",
+            "architecture": "Membangun lapisan middleware integrasi API & protokol ISO 8583/20022 dengan idempotency key dan rekonsiliasi settlement otomatis."
+          },
+          {
+            "challenge": "Proses KYC, persetujuan limit, dan pemantauan transaksi masih bergantung pada pengecekan manual yang lambat.",
+            "architecture": "Merancang portal operasional terintegrasi dengan validasi aturan bisnis otomatis, multi-tier approval, dan audit log setiap perubahan status."
+          },
+          {
+            "challenge": "Kebutuhan deployment di infrastruktur privat bank yang tidak mengizinkan penyimpanan data di public cloud.",
+            "architecture": "Arsitektur container siap on-premise (RHEL/OpenShift) dengan enkripsi TLS 1.3, isolasi rahasia, dan dokumentasi serah terima lengkap."
+          }
+        ],
+        "deliverables": [
+          "Middleware Integrasi Core Banking & ISO 8583/20022",
+          "Aplikasi Agent Banking Mobile & Portal Settlement",
+          "Dashboard Rekonsiliasi & Jejak Audit Transaksi",
+          "Dokumentasi Keamanan & Kesiapan On-Premise"
+        ],
+        "proofTitle": "Platform Referensi: LAKUPANDAI Agent Banking & Pengalaman Integrasi PPOB/EDC",
+        "proofSummary": "Sundawa merancang arsitektur LAKUPANDAI untuk layanan keuangan tanpa kantor (branchless banking) serta berpengalaman menangani integrasi kanal pembayaran perbankan di lingkungan produksi.",
+        "proofCta": "Lihat Arsitektur LAKUPANDAI",
+        "secondaryProofCta": "Tinjau Trust Center"
+      },
+      "manufacturing-industrial": {
+        "name": "Manufaktur & Industri",
+        "shortTag": "ERP & Otomatisasi Pabrik",
+        "headline": "Modernisasi ERP, Visibilitas Produksi & Eliminasi Rekonsiliasi Excel Lintas Pabrik",
+        "summary": "Menghubungkan sistem ERP lama, operasional lantai produksi, gudang, dan SDM multi-cabang agar manajemen memiliki visibilitas biaya serta output secara akurat.",
+        "typicalSystems": "Legacy ERP, Sistem Inventori & Gudang, Penjadwalan Shift Pabrik, Biometrik Kehadiran & Payroll.",
+        "deploymentModel": "Hybrid On-Premise Pabrik + Private Cloud Konsolidasi Kantor Pusat.",
+        "governanceFocus": "Kontinuitas operasional tanpa downtime mendadak, akurasi master data, dan pemisahan wewenang cabang.",
+        "challengePairs": [
+          {
+            "challenge": "ERP utama masih dipakai keuangan, tetapi pencatatan produksi, lembur, dan stok antar gudang masih mengandalkan puluhan file Excel.",
+            "architecture": "Membangun aplikasi operasional pendamping dan pipeline integrasi API yang menyinkronkan data lantai produksi langsung ke ERP tanpa mengganti inti yang masih stabil."
+          },
+          {
+            "challenge": "Pengelolaan ribuan tenaga kerja shift, mesin absensi biometrik lintas lokasi, dan perhitungan lembur/payroll memakan waktu berhari-hari.",
+            "architecture": "Mengimplementasikan sinkronisasi perangkat IoT biometrik otomatis, manajemen shift dinamis, dan mesin payroll tervalidasi lintas cabang."
+          },
+          {
+            "challenge": "Sistem lama sulit dikembangkan karena kode tidak terdokumentasi dan bergantung pada vendor terdahulu.",
+            "architecture": "Modernisasi bertahap (Strangler Pattern) dengan dokumentasi arsitektur penuh, uji regresi otomatis, dan kepemilikan kode khusus diserahkan ke perusahaan."
+          }
+        ],
+        "deliverables": [
+          "Layer Integrasi ERP & Otomatisasi Laporan Manajemen",
+          "Portal Operasional Gudang, Produksi & Approval Digital",
+          "Sistem HRIS & Sinkronisasi Absensi Multi-Cabang",
+          "Peta Jalan Modernisasi Bertahap Tanpa Gangguan Produksi"
+        ],
+        "proofTitle": "Platform Referensi: SUNDAWA People HRIS & Modernisasi Sistem Operasional",
+        "proofSummary": "Pengalaman membangun otomatisasi SDM/payroll multi-cabang (diuji internal pada 2.400+ data slip gaji) serta integrasi alur kerja industri untuk menggantikan proses manual.",
+        "proofCta": "Lihat SUNDAWA People",
+        "secondaryProofCta": "Hitung Biaya Sistem Lama"
+      },
+      "logistics-supply-chain": {
+        "name": "Logistik, Armada & Rantai Pasok",
+        "shortTag": "Armada, Anti-Fraud & ESG",
+        "headline": "Kendali Konsumsi BBM Armada, Pelacakan Operasional & Kepatuhan Emisi ESG",
+        "summary": "Memberikan kendali penuh atas biaya bahan bakar, pelaporan pengiriman lapangan, integrasi GPS/ERP, dan pembukuan emisi Scope 1 bagi operator logistik, tambang, dan perkebunan.",
+        "typicalSystems": "GPS Telematics, Sistem Manajemen Armada (FMS), ERP Logistik, Pelaporan Bahan Bakar & Audit Emisi GRK.",
+        "deploymentModel": "Cloud Enterprise / Private Cloud + Aplikasi Mobile PWA untuk Pengemudi Lapangan.",
+        "governanceFocus": "Validasi bukti transaksi anti-fraud (OCR + Geofence), konsistensi data audit KAN/KLHK, dan enkripsi webhook.",
+        "challengePairs": [
+          {
+            "challenge": "Kebocoran biaya BBM (solar) sulit dideteksi karena struk pengisian dilaporkan manual tanpa validasi lokasi dan odometer.",
+            "architecture": "Menggabungkan aplikasi driver PWA dengan validasi AI OCR struk/odometer, geofencing SPBU/titik pengisian, dan deteksi anomali otomatis."
+          },
+          {
+            "challenge": "Data GPS telematika, surat jalan, dan penagihan ERP terpisah sehingga menyulitkan analisis profitabilitas per rute/armada.",
+            "architecture": "Membangun hub integrasi webhook GPS + ERP yang mengonsolidasikan perjalanan, konsumsi BBM, dan biaya operasional dalam satu dashboard."
+          },
+          {
+            "challenge": "Tuntutan pelaporan emisi GRK Scope 1 (ISO 14064-1 / POJK 51) masih dikumpulkan manual setiap akhir tahun.",
+            "architecture": "Mengotomatiskan perhitungan emisi berbasis konsumsi bahan bakar aktual (IPCC Tier-2) lengkap dengan jejak bukti siap audit."
+          }
+        ],
+        "deliverables": [
+          "Platform Pengendalian BBM & Deteksi Anomali Armada",
+          "Aplikasi Mobile/PWA Pengemudi & Bukti Pengiriman",
+          "Integrasi Webhook GPS Telematika ke ERP",
+          "Modul Pelaporan Emisi Scope 1 Siap Audit"
+        ],
+        "proofTitle": "Platform Referensi: Nawasanga — Enterprise ESG & Anti-Fraud BBM",
+        "proofSummary": "Nawasanga dirancang khusus untuk menyatukan pengendalian fraud bahan bakar armada (AI OCR + Geofence) dengan kalkulasi emisi Scope 1 bagi armada logistik, tambang, dan industri.",
+        "proofCta": "Lihat Platform Nawasanga",
+        "secondaryProofCta": "Hitung Biaya Inefisiensi"
+      },
+      "healthcare": {
+        "name": "Layanan Kesehatan & Rumah Sakit",
+        "shortTag": "SIMRS, Integrasi & Keamanan Data Medis",
+        "headline": "Sistem Informasi Kesehatan Terintegrasi dengan Perlindungan Data Pasien yang Ketat",
+        "summary": "Mendukung rumah sakit, jaringan klinik, dan institusi kesehatan memodernisasi sistem operasional, integrasi data klinis/administrasi, dan kontrol akses berbasis peran.",
+        "typicalSystems": "SIMRS / EHR, Integrasi Standar FHIR / ICD-10, Portal Administrasi Pasien, Inventarisasi Fasilitas & Alkes.",
+        "deploymentModel": "On-Premise Rumah Sakit atau Private Cloud Terisolasi Sesuai Kebijakan Data Kesehatan.",
+        "governanceFocus": "Kerahasiaan data pasien (UU PDP), RBAC per peran medis/admin, dan ketersediaan layanan tinggi.",
+        "challengePairs": [
+          {
+            "challenge": "Sistem administrasi pendaftaran, rekam medis, farmasi, dan penagihan berjalan terpisah sehingga memperlambat layanan pasien.",
+            "architecture": "Menghubungkan modul operasional rumah sakit melalui API terstandarisasi dan data model terpadu untuk mengurangi input berulang."
+          },
+          {
+            "challenge": "Kebutuhan pengelolaan aset fasilitas kesehatan, tenaga medis, dan logistik alat kesehatan lintas banyak unit wilayah.",
+            "architecture": "Membangun portal inventarisasi geospasial dan alur verifikasi berjenjang (Operator → Verifikator → Pusat) dengan enkripsi sesi dan audit trail."
+          },
+          {
+            "challenge": "Kewajiban ketat atas keamanan data pribadi pasien dan pemisahan hak akses antar tenaga kesehatan dan staf administrasi.",
+            "architecture": "Implementasi RBAC granular, enkripsi TLS 1.3, pencatatan aktivitas akses data sensitif, dan kesiapan prosedur backup/pemulihan."
+          }
+        ],
+        "deliverables": [
+          "Modernisasi Portal Operasional & Integrasi Data Rumah Sakit",
+          "Sistem Inventarisasi Fasilitas & Logistik Kesehatan",
+          "Kontrol Akses RBAC Granular & Audit Trail Akses Data",
+          "Dukungan Stabilisasi & Managed Engineering Berkelanjutan"
+        ],
+        "proofTitle": "Rekam Jejak: Oetomo Hospital & Portal Geospasial Kesehatan (NDA)",
+        "proofSummary": "Sundawa berpengalaman mendampingi proyek sistem informasi rumah sakit (Oetomo Hospital) serta merancang portal manajemen sumber daya kesehatan berstandar keamanan tinggi.",
+        "proofCta": "Lihat Portfolio Kesehatan",
+        "secondaryProofCta": "Tinjau Trust Center"
+      },
+      "government-public-sector": {
+        "name": "Pemerintahan & Sektor Publik",
+        "shortTag": "E-Office, Tata Kelola & NDA",
+        "headline": "Modernisasi Sistem Instansi Publik yang Akuntabel, Terstruktur & Siap Diaudit",
+        "summary": "Membantu instansi pemerintahan dan lembaga publik menggantikan administrasi kertas dan sistem lama dengan portal web terproteksi, persuratan digital, serta tata kelola akses berjenjang.",
+        "typicalSystems": "E-Office & Disposisi Persuratan, Portal Inventarisasi Geospasial, Sistem Layanan Publik Web & Rebuild Legacy.",
+        "deploymentModel": "Pusat Data Instansi (On-Premise / Sovereign Cloud) dengan Kendali Penuh Internal.",
+        "governanceFocus": "Kerahasiaan ketat (NDA), pemisahan wewenang berjenjang (RBAC), audit trail lengkap, dan serah terima kode penuh.",
+        "challengePairs": [
+          {
+            "challenge": "Alur persuratan dinas, disposisi pimpinan, dan pengarsipan fisik memakan waktu lama serta sulit ditelusuri statusnya.",
+            "architecture": "Implementasi E-Office terintegrasi untuk penomoran surat, disposisi berjenjang, pencarian arsip instan, dan log riwayat persetujuan."
+          },
+          {
+            "challenge": "Aplikasi layanan publik berbasis teknologi usang lambat diakses, rawan celah keamanan, dan sulit diperbarui.",
+            "architecture": "Pengembangan ulang (rebuild) dengan arsitektur web modern, hardening keamanan berbasis daftar periksa OWASP, dan dokumentasi teknis standar instansi."
+          },
+          {
+            "challenge": "Data sumber daya strategis tersebar di banyak unit daerah dan menuntut validasi berlapis sebelum masuk ke tingkat pusat.",
+            "architecture": "Portal web tertutup dengan autentikasi dinas, sesi terenkripsi HS256, dan alur kerja 3 tingkat (Operator Wilayah → Verifikator → Pusat Data)."
+          }
+        ],
+        "deliverables": [
+          "Platform E-Office & Disposisi Dokumen Terintegrasi",
+          "Rebuild & Hardening Keamanan Aplikasi Layanan Publik",
+          "Portal Web Tertutup dengan Dynamic RBAC & Audit Trail",
+          "Transfer Pengetahuan & Serah Terima Dokumentasi Penuh"
+        ],
+        "proofTitle": "Rekam Jejak: E-Office & SI-GEOMEDIK (Instansi Pertahanan & Kesehatan Nasional — NDA)",
+        "proofSummary": "Sundawa telah mengeksekusi implementasi E-Office, pengembangan ulang sistem web instansi, serta portal geospasial terproteksi dengan menghormati penuh kerahasiaan NDA.",
+        "proofCta": "Lihat Arsitektur SI-GEOMEDIK",
+        "secondaryProofCta": "Tinjau Trust Center"
+      },
+      "international-organizations": {
+        "name": "Organisasi Internasional & Lembaga Pembangunan",
+        "shortTag": "Akuntabilitas Global & Audit Trail",
+        "headline": "Platform Operasional Lapangan & Distribusi Digital Berstandar Akuntabilitas Internasional",
+        "summary": "Bermitra dengan lembaga internasional, program pembangunan, dan mitra konsultan global untuk membangun ekosistem aplikasi lintas platform yang transparan dan siap diaudit.",
+        "typicalSystems": "Platform Distribusi Bantuan Digital, Aplikasi Mobile Petugas Lapangan, Portal Backoffice & Audit Transaksi.",
+        "deploymentModel": "Cloud Berstandar Internasional (Multi-Region / Enkripsi Penuh) & Dukungan Offline-Resilient.",
+        "governanceFocus": "Zero duplikasi data, verifikasi identitas penerima, transparansi jejak audit, serta kolaborasi lintas zona waktu.",
+        "challengePairs": [
+          {
+            "challenge": "Distribusi bantuan atau operasional lapangan membutuhkan verifikasi penerima yang ketat tanpa toleransi duplikasi atau manipulasi.",
+            "architecture": "Ekosistem mobile petugas lapangan + backend tervalidasi dengan pencatatan transaksi real-time, verifikasi berlapis, dan audit trail tidak dapat diubah."
+          },
+          {
+            "challenge": "Proses rekonsiliasi berbasis kertas di lapangan memperlambat pelaporan ke donor dan meningkatkan risiko kesalahan data.",
+            "architecture": "Digitalisasi alur kerja lapangan secara menyeluruh dengan portal backoffice pusat yang menyajikan status penyaluran secara akurat."
+          },
+          {
+            "challenge": "Kebutuhan mitra engineering lokal di Indonesia yang mampu bekerja sesuai standar dokumentasi, keamanan, dan komunikasi bahasa Inggris internasional.",
+            "architecture": "Tim engineering senior Bandung dengan tata kelola rilis terdokumentasi (Sundawa AI Engineering Standards v1.1.0), QA otomatis, dan komunikasi eksekutif bilingual."
+          }
+        ],
+        "deliverables": [
+          "Aplikasi Mobile Petugas Lapangan & Portal Backoffice Admin",
+          "Arsitektur Backend Terenkripsi dengan Audit Trail Penuh",
+          "Dokumentasi Teknis & Keamanan Berbahasa Inggris",
+          "Dukungan Co-Delivery bersama Tim Program Internasional"
+        ],
+        "proofTitle": "Rekam Jejak Terverifikasi: DACAR by UNDP (Platform Distribusi Bantuan Digital)",
+        "proofSummary": "Sundawa merancang dan membangun ekosistem lintas platform DACAR untuk UNDP (United Nations Development Programme) guna menghadirkan distribusi bantuan tunai digital yang akuntabel.",
+        "proofCta": "Lihat Portfolio DACAR by UNDP",
+        "secondaryProofCta": "Pelajari Program Kemitraan"
+      }
     }
   }
 }
