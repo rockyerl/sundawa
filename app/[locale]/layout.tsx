@@ -7,7 +7,7 @@ import { SITE_URL, SITE_NAME } from '@/lib/Seo'
 import { COMPANY_CONTACT } from '@/lib/contact'
 import { Navbar } from '@/src/features/home'
 import { CookieConsentManager } from '@/src/features/legal'
-import { Footer, GoogleAnalytics, InstallPrompt, IntroLoader, PageTransition, PWARegister, SkipLink } from '@/src/shared/ui'
+import { Footer, GoogleAnalytics, InstallPrompt, PageTransition, PWARegister, SkipLink } from '@/src/shared/ui'
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
@@ -140,7 +140,6 @@ export default async function LocaleLayout({ children, params }: Props) {
                         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
                     />
                     <GoogleAnalytics />
-                    <IntroLoader />
                     <SkipLink />
                     <Navbar />
                     <PWARegister />

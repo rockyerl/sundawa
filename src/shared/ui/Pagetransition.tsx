@@ -77,7 +77,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
                                     background: '#0E1E30',
                                 }}
                             >
-                                <Image src="/assets/mascot-face.png" alt="" width={20} height={20} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <Image src="/assets/logo2.png" alt="" width={20} height={20} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '1px' }} />
                             </motion.div>
                         </motion.div>
                     </motion.div>
